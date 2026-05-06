@@ -27,6 +27,8 @@
 
 ## Activity
 
+![3D GitHub contribution calendar](./profile-3d-contrib/profile-night-rainbow.svg)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=rndrntwrk&hide_border=true&border_radius=4.5&card_width=980&background=00000000&stroke=30363D&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&sideNums=F0F6FC&currStreakLabel=9198A1&sideLabels=9198A1&dates=9198A1">
   <img src="https://streak-stats.demolab.com?user=rndrntwrk&hide_border=true&border_radius=4.5&card_width=980&background=00000000&stroke=D1D9E0&ring=0969DA&fire=0969DA&currStreakNum=0969DA&sideNums=24292F&currStreakLabel=57606A&sideLabels=57606A&dates=57606A" alt="GitHub contribution streak" width="100%">
