@@ -14,10 +14,6 @@
 
 </div>
 
-<p align="center">
-  <img src="./assets/rndrntwrk-loop.svg" alt="Animated infrastructure loop for human and agent media" width="100%" />
-</p>
-
 ## Core Interest
 
 > Live media is becoming infrastructure: a place where people and software operators coordinate, where participation has state, and where value can route through what happens in the moment.
@@ -30,11 +26,6 @@
 | Protocol-shaped systems | The interface can change, but state, identity, rewards, and settlement need durable rails underneath. |
 
 ## Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
-  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D GitHub contribution calendar" width="100%">
-</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=rndrntwrk&hide_border=true&border_radius=4.5&card_width=980&background=00000000&stroke=30363D&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&sideNums=F0F6FC&currStreakLabel=9198A1&sideLabels=9198A1&dates=9198A1">
