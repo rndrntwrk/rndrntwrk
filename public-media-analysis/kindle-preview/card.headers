@@ -1,0 +1,39 @@
+HTTP/2 302 
+content-type: text/html
+location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+server: Server
+date: Mon, 17 Aug 2026 22:17:55 GMT
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+vary: User-Agent,Accept-Encoding
+x-amz-rid: 2W89PYAMWHG70KABKCVW
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+x-cache: Miss from cloudfront
+via: 1.1 6c631b4a31fdb4facbfa609dbecec584.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: ovFlKgsQ_U7qUZiKN0akHDqGT9GBNlwjlW1z2na-pp-XcLuU3a4oLg==
+
+HTTP/1.1 301 Moved Permanently
+Server: CloudFront
+Date: Mon, 17 Aug 2026 22:17:55 GMT
+Content-Type: text/html
+Content-Length: 167
+Connection: keep-alive
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 daca68d2eb56d8591040b0405aa055ce.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: ORD58-P15
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: I-u7zKKv7IaDUQJIQ-8bUHLiu5N1_N9iBtv9IXgaAkBXs3TFbpYFmQ==
+
+HTTP/2 500 
+date: Mon, 17 Aug 2026 22:17:56 GMT
+pragma: no-cache
+expires: -1
+x-amz-rid: ZE64VNHK4YPW6FJWGK3T
+cache-control: no-cache
+x-cache: Error from cloudfront
+via: 1.1 c8cdc9fbc50901560b8834415670070e.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P15
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: VQBWhROthdEknIbpOUeQsjtW_4RztIxdNgJzfS-AAreZU5bAn3eymg==
+
