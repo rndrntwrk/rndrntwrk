@@ -1,0 +1,40 @@
+name: Fetch canonical BIP39 wordlist
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Fetch and validate canonical English list
+        run: |
+          mkdir -p public-media-analysis/wordlists
+          curl --fail --location --silent --show-error \
+            https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt \
+            -o public-media-analysis/wordlists/bip39-english.txt
+          test "$(wc -l < public-media-analysis/wordlists/bip39-english.txt)" -eq 2048
+          sha256sum public-media-analysis/wordlists/bip39-english.txt
+      - name: Persist wordlist
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/wordlists/bip39-english.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: add canonical BIP39 English wordlist'
+          git push origin HEAD:research/public-media-analysis
+      - name: Upload wordlist
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-bip39-wordlist
+          path: public-media-analysis/wordlists/bip39-english.txt
+          retention-days: 7
