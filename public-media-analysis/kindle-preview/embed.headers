@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Mon, 17 Aug 2026 23:35:21 GMT
+date: Mon, 17 Aug 2026 23:39:57 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: EA1WPT0KDCV8A9XJJCCS
+x-amz-rid: 66XEQQSJDP8XGVEZ9CPS
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 706d44cf645fa513dc870a95865811d8.cloudfront.net (CloudFront)
+via: 1.1 f8c4fc22f56f2f27103fff56edc5a8e6.cloudfront.net (CloudFront)
 x-amz-cf-pop: SFO5-P3
-x-amz-cf-id: K-OrVih_y6QOGIIYIZQ1lXLPWaHG3UtHLlcrq8Uxvx7zGlbmSaooFg==
+x-amz-cf-id: CrX5wyESHdMi6uczn5MJPLHG4gdn6i4sj7mD0PS_8gscfKyKMId5MA==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Mon, 17 Aug 2026 23:35:21 GMT
+Date: Mon, 17 Aug 2026 23:39:57 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 e1c58c40260ab4676220a9a738c87722.cloudfront.net (CloudFront)
+Via: 1.1 1c4d129deb2211304c934a250596192c.cloudfront.net (CloudFront)
 X-Amz-Cf-Pop: SFO53-P8
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: b_5JwPVybFdNYP9V2rDUypkXlk-TYqf4coiANQDKYCglfv5vlClT6w==
+X-Amz-Cf-Id: r2krZzFs5prXiY4VwCuOv1yhFBnh4Acx93OxV7TnnVBcdH_2d8r7DQ==
 
 HTTP/2 500 
-date: Mon, 17 Aug 2026 23:35:21 GMT
+date: Mon, 17 Aug 2026 23:39:57 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: R46HCQ9PHAEN8H0RQHJG
+x-amz-rid: Z34EW47REGAG15DAM095
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 caaeba2a924bc96d1c9587af9daa3d38.cloudfront.net (CloudFront)
+via: 1.1 1c4d129deb2211304c934a250596192c.cloudfront.net (CloudFront)
 x-amz-cf-pop: SFO53-P8
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: V_73HBMiysjiHMH7Nh4O87mIzrNAVtFR2uT0pHuEAUFw1Uyd0NSnKA==
+x-amz-cf-id: Ph9uX7aU73nh40chx_bxDNcVf1eaPqdhlGfxb9pvnTBguzSk3N6UbA==
 
