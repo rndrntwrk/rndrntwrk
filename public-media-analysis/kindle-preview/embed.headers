@@ -2,38 +2,34 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Mon, 17 Aug 2026 22:17:56 GMT
+date: Mon, 17 Aug 2026 22:22:07 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: XNAGJN21F54AX1REZH3Z
+x-amz-rid: 12S2WNFAM36CSADG0M4C
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 bf4d82ed0541e8e80440125c2f76d772.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: MGDdDWHFDIkkLg8KEUah0YsE1erFOzx_TZ_Jfsixq6sYSgYWsr_4dw==
+via: 1.1 067e8de16c423e80c411315827c4e9a8.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX50-P1
+x-amz-cf-id: b88wd8VsyFuf2vPYbxZDkDzCCWHEgzqNfRO4GOa-pX7-NyiWlroOig==
 
 HTTP/1.1 301 Moved Permanently
-Server: CloudFront
-Date: Mon, 17 Aug 2026 22:17:56 GMT
-Content-Type: text/html
-Content-Length: 167
-Connection: keep-alive
+Server: AkamaiGHost
+Content-Length: 0
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-X-Cache: Redirect from cloudfront
-Via: 1.1 de94008e5a526bbfeab72454e6d54968.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: ORD58-P15
-Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: 3X8COa-9nmHjeuWgIomfuXyxL1-BIvDfMnK-gyLrA-qfcqWvs69xsA==
+Date: Mon, 17 Aug 2026 22:22:07 GMT
+Connection: keep-alive
+Akamai-Request-BC: [a=23.213.247.209,b=911889171,c=g,n=US_CA_ELSEGUNDO,o=20940]
+X-Amzn-Cdn-Id: ak-0.d1f7d517.1787005327.365a5313
+X-Cache: NotCacheable from child
 
 HTTP/2 500 
-date: Mon, 17 Aug 2026 22:17:56 GMT
+x-amz-rid: VCD5NEM2QN6EXGWRREV7
+cache-control: no-cache
 pragma: no-cache
 expires: -1
-x-amz-rid: NGW7732Q3RSBWTR7N5HA
-cache-control: no-cache
-x-cache: Error from cloudfront
-via: 1.1 daca68d2eb56d8591040b0405aa055ce.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P15
-alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: XLukQCaUH1O1AN8T-wd3_igFoOU9E8reErKHBMjmqBWFkx0pmGh0Cg==
+date: Mon, 17 Aug 2026 22:22:07 GMT
+alt-svc: h3=":443"; ma=93600
+akamai-request-bc: [a=23.213.247.209,b=911889418,c=g,n=US_CA_ELSEGUNDO,o=20940],[c=o]
+x-amzn-cdn-id: ak-0.d1f7d517.1787005327.365a540a
+x-cache: NotCacheable from child
 
