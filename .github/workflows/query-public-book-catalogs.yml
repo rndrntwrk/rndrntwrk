@@ -1,0 +1,47 @@
+name: Query public book catalog and preview APIs
+
+on:
+  push:
+    branches:
+      - research/kindle-preview-analysis
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  query:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/kindle-preview-analysis
+      - name: Query public catalog endpoints
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/public-book-catalogs
+          mkdir -p "$out"
+          curl --fail --location --silent --show-error --get \
+            --data-urlencode 'q=isbn:9798267313988' \
+            https://www.googleapis.com/books/v1/volumes -o "$out/google-hardcover.json" || true
+          curl --fail --location --silent --show-error --get \
+            --data-urlencode 'q=isbn:9798294697969' \
+            https://www.googleapis.com/books/v1/volumes -o "$out/google-paperback.json" || true
+          curl --fail --location --silent --show-error --get \
+            --data-urlencode 'q=intitle:"Hunting Time: Genesis" inauthor:"Martin Warwick"' \
+            https://www.googleapis.com/books/v1/volumes -o "$out/google-title.json" || true
+          curl --fail --location --silent --show-error \
+            'https://openlibrary.org/api/books?bibkeys=ISBN:9798267313988,ISBN:9798294697969&jscmd=data&format=json' \
+            -o "$out/openlibrary.json" || true
+          curl --fail --location --silent --show-error \
+            'https://openlibrary.org/search.json?title=Hunting%20Time%3A%20Genesis&author=Martin%20Warwick' \
+            -o "$out/openlibrary-search.json" || true
+          for f in "$out"/*.json; do echo "=== $f ==="; head -c 4000 "$f"; echo; done
+      - name: Persist catalog responses
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/public-book-catalogs
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: add public book catalog responses'
+          git push origin HEAD:research/kindle-preview-analysis
