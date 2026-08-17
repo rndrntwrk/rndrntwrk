@@ -1,0 +1,70 @@
+name: Probe Hunting Time Search Inside
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-search.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Probe search responses
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/search-probe
+          rm -rf "$out"
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' "$base/book-data?asin=B0FK7RBDFL" -o "$out/book-data.json"
+          python - <<'PY'
+          import hashlib,json,subprocess,urllib.parse
+          from pathlib import Path
+          out=Path('public-media-analysis/search-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print/position-data'
+          queries=['time','wall','radio','soldier','apology','price','helicopter','watch','door','wallet','drone','defender','memory','phrase','bitcoin']
+          variants=[
+            lambda q:{'asin':'B0FK7RBDFL','query':q,'token':'null','page':'1'},
+            lambda q:{'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','query':q,'token':'null','page':'1'},
+            lambda q:{'asin':'B0FK7RBDFL','query':q,'page':'1'},
+          ]
+          summary=[]
+          for q in queries:
+            for vi,fn in enumerate(variants,1):
+              params=fn(q)
+              url=base+'?'+urllib.parse.urlencode(params)
+              key=f'{q}-{vi}'
+              body=out/f'{key}.body'
+              hdr=out/f'{key}.headers'
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),'-e',card,'-H','Accept: application/json','-D',str(hdr),url,'-o',str(body),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+              rec={'query':q,'variant':vi,'params':params,'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':body.stat().st_size if body.exists() else 0}
+              raw=body.read_bytes() if body.exists() else b''
+              try:
+                obj=json.loads(raw)
+                rec['json']=obj
+                (out/f'{key}.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+              except Exception as e:
+                rec['parse_error']=repr(e)
+                rec['prefix']=raw[:1000].decode('utf-8','replace')
+              summary.append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist Search Inside probe responses'
+          git push origin HEAD:research/public-media-analysis
