@@ -1,0 +1,120 @@
+name: Isolated Kindle sample click
+
+on:
+  push:
+    branches:
+      - research/kindle-click-only
+    paths-ignore:
+      - public-media-analysis/kindle-click-only/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  click:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/kindle-click-only
+      - name: Install browser tooling
+        run: |
+          python -m pip install --disable-pip-version-check -q playwright
+          python -m playwright install chromium
+      - name: Exercise the public sample control
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/kindle-click-only
+          mkdir -p "$out"
+          cat > /tmp/run.py <<'PY'
+          import asyncio, json
+          from pathlib import Path
+          from playwright.async_api import async_playwright
+
+          OUT=Path('public-media-analysis/kindle-click-only')
+          URL='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+
+          async def main():
+              req=[]; resp=[]; console=[]; page_errors=[]
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True)
+                  ctx=await browser.new_context(viewport={'width':1440,'height':1200})
+                  page=await ctx.new_page()
+                  page.on('request',lambda r:req.append({'method':r.method,'url':r.url,'type':r.resource_type}))
+                  page.on('response',lambda r:resp.append({'status':r.status,'url':r.url,'content_type':r.headers.get('content-type','')}))
+                  page.on('console',lambda m:console.append({'type':m.type,'text':m.text}))
+                  page.on('pageerror',lambda e:page_errors.append(str(e)))
+                  result={}
+                  await page.goto(URL,wait_until='networkidle',timeout=120000)
+                  result['initial_url']=page.url
+                  result['before_pages']=[x.url for x in ctx.pages]
+                  (OUT/'before.txt').write_text((await page.locator('body').inner_text())+'\n')
+                  (OUT/'before.html').write_text(await page.content())
+                  await page.screenshot(path=str(OUT/'before.png'),full_page=True)
+
+                  target=page.get_by_text('Read sample',exact=True)
+                  result['candidate_count']=await target.count()
+                  if await target.count():
+                      el=target.first
+                      result['outer_html']=await el.evaluate('(e)=>e.outerHTML')
+                      try:
+                          async with page.expect_popup(timeout=15000) as info:
+                              await el.click(timeout=30000)
+                          page=await info.value
+                          result['opened_popup']=True
+                      except Exception as exc:
+                          result['popup_exception']=repr(exc)
+                          try:
+                              await el.click(timeout=30000,force=True)
+                          except Exception as exc2:
+                              result['forced_click_exception']=repr(exc2)
+                  else:
+                      result['shadow_click']=await page.evaluate('''() => {
+                        function walk(root){
+                          for(const el of root.querySelectorAll('*')){
+                            if(el.shadowRoot && walk(el.shadowRoot)) return true;
+                            const t=(el.innerText||el.textContent||'').trim();
+                            if(t==='Read sample'){ el.click(); return true; }
+                          }
+                          return false;
+                        }
+                        return walk(document);
+                      }''')
+
+                  await page.wait_for_timeout(20000)
+                  try: await page.wait_for_load_state('networkidle',timeout=30000)
+                  except Exception as exc: result['networkidle_exception']=repr(exc)
+                  result['final_url']=page.url
+                  result['after_pages']=[x.url for x in ctx.pages]
+                  try: (OUT/'after.txt').write_text((await page.locator('body').inner_text())+'\n')
+                  except Exception as exc: result['after_text_exception']=repr(exc)
+                  try: (OUT/'after.html').write_text(await page.content())
+                  except Exception as exc: result['after_html_exception']=repr(exc)
+                  try: await page.screenshot(path=str(OUT/'after.png'),full_page=True)
+                  except Exception as exc: result['after_screenshot_exception']=repr(exc)
+                  (OUT/'result.json').write_text(json.dumps(result,indent=2))
+                  (OUT/'requests.json').write_text(json.dumps(req,indent=2))
+                  (OUT/'responses.json').write_text(json.dumps(resp,indent=2))
+                  (OUT/'console.json').write_text(json.dumps(console,indent=2))
+                  (OUT/'page-errors.json').write_text(json.dumps(page_errors,indent=2))
+                  # Compact, grep-friendly endpoint inventory.
+                  urls=[]
+                  for item in req:
+                      u=item['url']
+                      if u not in urls: urls.append(u)
+                  (OUT/'request-urls.txt').write_text('\n'.join(urls)+'\n')
+                  await browser.close()
+          asyncio.run(main())
+          PY
+          python /tmp/run.py
+          cat "$out/result.json"
+          echo '--- BEFORE ---'; cat "$out/before.txt" || true
+          echo '--- AFTER ---'; cat "$out/after.txt" || true
+      - name: Persist diagnostics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/kindle-click-only
+          git commit -m 'research: persist isolated Kindle sample click'
+          git push origin HEAD:research/kindle-click-only
