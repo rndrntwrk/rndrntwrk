@@ -1,0 +1,183 @@
+name: Analyze public clue photographs
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/analyze-public-media.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install OCR and vision dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr libgl1
+          python -m pip install --disable-pip-version-check -q pillow pytesseract opencv-python-headless numpy transformers==4.48.3 timm einops sentencepiece
+
+      - name: Run deterministic OCR and image measurements
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/analyze_ocr.py <<'PY'
+          from __future__ import annotations
+          import json
+          import re
+          from pathlib import Path
+          import cv2
+          import numpy as np
+          import pytesseract
+          from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+
+          root = Path('public-media-analysis')
+          out = root / 'analysis'
+          out.mkdir(exist_ok=True)
+          results = {}
+
+          def variants(im: Image.Image):
+              gray = ImageOps.grayscale(im)
+              yield 'gray', gray
+              yield 'contrast2', ImageEnhance.Contrast(gray).enhance(2.0)
+              yield 'contrast4', ImageEnhance.Contrast(gray).enhance(4.0)
+              yield 'autocontrast', ImageOps.autocontrast(gray)
+              yield 'invert', ImageOps.invert(gray)
+              arr = np.asarray(gray)
+              for threshold in (64, 96, 128, 160, 192, 224):
+                  yield f'threshold{threshold}', Image.fromarray(np.where(arr > threshold, 255, 0).astype(np.uint8))
+              cv = np.asarray(gray)
+              adaptive = cv2.adaptiveThreshold(cv,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,51,11)
+              yield 'adaptive', Image.fromarray(adaptive)
+
+          for path in sorted(root.glob('clue-*.jpg')):
+              im = Image.open(path).convert('RGB')
+              item = {
+                  'file': path.name,
+                  'size': list(im.size),
+                  'ocr': [],
+                  'candidate_numbers': [],
+              }
+              all_numbers = []
+              for angle in (0, 90, 180, 270):
+                  rotated = im.rotate(angle, expand=True)
+                  for vname, vim in variants(rotated):
+                      for psm in (6, 11, 12, 13):
+                          config = f'--oem 3 --psm {psm}'
+                          text = pytesseract.image_to_string(vim, config=config).strip()
+                          if text:
+                              record = {'angle': angle, 'variant': vname, 'psm': psm, 'text': text}
+                              item['ocr'].append(record)
+                              all_numbers.extend(re.findall(r'(?<!\d)\d{1,4}(?!\d)', text))
+              counts = {}
+              for n in all_numbers:
+                  counts[n] = counts.get(n, 0) + 1
+              item['candidate_numbers'] = sorted(
+                  ({'value': k, 'count': v} for k, v in counts.items()),
+                  key=lambda x: (-x['count'], int(x['value']))
+              )
+              # Keep a compact OCR summary as well as the full data.
+              unique = []
+              seen = set()
+              for rec in item['ocr']:
+                  clean = ' '.join(rec['text'].split())
+                  if clean and clean not in seen:
+                      seen.add(clean)
+                      unique.append(clean)
+              item['unique_ocr_text'] = unique[:100]
+              results[path.stem] = item
+              print(path.name, item['candidate_numbers'][:20], item['unique_ocr_text'][:10])
+
+          (out / 'ocr-results.json').write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding='utf-8')
+          PY
+          python /tmp/analyze_ocr.py | tee public-media-analysis/analysis/ocr-console.txt
+
+      - name: Run Florence-2 captions and OCR
+        shell: bash
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          set -euo pipefail
+          cat > /tmp/analyze_vlm.py <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import torch
+          from PIL import Image
+          from transformers import AutoModelForCausalLM, AutoProcessor
+
+          model_id = 'microsoft/Florence-2-base-ft'
+          processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+          model = AutoModelForCausalLM.from_pretrained(
+              model_id,
+              trust_remote_code=True,
+              torch_dtype=torch.float32,
+              low_cpu_mem_usage=True,
+          ).eval()
+
+          root = Path('public-media-analysis')
+          out = root / 'analysis'
+          out.mkdir(exist_ok=True)
+          tasks_all = ['<CAPTION>', '<DETAILED_CAPTION>', '<MORE_DETAILED_CAPTION>', '<OCR>', '<OCR_WITH_REGION>']
+          results = {}
+
+          def run_task(image, task):
+              inputs = processor(text=task, images=image, return_tensors='pt')
+              with torch.inference_mode():
+                  generated_ids = model.generate(
+                      input_ids=inputs['input_ids'],
+                      pixel_values=inputs['pixel_values'],
+                      max_new_tokens=1024,
+                      num_beams=3,
+                      do_sample=False,
+                  )
+              text = processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
+              try:
+                  parsed = processor.post_process_generation(text, task=task, image_size=image.size)
+              except Exception as e:
+                  parsed = {'raw': text, 'postprocess_error': repr(e)}
+              return {'generated': text, 'parsed': parsed}
+
+          for path in sorted(root.glob('clue-*.jpg')):
+              image = Image.open(path).convert('RGB')
+              item = {'file': path.name, 'size': list(image.size), 'tasks': {}}
+              for task in tasks_all:
+                  try:
+                      item['tasks'][task] = run_task(image, task)
+                      print(path.name, task, json.dumps(item['tasks'][task], ensure_ascii=False)[:1500])
+                  except Exception as e:
+                      item['tasks'][task] = {'error': repr(e)}
+                      print(path.name, task, 'ERROR', repr(e))
+              results[path.stem] = item
+              (out / 'florence-results.partial.json').write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding='utf-8')
+
+          (out / 'florence-results.json').write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding='utf-8')
+          PY
+          python /tmp/analyze_vlm.py | tee public-media-analysis/analysis/florence-console.txt
+
+      - name: Persist analysis outputs
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/analysis || true
+          if git diff --cached --quiet; then
+            echo 'No analysis output to commit'
+            exit 0
+          fi
+          git commit -m 'research: add OCR and local vision analysis'
+          git push origin HEAD:research/public-media-analysis
