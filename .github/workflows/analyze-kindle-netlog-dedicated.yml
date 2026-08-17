@@ -1,0 +1,91 @@
+name: Isolated Kindle preview analysis
+
+on:
+  push:
+    branches:
+      - research/kindle-preview-analysis
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/kindle-preview-analysis
+      - name: Extract compact diagnostics
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import html, json, re
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          root=Path('public-media-analysis/kindle-preview')
+          out=root/'analysis-isolated'; out.mkdir(exist_ok=True)
+          dom=(root/'card.dom.html').read_text(errors='replace')
+          visible=re.sub(r'(?is)<(script|style|template).*?>.*?</\1>', ' ', dom)
+          visible=re.sub(r'(?s)<[^>]+>', '\n', visible)
+          visible=html.unescape(visible)
+          visible='\n'.join(x.strip() for x in visible.splitlines() if x.strip())
+          (out/'dom-visible-text.txt').write_text(visible+'\n')
+
+          data=json.loads((root/'netlog.json').read_text(errors='replace'))
+          strings=[]; urls=set()
+          def walk(x,path='$'):
+              if isinstance(x,dict):
+                  for k,v in x.items(): walk(v,f'{path}.{k}')
+              elif isinstance(x,list):
+                  for i,v in enumerate(x): walk(v,f'{path}[{i}]')
+              elif isinstance(x,str):
+                  strings.append((path,x))
+                  for u in re.findall(r'https?://[^\s"<>\\]+',x): urls.add(u.rstrip('),;]'))
+          walk(data)
+          ordered=sorted(urls,key=lambda u:(urlsplit(u).netloc,u))
+          (out/'urls.txt').write_text('\n'.join(ordered)+'\n')
+          hosts={}
+          for u in ordered: hosts[urlsplit(u).netloc]=hosts.get(urlsplit(u).netloc,0)+1
+          (out/'hosts.txt').write_text('\n'.join(f'{n:5d} {h}' for h,n in sorted(hosts.items(),key=lambda kv:(-kv[1],kv[0])))+'\n')
+
+          keys=('b0fk7rbdfl','sample','manifest','metadata','book','content','fragment','reader','kindle','asin','srs','location','resource','download','cloudfront','amazonaws','kfw','embed')
+          rows=[]
+          for path,s in strings:
+              if any(k in s.lower() for k in keys):
+                  one=s.replace('\r','\\r').replace('\n','\\n')
+                  if len(one)>1400: one=one[:1400]+'…'
+                  rows.append(f'{path}\t{one}')
+          (out/'keyword-context.txt').write_text('\n'.join(rows)+'\n')
+
+          # Extract request URLs directly from netlog event params, preserving query strings.
+          req=[]
+          for ev in data.get('events',[]):
+              p=ev.get('params') or {}
+              u=p.get('url')
+              if isinstance(u,str): req.append(u)
+              line=p.get('line')
+              if isinstance(line,str) and ('http://' in line or 'https://' in line): req.append(line)
+          (out/'request-urls.txt').write_text('\n'.join(dict.fromkeys(req))+'\n')
+
+          config=[]
+          for needle in ('B0FK7RBDFL','metadataResponse','isSample','bookCardInfo','sharedUrl'):
+              start=0
+              while True:
+                  i=dom.find(needle,start)
+                  if i<0: break
+                  config.append(dom[max(0,i-700):i+1800])
+                  start=i+len(needle)
+          (out/'dom-config.txt').write_text('\n\n---\n\n'.join(config)+'\n')
+          print('urls',len(ordered),'strings',len(strings),'keyword rows',len(rows))
+          PY
+          find public-media-analysis/kindle-preview/analysis-isolated -type f -printf '%f %s bytes\n'
+      - name: Commit diagnostics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/kindle-preview/analysis-isolated
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: persist isolated Kindle preview analysis'
+          git push origin HEAD:research/kindle-preview-analysis
