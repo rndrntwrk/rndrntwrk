@@ -1,0 +1,98 @@
+name: Fast OCR public clue photographs
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/ocr-public-media.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ocr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install OCR
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr imagemagick
+          python -m pip install --disable-pip-version-check -q pillow pytesseract
+
+      - name: Extract text and numeric candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/analysis-fast
+          cat > /tmp/ocr.py <<'PY'
+          import json, re
+          from collections import Counter
+          from pathlib import Path
+          from PIL import Image, ImageEnhance, ImageOps, ImageFilter
+          import pytesseract
+
+          root=Path('public-media-analysis')
+          out={}
+          for path in sorted(root.glob('clue-*.jpg')):
+              im=Image.open(path).convert('RGB')
+              records=[]
+              nums=[]
+              for angle in (0,90,180,270):
+                  rot=im.rotate(angle,expand=True)
+                  gray=ImageOps.grayscale(rot)
+                  variants={
+                    'gray':gray,
+                    'auto':ImageOps.autocontrast(gray),
+                    'c2':ImageEnhance.Contrast(gray).enhance(2),
+                    'c4':ImageEnhance.Contrast(gray).enhance(4),
+                    'invert':ImageOps.invert(gray),
+                    'sharp':ImageEnhance.Sharpness(gray).enhance(3),
+                  }
+                  for threshold in (64,96,128,160,192,224):
+                      variants[f't{threshold}']=gray.point(lambda p,t=threshold:255 if p>t else 0)
+                  for name,v in variants.items():
+                      for psm in (3,6,11,12,13):
+                          for whitelist in (False,True):
+                              config=f'--oem 3 --psm {psm}'
+                              if whitelist:
+                                  config+=' -c tessedit_char_whitelist=0123456789'
+                              text=pytesseract.image_to_string(v,config=config).strip()
+                              if text:
+                                  rec={'angle':angle,'variant':name,'psm':psm,'digits_only':whitelist,'text':text}
+                                  records.append(rec)
+                                  nums += re.findall(r'(?<!\d)\d{1,4}(?!\d)',text)
+              counts=Counter(nums)
+              unique=[]; seen=set()
+              for r in records:
+                  s=' '.join(r['text'].split())
+                  if s and s not in seen:
+                      seen.add(s); unique.append(s)
+              out[path.stem]={
+                  'size':list(im.size),
+                  'number_counts':counts.most_common(),
+                  'unique_text':unique,
+                  'records':records,
+              }
+              print('\n###',path.name)
+              print('NUMBERS',counts.most_common(30))
+              print('TEXT',unique[:80])
+          Path('public-media-analysis/analysis-fast/ocr.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+          PY
+          python /tmp/ocr.py | tee public-media-analysis/analysis-fast/ocr.txt
+
+      - name: Persist OCR
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/analysis-fast
+          git commit -m 'research: add fast OCR results'
+          git push origin HEAD:research/public-media-analysis
