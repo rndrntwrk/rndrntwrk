@@ -1,0 +1,1 @@
+public-media-analysis/kindle-preview/card-latest.png: PNG image data, 1440 x 1200, 8-bit/color RGB, non-interlaced

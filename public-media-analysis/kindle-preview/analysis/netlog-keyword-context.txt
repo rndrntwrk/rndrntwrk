@@ -1,0 +1,823 @@
+$.constants.clientInfo.command_line	/usr/bin/google-chrome --headless=new --no-sandbox --disable-gpu --window-size=1440,1200 --virtual-time-budget=30000 --log-net-log=public-media-analysis/kindle-preview/netlog.json --net-log-capture-mode=IncludeSensitive --dump-dom --incognito --noerrdialogs --no-first-run --user-data-dir=/home/runner/.config/google-chrome-headless/scoped_dirf5kNiI --ozone-platform=headless --ozone-override-screen-size=800,600 --use-angle=swiftshader-webgl --flag-switches-begin --flag-switches-end https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[90].params.request_headers.headers[1]	Content-Type: application/x-www-form-urlencoded
+$.events[590].params.bytes	AQAHKAMDEnAk7sI0yl9+026/ZYd0tUUbX5vZLGXwcqe6enBuzc8gYDoGavuiLOlhEPMEfvwFF2NJ5Cnj+ErrC0TCw64c0dIAIAoKEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGvyoqAAAAEgAAABsAAwIAAgALAAIBAAAFAAUBAAAAAAArAAcGGhoDBAMDAAoADAAK+voR7AAdABcAGAAtAAIBAQAXAAD+DQEaAAABAAEzACDOXcGzdppHUD+DNI7eakZl6RK5NGtcYtDAVHdC9bvrCwDwypte+JYE21nRubDR/5crnzB3GljYumAbrWxcMgz/TARqiQyZJbs21PoEEz0CQUjWgSGk+Fix+dyj5nJG1TG68Ym1r+WOHdoLMUXxcD19dCIv6LlmOE31j7UWWzEdZ0WFLGdf1Hh7OhyEbJR5dDxKZxvxdzvSKaF3H0bLiQtmWarM+5BKpWasvpb4u/ICvxF4U3WCKir+rCiAZJQgLeHTftWwud3ezXjVM5KgFqLsoFagykmjnjJB8WoQW6x7P8su+4Wj2+Ko7VV08snCAtmX/s7kmNe9Sm14xmCu/bvt0+5ujOfZ5fd0esUNAxsjmMPNAAAAIgAgAAAdY2xpZW50c2VydmljZXMuZ29vZ2xlYXBpcy5jb21EzQAFAAMCaDL/AQABAAAjAAAAEAAOAAwCaDIIaHR0cC8xLjEAMwTvBO36+gABABHsBMAjIRzc6JusxZE16s9POko4YM8a9GcAq05I1sQ6I4UQpyd+Rq905YBdwwq68C5xhTMsIbq4KrUnWQ61mnFFhrevUKNuB7FPsyjsqU4eRFVnND+iZAOT9xfT2Bah2r2hcrV6lmQMpQkCG01HaV47kCRAws+S1i4ixB5pknGSAia2QGnvWsGHO2bqYQFNxEIJkEWxth+0YAgSGs7btIQYCWA7c8c0+QhJopOQ6CvkqDhF6pfL9nm/NoU6YneqvBPw1UB3g2GyebbtDEGSJKS+d5pkocgV+pYFqV50rFWSgwMfBafa139sqZUyebI2lkIPCkJ+51aahsZZN1I8RkzmQCUWpAoZlxuAqYrGYl5DtXl+iXDa0J5Fcmg7CRzmkDrPAxXPdWd6CamzCh1mPEsQYghdLBFAQ5omLBdGA6KhixRkuUQ9ln/MxDiXVRB2kkBi56+LeKJubHgdFpAv5BJz…
+$.events[598].params.bytes	AQAG/gMD0E7T5nHWQIlT68In6NetQAVdaJj3qxb/fzugifu5znAgUugNF04gY23oK4p419xy70PjSy4KLizkeQ98QVi/tpwAIEpKEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGldraAAD/AQABAAASAAAAFwAAAAUABQEAAAAAAAAAGAAWAAATcmVkaXJlY3Rvci5ndnQxLmNvbf4NAPoAAAEAAfsAIH2kUzgLFZxqBkezHGGATN9nn8qIh/+j63cjdmRwsR0bANDkyui/hgarP2WwIcOl4Difv5ufsnv04y9xaEMnnD40KtsQ8KuthH03BEGb+qJ2tFrMj3+EPyHty7HVWGT1GvBctfHkcMJ5wgraCp6Bg3rR3CVkbeIn1lNVFcy1xHP/+6kvPGAsXohHH9JMCdN4B0+mXKw0oaxrOASjmtKDyEOuQXczpAJX1LNT9fh1gliLq0pov2i9INtm92ENqL1zoeUPj/Rgr8Fjazl67NCfkLNRVi8mNPvfSNRnX0hDIUe2kZmMMUbQ66okvLrWaMZedeLORM0ABQADAmgyAAsAAgEAABAADgAMAmgyCGh0dHAvMS4xABsAAwIAAgAKAAwAChoaEewAHQAXABgADQAYABYJBAkFCQYEAwgEBAEFAwgFBQEIBgYBACMAAAAtAAIBAQArAAcGiooDBAMDADME7wTtGhoAAQAR7ATAqvOfSfWYcjZN0fV5RWSDmmnLVudyo0my5nmmeZdejSNq1URy0SENJlt5Rmxm75Cqu/htNNVHe8ACfdOtRPiVp8g4uDCKQ5I5EYBQRKqbDve7z6WpXIa4CBQ+zkSROuMBUjWbi9GpAqlqzmu4nmZBRcNTAtUhKtihmDayL6y3RzxMERuz0gwIoOaKXUSjQ/JaBDqwcesy5ZOFdHhxueMNy0g0sckQ++SCkBu5q7i3+0JlGXRbtdh5iXCD64E6d1iiwznCd3zFeEV6y4ZHj0MPw/mnXdeqzHGE7EHOyuyjGuc+dMOvhEVY//ad4+OUO9pu1VVLiNQvE7Wi30duA8LKgsiX7nkJnwEPDdt424NauBoJ60li5MwlhZtLVRjE6fpL9dp04eIa7Msi3buQzAOMeXi89lHKe3V3R1IV8/VToUu1k1pKzeG0x6G6W7Yv6qVqpJuXoAxWNEmzrrVgBywhBWJTcmBRb2hKjxFK…
+$.events[615].params.bytes	AQAGugMDX1zxFp/MIxRcnFXtrG/ho8BDTm23WjteqdKVo44LS1YgWEi/8WQb7xYUrFuVZ+Plag2PIGgEiGGrgkx0iB4xJ/wAIIqKEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGUfr6AAAACwACAQAAGwADAgACAC0AAgEBRM0ABQADAmgyADME7wTt6uoAAQAR7ATAMzVKoUFRQuJSYlcsVZF48awIXls10fsXc0e6CNaZerUTGuodohAqAnaMCveFcspEekup4jhLF1QZCzVAg4mM8QAmb6agblxejPo+AHXAVLgYZpA0xzJzUqZc4XpYKUs4LZOlqcVPR5lqnhbF83gw8LI6/rhiGsZXOkV+WAqm0rMZnJVFkbBhoEPDBsZcp4ErXBXOrxF8sMs8y3vDEjd3BgAY6favGoeNdUydgkCfBTWYttTAMmwLssUNSQciAFNOp8szOcoEq3Jvo9m2z6jGtRS45ErF3EjOZAxFAKgv24lyN5AhcABPDXoX6vGfYmu3WYx5XKEqaHwVosQDb1Y6PCfDGxRd6WJ5s3CAzeBJQNVXxFCy8MOsXsQXblg1+MZUV+Ztm+kwwvKfpCZLLIpU4izBk0qkdhdwjpZqQIcFnRPLlYJIRWkaMzypaZMvkNy2MVterZK4JIhcr3pKFzGNWsl4rTWFaIY2Q0iqmwejL8VtLYsmbgrCDHeJt4B/fQSl7vk7LVEh30OewkIe5BlPGGdMXnO/Q+Kxpjc0r8GvUOM8xGNRKaMz9jNzT5zJHuWYaigUpmJIyZokhJOdexd89icWEXLAyOWmndosOUZF9ufDucm7rvQ67Lk8VuqZQ7at9BKp1Qaw/7AQiEPOEGlztggftgA8TDctGlyP0HqFPwmAApkEsTBWAhcGRiu7JFOoPTQOiyoWS5i93FN6pzCwWJOhI+RNdrQAnFtNOxY++OIEqQCGlCzIgLIA4Rp1zhgActJ9MSFBcEmQacN0uwerbTQlrZRjseobRzN8thu5zyqtKAyyLfksmTkU2kENiYu5/0bKbYU6XsZ6psR8QhJ9SFyRLSurRqmUuIEO1ljFBQckCrO5ahy5nMs+cjQQDPKPxKWjqOvG/MCOZ7qmCOQ3ADYKfnBurbsYk4nOTXao4hfPa/ubWsWzY2poEEY+MvWXi1TGphefSyqwCSm4g8w73YRP54MONyZC…
+$.events[745].params.headers[1]	Content-Type: application/json; charset=utf-8
+$.events[745].params.headers[3]	X-Content-Type-Options: nosniff
+$.events[745].params.headers[10]	Content-Disposition: attachment; filename="json.txt"; filename*=UTF-8''json.txt
+$.events[745].params.headers[12]	Cross-Origin-Resource-Policy: same-site
+$.events[745].params.headers[13]	Content-Encoding: gzip
+$.events[870].params.bytes	AgAEtgMDBKtHucqWbtCqFB44a7fH3SgMCvBhQHFrmPMjfZy0qRUgWEi/8WQb7xYUrFuVZ+Plag2PIGgEiGGrgkx0iB4xJ/wTAQAEbgAzBGQR7ARg9MIuFBWrClu67LQV8kAFghyl1cj758NJJ+eOidiUybEtM0PBTMljK5sKP8C9MLg+sg+4wCwEM2pFM6CrriNfPRIFD2slyyx7S+Wp1/HZ8op/xtBsCzxdapz+j+W7dC2iqXfOANZGFJ3jGPkJXvlhMnfnSHf7XySo0G1JYOHFJSVfxzOoaNrxnIwL3sZzizw1NwoFCT6L5TqdPPJNfLRdcJvoz1N+uHuTN9jxHdvcCetW5nEodpzZUOKhTgCX5QHvCa1b440rHhrDAnBCLrg4t++wre9ZKdCHaayv59GJ9JWz4fxh3s0PkBeWTW0jqT5i/EQfuCB+TCYljNFxgQnTMcmYxrssAntwhbrrvDfUdPd2keWxwrqHgGGfLiSe6B8puTcmrg+qgat/fiRemy1siDGAMlrokHfrSsU8KNKLF9BeVVce9jO4hls1av9fViAxT30UPdbMLNqgpUU6sYLE0idD7gTqEUJ4Mq+pbNATv6pShUlhoCTy7u3tAs8dweT2jZpZs3DfAP5pVa1fETfDx2iOh3wjqPIwPIfc4NA6IpzZhL6YQ3zAFF99GKSQj1q2MzDbz+6mg81y9Mj7oz5yqblMu9hUiNwLRvqoAkg48QhDZOVFD7B7xUM8W08LuVITrdEv+5UfuDhWjH3jEgekKj2i3EoAnkFAnBER1vdPFgO5lIJaaVAL0RM9yWtIn1zuVDwT0QOkdLo3TJJHBWz2eMifw+kIkQvNEgcJa5eH46aV2b0QCY8TDSs12kSQwT36I00lcacuijHjxub/xdStFeDWgEXPahm/TIrAMZVcosdaDCdeLCt/aKiwSjBbK7YzdF6VbsqnOXvX89JF9WzrvgqDTgUCU6ctgU0woa3EYLEwmKRZFXNx/azvTuTQkNVb+vSWGJLFUKKKqShpp6arBuaro3rwfhgPTT7S2F0lSbQbEXWyllAVb122TnlClzjX8lHzpWL/U68IIHXKfIG5mbzp4syxjDDCvQZ91RCQ1k7rhGomiIjsc6oLOAE1lDTOiwlUqzySvqUmhXpDC2tMbuFDRdEYYJDP819niUrPT0J7rYfw6zjkfvbaddEAkJnY…
+$.events[917].params.results[0].type	metadata
+$.events[918].params.results[0].type	metadata
+$.events[1064].params.results[0].type	metadata
+$.events[1069].params.results[1].type	metadata
+$.events[1275].params.bytes	AgAEtgMDswqZopt7SFpLbu/ZcTaTKapRLmGF81pFzfT8hbC3DzQgrGoTVZ/Vvp9zcle2hlqkv1576byZHWKDlcnC/8JqLxQTAQAEbgAzBGQR7ARg5zl7pll5bfCTsjZo/g9eBfMZ0mxw/k++2933fPn7M9WihqFDXx/82wDp0+qqiQly5OI7c4spt1nf7mWmDjFhRTxA0W2Z0je8DNXgqpfrLMe5oGSEtXzx8Im18KnUJrT67b8tsFk+fDVnDdFW+joQjXgdmh/dudxYssSqLLAMKM/6tykhdRLq1MWtMsMbCaiksFOEzWdXfmOUXTZO2es7f+LB7nZeVLl9sosAuGa1FpwsLm1jmZ1cQ0neC7MunWtHGoA59Q7QyrGJ325hOUl1KYEkP0dMSsovv0qSlkqYDpR9Ljreieaqk85JaH+bWRp3SbZ3S78MbgUQex09NL71wYsDY7gX6Z3OOBRKj7H9Or8Pv0ynJv29AU99txJUgFDfD9MqDqdfjJNXdihUYXLhbkBKGh2v3Z6LjIMeCkCB7OAG8azmJ/1OiT8r3Nacq0scmoG5sTA+FdIrBfI87bBrhOTTe6/R9k3mMvcJMPklK/HLgj0RzNoK2ffrD97XQ4OEneIdVEMIQj+ihFXYAa/Icv/+4wV8AKQYTyg8c/bvvMosV28nfjrWZ4sV/QgR0C/vvHaI+oLtk+faFBiMKj89oBixFo/5cxxJ0v36EFJFqwBknHe0ASVhY8fPX6wBRyu+szZZuf5tFjfxE9AgrVN870NDmg8e4Oggq1A0HF6tcqRRq6WUG1DkyAdugN4AKeDXFT67U0j+VnuF0xy71+qNiGZ8EGnkxbsVU8tAiNhV0LBS4HatBlFgH43XWcEXrRA3GjAooLTTqe5uFWDjTj5oZa7e2wgss7ABnMC4tvPf9zbJKyl+cvc9Gtz2BoY+fnl0R5SOZQNw2DoRTogFnOotJ5yNF4k4UO0gvx3+cO84gYg6RxhCATLEh0PNPwUei6bNZWrlRpBt1rsVg30oaSgfR7glmwcmt2XZhx0aT5vImxviuwuBoxAKKD+gaLnoKDHYZjLvN7M5rXn7aW+/zqvObEYzsis4YohPI1Re6WlyoczkXYjmX+LD/zR48K9PEF0jAEEWpGS0HERCy3yMxwdOAFgDvcsCjGaBlIbVbYSCE/hvgQ43FFfJ07vqlGXr62qO…
+$.events[1297].params.bytes	AQAGuQMDeMf73hguglZR7jdncUr5gDqQTeTTnuhMmbP+IWwXslYgBM9tMMAzYA7RqCtx27xvpi5Dv3l7+KOuWUDd+SQ31UwAIEpKEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGUHp6AAAACgAMAAr6+hHsAB0AFwAYRM0ABQADAmgyAAUABQEAAAAAAC0AAgEBACsABwb6+gMEAwP/AQABAAAXAAAAEgAAABsAAwIAAgANABgAFgkECQUJBgQDCAQEAQUDCAUFAQgGBgEAIwAAADME7wTt+voAAQAR7ATAaAVCkSGvsJeHzAENK3md4fSwqoAg+mNyi8NPWOgJqjVygWfPxumDiIqQs6yQYlCVaRpfbDZ9giaggRVx6PVRgtSIdmt+TWeZWyM3eLeRsjJH4KI6xuMYEqAjgdwPogZmA5qXb3OOCzY74DI6lwokKzNSgmkAYhVLccchfmRtF5Abw8VAe7p3sPmnhVI2SexAXVa6v0pesfye7VlWEuW+OlxAHBlBNOkFLzO9rZPPQsCoYAYtVGR933MNb8BlMcqEn3GEjYctO4Q33GoCwlgsvthmA0UhxFyzq7dS0lfJ6jsORaiedbxQu0zLr/mSBplP+StHjqA+KxY/CBwuhXytb1o1WaADPXkUtFjNWIqDpast2zMEa5LPzLZXUjSSQAkUdmomphQzcCC7v7Ak++AnTcjGAAJgASSkjseBANe84VyFf5i2sVkN/uiui5rC2YRFCZmCwwiqd8qt+QQfnJhPUGAkCmgk0PJXJwcAHVMXecAxCZc0+Nd/F/yoKTMMcvSYtRdMljRyKnkiakOYJnZ5O+WfPtGEfXAhXWfF5+Mw6LCdzaES8OWevHVNFptCM5Ut0hF+hZidz4OU1EhXfhosczcYnvy4wbUH6vg+YpKqZ5pVeHWGhzu5pCS8nLpcxPDD2ozLPgu5EeR5fmWubeHGL1WAmCZB2WNzXVoI1rkaW4YL4XeeVQy2o9Cn16nPXZCHmnwEE9R574MyIEzFp3heCzWYv4kH6MQoQPdHUIqs9Mao4cu4gxqDxZRq3WG907zEZopdrxxz5NQGsTYvSyZGmdQakOsf4kmRU1Ac1kVeHveRJ8ZmcqfB8PyzrgtsUYasuRsS+2Vu9SYkKgvDsYDHVXsxr3B6sZeHgdVMRtdp6GqYq4updtuAKcEmEZXI…
+$.events[1525].params.bytes	AQAGuQMDyv0lQUnmV4hkLJtHi/z9/NWDZQRLcsSy1Vcsu9n5M48gttwLLfafceMKCuLLs+Scde+JZ+2ThrhXg+jUrlDIvTMAIBoaEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGUAoKAAAALQACAQH+DQC6AAABAAFlACA9FojYy1fJCI1W51e8PKnMvf4ZxKCGUB9feh8Q5mP9AQCQHHx/PxTZlmTBHlJWpHSuIfAXmTFTbiMlwRnDIETGhQjSDd5YRq7oCmKNvOSErguYSwyaQzOJeph5JXqX5sd0lImqQj0W1gzhcdJzM3P4etGFAFUzbtwiGXoIwT7Tjy6DJrmuIwg6dvXgU23cfmcZ9LOiQqndhM9LZPaov6ASLa8Ro4Z+6KDFGK2u8meMA6vwAA0AGAAWCQQJBQkGBAMIBAQBBQMIBQUBCAYGAf8BAAEAAAoADAAKmpoR7AAdABcAGAAAABMAEQAADnd3dy5nb29nbGUuY29tABsAAwIAAgAFAAUBAAAAAAAQAA4ADAJoMghodHRwLzEuMUTNAAUAAwJoMgArAAcG+voDBAMDABIAAAAXAAAACwACAQAAIwAAADME7wTtmpoAAQAR7ATA6eVTKVKN9stQucdK+DWR/tt0YehiBiR0sfqs4wm6F3mntQhF7ItEfHAlOapizwY6jbII8zppCEBxESq1BENRm3MWoNRtYreke+RoYmUwtMCeqYmfG3GN7BeqI0ASpEDIpKCoUdfLn/qnlSfPgjU+ADAiojK1OBdNk1YjNuaxYqmr+8N4RpU598VP8OSqfeugm3Ahj7QfYUEEvRMO0NTOo9iuUetUkSw9JvABxOtyv8iuZTwUYJvBzjRXMggcmfJ0SFBCffcL6OJiUHhpl7AZfyZl0Zuhs4YObSx+pzWXr+C4u9qiw+QEnPDMcrANH6ZbmPdSy2chEpLJf+R0tSJ+xqorw7EZ+qlw6GyaFFVLiQGBv4AIE6tO2/hR3mIFKUhFpOVE/uWSOYo0oeQhbNAkiWZrBWKxGWo0LQcd7FM8myBSVupKrreRHyiJK8cJBfF24riUMiJ+1mg0DXEjTas0GlYWJQV8YXhRXoEGnHRoQdRedWeV9ogzxLDHE1zLDceTwxF5MuY7L3HLQxen1eCDgHYcwOKOBtmUiHWg6Dhe1wwsXtab1uaShjUfFaxMRohx…
+$.events[1541].params.bytes	AQAHGQMDVfwAby6CXFpCfU30mQJItSxMFoXbstHqHLt9++1gdTIg8OCKkoe85++81MHl9hdEUke0Kjpn9AHL8CtPSqzMkIkAIAoKEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGsPr6AAAAGwADAgACAC0AAgEBADME7wTt2toAAQAR7ATAcSQY7GdcmdSiAGB2d5YgCbqDTaumYDg8K2YBK1Sv2SGYqql47FwdOaMvC1YfVmwFKUEh4xeuMeTGs8oAA9YMlYow7UsqPrMKSKJw4EImBjV3bIfBqBwWdZkvyjiY0ZyqlRkOmiBDXVBuIwI8OhigtUcI4iYfxRIuyOWswMZNqiJ9k4ZXzWBTEgdBo2CQbkWCkZYQfygCTnogJ9F1ZCxtaAWXkkaxNxlQ3QoQ/wvIFXlNahlRIml4LsKnImsreTaMZJCPXnCHiDq6suRxF4VTJnRcQMRlbZkRigsqX5o9LmEj4pfKlnKy82pKa2Al8yUgdrjBI+ezUPIeZ0eTjiR5P1Mr7MCvFxZ7rYqNvsyTWOufUwB9YkZLmEMykghl1sqBKNPAUgI1sNEBGzAzg4s3EJlXUKgXWNTE/KUgzSA5UdNcVNObn+ybQlFMp6g37+hNaQuPIyqgHavMndhhKFluu8gQoqFhHbFC2fN5WmovGGw1QOlLcxdhskcqiBfGfWybM2aUlbGU/ZFfkdwRoeQJSxUhyNCWN5UwBVwGv9W+n9WA8SgPjUtQxnV+ptKuHpRRjGCn3gpZBCAcdulkzEFhqfxvsQFqSMRlsgCqKvGMnLWWGyGbcCJULIInGvt+A1BdGxdVpFeijPhZdwKcAC2j+KmaGlNXiDyrNAbIPUQi/aRzeNmlzGSDSAZj0oOS7wOgC7mFvYV9t5dikVRvDvoip8oBEnud+VhRP4iFGYawqepjmth4g5ODyoU3d0oHKGPJp3YZDcZop7GsfobDW/deZuEp3cU2fgNOxdZM5oCqnWMbCWksHOKDu7s2v3oHaTS6f6NdECYNQlFvn6ZgU1hYDwww9fhOPcMCs+un20kVJeNjPcSLCbYESjheXQssqfyeY9i1oJQD5KCBpWalSKAZiikh55PHWWBPyfVxuyonh5m/5bxbAkV195nCVRax9lNXQ5II8WAvJ8TMNTCjHZUp1csn/fgb5BS1xQhLcGVgEgYxQAM6q+ss…
+$.events[1591].params.bytes	AQAGvgMDald5mvGla0jIqxvzgdoWtQmczvd3M5sfBgLIkFwFfdAgkEU7yUY93mcESHahGef2p2TMSnlHSGbicqxgOguIjfEAIMrKEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGVbq6AAD/AQABAAAbAAMCAAIACgAMAArq6hHsAB0AFwAYACMAAAArAAcG+voDBAMDAA0AGAAWCQQJBQkGBAMIBAQBBQMIBQUBCAYGAQAQAA4ADAJoMghodHRwLzEuMUTNAAUAAwJoMgAAABgAFgAAE2NsaWVudHMyLmdvb2dsZS5jb20AEgAAAC0AAgEBAAsAAgEA/g0AugAAAQABaAAgoY/gT7f8YY0hA/qGZLWoiuKedUrz4oKJYXqvxeKxmVwAkDYq084QDaaCHnzDKGWXAamr+Qf0xoM+8OQLjM1FJ4x4eVK+LzrMeK+5iInRxv3dIUBwyh/1qaqty1ZikJpZclz0g6W4k8wzTJfoEMx6d00p57fFvmkXWfmwkxlRJQAHxiQKJFLP8gAMgmQlyi4p8c992DX40Ge+p5Ycbws4/s051VZNHo/teNcY6yAGlSUJVAAFAAUBAAAAAAAXAAAAMwTvBO3q6gABABHsBMBH9wIadKh5/KDNSjMrkm312HIiJCr3Cs6hp4zJIhtNyaC/Y0TOUXgdEMqHtV6JUBDIvA00KGr8l4C/YSz0oKlBwKIKWznM4ha7bB+NYkcUlYuuM8JFEqAOqIWHo4iJpU7qCcdipBLZFpyiAWQYUZ+lRH37Zo/BNkC9oxcAq6XEKMYxYiWkMWeYir8SqHhSEaezt4giCoCLoxOJJq1ZOy4bx7eiuMH0t1x0Q5TFuoW5SXEzhCRTF6jyQlHbQDD5MYcSomlk58Gl+o+PPIIg+2FLQzseuIzdKQirg0LaoLpCkb+NNx1ckXZBrIkLVTcbkgLWZEqeZCNyYSG76m5UR7yW8VLGMSNoEHCiR4AStmmpBoYCBSwHtG4ra7mQ0LPuMmr4sCxLmEhSrF9Z4I9kBQFiTASYy5c18Ba5mLR9ShXaVK+XxHJV54F52YMvAxRAC2e3LCOv7KjgshZ0FX/W3E6AolLsAMr3JEDA2Vdm+RnLk2Tft2HiWpOXlzZiIIY1WRY1rCTftJmJ4x3XRICiuxcsCpOkMoD4YBMBtGG01cx64m9weXY/KAZpzLwo…
+$.events[1610].params.bytes	AgAEtgMDHK5yV++llyUMtqiddUirw7zlE2pdFhVi/CXbMGEL7j4g8OCKkoe85++81MHl9hdEUke0Kjpn9AHL8CtPSqzMkIkTAQAEbgAzBGQR7ARgmvYjOu8CVbvHFOHsU891hn8s+cVCAPv1UrhI55/7eXpDWPLqrhyuG2/z99PI9yWqm2PjJ2OkSE9Hd1PiNu5O0/temdt/HNx+Q3vNd6MymE+xKZNaMB+1HBdsGp/JUN/BTHc2qKq33HLrt7pAS7iYAUVYZ3TE8ZLm1dufi0mDQaSIwgoLO9RSymesWdo6/pvQHnM36q8fjmSGJqKVVXr2t39j5GNA4J2syn0ibCm64X3f682tqzyXv974YshzuSkM/9yqUFhxBB8nfpysPkfWnlU2CTq4snVxS5QyLsfHR7bUxx+Dn42RRzhstfBbYACCxyr/TdW1vk3//1dfWYpDcMJcHp42/qLIJbhUWvt1r7uU1K5x/SxM/MPr2jMmtlpB+amZYkyi5oLlX4uASGah+jxhqbZKEEIu/iP2MqsgOCiVbi4ojq0aGKeW3ngDrj2yqzAMR7PoZdSi6wfUSZ3rvKu+uIHC+YMXl8bHpWY9j5CZzd6SmRoBo0KZfi9gdlK+NUaUDzQ33KpwvAP7onCqFJi3EJAZC34Aa5Wtk737+PUi0ZeobjOXqgzIl6XQm/bUZneLj2YkxvaxQjEFSlY6ENO3tAPCkiuad0IGMx/Hpsr2jiWN+CSnbBBq8avqGglN5MGFpTFXUhaghfvNA3vH4ToZ1dlTTecB3RTnIXhywIGFJBHQF+nDyiHjzd5Newb03ZzB9TcEpdJR/PU9xI7iaa9VaTcwgLvmc9odumuZwDDDj11tLlUZrhozfFVAzdY10MRBG5zb4CC3IbKfVqTZUugLnW36Y8NjtY3aJSAyIxixbrpTT7rlSvzN9i/zW3Jup3fcNVVD3YH6Au0+Gv5gqW9DFPXJmBAmauj3tAjxQUtlw5HpNvHT7h+GB9NUqPsQs7qnxvpqs2gjOJlmLwphRoOMHW1oKn+RCdAwwuniRo+LKfIkDkylTIosHUZ+L4tH8UnE8M+yeHYhGbHIzSAR4DEM5c1bjKEfiMMRufJYr1aOX81ijjRr8ba7PBZOvu7QupFCJTjf4iEDdfpTqQDbUpbE1f0D+JRJBQxtmwVqFofa5ybE47YCYD4CdDIalljU…
+$.events[2000].params.headers[2]	content-type: application/x-protobuffer
+$.events[2000].params.headers[3]	x-content-type-options: nosniff
+$.events[2000].params.headers[19]	content-disposition: attachment; filename="f.txt"
+$.events[2000].params.headers[20]	content-encoding: gzip
+$.events[2000].params.headers[23]	content-length: 126
+$.events[2013].params.headers[2]	content-type: application/x-protobuffer
+$.events[2013].params.headers[3]	x-content-type-options: nosniff
+$.events[2013].params.headers[8]	content-disposition: attachment; filename="f.txt"
+$.events[2013].params.headers[9]	content-encoding: gzip
+$.events[2013].params.headers[12]	content-length: 126
+$.events[2014].params.headers[2]	content-type: application/x-protobuffer
+$.events[2014].params.headers[3]	x-content-type-options: nosniff
+$.events[2014].params.headers[19]	content-disposition: attachment; filename="f.txt"
+$.events[2014].params.headers[20]	content-encoding: gzip
+$.events[2014].params.headers[23]	content-length: 126
+$.events[2057].params.headers[2]	content-type: application/x-protobuffer
+$.events[2057].params.headers[3]	x-content-type-options: nosniff
+$.events[2057].params.headers[19]	content-disposition: attachment; filename="f.txt"
+$.events[2057].params.headers[20]	content-encoding: gzip
+$.events[2057].params.headers[23]	content-length: 126
+$.events[2075].params.headers[2]	content-type: application/x-protobuffer
+$.events[2075].params.headers[3]	x-content-type-options: nosniff
+$.events[2075].params.headers[8]	content-disposition: attachment; filename="f.txt"
+$.events[2075].params.headers[9]	content-encoding: gzip
+$.events[2075].params.headers[12]	content-length: 126
+$.events[2076].params.headers[2]	content-type: application/x-protobuffer
+$.events[2076].params.headers[3]	x-content-type-options: nosniff
+$.events[2076].params.headers[19]	content-disposition: attachment; filename="f.txt"
+$.events[2076].params.headers[20]	content-encoding: gzip
+$.events[2076].params.headers[23]	content-length: 126
+$.events[2359].params.bytes	BAABtgACowADsi3iAQEBnAJprMVgTN36M9y50i6nzD1KDnUzY0+sFLk/BIetH8GVOQ6f+P/yZ3iuwQMyibBdAqlNzKoPUWOlAmzP3AbbLZS+oFYbCgr1MdUvfVdfzPGhLtkz9sCNWztPXTX9dk7cMXlngi6QEZ5duUHMQkFtfz24+mxFwVJheix7/7MeLbmozS2SEy5+kn44iaxrhDmQgAKeGoaniwbAA0l3wxn9YIJBlBLw0r8SKX3bqCtDLRaiLCPiD6RkYZPuVY2gXRkP/3wrExMujsPI7zdEVja8k5JXqyGKRYn7kqSLguJKq2eDufvaBl4+qNbe3RFszEAYdtd6vYOLuHdm8X/cGTcs60ENUKxytALZh1gmLJRxt3+xDzac6DE4h+WVVYGxoJnu+UoIStTjCUi87CUbFJNH77/6sp3cDjs7x16NhD2NARJKWvjgCSnNwkKWXR/ntfuGJWeG+kKOmSqUGla1K8xpKWkW5hWzv8+ZYPjZ6mvOM2fI+o0S8+J8FRWsRxC/B+IceD92qcQp3Vhop/0UKpTn/hIvTEFTQo+dYF2MeAIADAAqAAQAADgASkoAAA==
+$.events[2492].params.headers[4]	content-length: 1
+$.events[2492].params.headers[6]	content-type: application/x-www-form-urlencoded
+$.events[2508].params.headers[4]	content-length: 1
+$.events[2508].params.headers[6]	content-type: application/x-www-form-urlencoded
+$.events[2598].params.headers[2]	content-security-policy: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/privacy-proxy
+$.events[2598].params.headers[3]	cross-origin-resource-policy: cross-origin
+$.events[2598].params.headers[6]	content-length: 41
+$.events[2598].params.headers[7]	x-content-type-options: nosniff
+$.events[2598].params.headers[15]	content-type: application/ohttp-keys
+$.events[2599].params.headers[2]	content-security-policy: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/privacy-proxy
+$.events[2599].params.headers[3]	cross-origin-resource-policy: cross-origin
+$.events[2599].params.headers[6]	content-length: 41
+$.events[2599].params.headers[7]	x-content-type-options: nosniff
+$.events[2599].params.headers[15]	content-type: application/ohttp-keys
+$.events[2642].params.headers[1]	content-security-policy: sandbox allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-storage-access-by-user-activation allow-top-navigation allow-top-navigation-by-user-activation allow-top-navigation-to-custom-protocols
+$.events[2642].params.headers[4]	x-content-type-options: nosniff
+$.events[2642].params.headers[10]	content-type: application/x-gzip
+$.events[2643].params.headers[1]	content-security-policy: sandbox allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-storage-access-by-user-activation allow-top-navigation allow-top-navigation-by-user-activation allow-top-navigation-to-custom-protocols
+$.events[2643].params.headers[4]	x-content-type-options: nosniff
+$.events[2643].params.headers[10]	content-type: application/x-gzip
+$.events[2654].params.url	https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[2719].params.results[1].alias_target	d3uye3v7bpwqwr.cloudfront.net
+$.events[2719].params.results[2].domain_name	d3uye3v7bpwqwr.cloudfront.net
+$.events[2722].params.request_headers.line	GET /kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe HTTP/1.1\r\n
+$.events[2722].params.url	https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[2724].params.url	https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[2728].params.url	https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[2738].params.key	1/0/_dk_https://amazon.com https://amazon.com https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[2745].params.url	https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[2773].params.results[1].alias_target	d3uye3v7bpwqwr.cloudfront.net
+$.events[2773].params.results[2].domain_name	d3uye3v7bpwqwr.cloudfront.net
+$.events[2795].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2795].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2796].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2796].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2845].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2845].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2846].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2846].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2870].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2870].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2871].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2871].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[2879].params.bytes	AgAEtgMDpjn0FmAMi2UlPsnzV2PVVaC4M7vZNO0+7zme02clVaUgMKnFVaZCAcR+XQDFQ8axz/HDK4EXmdBNYulWcb2RsfQTAQAEbgArAAIDBAAzBGQR7ARg1AWFqK9/fLAh5omNVQ1k4hrHWP4EqEt8NuC3BwNJYzmgvSilq6IjM/+0fV5xsR8aBt3Sj0NxxGFp+si1aDLe5nS6sYyhcz44eFzmHvm5eBaXzlnKzsdtr2cd35ZEZ+jT0p/6DMJCsFcIjgwabFjWEmjeAgrFn06xZI7gk78xk9HCYi0B0YrzFvkmH2UEZpBkDki2Zem+GKS/IiuMKP94JEN1MLWDtNAN6OYXUweuoe0ZnLea2fvGyICMUJqQNnky9WFbZW9F1H1A07tsKAzGbPn1bbcKWTTwUlT6CdfZOAjIcw/a15RGji6enYfzsmxRSLP3RiriHyB3SG0T/sXqJcHnAn+lGHfVKlrEXnphNgnsbHPSH0PRFP0Soa+3UEdjXv+BGIGomm9C8sW5sEnZ1pntxdzJ04Jpv911mIDm7tJDjUCd5gF2Wou7Br8s0F2FF9eEKeIQnU5XGW2676ROsx05lQ4/0lX338Po2wvTktsPta63+3jztgjJEAKb1q+lPhUhGp+Bav9dihU+BwkmHfcDxqnoazrjEl3lyNairXNZn3trj1f0yXdvCRj5QuwJ0U8+kSmH0rwwLUE+vxmvTgvgj9GlaBELTFjX6eAZg3BfncwjPPlSsrocnnKMXWQjLY4ttReQ75EHSrb587OvYlvgH7Na8/F9NafcFSgXtMTNnOseN54HdgQO+BCDHU1eZytZqK6afuS/VpDv0kRJGEzK4e34AVdqtXZ2tF1G4LOoT7g+Fy9P/kQv/oP3dnoBi0FSEj2uCP5rmp9WokW5o/n+UEc17w7WEEVKaFFjMIMQPWLr0aX36pYbdqi4YSCCW3TxPfGP3s/Sg+5nXVkWpOPRs40U78f+4qDNfh/xkeheVQi9uPIQ935f3r9SU8FP7o8M1fwNrrzt3vEshBAh/meE2rPQ3zGzOp36lxZBGXZiHaohu+Nzb3B88ujjmi+V0qsc0XWR5DbCMS5S1IdxU3l38kWAoodg3D+PRFX83KGrg3/jEDv2CYIfo21BmZ9IsfBY4YubwQt7VyXcgjaf2mFRGCF2ILxhKdfGREV/cnF5HE36p5/vPC97…
+$.events[2900].params.bytes	AQAHGgMDJ2Vh9P3RZNmhG0IhA7NFMdkYig1XqUaKglcK9LYNGBEgoCTC55jC8VRCYoSCiagCTVTfaQiUKSJs68MgXJI2hWcAIPr6EwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGsSoqAAAACwACAQAADQAYABYJBAkFCQYEAwgEBAEFAwgFBQEIBgYBABcAAAAKAAwACvr6EewAHQAXABgAEAAOAAwCaDIIaHR0cC8xLjEAAAAUABIAAA9yZWFkLmFtYXpvbi5jb20ABQAFAQAAAAAAIwAAAC0AAgEB/g0BGgAAAQABSQAghAm90fxjuWqLSYjcpJ2Ypu+0IyhX/VR1G0Hgp0ooKRYA8FfIK+hHXXmTQBxl9qPMtcIe857Q82J2Al4iQ4c5yIqW0+s1mBWlS7LFv1MQSW43nYXvBj8u3gGRpQUeetU/VZzSD8OB8v6ShHn1oSoRvk/v/vYiRx25sJtOYLAhQ6ltOgnSu3ktKC7RFPegrShVTDkQUsg44dg7jcT9Gve9gxxoF/xQTSQQ3BjHvGSFALik4mmNMoM+y21XKuLl+sSurLgcYYXZhjwEk2wZqSCceS7Eit/1rWktdgr0gVBaNZMBJRF70TKKg+4SG/YrhDTE8IJqqu0cmbP7aL12wh20emMahDWp5S+qci72FbejyY4kTETNAAUAAwJoMv8BAAEAADME7wTt+voAAQAR7ATAqoSxz9SjckhCUNTAshKPR6yf8NYrhAmXMCBplHUfELhJ2Nme2/azZIufzuqE2UYjb0YLajUJLfVhHdc+OvtRSomxniFOn0oDPaKTD3wG70SzEGpB4dqqjQO7M1VsEajMziGh7jsbYelS88rBO4EEl0jPEsN4ZSJdCDLKdqoAydIIYzAJusNsoWJVCQyYhTynAXRtCjpC/gUzidpL0YJvaaa686RzAjoLL+S1SbpaQIZoApV2HatsoaGrNppO6hOvTPNU+9hSoSVlT6S9P9ONJ6pPp0KNogdCe8q8B0IM5oFIuWKvmyh7gus+0ZOC/lxm+ZMXWEwM/pOIc/RvjKt5W9F5gGpg1PBMnnHEqUJjMyCMX5Whsyd4DhYtL6fAv4MQsLEac4YXxmTPGzOdL1G3bOu3gqQYIdWtfDJbn/Vz9UeuVOd/n9yZQAQbhmEv8lEwPhWCF7YFD9SmnRRKEcQJ0UdVOMzG…
+$.events[2904].params.headers[5]	x-content-type-options: nosniff
+$.events[2904].params.headers[6]	location: https://r3---sn-2imern7r.gvt1.com/edgedl/chrome/dict/en-us-10-1.bdic?cms_redirect=yes&met=1787005332,&mh=7g&mip=134.33.70.51&mm=28&mn=sn-2imern7r&ms=nvh&mt=1787004979&mv=m&mvi=3&pl=21&rmhost=r2---sn-2imern7r.gvt1.com&rms=nvh,nvh&shardbypass=sd&smhost=r1---sn-aj2im9-5j.gvt1.com
+$.events[2904].params.headers[7]	content-type: text/html; charset=UTF-8
+$.events[2904].params.headers[9]	content-length: 530
+$.events[2905].params.headers[5]	x-content-type-options: nosniff
+$.events[2905].params.headers[6]	location: https://r3---sn-2imern7r.gvt1.com/edgedl/chrome/dict/en-us-10-1.bdic?cms_redirect=yes&met=1787005332,&mh=7g&mip=134.33.70.51&mm=28&mn=sn-2imern7r&ms=nvh&mt=1787004979&mv=m&mvi=3&pl=21&rmhost=r2---sn-2imern7r.gvt1.com&rms=nvh,nvh&shardbypass=sd&smhost=r1---sn-aj2im9-5j.gvt1.com
+$.events[2905].params.headers[7]	content-type: text/html; charset=UTF-8
+$.events[2905].params.headers[9]	content-length: 530
+$.events[3040].params.headers[1]	content-security-policy: script-src 'report-sample' 'none';report-uri https://csp.withgoogle.com/csp/clientupdate-aus/1
+$.events[3040].params.headers[6]	content-type: text/xml; charset=UTF-8
+$.events[3040].params.headers[9]	content-encoding: gzip
+$.events[3040].params.headers[10]	x-content-type-options: nosniff
+$.events[3040].params.headers[13]	content-length: 762
+$.events[3041].params.headers[1]	content-security-policy: script-src 'report-sample' 'none';report-uri https://csp.withgoogle.com/csp/clientupdate-aus/1
+$.events[3041].params.headers[6]	content-type: text/xml; charset=UTF-8
+$.events[3041].params.headers[9]	content-encoding: gzip
+$.events[3041].params.headers[10]	x-content-type-options: nosniff
+$.events[3041].params.headers[13]	content-length: 762
+$.events[3142].params.headers[3]	:path: /kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[3145].params.headers[3]	:path: /kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[3196].params.results[1].type	metadata
+$.events[3197].params.results[2].type	metadata
+$.events[3410].params.url	https://clients2.googleusercontent.com/crx/blobs/Abe5cL6A_jaaNXApcJCLOoGa79zAaQm3TAdaAxPZgBj_5TEF2GcWgawLWVOjCtWJy-62xNz5nkpLhywefHKfcA7VE1mTOm8zrFv598kNndU2NEQDlTxpxS0LJJjKMozEdq0AxlKa5Z-i_McpVGwijS_fx-_DkKqdWg3Y/GHBMNNJOOEKPMOECNNNILNNBDLOLHKHI_1_109_1_0.crx
+$.events[3412].params.url	https://clients2.googleusercontent.com/crx/blobs/Abe5cL6A_jaaNXApcJCLOoGa79zAaQm3TAdaAxPZgBj_5TEF2GcWgawLWVOjCtWJy-62xNz5nkpLhywefHKfcA7VE1mTOm8zrFv598kNndU2NEQDlTxpxS0LJJjKMozEdq0AxlKa5Z-i_McpVGwijS_fx-_DkKqdWg3Y/GHBMNNJOOEKPMOECNNNILNNBDLOLHKHI_1_109_1_0.crx
+$.events[3415].params.host	clients2.googleusercontent.com
+$.events[3416].params.network_isolation_key	https://googleusercontent.com https://googleusercontent.com
+$.events[3416].params.url	https://clients2.googleusercontent.com/crx/blobs/Abe5cL6A_jaaNXApcJCLOoGa79zAaQm3TAdaAxPZgBj_5TEF2GcWgawLWVOjCtWJy-62xNz5nkpLhywefHKfcA7VE1mTOm8zrFv598kNndU2NEQDlTxpxS0LJJjKMozEdq0AxlKa5Z-i_McpVGwijS_fx-_DkKqdWg3Y/GHBMNNJOOEKPMOECNNNILNNBDLOLHKHI_1_109_1_0.crx
+$.events[3424].params.url	https://clients2.googleusercontent.com/crx/blobs/Abe5cL6A_jaaNXApcJCLOoGa79zAaQm3TAdaAxPZgBj_5TEF2GcWgawLWVOjCtWJy-62xNz5nkpLhywefHKfcA7VE1mTOm8zrFv598kNndU2NEQDlTxpxS0LJJjKMozEdq0AxlKa5Z-i_McpVGwijS_fx-_DkKqdWg3Y/GHBMNNJOOEKPMOECNNNILNNBDLOLHKHI_1_109_1_0.crx
+$.events[3432].params.destination	https://clients2.googleusercontent.com
+$.events[3432].params.logical_destination	https://clients2.googleusercontent.com
+$.events[3437].params.host	clients2.googleusercontent.com
+$.events[3437].params.network_anonymization_key	https://googleusercontent.com same_site
+$.events[3440].params.host	https://clients2.googleusercontent.com
+$.events[3440].params.network_anonymization_key	https://googleusercontent.com same_site
+$.events[3444].params.host	https://clients2.googleusercontent.com
+$.events[3444].params.network_anonymization_key	https://googleusercontent.com same_site
+$.events[3450].params.hostname	clients2.googleusercontent.com
+$.events[3451].params.qname	clients2.googleusercontent.com
+$.events[3462].params.hostname	clients2.googleusercontent.com
+$.events[3463].params.qname	clients2.googleusercontent.com
+$.events[3473].params.destination	https://clients2.googleusercontent.com
+$.events[3473].params.logical_destination	https://clients2.googleusercontent.com
+$.events[3492].params.subjects[7]	*.c.doc-0-0-sj.sj.googleusercontent.com
+$.events[3492].params.subjects[12]	*.c.mail.googleusercontent.com
+$.events[3558].params.token	AMzSzfn3RNv21wEU68pDdH+TCxxCQeMVN1qqBP2tEjeOWJ3mnfA5tty07tvZ5HuayPCKueKZrriisrRacgrzAZw=
+$.events[3577].params.results[0].domain_name	googlehosted.l.googleusercontent.com
+$.events[3577].params.results[1].alias_target	googlehosted.l.googleusercontent.com
+$.events[3577].params.results[1].domain_name	clients2.googleusercontent.com
+$.events[3588].params.headers[3]	content-disposition: attachment
+$.events[3588].params.headers[4]	content-length: 451968
+$.events[3588].params.headers[5]	content-security-policy: default-src 'none'
+$.events[3588].params.headers[6]	content-type: application/octet-stream
+$.events[3588].params.headers[8]	server: downloads
+$.events[3588].params.headers[10]	x-content-type-options: nosniff
+$.events[3588].params.headers[12]	x-identity-content-length: 451968
+$.events[3744].params.headers[3]	content-disposition: attachment
+$.events[3744].params.headers[4]	content-length: 451968
+$.events[3744].params.headers[5]	content-security-policy: default-src 'none'
+$.events[3744].params.headers[6]	content-type: application/octet-stream
+$.events[3744].params.headers[8]	server: downloads
+$.events[3744].params.headers[10]	x-content-type-options: nosniff
+$.events[3744].params.headers[12]	x-identity-content-length: 451968
+$.events[3745].params.headers[3]	content-disposition: attachment
+$.events[3745].params.headers[4]	content-length: 451968
+$.events[3745].params.headers[5]	content-security-policy: default-src 'none'
+$.events[3745].params.headers[6]	content-type: application/octet-stream
+$.events[3745].params.headers[8]	server: downloads
+$.events[3745].params.headers[10]	x-content-type-options: nosniff
+$.events[3745].params.headers[12]	x-identity-content-length: 451968
+$.events[4219].params.headers[1]	content-type: application/binary
+$.events[4219].params.headers[10]	content-security-policy: require-trusted-types-for 'script';report-uri /_/IdentityListAccountsHttp/cspreport script-src 'report-sample' 'nonce-R7_mgIiewmZo4JTzN9IxqA' 'unsafe-inline';object-src 'none';base-uri 'self';report-uri /_/IdentityListAccountsHttp/cspreport;worker-src 'self' script-src 'unsafe-inline' 'unsafe-eval' blob: data: 'self' https://apis.google.com https://ssl.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.gstatic.com https://www.google-analytics.com;report-uri /_/IdentityListAccountsHttp/cspreport/allowlist script-src 'unsafe-inline' 'unsafe-eval' blob: data:;report-uri /_/IdentityListAccountsHttp/cspreport/fine-allowlist
+$.events[4219].params.headers[16]	content-length: 0
+$.events[4219].params.headers[18]	x-content-type-options: nosniff
+$.events[4220].params.headers[1]	content-type: application/binary
+$.events[4220].params.headers[10]	content-security-policy: require-trusted-types-for 'script';report-uri /_/IdentityListAccountsHttp/cspreport
+$.events[4220].params.headers[11]	content-security-policy: script-src 'report-sample' 'nonce-R7_mgIiewmZo4JTzN9IxqA' 'unsafe-inline';object-src 'none';base-uri 'self';report-uri /_/IdentityListAccountsHttp/cspreport;worker-src 'self'
+$.events[4220].params.headers[12]	content-security-policy: script-src 'unsafe-inline' 'unsafe-eval' blob: data: 'self' https://apis.google.com https://ssl.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.gstatic.com https://www.google-analytics.com;report-uri /_/IdentityListAccountsHttp/cspreport/allowlist
+$.events[4220].params.headers[13]	content-security-policy: script-src 'unsafe-inline' 'unsafe-eval' blob: data:;report-uri /_/IdentityListAccountsHttp/cspreport/fine-allowlist
+$.events[4220].params.headers[19]	content-length: 0
+$.events[4220].params.headers[21]	x-content-type-options: nosniff
+$.events[4249].params.results[0].domain_name	googlehosted.l.googleusercontent.com
+$.events[4249].params.results[1].alias_target	googlehosted.l.googleusercontent.com
+$.events[4249].params.results[1].domain_name	clients2.googleusercontent.com
+$.events[4593].params.group_id	pm/https://clients2.googleusercontent.com <https://googleusercontent.com same_site>
+$.events[4596].params.group_id	pm/https://clients2.googleusercontent.com <https://googleusercontent.com same_site>
+$.events[4599].params.host	https://clients2.googleusercontent.com
+$.events[4599].params.network_anonymization_key	https://googleusercontent.com same_site
+$.events[4602].params.results.aliases[0]	clients2.googleusercontent.com
+$.events[4602].params.results.aliases[1]	googlehosted.l.googleusercontent.com
+$.events[4602].params.results.canonical_names[0]	googlehosted.l.googleusercontent.com
+$.events[4603].params.results.aliases[0]	clients2.googleusercontent.com
+$.events[4603].params.results.aliases[1]	googlehosted.l.googleusercontent.com
+$.events[4603].params.results.canonical_names[0]	googlehosted.l.googleusercontent.com
+$.events[5854].params.bytes	CwAftwAAH7MAGYQwghmAMIIZJaADAgECAhAYA+wonnZ+NgpNewHBj38IMAoGCCqGSM49BAMCMDsxCzAJBgNVBAYTAlVTMR4wHAYDVQQKExVHb29nbGUgVHJ1c3QgU2VydmljZXMxDDAKBgNVBAMTA1dFMjAeFw0yNjA4MDUyMDQzNTVaFw0yNjEwMjgyMDQzNTRaMCIxIDAeBgNVBAMMFyouZ29vZ2xldXNlcmNvbnRlbnQuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8rDf8Zpo614Uvka2aQf/WdtqNHc6bXk0wYL+5j94KFF0ZqeshzpQ9MRNUW0HL8dIlCm1Qn1JVf7a9giw4YvWFqOCGCIwghgeMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTPx23D9qrxy1fp+znhKxNz3lDABzAfBgNVHSMEGDAWgBR1vsR3ron2RDd9z7FoHx0a69w0WTA1BggrBgEFBQcBAQQpMCcwJQYIKwYBBQUHMAKGGWh0dHA6Ly9pLnBraS5nb29nL3dlMi5jcnQwghYZBgNVHREEghYQMIIWDIIXKi5nb29nbGV1c2VyY29udGVudC5jb22CIGNvbW1vbmRhdGFzdG9yYWdlLmdvb2dsZWFwaXMuY29tgiIqLmNvbW1vbmRhdGFzdG9yYWdlLmdvb2dsZWFwaXMuY29tghZzdG9yYWdlLmdvb2dsZWFwaXMuY29tghgqLnN0b3JhZ2UuZ29vZ2xlYXBpcy5jb22CGXN0b3JhZ2UtcDIuZ29vZ2xlYXBpcy5jb22CGyouc3RvcmFnZS1wMi5nb29nbGVhcGlzLmNvbYIbc3RvcmFnZS5tdGxzLmdvb2dsZWFwaXMuY29tgiQqLmFwcHNwb3QuY29tLnN0b3JhZ2UuZ29vZ2xlYXBpcy5jb22CICouY29udGVudC1zdG9yYWdlLmdvb2dsZWFwaXMuY29tgiMqLmNvbnRlbnQtc3RvcmFnZS1wMi5nb29nbGVhcGlzLmNvbYInKi5jb250ZW50LXN0b3JhZ2UtdXBsb2FkLmdvb2dsZWFwaXMuY29tgikqLmNvbnRlbnQtc3RvcmFnZS1kb3dubG9hZC5nb29nbGVhcGlzLmNvbYIfKi5zdG9y…
+$.events[5857].params.host	clients2.googleusercontent.com
+$.events[5862].params.host	clients2.googleusercontent.com
+$.events[5868].params.debug	CertPathIter cur_path_ =\n 8FF48A1BBB05CC8FB6252533E8DB2A830B1655836D525E6833FCCB92F2D37DC6 CN=*.googleusercontent.com
+$.events[5869].params.debug	CertPathIter returning path:\n 8FF48A1BBB05CC8FB6252533E8DB2A830B1655836D525E6833FCCB92F2D37DC6 CN=*.googleusercontent.com\n 9C3F2FD11C57D7C649AD5A0932C0F0D29756F6A0A1C74C43E1E89A62D64CD320 CN=WE2,O=Google Trust Services,C=US
+$.events[5894].params.host	clients2.googleusercontent.com:443
+$.events[5900].params.origin	https://clients2.googleusercontent.com
+$.events[5913].params.headers[1]	:authority: clients2.googleusercontent.com
+$.events[5914].params.headers[1]	:authority: clients2.googleusercontent.com
+$.events[5939].params.headers[3]	content-length: 158541
+$.events[5939].params.headers[12]	content-type: application/x-chrome-extension
+$.events[5940].params.headers[3]	content-length: 158541
+$.events[5940].params.headers[12]	content-type: application/x-chrome-extension
+$.events[5982].params.host	https://clients2.googleusercontent.com
+$.events[5982].params.network_anonymization_key	https://googleusercontent.com same_site
+$.events[5985].params.results.aliases[0]	clients2.googleusercontent.com
+$.events[5985].params.results.aliases[1]	googlehosted.l.googleusercontent.com
+$.events[5985].params.results.canonical_names[0]	googlehosted.l.googleusercontent.com
+$.events[5986].params.results.aliases[0]	clients2.googleusercontent.com
+$.events[5986].params.results.aliases[1]	googlehosted.l.googleusercontent.com
+$.events[5986].params.results.canonical_names[0]	googlehosted.l.googleusercontent.com
+$.events[5988].params.host	https://clients2.googleusercontent.com
+$.events[5988].params.network_anonymization_key	https://googleusercontent.com same_site
+$.events[5991].params.results.aliases[0]	clients2.googleusercontent.com
+$.events[5991].params.results.aliases[1]	googlehosted.l.googleusercontent.com
+$.events[5991].params.results.canonical_names[0]	googlehosted.l.googleusercontent.com
+$.events[5992].params.results.aliases[0]	clients2.googleusercontent.com
+$.events[5992].params.results.aliases[1]	googlehosted.l.googleusercontent.com
+$.events[5992].params.results.canonical_names[0]	googlehosted.l.googleusercontent.com
+$.events[6047].params.headers[1]	content-type: text/html;charset=UTF-8
+$.events[6047].params.headers[6]	x-amz-rid: VXYAX5J0JDTEWVFG9CDT
+$.events[6047].params.headers[8]	content-encoding: gzip
+$.events[6047].params.headers[9]	content-language: en-US
+$.events[6047].params.headers[10]	content-security-policy: frame-ancestors *
+$.events[6047].params.headers[11]	x-content-type-options: nosniff
+$.events[6047].params.headers[15]	x-cache: Miss from cloudfront
+$.events[6047].params.headers[16]	via: 1.1 a0a6db03b6ef1c1a137cdae8972c79a2.cloudfront.net (CloudFront)
+$.events[6047].params.headers[17]	x-amz-cf-pop: PHX50-P1
+$.events[6047].params.headers[18]	x-amz-cf-id: Ygfvw--u-fEVJMVMxwR6NjS3hI_NNDnvcon_PUEA0gcSrU6qn1rtuQ==
+$.events[6048].params.headers[1]	content-type: text/html;charset=UTF-8
+$.events[6048].params.headers[6]	x-amz-rid: VXYAX5J0JDTEWVFG9CDT
+$.events[6048].params.headers[9]	content-encoding: gzip
+$.events[6048].params.headers[10]	content-language: en-US
+$.events[6048].params.headers[11]	content-security-policy: frame-ancestors *
+$.events[6048].params.headers[12]	x-content-type-options: nosniff
+$.events[6048].params.headers[16]	x-cache: Miss from cloudfront
+$.events[6048].params.headers[17]	via: 1.1 a0a6db03b6ef1c1a137cdae8972c79a2.cloudfront.net (CloudFront)
+$.events[6048].params.headers[18]	x-amz-cf-pop: PHX50-P1
+$.events[6048].params.headers[19]	x-amz-cf-id: Ygfvw--u-fEVJMVMxwR6NjS3hI_NNDnvcon_PUEA0gcSrU6qn1rtuQ==
+$.events[6097].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6097].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6098].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6098].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6103].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6103].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6104].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6104].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[6767].params.headers[5]	X-Content-Type-Options: nosniff
+$.events[6767].params.headers[6]	Location: http://r3---sn-2imern7r.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvNzI0QUFXNV9zT2RvdUwyMERESEZGVmJnQQ/1.0.0.6_nmmhkkegccagdldgiimedpiccmgmieda.crx?cms_redirect=yes&met=1787005333,&mh=e_&mip=134.33.70.51&mm=28&mn=sn-2imern7r&ms=nvh&mt=1787004979&mv=m&mvi=3&pl=21&rms=nvh,nvh&shardbypass=sd&smhost=r4---sn-aj2im9-5q.gvt1.com
+$.events[6767].params.headers[7]	Content-Type: text/html; charset=UTF-8
+$.events[6767].params.headers[9]	Content-Length: 591
+$.events[6934].params.results[1].type	metadata
+$.events[6979].params.headers[1]	Location: https://r3---sn-2imern7r.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvNzI0QUFXNV9zT2RvdUwyMERESEZGVmJnQQ/1.0.0.6_nmmhkkegccagdldgiimedpiccmgmieda.crx?cms_redirect=yes&met=1787005333,&mh=e_&mip=134.33.70.51&mm=28&mn=sn-2imern7r&ms=nvh&mt=1787004979&mv=m&mvi=3&pl=21&rms=nvh,nvh&shardbypass=sd&smhost=r4---sn-aj2im9-5q.gvt1.com
+$.events[6979].params.headers[2]	Cross-Origin-Resource-Policy: Cross-Origin
+$.events[7053].params.bytes	AQAG3QMDzKUS2DCmdOsVtx6yvfh2pao8ZfrIVGtUI8fOkOvOo9IgrAT2Tk4PORfG4DvxAR5JB2fWdWS6BnK0Y4pVB6izVA0AIOrqEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGdAoKAAAAFwAAACMAAAAbAAMCAAL/AQABAAALAAIBAAAFAAUBAAAAAAANABgAFgkECQUJBgQDCAQEAQUDCAUFAQgGBgEAEgAAAAoADAAKCgoR7AAdABcAGETNAAUAAwJoMgAQAA4ADAJoMghodHRwLzEuMQAtAAIBAf4NANoAAAEAAXEAIOKL8u0hGnhye2Go/IOBXUaUgSBK1VjULCATKptrU2hzALCLH4LWiDbqpWHnDw8mnY/G9zWFfKkyuwIxyyH7MWicsNYf76VnDli1JD8FcQVEfOMPokw8hs5xB7E6rwP+Oi9liEIXBcjTpNmv7tTq6l5OgntvBJG4SF0mYXkGfFD5Xdv6MmoKxXSm02b3kH/RC5tnRuSCsj+2fNcgPwPriHBSJx7yb3GyrQH0UFC7mOSkiR3dVmkM5isx57C2camTTniOHuma/59VpFfZDjxa+pBsLAAzBO8E7QoKAAEAEewEwK+KY9xZsPBGLrfIgqQ2SdeMwgb1Vo6szxLSwD5THKChs8slIA52k3+1q7NAIKe5dumFD3CjPf8ngKKgbm36Kcj3V0GhWePpmv9HbKkjIAqmXy7jrQZqa9MZvvsVdEFrQzwkwaW2T9P7mlgJbBv8OoZ6CZVTJeHnK6/3KwYrz+NkUQdsWP2ng1IBo7NcPBe6ghKFALYaX/AaGtjihgP2gkzRCGkpNUj4mHPKkvVhIkV3unW1sU5gFJ6HWJHbSaMzwVUVvFBaN7GISEl1eiPIfGJ3Pu3Xg70DDzwyTiP0LpvjVuihxrFBsjIYd9EatwE6KoESsN+RstpMzkdJeKILqAHYcIl4wJo2SuKCBkVLUXtZGLgK0BKCeGyiinKxlKwRisN2dilDMFQgV2IST39HHaDqeYg6j7UKfDmgRkVjNJ2ldghytta6LD2cCEesd7hklEWqd5axwBYAPoq3zMKRxGfib0tKjnWkZw5LIoCoFbQkYwyrrjS8OVLraOnnOS3Ms+d7XFOsSgM3Mj0mWVasjBFXc6PzMWCzv0xgtOf7mqAjmeKUkntowgWmAlx2oRQgNVlJ…
+$.events[7077].params.bytes	AQAG3QMDY5jnRqWlYC0+TCaMrvJv7hRWzBrmqWaof2uaoPzfzBggxcKQDbC9cUECTc29nHP0dTPJqVG98cob6mDu7xtC5VIAICoqEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGdGpqAAAABQAFAQAAAAAAKwAHBmpqAwQDAwAKAAwACqqqEewAHQAXABgADQAYABYJBAkFCQYEAwgEBAEFAwgFBQEIBgYBAC0AAgEBAAAAFwAVAAASbS5tZWRpYS1hbWF6b24uY29t/wEAAQD+DQDaAAABAAHUACA6B9jqzxGN+0HS3hSi4/a7UAst93SKtBntqGYVj1AXEACwe+8dcKKgpbnnNTGq8tbe6tHpmXCRMGlJZR9Nb+3sG9H1MXb8BhG03wKBsY+eKxCb2aITLkGndtIPqsW6RFRoEnN+aaV7gMwuES4+Y3Zo76f5OXVTRARH2RAVe0fSkn9xwqbacQ50hN08pKcju44HJqRuUXEQMdOqdjYw5uLTDSKwm6f7qmXHwvXvi6IA6JcXn7+LSmE1bu7Y97SgRV6+5xU3cYgZjm6/0LWSCBoWfbwAFwAAABIAAAAQAA4ADAJoMghodHRwLzEuMQALAAIBAETNAAUAAwJoMgAzBO8E7aqqAAEAEewEwEGbUlGQqsAKZex6NoDWz4rmLQTgBw8oP6pKtn4FW4GsYM9SACaxW33HtVKJqgOCYcNQm6nlizCCzETnThE7zyiYsR/EI0xzyf5KSX/jTQwEIyJAwrlmNfZWgJ/LhtNslk6xhsqwa2YZGfLlFInke5MKFvTsxHkLEFXylMK0wPbFMIoWD0C3gywjfZmrUO7yOllMVBBnULdKd/N1FhNgUJXzdBSmaI9XiIHkEGqriUXKeJE6WLHYHEbmMfEoKpdHadJGmGezgCvzsRsyrU6XLd+IN0ochPYbimcTJEuElCVWcli4TCFBEqNgbBvzv1bZgbt7NcyycmBFGbCpt9UWFxEDupnXkClFF34VqXXAwoi8jA2pL9XkNkEsL/rlTi2ssCWFraWmZ30Sxx/7p9BGCySyZYb0geKsD3fjc6K0sWZ8hhnIaNVcyFMCIgCpuuZ6spd5zZHpqjD2ai6xk7yLfqhSwEXABzoqs7o2FYl3ie4VK0T1Bj57oT57GDA3GMn5zaJDZIUsu3hsyI8oLrl2JqYashZ2ziy4…
+$.events[7083].params.results[1].type	metadata
+$.events[7091].params.results[2].type	metadata
+$.events[7144].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7145].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7219].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7224].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7228].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7234].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7242].params.certificate	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7253].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7293].params.subjects[7]	*.c.doc-0-0-sj.sj.googleusercontent.com
+$.events[7293].params.subjects[12]	*.c.mail.googleusercontent.com
+$.events[7318].params.verified_cert.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7347].params.verified_cert.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[7492].params.headers[3]	content-disposition: attachment
+$.events[7492].params.headers[4]	content-length: 248531
+$.events[7492].params.headers[5]	content-security-policy: default-src 'none'
+$.events[7492].params.headers[6]	content-type: application/x-chrome-extension
+$.events[7492].params.headers[8]	server: downloads
+$.events[7492].params.headers[10]	x-content-type-options: nosniff
+$.events[7492].params.headers[12]	x-identity-content-length: 248531
+$.events[7656].params.headers[3]	content-disposition: attachment
+$.events[7656].params.headers[4]	content-length: 248531
+$.events[7656].params.headers[5]	content-security-policy: default-src 'none'
+$.events[7656].params.headers[6]	content-type: application/x-chrome-extension
+$.events[7656].params.headers[8]	server: downloads
+$.events[7656].params.headers[10]	x-content-type-options: nosniff
+$.events[7656].params.headers[12]	x-identity-content-length: 248531
+$.events[7657].params.headers[3]	content-disposition: attachment
+$.events[7657].params.headers[4]	content-length: 248531
+$.events[7657].params.headers[5]	content-security-policy: default-src 'none'
+$.events[7657].params.headers[6]	content-type: application/x-chrome-extension
+$.events[7657].params.headers[8]	server: downloads
+$.events[7657].params.headers[10]	x-content-type-options: nosniff
+$.events[7657].params.headers[12]	x-identity-content-length: 248531
+$.events[8294].params.headers[1]	content-type: text/css
+$.events[8294].params.headers[3]	content-encoding: gzip
+$.events[8294].params.headers[5]	x-amz-ir-id: 89b5f6fd-9629-4fad-b7c4-4122becd46a6
+$.events[8294].params.headers[14]	via: 1.1 79dd0e4c50f89af282c1a73e9fd669be.cloudfront.net (CloudFront)
+$.events[8294].params.headers[19]	x-cache: Hit from cloudfront
+$.events[8294].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[8294].params.headers[21]	x-amz-cf-id: gfa-8N9mCDd9ubaaDZTX7RgAZ5aLXbEfoz3GVo-Dm5D6SBpbvULZxg==
+$.events[8295].params.headers[1]	content-type: text/css
+$.events[8295].params.headers[3]	content-encoding: gzip
+$.events[8295].params.headers[5]	x-amz-ir-id: 89b5f6fd-9629-4fad-b7c4-4122becd46a6
+$.events[8295].params.headers[14]	via: 1.1 79dd0e4c50f89af282c1a73e9fd669be.cloudfront.net (CloudFront)
+$.events[8295].params.headers[19]	x-cache: Hit from cloudfront
+$.events[8295].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[8295].params.headers[21]	x-amz-cf-id: gfa-8N9mCDd9ubaaDZTX7RgAZ5aLXbEfoz3GVo-Dm5D6SBpbvULZxg==
+$.events[8347].params.headers[1]	content-type: text/css
+$.events[8347].params.headers[3]	content-encoding: br
+$.events[8347].params.headers[5]	x-amz-ir-id: 28971f41-11d1-4e86-8105-aee3570ca462
+$.events[8347].params.headers[14]	via: 1.1 79dd0e4c50f89af282c1a73e9fd669be.cloudfront.net (CloudFront)
+$.events[8347].params.headers[19]	x-cache: Hit from cloudfront
+$.events[8347].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[8347].params.headers[21]	x-amz-cf-id: ZXwjVoMoScYBXupW8yXARnldQkBfAcdm_Ro5BvoQmlxDdAOYcl0Dtg==
+$.events[8348].params.headers[1]	content-type: text/css
+$.events[8348].params.headers[3]	content-encoding: br
+$.events[8348].params.headers[5]	x-amz-ir-id: 28971f41-11d1-4e86-8105-aee3570ca462
+$.events[8348].params.headers[14]	via: 1.1 79dd0e4c50f89af282c1a73e9fd669be.cloudfront.net (CloudFront)
+$.events[8348].params.headers[19]	x-cache: Hit from cloudfront
+$.events[8348].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[8348].params.headers[21]	x-amz-cf-id: ZXwjVoMoScYBXupW8yXARnldQkBfAcdm_Ro5BvoQmlxDdAOYcl0Dtg==
+$.events[9247].params.headers[1]	content-type: application/x-javascript
+$.events[9247].params.headers[3]	content-encoding: br
+$.events[9247].params.headers[5]	x-amz-ir-id: 626cfd37-a833-42dc-9fe9-77df1d5dc262
+$.events[9247].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[9247].params.headers[19]	x-cache: Hit from cloudfront
+$.events[9247].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[9247].params.headers[21]	x-amz-cf-id: 6ekERXNM9QVzEljEjX6VhgWZxiJuCml-ZSpvaq0TFXZfBVC4pNtIsg==
+$.events[9248].params.headers[1]	content-type: application/x-javascript
+$.events[9248].params.headers[3]	content-encoding: br
+$.events[9248].params.headers[5]	x-amz-ir-id: 626cfd37-a833-42dc-9fe9-77df1d5dc262
+$.events[9248].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[9248].params.headers[19]	x-cache: Hit from cloudfront
+$.events[9248].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[9248].params.headers[21]	x-amz-cf-id: 6ekERXNM9QVzEljEjX6VhgWZxiJuCml-ZSpvaq0TFXZfBVC4pNtIsg==
+$.events[9291].params.headers[1]	content-type: application/x-javascript
+$.events[9291].params.headers[3]	content-encoding: br
+$.events[9291].params.headers[5]	x-amz-ir-id: d3e397b9-2c28-43d6-8e07-b03460f3e2f6
+$.events[9291].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[9291].params.headers[19]	x-cache: Hit from cloudfront
+$.events[9291].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[9291].params.headers[21]	x-amz-cf-id: Vo-oqeydERzsOFT2K3zu2KQ_DqAZB5_aCxqvNwy-eSfpwNEQA7mTDA==
+$.events[9292].params.headers[1]	content-type: application/x-javascript
+$.events[9292].params.headers[3]	content-encoding: br
+$.events[9292].params.headers[5]	x-amz-ir-id: d3e397b9-2c28-43d6-8e07-b03460f3e2f6
+$.events[9292].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[9292].params.headers[19]	x-cache: Hit from cloudfront
+$.events[9292].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[9292].params.headers[21]	x-amz-cf-id: Vo-oqeydERzsOFT2K3zu2KQ_DqAZB5_aCxqvNwy-eSfpwNEQA7mTDA==
+$.events[9461].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[9575].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[9610].params.certificate	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[9706].params.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[9709].params.verified_cert.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[9743].params.verified_cert.certificates[0]	-----BEGIN CERTIFICATE-----\nMIIG/zCCBeegAwIBAgIQBDWIyQI1sAyPNC55aWULHTANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI2MDUxNDAwMDAwMFoXDTI2MTEyNzIzNTk1OVowKjEoMCYGA1UEAxMfaW1h\nZ2VzLW5hLnNzbC1pbWFnZXMtYW1hem9uLmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBANvXBgF7UZZMdAyxr/n8n3n65mqleIXiZvO2wyawxkFw7GCY\nGdRK4Gq8XElnkj+u8fyv1Ot770C1wsYP4EyzEyqcKE+GF32jS4ISGx4Zppi5ZP0I\nNuejFPHo04ICbi+53DRpXuphVfbdSxjXr65XUt9QObgQZDYseBdnhWZO56e/sjCS\nd/loJzwLKu/misStuqI4A7uPXOZV6HthSx1mWpHgbzfpbGl3PU26Vn2Owp94Lik/\n1eIz5lx5g5+4Yjs2MiaJnm+LCsamgOqW+4FZ6YiHTDLdBQ5cBhq3ZzFgLLxRvdQE\nL2sa33O+KU+H3egKu0qWqEmUbefobQV32IRc/vMCAwEAAaOCA+kwggPlMB8GA1Ud\nIwQYMBaAFJRP1F2L5KTipoD+/dj5AO+jvgJXMB0GA1UdDgQWBBTvmfK2ivcZ8auH\ni/W7u3OV5sJYMzCB9AYDVR0RBIHsMIHpgh9pbWFnZXMtbmEuc3NsLWltYWdlcy1h\nbWF6b24uY29tghJtLm1lZGlhLWFtYXpvbi5jb22CH2ltYWdlcy1mZS5zc2wtaW1h\nZ2VzLWFtYXpvbi5jb22CH2ltYWdlcy1ldS5zc2wtaW1hZ2VzLWFtYXpvbi5jb22C\nEWlhLm1lZGlhLWltZGIuY29tghJmLm1lZGlhLWFtYXpvbi5jb22CEWltYWdlcy5h\nbWF6b24uY29tghNnLWltYWdlcy5hbWF6b24uY29tgg1pbWcuYW1hem9uLmNhghJj\nLm1lZGlhLWFtYXpvbi5jb20wPgYDVR0gBDcwNTAzBgZngQwBA…
+$.events[10255].params.headers[1]	content-type: application/x-javascript
+$.events[10255].params.headers[3]	content-encoding: gzip
+$.events[10255].params.headers[5]	x-amz-ir-id: 655bd78f-9e85-47c6-a928-3ca0cd3a2494
+$.events[10255].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[10255].params.headers[19]	x-cache: Hit from cloudfront
+$.events[10255].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[10255].params.headers[21]	x-amz-cf-id: O32xsnG4b9UrIYYKrA3yB4LCRXAyngNXtPNQe2jKEkLSTgV_2r1zpw==
+$.events[10256].params.headers[1]	content-type: application/x-javascript
+$.events[10256].params.headers[3]	content-encoding: gzip
+$.events[10256].params.headers[5]	x-amz-ir-id: 655bd78f-9e85-47c6-a928-3ca0cd3a2494
+$.events[10256].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[10256].params.headers[19]	x-cache: Hit from cloudfront
+$.events[10256].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[10256].params.headers[21]	x-amz-cf-id: O32xsnG4b9UrIYYKrA3yB4LCRXAyngNXtPNQe2jKEkLSTgV_2r1zpw==
+$.events[10273].params.headers[1]	content-type: application/x-javascript
+$.events[10273].params.headers[3]	content-encoding: gzip
+$.events[10273].params.headers[5]	x-amz-ir-id: 50ecbad5-aab0-4b29-9fb2-30082ac79cd7
+$.events[10273].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[10273].params.headers[19]	x-cache: Hit from cloudfront
+$.events[10273].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[10273].params.headers[21]	x-amz-cf-id: WQcZwZPLlPqFNX93UDE47jHNLEwhlRN7FZYST4NZD1yClHLeFES32A==
+$.events[10274].params.headers[1]	content-type: application/x-javascript
+$.events[10274].params.headers[3]	content-encoding: gzip
+$.events[10274].params.headers[5]	x-amz-ir-id: 50ecbad5-aab0-4b29-9fb2-30082ac79cd7
+$.events[10274].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[10274].params.headers[19]	x-cache: Hit from cloudfront
+$.events[10274].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[10274].params.headers[21]	x-amz-cf-id: WQcZwZPLlPqFNX93UDE47jHNLEwhlRN7FZYST4NZD1yClHLeFES32A==
+$.events[10291].params.headers[1]	content-type: application/x-javascript
+$.events[10291].params.headers[3]	content-encoding: br
+$.events[10291].params.headers[5]	x-amz-ir-id: 88aba6c3-9553-45ef-98e2-61c575b7a07d
+$.events[10291].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[10291].params.headers[19]	x-cache: Hit from cloudfront
+$.events[10291].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[10291].params.headers[21]	x-amz-cf-id: CvJslhR-ATBTGzQvoWkEHGGSvQSjb_Sw8Fa3ujZ6kPhR0bvKR4LXyg==
+$.events[10292].params.headers[1]	content-type: application/x-javascript
+$.events[10292].params.headers[3]	content-encoding: br
+$.events[10292].params.headers[5]	x-amz-ir-id: 88aba6c3-9553-45ef-98e2-61c575b7a07d
+$.events[10292].params.headers[14]	via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+$.events[10292].params.headers[19]	x-cache: Hit from cloudfront
+$.events[10292].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[10292].params.headers[21]	x-amz-cf-id: CvJslhR-ATBTGzQvoWkEHGGSvQSjb_Sw8Fa3ujZ6kPhR0bvKR4LXyg==
+$.events[11272].params.headers[2]	content-type: image/gif
+$.events[11272].params.headers[3]	content-length: 43
+$.events[11272].params.headers[4]	x-amzn-requestid: 622d1c19-93da-44e9-b00d-92bd53246c7d
+$.events[11273].params.headers[2]	content-type: image/gif
+$.events[11273].params.headers[3]	content-length: 43
+$.events[11273].params.headers[4]	x-amzn-requestid: 622d1c19-93da-44e9-b00d-92bd53246c7d
+$.events[11320].params.request_headers.headers[7]	Content-Type: application/json
+$.events[11320].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[11324].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[11328].params.host	session.bugsnag.kindle.amazon.dev
+$.events[11329].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[11337].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[11345].params.destination	https://session.bugsnag.kindle.amazon.dev
+$.events[11345].params.logical_destination	https://session.bugsnag.kindle.amazon.dev
+$.events[11350].params.host	session.bugsnag.kindle.amazon.dev
+$.events[11353].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[11357].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[11363].params.hostname	session.bugsnag.kindle.amazon.dev
+$.events[11364].params.qname	session.bugsnag.kindle.amazon.dev
+$.events[11375].params.hostname	session.bugsnag.kindle.amazon.dev
+$.events[11376].params.qname	session.bugsnag.kindle.amazon.dev
+$.events[11386].params.destination	https://session.bugsnag.kindle.amazon.dev
+$.events[11386].params.logical_destination	https://session.bugsnag.kindle.amazon.dev
+$.events[11393].params.results[0].domain_name	session.bugsnag.kindle.amazon.dev
+$.events[11396].params.request_headers.headers[7]	Content-Type: application/json
+$.events[11469].params.results[0].domain_name	session.bugsnag.kindle.amazon.dev
+$.events[11470].params.results[0].domain_name	session.bugsnag.kindle.amazon.dev
+$.events[11470].params.results[1].domain_name	session.bugsnag.kindle.amazon.dev
+$.events[11483].params.group_id	pm/https://session.bugsnag.kindle.amazon.dev <https://amazon.com same_site>
+$.events[11486].params.group_id	pm/https://session.bugsnag.kindle.amazon.dev <https://amazon.com same_site>
+$.events[11489].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[11492].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[11492].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[11493].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[11493].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[11573].params.request_headers.line	GET /sample/meta/with-fallback/B0FK7RBDFL HTTP/1.1\r\n
+$.events[11573].params.url	https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL
+$.events[11575].params.url	https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL
+$.events[11579].params.url	https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL
+$.events[11592].params.key	1/0/_dk_https://amazon.com https://amazon.com https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL
+$.events[11599].params.url	https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL
+$.events[11618].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11618].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11619].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11619].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11637].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11637].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11638].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11638].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[11653].params.headers[1]	content-type: application/json
+$.events[11653].params.headers[2]	x-cache: Hit from cloudfront
+$.events[11653].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[11653].params.headers[5]	content-encoding: gzip
+$.events[11653].params.headers[7]	x-amz-ir-id: a85844c6-4e05-4d9d-ae57-514ca88118b1
+$.events[11653].params.headers[16]	via: 1.1 53e2639e63e6da8f48e032b34d6159f2.cloudfront.net (CloudFront)
+$.events[11653].params.headers[21]	x-amz-cf-id: 1fXn-Mqt13OiFcEw7ktjiDp-GtEXLJxfXW7rymkDSRyd8rHTZy4fCw==
+$.events[11685].params.headers[1]	content-type: application/json
+$.events[11685].params.headers[2]	x-cache: Hit from cloudfront
+$.events[11685].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[11685].params.headers[5]	content-encoding: gzip
+$.events[11685].params.headers[7]	x-amz-ir-id: a85844c6-4e05-4d9d-ae57-514ca88118b1
+$.events[11685].params.headers[16]	via: 1.1 53e2639e63e6da8f48e032b34d6159f2.cloudfront.net (CloudFront)
+$.events[11685].params.headers[21]	x-amz-cf-id: 1fXn-Mqt13OiFcEw7ktjiDp-GtEXLJxfXW7rymkDSRyd8rHTZy4fCw==
+$.events[11686].params.headers[1]	content-type: application/json
+$.events[11686].params.headers[2]	x-cache: Hit from cloudfront
+$.events[11686].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[11686].params.headers[5]	content-encoding: gzip
+$.events[11686].params.headers[7]	x-amz-ir-id: a85844c6-4e05-4d9d-ae57-514ca88118b1
+$.events[11686].params.headers[16]	via: 1.1 53e2639e63e6da8f48e032b34d6159f2.cloudfront.net (CloudFront)
+$.events[11686].params.headers[21]	x-amz-cf-id: 1fXn-Mqt13OiFcEw7ktjiDp-GtEXLJxfXW7rymkDSRyd8rHTZy4fCw==
+$.events[11803].params.headers[3]	:path: /sample/meta/with-fallback/B0FK7RBDFL
+$.events[11803].params.headers[12]	referer: https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[11804].params.headers[3]	:path: /sample/meta/with-fallback/B0FK7RBDFL
+$.events[11804].params.headers[12]	referer: https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe
+$.events[11899].params.headers[1]	content-type: application/x-javascript
+$.events[11899].params.headers[2]	x-cache: Hit from cloudfront
+$.events[11899].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[11899].params.headers[5]	content-encoding: br
+$.events[11899].params.headers[7]	x-amz-ir-id: 7f5d77ad-0744-4a1b-8e1c-f3808244b22a
+$.events[11899].params.headers[16]	via: 1.1 53e2639e63e6da8f48e032b34d6159f2.cloudfront.net (CloudFront)
+$.events[11899].params.headers[21]	x-amz-cf-id: _WAvUztVX76fGA9_GCNl2OmusrDXcikoR85zwkZBAjm27XhAgNOlRg==
+$.events[11910].params.headers[1]	content-type: application/x-javascript
+$.events[11910].params.headers[2]	x-cache: Hit from cloudfront
+$.events[11910].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[11910].params.headers[5]	content-encoding: br
+$.events[11910].params.headers[7]	x-amz-ir-id: 7f5d77ad-0744-4a1b-8e1c-f3808244b22a
+$.events[11910].params.headers[16]	via: 1.1 53e2639e63e6da8f48e032b34d6159f2.cloudfront.net (CloudFront)
+$.events[11910].params.headers[21]	x-amz-cf-id: _WAvUztVX76fGA9_GCNl2OmusrDXcikoR85zwkZBAjm27XhAgNOlRg==
+$.events[11911].params.headers[1]	content-type: application/x-javascript
+$.events[11911].params.headers[2]	x-cache: Hit from cloudfront
+$.events[11911].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[11911].params.headers[5]	content-encoding: br
+$.events[11911].params.headers[7]	x-amz-ir-id: 7f5d77ad-0744-4a1b-8e1c-f3808244b22a
+$.events[11911].params.headers[16]	via: 1.1 53e2639e63e6da8f48e032b34d6159f2.cloudfront.net (CloudFront)
+$.events[11911].params.headers[21]	x-amz-cf-id: _WAvUztVX76fGA9_GCNl2OmusrDXcikoR85zwkZBAjm27XhAgNOlRg==
+$.events[11961].params.request_headers.line	GET /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408 HTTP/1.1\r\n
+$.events[11961].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[11963].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[11967].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[11980].params.key	1/0/_dk_https://amazon.com https://amazon.com https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[11987].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[12087].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[12156].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[12277].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[12294].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fld%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26sw%3D800%26sh%3D600%26vw%3D1440%26vh%3D1113%26m%3D1%26sc%3DVXYAX5J0JDTEWVFG9CDT%26ue%3D3%26bb%3D106%26be%3D396%26pc%3D406%26tc%3D-129%26na_%3D-129%26ul_%3D-1787005333125%26_ul%3D-1787005333125%26rd_%3D-1787005333125%26_rd%3D-1787005333125%26fe_%3D-128%26lk_%3D-127%26_lk%3D-121%26co_%3D-121%26_co%3D-110%26sc_%3D-118%26rq_%3D-109%26rs_%3D-15%26_rs%3D93%26dl_%3D-8%26di_%3D405%26de_%3D406%26_de%3D406%26_dc%3D406%26ld_%3D406%26_ld%3D-1787005333125%26ntd%3D-1%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D406%26t%3D1787005333531%26ctb%3D1%26rt%3D__ld%3A9-5-2-1-2-1-1%26csmtags%3Dfls-na-amazon-com%26viz%3Dvisible%3A3%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:408
+$.events[12348].params.request_headers.line	GET /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416 HTTP/1.1\r\n
+$.events[12348].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12350].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12354].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12367].params.key	1/0/_dk_https://amazon.com https://amazon.com https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12374].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12416].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12417].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dadblk_no%26pc%3D416%26at%3D416%26t%3D1787005333541%26csmtags%3Dadblk_no%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:416
+$.events[12422].params.request_headers.line	GET /images/G/01/kfw/mobile/favicon.ico HTTP/1.1\r\n
+$.events[12422].params.url	https://m.media-amazon.com/images/G/01/kfw/mobile/favicon.ico
+$.events[12424].params.url	https://m.media-amazon.com/images/G/01/kfw/mobile/favicon.ico
+$.events[12428].params.url	https://m.media-amazon.com/images/G/01/kfw/mobile/favicon.ico
+$.events[12438].params.key	1/0/_dk_https://amazon.com https://amazon.com https://m.media-amazon.com/images/G/01/kfw/mobile/favicon.ico
+$.events[12445].params.url	https://m.media-amazon.com/images/G/01/kfw/mobile/favicon.ico
+$.events[12517].params.certificates[1]	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12518].params.certificates[1]	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12532].params.headers[3]	:path: /images/G/01/kfw/mobile/favicon.ico
+$.events[12547].params.certificates[1]	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12548].params.headers[3]	:path: /images/G/01/kfw/mobile/favicon.ico
+$.events[12553].params.certificate	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12606].params.certificates[1]	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12608].params.verified_cert.certificates[1]	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12610].params.verified_cert.certificates[1]	-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZ…
+$.events[12658].params.headers[6]	access-control-request-headers: bugsnag-api-key,bugsnag-sent-at,bugsnag-span-sampling,content-type
+$.events[12678].params.headers[6]	access-control-request-headers: bugsnag-api-key,bugsnag-sent-at,bugsnag-span-sampling,content-type
+$.events[12703].params.headers[1]	content-type: image/x-icon
+$.events[12703].params.headers[3]	content-encoding: br
+$.events[12703].params.headers[5]	x-amz-ir-id: 7506393c-f533-48f1-b297-11a9e128f0b3
+$.events[12703].params.headers[10]	edge-cache-tag: x-cache-367,/images/G/01/kfw/mobile/favicon
+$.events[12703].params.headers[12]	surrogate-key: x-cache-367 /images/G/01/kfw/mobile/favicon
+$.events[12703].params.headers[14]	via: 1.1 79dd0e4c50f89af282c1a73e9fd669be.cloudfront.net (CloudFront)
+$.events[12703].params.headers[19]	x-cache: Hit from cloudfront
+$.events[12703].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[12703].params.headers[21]	x-amz-cf-id: iZUbMDiQFDCtIMqhr50pByKvElgoff3VpBA_t1-qooYCnJrjgny-GQ==
+$.events[12704].params.headers[1]	content-type: image/x-icon
+$.events[12704].params.headers[3]	content-encoding: br
+$.events[12704].params.headers[5]	x-amz-ir-id: 7506393c-f533-48f1-b297-11a9e128f0b3
+$.events[12704].params.headers[10]	edge-cache-tag: x-cache-367,/images/G/01/kfw/mobile/favicon
+$.events[12704].params.headers[12]	surrogate-key: x-cache-367 /images/G/01/kfw/mobile/favicon
+$.events[12704].params.headers[14]	via: 1.1 79dd0e4c50f89af282c1a73e9fd669be.cloudfront.net (CloudFront)
+$.events[12704].params.headers[19]	x-cache: Hit from cloudfront
+$.events[12704].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[12704].params.headers[21]	x-amz-cf-id: iZUbMDiQFDCtIMqhr50pByKvElgoff3VpBA_t1-qooYCnJrjgny-GQ==
+$.events[12856].params.bytes	AQAGygMDcnJx8gSLZwaQkBrxRJHgc0fWFto8tMYRZITXmW/8xmIgl17gngBrTIJa7D3bYviCUfwWJP8/EqtiOiWg6m/w4UYAICoqEwETAhMDwCvAL8AswDDMqcyowBPAFACcAJ0ALwA1AQAGYYqKAAAAEgAAACsABwba2gMEAwMACgAMAAoqKhHsAB0AFwAYRM0ABQADAmgyABcAAAALAAIBAP8BAAEAABsAAwIAAgAAACQAIgAAH2ltYWdlcy1uYS5zc2wtaW1hZ2VzLWFtYXpvbi5jb23+DQC6AAABAAEoACBfwaK5fnYzc8BYSP0ol/cUdfw0CQDiyvdXjwRNrxbrQQCQ3rUkCuqQLunXo/lMnAE4tUoNqh/SF9jblvNgsmA67+LEkLoXdxR9rguH2QNPAV5PbhjSwRGxWvT946Bw0XQnde8zPpn6DzDNLyG9o3H6ci/xZNt0O8x9kb3PXng9XgaBaYJ8UOdZCWVVHtZmjcjOK4dAo74zugE2xKfyLeEeX0jVbJXpr/wOgI4cq0AjxTo8AC0AAgEBAAUABQEAAAAAADME7wTtKioAAQAR7ATAIgBg4jY/jGF614RavIkaUOGQxChS/LnJwnxInqx3k9utsmdXJLIfAvt4EmuWXBOqant3A2xv5DVZZ1QKRjcoGLaW8PuAKCBBzHevfVcPkPRClrouxEGIL9gw4GW8ebNOoNpo5cUXveZzQEs6cyuU9LISnNc99YEz5ICw/NBFy9gLuLOQsAo9FzayW7iilTKeK/GZwUygObxFw6Zw/4ljCVRM7SfJ02O6n/pfVppQyHt5ZNJuhTxJZUU+O5KqvMaPOqgnEnQgT/KUxsnIj2zKqjOkF0NEuuauiLpiqIwNZqAuUsVuvpRNVvJLztc7HEFFp5RUGpksGWZ1FDPBI6COkrOJzuZYCDJb8qc3JMdjKtqOMPKvfmqIb3ejrgGbIct4gXl7iTmA0/NNvTUkdGSpOIeVi7i4jzBMF/N1yYJg7aK5tWdXf6wsyTAtsinMSiOA1oZvMYTMJ/R8jUGRr1e+39A4a3K7+sgkvIyQTTpaTUy06wwRnkuj48uDINLKZptU6gNaetYggxRD6gkqC9lt05MNzyY0Gleol+ogL5QT4SaAlOLAboF6bDukC1qwpfnM4IILDjWOTWCEJhnO8/ZI+XBUaxYbB9K+nrZTLgppvTyi…
+$.events[12933].params.host	session.bugsnag.kindle.amazon.dev
+$.events[12938].params.host	session.bugsnag.kindle.amazon.dev
+$.events[12944].params.debug	CertPathIter cur_path_ =\n CF1BA471FBA9568F7F97021C3447CB61C5A9C0929EB2CAF1E2EA86D842D52CCB CN=bugsnag.kindle.amazon.dev
+$.events[12945].params.debug	CertPathIter cur_path_ =\n CF1BA471FBA9568F7F97021C3447CB61C5A9C0929EB2CAF1E2EA86D842D52CCB CN=bugsnag.kindle.amazon.dev\n 138BDF6E23AC971EB4E626B279DD6A26F057510F1DE394293A5EEA2860DE019B CN=Amazon RSA 2048 M04,O=Amazon,C=US
+$.events[12946].params.debug	CertPathIter returning path:\n CF1BA471FBA9568F7F97021C3447CB61C5A9C0929EB2CAF1E2EA86D842D52CCB CN=bugsnag.kindle.amazon.dev\n 138BDF6E23AC971EB4E626B279DD6A26F057510F1DE394293A5EEA2860DE019B CN=Amazon RSA 2048 M04,O=Amazon,C=US\n 8ECDE6884F3D87B1125BA31AC3FCB13D7016DE7F57CC904FE1CB97C6AE98196E CN=Amazon Root CA 1,O=Amazon,C=US
+$.events[12970].params.host	session.bugsnag.kindle.amazon.dev:443
+$.events[12988].params.headers[1]	:authority: session.bugsnag.kindle.amazon.dev
+$.events[12988].params.headers[6]	access-control-request-headers: bugsnag-api-key,bugsnag-payload-version,bugsnag-sent-at,content-type
+$.events[12989].params.headers[1]	:authority: session.bugsnag.kindle.amazon.dev
+$.events[12989].params.headers[6]	access-control-request-headers: bugsnag-api-key,bugsnag-payload-version,bugsnag-sent-at,content-type
+$.events[13007].params.headers[1]	content-type: application/x-javascript
+$.events[13007].params.headers[2]	x-amz-ir-id: 900793ff-5d3c-4b89-b54b-73be64cd8c4b
+$.events[13007].params.headers[9]	content-encoding: br
+$.events[13007].params.headers[18]	content-length: 3114
+$.events[13008].params.headers[1]	content-type: application/x-javascript
+$.events[13008].params.headers[2]	x-amz-ir-id: 900793ff-5d3c-4b89-b54b-73be64cd8c4b
+$.events[13008].params.headers[9]	content-encoding: br
+$.events[13008].params.headers[18]	content-length: 3114
+$.events[13061].params.headers[1]	access-control-allow-headers: Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For, Bugsnag-Api-Key, Bugsnag-Span-Sampling, Bugsnag-Integrity, Bugsnag-Sent-At
+$.events[13061].params.headers[6]	content-length: 0
+$.events[13062].params.headers[1]	access-control-allow-headers: Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For, Bugsnag-Api-Key, Bugsnag-Span-Sampling, Bugsnag-Integrity, Bugsnag-Sent-At
+$.events[13062].params.headers[6]	content-length: 0
+$.events[13080].params.access-control-allow-headers	accept,authorization,bugsnag-api-key,bugsnag-integrity,bugsnag-sent-at,bugsnag-span-sampling,content-type,origin,referer,user-agent,x-forwarded-for
+$.events[13167].params.headers[4]	content-length: 20
+$.events[13167].params.headers[12]	content-type: application/json
+$.events[13168].params.headers[4]	content-length: 20
+$.events[13168].params.headers[12]	content-type: application/json
+$.events[13195].params.headers[2]	content-type: image/gif
+$.events[13195].params.headers[3]	content-length: 43
+$.events[13195].params.headers[4]	x-amzn-requestid: ddce1ee3-b9f4-4642-86de-d7cc3b6fc64f
+$.events[13196].params.headers[2]	content-type: image/gif
+$.events[13196].params.headers[3]	content-length: 43
+$.events[13196].params.headers[4]	x-amzn-requestid: ddce1ee3-b9f4-4642-86de-d7cc3b6fc64f
+$.events[13243].params.headers[2]	content-type: image/gif
+$.events[13243].params.headers[3]	content-length: 43
+$.events[13243].params.headers[4]	x-amzn-requestid: aa1de2dd-d5af-46dc-aba0-4fc87a7b0457
+$.events[13244].params.headers[2]	content-type: image/gif
+$.events[13244].params.headers[3]	content-length: 43
+$.events[13244].params.headers[4]	x-amzn-requestid: aa1de2dd-d5af-46dc-aba0-4fc87a7b0457
+$.events[13343].params.headers[2]	content-type: image/gif
+$.events[13343].params.headers[3]	content-length: 43
+$.events[13343].params.headers[4]	x-amzn-requestid: 1adc3b9a-2077-4135-97ac-040a5a51f58e
+$.events[13344].params.headers[2]	content-type: image/gif
+$.events[13344].params.headers[3]	content-length: 43
+$.events[13344].params.headers[4]	x-amzn-requestid: 1adc3b9a-2077-4135-97ac-040a5a51f58e
+$.events[13435].params.headers[2]	content-length: 0
+$.events[13435].params.headers[3]	access-control-allow-headers: Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For, Bugsnag-Api-Key, Bugsnag-Payload-Version, Bugsnag-Sent-At, Bugsnag-Integrity
+$.events[13436].params.headers[2]	content-length: 0
+$.events[13436].params.headers[3]	access-control-allow-headers: Origin, Content-Type, Accept, Authorization, User-Agent, Referer, X-Forwarded-For, Bugsnag-Api-Key, Bugsnag-Payload-Version, Bugsnag-Sent-At, Bugsnag-Integrity
+$.events[13445].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[13448].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13448].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13449].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13449].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13452].params.access-control-allow-headers	accept,authorization,bugsnag-api-key,bugsnag-integrity,bugsnag-payload-version,bugsnag-sent-at,content-type,origin,referer,user-agent,x-forwarded-for
+$.events[13453].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[13456].params.host	session.bugsnag.kindle.amazon.dev
+$.events[13457].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[13465].params.url	https://session.bugsnag.kindle.amazon.dev/
+$.events[13473].params.destination	https://session.bugsnag.kindle.amazon.dev
+$.events[13473].params.logical_destination	https://session.bugsnag.kindle.amazon.dev
+$.events[13478].params.host	session.bugsnag.kindle.amazon.dev
+$.events[13481].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[13484].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13484].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13485].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13485].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13489].params.destination	https://session.bugsnag.kindle.amazon.dev
+$.events[13489].params.logical_destination	https://session.bugsnag.kindle.amazon.dev
+$.events[13508].params.headers[1]	:authority: session.bugsnag.kindle.amazon.dev
+$.events[13508].params.headers[4]	content-length: 492
+$.events[13508].params.headers[12]	content-type: application/json
+$.events[13509].params.headers[1]	:authority: session.bugsnag.kindle.amazon.dev
+$.events[13509].params.headers[4]	content-length: 492
+$.events[13509].params.headers[12]	content-type: application/json
+$.events[13536].params.headers[4]	content-type: application/json
+$.events[13536].params.headers[6]	content-length: 21
+$.events[13537].params.headers[4]	content-type: application/json
+$.events[13537].params.headers[6]	content-length: 21
+$.events[13581].params.headers[2]	content-type: application/json
+$.events[13581].params.headers[3]	content-length: 21
+$.events[13582].params.headers[2]	content-type: application/json
+$.events[13582].params.headers[3]	content-length: 21
+$.events[13585].params.key	1/0/_dk_https://amazon.com https://amazon.com https://session.bugsnag.kindle.amazon.dev/
+$.events[13600].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[13603].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13603].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13604].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13604].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13606].params.host	https://session.bugsnag.kindle.amazon.dev
+$.events[13609].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13609].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13610].params.results.aliases[0]	session.bugsnag.kindle.amazon.dev
+$.events[13610].params.results.canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.events[13623].params.bytes	CwARsAAAEawABsYwggbCMIIFqqADAgECAhAG6Q/F7Bjt5sRL/Bp4HGLGMA0GCSqGSIb3DQEBCwUAMDwxCzAJBgNVBAYTAlVTMQ8wDQYDVQQKEwZBbWF6b24xHDAaBgNVBAMTE0FtYXpvbiBSU0EgMjA0OCBNMDQwHhcNMjYwNzI4MDAwMDAwWhcNMjcwMjEwMjM1OTU5WjAeMRwwGgYDVQQDExN1bmFnaS1uYS5hbWF6b24uY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0a6CwvOpM2V/N6FfWkR4H9FtuTjhoaAAk/yZA/W70/7andci+quhdrlHAy4ht61qk62pyt5/C8BNiPWf3pqXWFO0qrWwRh+B6kikfcQdlrWKBEGhQV4I9Td+fV/KCHVAB+ZuCsYD7vgi12sQ9iCtfBUWmbjlKCtra8TWSbPiE1Ll/+q9tANmqzXIC+p58eNtXQbxR5TfXQQo0aMzCmoT7N4bbHVNlgL1QbLXrWvxbtEmqvIfJ3al3L9CUYXHcq9peKe+rWozIIxiXfi0iXd/i/46KT5q9fvKAe2OMhDSLeN0ELZ9sgvtP4manucAmZIiJ6qUQUc88w3/92heMHj9EQIDAQABo4ID3DCCA9gwHwYDVR0jBBgwFoAUH1KSYVaCVH+BZtgdPQqqMlyH3QgwHQYDVR0OBBYEFPqZCas14iIvtho87kwYZ0f0RSqHMIIBDwYDVR0RBIIBBjCCAQKCE3VuYWdpLW5hLmFtYXpvbi5jb22CE3VuYWdpLmFtYXpvbi5jb20ubXiCE3VuYWdpLmFtYXpvbi5jb20uY2+CFnVuYWdpLW5hLmFtYXpvbi5jb20uYnKCD3VuYWdpLmFtYXpvbi5jbIIWdW5hZ2ktbmEuYW1hem9uLmNvbS5teIIYaXB2Ni51bmFnaS1uYS5hbWF6b24uY29tghB1bmFnaS5hbWF6b24uY29tghp1bmFnaS53aG9sZWZvb2RzbWFya2V0LmNvbYITdW5hZ2kuYW1hem9uLmNvbS5icoISdW5hZ2ktbmEuYW1hem9uLmNhgg91bmFnaS5hbWF6b24uY2EwEwYDVR0gBAwwCjAIBgZngQwBAgEwDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMDsGA1UdHwQ0MDIwMKAuoCyG…
+$.events[13624].params.bytes	DwABBAgEAQA9okLuMrMwgEg4E7vg378C5XWyZe15PLWBXQYpCtrt/Y3bd19QyJ6KAqErCGbwOeq0ZAGB51kK9NU3K8etTlt54nODt/Sqqec8eDoDts56+6dOQHQY1mIAGnDp2Tt6zx3YsvZWEnD4JVlU+KQTGIVXJon9C03ayekowhihhFdA7VnCqhhz5Xt1WmnidJVg6t/f+C+szkoV0KFw35iwxEEcA29e5HCMpgkwkSmiYHnbOJprhVBJ5wbMKkjSdPVpfWxMUSBWTlT1P1i/liuI/QsB9674E8Vukgjt8PL0CFW6SMn91iJuHINB6/DrEl4gq1oflmSZfuAe3Fg+Oo2OoB8H
+$.events[13678].params.headers[2]	Content-Length: 477
+$.events[13678].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[13688].params.bytes	CwARsAAAEawABsYwggbCMIIFqqADAgECAhAG6Q/F7Bjt5sRL/Bp4HGLGMA0GCSqGSIb3DQEBCwUAMDwxCzAJBgNVBAYTAlVTMQ8wDQYDVQQKEwZBbWF6b24xHDAaBgNVBAMTE0FtYXpvbiBSU0EgMjA0OCBNMDQwHhcNMjYwNzI4MDAwMDAwWhcNMjcwMjEwMjM1OTU5WjAeMRwwGgYDVQQDExN1bmFnaS1uYS5hbWF6b24uY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0a6CwvOpM2V/N6FfWkR4H9FtuTjhoaAAk/yZA/W70/7andci+quhdrlHAy4ht61qk62pyt5/C8BNiPWf3pqXWFO0qrWwRh+B6kikfcQdlrWKBEGhQV4I9Td+fV/KCHVAB+ZuCsYD7vgi12sQ9iCtfBUWmbjlKCtra8TWSbPiE1Ll/+q9tANmqzXIC+p58eNtXQbxR5TfXQQo0aMzCmoT7N4bbHVNlgL1QbLXrWvxbtEmqvIfJ3al3L9CUYXHcq9peKe+rWozIIxiXfi0iXd/i/46KT5q9fvKAe2OMhDSLeN0ELZ9sgvtP4manucAmZIiJ6qUQUc88w3/92heMHj9EQIDAQABo4ID3DCCA9gwHwYDVR0jBBgwFoAUH1KSYVaCVH+BZtgdPQqqMlyH3QgwHQYDVR0OBBYEFPqZCas14iIvtho87kwYZ0f0RSqHMIIBDwYDVR0RBIIBBjCCAQKCE3VuYWdpLW5hLmFtYXpvbi5jb22CE3VuYWdpLmFtYXpvbi5jb20ubXiCE3VuYWdpLmFtYXpvbi5jb20uY2+CFnVuYWdpLW5hLmFtYXpvbi5jb20uYnKCD3VuYWdpLmFtYXpvbi5jbIIWdW5hZ2ktbmEuYW1hem9uLmNvbS5teIIYaXB2Ni51bmFnaS1uYS5hbWF6b24uY29tghB1bmFnaS5hbWF6b24uY29tghp1bmFnaS53aG9sZWZvb2RzbWFya2V0LmNvbYITdW5hZ2kuYW1hem9uLmNvbS5icoISdW5hZ2ktbmEuYW1hem9uLmNhgg91bmFnaS5hbWF6b24uY2EwEwYDVR0gBAwwCjAIBgZngQwBAgEwDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMDsGA1UdHwQ0MDIwMKAuoCyG…
+$.events[13716].params.headers[2]	Content-Length: 12456
+$.events[13716].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[13740].params.headers[3]	Content-Type: application/json
+$.events[13740].params.headers[4]	Content-Length: 22
+$.events[13740].params.headers[6]	x-amz-rid: BFS8DCAMJK1R3R1AE430
+$.events[13740].params.headers[7]	x-amzn-RequestId: 016362d8-96cc-45a8-8e7e-85932b69b905
+$.events[13740].params.headers[9]	Content-Encoding: gzip
+$.events[13740].params.headers[10]	Access-Control-Expose-Headers: x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date
+$.events[13785].params.headers[1]	content-type: application/json;charset=UTF-8
+$.events[13785].params.headers[6]	x-amz-rid: R171HWZ4Y8NG3AWS056V
+$.events[13785].params.headers[11]	content-encoding: gzip
+$.events[13785].params.headers[12]	content-security-policy: upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/
+$.events[13785].params.headers[14]	x-content-type-options: nosniff
+$.events[13785].params.headers[16]	content-security-policy-report-only: default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/
+$.events[13785].params.headers[18]	x-cache: Miss from cloudfront
+$.events[13785].params.headers[19]	via: 1.1 25ad32b45015b92d33a50547ecf52758.cloudfront.net (CloudFront)
+$.events[13785].params.headers[20]	x-amz-cf-pop: PHX50-P1
+$.events[13785].params.headers[21]	x-amz-cf-id: _6C87XhK-ec7oqKj7BEDNbXbwAiZ4pZBSpfEVMDulZp8a7E1e7SQHw==
+$.events[13786].params.headers[1]	content-type: application/json;charset=UTF-8
+$.events[13786].params.headers[6]	x-amz-rid: R171HWZ4Y8NG3AWS056V
+$.events[13786].params.headers[14]	content-encoding: gzip
+$.events[13786].params.headers[15]	content-security-policy: upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/
+$.events[13786].params.headers[17]	x-content-type-options: nosniff
+$.events[13786].params.headers[19]	content-security-policy-report-only: default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/
+$.events[13786].params.headers[21]	x-cache: Miss from cloudfront
+$.events[13786].params.headers[22]	via: 1.1 25ad32b45015b92d33a50547ecf52758.cloudfront.net (CloudFront)
+$.events[13786].params.headers[23]	x-amz-cf-pop: PHX50-P1
+$.events[13786].params.headers[24]	x-amz-cf-id: _6C87XhK-ec7oqKj7BEDNbXbwAiZ4pZBSpfEVMDulZp8a7E1e7SQHw==
+$.events[13826].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13826].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13827].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13827].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13832].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13832].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13833].params.results.aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13833].params.results.canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.events[13915].params.headers[3]	Content-Type: application/json
+$.events[13915].params.headers[4]	Content-Length: 22
+$.events[13915].params.headers[6]	x-amz-rid: HEFQHJXGXT1AZJNPFXDJ
+$.events[13915].params.headers[7]	x-amzn-RequestId: 035ae0cc-dfdf-47c4-9d9b-6dff6b19db6f
+$.events[13915].params.headers[9]	Content-Encoding: gzip
+$.events[13915].params.headers[10]	Access-Control-Expose-Headers: x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date
+$.events[13967].params.headers[1]	content-type: image/jpeg
+$.events[13967].params.headers[2]	content-length: 23981
+$.events[13967].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[13967].params.headers[6]	x-amz-ir-id: 43ddca0d-7004-41b4-b19a-d084b295ee9e
+$.events[13967].params.headers[16]	via: 1.1 25ad32b45015b92d33a50547ecf52758.cloudfront.net (CloudFront)
+$.events[13967].params.headers[21]	x-cache: Hit from cloudfront
+$.events[13967].params.headers[22]	x-amz-cf-id: gDe8-h5gbwDZA33HZLYIzyuLL60lFc8HFVqOqhb6Z9t7WJfpt3_aRg==
+$.events[14088].params.headers[1]	content-type: image/jpeg
+$.events[14088].params.headers[2]	content-length: 23981
+$.events[14088].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[14088].params.headers[6]	x-amz-ir-id: 43ddca0d-7004-41b4-b19a-d084b295ee9e
+$.events[14088].params.headers[16]	via: 1.1 25ad32b45015b92d33a50547ecf52758.cloudfront.net (CloudFront)
+$.events[14088].params.headers[21]	x-cache: Hit from cloudfront
+$.events[14088].params.headers[22]	x-amz-cf-id: gDe8-h5gbwDZA33HZLYIzyuLL60lFc8HFVqOqhb6Z9t7WJfpt3_aRg==
+$.events[14089].params.headers[1]	content-type: image/jpeg
+$.events[14089].params.headers[2]	content-length: 23981
+$.events[14089].params.headers[3]	x-amz-cf-pop: PHX50-P1
+$.events[14089].params.headers[6]	x-amz-ir-id: 43ddca0d-7004-41b4-b19a-d084b295ee9e
+$.events[14089].params.headers[16]	via: 1.1 25ad32b45015b92d33a50547ecf52758.cloudfront.net (CloudFront)
+$.events[14089].params.headers[21]	x-cache: Hit from cloudfront
+$.events[14089].params.headers[22]	x-amz-cf-id: gDe8-h5gbwDZA33HZLYIzyuLL60lFc8HFVqOqhb6Z9t7WJfpt3_aRg==
+$.events[14131].params.request_headers.line	GET /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699 HTTP/1.1\r\n
+$.events[14131].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14133].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14137].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14154].params.key	1/0/_dk_https://amazon.com https://amazon.com https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14161].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14203].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14204].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D699%26pc%3D699%26at%3D699%26t%3D1787005333824%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:699
+$.events[14220].params.headers[2]	content-type: image/gif
+$.events[14220].params.headers[3]	content-length: 43
+$.events[14220].params.headers[4]	x-amzn-requestid: e3e03cf6-fd45-4ce2-b123-c090c272b203
+$.events[14221].params.headers[2]	content-type: image/gif
+$.events[14221].params.headers[3]	content-length: 43
+$.events[14221].params.headers[4]	x-amzn-requestid: e3e03cf6-fd45-4ce2-b123-c090c272b203
+$.events[14268].params.request_headers.line	GET /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946 HTTP/1.1\r\n
+$.events[14268].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14270].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14274].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14291].params.key	1/0/_dk_https://amazon.com https://amazon.com https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14298].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14328].params.request_headers.line	GET /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946 HTTP/1.1\r\n
+$.events[14328].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14330].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14334].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14351].params.key	1/0/_dk_https://amazon.com https://amazon.com https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14358].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14388].params.request_headers.line	GET /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946 HTTP/1.1\r\n
+$.events[14388].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14390].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14394].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14411].params.key	1/0/_dk_https://amazon.com https://amazon.com https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14418].params.url	https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14460].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14473].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14486].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14487].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14490].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14493].params.headers[3]	:path: /1/batch/1/OP/ATVPDKIKX0DER:142-5454856-5946604:VXYAX5J0JDTEWVFG9CDT$uedata=s:undefined%3Fat%26v%3D0.357670.0%26id%3DVXYAX5J0JDTEWVFG9CDT%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D456%26pc%3D2946%26at%3D2946%26t%3D1787005336071%26pty%3DKindleWebReader%26spty%3DBookCard%26pti%3Dundefined%26tid%3DVXYAX5J0JDTEWVFG9CDT%26aftb%3D1%26lob%3D0:2946
+$.events[14504].params.headers[2]	content-type: image/gif
+$.events[14504].params.headers[3]	content-length: 43
+$.events[14504].params.headers[4]	x-amzn-requestid: 8cacf90d-c1db-435b-815b-e2c2ffb43d7c
+$.events[14505].params.headers[2]	content-type: image/gif
+$.events[14505].params.headers[3]	content-length: 43
+$.events[14505].params.headers[4]	x-amzn-requestid: 8cacf90d-c1db-435b-815b-e2c2ffb43d7c
+$.events[14551].params.headers[2]	content-type: image/gif
+$.events[14551].params.headers[3]	content-length: 43
+$.events[14551].params.headers[4]	x-amzn-requestid: eab06613-e85e-4bd6-9666-44eb5df9bab7
+$.events[14552].params.headers[2]	content-type: image/gif
+$.events[14552].params.headers[3]	content-length: 43
+$.events[14552].params.headers[4]	x-amzn-requestid: eab06613-e85e-4bd6-9666-44eb5df9bab7
+$.events[14596].params.headers[2]	content-type: image/gif
+$.events[14596].params.headers[3]	content-length: 43
+$.events[14596].params.headers[4]	x-amzn-requestid: 91aed78a-ae6d-45b1-9e5e-e027f6158bee
+$.events[14597].params.headers[2]	content-type: image/gif
+$.events[14597].params.headers[3]	content-length: 43
+$.events[14597].params.headers[4]	x-amzn-requestid: 91aed78a-ae6d-45b1-9e5e-e027f6158bee
+$.events[14654].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[14725].params.headers[2]	Content-Length: 7265
+$.events[14725].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[14741].params.headers[3]	Content-Type: application/json
+$.events[14741].params.headers[4]	Content-Length: 22
+$.events[14741].params.headers[6]	x-amz-rid: SDDT4X8MFY0P42VY68C1
+$.events[14741].params.headers[7]	x-amzn-RequestId: 38d0c9da-5ef1-4a38-9d50-2215284e88f3
+$.events[14741].params.headers[9]	Content-Encoding: gzip
+$.events[14741].params.headers[10]	Access-Control-Expose-Headers: x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date
+$.events[14776].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[14899].params.bytes	CwARsAAAEawABsYwggbCMIIFqqADAgECAhAG6Q/F7Bjt5sRL/Bp4HGLGMA0GCSqGSIb3DQEBCwUAMDwxCzAJBgNVBAYTAlVTMQ8wDQYDVQQKEwZBbWF6b24xHDAaBgNVBAMTE0FtYXpvbiBSU0EgMjA0OCBNMDQwHhcNMjYwNzI4MDAwMDAwWhcNMjcwMjEwMjM1OTU5WjAeMRwwGgYDVQQDExN1bmFnaS1uYS5hbWF6b24uY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0a6CwvOpM2V/N6FfWkR4H9FtuTjhoaAAk/yZA/W70/7andci+quhdrlHAy4ht61qk62pyt5/C8BNiPWf3pqXWFO0qrWwRh+B6kikfcQdlrWKBEGhQV4I9Td+fV/KCHVAB+ZuCsYD7vgi12sQ9iCtfBUWmbjlKCtra8TWSbPiE1Ll/+q9tANmqzXIC+p58eNtXQbxR5TfXQQo0aMzCmoT7N4bbHVNlgL1QbLXrWvxbtEmqvIfJ3al3L9CUYXHcq9peKe+rWozIIxiXfi0iXd/i/46KT5q9fvKAe2OMhDSLeN0ELZ9sgvtP4manucAmZIiJ6qUQUc88w3/92heMHj9EQIDAQABo4ID3DCCA9gwHwYDVR0jBBgwFoAUH1KSYVaCVH+BZtgdPQqqMlyH3QgwHQYDVR0OBBYEFPqZCas14iIvtho87kwYZ0f0RSqHMIIBDwYDVR0RBIIBBjCCAQKCE3VuYWdpLW5hLmFtYXpvbi5jb22CE3VuYWdpLmFtYXpvbi5jb20ubXiCE3VuYWdpLmFtYXpvbi5jb20uY2+CFnVuYWdpLW5hLmFtYXpvbi5jb20uYnKCD3VuYWdpLmFtYXpvbi5jbIIWdW5hZ2ktbmEuYW1hem9uLmNvbS5teIIYaXB2Ni51bmFnaS1uYS5hbWF6b24uY29tghB1bmFnaS5hbWF6b24uY29tghp1bmFnaS53aG9sZWZvb2RzbWFya2V0LmNvbYITdW5hZ2kuYW1hem9uLmNvbS5icoISdW5hZ2ktbmEuYW1hem9uLmNhgg91bmFnaS5hbWF6b24uY2EwEwYDVR0gBAwwCjAIBgZngQwBAgEwDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMDsGA1UdHwQ0MDIwMKAuoCyG…
+$.events[14927].params.bytes	FAAAID8DSrStt/Mhd2qeB+hPcu4evFOPOgmc8d+iAlV4emg0
+$.events[14951].params.headers[2]	Content-Length: 864
+$.events[14951].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[14971].params.headers[3]	Content-Type: application/json
+$.events[14971].params.headers[4]	Content-Length: 22
+$.events[14971].params.headers[6]	x-amz-rid: Y61JRRN8YSRCBX08RTB6
+$.events[14971].params.headers[7]	x-amzn-RequestId: b0430c66-a4e4-4f98-9a9f-9c6c731b2f25
+$.events[14971].params.headers[9]	Content-Encoding: gzip
+$.events[14971].params.headers[10]	Access-Control-Expose-Headers: x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date
+$.events[15006].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[15077].params.headers[2]	Content-Length: 4632
+$.events[15077].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[15093].params.headers[3]	Content-Type: application/json
+$.events[15093].params.headers[4]	Content-Length: 22
+$.events[15093].params.headers[6]	x-amz-rid: HX5N5BND188A0XB170Z0
+$.events[15093].params.headers[7]	x-amzn-RequestId: 07d47d47-8e52-40e4-a84a-7f66edda7e86
+$.events[15093].params.headers[9]	Content-Encoding: gzip
+$.events[15093].params.headers[10]	Access-Control-Expose-Headers: x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date
+$.events[15128].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[15199].params.headers[2]	Content-Length: 1096
+$.events[15199].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[15215].params.headers[3]	Content-Type: application/json
+$.events[15215].params.headers[4]	Content-Length: 22
+$.events[15215].params.headers[6]	x-amz-rid: VQ3ESN62E0TE67HMA882
+$.events[15215].params.headers[7]	x-amzn-RequestId: adbed0e4-6ab5-40e8-bed9-d008bf4b8f9b
+$.events[15215].params.headers[9]	Content-Encoding: gzip
+$.events[15215].params.headers[10]	Access-Control-Expose-Headers: x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date
+$.events[15250].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[15321].params.headers[2]	Content-Length: 1882
+$.events[15321].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[15334].params.request_headers.headers[3]	Content-Type: text/plain;charset=UTF-8
+$.events[15405].params.headers[2]	Content-Length: 1358
+$.events[15405].params.headers[6]	Content-Type: text/plain;charset=UTF-8
+$.events[15609].params.servers[3].server	https://clients2.googleusercontent.com
+$.events[15609].params.servers[6].server	https://session.bugsnag.kindle.amazon.dev
+$.polledData[2].altSvcMappings[5].network_anonymization_key	https://googleusercontent.com same_site
+$.polledData[2].altSvcMappings[5].server	https://clients2.googleusercontent.com
+$.polledData[2].hostResolverInfo.cache.entries[5].aliases[0]	clients2.googleusercontent.com
+$.polledData[2].hostResolverInfo.cache.entries[5].aliases[1]	googlehosted.l.googleusercontent.com
+$.polledData[2].hostResolverInfo.cache.entries[5].canonical_names[0]	googlehosted.l.googleusercontent.com
+$.polledData[2].hostResolverInfo.cache.entries[5].hostname	clients2.googleusercontent.com
+$.polledData[2].hostResolverInfo.cache.entries[5].network_anonymization_key	https://googleusercontent.com same_site
+$.polledData[2].hostResolverInfo.cache.entries[11].aliases[0]	d3uye3v7bpwqwr.cloudfront.net
+$.polledData[2].hostResolverInfo.cache.entries[11].canonical_names[0]	d3uye3v7bpwqwr.cloudfront.net
+$.polledData[2].hostResolverInfo.cache.entries[13].aliases[0]	session.bugsnag.kindle.amazon.dev
+$.polledData[2].hostResolverInfo.cache.entries[13].canonical_names[0]	session.bugsnag.kindle.amazon.dev
+$.polledData[2].hostResolverInfo.cache.entries[13].hostname	session.bugsnag.kindle.amazon.dev
+$.polledData[2].spdySessionInfo[0].host_port_pair	clients2.googleusercontent.com:443
+$.polledData[2].spdySessionInfo[0].network_anonymization_key	https://googleusercontent.com same_site
+$.polledData[2].spdySessionInfo[6].host_port_pair	session.bugsnag.kindle.amazon.dev:443

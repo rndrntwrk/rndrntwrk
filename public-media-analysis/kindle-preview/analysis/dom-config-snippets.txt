@@ -1,0 +1,17 @@
+        var sharedUrl = 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL';
+
+---
+
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+
+---
+
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+
+---
+
+        var isSample = false;
+
+---
+
+                var metadataResponse = null;
