@@ -1,0 +1,15 @@
+{
+  "initial_url": "https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe",
+  "before_pages": [
+    "https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe"
+  ],
+  "candidate_count": 1,
+  "outer_html": "<ion-button size=\"small\" class=\"book-card-button book-card-button--secondary ios button button-small button-solid ion-activatable ion-focusable\">Read sample</ion-button>",
+  "opened_popup": true,
+  "networkidle_exception": "TimeoutError('Timeout 30000ms exceeded.')",
+  "final_url": "https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL",
+  "after_pages": [
+    "https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe",
+    "https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL"
+  ]
+}
