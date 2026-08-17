@@ -1,0 +1,21 @@
+HTTP/2 200 
+content-type: text/html;charset=UTF-8
+server: Server
+date: Mon, 17 Aug 2026 23:44:09 GMT
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: MZ0NCB4NNRH0HKWR2JQC
+set-cookie: session-id=139-6677008-6046763; Domain=.amazon.com; Expires=Tue, 01 Jan 2036 08:00:01 GMT; Path=/; Secure
+set-cookie: session-id-time=2082787201l; Domain=.amazon.com; Expires=Tue, 01 Jan 2036 08:00:01 GMT; Path=/; Secure
+content-encoding: gzip
+content-language: en-US
+content-security-policy: frame-ancestors *
+x-content-type-options: nosniff
+x-frame-options: 
+x-xss-protection: 1; mode=block
+vary: accept-encoding,Accept-Encoding,User-Agent
+x-cache: Miss from cloudfront
+via: 1.1 a2eb08d83c216edb471d369425d11dd8.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: SWV3WG-sf3y8X7XM8sDKBFH3MEhlPrqeGWkPzq2Kgo7c9aH3GZFnHg==
+
