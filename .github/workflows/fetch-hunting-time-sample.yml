@@ -1,0 +1,107 @@
+name: Fetch Hunting Time Kindle sample metadata
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-hunting-time-sample.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Fetch public Kindle sample endpoints
+        run: |
+          set -euxo pipefail
+          out=/tmp/hunting-time-kindle
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          meta='https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL'
+          embed='https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+          curl -L --compressed --retry 3 -A "$ua" -c "$out/cookies.txt" -D "$out/card.headers" "$card" -o "$out/card.html" || true
+          curl -L --compressed --retry 3 -A "$ua" -b "$out/cookies.txt" -e "$card" -D "$out/meta.headers" "$meta" -o "$out/meta.body" || true
+          curl -L --compressed --retry 3 -A "$ua" -b "$out/cookies.txt" -e "$card" -D "$out/embed.headers" "$embed" -o "$out/embed.html" || true
+          python - <<'PY'
+          import json, re, urllib.parse, urllib.request
+          from pathlib import Path
+          out=Path('/tmp/hunting-time-kindle')
+          body=out.joinpath('meta.body').read_bytes() if out.joinpath('meta.body').exists() else b''
+          try:
+              obj=json.loads(body)
+              out.joinpath('meta.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+          except Exception as e:
+              out.joinpath('meta.parse-error.txt').write_text(repr(e)+'\n'+body[:1000].decode('utf-8','replace'))
+              obj=None
+          urls=set()
+          def walk(x):
+              if isinstance(x,dict):
+                  for v in x.values(): walk(v)
+              elif isinstance(x,list):
+                  for v in x: walk(v)
+              elif isinstance(x,str):
+                  for u in re.findall(r'https?://[^\s"<>]+',x): urls.add(u.rstrip('\\,}'))
+          if obj is not None: walk(obj)
+          for p in [out/'card.html',out/'embed.html']:
+              if p.exists():
+                  t=p.read_text(errors='replace')
+                  urls.update(re.findall(r'https?://[^\s"<>]+',t))
+          out.joinpath('discovered-urls.txt').write_text('\n'.join(sorted(urls))+'\n')
+          # Fetch only URLs hosted by Amazon/read domains and likely to be sample assets.
+          allowed=('read.amazon.com','m.media-amazon.com','images-na.ssl-images-amazon.com','kindle-digital-delivery.amazon.com')
+          for n,u in enumerate(sorted(urls),1):
+              try:
+                  q=urllib.parse.urlparse(u)
+                  if q.hostname not in allowed: continue
+                  low=u.lower()
+                  if not any(k in low for k in ('sample','content','book','manifest','metadata','image','resource','asset','kindle','media-amazon')): continue
+                  req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Referer':'https://read.amazon.com/'})
+                  with urllib.request.urlopen(req,timeout=30) as r:
+                      data=r.read(20_000_000)
+                      ctype=r.headers.get('content-type','')
+                  suffix='.bin'
+                  if 'json' in ctype: suffix='.json'
+                  elif 'html' in ctype: suffix='.html'
+                  elif 'jpeg' in ctype: suffix='.jpg'
+                  elif 'png' in ctype: suffix='.png'
+                  out.joinpath(f'asset-{n:03d}{suffix}').write_bytes(data)
+                  out.joinpath(f'asset-{n:03d}.url.txt').write_text(u+'\n'+ctype+'\n')
+              except Exception as e:
+                  out.joinpath(f'asset-{n:03d}.error.txt').write_text(u+'\n'+repr(e)+'\n')
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+      - name: Upload Kindle sample capture
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-kindle-sample
+          path: /tmp/hunting-time-kindle
+          if-no-files-found: error
+          retention-days: 1
+      - name: Record artifact coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('public-media-analysis/kindle-sample-run.json').write_text(json.dumps({
+              'run_id': int(os.environ['RUN_ID']),
+              'artifact_id': int(os.environ['ARTIFACT_ID']),
+              'artifact_url': os.environ.get('ARTIFACT_URL',''),
+          },indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/kindle-sample-run.json
+          git commit -m 'research: record Kindle sample artifact'
+          git push origin HEAD:research/public-media-analysis
