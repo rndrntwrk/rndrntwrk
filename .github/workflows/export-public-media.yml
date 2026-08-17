@@ -1,0 +1,32 @@
+name: Export recovered clue evidence
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Inventory evidence
+        run: |
+          find public-media-analysis -maxdepth 3 -type f -print | sort
+      - name: Upload recovered clue evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-clue-evidence
+          path: public-media-analysis
+          if-no-files-found: error
+          retention-days: 7
