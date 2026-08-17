@@ -1,0 +1,85 @@
+name: Probe Hunting Time reader endpoints
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-reader.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Probe public reader endpoints
+        run: |
+          set -euxo pipefail
+          out=/tmp/hunting-time-reader-probes
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" -D "$out/00-card.headers" "$card" -o "$out/00-card.html" || true
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          out=Path('/tmp/hunting-time-reader-probes')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          urls=[
+            ('01-reader-preview','https://read.amazon.com/reader/preview/?asin=B0FK7RBDFL'),
+            ('02-print-book-data','https://read.amazon.com/sample/print/book-data?asin=B0FK7RBDFL'),
+            ('03-karamel-token','https://read.amazon.com/sample/karamel-token?asin=B0FK7RBDFL'),
+            ('04-meta','https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL'),
+            ('05-reader-for','https://read.amazon.com/reader/readerFor?asin=B0FK7RBDFL'),
+            ('06-web-content','https://read.amazon.com/web/content/getFileUrl?asin=B0FK7RBDFL&contentVersion=64363d23&formatVersion=YJ&isSample=true'),
+          ]
+          manifest=[]
+          for name,url in urls:
+              cmd=['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),'-e',card,'-D',str(out/(name+'.headers')),url,'-o',str(out/(name+'.body')),'-w','%{http_code}\t%{url_effective}\t%{content_type}\n']
+              p=subprocess.run(cmd,capture_output=True,text=True)
+              body=out/(name+'.body')
+              manifest.append({'name':name,'url':url,'curl_stdout':p.stdout.strip(),'curl_stderr':p.stderr.strip(),'bytes':body.stat().st_size if body.exists() else 0})
+              if body.exists():
+                  raw=body.read_bytes()
+                  try:
+                      obj=json.loads(raw)
+                      (out/(name+'.pretty.json')).write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+                  except Exception:
+                      pass
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+      - name: Upload probes
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-reader-probes
+          path: /tmp/hunting-time-reader-probes
+          if-no-files-found: error
+          retention-days: 1
+      - name: Record artifact coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('public-media-analysis/reader-probes-run.json').write_text(json.dumps({
+              'run_id': int(os.environ['RUN_ID']),
+              'artifact_id': int(os.environ['ARTIFACT_ID']),
+              'artifact_url': os.environ.get('ARTIFACT_URL',''),
+          },indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/reader-probes-run.json
+          git commit -m 'research: record reader probes artifact'
+          git push origin HEAD:research/public-media-analysis
