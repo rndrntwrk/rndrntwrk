@@ -1,10 +1,10 @@
 HTTP/2 200 
 content-type: application/json;charset=UTF-8
 server: Server
-date: Mon, 17 Aug 2026 22:33:43 GMT
+date: Mon, 17 Aug 2026 22:36:39 GMT
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
-x-amz-rid: 8MXYCPPGSY4D49YCKHG0
+x-amz-rid: 4F58MJHQ6SQM9G4GZVD5
 accept-ch: ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr,sec-ch-ua-full-version-list,viewport-height,sec-ch-viewport-height
 accept-ch-lifetime: 86400
 cache-control: max-age=300
@@ -16,7 +16,7 @@ x-xss-protection: 1;
 content-security-policy-report-only: default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/
 vary: Accept-Encoding,User-Agent
 x-cache: Miss from cloudfront
-via: 1.1 86ad3ad14ba6e4857ea999708a564ff4.cloudfront.net (CloudFront)
-x-amz-cf-pop: EZE50-P3
-x-amz-cf-id: GUu6194c8ow4w4ObWkK6q3qCgpB-swhdkY0p38bt9OArW1c1qyX04w==
+via: 1.1 75fb287bbd6802c169534a069b0fa0d2.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: oCNV84hKNXGQadoDFWMWyx-MhSppwZbXkwkdEVPdWE1Mc4DJXdLOzg==
 
