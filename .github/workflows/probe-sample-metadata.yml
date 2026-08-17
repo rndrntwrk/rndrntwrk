@@ -1,0 +1,40 @@
+name: Probe public Kindle sample metadata
+
+on:
+  push:
+    branches:
+      - research/kindle-preview-analysis
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/kindle-preview-analysis
+      - name: Fetch public sample metadata for all known editions
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/kindle-preview/sample-meta
+          mkdir -p "$out"
+          for asin in B0FK7RBDFL B0FRGB2PMR B0FTM8XPKL; do
+            curl --fail --location --compressed --silent --show-error \
+              --dump-header "$out/$asin.headers" \
+              "https://read.amazon.com/sample/meta/with-fallback/$asin" \
+              -o "$out/$asin.json" || true
+            echo "=== $asin ==="
+            cat "$out/$asin.json" || true
+            echo
+          done
+      - name: Persist responses
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/kindle-preview/sample-meta
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: add public Kindle sample metadata responses'
+          git push origin HEAD:research/kindle-preview-analysis
