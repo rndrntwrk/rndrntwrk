@@ -1,0 +1,52 @@
+name: Public media analysis acquisition
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/public-media-analysis.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Download the twelve public source photographs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HL_pzFfWIAAZ-sl.jpg?name=orig' -o public-media-analysis/clue-01.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HMjsVnIXIAErtZa.jpg?name=orig' -o public-media-analysis/clue-02.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HNB1zr_XYAAFE5N.jpg?name=orig' -o public-media-analysis/clue-03.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HNry7JoWMAAWa7k.jpg?name=orig' -o public-media-analysis/clue-04.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HOPt1B2WkAAPFca.jpg?name=orig' -o public-media-analysis/clue-05.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HOaK9QsWUAACSoS.jpg?name=orig' -o public-media-analysis/clue-06.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HOoHoo5WwAEwo7W.jpg?name=orig' -o public-media-analysis/clue-07.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HOz3TvBWQAAL-X-.jpg?name=orig' -o public-media-analysis/clue-08.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HPDzzLjWQAAf5cZ.jpg?name=orig' -o public-media-analysis/clue-09.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HPSsyANXMAA553S.jpg?name=orig' -o public-media-analysis/clue-10.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HPeSOYwXwAAk2Wk.jpg?name=orig' -o public-media-analysis/clue-11.jpg
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' 'https://pbs.twimg.com/media/HPlSoVUWgAAr50E.jpg?name=orig' -o public-media-analysis/clue-12.jpg
+          test "$(find public-media-analysis -type f -name 'clue-*.jpg' | wc -l)" -eq 12
+          sha256sum public-media-analysis/clue-*.jpg > public-media-analysis/SHA256SUMS
+          file public-media-analysis/clue-*.jpg > public-media-analysis/FILE_TYPES
+
+      - name: Persist the exact public files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis
+          git commit -m 'research: persist twelve public source photographs'
+          git push origin HEAD:research/public-media-analysis
