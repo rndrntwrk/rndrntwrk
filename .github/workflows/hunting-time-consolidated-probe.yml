@@ -1,0 +1,124 @@
+name: Hunting Time consolidated Amazon probe
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/hunting-time-consolidated-probe.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+      - name: Probe pages and Search Inside
+        run: |
+          set -euxo pipefail
+          out=/tmp/hunting-time-consolidated
+          rm -rf "$out"
+          mkdir -p "$out/pages" "$out/search" "$out/images"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" -D "$out/card.headers" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' -D "$out/book-data.headers" "$base/book-data?asin=B0FK7RBDFL" -o "$out/book-data.json"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' -D "$out/token.headers" 'https://read.amazon.com/sample/karamel-token?asin=B0FK7RBDFL' -o "$out/karamel-token.json"
+          python - <<'PY'
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+          out=Path('/tmp/hunting-time-consolidated')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          cookies=str(out/'cookies.txt')
+          summary={'pages':[],'search':[]}
+          def curl_json(url, body, headers):
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',cookies,'-c',cookies,'-e',card,'-H','Accept: application/json','-D',str(headers),url,'-o',str(body),'-w','%{http_code}\t%{url_effective}\t%{content_type}\n'],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              rec={'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw)}
+              try:
+                  obj=json.loads(raw)
+                  rec['json']=obj
+                  body.with_suffix('.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+              except Exception as e:
+                  obj=None; rec['parse_error']=repr(e); rec['prefix']=raw[:1000].decode('utf-8','replace')
+              return rec,obj
+          # Try all plausible request contracts for the five clue pages exposed by Look Inside.
+          for page in [14,19,21,24,32]:
+              for vi,params in enumerate([
+                  {'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':str(page),'token':'null'},
+                  {'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':str(page)},
+                  {'asin':'B0FK7RBDFL','page':str(page),'token':'null'},
+                  {'asin':'B0FK7RBDFL','page':str(page)},
+              ],1):
+                  url='https://read.amazon.com/sample/print/go-to-page?'+urllib.parse.urlencode(params)
+                  body=out/'pages'/f'page-{page:03d}-v{vi}.body'
+                  rec,obj=curl_json(url,body,out/'pages'/f'page-{page:03d}-v{vi}.headers')
+                  rec.update({'page':page,'variant':vi,'params':params})
+                  if isinstance(obj,dict):
+                      urls=obj.get('jumboImageUrls') or obj.get('largeImageUrls') or {}
+                      iterable=urls.items() if isinstance(urls,dict) else enumerate(urls,1) if isinstance(urls,list) else []
+                      for sub,u in iterable:
+                          if not u: continue
+                          ip=out/'images'/f'page-{page:03d}-v{vi}-{sub}.jpg'
+                          q=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-e',card,u,'-o',str(ip),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+                          rec.setdefault('assets',[]).append({'sub':str(sub),'url':u,'status':q.stdout.strip(),'stderr':q.stderr.strip(),'bytes':ip.stat().st_size if ip.exists() else 0,'file':ip.name})
+                  summary['pages'].append(rec)
+          # Probe Search Inside with several known terms and request variants.
+          for query in ['time','wall','radio','soldier','apology','price','helicopter','watch','door','wallet','drone','defender','memory','phrase','bitcoin']:
+              for vi,params in enumerate([
+                  {'asin':'B0FK7RBDFL','query':query,'token':'null','page':'1'},
+                  {'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','query':query,'token':'null','page':'1'},
+                  {'asin':'B0FK7RBDFL','query':query,'page':'1'},
+              ],1):
+                  url='https://read.amazon.com/sample/print/position-data?'+urllib.parse.urlencode(params)
+                  body=out/'search'/f'{query}-v{vi}.body'
+                  rec,obj=curl_json(url,body,out/'search'/f'{query}-v{vi}.headers')
+                  rec.update({'query':query,'variant':vi,'params':params})
+                  summary['search'].append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+      - name: Upload consolidated probe
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-consolidated-probe
+          path: /tmp/hunting-time-consolidated
+          if-no-files-found: error
+          retention-days: 1
+      - name: Record artifact coordinates with retry-safe push
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          mkdir -p /tmp/runmeta
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('/tmp/runmeta/consolidated-probe-run.json').write_text(json.dumps({
+              'run_id': int(os.environ['RUN_ID']),
+              'artifact_id': int(os.environ['ARTIFACT_ID']),
+              'artifact_url': os.environ.get('ARTIFACT_URL',''),
+          },indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis
+            cp /tmp/runmeta/consolidated-probe-run.json public-media-analysis/consolidated-probe-run.json
+            git add public-media-analysis/consolidated-probe-run.json
+            git commit -m 'research: record consolidated Amazon probe artifact' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
