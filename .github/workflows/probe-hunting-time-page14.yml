@@ -1,0 +1,80 @@
+name: Probe Hunting Time page 14
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-page14.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Probe page 14 and persist raw response
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/page14-probe
+          rm -rf "$out"
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" -D "$out/card.headers" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -D "$out/book-data.headers" "$base/book-data?asin=B0FK7RBDFL" -o "$out/book-data.json"
+          for query in \
+            'asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=14&token=null' \
+            'asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=14' \
+            'asin=B0FK7RBDFL&page=14&token=null' \
+            'asin=B0FK7RBDFL&page=14'; do
+            key=$(printf '%s' "$query" | sha256sum | cut -c1-8)
+            curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" \
+              -H 'Accept: application/json' \
+              -D "$out/go-$key.headers" "$base/go-to-page?$query" -o "$out/go-$key.body" \
+              -w '%{http_code}\t%{url_effective}\t%{content_type}\n' > "$out/go-$key.status" || true
+            printf '%s\n' "$query" > "$out/go-$key.query"
+          done
+          python - <<'PY'
+          import json,re,subprocess
+          from pathlib import Path
+          out=Path('public-media-analysis/page14-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          summary=[]
+          for p in sorted(out.glob('go-*.body')):
+              rec={'file':p.name,'bytes':p.stat().st_size,'status':p.with_suffix('.status').read_text(errors='replace') if p.with_suffix('.status').exists() else ''}
+              raw=p.read_bytes()
+              try:
+                  obj=json.loads(raw)
+                  rec['json']=obj
+                  p.with_suffix('.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+                  urls=[]
+                  def walk(x):
+                      if isinstance(x,dict):
+                          for v in x.values(): walk(v)
+                      elif isinstance(x,list):
+                          for v in x: walk(v)
+                      elif isinstance(x,str) and x.startswith('http'): urls.append(x)
+                  walk(obj)
+                  for i,u in enumerate(urls,1):
+                      ip=out/f'{p.stem}-asset-{i:02d}'
+                      q=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-e',card,u,'-o',str(ip),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+                      rec.setdefault('assets',[]).append({'url':u,'status':q.stdout.strip(),'bytes':ip.stat().st_size if ip.exists() else 0,'file':ip.name})
+              except Exception as e:
+                  rec['parse_error']=repr(e)
+                  rec['prefix']=raw[:1000].decode('utf-8','replace')
+              summary.append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist page 14 probe response'
+          git push origin HEAD:research/public-media-analysis
