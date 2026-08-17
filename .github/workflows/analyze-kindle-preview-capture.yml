@@ -1,0 +1,104 @@
+name: Analyze public Kindle preview capture
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Extract DOM text and network endpoints
+        run: |
+          set -euo pipefail
+          root=public-media-analysis/kindle-preview
+          out=$root/analysis
+          mkdir -p "$out"
+          python - <<'PY'
+          import html, json, re
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          root=Path('public-media-analysis/kindle-preview')
+          out=root/'analysis'; out.mkdir(exist_ok=True)
+
+          dom=(root/'card.dom.html').read_text(errors='replace')
+          # Remove scripts/styles, then tags; preserve enough text to identify the rendered state.
+          visible=re.sub(r'(?is)<(script|style|template).*?>.*?</\1>', ' ', dom)
+          visible=re.sub(r'(?s)<[^>]+>', '\n', visible)
+          visible=html.unescape(visible)
+          visible='\n'.join(line.strip() for line in visible.splitlines() if line.strip())
+          (out/'dom-visible-text.txt').write_text(visible+'\n')
+
+          data=json.loads((root/'netlog.json').read_text(errors='replace'))
+          urls=set(); strings=[]
+          def walk(x, path='$'):
+              if isinstance(x, dict):
+                  for k,v in x.items(): walk(v, f'{path}.{k}')
+              elif isinstance(x, list):
+                  for i,v in enumerate(x): walk(v, f'{path}[{i}]')
+              elif isinstance(x, str):
+                  strings.append((path,x))
+                  for u in re.findall(r'https?://[^\s"<>\\]+', x):
+                      urls.add(u.rstrip('),;]'))
+          walk(data)
+          ordered=sorted(urls, key=lambda u:(urlsplit(u).netloc,u))
+          (out/'netlog-urls.txt').write_text('\n'.join(ordered)+'\n')
+          hosts={}
+          for u in ordered: hosts[urlsplit(u).netloc]=hosts.get(urlsplit(u).netloc,0)+1
+          (out/'netlog-hosts.txt').write_text('\n'.join(f'{n:5d} {h}' for h,n in sorted(hosts.items(), key=lambda kv:(-kv[1],kv[0])))+'\n')
+
+          keys=('b0fk7rb­dfl'.replace('\u00ad',''),'sample','manifest','metadata','book','content','fragment','reader','kindle','asin','srs','annotation','location','resource','download','cloudfront','s3.amazonaws','amz','kfw')
+          rows=[]
+          for p,s in strings:
+              low=s.lower()
+              if any(k in low for k in keys):
+                  s=s.replace('\r','\\r').replace('\n','\\n')
+                  if len(s)>1200: s=s[:1200]+'…'
+                  rows.append(f'{p}\t{s}')
+          (out/'netlog-keyword-context.txt').write_text('\n'.join(rows)+'\n')
+
+          # Extract inline JS assignments and JSON-like configuration around the ASIN.
+          patterns=[r'(?i).{0,500}B0FK7RBDFL.{0,1500}',r'(?i).{0,500}isSample.{0,1000}',r'(?i).{0,500}metadataResponse.{0,2000}']
+          snippets=[]
+          for pat in patterns:
+              for m in re.finditer(pat,dom): snippets.append(m.group(0))
+          (out/'dom-config-snippets.txt').write_text('\n\n---\n\n'.join(snippets)+'\n')
+          PY
+          find "$out" -type f -printf '%f %s bytes\n' | sort
+      - name: Capture and OCR the rendered public card
+        run: |
+          set -euo pipefail
+          root=public-media-analysis/kindle-preview
+          out=$root/analysis
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          timeout 90s "$CHROME" --headless=new --no-sandbox --disable-gpu --window-size=1440,1200 \
+            --virtual-time-budget=30000 --screenshot="$root/card-latest.png" "$card" >/dev/null 2>&1 || true
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr >/dev/null
+          tesseract "$root/card-latest.png" "$out/card-ocr" 2>/dev/null || true
+          file "$root/card-latest.png" > "$out/card-file.txt" || true
+          cat "$out/card-ocr.txt" || true
+      - name: Persist compact diagnostics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/kindle-preview/analysis
+          git diff --cached --quiet && exit 0
+          git commit -m 'research: add Kindle preview endpoint analysis'
+          git push origin HEAD:research/public-media-analysis
+      - name: Upload rendered card
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-kindle-card-render
+          path: public-media-analysis/kindle-preview/card-latest.png
+          retention-days: 7
