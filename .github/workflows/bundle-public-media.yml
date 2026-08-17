@@ -1,0 +1,26 @@
+name: Bundle public media evidence
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/bundle-public-media.yml
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Upload recovered evidence set
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-media-evidence
+          path: public-media-analysis
+          if-no-files-found: error
+          retention-days: 1
