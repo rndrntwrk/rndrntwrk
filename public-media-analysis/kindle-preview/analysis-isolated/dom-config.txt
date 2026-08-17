@@ -1,0 +1,482 @@
+13.9,15.6,17.6,19.8,22.3,25.0,28.2,31.7,35.7,40.1,45.2,50.8]}};
+            
+            
+        
+        
+            
+                var kfwDisabledFeatures = [];
+            
+            
+        
+        
+            
+            
+                var bookMetadata = null;
+            
+        
+        
+            
+            
+                var karamelToken = null;
+            
+        
+        
+            
+            
+                var startReadingResponse = null;
+            
+        
+        
+            
+            
+                var metadataResponse = null;
+            
+        
+        var isSample = false;
+        var sharedUrl = 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL';
+        var kindleDeepLinksURL = '';
+        var ingressPointReturnBackURL = '';
+        var ingressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-i
+
+---
+
+gressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-128x128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-precomposed.png">
+    <link rel="icon" sizes="32x3
+
+---
+
+ingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-128x128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-precomposed.png">
+    <link rel="icon" sizes="32x32" href="https://m.media-amazon.com/images/G/01/kfw/mobile/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x1
+
+---
+
+":"/","allowContactUs":true,"allowLinkToStore":true,"aaMenuConfig":{"defaultFontSizeIndex":5,"defaultMargin":"narrow","fontSizes":[11.0,12.3,13.9,15.6,17.6,19.8,22.3,25.0,28.2,31.7,35.7,40.1,45.2,50.8]}};
+            
+            
+        
+        
+            
+                var kfwDisabledFeatures = [];
+            
+            
+        
+        
+            
+            
+                var bookMetadata = null;
+            
+        
+        
+            
+            
+                var karamelToken = null;
+            
+        
+        
+            
+            
+                var startReadingResponse = null;
+            
+        
+        
+            
+            
+                var metadataResponse = null;
+            
+        
+        var isSample = false;
+        var sharedUrl = 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL';
+        var kindleDeepLinksURL = '';
+        var ingressPointReturnBackURL = '';
+        var ingressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-to
+
+---
+
+Config":{"defaultFontSizeIndex":5,"defaultMargin":"narrow","fontSizes":[11.0,12.3,13.9,15.6,17.6,19.8,22.3,25.0,28.2,31.7,35.7,40.1,45.2,50.8]}};
+            
+            
+        
+        
+            
+                var kfwDisabledFeatures = [];
+            
+            
+        
+        
+            
+            
+                var bookMetadata = null;
+            
+        
+        
+            
+            
+                var karamelToken = null;
+            
+        
+        
+            
+            
+                var startReadingResponse = null;
+            
+        
+        
+            
+            
+                var metadataResponse = null;
+            
+        
+        var isSample = false;
+        var sharedUrl = 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL';
+        var kindleDeepLinksURL = '';
+        var ingressPointReturnBackURL = '';
+        var ingressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/
+
+---
+
+n=B0FK7RBDFL';
+        var kindleDeepLinksURL = '';
+        var ingressPointReturnBackURL = '';
+        var ingressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-128x128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="https:/
+
+---
+
+":5,"defaultMargin":"narrow","fontSizes":[11.0,12.3,13.9,15.6,17.6,19.8,22.3,25.0,28.2,31.7,35.7,40.1,45.2,50.8]}};
+            
+            
+        
+        
+            
+                var kfwDisabledFeatures = [];
+            
+            
+        
+        
+            
+            
+                var bookMetadata = null;
+            
+        
+        
+            
+            
+                var karamelToken = null;
+            
+        
+        
+            
+            
+                var startReadingResponse = null;
+            
+        
+        
+            
+            
+                var metadataResponse = null;
+            
+        
+        var isSample = false;
+        var sharedUrl = 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL';
+        var kindleDeepLinksURL = '';
+        var ingressPointReturnBackURL = '';
+        var ingressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-114x11
+
+---
+
+ var ingressPointReturnBackURL = '';
+        var ingressPointsMetricPrefix = '';
+        window.ue_domain = 'prod';
+        window.ue_realm = 'USAmazon';
+        window.clientLoggingUrl = 'https://oq5icg0pf5.execute-api.us-east-1.amazonaws.com/prod/v1/log';
+        window.platform = 'DESKTOP';
+        window.device = 'DESKTOP';
+        window.envConfig = {
+            customerId: 'NOT_LOGGED_IN',
+            eelEndpoint: 'https://unagi-na.amazon.com/1/events/com.amazon.eel.KindleFastMetrics.Prod.KWRP.fm'
+        };
+        window.notebookInfo = {
+            isNotebook: false,
+            marketplaceId: '',
+        };
+        window.bookCardInfo = {
+            isBookCard: true,
+            sharedUrl: 'https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL'
+        };
+    </script>
+
+    
+    
+        <meta property="og:url" content="https://read.amazon.com/kp/embed/?asin=B0FK7RBDFL">
+    
+    
+    
+    
+
+    <title>Kindle</title>
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-128x128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="https://m.media-amazon.com/images/G/01/kfw/mobile/apple-touch-icon
