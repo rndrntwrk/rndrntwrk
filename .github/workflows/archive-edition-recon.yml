@@ -1,0 +1,91 @@
+name: Recover Genesis edition metadata
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/archive-edition-recon.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Query public archives and live metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/edition-recon
+          mkdir -p "$out"
+          UA='Mozilla/5.0 (compatible; public bibliographic research)'
+          curl -fsSL --retry 3 -A "$UA" \
+            'https://web.archive.org/cdx/search/cdx?url=huntingtimenovel.com/*&output=json&filter=statuscode:200&fl=timestamp,original,mimetype,statuscode,digest&collapse=digest&from=2025&to=2026' \
+            -o "$out/cdx.json" || true
+          curl -fsSL --retry 3 -A "$UA" \
+            'https://archive.org/wayback/available?url=https%3A%2F%2Fwww.huntingtimenovel.com%2F&timestamp=20260715' \
+            -o "$out/available-20260715.json" || true
+          curl -fsSL --retry 3 -A "$UA" \
+            'https://www.huntingtimenovel.com/' -o "$out/live-home.html" || true
+          curl -fsSL --retry 3 -A "$UA" \
+            'https://www.huntingtimenovel.com/sitemap.xml' -o "$out/sitemap.xml" || true
+          curl -fsSL --retry 3 -A "$UA" \
+            'https://www.huntingtimenovel.com/robots.txt' -o "$out/robots.txt" || true
+          python - <<'PY'
+          import json, pathlib, re, urllib.parse, urllib.request
+          out=pathlib.Path('public-media-analysis/edition-recon')
+          summary={}
+          cdx=out/'cdx.json'
+          rows=[]
+          if cdx.exists() and cdx.stat().st_size:
+              try:
+                  data=json.loads(cdx.read_text(errors='replace'))
+                  if isinstance(data,list) and data:
+                      head=data[0]
+                      for row in data[1:]: rows.append(dict(zip(head,row)))
+              except Exception as e: summary['cdx_error']=repr(e)
+          summary['capture_count']=len(rows)
+          summary['captures']=rows
+          amazon=[]
+          for row in rows:
+              if row.get('mimetype')!='text/html': continue
+              ts=row['timestamp']; original=row['original']
+              replay=f'https://web.archive.org/web/{ts}id_/{original}'
+              try:
+                  req=urllib.request.Request(replay,headers={'User-Agent':'Mozilla/5.0'})
+                  with urllib.request.urlopen(req,timeout=30) as r: html=r.read().decode('utf-8','replace')
+                  name=f"snapshot-{ts}.html"
+                  (out/name).write_text(html)
+                  for url in re.findall(r'https?://[^\"\'<> ]+',html):
+                      if 'amazon.' in url or 'amzn.' in url: amazon.append({'timestamp':ts,'url':url})
+              except Exception as e:
+                  summary.setdefault('snapshot_errors',[]).append({'timestamp':ts,'url':original,'error':repr(e)})
+          live=(out/'live-home.html').read_text(errors='replace') if (out/'live-home.html').exists() else ''
+          for url in re.findall(r'https?://[^\"\'<> ]+',live):
+              if 'amazon.' in url or 'amzn.' in url: amazon.append({'timestamp':'live','url':url})
+          # Normalize escaped JSON slashes and HTML entities enough for ASIN discovery.
+          raw='\n'.join(x['url'] for x in amazon)+"\n"+live
+          asins=sorted(set(re.findall(r'(?i)(?:/dp/|/gp/product/|asin[=:/%22]+)([A-Z0-9]{10})',raw)))
+          summary['amazon_urls']=amazon
+          summary['asins']=asins
+          (out/'summary.json').write_text(json.dumps(summary,indent=2))
+          print(json.dumps(summary,indent=2)[:20000])
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE-INVENTORY.txt"
+      - name: Persist public-research outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/edition-recon
+          git commit -m 'research: persist Genesis edition metadata'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
