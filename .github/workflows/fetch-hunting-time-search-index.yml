@@ -1,0 +1,92 @@
+name: Fetch Hunting Time public sample search index
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/fetch-hunting-time-search-index.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Fetch and decrypt public sample search index
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/search-index
+          rm -rf "$out"
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          endpoint='https://read.amazon.com/service/web/content/getSearchIndex?asin=B0FK7RBDFL&contentVersion=64363d23&formatVersion=YJ&facet=YJ'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' -D "$out/index-info.headers" "$endpoint" -o "$out/index-info.json"
+          python - <<'PY'
+          import base64,json,subprocess
+          from pathlib import Path
+          out=Path('public-media-analysis/search-index')
+          info=json.loads((out/'index-info.json').read_text())
+          (out/'index-info.pretty.json').write_text(json.dumps(info,indent=2,ensure_ascii=False))
+          url=info.get('s3Url')
+          if url:
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS',url,'-o',str(out/'index.encrypted'),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+              (out/'index-download.status').write_text(p.stdout+p.stderr)
+          # Try the advertised crypto method using openssl-compatible AES modes.
+          enc=out/'index.encrypted'
+          if enc.exists():
+              key=info.get('decryptionKey','')
+              iv=info.get('decryptionIV','')
+              method=info.get('decryptionMethod','')
+              (out/'crypto-summary.json').write_text(json.dumps({'method':method,'key_len_b64':len(key),'iv_len_b64':len(iv),'encrypted_bytes':enc.stat().st_size},indent=2))
+              for name,val in [('key',key),('iv',iv)]:
+                  try: (out/f'{name}.bin').write_bytes(base64.b64decode(val))
+                  except Exception as e: (out/f'{name}.error.txt').write_text(repr(e))
+          PY
+          python - <<'PY'
+          import json,base64
+          from pathlib import Path
+          out=Path('public-media-analysis/search-index')
+          info=json.loads((out/'index-info.json').read_text())
+          enc=(out/'index.encrypted').read_bytes() if (out/'index.encrypted').exists() else b''
+          key=base64.b64decode(info.get('decryptionKey','')) if info.get('decryptionKey') else b''
+          iv=base64.b64decode(info.get('decryptionIV','')) if info.get('decryptionIV') else b''
+          attempts=[]
+          if enc and key and iv:
+              try:
+                  from cryptography.hazmat.primitives.ciphers import Cipher,algorithms,modes
+                  from cryptography.hazmat.primitives import padding
+                  candidates=[]
+                  # Advertised indexes have historically used AES-CBC or AES-CTR.
+                  if len(iv)>=16:
+                      candidates += [('aes-cbc',modes.CBC(iv[:16])),('aes-ctr',modes.CTR(iv[:16]))]
+                  for name,mode in candidates:
+                      try:
+                          dec=Cipher(algorithms.AES(key),mode).decryptor().update(enc)+Cipher(algorithms.AES(key),mode).decryptor().finalize()
+                      except Exception as e:
+                          attempts.append({'mode':name,'error':repr(e)}); continue
+                      variants=[('raw',dec)]
+                      if name=='aes-cbc':
+                          try:
+                              unpad=padding.PKCS7(128).unpadder(); variants.append(('unpad',unpad.update(dec)+unpad.finalize()))
+                          except Exception as e: attempts.append({'mode':name+'-unpad','error':repr(e)})
+                      for suffix,data in variants:
+                          p=out/f'index.{name}.{suffix}.bin'; p.write_bytes(data)
+                          attempts.append({'mode':name+'-'+suffix,'bytes':len(data),'prefix_hex':data[:32].hex(),'prefix_text':data[:200].decode('utf-8','replace')})
+              except Exception as e:
+                  attempts.append({'crypto_import_error':repr(e)})
+          (out/'decrypt-attempts.json').write_text(json.dumps(attempts,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist public sample search index'
+          git push origin HEAD:research/hunting-time-amazon-probe
