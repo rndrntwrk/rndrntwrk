@@ -1,0 +1,69 @@
+name: Fetch clue tweet metadata
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-clue-tweet-json.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Fetch public metadata mirrors
+        shell: bash
+        run: |
+          set -u
+          mkdir -p public-media-analysis/tweet-metadata
+          ids=(
+            2071632285951226106 2074168998938210563 2076705716501610744
+            2079242430499487893 2081779146196439527 2082504700125966650
+            2083486983142142452 2084315859770872026 2085434753092653555
+            2086490186888986672 2087297821921640942 2087893684633141356
+          )
+          for id in "${ids[@]}"; do
+            for source in fx vx; do
+              case "$source" in
+                fx) url="https://api.fxtwitter.com/status/$id" ;;
+                vx) url="https://api.vxtwitter.com/status/$id" ;;
+              esac
+              curl -sS -L --max-time 30 -A 'Mozilla/5.0' -D "public-media-analysis/tweet-metadata/${id}-${source}.headers" "$url" -o "public-media-analysis/tweet-metadata/${id}-${source}.json" || true
+            done
+          done
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path('public-media-analysis/tweet-metadata')
+          rows=[]
+          for p in sorted(root.glob('*.json')):
+              raw=p.read_text(errors='replace')
+              row={'file':p.name,'bytes':len(raw),'prefix':raw[:160]}
+              try:
+                  d=json.loads(raw)
+                  row['json']=True
+                  tweet=d.get('tweet',d) if isinstance(d,dict) else {}
+                  row['text']=tweet.get('text') if isinstance(tweet,dict) else None
+                  media=tweet.get('media',{}) if isinstance(tweet,dict) else {}
+                  row['media']=media
+              except Exception as e:
+                  row['json']=False; row['error']=str(e)
+              rows.append(row)
+          (root/'summary.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          PY
+      - name: Persist metadata
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/tweet-metadata
+          git commit -m 'research: persist public clue tweet metadata' || exit 0
+          git push origin HEAD:research/public-media-analysis
