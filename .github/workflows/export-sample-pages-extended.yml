@@ -18,32 +18,50 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: research/public-media-analysis
+          fetch-depth: 0
+      - name: Persist run identifier first
+        run: |
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/latest-sample-export-run-id.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/latest-sample-export-run-id.txt
+          git commit -m 'research: record extended sample export run [skip ci]'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
       - name: Download legally exposed sample pages
+        continue-on-error: true
         run: |
           python - <<'PY'
-          import json, pathlib, urllib.request
+          import json, pathlib, urllib.request, urllib.error
           root = pathlib.Path('public-media-analysis')
           out = root / 'sample-pages-extended'
           out.mkdir(exist_ok=True)
           window = json.load(open(root / 'sample-pages' / 'page-window.json'))
-          urls = {int(k): v for k, v in window['largeImageUrls'].items()}
+          urls = {int(k): v for k, v in window.get('largeImageUrls', {}).items()}
           summary = json.load(open(root / 'page-map' / 'summary.json'))
           for req in summary.get('page_requests', []):
               if str(req.get('params', {}).get('page')) == '58':
-                  urls[58] = req.get('json', {}).get('largeImageUrls', {}).get('58')
-                  if urls[58]:
+                  candidate = (req.get('json') or {}).get('largeImageUrls', {}).get('58')
+                  if candidate:
+                      urls[58] = candidate
                       break
+          report=[]
           for page, url in sorted(urls.items()):
-              if not url:
-                  continue
               dest = out / f'page-{page:03d}.jpg'
               try:
-                  with urllib.request.urlopen(url, timeout=30) as response:
-                      dest.write_bytes(response.read())
-                  print(page, dest.stat().st_size)
+                  request=urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0'})
+                  with urllib.request.urlopen(request, timeout=45) as response:
+                      body=response.read()
+                  dest.write_bytes(body)
+                  report.append({'page':page,'ok':True,'bytes':len(body)})
+                  print('OK',page,len(body))
               except Exception as exc:
-                  print('FAILED', page, repr(exc))
+                  report.append({'page':page,'ok':False,'error':repr(exc)})
+                  print('FAILED',page,repr(exc))
+          (out/'download-report.json').write_text(json.dumps(report,indent=2))
           PY
+      - name: Inventory pages
+        run: find public-media-analysis/sample-pages-extended -maxdepth 1 -type f -printf '%f %s bytes\n' | sort
       - name: Upload extended sample pages
         uses: actions/upload-artifact@v4
         with:
@@ -51,11 +69,3 @@ jobs:
           path: public-media-analysis/sample-pages-extended
           retention-days: 1
           if-no-files-found: error
-      - name: Persist run identifier
-        run: |
-          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/latest-sample-export-run-id.txt
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public-media-analysis/latest-sample-export-run-id.txt
-          git commit -m 'research: record extended sample export run [skip ci]'
-          git push origin HEAD:research/public-media-analysis
