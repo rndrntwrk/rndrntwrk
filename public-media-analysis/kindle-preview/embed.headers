@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 22:01:46 GMT
+date: Tue, 18 Aug 2026 22:07:17 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: KQ8EXW31CKTX6RF27821
+x-amz-rid: KNQW1ZHPP7G20BGEJ8R5
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 6eb1ef8dae64848e6a3aaafe9f5944b6.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: VvpLRGQc9KYPBnTLqSjnNOMcP0Je7rYL6mFunD0F_stnMK8aTGQ3Pw==
+via: 1.1 7ba8238566c8641cae9d38ebcb67e0e8.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: 1kid4sVrsJkhFCx2sP_-SGVoaIB52vR40HblHCT_30KDQTQKRMmo_Q==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 22:01:46 GMT
+Date: Tue, 18 Aug 2026 22:07:17 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 3c29554e84d0b58b399e86c50095b520.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: ORD56-P11
+Via: 1.1 3578d122de1401ebc52a7afd35dd5d0c.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD61-P10
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: dKLkAn-M-miIONT7NxjTk2tuf6970qrzIj7efNlaNP7sBFVawAREMg==
+X-Amz-Cf-Id: SZG9ZzW9goIRMjvmkwtV5UK31289W71xEl7wRbRG9L3WhNy7VNu6hA==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 22:01:46 GMT
+date: Tue, 18 Aug 2026 22:07:17 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: V1VCFHBA91PXVNTA6EFN
+x-amz-rid: 54615RQAZJ0ZBYBGX92M
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 acc23e269ef9b6787a21138c113a9414.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD56-P11
+via: 1.1 0f733baa3281c4651a54c2246e3e0d4e.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD61-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: -XFX5w2xK_g3lln3CLVyxzQbySQcZpKLxBjYXi1TWMSS9zKlvLOmFg==
+x-amz-cf-id: rf8hcnNdN8l3p9scA4UY1ugSV6GDUac8LfAWCqNs5M8-ZnN7A6K0Uw==
 
