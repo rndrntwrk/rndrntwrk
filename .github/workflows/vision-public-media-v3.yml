@@ -1,0 +1,115 @@
+name: Bounded Florence-2 clue captions
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/vision-public-media-v3.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Install model dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q \
+            'transformers==4.48.3' pillow timm einops sentencepiece accelerate safetensors
+
+      - name: Caption and read the clues
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/vision-v3
+          cat > /tmp/vision_v3.py <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import torch
+          from PIL import Image
+          from transformers import AutoModelForCausalLM, AutoProcessor
+
+          model_id = 'microsoft/Florence-2-base-ft'
+          root = Path('public-media-analysis')
+          out = root / 'vision-v3'
+          out.mkdir(parents=True, exist_ok=True)
+
+          processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+          model = AutoModelForCausalLM.from_pretrained(
+              model_id,
+              trust_remote_code=True,
+              torch_dtype=torch.float32,
+          ).eval()
+
+          tasks = ('<MORE_DETAILED_CAPTION>', '<OCR>')
+          results = {}
+          for path in sorted(root.glob('clue-*.jpg')):
+              image = Image.open(path).convert('RGB')
+              image.thumbnail((960, 960), Image.Resampling.LANCZOS)
+              item = {'file': path.name, 'size': list(image.size), 'tasks': {}}
+              print(f'===== {path.name} {image.size} =====', flush=True)
+              for task in tasks:
+                  inputs = processor(text=task, images=image, return_tensors='pt')
+                  with torch.inference_mode():
+                      ids = model.generate(
+                          input_ids=inputs['input_ids'],
+                          pixel_values=inputs['pixel_values'],
+                          max_new_tokens=512,
+                          num_beams=2,
+                          do_sample=False,
+                          early_stopping=True,
+                      )
+                  decoded = processor.batch_decode(ids, skip_special_tokens=False)[0]
+                  try:
+                      parsed = processor.post_process_generation(
+                          decoded,
+                          task=task,
+                          image_size=image.size,
+                      )
+                  except Exception as exc:
+                      parsed = {'error': repr(exc), 'raw': decoded}
+                  item['tasks'][task] = parsed
+                  print(task, json.dumps(parsed, ensure_ascii=False), flush=True)
+              results[path.stem] = item
+              (out / 'results.partial.json').write_text(
+                  json.dumps(results, indent=2, ensure_ascii=False), encoding='utf-8'
+              )
+
+          (out / 'results.json').write_text(
+              json.dumps(results, indent=2, ensure_ascii=False), encoding='utf-8'
+          )
+          lines = ['# Florence-2 bounded clue analysis', '']
+          for clue, item in results.items():
+              lines += [f'## {clue}', '']
+              for task, value in item['tasks'].items():
+                  lines += [f'### `{task}`', '', '```json', json.dumps(value, indent=2, ensure_ascii=False), '```', '']
+          (out / 'results.md').write_text('\n'.join(lines), encoding='utf-8')
+          PY
+          python /tmp/vision_v3.py
+
+      - name: Persist captions
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/vision-v3
+          if git diff --cached --quiet; then
+            echo 'No outputs to commit'
+            exit 0
+          fi
+          git commit -m 'research: add bounded Florence-2 clue captions'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
