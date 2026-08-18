@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 05:50:22 GMT
+date: Tue, 18 Aug 2026 06:37:25 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 39HZ9PA5QCH2FQ5S5GBR
+x-amz-rid: BD2VBTXK5VXA7R86TMYG
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 f96e72cfd61c675b75ea8547da63de24.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: Sqv02USJssTP_1lRXJi4CvgtoLBgZmmFhg4E5OCp9YL5JMPW8rXOpQ==
+via: 1.1 0f33c9659b1a6dc218ec542af622293c.cloudfront.net (CloudFront)
+x-amz-cf-pop: DFW59-P7
+x-amz-cf-id: mMhAfTjirGRNbkH9JhNcCxJou_TFwZAOMEBqRmrLsUu-mOUULYA3Yw==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 05:50:22 GMT
+Date: Tue, 18 Aug 2026 06:37:25 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 312cc2b2351d4d9512783521cd4a9fcc.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD55-P10
+Via: 1.1 4ad462565e55d68a3c6af38bb5b5b390.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: DFW57-P6
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: LWUVEnrwukw9EIEBzv19qlUC0J69VxEe7IkXbka5A_f7f9OYuIa5iw==
+X-Amz-Cf-Id: 2LUBykdjQNsCaPHu0One4x1j6hfJFMB1zyHMrZVoche2jJmqiO3Lpw==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 05:50:23 GMT
+date: Tue, 18 Aug 2026 06:37:25 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: BD4GDTHNVKJR6HJH2PP4
+x-amz-rid: EFKK88GN18T9T6BMW7C6
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 3483bb08dcec46a109a14ce9ac39dea6.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P10
+via: 1.1 8e11911ffee7f772d0997b62798e3068.cloudfront.net (CloudFront)
+x-amz-cf-pop: DFW57-P6
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: b06EcnJuY5k2R-mYEuZG3iCeqJqS0-12kPuA-_hIEBQfHkUeGBK0iw==
+x-amz-cf-id: I2vj3_7xnX6aswXm8LT9i_aijy3bercHFb9Lxw825HxTFiJ6F5XhJw==
 
