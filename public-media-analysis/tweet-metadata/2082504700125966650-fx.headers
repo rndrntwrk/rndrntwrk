@@ -1,0 +1,16 @@
+HTTP/2 200 
+date: Tue, 18 Aug 2026 14:36:04 GMT
+content-type: application/json
+content-length: 4565
+access-control-allow-origin: *
+allow: OPTIONS, GET, PURGE, HEAD
+vary: Accept-Encoding, User-Agent
+x-powered-by: fixtweet-main-d84b39b-2026-08-18T06:14:18
+x-trans-rights: true
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=y6nPc16x3yIr3guRikYxDh%2BBKsPcSsmxpDry3FKC5n2P8lCQaDi5O4ag3ph%2Ba5fslVr%2FiloptyvfGsmp6RsuI2NH95HRimlhW6aGpvNpqqCwrj6QNEyyaR1PLN1Qwj9r%2F%2FxJ2w%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+cf-ray: a2d1a610ce0322f6-SJC
+alt-svc: h3=":443"; ma=86400
+
