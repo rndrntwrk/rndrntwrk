@@ -1,0 +1,44 @@
+name: Bundle Hunting Time search index
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/bundle-hunting-time-search-index.yml
+
+permissions:
+  contents: write
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Upload unpacked index
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-search-index
+          path: public-media-analysis/search-index/unpacked
+          if-no-files-found: error
+          retention-days: 1
+      - name: Record coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          Path('public-media-analysis/search-index-bundle.json').write_text(json.dumps({'run_id':int(os.environ['RUN_ID']),'artifact_id':int(os.environ['ARTIFACT_ID']),'artifact_url':os.environ.get('ARTIFACT_URL','')},indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-index-bundle.json
+          git commit -m 'research: record Hunting Time search index artifact'
+          git push origin HEAD:research/hunting-time-amazon-probe
