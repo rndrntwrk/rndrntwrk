@@ -1,0 +1,78 @@
+name: Extract public sample search index
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-public-search-index.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch decrypt and extract
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/search-index-extracted
+          rm -rf "$out" && mkdir -p "$out/files"
+          cat > /tmp/extract-search-index.mjs <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const out='public-media-analysis/search-index-extracted';
+          const ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36';
+          const metaUrl='https://read.amazon.com/service/web/content/getSearchIndex?asin=B0FK7RBDFL&contentVersion=64363d23&formatVersion=undefined&facet=YJ';
+          const meta=await (await fetch(metaUrl,{headers:{'user-agent':ua,'accept':'application/json'}})).json();
+          const encrypted=Buffer.from(await (await fetch(meta.s3Url,{headers:{'user-agent':ua}})).arrayBuffer());
+          const decipher=crypto.createDecipheriv('aes-128-cbc',Buffer.from(meta.decryptionKey,'base64'),Buffer.from(meta.decryptionIV,'base64'));
+          const decrypted=Buffer.concat([decipher.update(encrypted),decipher.final()]);
+          fs.writeFileSync(`${out}/index.zip`,decrypted);
+          fs.writeFileSync(`${out}/metadata.json`,JSON.stringify(meta,null,2));
+          JS
+          node /tmp/extract-search-index.mjs
+          unzip -o "$out/index.zip" -d "$out/files"
+          find "$out/files" -type f -printf '%P\t%s bytes\n' | sort > "$out/inventory.txt"
+          file "$out/files"/* > "$out/file-types.txt" || true
+          for f in "$out/files"/*; do
+            b=$(basename "$f")
+            xxd -g 1 -l 4096 "$f" > "$out/${b}.head.hex.txt" || true
+            strings -a -n 2 "$f" > "$out/${b}.strings.txt" || true
+            base64 -w 0 "$f" > "$out/${b}.b64"
+          done
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+          cat "$out/inventory.txt"
+          cat "$out/file-types.txt"
+          for f in "$out/files"/*; do echo "--- $f ---"; head -c 500 "$f" || true; echo; done
+
+      - name: Upload extracted index
+        uses: actions/upload-artifact@v4
+        with:
+          name: extracted-public-sample-search-index
+          path: public-media-analysis/search-index-extracted
+          compression-level: 0
+          retention-days: 7
+
+      - name: Persist diagnostics and run id
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-index-extracted/RUN_ID.txt public-media-analysis/search-index-extracted/metadata.json public-media-analysis/search-index-extracted/inventory.txt public-media-analysis/search-index-extracted/file-types.txt public-media-analysis/search-index-extracted/*.head.hex.txt public-media-analysis/search-index-extracted/*.strings.txt || true
+          git commit -m "research: persist extracted search-index diagnostics $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
