@@ -1,0 +1,68 @@
+name: Probe Hunting Time late search contexts
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/probe-hunting-time-late-contexts.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Query sparse positions beyond sample window
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/late-context-probe
+          rm -rf "$out"
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          ref='https://read.amazon.com/reader/preview/?asin=B0FK7RBDFL'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$ref" -o "$out/reader.html"
+          python - <<'PY'
+          import json,subprocess,base64
+          from pathlib import Path
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+          out=Path('public-media-analysis/late-context-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          ref='https://read.amazon.com/reader/preview/?asin=B0FK7RBDFL'
+          endpoint='https://read.amazon.com/service/web/content/getSearchContext'
+          positions=[49799,50000,55000,60000,70000,80000,90000,100000,110000,120000,140000,160000,180000,200000,220000,241000,260000,280000,300000]
+          summary=[]
+          for bi in range(0,len(positions),6):
+              batch=positions[bi:bi+6]
+              body={'asin':'B0FK7RBDFL','positions':[[p] for p in batch],'refEmId':None,'revision':'64363d23','yjACR':'YJ','clientVersion':'20000100'}
+              req=out/f'batch-{bi//6:02d}.request.json'; req.write_text(json.dumps(body,indent=2))
+              resp=out/f'batch-{bi//6:02d}.response'; hdr=out/f'batch-{bi//6:02d}.headers'
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),'-e',ref,'-H','Accept: application/json','-H','Content-Type: application/json','-D',str(hdr),'-X','POST','--data-binary','@'+str(req),endpoint,'-o',str(resp),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+              raw=resp.read_bytes() if resp.exists() else b''
+              rec={'batch':batch,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw),'prefix':raw[:1000].decode('utf-8','replace')}
+              try:
+                  obj=json.loads(raw); rec['json']=obj
+                  contexts=obj.get('searchContexts',[]) if isinstance(obj,dict) else []
+                  dec=[]
+                  for pos,c in zip(batch,contexts):
+                      try:
+                          key=base64.b64decode(c[:24]); iv=base64.b64decode(c[24:48]); ct=base64.b64decode(c[48:])
+                          text=AESGCM(key).decrypt(iv,ct,None).decode('utf-8','replace')
+                      except Exception as e: text='ERROR '+repr(e)
+                      dec.append({'position':pos,'text':text})
+                  rec['decrypted']=dec
+              except Exception as e: rec['parse_error']=repr(e)
+              summary.append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist sparse late context probe'
+          git push origin HEAD:research/hunting-time-amazon-probe
