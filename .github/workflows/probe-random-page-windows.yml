@@ -1,0 +1,120 @@
+name: Probe random paperback preview windows
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-random-page-windows.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Sample public random-page windows
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/random-page-windows/targets
+          cat > /tmp/probe-random-windows.mjs <<'JS'
+          import fs from 'node:fs';
+          import path from 'node:path';
+
+          const out = 'public-media-analysis/random-page-windows';
+          const endpoint = 'https://read.amazon.com/sample/print/random-page';
+          const asin = 'B0FRGB2PMR';
+          const buyingAsin = 'B0FK7RBDFL';
+          const targets = new Set(['103', '110', '241']);
+          const attempts = [];
+          const distribution = {};
+          const targetHits = {};
+          const ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36';
+
+          const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+          for (let i = 0; i < 120; i++) {
+            const url = `${endpoint}?asin=${asin}&buyingAsin=${buyingAsin}&_=${Date.now()}-${i}`;
+            try {
+              const r = await fetch(url, {
+                headers: {
+                  'user-agent': ua,
+                  'accept': 'application/json,*/*',
+                  'cache-control': 'no-cache',
+                  'pragma': 'no-cache'
+                },
+                redirect: 'follow'
+              });
+              const text = await r.text();
+              let data = null;
+              try { data = JSON.parse(text); } catch {}
+              const keys = data?.jumboImageUrls ? Object.keys(data.jumboImageUrls) : [];
+              const pageNumber = data?.pageNumber ?? null;
+              const rec = {i, status:r.status, pageNumber, keys, bytes:text.length};
+              attempts.push(rec);
+              if (pageNumber !== null) distribution[String(pageNumber)] = (distribution[String(pageNumber)] || 0) + 1;
+
+              for (const target of targets) {
+                const imageUrl = data?.jumboImageUrls?.[target];
+                if (!imageUrl || targetHits[target]) continue;
+                const ir = await fetch(imageUrl, {headers:{'user-agent':ua}, redirect:'follow'});
+                const buf = Buffer.from(await ir.arrayBuffer());
+                const file = path.join(out, 'targets', `page-${target}.jpg`);
+                fs.writeFileSync(file, buf);
+                targetHits[target] = {attempt:i, pageNumber, status:ir.status, bytes:buf.length, file};
+              }
+            } catch (e) {
+              attempts.push({i, error:String(e)});
+            }
+            if (Object.keys(targetHits).length === targets.size) break;
+            await sleep(150);
+          }
+
+          const summary = {
+            runId: process.env.GITHUB_RUN_ID,
+            attemptCount: attempts.length,
+            uniqueStartingPages: Object.keys(distribution).length,
+            distribution,
+            targetHits,
+            foundAllTargets: Object.keys(targetHits).length === targets.size
+          };
+          fs.writeFileSync(path.join(out, 'summary.json'), JSON.stringify(summary, null, 2));
+          fs.writeFileSync(path.join(out, 'attempts.json'), JSON.stringify(attempts, null, 2));
+          console.log(JSON.stringify(summary, null, 2));
+          JS
+          node /tmp/probe-random-windows.mjs
+
+      - name: Upload probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: random-page-window-probe
+          path: public-media-analysis/random-page-windows
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+
+      - name: Persist compact result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/random-page-windows/summary.json public-media-analysis/random-page-windows/attempts.json public-media-analysis/random-page-windows/targets || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist random-page window probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
