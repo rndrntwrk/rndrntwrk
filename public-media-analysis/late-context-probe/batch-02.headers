@@ -1,0 +1,17 @@
+HTTP/2 200 
+content-type: application/json
+content-length: 470
+server: Server
+date: Tue, 18 Aug 2026 00:58:29 GMT
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: 0ZYEVGFGW95X07X204NT
+x-amzn-requestid: aa02d80d-9789-4137-a881-15d16a0d1a3d
+x-amz-date: Tue, 18 Aug 2026 00:58:29 GMT
+cache-control: no-cache
+vary: Accept-Encoding,User-Agent
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+x-cache: Miss from cloudfront
+via: 1.1 dec7efe7f00856f413c4b38fc72adb5e.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: mnQJsJE5_XGup4mTzVBpIZkGl19OFJKBTy38Bl4KJpXTG9CSRx3ebA==
+

@@ -1,0 +1,16 @@
+FILE_INDEX.txt	0 bytes
+batch-00.headers	664 bytes
+batch-00.request.json	290 bytes
+batch-00.response	494 bytes
+batch-01.headers	664 bytes
+batch-01.request.json	295 bytes
+batch-01.response	470 bytes
+batch-02.headers	664 bytes
+batch-02.request.json	296 bytes
+batch-02.response	470 bytes
+batch-03.headers	663 bytes
+batch-03.request.json	166 bytes
+batch-03.response	95 bytes
+cookies.txt	260 bytes
+reader.html	112736 bytes
+summary.json	5486 bytes
