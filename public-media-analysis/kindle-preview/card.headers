@@ -2,34 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:32:05 GMT
+date: Tue, 18 Aug 2026 20:33:11 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 1NC0Q7R90WNZ4EZYYWGD
+x-amz-rid: BMMKHCG5VTK1R4G410GV
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 aa0d09de09eddb73eaba0baf7abb2f12.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: jBj82s8z5MVbVuhP2wG15fFeiiWqffcHSJcdEqAXsJq79dUu6EakuA==
+via: 1.1 a73c4443f00fb366a3a7226697ad0b6c.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P5
+x-amz-cf-id: P3QcDJ5iCKaqEH1CInPeErd27QKFaU0iWm-1GysPyB11m1g-BHBfWA==
 
 HTTP/1.1 301 Moved Permanently
-Server: AkamaiGHost
-Content-Length: 0
-Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Tue, 18 Aug 2026 20:32:05 GMT
+Server: CloudFront
+Date: Tue, 18 Aug 2026 20:33:11 GMT
+Content-Type: text/html
+Content-Length: 167
 Connection: keep-alive
-Akamai-Request-BC: [a=23.38.164.51,b=1612603452,c=g,n=US_TX_DALLAS,o=20940]
-X-Amzn-Cdn-Id: ak-0.33a42617.1787085125.601e603c
-X-Cache: NotCacheable from child
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 743dabf2fdbfd64c0bd7adf3cea9dbec.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: HIO52-P4
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Wfqi4K4VvN7GYhHOy_XdYX6PpftvbdectzvCHGEjZuZCXC1pFzOrJQ==
 
 HTTP/2 500 
-x-amz-rid: JR1248P0SDPDR35PG381
-cache-control: no-cache
+date: Tue, 18 Aug 2026 20:33:11 GMT
 pragma: no-cache
 expires: -1
-date: Tue, 18 Aug 2026 20:32:05 GMT
-alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.38.164.38,b=1312652751,c=g,n=US_TX_DALLAS,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.26a42617.1787085125.4e3d7dcf
-x-cache: NotCacheable from child
+x-amz-rid: KJ853MGDNM0REPT8AJFC
+cache-control: no-cache
+x-cache: Error from cloudfront
+via: 1.1 93b50b5ce635a36621d7bd38d3b0d6da.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: -pfkosCMF_IhTsAoTRidkBiqs4IqcY5ki-T8vcUT2DKIg8W8Nv2qvg==
 

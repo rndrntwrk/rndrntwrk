@@ -2,34 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:32:06 GMT
+date: Tue, 18 Aug 2026 20:33:11 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: V76492BBYM48CKKB9JXM
+x-amz-rid: B9K1A2RVG6N62K8B28PS
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 6e0637fb9d75c49c696ae12c3a8b3c3a.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: cYMNnwc9Da4mFDS92b0b2hkVO_T7EjBaTgCbpcAL-9aJywkWSNn6SQ==
+via: 1.1 5cce6fb1b1e95ae50a1c4328874fd518.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P5
+x-amz-cf-id: gd2c8zkrUUOL7dIWziMznR10T7eHr8Q4MS98xsfxFagklDaqe4Y-7A==
 
 HTTP/1.1 301 Moved Permanently
-Server: AkamaiGHost
-Content-Length: 0
-Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Tue, 18 Aug 2026 20:32:06 GMT
+Server: CloudFront
+Date: Tue, 18 Aug 2026 20:33:12 GMT
+Content-Type: text/html
+Content-Length: 167
 Connection: keep-alive
-Akamai-Request-BC: [a=23.38.164.40,b=667084068,c=g,n=US_TX_DALLAS,o=20940]
-X-Amzn-Cdn-Id: ak-0.28a42617.1787085126.27c2e524
-X-Cache: NotCacheable from child
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 7ad3d6571deff4c3c83d7e4476fcc6d0.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: HIO52-P4
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: WjbXAsy-KXKWfWHv6NQVyxH_BvhnJbnBHyXtEAhlsQNG5lbHXjcwdA==
 
 HTTP/2 500 
-x-amz-rid: VZGEGV375C195NWM1DKE
-cache-control: no-cache
+date: Tue, 18 Aug 2026 20:33:12 GMT
 pragma: no-cache
 expires: -1
-date: Tue, 18 Aug 2026 20:32:06 GMT
-alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.38.164.38,b=1312654399,c=g,n=US_TX_DALLAS,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.26a42617.1787085126.4e3d843f
-x-cache: NotCacheable from child
+x-amz-rid: 111QV0QGNKS8XNZ38GGE
+cache-control: no-cache
+x-cache: Error from cloudfront
+via: 1.1 743dabf2fdbfd64c0bd7adf3cea9dbec.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: og76es7zOCS3Wmns5nXU9uaaTmJ-SnTUVsrbxL8oZPMOOXi9KYzAZQ==
 
