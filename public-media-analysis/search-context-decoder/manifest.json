@@ -1,0 +1,80 @@
+{
+  "classes": [
+    {
+      "name": "rn",
+      "start": 787145,
+      "end": 788062,
+      "chars": 917
+    },
+    {
+      "name": "an",
+      "start": 788498,
+      "end": 788813,
+      "chars": 315
+    },
+    {
+      "name": "ln",
+      "start": 789108,
+      "end": 790046,
+      "chars": 938
+    },
+    {
+      "name": "un",
+      "start": 790341,
+      "end": 790717,
+      "chars": 376
+    }
+  ],
+  "hits": [
+    {
+      "needle": "getSearchContext(",
+      "offset": 787398,
+      "file": "getSearchContext-787398.pretty.js"
+    },
+    {
+      "needle": "getSearchContext(",
+      "offset": 788750,
+      "file": "getSearchContext-788750.pretty.js"
+    },
+    {
+      "needle": "getSearchContext(",
+      "offset": 789117,
+      "file": "getSearchContext-789117.pretty.js"
+    },
+    {
+      "needle": "getSearchContext(",
+      "offset": 789205,
+      "file": "getSearchContext-789205.pretty.js"
+    },
+    {
+      "needle": ".getSearchContext",
+      "offset": 788749,
+      "file": "dotgetSearchContext-788749.pretty.js"
+    },
+    {
+      "needle": ".getSearchContext",
+      "offset": 789204,
+      "file": "dotgetSearchContext-789204.pretty.js"
+    },
+    {
+      "needle": "addContext(",
+      "offset": 780734,
+      "file": "addContext-780734.pretty.js"
+    },
+    {
+      "needle": "addContext(",
+      "offset": 788544,
+      "file": "addContext-788544.pretty.js"
+    },
+    {
+      "needle": "contextService",
+      "offset": 788527,
+      "file": "contextService-788527.pretty.js"
+    },
+    {
+      "needle": "contextService",
+      "offset": 788575,
+      "file": "contextService-788575.pretty.js"
+    }
+  ]
+}
