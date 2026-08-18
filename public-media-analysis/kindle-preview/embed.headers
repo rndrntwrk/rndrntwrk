@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 04:26:44 GMT
+date: Tue, 18 Aug 2026 04:30:42 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: TVC40Z1PGTW6E8JR36QC
+x-amz-rid: 1Y2WSSP6377SNQQB319T
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 123e69ce4c4641277ec2a7cbf9f44f26.cloudfront.net (CloudFront)
-x-amz-cf-pop: PHX50-P1
-x-amz-cf-id: dLAm3aQV9SaCQ3Vstg2n4hsL7g43BRZ7_KY3DE_EIzv5r4lpNzs4PA==
+via: 1.1 b40940a08d8ae316e8c3593183c3786c.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: xZ5Oq-oG2BjbNRJ_p43_uHMavxzb4PlyEDy1-wcXaCuJKV8n6KGREg==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 04:26:44 GMT
+Date: Tue, 18 Aug 2026 04:30:42 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 a183b6545fea485604515ba7931cb9b8.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: DFW57-P1
+Via: 1.1 4a0551ae94e22ed7f1bb37c1e336e606.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: ORD56-P13
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: Q0PWC2_GRXTosLyqwHI-HJe-ez5kf_kuROU9XQjwNAMaIfgpI_prHg==
+X-Amz-Cf-Id: n-PBHD57hHj55jqilnCcdC0M_kMKm_eUQLe0ckZGlhYi3lHnPxTLjw==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 04:26:44 GMT
+date: Tue, 18 Aug 2026 04:30:42 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: 2E26Z03A0B6NN544EA95
+x-amz-rid: 7HXDXGCCADW46R55Z342
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 223f95455b0bb3057583bfe63e0d5c7a.cloudfront.net (CloudFront)
-x-amz-cf-pop: DFW57-P1
+via: 1.1 eded6ceb5fcf620926ec41d66d9f7be6.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD56-P13
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: 1Ba2HcMQcmDN5B2ANsEiypQ9IBA4vqLCrdAgY9Ixm9bJRC-JTV2uZw==
+x-amz-cf-id: 47ytR0eEZ3_v7Z4oUIHBNlL_gbu03W6zqfCnbPV931qMjaiU7xTjiw==
 
