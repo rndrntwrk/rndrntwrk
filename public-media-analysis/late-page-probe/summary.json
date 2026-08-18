@@ -1,0 +1,1047 @@
+[
+  {
+    "page": 24,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=24&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=24&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 19383,
+    "json_keys": [
+      "jumboImageUrls",
+      "largeImageUrls"
+    ],
+    "assets": [
+      {
+        "sub": "24",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00O.JUMBOXXX.jpg?Expires=1787097664&Signature=UAMULvJRrj6zyvZJGkpc9hp3R8XXbltxflGaLjaQ0TqSnYGRm~bSG~I-R4Jezr-q-YeAzidQgZ01yG79Kp7URKnF6KOARmTjV5bgGtrVt960Jt4A~jdgQ5DKvcBxm90n18UJcDvvusC0fgkl5lb70lKHBYsOouNBBNUxRAssZPQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 151514,
+        "file": "request-024-page-24.jpg"
+      },
+      {
+        "sub": "25",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00P.JUMBOXXX.jpg?Expires=1787097664&Signature=FFr~VnWMmydl7J-L-iY8uOVZ~tqMIdNggN1etxnDQhiWChExjRZlm0rZ8gUF2imUDyj2NX2lBPTCGXOvcqVfDpF8UWXMadvKVe6LMMDVikAEUpanNeUbXRVmfzZZyf2mZA9O49gcm5K6XcG9C69N8gSOKIO2NDSbE5aPIZBGPMo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145470,
+        "file": "request-024-page-25.jpg"
+      },
+      {
+        "sub": "26",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Q.JUMBOXXX.jpg?Expires=1787097664&Signature=hIN91IgnvwQEeK6jIwe-PtRJs7khqlMDxZSpfuFp3AVzEkoSmoWr06iT6AoiR2TTgbqcnb9MOE5P8mUMBxl9vewTlbgmqPILI4vLr4V2hep8Zvlw7wChIp64RCQiDIQB5utgyBprcyQGV1TwAht-EsVMzPuI-61quOUWZCxM6ws_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136443,
+        "file": "request-024-page-26.jpg"
+      },
+      {
+        "sub": "27",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00R.JUMBOXXX.jpg?Expires=1787097664&Signature=XMRV~bVFnPpu2OUs2xI1dkXmtLqsvgEHGnfGMqxKSYkSNb3~QExft9gR5GknJNJfUXFu5kBg5DVfcaQWpSAN0alzqYIUOYp~MHabuNhIfe7UJuqyuSg4KpsOEJ06MNwXN-cCe5Q7C87MC-T5VZdiPfr2Y4rl7VB6NWUYEs0qtZQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 137922,
+        "file": "request-024-page-27.jpg"
+      },
+      {
+        "sub": "28",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00S.JUMBOXXX.jpg?Expires=1787097664&Signature=fFkFMIOYSNtO8eHr21No4cudKcOn~yd4yp4I9nXR-aw70xLRjcO-t7iyjK10WeVQ66YIuq~QU55qrymQU08NYHeh-b2zP7PBKPMcbINFyeUUZhGHNFgaO7uu2EGolOCxntAQTqm8YewiRZsD02KoEAD1Ep39ab6NrCKgKfznoKU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136401,
+        "file": "request-024-page-28.jpg"
+      },
+      {
+        "sub": "29",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00T.JUMBOXXX.jpg?Expires=1787097664&Signature=JnFI4CQBIy33WnIPYSJYbnyp33IYi87Wv0-EAe0ujaSY05B29hV5g0pcs0tKnr7x5dn28tklqqHtc48C392tJ~doUd5fWSg9WpQz5JWWVMtMu-qk64AzREX7g4TTLnkMRja65IA-ztxu~8kiViYG08rObZG4TWwTUjfsxdQKJ4M_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 76396,
+        "file": "request-024-page-29.jpg"
+      },
+      {
+        "sub": "30",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00U.JUMBOXXX.jpg?Expires=1787097664&Signature=VtiLdCVMsfV75fnjWVI2EETQ9wo79KBUrzhrhpU4yXyCElMfWqRpg2NV8NjgXhMh43X9UEgMj19-J7TBxEbMDxM1gEtbJYsJrlUQRxQJLK7BKrWOnzqv8S-UBuvZrp2PSIgXtfQqlFXV~V4sxCGbimDgF7vEPbz4XbtC3uAU7kU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 114596,
+        "file": "request-024-page-30.jpg"
+      },
+      {
+        "sub": "31",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00V.JUMBOXXX.jpg?Expires=1787097664&Signature=cYnEKyIwazrsd0ymAjlPqCnrhaI5~~Tx9a8mjhCyNDGU4yxaLSzGRV9XE9t5RjCl1BXTSiEltsIRCb-wuLReLiplQw3i3aVbYUSzYLpthnJij88SkTrIL9O0WONlx4ZpQ0AJRE7a0laXs0xIn6GUbdio0k0bIeERExFjp7Z89x0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153226,
+        "file": "request-024-page-31.jpg"
+      },
+      {
+        "sub": "32",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00W.JUMBOXXX.jpg?Expires=1787097664&Signature=VV6h2-KWTPrb7pOFDK-TIg8fBwCOfh0OMIJdGH~o5thcjCvX3iiPPgtrBxgv~p-hdJenitRfhHy7hWHmeh2R~C7pAA-2Qzt4L3D~z-nwQMQ96FU6rEkYbEf8uXqQ17PuHxiA-q~8vSgiS2AdcWh1mlYzGbzKfBn9Emffj3t5~Ag_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 155794,
+        "file": "request-024-page-32.jpg"
+      },
+      {
+        "sub": "33",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00X.JUMBOXXX.jpg?Expires=1787097664&Signature=Lur6ZwDAe6liOlh96nOqojwwUzZoSV-0ztWaCroAVtmhWMFOgWWzDaZylZ~LYXGF3skKd9VJgViSzpsb4yAsg-37tlmxwqp1N-TfdZ39LzHZ8zIf8UnikF63DM2odYfA7Rt66eWINzTsL71ITMgV662uz2W23mupOXv2KU3OeFA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 142358,
+        "file": "request-024-page-33.jpg"
+      },
+      {
+        "sub": "34",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Y.JUMBOXXX.jpg?Expires=1787097664&Signature=MI3JiDlTwVlKmMzBVlYA8cmWwWlpaMRCkPVjVFd6dkWPsRPCTuoA4ogoRo1gBLjRNsnb3DhW0NjOwQzgw3Huny7ePQhSx68GbcnK0TFo4ENr03Ehn3OKbcR0G~rnk1Z7X~A1w7eV9dB-J3Yj2SyCSWl-S7CjMUDJTODOgMQ32sw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 144072,
+        "file": "request-024-page-34.jpg"
+      },
+      {
+        "sub": "35",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Z.JUMBOXXX.jpg?Expires=1787097664&Signature=XhBzYBMqkRn~KTeKEyM-2GwZP5fHZXAIkb2oXV4s9YAkWzlSNNwF1FwBJtcY9hCZpuh9VY8udI9xAjtxZ-D8zZ8kdjcHA2Qh0A-Kvu-RSrX1eOwUgPIC7DccngChsB9oJk~moBzB8S~r-sgsi8~eJGC2NMR6WDs4jQi9N0lfg7s_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147176,
+        "file": "request-024-page-35.jpg"
+      },
+      {
+        "sub": "36",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S010.JUMBOXXX.jpg?Expires=1787097664&Signature=HRvEyl6ZxbJF5vNBrzh1h9n5ZMwHKkYTjq8nw6eEuEPegZXwlDXqBitU4xDRXJSVceLMfHtP9jViCErqVO12NhMPavnmf8irqCbL-IS6b4WozVEPteIWBhXte0gXemFQgeaRLxl~JJQPsFLkBzGaxVlInWNqdK9iCRDJxOUepCQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145437,
+        "file": "request-024-page-36.jpg"
+      },
+      {
+        "sub": "37",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S011.JUMBOXXX.jpg?Expires=1787097664&Signature=QiX~aPpYyGCYqXnHwPMuqgPlBt4c1yefd2bWMT-B7uVbHTHZ03B4zXlZmmeprMy-0JpjcFdWCAn8Gyx9tAqaBDRbGN6IfGOBlrNnh4tWyRr9ulYb6FAxBlCL7LH7Gi82Vj-a-Ofj13pnA6iuNo7Hlq3jdkyD2f6J8b7QY51HwOI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 128056,
+        "file": "request-024-page-37.jpg"
+      },
+      {
+        "sub": "38",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S012.JUMBOXXX.jpg?Expires=1787097664&Signature=d47IVAwdYr04ipd~2lUAbh0ZQ7UqmR33Adkxsy-OQQ~j2aT52CPIsGm-ULmJtxtkkS3PPhPb-eHIBkxYWiExUL03I~N6m40ZTG-7PZf5Gx1TW76WewA-dKhaOqIT8OSwgNaNI5-IokLMXMf7bNkTL9zj4NKJZBSu7sJ67Yt16ZY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147921,
+        "file": "request-024-page-38.jpg"
+      },
+      {
+        "sub": "39",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S013.JUMBOXXX.jpg?Expires=1787097664&Signature=W96OW4M1uzfwuKuhHJwKmQolpa4kQnHTEw1-ZCQQ6QDn2K2cZFsDqDMvoxb4UzEmrZ2iQOpB6-vWzoxfx2Zoyo2ogBjyhaJxOnZGZX2J~1VcmHcFnr7exjeVWXjSKPUkATp5~aUkll8csA-GetC9jZiq~vEiCMGQ9aQS7AzYOD4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149170,
+        "file": "request-024-page-39.jpg"
+      },
+      {
+        "sub": "40",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S014.JUMBOXXX.jpg?Expires=1787097664&Signature=e3iAPcD7mHG7DEjGXh1zpacxq7FCTxhhOp6lUwSV0-1-v1Eoo897myUTN0YdWpyekxgl4Sg73KvTzOH31JhEi7kJQsW1aW9aEqpPOY896pBHrtzs4kv4loC9b3M95lDSbVCjIbvk3AI6OO9bdXIaZdFdXsx-88B9cun2Mk2RE6o_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 160114,
+        "file": "request-024-page-40.jpg"
+      },
+      {
+        "sub": "41",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S015.JUMBOXXX.jpg?Expires=1787097664&Signature=W3YKpDpEaofA7TEB-J78pKeo~ZuXfIt~misJ~GF5-h8UEoXYmKZUDB4WeMCfoYv096sPBEZY~VyuM7-Ez4k7vBhcGRgafvjpKLPq3UTrWhMGt8Rs997vU-lMxg8og74brApNxPT9CY~Xwm24XCKzEC0EyVmo0BSmfk5G3qWSWnM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 156617,
+        "file": "request-024-page-41.jpg"
+      },
+      {
+        "sub": "42",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S016.JUMBOXXX.jpg?Expires=1787097664&Signature=FUShJYFMY3xW1zcYJm7EjJodlMO6YUgpriBL5dIgWxZCSfbkiS3vayz8kh~1IcMcT8yv6sJqSo4q~LGlaChBfB0DdTrWtOs75METryoWmg~idOw3i0aP9P80f2j5H3r0NfBw~eGmgnmTcXxavVosONDYzPpWlBOUufP5RK1oh10_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 77312,
+        "file": "request-024-page-42.jpg"
+      },
+      {
+        "sub": "43",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S017.JUMBOXXX.jpg?Expires=1787097664&Signature=A72irTmWgNnqfTvUi9-Y3ddY6~bxMz6hKdpnT3d8yzGJLLX36gq5ybhE-4xKcrYlES-xxvmaMTts8faxgxkmZPvlUeE4DTXfqAs6zu8BvmJGVgyFcWwaRU88ZFvsWGqBYGFxcOf~rpJcPCW0gUMyN-9HCUgOTL9dWLgHeYToxPw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 98700,
+        "file": "request-024-page-43.jpg"
+      },
+      {
+        "sub": "44",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S018.JUMBOXXX.jpg?Expires=1787097664&Signature=Ny-GUjsMVqs9SgTr1N-tN~UgUoCIoosE3rLLGHRqr-Reuh3Ebu3AZralzJUGx4vk66EbpINYfuCGEetr5w8iBL4x7HpeNZ06BYMmpGHtZgsJK4Shsori7ph0bXZhLz3VAr9rrUzNgn2qbnz4MJirl7THZf2dChhTiUXDIBAFGRc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 139635,
+        "file": "request-024-page-44.jpg"
+      },
+      {
+        "sub": "45",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S019.JUMBOXXX.jpg?Expires=1787097664&Signature=c7qWiqu-m38lzyu5kXgeTCV5A8ZapaHCnUhBTPOJvCIrZQVIg94gRXXs-TjSMDFljTpAZ~UtlNM3VLH8Mcc3XDjHVgsJEp2rizlLAO4sJ31KsbaBviSbaX2RLS4Q~F8EqKLPqpqogd0la4jR2VA8rAdqxZ1EjsFPJKUJLWvo0VI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153676,
+        "file": "request-024-page-45.jpg"
+      },
+      {
+        "sub": "46",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01A.JUMBOXXX.jpg?Expires=1787097664&Signature=GXWwq-QJwWJTKZhatW1x1Y~Q6M6pj581XHlBCewgrBc645OVVABHfGDoRUYD-J-Ls2L92YcTns8pqC03gD4FJJMGY9fUZadg1uZnekwY3BVam~EP1I6hPsNKeQV1litlwkPrRYusq7zU3Uo0hpOr5U73m1MHKxFiIfs0kL2a2yY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148476,
+        "file": "request-024-page-46.jpg"
+      },
+      {
+        "sub": "47",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01B.JUMBOXXX.jpg?Expires=1787097664&Signature=Awu2bRLh1mIJasbvTpKLCUv1-6d5qsiFUxsiWAIXgB8n1Qz7MAZbnRioG8JkYxzoJf~x3v2LzwGUr1FjkOvvqrEb3Gzcwn-VzJYBh~B7Alj~gBBIo3p8n~loD8Md1I0bvzzMGdHMlgKeR-WxtY964wlQC9qUvyyptgnMVAn3Ezw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149155,
+        "file": "request-024-page-47.jpg"
+      },
+      {
+        "sub": "48",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01C.JUMBOXXX.jpg?Expires=1787097664&Signature=eHN5KBcxPOcWbav1tGw8Htf8X2k7QXa46WbilBd4GrHghiQRTwj1gjrvYYk32eS6vpNp2j4vcb6q620P1m~YHmOnc78MxhDTHOFKmoAI06BdjTXiPn8eXMrLO3NwUugOP-wygnAjHxaVeZP5pX3YG5KN45sYNnoqNQ49~mA6zxk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148946,
+        "file": "request-024-page-48.jpg"
+      },
+      {
+        "sub": "49",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01D.JUMBOXXX.jpg?Expires=1787097664&Signature=ALvzLbxaLS1I5d6Eh48a9bMeYHSh2gC3w-OG2FsCNBS4vdaBSbbEtuMYgM0bO26oGSvVqzUaoCRJnnDa1Z~xbQTMCwDnnGAezgcwaBFlGtcdovszgLImtikQWXtYRMATzd66YBpSKpEgrxoQobzmLTje4jW7rxXoQT-1w28C-MA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 150699,
+        "file": "request-024-page-49.jpg"
+      },
+      {
+        "sub": "50",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01E.JUMBOXXX.jpg?Expires=1787097664&Signature=BSkZ3e-kfb4yBe8MySz6MjPoonH2C3mpHDoVNgTb8YFb6IKdiP~pwU8QuTfDrN1Pvywcn~JxHpfWHXK7osga2ZJD5VneThiNDNCyI9cpT20Tpt25JH~kBcuTXDu-~cIf93SRpS5VyVEvFdNFdYFYLk5ERH5J9sPmgR8kgTri~uQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 135658,
+        "file": "request-024-page-50.jpg"
+      },
+      {
+        "sub": "51",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01F.JUMBOXXX.jpg?Expires=1787097664&Signature=Olsjkep-o0yT-O4uIAKA4uu5dSf5m9RBxwMKOmKKcSnmaxaoRAc58vRwKajheuJVGYV7Tr0c-ncJNAyljFp~0o7kRHMGnGVC3qsAUboQJG8Tjyrh1efrYw1WlqxQ256pQIWfeZ~aYy6Js9UY5s2g9LsPlW~~BIOv8P5mQgxXK4A_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 143608,
+        "file": "request-024-page-51.jpg"
+      },
+      {
+        "sub": "52",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01G.JUMBOXXX.jpg?Expires=1787097664&Signature=X2CGdOo6a48GMGRHdiCJy5apQjEVDaSLfuQF~QmU8GA~vETtnyR8gW~OtP-GCXF0deoVz3MuJiuDXyCie4VI~gAJX4G3m2Wb28w4qTz59~vRisZ6aJi7P-hXTByCUadS22qYxYws~Ori00XRKufqaEEAb~2pvuS8aqwRShl-Ylo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 156447,
+        "file": "request-024-page-52.jpg"
+      },
+      {
+        "sub": "53",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01H.JUMBOXXX.jpg?Expires=1787097664&Signature=K-fdiRh7X5~2u2WaKhgGb7N9WkOIWMupHKZSHVYYlosKbz9Cy7DQRGstXfU4I0MQ4r9~Xyps9eQ8zcAnX9kgHg4XG9ob-6QFB~Ff7P3ZUOw2vKLkea4TiuoAnzsCDqx0A3O-i9KGQmP3ahvfU560Lk8JaE~NSYPjBWUYMJISzCQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136665,
+        "file": "request-024-page-53.jpg"
+      },
+      {
+        "sub": "54",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01I.JUMBOXXX.jpg?Expires=1787097664&Signature=J1B6vBSuxeHsxg5xwaT~Axy0x7eLiJcxg5wqhl0upVPBxhz55SAbiQQw5n-TNkf2j1l43fe4jgxk3kf5rL8sjT7FhRieHFCacOlIIDtLltFTgO0mFIU9f62xZAmvq-5fIEQAhxcClC7qGTPvIwZufRmUJ4~kT-K0SVy5t1HsXys_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 154459,
+        "file": "request-024-page-54.jpg"
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=19&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=19&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 19383,
+    "json_keys": [
+      "jumboImageUrls",
+      "largeImageUrls"
+    ],
+    "assets": [
+      {
+        "sub": "19",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00J.JUMBOXXX.jpg?Expires=1787097668&Signature=LNSGAZO7IqJUoXrVUpSMwGxV0bDCL16k3yXRY9JHMcjC~Ooy95dfTuriBsSSoEGlzlYF7FBxipbu~c3dRH2xVg~58SGUUKiOr5Rb~iVmdl3O5BNkHHkNDgiECqePesWcSasbdj5cMs5cyEK6W1EX1TVBQdBYtukcO3UsGZIiiPA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 151262,
+        "file": "request-019-page-19.jpg"
+      },
+      {
+        "sub": "20",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00K.JUMBOXXX.jpg?Expires=1787097668&Signature=HyLnJLpV9LtMkgnFhNo8aIbw3JId4Be5V7kwqLdhZ2~tA2fKNoUwiaCvuh3OIMD~0pyvyRW~~NFXXvDhFC5-hJF7B9J20ipsymwti4BczYrPKPjpMn2C3LL6V4Yn2AGsyteRkAckir~DmUZiq2U2Vo3e4FkEBJQ1BVK8EbNlhpU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147610,
+        "file": "request-019-page-20.jpg"
+      },
+      {
+        "sub": "21",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00L.JUMBOXXX.jpg?Expires=1787097668&Signature=Mp9QhISSVr3UgE9pJJQ9v9wD6TN3NpvIvynHMFC0Nz13aHE~Zt13dUfy0qdJY4XkDn9c6LuV6Xooy5V1PKo37TvnJoZgHQl7LjSyqseT78E-BP1yPj0Lp4f2ijfcifJieYs23Qfr44DnqOBDDJik4wYO6RZ-grpaL1zKklxWCUM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 152527,
+        "file": "request-019-page-21.jpg"
+      },
+      {
+        "sub": "22",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00M.JUMBOXXX.jpg?Expires=1787097668&Signature=R2tHXm~tcSClxSB-6K9RlGHqAUzs-ZvqWl6QuxTi4qjxpSM~3f7cPaFrTs6as3hHHgLBdVMzrthYh2lTYKQaQglpmS01aF1WVveh84l0O~sNAx5LaIVxybqqKTFhmbthVDylz1fDxaWgnu~rxxN-szjmSj5FiynKjIA-13HMsKk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145578,
+        "file": "request-019-page-22.jpg"
+      },
+      {
+        "sub": "23",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00N.JUMBOXXX.jpg?Expires=1787097668&Signature=V8DefpnDGBW6O9ZQV6WbvKmPpINBSg5ib2XJ-rragSZq2aF4d2o3hxscAdIufPObOvCwPsseQ8VU~nQRXFFHjqnT8w6JepYWYK~H33NgkKbmlmRoxxu21kYmsSCl~bImKP54OJkKKsaDJWqkttJdtIpxiqA5yG5j8pjKLtyzWvo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149146,
+        "file": "request-019-page-23.jpg"
+      },
+      {
+        "sub": "24",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00O.JUMBOXXX.jpg?Expires=1787097668&Signature=CyCUSHpAdKrOdQC2eukrE9uzWUYQzeDoL-Xpoo3fQsnJNq2qzTQGv0xtsXITSynMFsSaYEeWMXoeVS9GGPId4s5AmHWxpr3yOhQohltfcWSk44KjioitzNO5hPDSl2c8FOMP~0WPS7cw4hMbfEmCDR2bkuoYREiAEGgsKVOj03g_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 151514,
+        "file": "request-019-page-24.jpg"
+      },
+      {
+        "sub": "25",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00P.JUMBOXXX.jpg?Expires=1787097668&Signature=CQVflpW1gj5AYkCQMx6SSEbmSDfSgq37pXx8ffU9nKHfJK4r~s9Yv45ElOeL5EGYJ0Cs423rkOJ9mVL4~MhY9SU4DDCkLzW9iwSRNm5gxJHzdbA-8QpUsM5TZkKRZIol9-LbcoBskUMORmErNYdlARkgokb99MD814l~a7jfdE4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145470,
+        "file": "request-019-page-25.jpg"
+      },
+      {
+        "sub": "26",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Q.JUMBOXXX.jpg?Expires=1787097668&Signature=LRGr9OKnVb-eOW7paUwmQnhaiIKLrlnWXBHOyYHNnImSSeBQa8LMtEoGjyUpahYKPB0b7wdihhMPULszCbhRudERMvgqXMmbsq9nuzNnILw5eCECLksHI5tAvXAqeHLwOAelQXtNr9tOex~cJYcIuajrX9ShoRDXj6AFE1LreMc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136443,
+        "file": "request-019-page-26.jpg"
+      },
+      {
+        "sub": "27",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00R.JUMBOXXX.jpg?Expires=1787097668&Signature=VW54~JsOfBTjzmM0Bo3ZGsT6Ffo0bonYlOHAu5zo-X6XmStaciT4eIbQzROGIlF6lyc7l2dcK3M6LHNtSTfaxRz~jCIHOnoz0L3zr4XbKfNonpAt-T6~yp9jceESfxY5lM2FFV07dBcBrJWWtvF2qE93jEC8jlJaTfGwS1LyoYQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 137922,
+        "file": "request-019-page-27.jpg"
+      },
+      {
+        "sub": "28",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00S.JUMBOXXX.jpg?Expires=1787097668&Signature=JuS0lmGqA4qlpPPev2~a0GFCFSBTCcH38VKC2~EwPTok-PbaA~d66ZriWcKHmTIhynPL2odNPifWr1yfyUnt5vAasC6RqX6CMTZGYR8HciiNSSL3FSXA7UIH2MTLKqo77kRty6tttUVhPMiA8-SQNCt8tHPqDM7P0EZgOIhC2GY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136401,
+        "file": "request-019-page-28.jpg"
+      },
+      {
+        "sub": "29",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00T.JUMBOXXX.jpg?Expires=1787097668&Signature=gMyF4TQAvOss89vv2C8TOArXtTotXtZ~0L2h4S3RmTXqAjdp2Qj2k-oMI35bi-c4l22IfF0tkQtbRJcwXTVCSUep3cipOSa5dT7wRrn2-lL9vhPof4Z1LIO-VjjA71XAIGjAr~vPihfa9x2GmZRA2xO~X1UAzaXJh6OmTtiVWTY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 76396,
+        "file": "request-019-page-29.jpg"
+      },
+      {
+        "sub": "30",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00U.JUMBOXXX.jpg?Expires=1787097668&Signature=aodsNJb~gb6vWh~03gGgUMYi5BJ8~tpu3FWyLvQtXWcJaIBgcIpX9xdAg5F3wXywanYhbGkdanE2tmUbxDtjonvL6ZbpuFjxCiXUN6bZK50p4DBT36TiPMLP7cONkF7EYyAcvYm1GMmMz~85a3l9OEFb9fSUMKAAbXz1kvnsB34_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 114596,
+        "file": "request-019-page-30.jpg"
+      },
+      {
+        "sub": "31",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00V.JUMBOXXX.jpg?Expires=1787097668&Signature=EwVLfxkb2aBXLqOyfpIhF4KRPiNux5N8woV1dZhSU-ZwnYsLcbCiih7Y47nkC7VR~p8lnpyD08fXcpFHK-CK6EKKQlh~D3QzHZ9DD8H8rhGmad1je73j6VT4cL6bW9MqUgkwpOac2efC6jg4BJcjalsK9umAiEjTcNtJcgEGIdo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153226,
+        "file": "request-019-page-31.jpg"
+      },
+      {
+        "sub": "32",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00W.JUMBOXXX.jpg?Expires=1787097668&Signature=cK4~vLkkLAva0A5FCV4389E1J-5WXbYo5ihzAJ~LE-Vlev9H44vSVuue6Tz9RI-hajdPfRjBYGL3mxcbStKJQVxmekbA29na4s-KNRm~gWXTarXI~ySIBeAQO8I5wXReJH7kaxdjD27K5L~0EvtNUWhK5UH~3xhJc8dAocLIx9o_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 155794,
+        "file": "request-019-page-32.jpg"
+      },
+      {
+        "sub": "33",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00X.JUMBOXXX.jpg?Expires=1787097668&Signature=c4GOeTvOT0yyQJipk0LedSlywGQSAW-r~oVSVp1pIP467D9zebrdxWycOqQflKEOQ2I5wV8Ro1WmDQI7-x4JoMTmlUjiGP9gBDFDHgYp7SsPnckrtHKaMCcCVUh1276wslTB1lP0PqqBt98wYG94vLmSTRlps1NmB9AMrg5fFOw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 142358,
+        "file": "request-019-page-33.jpg"
+      },
+      {
+        "sub": "34",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Y.JUMBOXXX.jpg?Expires=1787097668&Signature=QJSrlkQOe5PTqFzUapFH0mIOa4bDGFkPIF3AgQYmC0eL1xWJaQDl2lMEfelhxURBo~~8sv2u95fEIOf2ZItvsDazbCRaHHvzOzUA45uw3sxVRroxdxvzTFF35gBCniKfEHfGFZybpkvpGvGqBaotn6sBTCaBMWsWWmbWpXs440o_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 144072,
+        "file": "request-019-page-34.jpg"
+      },
+      {
+        "sub": "35",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Z.JUMBOXXX.jpg?Expires=1787097668&Signature=fG8NT6m08SGKiH9IpinZFuIZqqug6-zwgSjXtb5VeV4EgzaYDO7tkcfmTIR7bxBbT1VvS71p9hhmZWjvqK45ZbeG-clejG70quHNrmDlVUsaJrwU8i5yr15tLgO7xc0bS6~jFks3eL~a9fB55QcOHjaWPBdAK8LSXyqhfVqsgf0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147176,
+        "file": "request-019-page-35.jpg"
+      },
+      {
+        "sub": "36",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S010.JUMBOXXX.jpg?Expires=1787097668&Signature=BMZg5KYCsMzkGCQ2QfntjgFefRNlRmstUGwD1jMb4KahCtfhaT6GA97ybGhKd-3E9UM0K-du-m3icyED~4BeHnPHj4UpJwJUfGW3CM3tjmu4GMNVqwF-kBWmrOopLdjKgoLHYBfGTzdNnd45FqfZvzBpIFRAIH0GJ5CRIo6bqVY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145437,
+        "file": "request-019-page-36.jpg"
+      },
+      {
+        "sub": "37",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S011.JUMBOXXX.jpg?Expires=1787097668&Signature=aLPK9TjvLPAcWciFQ314HmsW~EyzfYfcrLIo6-581ZmTXIe4ajT6uswrXjF~ZZ2KmnR6PG2bCDZktansy5M6lTkRrGF2JVhopzYvX1RzamBUYYnQ0tU0rAbLLDb39jgYIgjYVCpmMw1YbUPeomt6H-mof-kOILt0vLJLKqM9nbI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 128056,
+        "file": "request-019-page-37.jpg"
+      },
+      {
+        "sub": "38",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S012.JUMBOXXX.jpg?Expires=1787097668&Signature=Wi~dllRJ8eZzJk9f2xQfjNZ0RwTpFm-cgr-vmH4Tl0FciIjTw1vIobU8hmMulUBeEPQmkHpVMXIXa3hYKG6f~RmYdz94yO1br8PAYFAmTS7Cwt2fV0GBRxhOfHVDZ2kOAghNFjZROq2IQdhETBcOkqrn6yS0GGOcgWtOfIhwVCI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147921,
+        "file": "request-019-page-38.jpg"
+      },
+      {
+        "sub": "39",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S013.JUMBOXXX.jpg?Expires=1787097668&Signature=gdx6FjpqIhLnzvQsyx-ta-WXlDPwQ~WK8wMPQtgVzZRK9VAn6mSW431WpjjwN3d78yfZTtfQutIc5ZIumlzlwzDJkEvDPBc8ksLigsa2xhu77ZJNSvFv6U-suFySUXYckNHFXsZFQs9W5Do8HFcCPW9elh8si2RVNWok6tgL400_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149170,
+        "file": "request-019-page-39.jpg"
+      },
+      {
+        "sub": "40",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S014.JUMBOXXX.jpg?Expires=1787097668&Signature=f1iHsFLikjqo2hwQeRlpIn~h13vOxDMrnwL8E2YgMQCPcApisb1SuUbjYxj815Q12lKUA1lGUFoa5OKYpviDUqrqacfXVL5kyjMO-Ouk~WgEpZ8JvyS6NelZThhnBqb17rjT6gGfyEGm0dosSpdeA21zL42eYyKnhZR1XBe8sow_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 160114,
+        "file": "request-019-page-40.jpg"
+      },
+      {
+        "sub": "41",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S015.JUMBOXXX.jpg?Expires=1787097668&Signature=dOShWjVDT-j7Y8e6qQPyPBy9Vo8EirgfjlFkDQN6EtGIlQPe8db3JaeghPkcCclB3TuGv4Nbxl7HadWdF2LihscrzRDvcmTEeA1bBQ8BtI03KjMXqVmkh5FqLtMbZLYxOyi39YrSNP3ldHpgObiv2aSNypl9YKjWfsBPjwKyfYo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 156617,
+        "file": "request-019-page-41.jpg"
+      },
+      {
+        "sub": "42",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S016.JUMBOXXX.jpg?Expires=1787097668&Signature=IAkUiDMNVQGzmSJ59krhh9pITdFNj8JBiicGZcrmBG5MlRAyZAca3e3X5wAMC2DjE4DAS9bNxqK2cVG5kEXeaQ0CeYfFriSYi2cj90yB4plXQBCCBrlpX4rfFIHTl3IgQdQYf836zqQYZCJjUfl2ZJi7NFBUrzutsRcQiY5Xfbo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 77312,
+        "file": "request-019-page-42.jpg"
+      },
+      {
+        "sub": "43",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S017.JUMBOXXX.jpg?Expires=1787097668&Signature=GHwp6MADVVrQPJntFQDaKqgOFLvRHad5aUiMClR5jE9UmIH-9PblBNaRXQesHjoeMRA2Ybi4wC--Q2tzM05eQfJtVeQA0w5YYXQsoEoFFjJIY~x2n2T5-qMUQxfE~J6rjcv7b4sPV2B12p-39Hr6MhwdUglfLaKfdJeqbNhAn0U_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 98700,
+        "file": "request-019-page-43.jpg"
+      },
+      {
+        "sub": "44",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S018.JUMBOXXX.jpg?Expires=1787097668&Signature=hMBqmQZXvCZoCyft7lt1IyJ83HTrh~FBeTycvteO9P61pP8L9lnpFZE8yGQnthKrIR9ynQes19NpG5tsD56WLxgxwyj2deKjSmufTtOjUbWN2gdg0SqZhS-ht4Lmxe1oXch-gxEXL6lyV-S61i0YU34PXeFvKWbikSsUg48OS40_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 139635,
+        "file": "request-019-page-44.jpg"
+      },
+      {
+        "sub": "45",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S019.JUMBOXXX.jpg?Expires=1787097668&Signature=FGUKCrOn04ftvQZklo~mQlK3hV4PJYxYoklj261PcYTWo4wdv8vNVNGzjlQpzw7GjZbaM1VouQWuEScbGTOcT0b84AHGhZbgHVusPrkoc9faqUDTJD7Bj8BdLCPP5N986Z-UsrWYSsvW3JTT9LlvybRW9CUZHcRCLwEl4UXcT2k_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153676,
+        "file": "request-019-page-45.jpg"
+      },
+      {
+        "sub": "46",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01A.JUMBOXXX.jpg?Expires=1787097668&Signature=c0c-iSOeNHjOFn0sqiwynRJFi5iqifjKGGQxxTJHvx3CiEtTa4owuXX8DD~1RbztlY3s~Dtxtv~lNX26OPdowJhmAUQHngKXOk7-wM8ydcXAhvDi~OnenLR212IueSnKm9ypi1osmhXqO3TN-JQMTsH-m2Ofkp0vIdyPZLgbIeo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148476,
+        "file": "request-019-page-46.jpg"
+      },
+      {
+        "sub": "47",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01B.JUMBOXXX.jpg?Expires=1787097668&Signature=ZoJvgzkNqV67W5zay9XI3fEdqMXF0cDYn7WGfkP3c-ut2LiWUkdeprzAWb6r6sdlNC1kFu0jBI1rUMq-FY~ZdDfalGmZ9P4unkeIYHMNh1nMh4Q1FOv3eh8c~h2PYZhc2KFYYOrj0L3QgvKc~nemOFxHWb-ppepok0YU68COPMA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149155,
+        "file": "request-019-page-47.jpg"
+      },
+      {
+        "sub": "48",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01C.JUMBOXXX.jpg?Expires=1787097668&Signature=OK~l8HD5xaLpL0s8t0mqGKorO9liOcOt2j1M5CB0vlHjUdEBLfOGp5-3BiF87avEWtZZc0vj~YDe3fvlm1hjwQb5UvH3yxWP9nUjb-6NLryDcdpEkoCbmxpHZxrTIxaj~LEpETHlDPvLGJRXhBDA7PRP51AgB~W2W606BPQTsLY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148946,
+        "file": "request-019-page-48.jpg"
+      },
+      {
+        "sub": "49",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01D.JUMBOXXX.jpg?Expires=1787097668&Signature=MdiE6sH8P-Z4Izf0zx4jenZizfCpMyl4YbEkm-MTWkzbw6zpqax2EtC1NCXWEl6UFjcw-ZE~zo5wM0ss8~-P5v7FigOPQp~VVt8336XqdBcJTlSXmgShmkEUeHXltPA9b8aIhDH60CX6~NCK-csYaHu8GIlYKTvBYc0QYIYt-oE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 150699,
+        "file": "request-019-page-49.jpg"
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=21&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=21&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 19383,
+    "json_keys": [
+      "jumboImageUrls",
+      "largeImageUrls"
+    ],
+    "assets": [
+      {
+        "sub": "21",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00L.JUMBOXXX.jpg?Expires=1787097670&Signature=ObpHIpZD5WnPvemyAKitzBBBLaxvbl24LZo6JfrH0RgHsJ76YVA6W-SFaNhKV7UKRjZqGQ4maGsCA7G3c5ygNjVK46mhRZ-ZZhRVqSm7XpZmaHhboGLuS8Q0QDnTJt0sS-P0DSoq3hmytB4vRiLTxhazef5fBoK6w8GS6-lIg6U_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 152527,
+        "file": "request-021-page-21.jpg"
+      },
+      {
+        "sub": "22",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00M.JUMBOXXX.jpg?Expires=1787097670&Signature=a-VzjgOwIZZINnx8xH77cjKsu02rwT9i8QSAOhTY1vBjPJHV2xtRMhpYJ6L~9rBeJBz8wJRWJF~S0hL6GVnHIr9Ly8ZowwfmaZp8mJg5ggzW~1CTcI~YjL56jaYAQMsHzsNgDSr0X94CRmdI-LAYgmfxcOd88wKR4js0dx-eUQY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145578,
+        "file": "request-021-page-22.jpg"
+      },
+      {
+        "sub": "23",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00N.JUMBOXXX.jpg?Expires=1787097670&Signature=cT1M9TEeSKA~3E7i4OGxQhG8rOpDml~jfHAo1yCUj71AdgkSwtVUiJOPZGTqJnU5Efm-SKk6Gl4uEake-17NGisc7a6pMRuPIbGO6VAr2ippR2xpzY2NSKqzmhVl5bn6~xJ18yIixZUh-PxWP~hkLbJ22mIFlkpIX~VtruaRpBk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149146,
+        "file": "request-021-page-23.jpg"
+      },
+      {
+        "sub": "24",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00O.JUMBOXXX.jpg?Expires=1787097670&Signature=MKMgG0w0eueseL-MC-z9Jy3A7kC7jvnAp5JA0UxsqIkgwBQvj-U8B9GZG06unQfvFxW1~HYCwr34q3u2zCtsZdPuV4p0~SgZlYBDhj55QjRT8aV84RciCCQVXgDmevkVvplPMeDNbMq5XE7n-gac7kEmQZ5iadUvFM69v8TiiQw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 151514,
+        "file": "request-021-page-24.jpg"
+      },
+      {
+        "sub": "25",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00P.JUMBOXXX.jpg?Expires=1787097670&Signature=dbzjQeGIzNEwP53LMZ9~qmx-x7IGNSU~YpZxkmpEIiTjIbFIziI5RYxmMMMLfTiNDtJQ0McXUvJWHvrusCD62NGmcCxI7beDyVZlAC2Md0jom5Z4U9pXhZ8SsqS6X0-dshO~AOx8Rmf3saEq2BKlKzNe6hLJE1Z6PvpUDnqdgkw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145470,
+        "file": "request-021-page-25.jpg"
+      },
+      {
+        "sub": "26",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Q.JUMBOXXX.jpg?Expires=1787097670&Signature=hHS2gRDmH16sQEzDDbGBLjkpKzpq5V89wxOshUfMr88ayoWI5KBJ4-aHl23VctS2mmi4lCie2Il~DtFQWfPvMoKdUlqqjdJX8pjbuaHmQTzleA-GJLKyDkRWuMQfIPvKpDI1D3kk9RyS0qNHohh~wEDXmu2Ioj3j5jxygsvGEcM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136443,
+        "file": "request-021-page-26.jpg"
+      },
+      {
+        "sub": "27",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00R.JUMBOXXX.jpg?Expires=1787097670&Signature=PW4e2GbGwh7ZuNAUUC0H8JpcnFZ8BsQbiddbBnsp9M6vWKgz3VgEa1I3G0G~ix~LkSQHpI4TF2rT1tuGv4vjnXjo8MdFOdXFJLti46DaFBcDTmGRGPZyt3BcbF5ukrOqiU2fQyHnFF-OKQvDjXoyD4c979SJ3olOEdJnXeCQpJ4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 137922,
+        "file": "request-021-page-27.jpg"
+      },
+      {
+        "sub": "28",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00S.JUMBOXXX.jpg?Expires=1787097670&Signature=WaMVtr9ckQwxpX6xMuk7X8qiN-EeH~4Oh-bHdNcszdbSlnDZ6Pjo5BEb-UnDfQcmLkK4T3liFCA61MxuJW2iZBgq2kSLGPQAOsfaFMQeipg8osqa4454JA-y5hASkaOKax98Y-ulGFB0jw9QCj4HQDpZXGJu35n7pq~2ch2VmI8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136401,
+        "file": "request-021-page-28.jpg"
+      },
+      {
+        "sub": "29",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00T.JUMBOXXX.jpg?Expires=1787097670&Signature=NFaQJdMqNztgLBtyVreza~jLldvWJ2LB-irad67xq6770z23Ly~pRQovgIFCh2sQ2wUrVWPSt1E0b7QjVIv8P9dq80BAo~m4POBFJrTZiyTE0kXXe9DngpqXbV4n-zgavFu5ZIfNfVh2woavTHweCD25PsksKFWLRSXdF8OWA3U_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 76396,
+        "file": "request-021-page-29.jpg"
+      },
+      {
+        "sub": "30",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00U.JUMBOXXX.jpg?Expires=1787097670&Signature=cXqcECCSwMAEGvFSJRg5EI8zbGV4UH-KldAwLYdmf7NFoLUi~u5pcKmndsmOwNrOU2MeqXGaupiA650hYhtpGmcq5PAT3hOQ52QRxLB1Jil6i5KeO-~PuDwjpRJmNvPybOAZHEpvo7nIekHDvDPJdQ7W-7vgcH5Bk3kCuO0xb2M_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 114596,
+        "file": "request-021-page-30.jpg"
+      },
+      {
+        "sub": "31",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00V.JUMBOXXX.jpg?Expires=1787097670&Signature=LuE49~CUD~bd4IQzq1gCDlOyCGYhpicVSt8olL68HP5qEo45sbkFmXydnVCdAqOEZQyKszbevrTs4MoyDg7mdGv2qFJp0XjPC9EC5tkUIBw2KeMc9VIkuKKhGjdkkLkB98wUaTo8jDbO~SsWdN6dwZUZ5R3SiHQagSF8kiMowXk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153226,
+        "file": "request-021-page-31.jpg"
+      },
+      {
+        "sub": "32",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00W.JUMBOXXX.jpg?Expires=1787097670&Signature=E69Qa5oPnkUNQrewPO64iZhVvzX~8387GyG7cA7rwEoN8mdjkXLn8gtt4k5FkLhsyI1~x24P56bf4FGrWHAitmy2QYMytyIs-tTznMPXUYTwgFdj6piufRcPL8EZqjcS~4Enr8BgmF0bkCMLyqywi2edj2beNIJQZtG-6Sy-p6Y_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 155794,
+        "file": "request-021-page-32.jpg"
+      },
+      {
+        "sub": "33",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00X.JUMBOXXX.jpg?Expires=1787097670&Signature=bPG74vi8UDzmQl8fzp0bdrHQgUSRxb2~~i1QKCcuJbNsohvfJ2j321miyfri78CXZGWb5yXjHNq3XVoBawaQYlWWu3OBxDbCEX7wovzdwBj7-PYcKNdlQlCXyedA6pKXvIJ5ArxcTz6HEjjjlNV-Ga4gJds23Uh7otL8c6qchqE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 142358,
+        "file": "request-021-page-33.jpg"
+      },
+      {
+        "sub": "34",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Y.JUMBOXXX.jpg?Expires=1787097670&Signature=QsIkQd4pWHl2btWdwM2E5iDNIZJIQ7T2YrrJLGlrg3zxVodVRImsMyOKaPTc2aWBEFxpb9CdBgBaSSJb4W~KhcEExa4Jo-jOeD1oi7rjsv8wZjXz8TxcDokPdlibv7Fi5h~YxJd2wY5yzp~2omv7gxC1ARbaiqdsVrWqnG60mlc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 144072,
+        "file": "request-021-page-34.jpg"
+      },
+      {
+        "sub": "35",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Z.JUMBOXXX.jpg?Expires=1787097670&Signature=fa7tkYtAnwuqNAhUBtDI8fmUKrE0ZF~cinMJ6IKGOsSpgwmogeIzOylpsP5DjiiFfpfHsB1p-lOGzMenuhnF0v6~rZzabuan-iMkhHCbC69Ew9NlAqnhtB76c1aul0MwGqrGkn5lNoQTI-CNSY5rMs2lQuhW-C1kyg6QLgcTx6Y_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147176,
+        "file": "request-021-page-35.jpg"
+      },
+      {
+        "sub": "36",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S010.JUMBOXXX.jpg?Expires=1787097670&Signature=BlvF4xzRJQHzKlYu7iebvCStENacW0MFmG3qnRk7KTDr2L7j-V8EqV-sFm09pZQ6T3d7SMRvoUmIOdMhekUKCiVENrTtzTv7pAZzbsecqbpDxr4CYgjKDEWsEEKncM0xG8DHu-azmSz4gpvL9Wy4~zhAFcExkHb~ZHh1YxfgRow_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145437,
+        "file": "request-021-page-36.jpg"
+      },
+      {
+        "sub": "37",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S011.JUMBOXXX.jpg?Expires=1787097670&Signature=QLUQUZ6pEoY1KUM7pVN~curjL9~oW1Jzk4GjoFBs8hZsiKYqQKgu5Gmlzvm3vg9B7EtgKGj0FDxFg4LJjnLxAMtNyllMGCXGbUrbPC-KDYnv99NcqrDgKOXP0uELLy6myip37J2tYqZn~WdZIBQuBW2IxBwaX~dmDnpT-7yN-7o_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 128056,
+        "file": "request-021-page-37.jpg"
+      },
+      {
+        "sub": "38",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S012.JUMBOXXX.jpg?Expires=1787097670&Signature=SUr77NtthVooxwMKW-Gzd9CHhhqVcBjjNafbcdJFBvsZqiR6y2XLeSB34DLZ4y7WHtZQtELasHfPKCey8zy-2YGHoFMhPGz5n5BEYnyOe7Tvl1Uw6CLkC6Da-jU8fzD~cc25apvcnRP0X77qbnKk5xj0J3wZOhJiKZXiIVtf2fU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147921,
+        "file": "request-021-page-38.jpg"
+      },
+      {
+        "sub": "39",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S013.JUMBOXXX.jpg?Expires=1787097670&Signature=DPUWNd~hh5XIdIF4ulka8~QFVWH3WfqpdoP0FOCe-0YtMZT4FHsLjiP14hrMKiSsGh6jhS9a0icStjqFVLo4XCkRBZ2qdr-7xuHtxUwSqS5K~KkAu5G7qEyMSpxGLj~2-ctQDOtb9w9QXCdk2s3ECDuW9WLF5eoqg1V68SUNvio_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149170,
+        "file": "request-021-page-39.jpg"
+      },
+      {
+        "sub": "40",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S014.JUMBOXXX.jpg?Expires=1787097670&Signature=gtcsHb2Y-yS2iJ5FFjV9cfLGIBh7B7mRQsoN9LKEwHptbCjRDkGnFq7uidDj~6AEQTg97XPSk6qk1bhEtqHfm6-tuEUBWJe4ABdrZYN-qVB8KMKbY7D0kf29AsqeyRMB5nZb2j3H9zewvckrS02am64xHQ59Pr0GgIHqv-cRUWA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 160114,
+        "file": "request-021-page-40.jpg"
+      },
+      {
+        "sub": "41",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S015.JUMBOXXX.jpg?Expires=1787097670&Signature=Vl1xK-P-FAboH9Qke~AtZEL-9zW-aYOWUgfxI1uvIP-qiPA7yNfSStNqIQyThaUfIJl1axLCDYRZtzk6IacL6Fda3Wetw1j7pQN891eij8tO8~pwtXcTF-uVlK6x4LPnFKq06ob-ZVGawMrdc1eFq~fUAIaDCUPux36Ipfdgxgk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 156617,
+        "file": "request-021-page-41.jpg"
+      },
+      {
+        "sub": "42",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S016.JUMBOXXX.jpg?Expires=1787097670&Signature=I5ovUVoMgnXa~z7Xy469GmyNk7zHR6ysgOkPQDR4ou4Kw0OOBSKj76VVIwFNZL0oB-KGp9WbmdRS7O7GCTCz8rL~Y~qyEV4R~8hIsHC6i7glveVvUpUoc1cA5SEFloayycKkbLOd9XVkbRqeIZJmb3HOnqwbav0elLAZO0G2kDw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 77312,
+        "file": "request-021-page-42.jpg"
+      },
+      {
+        "sub": "43",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S017.JUMBOXXX.jpg?Expires=1787097670&Signature=QPD3l-woRdWr1n-4IWdc5vGAgcaUSZI3rCDRypF7yRjxxV-k~uqa-f7VJg~Ogb~BvFMOX-FS6CAVUchn18mkOEi~B3xaIMrIveDUywFlSu03dy6l-UY3Rtm-I391FVAR8o07aQbAd9RZmW-HQbP1gZaFFLVQlybxIQLR-Uj~xGM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 98700,
+        "file": "request-021-page-43.jpg"
+      },
+      {
+        "sub": "44",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S018.JUMBOXXX.jpg?Expires=1787097670&Signature=Vt~ylJR~6h14Wu7W~Y3N2HtmoVbQOGBizKA2DwqPa5rJjwUptsahKjqeWZk3BajqR-gWnTjlGTXrs4N4RX16a2aiDfhvEm5dMjfMKTYuSEkuXWKw~L~3t2v24M4WhVFSCohJBCYo6InPZhxTvkTbLiMSeXxBjL8tctTqjKAURmY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 139635,
+        "file": "request-021-page-44.jpg"
+      },
+      {
+        "sub": "45",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S019.JUMBOXXX.jpg?Expires=1787097670&Signature=TQlqHeOZlU3JLw0JsL9qXBPfOgAx4RQvJzyoR5fmBTYaAViW1bUb2QWs9iyqgt4vSktBJbgqZs5-8YSxCkoToi-crKaJ8QnFGiYdVWHyOVLO-1XyNVUEBSGvpWbhH-InZ7cSoQlv6eOdzHB6CzdHSayLolJXlOcLIJdcTt3L3dI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153676,
+        "file": "request-021-page-45.jpg"
+      },
+      {
+        "sub": "46",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01A.JUMBOXXX.jpg?Expires=1787097670&Signature=U9qnzbjq4R4cdk0g0nQYgIddsklN6nlG4tcvEQdpJbhwJuiv1P~yUUYQPpPpxEAEbAvAchljTQpaI9xLv8U8bwde63R9tyJ49Rii9gsRYpAOatnrwzPYsxAjedwptf1D4AipouQ35yRvsOIJTthBs2oGzZViOpFpKfiNH3vg6iQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148476,
+        "file": "request-021-page-46.jpg"
+      },
+      {
+        "sub": "47",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01B.JUMBOXXX.jpg?Expires=1787097670&Signature=PxMk6o-WkkOaqb6dIuBJiXYfNzrlRtrT8TCC5PAWdZl23zyMvbnm1bXxn6xtqRTXzJzmZmp6S9t6Asl31OY0HNUHP-IoWPNfgpvaWuCTf2q7xfWeA-uxJivtSieay1MZu3vJjzwLRdhydbnf7FkZGn2GlvdTNJcBKtgPBBM1r-8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149155,
+        "file": "request-021-page-47.jpg"
+      },
+      {
+        "sub": "48",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01C.JUMBOXXX.jpg?Expires=1787097670&Signature=YDtD1rzNWvzBpJ~g-39lLJHbnCpD91wIIUtNsgoy3bj3DJNX9NiSXN4berjXTUlscmu-gCWyf7HXCda7MpfJcMuXqVmz5HhviScDrSaGMf85VHrHPS8A5~mSfox~omXqB5UiXoAtsQbzV6NdmXj7XgMenhHDXfHvOvjYu9Yc-4s_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148946,
+        "file": "request-021-page-48.jpg"
+      },
+      {
+        "sub": "49",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01D.JUMBOXXX.jpg?Expires=1787097670&Signature=L26sG4KAxt8R3966JmHu~P-jOmM74WbdgiFqDk4FF97mYuq~kzMYoCMmV6T5q9GN0oQ0qH18dxo3dZ1S1BVCk3a1FYxxjl2hAP~QrBJg6jfwgmT6HCbHWAbFdVF018qEPMgp6GZuv85Cb3ynCVPlE4foN~Af~lthz4aWD0tJcXM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 150699,
+        "file": "request-021-page-49.jpg"
+      },
+      {
+        "sub": "50",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01E.JUMBOXXX.jpg?Expires=1787097670&Signature=gE0Q91hmvP~b8g~AlTJztSIT5QHxbhZzgrpcnB2quMTgG9KDfYc5zHVSlR2vrZFxPvbzpOldlAwbzTee3emKJB~ASnMOXa99fUbJK~2GoBpPNXTNJDfFyoOls4AfbieMJZw~Crq-iunGUwuMQ7OOBOK-3jvzspkFhNN1s2N8eNI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 135658,
+        "file": "request-021-page-50.jpg"
+      },
+      {
+        "sub": "51",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01F.JUMBOXXX.jpg?Expires=1787097670&Signature=TrdnZL9tSL6tw8WZc12YxcSPvp5DyEQXcBV~Dvgon5P8m8KX5QDFFgHzU3xkVFoxMKZ1G7SJd1QoPJg1a9tflL9VNFjXm13DqxHgleifGP0q0EhtLNCoCh3WtW04kXowA95nW2SeWBkhBHSip79tReom4m8BrQs-mll5BZVjBMc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 143608,
+        "file": "request-021-page-51.jpg"
+      }
+    ]
+  },
+  {
+    "page": 32,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=32&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=32&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 16887,
+    "json_keys": [
+      "jumboImageUrls",
+      "largeImageUrls"
+    ],
+    "assets": [
+      {
+        "sub": "32",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00W.JUMBOXXX.jpg?Expires=1787097672&Signature=XBnLF0bIsb5A42pcMicp3~aiY9nNGioDUTJRIxRAvejU4SNxdpXZPMhZ6oAvO4IWqcJwxgBRBrZ9xFaAPCZYfjYn-vAfja4~SWbBIAHJXHgIqLT4xqs0l6M1UHUgVntF9Pp~~2lppIPL~qvncSBNMkO1F8yeEARTQ~m1WKh2XSc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 155794,
+        "file": "request-032-page-32.jpg"
+      },
+      {
+        "sub": "33",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00X.JUMBOXXX.jpg?Expires=1787097672&Signature=TfDjzxQMklX~9BAZr4~YaNwUN9NpsGI-bQ1FtlU2Cu4zYxTxNocPtzNSOp54uO-FyBcii~bkzQDWAhBoHtkPomd8AICwOVpslTU9utwRypsVc5FP0gtoloOLqtxSI5Jd5lgo6c2g5Uh~16xa0roSYeou8zY-ZjNz9Y3gKYgRJgA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 142358,
+        "file": "request-032-page-33.jpg"
+      },
+      {
+        "sub": "34",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Y.JUMBOXXX.jpg?Expires=1787097672&Signature=QpLesE4piuXFF-GGNoTUVpPpAEg9-1IRTEKCk1JUFCoHYw6RA290GA1bMjkEJbPXiEeJVDDEvHIUTvbB-N3xDtO9Hx41Nqnrr14fJn627wFHMEInBB4ReWQGiv~NvFDJDSuErYSKs~RZUl4xJqKQq-fihw8pEp0S3QfTa4afg9k_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 144072,
+        "file": "request-032-page-34.jpg"
+      },
+      {
+        "sub": "35",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Z.JUMBOXXX.jpg?Expires=1787097672&Signature=Vp6oXHxMs3OxU1x2IPtLViSxZjEwb7IqThG~SkXYWk0hlP6LXLSeEHAeU47Fb0DZsQmDoISqiHUEe669jOPOxySy7dvIfjrPi-ewQAez4l1ICa3-Zp6JTuM5wznixz7c8-N5nAKCohJmgC9CFg3FRo3sGBlaTgSWciAgp2M5X~U_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147176,
+        "file": "request-032-page-35.jpg"
+      },
+      {
+        "sub": "36",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S010.JUMBOXXX.jpg?Expires=1787097672&Signature=KShUxvPv3HkWVvJ8G5fjMmz1-YxO1FdW6c8I9Vo-irxZ4OSXt1lAFTHJ1Oeqz5Dz9~Bxfj-bui408dwbvNeZX4PDydfke53ggERVe-wW3fpRDaFxhzUw1DV5-f2KHxPQ9-K1eqAUe6bxIYY3i9m~~Bg~6pyzTjerVc4ncPqG2sY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 145437,
+        "file": "request-032-page-36.jpg"
+      },
+      {
+        "sub": "37",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S011.JUMBOXXX.jpg?Expires=1787097672&Signature=a7ol1j4WVdhyIli5MXtk~nA9WY7eKIb50eUl2dc8iX77gWEtB2KKU1jA6B7tClm0o5psR6z4VOiSq76ufsilQxJX4Bs1Pby-boMWmdnt-1Uyk2bAeyLDZRusRxFtvbkykU168ueBo9SkXR7NfkMqcLeOb2kpiLJl-PjHzljaOto_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 128056,
+        "file": "request-032-page-37.jpg"
+      },
+      {
+        "sub": "38",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S012.JUMBOXXX.jpg?Expires=1787097672&Signature=M3ZvgFtKv7dazRbBHGHcEFq63h3Ukv-7AEEraL~bGhc9vWQ2gUmTildGDr853ASYDpkv11jhjGSVIQSZ0hJ4vP1IWvvT9kyv4TImyQXi2Z1aJeAz7YWE83LEfxZ7Urhz~PD1Yz7F9M0QByQDBK4h7TFORpm3FvgKGo9wGUkCeYQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 147921,
+        "file": "request-032-page-38.jpg"
+      },
+      {
+        "sub": "39",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S013.JUMBOXXX.jpg?Expires=1787097672&Signature=a4jQZCR8gNdJKifsuUESaX2f~gKTq64hv8sb8eixesd3MJY-R8iUcWOUwNgk1TQC4qOni~HYi43PMm9m535ZdzJo9gexAfVpQVBNE2I-ezzbcivMMWKBq8uUm~9AA3BGW-JybL1ApGDwVT5PbP-jx3WwgN92mvqTxGZLhHtmYJU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149170,
+        "file": "request-032-page-39.jpg"
+      },
+      {
+        "sub": "40",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S014.JUMBOXXX.jpg?Expires=1787097672&Signature=cJ9dpRrJW5NZQC6Rs-Igu~tvRROP1ZQwe8~R0Qc8jNzW8kkidcUp2NSFgaQYk8vETarYvjPAbvRJMbMtQyaNi~M~ttNzj881DBEjxt9xzu6fE~ven~AXf0SLDmmdx9bcrOs9cpDkbcXWBKGBvqXOYOO4-sSuEJ6UC0bNpvRUk1E_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 160114,
+        "file": "request-032-page-40.jpg"
+      },
+      {
+        "sub": "41",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S015.JUMBOXXX.jpg?Expires=1787097672&Signature=M1PyBQN16j7oADT38DG6XiUQ3fB93n~VwQtd1nfJlot3RlxlqIq7zVKbijHNolPqQDHZxp3APpH8m2ECAwE7pbtumjB2cbjxDayusDdSi0bsJGiYPlJgCQHWKf7T0naRgbwv763YHMFqFwsCH7AZ8k3l~TcmpBc3~ayQHT1r6dw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 156617,
+        "file": "request-032-page-41.jpg"
+      },
+      {
+        "sub": "42",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S016.JUMBOXXX.jpg?Expires=1787097672&Signature=L1VzGxdT93oQ9uztinN0XblHRhOEAWrpS4thqEdNpoeJzE5xvF~zGVCxIXE9qL5To~EVkYP4Vl5mqTx5ohb8G5szNO~KGViJBx-Gg5-D1jMp1MIXexXAxPQ9OKFaBXO8YurUIk~3pTGWUArcCJzghqueER8tdytwHWd7d-pIADA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 77312,
+        "file": "request-032-page-42.jpg"
+      },
+      {
+        "sub": "43",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S017.JUMBOXXX.jpg?Expires=1787097672&Signature=Nk-1sYX81lpzja9IAsfgjjwxfWzJmHXDW~T~GxTH9P3Xul2T7e3Q2njBrzb6FeaMIQlb0gEATllxicmOTgDNyWjLaTy-zs4CdDVx0~GHGsIHdjo8UBHWzVO4PP4BMFbgy~nQUAGEbX27leaUM3ncuZ3oBkzXvV--x7ZoAy3VZCU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 98700,
+        "file": "request-032-page-43.jpg"
+      },
+      {
+        "sub": "44",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S018.JUMBOXXX.jpg?Expires=1787097672&Signature=PYHxbp9eUu-nlMFwQybeywhpkcnvOXqgwoebm7ktSvI9NjLdfcaT2ltCbLpHyfZ3qDUTuxOzIUSFhVIBjRxK9eSyBofdW2E-cOg0pM9CaIsUTiKey4d4TGHd65hL6NTGH6661aiq1R4aV4VSHXiRXRrOtiJqPpbh4DbztgFxPSE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 139635,
+        "file": "request-032-page-44.jpg"
+      },
+      {
+        "sub": "45",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S019.JUMBOXXX.jpg?Expires=1787097672&Signature=Xg2HJhJBeQi0sKKiv~JxB8~ra-hq3A6PYV53CS0IK~22020Ept-zVCms6H1VikWtR4J0J3uLdz66gN1tuJplIkUwdIy8OT28s6dfk29TZX8bPG7PhCzYAwxRiGUlhzc~92oVQoOPIi6FIdxarbr46Xz8fKbzLtJ9NVRE3ZUGX6w_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 153676,
+        "file": "request-032-page-45.jpg"
+      },
+      {
+        "sub": "46",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01A.JUMBOXXX.jpg?Expires=1787097672&Signature=fy4z057hYZ3l01rGAeBiN~dwY~OSB9EnQ5i5UBOHawjRQfRcLPWwgXdhC~OU-3bR4JZOXldKSbsLyBUhVttBX~TW4cyehFUOnpcILt~KFO8NrMStX9hU6OfF7vk~FdmwOLQr70zFPItF75dRAkHouEuHP3OgxySJD4vz9CsgH3U_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148476,
+        "file": "request-032-page-46.jpg"
+      },
+      {
+        "sub": "47",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01B.JUMBOXXX.jpg?Expires=1787097672&Signature=D6OMO6BWojoNDZpe6D0gWgt3ViFnzLAOQsaY~cuumEUJHVA-EXNCo4atx31zAe4tuXkrDEIiy6lpcTBTbklnMQu-sqHKBjacaQ-rkrupJEhl-di77tcrh4DgBqR~MJnG6xYSmvx4MNZvMyF5vc33ggSyQKasYxO8bSt~6ZY-mfc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 149155,
+        "file": "request-032-page-47.jpg"
+      },
+      {
+        "sub": "48",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01C.JUMBOXXX.jpg?Expires=1787097672&Signature=aEWNahajj6-ddsWl-Gd4mrIXDobgkMfDXZAWmb0ygdhCzJxqZuGv7f0CvLLN4jJJNbMjg-Sw20ZdvIOcfQjyrqXx1hhyzdqsSMEJqEFunpl09qbq83ggmpnDuBa3dudydE7IaN4qKsXWd3wwuwbyBcsVEUB7K7KKwUnhFz81APg_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 148946,
+        "file": "request-032-page-48.jpg"
+      },
+      {
+        "sub": "49",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01D.JUMBOXXX.jpg?Expires=1787097672&Signature=QLkkat-lO4c6NEER46g~mvu75PPHA0iSlCZmWwGqWPCR1xwvwperzrf6zAzVvJJ4uG8f50iAASnKC8mcx4m1PmcrlnNGJsJUjt3lR6t0DyeZ6PX7hu2~qG5DBr4bd9Pg2Oe3VnYp0SWrA674gk4q17qOAdalsa1UhbxrEzKVcDU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 150699,
+        "file": "request-032-page-49.jpg"
+      },
+      {
+        "sub": "50",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01E.JUMBOXXX.jpg?Expires=1787097672&Signature=I3KbaHE~JUIhFEnciPvHOxHf5w816gOhgglM81d75XwLz4yqpgJfpzCG6BOKSF8~L5QjsQEi3frxSXhn184bEGjtcU3eM27~kiYhScapSXUR0Buw6Kg7l85vtYsGUYFegsE8fhDK0e5~~ZH6EHHDYC~7MJ1RdDl5FY04M9FQ8aY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 135658,
+        "file": "request-032-page-50.jpg"
+      },
+      {
+        "sub": "51",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01F.JUMBOXXX.jpg?Expires=1787097672&Signature=RV9nVFrtQ17AcOobZeb-VsnoNtWJCSZ6uRhTv-TBfvjd1oeewkqdeh9t93FCMp6ucd6UesPf8JPFBMfBzr0NsT6uMWnXDhZkvUFujSpsW7hr9WShK0CyknaScdOhclW0X3jwniZvn4r~aPubDWgL4U6Fxku~FpEh0TnGzFMzRYw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 143608,
+        "file": "request-032-page-51.jpg"
+      },
+      {
+        "sub": "52",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01G.JUMBOXXX.jpg?Expires=1787097672&Signature=Xs2XAf5TetH6wjfmnnFS4chj9n1myf3nn5DkmDXzMkoojp5zjdzDjQroeYdfSEY7Kz3LYgu1OnJuVZwkFTB4Jz7mv8ns0Zx7Pgl8TUmgS5Omia1qbYGtVn9YKpDnVLGJePWspu6xJwSVM-ZdAn~GtXRDSw3eifI8REmYehutHwc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 156447,
+        "file": "request-032-page-52.jpg"
+      },
+      {
+        "sub": "53",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01H.JUMBOXXX.jpg?Expires=1787097672&Signature=eyfkOWhxC25ZdmLag2KqjHL45gZnkn-Ez~PinQqlyJHl68uxAL40AIt-lFVs5PRBPTi9scVcrTCi9M3DDGi7ke6L3q~7omtqd~nnJeCWLIwgvuEBjv4opQzziS8cf8340HjZ9pwX6QKUfTqMymy~YR6VlCSjX73vhVWlQjIe~yM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 136665,
+        "file": "request-032-page-53.jpg"
+      },
+      {
+        "sub": "54",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01I.JUMBOXXX.jpg?Expires=1787097672&Signature=SOT5wu29PRBp0nhgDJ4yfPCWwKDhPozF7hta0xGMNmcNb6OU5tDOUwSOneZN2a04f7Ofc~VF5RHydrFmwH82qXOvaWXyl5e7rwNEoXUtu7gFaigcon7gMqfemQpi4KRhezcfykkWKeTg-TxQePCA~2NVyxsp18lojOMl7TCuPuw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 154459,
+        "file": "request-032-page-54.jpg"
+      },
+      {
+        "sub": "55",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01J.JUMBOXXX.jpg?Expires=1787097672&Signature=Us~WyiENog8IhX2L9SWkMzcnn24bRXaW3vyV~4lofr4Q87NwjG6LSZ5EGVTCnAzLds3NMHUmP7BE~1I0rQkhdBOeFIxtWEuZbFuaHxP~WucjMOLq0t3rgbYX8LLAUXcBSYkKNc5geYF1d4GlDaQzlnYk9y8ovWihVM2sZAaJVOE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 77886,
+        "file": "request-032-page-55.jpg"
+      },
+      {
+        "sub": "56",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01K.JUMBOXXX.jpg?Expires=1787097672&Signature=Y-nytVnIv4U4w2zBMelAvkan9zc-p5dmV23uhBDJcpucBFFeJRuCyzdVR86H759k~BwW6RJdXLsZh-DlHXyeHJ1aqJaAlYxVIYHjo8~X-hPpu5RuwYL6cqNBUQtLWCCgbag3THGTvLn-S3o~3WSmyJ9HPirgMwMo-ZyVviNAmT8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 112544,
+        "file": "request-032-page-56.jpg"
+      },
+      {
+        "sub": "57",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01L.JUMBOXXX.jpg?Expires=1787097672&Signature=EZ3Ae-B5rLx4TuTRiqDuOttiinACLlvdGUkgZCEf4of53L2O-Quh7mnDh3zoy-E3-vQ21SeXPsYw5fTsF5LteUwndn9~vexpTcalemobA4Gk~~rM3oXyqbV6VzX7T4xcSC3OCnM2UNjfACmBeKIELHT0LgEWGmnC1vDMx~1xOUU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 143594,
+        "file": "request-032-page-57.jpg"
+      },
+      {
+        "sub": "58",
+        "url": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01M.JUMBOXXX.jpg?Expires=1787097672&Signature=f~9HJYOrjS3hTHiPk3PuVms~1-2gX~6g4~3D7UjsQPA0XgYmiQLht6nPsyhl85pl0OfeiXl~qFgZGzlbFgZnBp6OTly34T5miHS1StJicZO3TigJ5Ae-EC8MGS3AVwuAERDnNm9REdWKwF2D~ja02F27dLY8hX1frDycKiyP2cc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "status": "200\timage/jpeg",
+        "stderr": "",
+        "bytes": 118549,
+        "file": "request-032-page-58.jpg"
+      }
+    ]
+  },
+  {
+    "page": 103,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=103&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=103&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 138,
+    "json_keys": [
+      "error",
+      "nextPageToTry"
+    ]
+  },
+  {
+    "page": 110,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=110&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=110&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 138,
+    "json_keys": [
+      "error",
+      "nextPageToTry"
+    ]
+  },
+  {
+    "page": 241,
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=241&token=null",
+    "status": "200\thttps://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=241&token=null\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 138,
+    "json_keys": [
+      "error",
+      "nextPageToTry"
+    ]
+  }
+]
