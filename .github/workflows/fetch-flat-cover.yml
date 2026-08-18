@@ -1,0 +1,62 @@
+name: Recover public flat Hunting Time cover
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-flat-cover.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Fetch post and original media
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/flat-cover-post
+          ID='2078641903101247970'
+          TOKEN="$(node -e "const id='$ID'; console.log(((Number(id)/1e15)*Math.PI).toString(36).replace(/(0+|\\.)/g,''))")"
+          URL="https://cdn.syndication.twimg.com/tweet-result?id=${ID}&lang=en&token=${TOKEN}"
+          curl --fail --location --retry 3 --user-agent 'Mozilla/5.0' "$URL" -o public-media-analysis/flat-cover-post/tweet.json
+          python - <<'PY'
+          import json, pathlib, urllib.request
+          root=pathlib.Path('public-media-analysis/flat-cover-post')
+          data=json.loads((root/'tweet.json').read_text())
+          urls=[]
+          def walk(x):
+              if isinstance(x,dict):
+                  for k,v in x.items():
+                      if k in {'media_url_https','media_url'} and isinstance(v,str): urls.append(v)
+                      walk(v)
+              elif isinstance(x,list):
+                  for v in x: walk(v)
+          walk(data)
+          urls=list(dict.fromkeys(urls))
+          (root/'media-urls.txt').write_text('\n'.join(urls)+'\n')
+          for i,u in enumerate(urls,1):
+              req=urllib.request.Request(u+'?name=orig',headers={'User-Agent':'Mozilla/5.0'})
+              with urllib.request.urlopen(req,timeout=30) as r:
+                  (root/f'media-{i:02d}.jpg').write_bytes(r.read())
+          print(json.dumps({'media_count':len(urls),'urls':urls},indent=2))
+          PY
+          sha256sum public-media-analysis/flat-cover-post/* > public-media-analysis/flat-cover-post/SHA256SUMS.txt
+      - name: Persist recovered public evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/flat-cover-post
+          git commit -m 'research: persist public flat Hunting Time cover'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
