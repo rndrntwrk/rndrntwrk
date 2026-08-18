@@ -1,0 +1,50 @@
+{
+    "authorInfoList": [
+        {
+            "authorName": "Martin Warwick",
+            "authorDetailPageUrl": "https://www.amazon.com/Martin-Warwick/e/B0FWJPXY5Y"
+        }
+    ],
+    "numberOfReviewsDisplayString": "14",
+    "hasHalfStar": false,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/41ut6sqjXIL.jpg",
+    "numberOfReviews": 14,
+    "binding": "Kindle Edition",
+    "productAsinPrice": {},
+    "title": "Hunting Time: Genesis",
+    "bindingSymbol": "kindle_edition",
+    "averageRating": 4.8,
+    "printRelatedEditionInfo": [
+        {
+            "format": "IMAGE_JPG",
+            "binding": "Paperback",
+            "asin": "B0FRGB2PMR"
+        }
+    ],
+    "isAdult": false,
+    "kindleRelatedEditionInfo": {
+        "asin": "B0FK7RBDFL",
+        "format": "YJ",
+        "revisionId": "64363d23",
+        "kv3Eligibility": {
+            "enabled": true,
+            "weblab": null,
+            "treatment": null
+        }
+    },
+    "backToMainPageUrl": "https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL",
+    "storeLink": "https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL",
+    "customerReviewsUrl": "https://www.amazon.com/product-reviews/B0FK7RBDFL",
+    "libraryLink": "https://read.amazon.com/kindle-library",
+    "fullStarCount": 5,
+    "aboutKindleUrl": "https://www.amazon.com/b/?node=11516960011",
+    "sampleEditionMetadata": null,
+    "productAsinStoreLink": "https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL",
+    "productEditionMetadata": {
+        "binding": "Kindle Edition",
+        "bindingSymbol": "kindle_edition",
+        "publicationYear": "2025",
+        "publisherName": null
+    },
+    "ogTags": null
+}

@@ -1,0 +1,62 @@
+{
+  "top_type": "dict",
+  "top_keys": [
+    "aboutKindleUrl",
+    "authorInfoList",
+    "averageRating",
+    "backToMainPageUrl",
+    "binding",
+    "bindingSymbol",
+    "coverImageUrl",
+    "customerReviewsUrl",
+    "fullStarCount",
+    "hasHalfStar",
+    "isAdult",
+    "kindleRelatedEditionInfo",
+    "libraryLink",
+    "numberOfReviews",
+    "numberOfReviewsDisplayString",
+    "ogTags",
+    "printRelatedEditionInfo",
+    "productAsinPrice",
+    "productAsinStoreLink",
+    "productEditionMetadata",
+    "sampleEditionMetadata",
+    "storeLink",
+    "title"
+  ],
+  "strings_of_interest": [
+    {
+      "path": "$.authorInfoList[0].authorDetailPageUrl",
+      "value": "https://www.amazon.com/Martin-Warwick/e/B0FWJPXY5Y"
+    },
+    {
+      "path": "$.coverImageUrl",
+      "value": "https://m.media-amazon.com/images/I/41ut6sqjXIL.jpg"
+    },
+    {
+      "path": "$.backToMainPageUrl",
+      "value": "https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL"
+    },
+    {
+      "path": "$.storeLink",
+      "value": "https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL"
+    },
+    {
+      "path": "$.customerReviewsUrl",
+      "value": "https://www.amazon.com/product-reviews/B0FK7RBDFL"
+    },
+    {
+      "path": "$.libraryLink",
+      "value": "https://read.amazon.com/kindle-library"
+    },
+    {
+      "path": "$.aboutKindleUrl",
+      "value": "https://www.amazon.com/b/?node=11516960011"
+    },
+    {
+      "path": "$.productAsinStoreLink",
+      "value": "https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL"
+    }
+  ]
+}
