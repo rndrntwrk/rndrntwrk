@@ -1,0 +1,65 @@
+name: Extract public search-index decoder
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-search-index-decoder.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Download public reader bundle and extract decoder regions
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/search-decoder
+          rm -rf "$out"; mkdir -p "$out"
+          url='https://m.media-amazon.com/images/I/C1+7O3p6oWL.js'
+          curl -L --compressed --retry 3 -sS "$url" -o "$out/reader.js"
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('public-media-analysis/search-decoder/reader.js')
+          s=p.read_text(errors='replace')
+          needles=['class Ki','class Ji','NumberOfWordsIndexed','JUNO_4','maximumPosition','getSearchIndex','searchIndexInfo']
+          manifest=[]
+          pieces=[]
+          for needle in needles:
+            start=0
+            while True:
+              i=s.find(needle,start)
+              if i<0: break
+              a=max(0,i-80000); b=min(len(s),i+120000)
+              name=f'{needle.replace(" ","-").replace("_","-")}-{i}.js'
+              Path('public-media-analysis/search-decoder',name).write_text(s[a:b])
+              manifest.append({'needle':needle,'offset':i,'start':a,'end':b,'file':name})
+              start=i+len(needle)
+          import json
+          Path('public-media-analysis/search-decoder/manifest.json').write_text(json.dumps(manifest,indent=2))
+          # Compact context around the first likely decoder constructor.
+          idx=s.find('class Ki')
+          if idx>=0:
+            Path('public-media-analysis/search-decoder/decoder-wide.js').write_text(s[max(0,idx-250000):min(len(s),idx+350000)])
+          print(json.dumps(manifest,indent=2))
+          PY
+          rm "$out/reader.js"
+      - name: Persist decoder snippets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-decoder
+          git commit -m "research: persist public search-index decoder snippets $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
