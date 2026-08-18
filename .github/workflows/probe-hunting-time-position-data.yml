@@ -1,0 +1,80 @@
+name: Probe Hunting Time page position data
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/probe-hunting-time-position-data.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Query position-data on known and late pages
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/position-data-probe
+          rm -rf "$out"
+          mkdir -p "$out/raw"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+          python - <<'PY'
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+          out=Path('public-media-analysis/position-data-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          cookies=str(out/'cookies.txt')
+          tests={
+            14:['computer','camouflaged','clock','stone','helicopter','air'],
+            19:['price','cash','headquarters','radio','trust','wealth'],
+            21:['army','window','guilt','soldier','overseas','surface'],
+            22:['machine','radio','patrol','top','cover','desert'],
+            24:['white','stairwell','stairs','alone','shoreline','wall'],
+            32:['thailand','north','unit','war','bitcoin','network','street'],
+            34:['watch','wet','earth','gps','trail','jungle'],
+            39:['thermal','target','pound','drone','trees','below'],
+            103:['time','watch','jungle','target','drone','hotel','wallet','electric','power','wall','stone','army','machine','earth','pound'],
+            110:['defender','vehicle','car','drive','road','jungle','truck','wheel','army','target','time'],
+            241:['helicopter','pilot','flight','air','heading','control','vehicle','army','target','machine'],
+          }
+          summary=[]
+          for page,queries in tests.items():
+            for query in queries:
+              params={'asin':'B0FK7RBDFL','query':query,'token':'null','page':str(page)}
+              url='https://read.amazon.com/sample/print/position-data?'+urllib.parse.urlencode(params)
+              body=out/'raw'/f'p{page:03d}-{query}.body'
+              hdr=out/'raw'/f'p{page:03d}-{query}.headers'
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',cookies,'-c',cookies,'-e',card,'-H','Accept: application/json','-D',str(hdr),url,'-o',str(body),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              rec={'page':page,'query':query,'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw)}
+              try:
+                obj=json.loads(raw)
+                rec['json']=obj
+                body.with_suffix('.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+              except Exception as e:
+                rec['parse_error']=repr(e); rec['prefix']=raw[:1000].decode('utf-8','replace')
+              summary.append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          hits=[]
+          for r in summary:
+            j=r.get('json')
+            if isinstance(j,dict) and not j.get('error'):
+              hits.append(r)
+          (out/'non-error-results.json').write_text(json.dumps(hits,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist page position-data probe'
+          git push origin HEAD:research/hunting-time-amazon-probe
