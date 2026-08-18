@@ -1,0 +1,121 @@
+name: Hunting Time CLIP semantic ranking
+
+on:
+  push:
+    branches:
+      - research/hunting-time-clip
+    paths:
+      - .github/workflows/hunting-time-clip-artifact.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-clip
+          fetch-depth: 0
+
+      - name: Record run lookup immediately
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/clip-artifact
+          cat > public-media-analysis/clip-artifact/run.json <<EOF
+          {"run_id": ${GITHUB_RUN_ID}, "run_attempt": ${GITHUB_RUN_ATTEMPT}, "source_sha": "${GITHUB_SHA}"}
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/clip-artifact/run.json
+          git commit -m 'research: record CLIP ranking run id'
+          git push origin HEAD:research/hunting-time-clip
+
+      - name: Install CLIP dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q \
+            'transformers==4.48.3' pillow safetensors sentencepiece
+
+      - name: Rank all BIP39 words for unnumbered clues
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/hunting-time-clip
+          cat > /tmp/rank.py <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import torch
+          from PIL import Image
+          from transformers import CLIPModel, CLIPProcessor
+
+          root=Path('public-media-analysis')
+          words=(Path('/tmp/bip39.txt').read_text().splitlines())
+          model_id='openai/clip-vit-base-patch32'
+          model=CLIPModel.from_pretrained(model_id).eval()
+          processor=CLIPProcessor.from_pretrained(model_id)
+          templates=(
+              'a photograph of {}',
+              'a photograph representing {}',
+              'the visual concept {}',
+              'an image whose answer is {}',
+          )
+
+          all_text=[]
+          batch=128
+          with torch.inference_mode():
+              for start in range(0,len(words),batch):
+                  chunk=words[start:start+batch]
+                  feats=[]
+                  for template in templates:
+                      inputs=processor(text=[template.format(w) for w in chunk],return_tensors='pt',padding=True,truncation=True)
+                      f=model.get_text_features(**inputs)
+                      f=f/f.norm(dim=-1,keepdim=True)
+                      feats.append(f)
+                  f=torch.stack(feats).mean(0)
+                  f=f/f.norm(dim=-1,keepdim=True)
+                  all_text.append(f)
+          text=torch.cat(all_text)
+
+          results={}
+          with torch.inference_mode():
+              for n in (2,5,10):
+                  image=Image.open(root/f'clue-{n:02d}.jpg').convert('RGB')
+                  inputs=processor(images=image,return_tensors='pt')
+                  f=model.get_image_features(**inputs)
+                  f=f/f.norm(dim=-1,keepdim=True)
+                  scores=(f @ text.T)[0]
+                  vals,inds=torch.topk(scores,250)
+                  ranked=[]
+                  for rank,(score,index) in enumerate(zip(vals.tolist(),inds.tolist()),1):
+                      ranked.append({'rank':rank,'word':words[index],'index_zero_based':index,'index_one_based':index+1,'score':score})
+                  results[f'clue-{n:02d}']=ranked
+                  print(f'clue-{n:02d}:',' '.join(r['word'] for r in ranked[:50]),flush=True)
+          Path('/tmp/hunting-time-clip/results.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
+          lines=['# CLIP BIP39 rankings','']
+          for clue,ranked in results.items():
+              lines += [f'## {clue}','','| Rank | Word | 0-based | 1-based | Score |','|---:|---|---:|---:|---:|']
+              for r in ranked:
+                  lines.append(f"| {r['rank']} | `{r['word']}` | {r['index_zero_based']} | {r['index_one_based']} | {r['score']:.6f} |")
+              lines.append('')
+          Path('/tmp/hunting-time-clip/results.md').write_text('\n'.join(lines),encoding='utf-8')
+          PY
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt \
+            -o /tmp/bip39.txt
+          test "$(wc -l < /tmp/bip39.txt)" -eq 2048
+          python /tmp/rank.py
+
+      - name: Upload CLIP results
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-clip-rankings
+          path: /tmp/hunting-time-clip
+          if-no-files-found: error
+          retention-days: 7
