@@ -1,0 +1,40 @@
+name: Package public Genesis sample probe
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/package-sample-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Upload probe files
+        uses: actions/upload-artifact@v4
+        with:
+          name: genesis-sample-probe
+          path: public-media-analysis/sample-probe
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+      - name: Persist run id
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/SAMPLE_PACKAGE_RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/SAMPLE_PACKAGE_RUN_ID.txt
+          git commit -m "research: record sample package run $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
