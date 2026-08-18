@@ -1,0 +1,187 @@
+name: Enumerate BIP39 words on full paperback pages
+
+on:
+  push:
+    branches:
+      - research/hunting-index-decoder
+    paths:
+      - .github/workflows/enumerate-fullbook-bip39-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-index-decoder
+          fetch-depth: 0
+
+      - name: Install HTTP client
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
+      - name: Enumerate the official 2048-word list
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=/tmp/hunting-fullbook-bip39
+          rm -rf "$out"
+          mkdir -p "$out"
+          curl -L --compressed --retry 3 -sS \
+            https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt \
+            -o "$out/bip39-english.txt"
+          test "$(wc -l < "$out/bip39-english.txt")" -eq 2048
+          python - <<'PY'
+          import asyncio,json,math,random,re,time
+          from collections import Counter,defaultdict
+          from pathlib import Path
+          import aiohttp
+
+          out=Path('/tmp/hunting-fullbook-bip39')
+          words=[w.strip() for w in (out/'bip39-english.txt').read_text().splitlines() if w.strip()]
+          assert len(words)==2048 and len(set(words))==2048
+          targets={103,110,241}
+          asin='B0FRGB2PMR'
+          endpoint='https://read.amazon.com/sample/print/search-results'
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36'
+          semaphore=asyncio.Semaphore(6)
+          status_counts=Counter()
+          request_count=[0]
+          errors=[]
+          matches=defaultdict(list)
+          all_rows=[]
+
+          def parse_printed_page(row):
+              if not isinstance(row,list) or len(row)<2: return None
+              m=re.fullmatch(r'Page\s+(\d+)',str(row[1]).strip())
+              return int(m.group(1)) if m else None
+
+          async def fetch_json(session,params,word,result_page):
+              for attempt in range(1,5):
+                  try:
+                      async with semaphore:
+                          async with session.get(endpoint,params=params,
+                              timeout=aiohttp.ClientTimeout(total=45)) as r:
+                              status_counts[str(r.status)]+=1
+                              body=await r.text()
+                              request_count[0]+=1
+                          if r.status in (429,500,502,503,504):
+                              await asyncio.sleep(attempt*1.2+random.random())
+                              continue
+                          try: return json.loads(body)
+                          except Exception as e:
+                              if attempt==4:
+                                  errors.append({'word':word,'result_page':result_page,
+                                                 'status':r.status,'error':repr(e),
+                                                 'prefix':body[:300]})
+                              else: await asyncio.sleep(attempt*0.7)
+                  except Exception as e:
+                      if attempt==4:
+                          errors.append({'word':word,'result_page':result_page,'error':repr(e)})
+                      else: await asyncio.sleep(attempt*0.7+random.random()*0.3)
+              return None
+
+          async def query_word(session,word):
+              base={'asin':asin,'buyingAsin':asin,'query':word,'pageSize':'100'}
+              obj=await fetch_json(session,{**base,'pageNumber':'1'},word,1)
+              if not isinstance(obj,dict): return
+              total=int(obj.get('totalResults') or 0)
+              rows=list(obj.get('results') or [])
+              pages=max(1,math.ceil(total/100))
+              # Fetch all result pages.  The endpoint orders hits by printed page,
+              # and some common words exceed one hundred occurrences.
+              for rp in range(2,pages+1):
+                  more=await fetch_json(session,{**base,'pageNumber':str(rp)},word,rp)
+                  if isinstance(more,dict): rows.extend(more.get('results') or [])
+              page_set=[]
+              for row in rows:
+                  p=parse_printed_page(row)
+                  if p is not None: page_set.append(p)
+                  if p in targets:
+                      matches[p].append({'word':word,'result':row})
+              all_rows.append({'word':word,'totalResults':total,
+                               'resultPages':pages,'printedPages':sorted(set(page_set))})
+
+          async def main():
+              connector=aiohttp.TCPConnector(limit=10,limit_per_host=6,ttl_dns_cache=300)
+              async with aiohttp.ClientSession(connector=connector,
+                    headers={'User-Agent':ua,'Accept':'application/json'}) as session:
+                  start=time.time()
+                  tasks=[asyncio.create_task(query_word(session,w)) for w in words]
+                  done=0
+                  for fut in asyncio.as_completed(tasks):
+                      await fut; done+=1
+                      if done%128==0:
+                          print('progress',done,'requests',request_count[0],
+                                'matches',{p:len(matches[p]) for p in sorted(targets)},
+                                'elapsed',round(time.time()-start,1),flush=True)
+                  return time.time()-start
+
+          elapsed=asyncio.run(main())
+          for p in matches: matches[p].sort(key=lambda x:x['word'])
+          all_rows.sort(key=lambda x:x['word'])
+          summary={
+              'asin':asin,'target_printed_pages':sorted(targets),
+              'word_count':len(words),'request_count':request_count[0],
+              'status_counts':dict(status_counts),'elapsed_seconds':elapsed,
+              'matches':{str(p):matches[p] for p in sorted(targets)},
+              'match_counts':{str(p):len(matches[p]) for p in sorted(targets)},
+              'error_count':len(errors),'errors_sample':errors[:100],
+          }
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          (out/'all-word-pages.json').write_text(json.dumps(all_rows,ensure_ascii=False))
+          (out/'errors.json').write_text(json.dumps(errors,indent=2,ensure_ascii=False))
+          md=['# Full-paperback BIP39 page enumeration','',
+              f"Target printed pages: {sorted(targets)}",
+              f"Official words queried: {len(words)}",
+              f"HTTP requests: {request_count[0]}",
+              f"HTTP statuses: {dict(status_counts)}",
+              f"Errors: {len(errors)}",
+              f"Elapsed seconds: {elapsed:.1f}",'']
+          for p in sorted(targets):
+              md += [f'## Printed page {p}','']
+              if matches[p]:
+                  for m in matches[p]:
+                      md.append(f"- `{m['word']}` — {json.dumps(m['result'],ensure_ascii=False)}")
+              else: md.append('- no BIP39 word returned')
+              md.append('')
+          (out/'summary.md').write_text('\n'.join(md)+'\n')
+          print((out/'summary.md').read_text())
+          PY
+
+      - name: Upload complete full-book enumeration
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-fullbook-bip39-page-enumeration
+          path: /tmp/hunting-fullbook-bip39
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 6
+
+      - name: Persist compact result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest=public-media-analysis/fullbook-bip39-pages
+          rm -rf "$dest"
+          mkdir -p "$dest"
+          for f in summary.json summary.md; do
+            test -f "/tmp/hunting-fullbook-bip39/$f" && cp "/tmp/hunting-fullbook-bip39/$f" "$dest/$f"
+          done
+          printf '%s\n' "$GITHUB_RUN_ID" > "$dest/RUN_ID.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dest"
+          git commit -m "research: persist fullbook BIP39 pages $GITHUB_RUN_ID" || exit 0
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin research/hunting-index-decoder
+            if git push origin HEAD:research/hunting-index-decoder; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
