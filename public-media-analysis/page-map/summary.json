@@ -1,0 +1,999 @@
+{
+  "book": {
+    "buyingAsin": "B0FK7RBDFL",
+    "title": "Hunting Time: Genesis",
+    "kindleAsin": "B0FK7RBDFL",
+    "bookmarks": [
+      [
+        "Cover",
+        1,
+        1
+      ],
+      [
+        "Beginning",
+        2,
+        57
+      ]
+    ],
+    "largeImageUrls": {
+      "1": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S001.LXXXXXXX.jpg?Expires=1787113912&Signature=YU2Gn5KDD93ANGJF5abdrxke3h0Lu5e5nHgJ54p72FOHTz9oayPwNHWC3y-1Ro~Kh9rJRi9huODaeqDwBke3jZVJwz3sc885j6tFzXRtSBIzhpulVk~n-sK3xqhd2eZMN-8seeh~SUynFM4nuAoQ2LVw84PTl~8wCxNC896nsio_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+      "2": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S002.LXXXXXXX.jpg?Expires=1787113912&Signature=fTVfk0dKvdLc~DnnxAKktgf~LV49hui21QDjf3S7K81lFgOK9czvDC84G~U3LoQeqGboGPrHxeREdVqelz50sud1~uDsqhB2rRgzQh5aJAJwYSX-l7dx-UAoutdn~aEzT5T76t8h8o2UzLwaY14AR3c1pYMP7DnxEWL3uTB~5ho_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+    },
+    "jumboImageUrls": {
+      "1": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S001.JUMBOXXX.jpg?Expires=1787113912&Signature=N9ipQoHDTJnnnzblhfAijm1Ypvlt80TTzwHPWV5IUUlbir7L9FiF59Euk5249r7sHefLhciI0BZyrQZWJyghK5zhGfYFX6Ihvk1VfvN2wwYQbTyqRR2JZ4Um6weNrYf8D0hURgWBP17bQjQ0TyGyhgOfUMAAAql4HufM8dML9BA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+      "2": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S002.JUMBOXXX.jpg?Expires=1787113912&Signature=gV~Uv83CzFu8rfDd9MP~it0rjPw8ops0Jw1Rzcbhw2KnSQ2224M15YlnXQB2K3nmLGvSCxJ0gkBTOmFougbKz3Q26bfVvs0nGDdGQ-evwVo1xDUjdKli5Bz9N6oUd9Elf7T5kRb~L2WRFDQLxcwK3pNWdwjJYEIJAz5NOZLGTDA_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+    },
+    "litbPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58
+    ],
+    "orientation": "lrtb",
+    "numPages": 58,
+    "isFPS": "",
+    "type": "kps",
+    "hasKindleEdition": null,
+    "searchable": null,
+    "zoomable": true,
+    "xPages": ""
+  },
+  "issued_token_length": 1132,
+  "page_requests": [
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "1",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t8860",
+      "stderr": "",
+      "bytes": 19365,
+      "json": {
+        "jumboImageUrls": {
+          "1": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S001.JUMBOXXX.jpg?Expires=1787113912&Signature=N9ipQoHDTJnnnzblhfAijm1Ypvlt80TTzwHPWV5IUUlbir7L9FiF59Euk5249r7sHefLhciI0BZyrQZWJyghK5zhGfYFX6Ihvk1VfvN2wwYQbTyqRR2JZ4Um6weNrYf8D0hURgWBP17bQjQ0TyGyhgOfUMAAAql4HufM8dML9BA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "2": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S002.JUMBOXXX.jpg?Expires=1787113912&Signature=gV~Uv83CzFu8rfDd9MP~it0rjPw8ops0Jw1Rzcbhw2KnSQ2224M15YlnXQB2K3nmLGvSCxJ0gkBTOmFougbKz3Q26bfVvs0nGDdGQ-evwVo1xDUjdKli5Bz9N6oUd9Elf7T5kRb~L2WRFDQLxcwK3pNWdwjJYEIJAz5NOZLGTDA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "3": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S003.JUMBOXXX.jpg?Expires=1787113912&Signature=NcY7qMckTZy5ufJKBDhaRetNVVvDukFiNpUxjyt3fNf3FoO2enr2-AZ~iTwnGiw8xCyyS~QhsAGz~J9sp6E-jN8ajFrSKnFSJ6sA28ql7efttaAJ-hT0o17aiS9eJN0SwiWQM6SOWpb2G1RMEndOYqHFz5YJKZEs0bRpYSHKboM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "4": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S004.JUMBOXXX.jpg?Expires=1787113912&Signature=QbQrfoJlCu4Fmx9KkpoS2OkQEXcShUsd~ghfRUhxo-cv0hoQVyL3aFxymvzqSu~7dFNAQ-tGuYdtqaYvhXN0AviFfTqNW147a5qNjBrQbZHEfS8X86Y4KM~Xya9nMZN1r6cCbvsOIa~LbVq6~VMLJuhqR3JqTgX8ci23~F99FJc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "5": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S005.JUMBOXXX.jpg?Expires=1787113912&Signature=g7HMWqBFogHJOB42kvR4HLoz~FeouwKPkR2fNsHjXRyjQbK3b0jvcicNrUcpwAQUEztbDdsAin3LV-pDO~kt80s0~YjJBs4MnjfbiYVKrwE5It7nS-DUfcDGbANV6RAMminnsk8D8RnhWtBQlFOeHhoNYv~uy9W1Zdz01WbzuTU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "6": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S006.JUMBOXXX.jpg?Expires=1787113912&Signature=CFf8gWuNuMFVJPoLSZzDaGY6sIbdSYiHY~I7xw5A8AdoFdMqR6vNvNY1Hv06worhZXOnuLyo6iNn63cOlUW3MUu5SbqdCh7Wbu0EpjQ--9PzyQdALs0uCfy5L-Hv1fqumaKHpIlqMU6Nb8iIRpqr-qh1wTSZx6Msp1jez3aupfk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "7": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S007.JUMBOXXX.jpg?Expires=1787113912&Signature=I41QnrfIuaLLv62H5Ehgl-wCyiViOW546~f-X2eK~F4oGZitJtMhNUwZzSXskiokT~xriqx2MrKR~B4j8OwuqRLJRivJox0ifVyctosvmidra5EjdXnwsERfnpb0d~NT0K4mm5pZZPAaBsMy7jLCSK1WVg9s4DXlwFgoPzoWLks_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "8": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S008.JUMBOXXX.jpg?Expires=1787113912&Signature=OeB606l1PubiIeSIyTPJbiVbhhH7IbC96nU8BCr9EnL-f5~xHg~n8VWMlnw2ETC1Ix8eUej1hmh222uMtVVUegqyIvAP6pFMWN6lZ1WfmQiaJOfKbRSYFwmEGg-nsoOsLFy48JaJp-phbFwjvmj6IRF8DTzywD0Mu96M-Sjvy-s_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "9": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S009.JUMBOXXX.jpg?Expires=1787113912&Signature=Q~aIX~jODYjNa1gUHFhYYDy60NYmSrD95oFBm~L86rQk2R0MDnt7fNuTrVTspUMVit~83ZJlJdBt65Kpg3d8jjVuVVdm7418vg3XTmhzdbqU~6V896PltNZmSL-QI6OMGr3SoC8SK6n~UJyBKkpf1iWVjCvf3MVA-qoYie-QrTY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "10": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00A.JUMBOXXX.jpg?Expires=1787113912&Signature=D1F~ss50SJa7-AwnfOO9~6g~8bewUIPS4F25zFDLSejCKxu4puNe1gUk7wTfPdP8tWs-pHTlALCzeKWXBbVnZVdZboD1xUpgRX~eKJuL9orTwoLZwfHMc5DVipiLbjLlvlLdPCeeML4jzgnzby9hq~TyeZ8lZbFbDnD6UJesNNs_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "11": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00B.JUMBOXXX.jpg?Expires=1787113912&Signature=RuPFEWLI71~WKI366-0VTHpHsGmrXTk~oZTaMangnPMAcmNop2PpRxSwKQrPN9k-KIYfyj8n06cn6kCX6e3TUF2KY7VjtBek1JGfUSPcIJ6PPRTmWgHFCFQ8ErF24khz9Col~ztkc5BJ~tXewV6MSPwD8MXcoj2dI6~z7a1bOGU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "12": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00C.JUMBOXXX.jpg?Expires=1787113912&Signature=bL7VUAROVxMRrR04I4mjzep17azTZfXK6rhYNuaMD8axvF8BZyFl7sqpsA2KVcplnF8Z01lnICi~W5hpJU99jfXYdj59iP1CG3XX8mFwsWb44JjKDu0utM10ge-FfY-7kr-CLGZ8mTE-3p4dtfOd-x3Ar98UZRWwocvG9630tLM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "13": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00D.JUMBOXXX.jpg?Expires=1787113912&Signature=MwxwQFRbdVhmF9coBtG46meHft-PzJJf3XwwnMdI-lNBK-r0FPyECFvh5Z0FW4PIE--Cu1w9W5X3J4Jas8vl7-bW2JWl2TXa0YPLnqdyu4xT0LBnq8Q0l0LDcv14JjXH1SQejbgkYzpyP62k7KVEHpGYjVzZqymeitl3lzIasl4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "14": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00E.JUMBOXXX.jpg?Expires=1787113912&Signature=bd3-2JCxSvK2zC8wBcRYrt6Q4BqpJ6QXB6HC46sKnOK44vy~63a4rr0JWHAOkf2Mf850Iq7kRmfT-NUA9lDjCRW~pC-WDJmJ4Nk7IABg0e4aEkuXIBvdDy8srFes2lwiuskm9~VkDuQs4~g2OTnslrb~56i4IRkYqKtqPScYjE0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "15": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00F.JUMBOXXX.jpg?Expires=1787113912&Signature=VFb4g454SW92j8UTLbF-B~K7Bn5UMkErmcoAIBpC1LW~eJqrWOpwKUZH0YzMTPl-SJO-Ds1Z79-BQNhRA0wEif-mX6SAo7ks7JWMZFOnQOEbYip~Z~mZnQwepBDGFvfvs6Z3d-Iq9N7XpwRuG4SE3Z3Um2Hac91nYZ2cYTTDa48_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "16": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00G.JUMBOXXX.jpg?Expires=1787113912&Signature=E1cg1o79~s8F8HE6jHeQp-~qd7j~UtR~0ZaAH3-3WnN8Shie3OEBr1LTcCfSAmbhKRnp6Ro~ZbPfNxNT6sCW-IKsb5Fa0NdbUvwsRM24~7XGptv5Fwzz-GM-~O9NqI0IcLtnomLxHB9t9I7weSP0XVtaaiyH1S7rY5yDJyGTV2M_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "17": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00H.JUMBOXXX.jpg?Expires=1787113912&Signature=MOUPvdfuzL9cHZoLqgQ70OEmaIldgnlVBv~Ld0h7n2tRduoqEwtpdEcMM6a-yy7vWJ6r1t6EdkL4k05XENx7OwyIw84Yd7O656JtfzwQ3FwxTST8Yu-gmRfF2WyQ9cRi3LPqfZ3mb2AUxHzQTD6DIIk1L7uC3Uu-Ypm~OfV60oE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "18": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00I.JUMBOXXX.jpg?Expires=1787113912&Signature=BpvOQsNTCIS~sDuEqVRSjWGn0LHFsPwTeCqqr4g-kPLrwpfaL8EBx~4-Mozl1DkfDrK89fw2SlnRjjSi~KsRH5sEfUCkwe5MOF~b6DnnL5OadxiobSdkbqTlu2wF6fGkxmw8MibHzNGlsoMEF22Y6NfTwugT2H8-kl4dc4Yz5HA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "19": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00J.JUMBOXXX.jpg?Expires=1787113912&Signature=GWZJ3Fel8qSWUTQEfzrZEzpHRdRIt7Dk-ir0y0wsaf~ynjKFUXpd71jVAn-wsOnqdyalfAbZEo7I3I3p4c4Z-IaQEgEJ0E-UmKd71OEwiRqBLn~ZBdOfuw9p7eDXGHMV9UwthGidDF8ngIKId3tN4UuvIOIcMwn9pHIb-ZyglR4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "20": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00K.JUMBOXXX.jpg?Expires=1787113912&Signature=Ncg3mYHKJROm9duaacW7TGCGdvo4JwITmVwQsuXerALY4NpNOxFZ3H2-QEl0nLuclZ9jkhD7TX-b6WgM3siqM1dh7gC7Exh~V7dWMmh76tHNFUWu6RdbNXtXhMhAw4gxWQ1llpl1Iy6lMEab4yx7KKOJWuEDYXjpzphVpJOJG50_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "21": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00L.JUMBOXXX.jpg?Expires=1787113912&Signature=eKRR6Wee24NuijpKJ2ozRhpztKD-D1jAs5S7MW-Zvmcz6OFUoylIVH2pDQGn~2TvHzRNlB6RJqm5z1LVt6Z2FHg-nQoHrLASiUqguJcq2Mg5ESwFSYqnheTDyfQFL6BCoPjwNC4Akk6xrcMVVaSDnHQ75tbsNrKzfZt9pZ~WPeE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "22": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00M.JUMBOXXX.jpg?Expires=1787113912&Signature=GKG7jNdi9WtE-ZWDEnnXPaVasxSLOgk00mHt6MuLRm4SQfftmc1i~L2c1HqLbyHE2bjDwUv-tx6f-mnvwcA9UVX0e0v9xDpHY2VeY9icjS69vOaK6ibpqUl2O7KLQjADeh7UgeCxjZ9tes-ZvHtJAZgNs~rRhyfzbPUgj6P0XK0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "23": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00N.JUMBOXXX.jpg?Expires=1787113912&Signature=FD7vprQoW-lNVBAZDanA65W0z6RGL8HmXUuAGhephtuc3l9gMWrr5ZbUPJHb1SCO~AXphh7T5hai3deyCyGVg8jJw30aKO-7jEc2djeW3-ZbkTQpPprfVrNCWyYOJx4GJ2EIK6ZAE9iTPxapNnrquzoyqnqcKuY3xw-4Lr1-e14_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "24": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00O.JUMBOXXX.jpg?Expires=1787113912&Signature=c9XBiAi7QMDIyeM1iG~dwo2oGp6aYli1zAArOEldABdwiP4Crz-bmPVE30t5PZsH~0bpvYfQT-rKKcGqCTfmXwKJE-Q4Kqx-vBkBDIjBh9iLnlp5JVGrUgE3tQ4YxLFIf48IrzU~2XsInHLWpKyPLO9X0YOjyxCYB78Gpbygjkg_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "25": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00P.JUMBOXXX.jpg?Expires=1787113912&Signature=OuXx8YApgUkTRXVggo1Kxhh~NKc~sDmzJ0jwazxr3MifyZvBHRI0iKpLWn1tAG3cVHHxnBudMkJcp97fpA8H4SOirUaufQdK185N6~0cILjLelsScW1q6krFF3u1VADEd3dSRrCt8E7LfeZHf8Hy7dWcjFgo~AsIrw-MjbJhcNk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "26": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Q.JUMBOXXX.jpg?Expires=1787113912&Signature=Emj~AiP-yV8RZlQFsYkDW6nNIuIPjUjqikfGIEoP9~uHr3BFkdSE5QXFmjldGQ8Y1T98F1AhCdi6MdMnWh9B4llsptb3ySwgzgiuoyvU1osHSp4xrJZYbArcazlCEyvuFq21tWY~b8CR6k2SXvCiMVDod2TD5L6x2LirOwOTa2k_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "27": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00R.JUMBOXXX.jpg?Expires=1787113912&Signature=GZ3HGOJTMsOb8gOjWehYCovSem6QyUlhGid4DLjhhNWjHTwX3IKE554V7j2xvNIhwcJCxQMBFRlxV1do1wQxuJDsGWn42VikkWQaEY5Gh4Ky56QJ-Wu25SzftElHbgxhdjV8VCut3BnkNe4fG7TBaofCABgU0EFMDQsLEhAhbpU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "28": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00S.JUMBOXXX.jpg?Expires=1787113912&Signature=YZMrA4Bkk~HsFy5Pne7PFKWf66LKhP73639iHZzMd7X0MpSQyzIPm1nuHn7pEZHuHFDOSo4x4eYAOw5rPyyIwaPGTxJT7ed2zuRXdLIz9enhSJJNsyYxwgitqJFXFh97OgAI6yKvSqmd1lzBzCVfvyXUwTsHRwDK-V~sT~Skk5Q_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "29": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00T.JUMBOXXX.jpg?Expires=1787113912&Signature=ZjgavJk5gAZooM6nLrir6jYYTQ6u8pwv1W9-twLVtRkp~sl31wSFF~cRPhGyo7yXdeFG58Urymsh~0dLcnLShWPe3RPXWyBW8oPpMFoTw9joZG9n6cEqljhQAGtq-o7OmGcEr8y6HFknxhUaPCla8KYSPbouVlxmxi8wt0IvAJI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "30": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00U.JUMBOXXX.jpg?Expires=1787113912&Signature=NltNn7eI1VwiNSJOSwzIrE8EcP-1LXHeic9WcxA3eVXrlQ8Scz4l8foSZeOYQq8OqvVhzPMDtWgOUQ6j~ZlTkLLM8pvLdV9Euz4E~XBXnvhkPJXKA5nKueuUd3DsiwpV4wRiyVwYSVHpt7QTweu8~Txb2M~Ai1YA2pJiqk3mvkQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "31": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00V.JUMBOXXX.jpg?Expires=1787113912&Signature=GChR0nAVu-QJTOhjy92P4ZpAwFSw5YOQVyRk0n6DTvidd-dDwmPzh0MBVxebx~C2Cgf2urXV0ajKkoGatXKmciDArDwVckOGD3ixOXUS2wzZ8UUWGvjsHUeHweeGAD98rMlEsqvIq5enYBegRlBY2swOOiBaQfhgLFE-vXVjKI0_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+        },
+        "largeImageUrls": {
+          "1": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S001.LXXXXXXX.jpg?Expires=1787113912&Signature=YU2Gn5KDD93ANGJF5abdrxke3h0Lu5e5nHgJ54p72FOHTz9oayPwNHWC3y-1Ro~Kh9rJRi9huODaeqDwBke3jZVJwz3sc885j6tFzXRtSBIzhpulVk~n-sK3xqhd2eZMN-8seeh~SUynFM4nuAoQ2LVw84PTl~8wCxNC896nsio_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "2": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S002.LXXXXXXX.jpg?Expires=1787113912&Signature=fTVfk0dKvdLc~DnnxAKktgf~LV49hui21QDjf3S7K81lFgOK9czvDC84G~U3LoQeqGboGPrHxeREdVqelz50sud1~uDsqhB2rRgzQh5aJAJwYSX-l7dx-UAoutdn~aEzT5T76t8h8o2UzLwaY14AR3c1pYMP7DnxEWL3uTB~5ho_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "3": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S003.LXXXXXXX.jpg?Expires=1787113912&Signature=EPmuFm07CFa9uPABG-m9Oep8gZSKvDZ~QQmeZnsMzAafPuutyAumO6xFHqvdUqEcMH4wpCTxPmY7C~nW48GekNIOx7wOhSN7HPzJumP4EJSJbFVgwHpKZt0mKeKlPPjm6-epOq0hdR7EI9w0wGrN4c07J3LUM32ELGurD8yPiSo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "4": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S004.LXXXXXXX.jpg?Expires=1787113912&Signature=gQyZ8BoB-JKz1TTPSbqNbDcR-8VASO5Epten35t0yHKZmaNPtc~1sI8Fra1zl16TzfqgIfD5VPlOY5LSIqN9YWUh37zKhatyWwHq67F~yJtrVru9UokZBIQVwI9-1OsEFF~vk9zYadXJJ4T2DMgBV14VIM8wqFIqaif4aC9IP5w_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "5": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S005.LXXXXXXX.jpg?Expires=1787113912&Signature=MOBKxN5xQzeltmwI5g1lhVjP7D1LpmLh8KW3k9LKPOcfnmfh6Ri29s1m~goegXZpwfCgH6yegGQud9R~EYldEsZxS7fn8nC3SQ1Y2j2FYsv0zVNLtPpK-4ar1Afb~aEnVd7-LhRgMjOz3h3q9SteitK~XOC1biEajva7tLBWD04_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "6": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S006.LXXXXXXX.jpg?Expires=1787113912&Signature=LyqOTyDlacYFmEjJnWE6dm3jxkJnLw2ThmpVqF1dypjPp2rJn8mfYWQlZ99JD70n5rxWNYtiw9Ft8bVtp2qzgBlwUfFfziPbb4vPqGSSEiIIbjBIi-0~qmtH7sk2Gfpchr~~3XEvBxUljGN6GSMHXyw7IstBk9fIDwKva1GcDr4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "7": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S007.LXXXXXXX.jpg?Expires=1787113912&Signature=hNXLn1Zkly7V4Gxy1Ky013VrbYrLAG-2ntMwEWt~JRplVjvCiUEzyOZNtT7uJ40e2x3Q6KFpbHbF~9oEEUyv7oceSG~WLk8IhmjkPtgc2yOOAoorYU736ydUQdu~ZDGtdBhi0LQGGY8Px0cw6krygN7RuWhMKLDO-kxjDXhOBxg_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "8": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S008.LXXXXXXX.jpg?Expires=1787113912&Signature=g504pu6Xiy0vrPPchVizVQcHdMTIq40KxLW20xVUQPlA5v56ZGV4B8GhYzZllfuIb7CjtCsuWZJb5EtgFW7oGUEp42XFlJcODhhOEBmBHPf9ftpbVDeImFHuG7fQDafNcm8dkXV4~yoLYkWojkU3kQCk0~AqzGhY6ybCxmaztG0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "9": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S009.LXXXXXXX.jpg?Expires=1787113912&Signature=dTu2tw0yyIjQhxHFoQYOZGCbF4sfdDUksW0txIF24XkJ6gVUJPwUpv26Pq02YhYDUuL3tuF3M3S5514U-zrJXIh2FgbPNKsHvVHr1Fuqi73B7w~s5vTl5Erv32qaJWx-WnDUVf77gM7tjCWwXJgR9wUzvH~I57H9bKnHH1FAZDc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "10": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00A.LXXXXXXX.jpg?Expires=1787113912&Signature=SOlGUrBzoEI9AgxhtY-P8H7qemvzsbPTVzt2A6ePF3TS~Pz~GUXj7-ZiKx-Ir7bANQOK4EkZ1idHXjQED6fYq3UA1ddLYYLG7Gp59vuKhG6V2aVfZueJ~qilgOQRPZ~cst8CVIRSncgARdeliQvtSAn2Q3HneqiqsyvEzEKwD~s_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "11": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00B.LXXXXXXX.jpg?Expires=1787113912&Signature=aEblZwft1RFpEoriOw~HGxCeaU57kxH-8lQySnGIwXcUoxST8gzRDg0Z1XrA4eVqjwrIFcKOnZ9e15KBGdtDydPB8xZqBuNspOi0KKCefJwvJ3pjM-K1Q5UHS7Ko~7dHP78alc4HRhHDeDM1-KueZn-tOTZt2rUSsIE7O~Gpgsc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "12": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00C.LXXXXXXX.jpg?Expires=1787113912&Signature=fwBOsZ07ZVNA5LOAJ36Aid7-lBKVReI-QdxqYCZZsnZWyOpoSw0wNBQAE-fQjoJAWEcjeL30PZHrYDCtsUcwDJCd~QwmF2wXOTA6SQ6VwiLv8ywP9b-sPVKnlqH9FKRu1tRNsE92cSqW-cP3aO7UiJ642RRPVje~fmOQhA45or4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "13": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00D.LXXXXXXX.jpg?Expires=1787113912&Signature=DxGlO~FscICPXtB0J4xoh9zFb9tlOxlvWXwnjxQ4HLirSO~DwPL~7LxGzgHoM5dtvGOKFwuBSkFM3ym0ujsysHoV9qleYc5KLJp~PENPBWxGwTLLoOxBtjgd~0YXJzFiuiDqN1zizZs6lnBH1~xEDuutS0efuekmg2UB781JUZo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "14": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00E.LXXXXXXX.jpg?Expires=1787113912&Signature=E5LXPSX-QosyqbCFvSIXJkgiJoZsT~1YaIHhUvA~-CC94FHLqtvqf~~mq72IJoN2iuM1fEYDoFFjBlVRRnCRlelAuSKgI94Cgjw2~2GFme-O4SvnhjzNse9vzTifdPn7t8gaeSoV7nhL8lAN0YtrVsO~vywOw5RsJCBxRjCmRXM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "15": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00F.LXXXXXXX.jpg?Expires=1787113912&Signature=FMpKBpINVBV8VsSxF1lT~ht6tN9L4t9bq4luM-yGS-S1vPA~T0hnowYRBFCckewxn8FhxTF8IU2RDreIDCCLxNGUuImCnAigqlzJkI8HgIdNo7pX0rb~IAb6q7vM8pIuSoHt5qHSk2CCKbhD61jgmECMWOlYsbhoFsfNpBrQEvA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "16": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00G.LXXXXXXX.jpg?Expires=1787113912&Signature=MEUAVjai34LCpVnupeVbBJertsa3yyh7886HNQJCsOztyKQNPIrXGsnPLTIxcqmA36JjXMU6h~tPQNvVNb2O6LkMR58hl89BXPjrlAe9K5luRqI5-~87E8hA8kha04LFs6hUHNzVEJzGHD47u-RyWowUBUXtYsidMYKIPpBz-zU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "17": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00H.LXXXXXXX.jpg?Expires=1787113912&Signature=aL8dpC-dTXZxRkEFtmSUU7F25p31l~fqSC4Er3SQVodTYoCxhjGd0z8nIYGZSxUQTyod-Vd1JRmRwIy1zlPnaAAUcemEDxn1~KdZbv9cRh1xNbZJNhdPKgVAJV7dV3DNKNmu8Q9TyRgQL0Z38sq7mxek5dftF9Nj1Fx7CXpJmUw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "18": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00I.LXXXXXXX.jpg?Expires=1787113912&Signature=bW94aokAxs0YGgoQqPUVMdpsv-sYYjkKJ3Jvc2iZU5Q~thJTJ6uSGShorrfNccT~p102tg1NACVI7RXW8XumoeJtXH6z4SWorCBX02P~Xb4a417W84HtgmblaM75IzfZbNxUUDaUjVFXe6g5-lhJ2wEPfRov5BuzLY0eQ05Q9KY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "19": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00J.LXXXXXXX.jpg?Expires=1787113912&Signature=VQ4oFc1b2eoiANrF-qMJWnkAMgF-Kq-t2LLnkbEg4oMpTf8QRHifHpV46ixazEyUKKlc-nc6K~G~to1uFD8Q2ZMAdiDdD2Zy-5FJqSUQK4xNGKCqDaTeKss9s2Yu3ihBF38QMR8fzV1v~z1AHoD0XNZtrYErC3bw10H5vU-AEO8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "20": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00K.LXXXXXXX.jpg?Expires=1787113912&Signature=g7QWnGE707C6seyEtjX~nTUu-Kx-dUvskJ3vNoK8YVLUfZnp571SE3rKeq1D40k8crW0GRiQMmUYoinTurdLA~Fa8~TwZD41QvknPHWDP3tOnaws4~0sDkYZA3S-d64oo2IPeF9AycBQ81T2737itONfk9XISllbPnrK-B4tFYQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "21": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00L.LXXXXXXX.jpg?Expires=1787113912&Signature=eMi2jnAYSGSLW3~gL-VeGMZQcf8QrrFmWlSPGGA7bglaLpg2snPPYyHLjb6MSef4Syw~1ouB~Z8sLJNLLVdaCxLUR4ovVGUyXCpKzpybXjNI6OULRCx1bsLbbh1tqQr4TmXlffTOCmXMPqzJnaqta1ha1csvKSoe-o9miviOxkU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "22": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00M.LXXXXXXX.jpg?Expires=1787113912&Signature=ci~xzrSEe7dexT4dzzBx0pKD86i-1Irpkr27E~0JfomXgiBQ-wK4NZVfN0uxH~5Tjs8YD9z8ePgz96aC6vMuiCiNghSVLmW7cyST11iE82h202Kv4C8Mqa0v3~a-qQa8yL-bek24gsObSaVYeLqO~-9vSJTmCDJCM1oVEjsnQBk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "23": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00N.LXXXXXXX.jpg?Expires=1787113912&Signature=ZVqG0MrVMqf~3qWxNBfVcjSZyZ0BdgYnzLWaHQLt20zYc-r1MyjJoo1Aw8UDAQKBOThg-CZ6xZbqXRw7W54JP-H1Ctf7qIVxT8hiF8I~7nSm8IM3L6Hr8kTWotgQN3Hi4UG9XLIb2og4d-sLfKmZuPi0HL-kGa1xFdlg9PasXb8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "24": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00O.LXXXXXXX.jpg?Expires=1787113912&Signature=IxJI57VFUZSJNbkSWkN3R~quUODJc6eUwjXJ~UAEok~kO2ivcThdYl36kT1LYm0stPZwaDh7TcWFrKHEp8io33G4GU2ZutKwWFkJrKm2M0YNAcxbQazOvj~XZfNPwdvD99OpYeKV~t0FZjIY23vx6WmRDsOv6nCHlE6feB9j29s_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "25": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00P.LXXXXXXX.jpg?Expires=1787113912&Signature=DihXHt4Kx9qG0QqHaXLKCRx3IPDCgZ3g2S0HlJFy4Y3OujErWTm9DvKgGZCml6WhEg8HHNNmJ4QtcQp~eI4bG9Qb3Qb1JA6E3Y9EkugyXDcp1AFTSXI2VBSz8BA3imoyZa14ba9MvxQsWIV6Xhyg1E93GNOGqZVs-9kuiJaojwA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "26": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00Q.LXXXXXXX.jpg?Expires=1787113912&Signature=b7JROtk43MAdjBfp-2WZNkYXmQDjziUySjwru9di2v4snMQBeRYPPb5rbhb7qInRB96HxANOOYVf6sGepHAeLb3JAnPUQVcCNK8kAhXmS~f9FkxuZ6To~MDYNrLOqh8kUBXLFiyQTTob~Vk9ilAeDa4orDrIkabXvACvuAucA~c_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "27": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00R.LXXXXXXX.jpg?Expires=1787113912&Signature=OjRxK-B3DpvzDd2SLnABa2DbBGxbaGE96fDxpm5zfJt0YFxxFJrO1dCG-pFXoi823n3bF-Y9c-mOgFXJi0szYP0N7isN7e0aw42Ho0uyggH8oB53GuazFQa94U3z2BfJKWHID~lYY0aI39o8cPZPaeyX1mxfXT4eBlwEhw6PvJk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "28": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00S.LXXXXXXX.jpg?Expires=1787113912&Signature=ZpeC7eI2OmJkDftuSHfmOZzUP2PW-cxqheABSVeM91rPFaXB9wstz36fUe4rnSqmIT4kqmACdJxyw~4j5-Q3YNo82vOj5atT2X1m3yQHINVd0CEN0vptVkXCqdYJm5kqOuWBp~uwu2bVZEvTuGP2BKg3vV28TIKtk2NEz2pk8aQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "29": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00T.LXXXXXXX.jpg?Expires=1787113912&Signature=IV5361XzvVmlfgbs1SXdX61ps9sfdx1CXoSnkVYKrFqvUM334bJqQ1gx83vA2Ii-XN4MiSjvjx0wFgZMRbYXA~UgBsHrtQHwPvqxDhshU8-LGOH00Mg2AWPuvPmGtd~qXhH8r3Gq74qYNnvWtwNrM-tZWGaZSJVts-zswMz6YNc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "30": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00U.LXXXXXXX.jpg?Expires=1787113912&Signature=LI52Py2xwclc0oIu4O4iRTzltupKjzrwFGzQMzIbo7~9k5ziErBxr~ipiR70qfDQlhpOG892Lfa-KhrZMsd-BGiF~CzwiQr1de1GGUH3CuMpt-ehtdt-bNrOb0Pl6Vhs2ipXWSzuAp0slSWMyAIlpJ13cWBspYFIIOf8KMdkHBM_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+          "31": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S00V.LXXXXXXX.jpg?Expires=1787113912&Signature=FOfYXIkpPU6dC528MxxbFGYcvRM9Nx3BpV5vAacto2k7TUnnfh7Tyeh78fEW4gYDYqM41gqVFSE7ykkWMa~v1O-V02k1NuaLGvN9Hl5djemKv0JAOWggjglVsFz79R6E1SrBpBSMef-dU4Kvt1NScEXG-rGZNlXJdofJegl2qAA_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+        }
+      }
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "58",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t479",
+      "stderr": "",
+      "bytes": 663,
+      "json": {
+        "jumboImageUrls": {
+          "58": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01M.JUMBOXXX.jpg?Expires=1787113913&Signature=FVqGcGcKcSwofCVUngzg0l8BBSHdUVyOKOD4M8pIbGmIkBHbpUw52WU9BcjpKhWZvqtetvrxuyffxudQDTiQhjo7di-3BWaHNXEI0v2AuejfUmZ5gPZgKI6DwgGcUHNXRADLVmtrpiJJmH6zIsgFIFlX0KpqK7oNP3SJQJRUm8k_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+        },
+        "largeImageUrls": {
+          "58": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01M.LXXXXXXX.jpg?Expires=1787113913&Signature=d2nAX7tux67u~yFK~op1FKObtNGSNoxhlcltUD5Hbe8IPOOQFre4kk3kAr1f89a4w6sKI~e93929mKuypP-4EPTmvRdxxOMtyXw9R6b70TByyRgH3K5DHetWDKGf0LaIXH7izOQaaQ-9C-w1beRdRCg-bvMv-fEug0Ee1rXIGgQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+        }
+      },
+      "page": 58,
+      "token_kind": "null"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "58",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t479",
+      "stderr": "",
+      "bytes": 663,
+      "json": {
+        "jumboImageUrls": {
+          "58": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01M.JUMBOXXX.jpg?Expires=1787113913&Signature=FVqGcGcKcSwofCVUngzg0l8BBSHdUVyOKOD4M8pIbGmIkBHbpUw52WU9BcjpKhWZvqtetvrxuyffxudQDTiQhjo7di-3BWaHNXEI0v2AuejfUmZ5gPZgKI6DwgGcUHNXRADLVmtrpiJJmH6zIsgFIFlX0KpqK7oNP3SJQJRUm8k_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+        },
+        "largeImageUrls": {
+          "58": "https://d1b14unh5d6w7g.cloudfront.net/B0FK7RBDFL.01.S01M.LXXXXXXX.jpg?Expires=1787113913&Signature=d2nAX7tux67u~yFK~op1FKObtNGSNoxhlcltUD5Hbe8IPOOQFre4kk3kAr1f89a4w6sKI~e93929mKuypP-4EPTmvRdxxOMtyXw9R6b70TByyRgH3K5DHetWDKGf0LaIXH7izOQaaQ-9C-w1beRdRCg-bvMv-fEug0Ee1rXIGgQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+        }
+      },
+      "page": 58,
+      "token_kind": "issued"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "59",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 59,
+      "token_kind": "null"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "59",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 59,
+      "token_kind": "issued"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "60",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 60,
+      "token_kind": "null"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "60",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 60,
+      "token_kind": "issued"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "103",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 103,
+      "token_kind": "null"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "103",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 103,
+      "token_kind": "issued"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "110",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 110,
+      "token_kind": "null"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "110",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 110,
+      "token_kind": "issued"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "241",
+        "token": "null"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 241,
+      "token_kind": "null"
+    },
+    {
+      "kind": "go-to-page",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "buyingAsin": "B0FK7RBDFL",
+        "page": "241",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t136",
+      "stderr": "",
+      "bytes": 138,
+      "json": {
+        "error": {
+          "text": {
+            "key": "PAGE_NOT_AVAILABLE_TEXT"
+          },
+          "title": {
+            "key": "PAGE_NOT_AVAILABLE_TITLE"
+          },
+          "reftag": "rdr_bar_view"
+        },
+        "nextPageToTry": -1
+      },
+      "page": 241,
+      "token_kind": "issued"
+    }
+  ],
+  "search_requests": [
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "apology",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "apology",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "apology",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "apology",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "price",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "price",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "price",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "price",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "electric",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "electric",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "electric",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "electric",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "wallet",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "wallet",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "wallet",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "wallet",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "coldcard",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "coldcard",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "coldcard",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "coldcard",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "helicopter",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "helicopter",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "helicopter",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "helicopter",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "component",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "component",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "component",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "component",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "defender",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "defender",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "defender",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "defender",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "unit 21",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "unit 21",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "unit 21",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "unit 21",
+      "token_kind": "issued"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "pink",
+        "token": "null",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "pink",
+      "token_kind": "null"
+    },
+    {
+      "kind": "position-data",
+      "params": {
+        "asin": "B0FK7RBDFL",
+        "query": "pink",
+        "token": "AgV4LebYDluI6LBfrUnM91LX8SM76vVwV2PC1aoSXVemwd8AdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFwUjA3R0NqVlI5dWo5TlFhZmsrSENNOTM2VnZtT0g3QXRseldNSEJjRXV4dSs1V0VIZnpKT2NWQU1UUHZMMWJDQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQGt3xV2cmAdwlQoLgadq4KZAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTRn/NQ3MfBpAqdibAgEQgDtjsDx5jcRi5L1CSlI0SXTMqtjisLwCXLCVTq0PSfXBo7L9YVB5TvwpqS+I25YKBLxgfQ1qNGiM31Gv5gIAABAA97jLS2YUuqQ9BosWPNd9RVig21fEFCZXHlSkByAOIlgTmpmDPrFlPwGiPsO4EA8V/////wAAAAEAAAAAAAAAAAAAAAEAAADgSf3PiNjDJH28W7rVfnMpgArG7mQAldNr5X7cAx6ET8YRYa0AhaQO3flD4JOEkuVwm/4wD3mRmapjV+VRWFGw2LzFqmccgC7d5RO/RjxeT74rtWAk0CG4PVnYcRdGwpLArSqzkowwtzxZjsTjSrpi75vppvDDACIzFI5eGRre+TULLR8wYznoO3A7MfwxvRwo+k3/YTaQ18v9P9C3Bj78nH4McIICtF4WhFzTIuzrx+VVQPEyVVYmHtEOOCUK5A7MJTQK/1/X2oWZRjV4Px6Bq62JDlYAQ8kg1wheWg4Bd6RPDqB6W09qml3QI49GI+5BAGcwZQIwfFzO9aq7xb8LF5T2dz2jZqrk2ximXF/q9A8S3BS5fJALc0Y0FxCC+we5m5k8kZGUAjEA2lZSkdz4LK0XjOyjiX6NfgaASHQLqjUxeTdsAJ0ja4xUNzSKbRYG+46u4u6/fYRP",
+        "page": "1"
+      },
+      "status": "200\tapplication/json;charset=utf-8\t163",
+      "stderr": "",
+      "bytes": 156,
+      "json": {
+        "error": {
+          "text": {
+            "key": "Failed to create response for page 1 and ASIN B0FK7RBDFL"
+          },
+          "title": {
+            "key": "PositionData::Error::PageResponseError"
+          },
+          "reftag": null
+        }
+      },
+      "query": "pink",
+      "token_kind": "issued"
+    }
+  ],
+  "ocr": {
+    "page-001": "SHE LEFT HIM A LEGACY. THE SYSTEM NOTICED.\n: pid a\nse.\nle 2\nGENESIS\nMARTIN WARWICK\n",
+    "page-002": "Martin Warwick\nHunting Time\nGenesis\n",
+    "page-003": "Copyright © 2025 by Martin Warwick\nAll rights reserved. No part of this publication may\nbe reproduced, stored or transmitted in any form or\nby any means, electronic, mechanical, photocopying,\nrecording, scanning, or otherwise without written\npermission from the publisher. It is illegal to\ncopy this book, post it to a website, or distribute\nit by any other means without permission.\nThis novel is entirely a work of fiction. The\nnames, characters and incidents portrayed in it\nare the work of the author's imagination. Any\nresemblance to actual persons, living or dead,\nevents or localities is entirely coincidental.\nDesignations used by companies to distinguish\ntheir products are often claimed as trademarks.\nAll brand names and product names used in this\nbook and on its cover are trade names, service\nmarks, trademarks and registered trademarks of\ntheir respective owners. The publishers and the\nbook are not associated with any product or vendor\n",
+    "page-004": "mentioned in this book. None of the companies\nreferenced within the book have endorsed the book.\nColdcard® is a registered trademark of Coinkite Inc. The\nuse of such names is for identification purposes only\nand does not imply any endorsement or affiliation.\nFirst edition\nCover art by Ryan Mulford\nEditing by Ann Howard Creel\nThis book was professionally typeset on Reedsy\nFind out more at reedsy.com\n",
+    "page-005": "To my mother, who taught me courage,\nand gifted me her creativity and spirit of adventure.\n",
+    "page-006": "“Brave men are forged by time and toil”\nAeschylus\n",
+    "page-007": "Contents\nPrologue\nI. RESISTANCE\nParting Waves\nUnder Canopy\nDiving In\nTotal\nClosing Time\nTurning Point\nRelief\nCountdown\nPassing Time\nMining for Blood\n",
+    "page-008": "Roman Rooms\n\nFrom the Darkness\nDancing in the Shadows\nOcean Drive\n\nA Penny for your Thoughts\nStorm Inbound\nBreakaway\n\nIL. PRECIPICE\n\nCapital Flight\n\nCounting the Cost\nLying Low, Flying High\nDistance\n\nOpen Jail\n\nStolen Time\n\nHostile State\n\nVas\n\nWaves of Regret\nTimeless\n",
+    "page-009": "Waiting Game\nIII. LEGACY\nHome Again\nRedemption\nTime Honored\nTreasure Island\nWasting Time\nConfrontation\nThe Turning\nAfter\nOpportunity\nAcknowledgments\nAuthors Note\nAbout the Author\n",
+    "page-010": "Prologue\nInception\n\nThe sun was setting over a vast warm ocean,\nreflecting the purple and orange hues of the sky\nabove, as the late evening bats began to emerge from\nthe forest. Ducking and weaving through the air, they\nflew against the mesmerizing sunset catching the\nevening feast of mosquitos that danced around them.\nThe evening air was warm, and a gentle breeze moved.\nthe tall silk curtains adorning the large balcony of the\nstunningly modern oceanfront property.\n\nIn the distance, the last small boats of evening\nfishermen returned to the shore with their catches of\nthe day. There, on the sea front balcony, a man waited\nalone, tanned by the Caribbean sun, and dressed in\n",
+    "page-011": "linen for comfort. He looked on at the small boats\nwith admiration, mixed with a little envy at the\nsimplicity of their work compared to the complexity\nof his own craft. Nevertheless, he respected the labor\nthe fishermen expended to land their catch. Through\nhis shaded glasses, the colors of the orange and purple\nsky were muted, however he had seen these hues\nevery night for the last few years, and he appreciated\nthe natural beauty of the sunset before him.\n\nShifting slightly in his chair, the man cast a gaze\ntowards the town, where the local port nestled in\nthe sandy shoreline. As the sun was drawing down,\nthe lights of the town began to sparkle in the dusk\nlight. Larger yachts docked at the port, with crewmen\nloading supplies and fuel for their onward journeys to\nneighboring islands and farther beyond the horizon.\nHis open laptop glowed gently as it rested on his\nlap, his design finally complete after over a year of\nstudious and dedicated work.\n\nWhile the laptop fan hummed desperately on his\nlap trying to cool itself, the man starred out to\nthe large white hulls of the yachts in the distance,\nwhich were a stark contrast to the faded and cracked\n",
+    "page-012": "exteriors of the small fishing boats. Their vast hulls\ngleamed against the darkening waters around them.\nThe small port had grown in popularity over the\nyears, and there must have been at least fifty yachts\nmoored there now, all of them jostling in the late\nevening waters. Some of the boats were at least fifty\nto sixty feet long, enough to house several luxurious\nbedrooms and lounge areas. The man looked on and\nwondered if any new yachts would be able to fit in the\nsmall port; there were likely to be more arrivals in the\nnext few years due to the turmoil around the world.\n\nWhile he sat, pondering his existence and the\nworld before him, a woman watched the scene unfold\nfrom behind the veil. This was her world, and he was\nthe architect of her designs. The view was exactly as\nshe remembered it. This was the last time she would\nsee this place, yet she must finish what she started.\n\nIt must be ready.\n\nWith a wave of her hand, the clouds departed the\nsky, revealing the bright orange glow of the setting\nsun in all its glory. She emerged from the house to\ntake in the fullness of her surroundings.\n\n“Are you ready?” she asked.\n",
+    "page-013": "With his concentration broken, he turned to the\nwoman behind him as she stepped forward and put\nher hand calmly on his shoulder, gripping it gently.\nShe was slender and athletic, aside from the large\nbump she carried—pregnant with a baby boy.\n\n“Always,” he said.\n\nHis conviction was firm, and the project was\ncomplete. Behind a glassy screen, concealed within\na meticulous coded world, a key lay hidden. It was\nnot simply a collection of words but a gateway to\nsomething far greater. The man on the balcony had\nwoven an intricate tapestry that only the astute and\nobservant could decipher. A cryptographic legacy that\npromised wealth and power to the first person able to\nunveil its contents. For as long as he was needed, the\narchitect would be the virtual steward of his master’s\nwill, and then, when the time was right, he would\nreveal her legacy.\n\nThe architect, sentient to the significance of his\nmaster’s creation, understood that the discovery of\nthe key would mark a turning point, an extraordinary\nmoment that could bridge worlds and break wars.\n\nThe moment had come.\n"
+  }
+}
