@@ -40,6 +40,8 @@ jobs:
         run: |
           set -euo pipefail
           python -m pip install --disable-pip-version-check -q \
+            torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --disable-pip-version-check -q \
             'transformers==4.48.3' pillow safetensors sentencepiece
 
       - name: Rank all BIP39 words for unnumbered clues
@@ -56,7 +58,7 @@ jobs:
           from transformers import CLIPModel, CLIPProcessor
 
           root=Path('public-media-analysis')
-          words=(Path('/tmp/bip39.txt').read_text().splitlines())
+          words=Path('/tmp/bip39.txt').read_text().splitlines()
           model_id='openai/clip-vit-base-patch32'
           model=CLIPModel.from_pretrained(model_id).eval()
           processor=CLIPProcessor.from_pretrained(model_id)
