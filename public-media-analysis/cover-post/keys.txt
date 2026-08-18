@@ -1,0 +1,17 @@
+__typename
+conversation_count
+created_at
+display_text_range
+edit_control
+entities
+favorite_count
+id_str
+isEdited
+isStaleEdit
+lang
+mediaDetails
+news_action_type
+photos
+possibly_sensitive
+text
+user
