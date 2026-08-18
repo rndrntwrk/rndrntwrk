@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:33:11 GMT
+date: Tue, 18 Aug 2026 20:40:18 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: BMMKHCG5VTK1R4G410GV
+x-amz-rid: ACCJY9ZRX6ZP8MS6B79Z
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 a73c4443f00fb366a3a7226697ad0b6c.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P5
-x-amz-cf-id: P3QcDJ5iCKaqEH1CInPeErd27QKFaU0iWm-1GysPyB11m1g-BHBfWA==
+via: 1.1 4892b1ac8a5bf76f6f3908b66c300c8c.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX50-P1
+x-amz-cf-id: 1noO-MV0PYZvhgRFQU2L6nJ5QhPVLALC5sD9CcrEi_6yevBBxu-lMg==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 20:33:11 GMT
+Date: Tue, 18 Aug 2026 20:40:18 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 743dabf2fdbfd64c0bd7adf3cea9dbec.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: HIO52-P4
+Via: 1.1 80df7bfea3aaa4837eb11281d6123162.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: PHX52-P1
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: Wfqi4K4VvN7GYhHOy_XdYX6PpftvbdectzvCHGEjZuZCXC1pFzOrJQ==
+X-Amz-Cf-Id: 8th-M3e6ndqIKaR9BEOPyPD0LXwH65LQRh4sn2swCXcU13Ys8jyyqQ==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 20:33:11 GMT
+date: Tue, 18 Aug 2026 20:40:18 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: KJ853MGDNM0REPT8AJFC
+x-amz-rid: 8X0C0EBNX0E8MZF1NS11
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 93b50b5ce635a36621d7bd38d3b0d6da.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P4
+via: 1.1 efcabe7b5ec775acb41f567d7bd5e8a6.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX52-P1
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: -pfkosCMF_IhTsAoTRidkBiqs4IqcY5ki-T8vcUT2DKIg8W8Nv2qvg==
+x-amz-cf-id: bLO3OeaFieaE7gRH1yvNXaKKvCSh0UWX9M43-ACNFjSVTO1QtAovYA==
 
