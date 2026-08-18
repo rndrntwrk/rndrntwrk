@@ -1,0 +1,76 @@
+name: Unpack Hunting Time sample search index
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/unpack-hunting-time-search-index.yml
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Unpack and inventory decrypted search index
+        run: |
+          set -euxo pipefail
+          src=public-media-analysis/search-index/index.aes-cbc.unpad.bin
+          out=public-media-analysis/search-index/unpacked
+          rm -rf "$out"
+          mkdir -p "$out"
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile,json,hashlib,os
+          src=Path('public-media-analysis/search-index/index.aes-cbc.unpad.bin')
+          out=Path('public-media-analysis/search-index/unpacked')
+          with zipfile.ZipFile(src) as z:
+              rows=[]
+              for info in z.infolist():
+                  data=z.read(info.filename)
+                  p=out/info.filename
+                  p.parent.mkdir(parents=True,exist_ok=True)
+                  p.write_bytes(data)
+                  rows.append({'name':info.filename,'compressed':info.compress_size,'size':info.file_size,'crc':info.CRC,'sha256':hashlib.sha256(data).hexdigest(),'prefix_hex':data[:32].hex(),'prefix_text':data[:200].decode('utf-8','replace')})
+              (out/'ZIP_INDEX.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          file "$out"/* > "$out/FILE_TYPES.txt" || true
+          # Generate readable text/hex views for small non-text files.
+          python - <<'PY'
+          from pathlib import Path
+          import json,binascii,string
+          out=Path('public-media-analysis/search-index/unpacked')
+          for p in list(out.rglob('*')):
+              if not p.is_file() or p.name.startswith(('FILE_','ZIP_INDEX')): continue
+              data=p.read_bytes()
+              if len(data)>2_000_000: continue
+              try:
+                  text=data.decode('utf-8')
+                  if sum(c.isprintable() or c in '\r\n\t' for c in text)/max(1,len(text))>0.9:
+                      p.with_name(p.name+'.utf8.txt').write_text(text)
+                      continue
+              except Exception: pass
+              # Extract printable strings and bounded hex prefix.
+              strings=[]; cur=[]
+              for b in data:
+                  ch=chr(b)
+                  if ch in string.printable and ch not in '\x0b\x0c\r\n\t': cur.append(ch)
+                  else:
+                      if len(cur)>=4: strings.append(''.join(cur))
+                      cur=[]
+              if len(cur)>=4: strings.append(''.join(cur))
+              p.with_name(p.name+'.strings.txt').write_text('\n'.join(strings[:200000]))
+              p.with_name(p.name+'.hex-prefix.txt').write_text(data[:65536].hex())
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: unpack Hunting Time sample search index'
+          git push origin HEAD:research/hunting-time-amazon-probe
