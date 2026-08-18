@@ -1,0 +1,31 @@
+name: Package latest Hunting Time evidence
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/package-hunting-time-latest.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Inventory latest evidence
+        run: |
+          find public-media-analysis -type f -printf '%P\t%s bytes\n' | sort > public-media-analysis/LATEST_INVENTORY.txt
+      - name: Upload latest evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-latest-evidence
+          path: public-media-analysis
+          if-no-files-found: error
+          retention-days: 1
