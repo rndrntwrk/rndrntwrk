@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:54:44 GMT
+date: Tue, 18 Aug 2026 22:01:46 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: CRK03D0Z68J1D49A9QYH
+x-amz-rid: 9CW08ZY4Q6PFSXY5WYVF
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 dd8c160abdaf9c95041bf719c46a2c40.cloudfront.net (CloudFront)
+via: 1.1 38d3e9761a0be8ab0e1649c301c7e24a.cloudfront.net (CloudFront)
 x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: SBAqPsGAG64IJnim64JUrbxMKPjUFWWFRsc9SCg2UHOD2Bd5dqeTlg==
+x-amz-cf-id: _HfEWYF_eQburrX-jpYakIZRQk0y_lW6Mpilq-ZK_HklG0ZV6e306g==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 20:54:44 GMT
+Date: Tue, 18 Aug 2026 22:01:46 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 25d753976be5211981770d9d1bd174aa.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD55-P10
+Via: 1.1 338da9a87cccb4494081d7b4978952b0.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: ORD56-P11
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: yLvxo4r3z1mbGwFVxkAr6B37ukpVkJ3bsG2G0jK7ovRlIg2n0AqlFQ==
+X-Amz-Cf-Id: f7Uwn27KK5lyEGCV_48NVxmkB6cWdsxjmj8-IWmpkLVmoj7tF6-BQQ==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 20:54:44 GMT
+date: Tue, 18 Aug 2026 22:01:46 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: AMGTNHS085748D34EKVV
+x-amz-rid: NGEK2HANG5HZ3BFSCZ81
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 d6b0796641ad9e40cce4a9874d43cd3a.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P10
+via: 1.1 682c86a4b6ee89ba3a16bb30331262f0.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD56-P11
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: ccEkdwkArjNrfKVMt3utlk67Ez-8zuVC1kxXwDJvvYYH0GXkot25Ng==
+x-amz-cf-id: lwhFww52K3gDhFHYz_GDIT4iY5sFDNQjQqdSdQti03KTqwHuXpHnNQ==
 
