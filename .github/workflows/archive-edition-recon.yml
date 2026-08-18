@@ -39,42 +39,46 @@ jobs:
           curl -fsSL --retry 3 -A "$UA" \
             'https://www.huntingtimenovel.com/robots.txt' -o "$out/robots.txt" || true
           python - <<'PY'
-          import json, pathlib, re, urllib.parse, urllib.request
+          import json, pathlib, re, urllib.request
           out=pathlib.Path('public-media-analysis/edition-recon')
           summary={}
-          cdx=out/'cdx.json'
           rows=[]
+          cdx=out/'cdx.json'
           if cdx.exists() and cdx.stat().st_size:
               try:
                   data=json.loads(cdx.read_text(errors='replace'))
                   if isinstance(data,list) and data:
-                      head=data[0]
-                      for row in data[1:]: rows.append(dict(zip(head,row)))
-              except Exception as e: summary['cdx_error']=repr(e)
+                      header=data[0]
+                      rows=[dict(zip(header,row)) for row in data[1:]]
+              except Exception as e:
+                  summary['cdx_error']=repr(e)
           summary['capture_count']=len(rows)
           summary['captures']=rows
           amazon=[]
+          url_pattern=re.compile(r"https?://[^\"'<> ]+")
           for row in rows:
-              if row.get('mimetype')!='text/html': continue
+              if row.get('mimetype')!='text/html':
+                  continue
               ts=row['timestamp']; original=row['original']
               replay=f'https://web.archive.org/web/{ts}id_/{original}'
               try:
                   req=urllib.request.Request(replay,headers={'User-Agent':'Mozilla/5.0'})
-                  with urllib.request.urlopen(req,timeout=30) as r: html=r.read().decode('utf-8','replace')
-                  name=f"snapshot-{ts}.html"
-                  (out/name).write_text(html)
-                  for url in re.findall(r'https?://[^\"\'<> ]+',html):
-                      if 'amazon.' in url or 'amzn.' in url: amazon.append({'timestamp':ts,'url':url})
+                  with urllib.request.urlopen(req,timeout=30) as r:
+                      html=r.read().decode('utf-8','replace')
+                  (out/f'snapshot-{ts}.html').write_text(html)
+                  for url in url_pattern.findall(html):
+                      if 'amazon.' in url or 'amzn.' in url:
+                          amazon.append({'timestamp':ts,'url':url})
               except Exception as e:
                   summary.setdefault('snapshot_errors',[]).append({'timestamp':ts,'url':original,'error':repr(e)})
           live=(out/'live-home.html').read_text(errors='replace') if (out/'live-home.html').exists() else ''
-          for url in re.findall(r'https?://[^\"\'<> ]+',live):
-              if 'amazon.' in url or 'amzn.' in url: amazon.append({'timestamp':'live','url':url})
-          # Normalize escaped JSON slashes and HTML entities enough for ASIN discovery.
-          raw='\n'.join(x['url'] for x in amazon)+"\n"+live
-          asins=sorted(set(re.findall(r'(?i)(?:/dp/|/gp/product/|asin[=:/%22]+)([A-Z0-9]{10})',raw)))
+          for url in url_pattern.findall(live):
+              if 'amazon.' in url or 'amzn.' in url:
+                  amazon.append({'timestamp':'live','url':url})
+          raw='\n'.join(x['url'] for x in amazon)+'\n'+live
+          asin_pattern=re.compile(r'(?i)(?:/dp/|/gp/product/|asin[=:/%22]+)([A-Z0-9]{10})')
           summary['amazon_urls']=amazon
-          summary['asins']=asins
+          summary['asins']=sorted(set(asin_pattern.findall(raw)))
           (out/'summary.json').write_text(json.dumps(summary,indent=2))
           print(json.dumps(summary,indent=2)[:20000])
           PY
