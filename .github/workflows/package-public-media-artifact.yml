@@ -45,3 +45,5 @@ jobs:
           git add public-media-analysis/PACKAGE_ARTIFACT_RUN_ID.txt
           git commit -m 'research: persist package artifact run id' || exit 0
           git push origin HEAD:research/public-media-analysis
+
+# Refreshed to package the latest recovered analysis tree.
