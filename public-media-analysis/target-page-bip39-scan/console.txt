@@ -1,0 +1,38 @@
+100/2048 words; requests=100; hits=28
+200/2048 words; requests=201; hits=47
+300/2048 words; requests=301; hits=57
+400/2048 words; requests=401; hits=73
+500/2048 words; requests=501; hits=87
+600/2048 words; requests=601; hits=105
+700/2048 words; requests=702; hits=119
+800/2048 words; requests=802; hits=139
+900/2048 words; requests=903; hits=156
+1000/2048 words; requests=1004; hits=173
+1100/2048 words; requests=1105; hits=189
+1200/2048 words; requests=1206; hits=208
+1300/2048 words; requests=1308; hits=234
+1400/2048 words; requests=1408; hits=247
+1500/2048 words; requests=1508; hits=263
+1600/2048 words; requests=1608; hits=279
+1700/2048 words; requests=1708; hits=292
+1800/2048 words; requests=1809; hits=310
+1900/2048 words; requests=1912; hits=324
+2000/2048 words; requests=2013; hits=347
+{
+  "stats": {
+    "words": 2048,
+    "requests": 2063,
+    "pages_fetched": 2063
+  },
+  "errors": 0,
+  "counts": {
+    "Page 103": 29,
+    "Page 110": 82,
+    "Page 14": 27,
+    "Page 19": 67,
+    "Page 21": 78,
+    "Page 24": 90,
+    "Page 241": 71,
+    "Page 32": 75
+  }
+}
