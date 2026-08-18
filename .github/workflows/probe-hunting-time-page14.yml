@@ -1,4 +1,4 @@
-name: Probe Hunting Time first pages
+name: Probe Hunting Time page mapping
 
 on:
   push:
@@ -17,42 +17,111 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: research/public-media-analysis
-      - name: Probe page 1 and persist public preview response
+          fetch-depth: 0
+      - name: Probe public preview pages and search
         run: |
           set -euxo pipefail
-          out=public-media-analysis/page1-probe
+          out=/tmp/hunting-time-page-map
           rm -rf "$out"
-          mkdir -p "$out"
+          mkdir -p "$out/images" "$out/ocr" "$out/responses"
           ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
           card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
           base='https://read.amazon.com/sample/print'
-          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" -D "$out/card.headers" "$card" -o "$out/card.html"
-          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -D "$out/book-data.headers" "$base/book-data?asin=B0FK7RBDFL" -o "$out/book-data.json"
-          query='asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=1&token=null'
-          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" \
-            -H 'Accept: application/json' -D "$out/go.headers" "$base/go-to-page?$query" -o "$out/go.body"
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' "$base/book-data?asin=B0FK7RBDFL" -o "$out/book-data.json"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' 'https://read.amazon.com/sample/karamel-token?asin=B0FK7RBDFL' -o "$out/karamel-token.json"
           python - <<'PY'
-          import json, subprocess
+          import json, subprocess, urllib.parse
           from pathlib import Path
-          out=Path('public-media-analysis/page1-probe')
-          obj=json.loads((out/'go.body').read_text())
-          (out/'go.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+          out=Path('/tmp/hunting-time-page-map')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          cookies=str(out/'cookies.txt')
+          base='https://read.amazon.com/sample/print'
+          book=json.loads((out/'book-data.json').read_text())
+          issued=json.loads((out/'karamel-token.json').read_text()).get('token')
+          summary={'book':book,'issued_token_length':len(issued or ''),'page_requests':[],'search_requests':[]}
+
+          def request(kind, params, stem):
+              url=f'{base}/{kind}?'+urllib.parse.urlencode(params)
+              body=out/'responses'/f'{stem}.body'
+              headers=out/'responses'/f'{stem}.headers'
+              q=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',cookies,'-c',cookies,'-e',card,'-H','Accept: application/json','-D',str(headers),url,'-o',str(body),'-w','%{http_code}\t%{content_type}\t%{size_download}\n'],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              rec={'kind':kind,'params':params,'status':q.stdout.strip(),'stderr':q.stderr.strip(),'bytes':len(raw)}
+              try:
+                  rec['json']=json.loads(raw)
+              except Exception:
+                  rec['prefix']=raw[:500].decode('utf-8','replace')
+              return rec
+
+          # Public first-page request. Download pages 1-13 for word-coordinate tests.
+          first=request('go-to-page',{'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':'1','token':'null'},'page-001-null')
+          summary['page_requests'].append(first)
+          obj=first.get('json') or {}
           urls=obj.get('jumboImageUrls') or obj.get('largeImageUrls') or {}
-          if not isinstance(urls,dict): raise SystemExit('missing page URL dictionary')
-          for key,url in urls.items():
-              n=int(key)
-              if n>13: continue
-              dst=out/f'page-{n:03d}.jpg'
-              subprocess.run(['curl','-L','--compressed','--retry','3','-sS',url,'-o',str(dst)],check=True)
-          missing=[n for n in range(1,14) if not (out/f'page-{n:03d}.jpg').exists()]
-          if missing: raise SystemExit(f'missing {missing}')
+          if isinstance(urls,dict):
+              for key,url in urls.items():
+                  try: n=int(key)
+                  except Exception: continue
+                  if 1 <= n <= 13:
+                      dst=out/'images'/f'page-{n:03d}.jpg'
+                      subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-e',card,url,'-o',str(dst)],check=True)
+
+          # Ask only the documented public preview endpoint. Record denials as denials.
+          for page in (58,59,60,103,110,241):
+              for label,token in [('null','null'),('issued',issued)]:
+                  params={'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':str(page),'token':token}
+                  rec=request('go-to-page',params,f'page-{page:03d}-{label}')
+                  rec['page']=page; rec['token_kind']=label
+                  summary['page_requests'].append(rec)
+
+          # Test the documented Search Inside call with both null and the public issued token.
+          for query in ('apology','price','electric','wallet','coldcard','helicopter','component','defender','unit 21','pink'):
+              for label,token in [('null','null'),('issued',issued)]:
+                  params={'asin':'B0FK7RBDFL','query':query,'token':token,'page':'1'}
+                  rec=request('position-data',params,f'search-{query.replace(" ","-")}-{label}')
+                  rec['query']=query; rec['token_kind']=label
+                  summary['search_requests'].append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
           PY
           sudo apt-get update -qq
           sudo apt-get install -y -qq tesseract-ocr >/dev/null
-          for img in "$out"/page-*.jpg; do tesseract "$img" "${img%.jpg}" --psm 6 >/dev/null 2>&1 || true; done
-          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          for img in "$out"/images/page-*.jpg; do
+            [ -e "$img" ] || continue
+            base_name=$(basename "$img" .jpg)
+            tesseract "$img" "$out/ocr/$base_name" --psm 6 >/dev/null 2>&1 || true
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out=Path('/tmp/hunting-time-page-map')
+          ocr={p.stem:p.read_text(errors='replace') for p in sorted((out/'ocr').glob('page-*.txt'))}
+          p=out/'summary.json'
+          summary=json.loads(p.read_text())
+          summary['ocr']=ocr
+          p.write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+      - name: Persist compact results with retry-safe push
+        run: |
+          cp /tmp/hunting-time-page-map/summary.json /tmp/hunting-time-page-map-summary.json
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$out"
-          git commit -m 'research: persist first public preview pages'
-          git push origin HEAD:research/public-media-analysis
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/page-map
+            cp /tmp/hunting-time-page-map-summary.json public-media-analysis/page-map/summary.json
+            git add public-media-analysis/page-map/summary.json
+            git commit -m 'research: persist Hunting Time page-map probe' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
+      - name: Upload full probe
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-page-map
+          path: /tmp/hunting-time-page-map
+          if-no-files-found: error
+          retention-days: 1
