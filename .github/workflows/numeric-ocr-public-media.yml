@@ -1,0 +1,194 @@
+name: Box-aware numeric OCR for clue photographs
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/numeric-ocr-public-media.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  numeric-ocr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Install OCR dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr
+          python -m pip install --disable-pip-version-check -q pillow pytesseract opencv-python-headless numpy
+
+      - name: Detect high-confidence numbers with bounding boxes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/numeric-ocr
+          cat > /tmp/numeric_ocr.py <<'PY'
+          from __future__ import annotations
+          import json
+          import math
+          import re
+          from collections import defaultdict
+          from pathlib import Path
+
+          import cv2
+          import numpy as np
+          import pytesseract
+          from PIL import Image, ImageEnhance, ImageOps
+          from pytesseract import Output
+
+          ROOT = Path('public-media-analysis')
+          OUT = ROOT / 'numeric-ocr'
+          OUT.mkdir(parents=True, exist_ok=True)
+
+          def variants(image: Image.Image):
+              gray = ImageOps.grayscale(image)
+              yield 'gray', gray
+              yield 'autocontrast', ImageOps.autocontrast(gray)
+              yield 'contrast2', ImageEnhance.Contrast(gray).enhance(2.0)
+              arr = np.asarray(gray)
+              clahe = cv2.createCLAHE(clipLimit=2.5, tileGridSize=(8, 8)).apply(arr)
+              yield 'clahe', Image.fromarray(clahe)
+              for threshold in (96, 128, 160, 192):
+                  yield f'threshold-{threshold}', Image.fromarray(np.where(arr > threshold, 255, 0).astype(np.uint8))
+
+          all_results = {}
+          for path in sorted(ROOT.glob('clue-*.jpg')):
+              original = Image.open(path).convert('RGB')
+              ow, oh = original.size
+              detections = []
+              general = []
+
+              for angle in (0, 90, 180, 270):
+                  rotated = original.rotate(angle, expand=True)
+                  for scale in (1.0, 2.0):
+                      work = rotated.resize((round(rotated.width * scale), round(rotated.height * scale)), Image.Resampling.LANCZOS)
+                      for vname, variant in variants(work):
+                          for psm in (6, 11, 12, 13):
+                              config = f'--oem 3 --psm {psm} -c tessedit_char_whitelist=0123456789'
+                              data = pytesseract.image_to_data(variant, config=config, output_type=Output.DICT)
+                              for i, raw in enumerate(data['text']):
+                                  text = re.sub(r'\D', '', raw or '')
+                                  if not text or len(text) > 6:
+                                      continue
+                                  try:
+                                      conf = float(data['conf'][i])
+                                  except Exception:
+                                      continue
+                                  if conf < 20:
+                                      continue
+                                  x, y = int(data['left'][i]), int(data['top'][i])
+                                  w, h = int(data['width'][i]), int(data['height'][i])
+                                  # Coordinates are reported in the transformed frame; retain those
+                                  # plus normalized position and area for stable cross-variant ranking.
+                                  fw, fh = variant.size
+                                  detections.append({
+                                      'text': text,
+                                      'confidence': conf,
+                                      'angle': angle,
+                                      'scale': scale,
+                                      'variant': vname,
+                                      'psm': psm,
+                                      'bbox': [x, y, w, h],
+                                      'normalized_center': [(x + w/2) / fw, (y + h/2) / fh],
+                                      'area_fraction': (w * h) / max(1, fw * fh),
+                                  })
+
+              # One restrained general OCR pass preserves genuine labels without producing
+              # the enormous low-confidence text dump from the earlier experiment.
+              for psm in (6, 11, 12):
+                  data = pytesseract.image_to_data(ImageOps.autocontrast(ImageOps.grayscale(original)), config=f'--oem 3 --psm {psm}', output_type=Output.DICT)
+                  for i, raw in enumerate(data['text']):
+                      text = (raw or '').strip()
+                      if len(text) < 2:
+                          continue
+                      try:
+                          conf = float(data['conf'][i])
+                      except Exception:
+                          continue
+                      if conf < 55:
+                          continue
+                      general.append({
+                          'text': text,
+                          'confidence': conf,
+                          'psm': psm,
+                          'bbox': [int(data['left'][i]), int(data['top'][i]), int(data['width'][i]), int(data['height'][i])],
+                      })
+
+              grouped = defaultdict(list)
+              for det in detections:
+                  # Coarse spatial bin makes repeated detection of the same physical number
+                  # across preprocessing variants accumulate without merging unrelated labels.
+                  cx, cy = det['normalized_center']
+                  key = (det['text'], round(cx * 5), round(cy * 5))
+                  grouped[key].append(det)
+
+              candidates = []
+              for (text, bx, by), group in grouped.items():
+                  candidates.append({
+                      'text': text,
+                      'spatial_bin': [bx, by],
+                      'support': len(group),
+                      'max_confidence': max(d['confidence'] for d in group),
+                      'mean_confidence': sum(d['confidence'] for d in group) / len(group),
+                      'max_area_fraction': max(d['area_fraction'] for d in group),
+                      'examples': sorted(group, key=lambda d: (d['confidence'], d['area_fraction']), reverse=True)[:5],
+                  })
+              candidates.sort(key=lambda x: (x['support'], x['max_confidence'], x['max_area_fraction']), reverse=True)
+
+              # Deduplicate general labels while keeping strongest reading.
+              label_map = {}
+              for item in general:
+                  key = (item['text'].lower(), tuple(item['bbox']))
+                  if key not in label_map or item['confidence'] > label_map[key]['confidence']:
+                      label_map[key] = item
+              labels = sorted(label_map.values(), key=lambda x: x['confidence'], reverse=True)[:100]
+
+              all_results[path.stem] = {
+                  'file': path.name,
+                  'size': [ow, oh],
+                  'numeric_candidates': candidates[:100],
+                  'high_confidence_labels': labels,
+              }
+              print(path.name)
+              for c in candidates[:15]:
+                  print('  NUM', c['text'], 'support', c['support'], 'max_conf', round(c['max_confidence'], 1), 'area', round(c['max_area_fraction'], 6), 'bin', c['spatial_bin'])
+              print('  LABELS', [x['text'] for x in labels[:25]])
+
+          (OUT / 'results.json').write_text(json.dumps(all_results, indent=2, ensure_ascii=False), encoding='utf-8')
+          lines = ['# Box-aware numeric OCR', '']
+          for clue, item in all_results.items():
+              lines += [f'## {clue}', '', f"Image size: `{item['size'][0]} × {item['size'][1]}`", '', '### Numeric candidates', '']
+              lines += ['| Text | Support | Max conf. | Max area | Spatial bin |', '|---|---:|---:|---:|---|']
+              for c in item['numeric_candidates'][:30]:
+                  lines.append(f"| `{c['text']}` | {c['support']} | {c['max_confidence']:.1f} | {c['max_area_fraction']:.6f} | `{c['spatial_bin']}` |")
+              lines += ['', '### High-confidence labels', '', ', '.join(f"`{x['text']}`" for x in item['high_confidence_labels'][:50]) or '_None_', '']
+          (OUT / 'results.md').write_text('\n'.join(lines), encoding='utf-8')
+          PY
+          python /tmp/numeric_ocr.py | tee public-media-analysis/numeric-ocr/console.txt
+
+      - name: Persist OCR outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/numeric-ocr
+          if git diff --cached --quiet; then
+            echo 'No outputs to commit'
+            exit 0
+          fi
+          git commit -m 'research: add box-aware numeric OCR results'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
