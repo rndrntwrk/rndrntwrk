@@ -1,0 +1,53 @@
+name: Beautify public search-index decoder
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/beautify-search-index-decoder.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  beautify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Beautify decoder region
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q jsbeautifier
+          python - <<'PY'
+          from pathlib import Path
+          import jsbeautifier
+          src=Path('public-media-analysis/search-decoder/decoder-wide.js')
+          s=src.read_text(errors='replace')
+          opts=jsbeautifier.default_options()
+          opts.indent_size=2
+          opts.preserve_newlines=False
+          out=jsbeautifier.beautify(s,opts)
+          Path('public-media-analysis/search-decoder/decoder-wide.pretty.js').write_text(out)
+          # Extract neighborhoods in the pretty form.
+          for needle in ['class Ki','class Ji','class Hi','class Vi','class Wi','NumberOfWordsIndexed','BytesPerEntity']:
+            i=out.find(needle)
+            if i>=0:
+              Path('public-media-analysis/search-decoder',needle.replace(' ','-')+'.pretty.js').write_text(out[max(0,i-20000):min(len(out),i+50000)])
+          print('source chars',len(s),'pretty chars',len(out),'lines',out.count('\n')+1)
+          PY
+      - name: Persist beautified decoder
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-decoder
+          git commit -m "research: persist beautified search-index decoder $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
