@@ -1,0 +1,158 @@
+name: Export high target pages and clue-term hits
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-high-target-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Query public paperback search index and download target scans
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q requests pillow
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import math
+          import time
+          from pathlib import Path
+          import requests
+          from PIL import Image
+
+          ASIN='B0FRGB2PMR'
+          endpoint='https://read.amazon.com/sample/print/search-results'
+          out=Path('/tmp/high-target-pages')
+          out.mkdir(parents=True,exist_ok=True)
+          session=requests.Session()
+          session.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36','Accept':'application/json'})
+
+          jobs=[
+            {'label':'Page 60','queries':['helicopter','pilot','flight','rotor','cockpit','air','machine','group','blue','black']},
+            {'label':'Page 103','queries':['strategy','shadow','height','swarm','machine','metal','when','where','hold','keep']},
+            {'label':'Page 110','queries':['engine','road','route','vehicle','drive','window','radio','seed','phrase','country']},
+            {'label':'Page 241','queries':['system','gaze','pulse','room','chair','floor','finger','armed','ready','voice']},
+          ]
+          clue_terms={
+            'clue-02':['electric','electricity','power','energy','wire','switch','shock','circuit','breaker','panel','spark','current','voltage','arc','cable'],
+            'clue-05':['every apology has a price','apology has a price','apology','price','sorry','guilt','bar','neon','sign','cost'],
+            'clue-10':['hotel','room','bed','bag','luggage','laptop','window','curtain','sunset','city','Bangkok','travel','pack','coffee'],
+          }
+
+          def fetch_all(query):
+            rows=[]; bodies=[]; page=1
+            while True:
+              params={'asin':ASIN,'buyingAsin':ASIN,'query':query,'pageNumber':page,'pageSize':100}
+              r=session.get(endpoint,params=params,timeout=45)
+              r.raise_for_status()
+              body=r.json(); bodies.append(body); rows.extend(body.get('results') or [])
+              total=int(body.get('totalResults') or 0)
+              if page*100>=total: break
+              page+=1; time.sleep(.05)
+            return rows,bodies
+
+          result={'targets':{},'clue_terms':{}}
+          downloaded={}
+          for job in jobs:
+            label=job['label']; rec={'queries':[],'rows':[],'download':None}
+            for query in job['queries']:
+              rows,bodies=fetch_all(query)
+              matches=[row for row in rows if isinstance(row,(list,tuple)) and len(row)>=2 and str(row[1])==label]
+              rec['queries'].append({'query':query,'total_rows':len(rows),'matches':matches})
+              print(label,query,'matches',matches,flush=True)
+              for row in matches:
+                key=str(row[0])
+                for body in bodies:
+                  for field in ('jumboImageUrls','largeImageUrls'):
+                    url=(body.get(field) or {}).get(key)
+                    if url and label not in downloaded:
+                      data=session.get(url,timeout=60).content
+                      path=out/f"{label.lower().replace(' ','-')}-{key}.jpg"
+                      path.write_bytes(data)
+                      with Image.open(path) as image: size=list(image.size)
+                      info={'query':query,'row':row,'key':key,'field':field,'file':path.name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'size':size}
+                      downloaded[label]=info; rec['download']=info
+                      print('DOWNLOADED',label,info,flush=True)
+                      break
+                  if label in downloaded: break
+                if label in downloaded: break
+              if label in downloaded: break
+              time.sleep(.05)
+            rec['rows']=[x for q in rec['queries'] for x in q['matches']]
+            result['targets'][label]=rec
+
+          for clue,terms in clue_terms.items():
+            entries=[]
+            for term in terms:
+              rows,_=fetch_all(term)
+              entries.append({'term':term,'rows':rows,'labels':sorted({str(r[1]) for r in rows if isinstance(r,(list,tuple)) and len(r)>=2})})
+              print(clue,term,entries[-1]['labels'],flush=True)
+              time.sleep(.03)
+            result['clue_terms'][clue]=entries
+
+          (out/'results.json').write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding='utf-8')
+          lines=['# High target page export and clue-term hits','']
+          for label,rec in result['targets'].items():
+            lines += [f'## {label}','',f"Download: `{json.dumps(rec['download'],ensure_ascii=False)}`",'']
+            for q in rec['queries']:
+              if q['matches']:
+                lines += [f"- `{q['query']}`: `{json.dumps(q['matches'],ensure_ascii=False)}`"]
+            lines.append('')
+          for clue,entries in result['clue_terms'].items():
+            lines += [f'## {clue}','']
+            for e in entries:
+              lines.append(f"- `{e['term']}`: {', '.join(e['labels']) or '(no result)'}")
+            lines.append('')
+          (out/'results.md').write_text('\n'.join(lines),encoding='utf-8')
+          PY
+
+      - name: Upload target-page artifact
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-high-target-pages
+          path: /tmp/high-target-pages
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Persist compact results and run id
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/high-target-pages
+            cp /tmp/high-target-pages/results.md public-media-analysis/high-target-pages/results.md
+            python - <<'PY'
+          import json,os
+          from pathlib import Path
+          Path('public-media-analysis/high-target-pages/run.json').write_text(json.dumps({'run_id':int(os.environ['RUN_ID']),'artifact_id':int(os.environ['ARTIFACT_ID'])},indent=2)+'\n')
+          PY
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add public-media-analysis/high-target-pages
+            git commit -m 'research: persist high target page export' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
