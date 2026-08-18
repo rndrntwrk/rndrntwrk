@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   export:
@@ -24,10 +24,30 @@ jobs:
           set -euo pipefail
           test -d public-media-analysis
           find public-media-analysis -maxdepth 3 -type f -print | sort
-      - uses: actions/upload-artifact@v4
+      - id: upload
+        uses: actions/upload-artifact@v4
         with:
           name: hunting-time-public-evidence
           path: public-media-analysis
           if-no-files-found: error
           compression-level: 6
           retention-days: 7
+      - name: Persist export identifiers
+        env:
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis
+          cat > public-media-analysis/export-run.txt <<EOF
+          run_id=${GITHUB_RUN_ID}
+          run_attempt=${GITHUB_RUN_ATTEMPT}
+          artifact_id=${ARTIFACT_ID}
+          artifact_url=${ARTIFACT_URL}
+          head_sha=${GITHUB_SHA}
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/export-run.txt
+          git commit -m 'research: record public evidence artifact identifiers'
+          git push origin HEAD:research/public-media-analysis
