@@ -1,0 +1,37 @@
+name: Package public media analysis inputs
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/package-public-media.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Verify evidence files
+        run: |
+          set -euo pipefail
+          test "$(find public-media-analysis -maxdepth 1 -name 'clue-*.jpg' | wc -l)" -eq 12
+          sha256sum public-media-analysis/clue-*.jpg > public-media-analysis/SHA256SUMS.txt
+          find public-media-analysis -maxdepth 2 -type f -printf '%P\t%s bytes\n' | sort
+
+      - name: Upload exact evidence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-media-analysis-evidence
+          path: public-media-analysis
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
