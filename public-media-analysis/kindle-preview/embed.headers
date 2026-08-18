@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 04:38:02 GMT
+date: Tue, 18 Aug 2026 04:38:44 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 4592G9AEKX5RFCHAC1E1
+x-amz-rid: 7HSZDBM8S2Q88PW80SFE
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 4b63c15595b60dbcca6db6aeea9d3d72.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P5
-x-amz-cf-id: A69Mzl3b-TDx7cauMwzEEqYxtDk-6J1vcSfodp3mQ08nm3DbRui48w==
+via: 1.1 6a1e43c7e8523dfb0378fa16c9f34f70.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: ost56kTN5o-9nAEyTUVc5MjayRrC0kDOmLkvL4I4lEbj8CJTJI2M0Q==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 04:38:03 GMT
+Date: Tue, 18 Aug 2026 04:38:44 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 518bdec7a5119a665abaf6315a08e6a8.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: HIO52-P2
+Via: 1.1 41577615315cdaa85bde85c55d8aea8c.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: SFO5-P3
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: vYoHDlo6QDKk2a9Uq9oU4KaiKdzt8CO7AJRj-FSDo6CTnx33-TasVA==
+X-Amz-Cf-Id: YaC2UGj1KugHoxJuzyjWZDp4eaA6HHxiptLkFg33T3CodufDkWB8ag==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 04:38:03 GMT
+date: Tue, 18 Aug 2026 04:38:44 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: FXPJE944KJ6JA9W1JS0B
+x-amz-rid: 7X0YXA1WQXPYNYAHT2HA
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 518bdec7a5119a665abaf6315a08e6a8.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P2
+via: 1.1 4d70f087869a9b5ea44066f1023bcc14.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: 3xpoM4FlDV8OPvaZV4d6IDREU4VF9DJv1CzIhgdfpdIXEN8VIA6Cew==
+x-amz-cf-id: tr-zo2GWgASUNU6KhlI0wALvs2oDQzL4eU2pA6vELhHNuA3R9xk-ow==
 

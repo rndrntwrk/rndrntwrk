@@ -2,37 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 04:38:02 GMT
+date: Tue, 18 Aug 2026 04:38:44 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: R37W5CHV1GPHVF96QWN6
+x-amz-rid: 0GYQ78XSDGQ5QBP1HQY9
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 33f44c5d40d98734c5ae4147ce95d00c.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P5
-x-amz-cf-id: JKW-0kmLE7m6d9sBJ0QVSf9vE9CJtEy19lrD5CG8mab26qqaz61GwA==
+via: 1.1 d55dffcd7a383a20b971e92575967a14.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: sv_3EUfuQb3CM8qo33VietbgRuaN2-NeRIHuUA0VIh7hC5bSdkXPHw==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 04:38:02 GMT
+Date: Tue, 18 Aug 2026 04:38:44 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 1f941fcf288b6d0259a0f708c955afae.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: HIO52-P2
-X-Amz-Cf-Id: N2bV6dH6LzZxMoQ8eTTZoc0WAbeAds4nBDRvoxb6SUlaA2ucUJTCkw==
+Via: 1.1 3d86a8f3eeffbe92c234d836c8991110.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: SFO5-P3
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: CT5xnEXv_Q7bz6CU6H_nBk3WzADpGLJZ0GE8H4nJsyh7-Ivlv1gGxw==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 04:38:02 GMT
+date: Tue, 18 Aug 2026 04:38:44 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: Z0Q3CEV9664672NAANDJ
+x-amz-rid: VCBNXFRAZXR166AWSHHQ
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 049ca50de603d43d8c9d0f7716efb414.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P2
+via: 1.1 faf980cb4a759b6ba4ede233ebb27e96.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: 7RMvcmyy3rqmUfWYWo2redpVozADJun671xNWLMVPM733TG_jiRVYg==
+x-amz-cf-id: -6S-HwdIKLPWZDQQLvhW_Qq_CgEveriIIrI1aUIbrL3yaM7bQygQDw==
 
