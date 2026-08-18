@@ -1,0 +1,30 @@
+name: Export public media analysis bundle
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-public-media-analysis.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Inventory bundle
+        run: |
+          find public-media-analysis -maxdepth 4 -type f -printf '%P\t%s bytes\n' | sort | tee public-media-analysis/INVENTORY.txt
+      - name: Upload recovered public evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-public-media-analysis
+          path: public-media-analysis
+          if-no-files-found: error
+          retention-days: 7
