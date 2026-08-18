@@ -1,0 +1,102 @@
+name: Fetch Amazon reader JavaScript
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-amazon-reader-js.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+      - name: Fetch and inspect first-party reader bundles
+        run: |
+          set -euo pipefail
+          out=/tmp/amazon-reader-js
+          mkdir -p "$out"
+          urls=(
+            'https://m.media-amazon.com/images/I/11d+-4JvqyL.js'
+            'https://m.media-amazon.com/images/I/C1+7O3p6oWL.js'
+            'https://m.media-amazon.com/images/I/01XYpC4oGnL.js'
+            'https://m.media-amazon.com/images/I/91hYUh6DIgL.js'
+            'https://m.media-amazon.com/images/I/814Xc5N3tBL.js'
+          )
+          : > "$out/manifest.tsv"
+          for url in "${urls[@]}"; do
+            base=$(basename "$url")
+            safe=$(printf '%s' "$base" | tr '+-' '__')
+            curl -L --compressed --retry 3 --fail -sS "$url" -o "$out/$safe"
+            printf '%s\t%s\t%s\n' "$safe" "$(wc -c < "$out/$safe")" "$url" >> "$out/manifest.tsv"
+          done
+          python - <<'PY'
+          from pathlib import Path
+          import re, json
+          root=Path('/tmp/amazon-reader-js')
+          patterns=[
+            r'/sample/[^"\'`\\ ]+', r'position-data', r'book-data', r'karamel-token',
+            r'highlights', r'searchable', r'query', r'pageLabel', r'litbPages',
+            r'fetch\(', r'XMLHttpRequest', r'axios', r'/reader/[^"\'`\\ ]+',
+          ]
+          rows=[]
+          for path in sorted(root.glob('*.js')):
+            text=path.read_text(errors='replace')
+            for pat in patterns:
+              for m in re.finditer(pat,text,re.I):
+                lo=max(0,m.start()-500); hi=min(len(text),m.end()+900)
+                rows.append({'file':path.name,'pattern':pat,'offset':m.start(),'context':text[lo:hi]})
+          (root/'matches.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          with (root/'matches.txt').open('w') as f:
+            for r in rows:
+              f.write(f"\n===== {r['file']} {r['pattern']} @{r['offset']} =====\n{r['context']}\n")
+          print('matches',len(rows))
+          PY
+          gzip -9 -k "$out"/*.js
+      - id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: amazon-reader-js
+          path: /tmp/amazon-reader-js
+          if-no-files-found: error
+          retention-days: 3
+      - name: Persist compact report and artifact coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          cp /tmp/amazon-reader-js/matches.txt /tmp/amazon-matches.txt
+          cp /tmp/amazon-reader-js/manifest.tsv /tmp/amazon-manifest.tsv
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/amazon-reader-js
+            cp /tmp/amazon-matches.txt public-media-analysis/amazon-reader-js/matches.txt
+            cp /tmp/amazon-manifest.tsv public-media-analysis/amazon-reader-js/manifest.tsv
+            python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('public-media-analysis/amazon-reader-js/run.json').write_text(json.dumps({
+            'run_id':int(os.environ['RUN_ID']),
+            'artifact_id':int(os.environ['ARTIFACT_ID']),
+            'artifact_url':os.environ.get('ARTIFACT_URL','')
+          },indent=2)+'\n')
+          PY
+            git add public-media-analysis/amazon-reader-js
+            git commit -m 'research: inspect Amazon reader JavaScript' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
