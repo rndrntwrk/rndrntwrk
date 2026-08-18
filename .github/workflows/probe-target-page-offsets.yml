@@ -1,0 +1,87 @@
+name: Probe target pages at scan offsets
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-target-page-offsets.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe scan-coordinate pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/target-page-offsets
+          rm -rf "$out"; mkdir -p "$out"
+          python - <<'PY'
+          from __future__ import annotations
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+          out=Path('public-media-analysis/target-page-offsets')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FRGB2PMR&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print/position-data'
+          cookies=out/'cookies.txt'
+          subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-c',str(cookies),card,'-o',str(out/'card.html')],check=True)
+          # scan page -> exact words visibly present on the corresponding printed page
+          controls={
+            23:['black','ocean','sunset','record','memory','blue','sea'],
+            28:['signal','device','network','connect','connection','machine','watch','time','drone'],
+            30:['shoulder','group','pair','machine','aim','air','jungle','steel'],
+            33:['surface','world','time','current','prize','turtle','whale'],
+            41:['road','car','screen','window','wall','stone','watch','image','mobile'],
+          }
+          targets={
+            112:['time','watch','track','tracking','target','signal','view','screen','forest','jungle','thermal','image','monitor','machine','drone','height','position','shadow','night','hour','minute','second','clock','where','find','found','hunt','follow','wait'],
+            119:['defense','defender','vehicle','car','drive','road','truck','engine','wheel','forest','jungle','green','cargo','load','travel','journey','route','country','protect','tool','rain','mud','land','bag','window','machine'],
+            250:['pilot','flight','air','control','screen','display','system','view','night','moon','river','forest','jungle','machine','helicopter','aircraft','cockpit','gaze','eye','alert','ready','armed','force','world','height','position','map','radar','signal','track','target','light','dark','cloud','mountain','valley'],
+          }
+          results=[]
+          for page,words in {**controls,**targets}.items():
+            for query in words:
+              for print_page in (page,page-9):
+                params={'asin':'B0FRGB2PMR','buyingAsin':'B0FK7RBDFL','query':query,'token':'null','page':str(print_page)}
+                url=base+'?'+urllib.parse.urlencode(params)
+                body=out/f'scan{page}-req{print_page}-{query}.body'
+                p=subprocess.run(['curl','-L','--compressed','--retry','2','-sS','-A',ua,'-b',str(cookies),'-c',str(cookies),'-e',card,'-H','Accept: application/json',url,'-o',str(body),'-w','%{http_code}\t%{content_type}'],capture_output=True,text=True)
+                raw=body.read_bytes() if body.exists() else b''
+                rec={'scan_page':page,'request_page':print_page,'query':query,'status':p.stdout.strip(),'bytes':len(raw)}
+                try: rec['json']=json.loads(raw)
+                except Exception as e: rec['parse_error']=repr(e); rec['prefix']=raw[:500].decode('utf-8','replace')
+                results.append(rec)
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          compact=[]
+          for r in results:
+            j=r.get('json') or {}
+            h=j.get('highlights') if isinstance(j,dict) else None
+            compact.append({'scan_page':r['scan_page'],'request_page':r['request_page'],'query':r['query'],'status':r['status'],'bytes':r['bytes'],'highlights':h or {},'error':j.get('error') if isinstance(j,dict) else None})
+          (out/'compact.json').write_text(json.dumps(compact,indent=2,ensure_ascii=False))
+          for x in compact:
+            if x['highlights'] or x['error']:
+              print(json.dumps(x,ensure_ascii=False))
+          PY
+
+      - name: Persist results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/target-page-offsets
+          git commit -m "research: persist target-page offset probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
