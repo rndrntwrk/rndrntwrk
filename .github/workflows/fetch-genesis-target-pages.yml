@@ -1,0 +1,172 @@
+name: Fetch edition-correct Genesis clue pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-genesis-target-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Persist run identifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/TARGET_PAGES_RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/TARGET_PAGES_RUN_ID.txt
+          git commit -m "research: record Genesis target-page run $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch target page bundles and images
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > fetch-genesis-target-pages.mjs <<'JS'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import crypto from 'node:crypto';
+
+          const out='public-media-analysis/target-pages';
+          fs.rmSync(out,{recursive:true,force:true});
+          fs.mkdirSync(path.join(out,'responses'),{recursive:true});
+          fs.mkdirSync(path.join(out,'images'),{recursive:true});
+          const ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36';
+          const base='https://read.amazon.com/sample/print';
+          const asin='B0FRGB2PMR';
+          const pages=[
+            14,19,21,23,24,28,30,32,33,41,46,50,55,60,67,69,74,83,
+            103,110,112,119,241,250
+          ];
+          const rows=[];
+          const imageUrls=new Map();
+
+          async function fetchJson(page,token='null',label='default') {
+            const qs=new URLSearchParams({asin,buyingAsin:asin,page:String(page),token:String(token)});
+            const url=`${base}/go-to-page?${qs}`;
+            try {
+              const r=await fetch(url,{headers:{'user-agent':ua,'accept':'application/json'}});
+              const text=await r.text();
+              let data=null; try{data=JSON.parse(text);}catch{}
+              fs.writeFileSync(path.join(out,'responses',`page-${String(page).padStart(3,'0')}-${label}.txt`),text);
+              rows.push({page,label,url,status:r.status,contentType:r.headers.get('content-type')||'',bytes:Buffer.byteLength(text),data});
+              if(data?.jumboImageUrls){
+                for(const [p,u] of Object.entries(data.jumboImageUrls)) imageUrls.set(String(p),u);
+              }
+              return data;
+            } catch(e) {
+              rows.push({page,label,url,error:String(e)});
+              return null;
+            }
+          }
+
+          for(const page of pages) await fetchJson(page);
+
+          // Certify the token semantics using the public random-page response.
+          const randomUrl=`${base}/random-page?asin=${asin}&buyingAsin=${asin}`;
+          const rr=await fetch(randomUrl,{headers:{'user-agent':ua,'accept':'application/json'}});
+          const random=await rr.json();
+          fs.writeFileSync(path.join(out,'random-page.json'),JSON.stringify(random,null,2));
+          if(random?.pageNumber && random?.token) await fetchJson(random.pageNumber,random.token,'random-token');
+          if(random?.jumboImageUrls){
+            for(const [p,u] of Object.entries(random.jumboImageUrls)) imageUrls.set(String(p),u);
+          }
+
+          const images=[];
+          for(const [page,url] of [...imageUrls.entries()].sort((a,b)=>Number(a[0])-Number(b[0]))) {
+            try {
+              const r=await fetch(url,{headers:{'user-agent':ua}});
+              const body=Buffer.from(await r.arrayBuffer());
+              const name=`scan-${String(page).padStart(3,'0')}.jpg`;
+              fs.writeFileSync(path.join(out,'images',name),body);
+              images.push({page:Number(page),url,status:r.status,bytes:body.length,file:name,sha256:crypto.createHash('sha256').update(body).digest('hex')});
+            } catch(e) { images.push({page:Number(page),url,error:String(e)}); }
+          }
+
+          const summary={
+            asin,
+            requestedPages:pages,
+            printPageOffsetHypothesis:9,
+            responseSummary:rows.map(r=>({
+              page:r.page,label:r.label,status:r.status,bytes:r.bytes,error:r.error||null,
+              keys:r.data&&typeof r.data==='object'?Object.keys(r.data):null,
+              returnedPages:r.data?.jumboImageUrls?Object.keys(r.data.jumboImageUrls).map(Number):[],
+              nextPageToTry:r.data?.nextPageToTry??null,
+              errorObject:r.data?.error??null,
+              tokenPresent:Boolean(r.data?.token)
+            })),
+            randomPage:{pageNumber:random?.pageNumber??null,returnedPages:Object.keys(random?.jumboImageUrls||{}).map(Number),tokenPresent:Boolean(random?.token)},
+            downloadedImages:images
+          };
+          fs.writeFileSync(path.join(out,'responses.json'),JSON.stringify(rows,null,2));
+          fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify(summary,null,2));
+          console.log(JSON.stringify(summary,null,2));
+          JS
+          node ./fetch-genesis-target-pages.mjs
+          file public-media-analysis/target-pages/images/* || true
+          find public-media-analysis/target-pages -type f -printf '%p\t%s bytes\n' | sort > public-media-analysis/target-pages/FILE-INVENTORY.txt
+
+      - name: Install OCR and extract page text
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr >/dev/null
+          mkdir -p public-media-analysis/target-pages/ocr
+          for f in public-media-analysis/target-pages/images/*.jpg; do
+            test -e "$f" || continue
+            b="$(basename "$f" .jpg)"
+            tesseract "$f" "public-media-analysis/target-pages/ocr/$b" --psm 6 2>/dev/null || true
+          done
+          python - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('public-media-analysis/target-pages')
+          pages={}
+          for p in sorted((root/'ocr').glob('scan-*.txt')):
+              pages[p.stem]=p.read_text(errors='replace')
+          (root/'ocr.json').write_text(json.dumps(pages,indent=2))
+          print(json.dumps(pages,indent=2)[:40000])
+          PY
+
+      - name: Upload target-page evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: genesis-target-pages
+          path: public-media-analysis/target-pages
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+
+      - name: Persist summaries and OCR
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in summary.json responses.json ocr.json FILE-INVENTORY.txt; do
+            test -f "public-media-analysis/target-pages/$f" && git add "public-media-analysis/target-pages/$f" || true
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist Genesis target pages $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
