@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:40:18 GMT
+date: Tue, 18 Aug 2026 20:46:59 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: ACCJY9ZRX6ZP8MS6B79Z
+x-amz-rid: NMYG74J8P16WHNJWET2A
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 4892b1ac8a5bf76f6f3908b66c300c8c.cloudfront.net (CloudFront)
-x-amz-cf-pop: PHX50-P1
-x-amz-cf-id: 1noO-MV0PYZvhgRFQU2L6nJ5QhPVLALC5sD9CcrEi_6yevBBxu-lMg==
+via: 1.1 c95a705fdf4e3077f715bd100df04b8a.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: S7yyNISTYeE4FKoO3ZAP667FvYkAlXcZVNAzrUYgBQCh9NOMrptfuA==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 20:40:18 GMT
+Date: Tue, 18 Aug 2026 20:47:00 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 80df7bfea3aaa4837eb11281d6123162.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: PHX52-P1
+Via: 1.1 23d9e67c276b83ea51d0d51c40d0b45e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD61-P8
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: 8th-M3e6ndqIKaR9BEOPyPD0LXwH65LQRh4sn2swCXcU13Ys8jyyqQ==
+X-Amz-Cf-Id: AKNUDvo_e9A3jED9ctrlKXZ7iuJc7W2_oLFtuWc4_pn644YrPV2g6g==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 20:40:18 GMT
+date: Tue, 18 Aug 2026 20:47:00 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: 8X0C0EBNX0E8MZF1NS11
+x-amz-rid: FSBG1N8XBMKZK16JWFXG
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 efcabe7b5ec775acb41f567d7bd5e8a6.cloudfront.net (CloudFront)
-x-amz-cf-pop: PHX52-P1
+via: 1.1 61296aba80c2d50aaa865cf5dbceff6c.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD61-P8
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: bLO3OeaFieaE7gRH1yvNXaKKvCSh0UWX9M43-ACNFjSVTO1QtAovYA==
+x-amz-cf-id: sgPZ9sZ3Xn1tiLwoI63n583-83dHTmxTOxkxzAzOV2UX7r7IB4ue2A==
 
