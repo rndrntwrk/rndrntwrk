@@ -1,0 +1,87 @@
+name: Extract public search-context classes
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-search-context-classes.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Download reader and extract relevant classes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q jsbeautifier
+          out=public-media-analysis/search-context-decoder
+          rm -rf "$out"; mkdir -p "$out"
+          curl -L --compressed --retry 3 -sS 'https://m.media-amazon.com/images/I/C1+7O3p6oWL.js' -o "$out/reader.js"
+          python - <<'PY'
+          from pathlib import Path
+          import jsbeautifier,json
+          root=Path('public-media-analysis/search-context-decoder')
+          src=(root/'reader.js').read_text(errors='replace')
+          opts=jsbeautifier.default_options(); opts.indent_size=2; opts.preserve_newlines=False
+          def span(marker):
+            start=src.find(marker)
+            if start<0:return None
+            brace=src.find('{',start); depth=0; quote=None; esc=False
+            for i in range(brace,len(src)):
+              c=src[i]
+              if quote:
+                if esc:esc=False
+                elif c=='\\':esc=True
+                elif c==quote:quote=None
+                continue
+              if c in "'\"`":quote=c;continue
+              if c=='{':depth+=1
+              elif c=='}':
+                depth-=1
+                if depth==0:return start,i+1
+            return None
+          manifest=[]
+          # Exact minified names in the current bundle around the search service.
+          for name in ['rn','an','sn','ln','cn','un','hn','dn','pn','fn','gn','mn','bn','yn','wn','Sn','Mn','xn','En']:
+            m='class '+name
+            x=span(m)
+            if not x:continue
+            a,b=x; text=src[a:b]
+            (root/f'class-{name}.pretty.js').write_text(jsbeautifier.beautify(text,opts))
+            manifest.append({'name':name,'start':a,'end':b,'chars':len(text)})
+          # Extract every call site around getSearchContext and addContext.
+          hits=[]
+          for needle in ['getSearchContext(','.getSearchContext','addContext(','contextService']:
+            start=0
+            while True:
+              i=src.find(needle,start)
+              if i<0:break
+              a=max(0,i-5000);b=min(len(src),i+12000)
+              fn=f'{needle.replace(".","dot").replace("(","").replace(")","")}-{i}.pretty.js'
+              (root/fn).write_text(jsbeautifier.beautify(src[a:b],opts))
+              hits.append({'needle':needle,'offset':i,'file':fn})
+              start=i+len(needle)
+          (root/'manifest.json').write_text(json.dumps({'classes':manifest,'hits':hits},indent=2))
+          (root/'reader.js').unlink()
+          print(json.dumps({'classes':manifest,'hits':hits},indent=2))
+          PY
+      - name: Persist snippets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-context-decoder
+          git commit -m "research: persist search-context decoder snippets $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
