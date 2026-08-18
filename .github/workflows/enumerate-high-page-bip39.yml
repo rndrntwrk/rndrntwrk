@@ -55,11 +55,9 @@ jobs:
           positives=[]
           errors=[]
           status_counts=Counter()
-          request_count=0
-          lock=asyncio.Lock()
+          request_count=[0]
 
           async def query(session, printed_page, word):
-              nonlocal request_count
               internal_page=printed_page+page_offset
               params={'asin':asin,'query':word,'token':'null','page':str(internal_page)}
               for attempt in range(1,4):
@@ -71,8 +69,7 @@ jobs:
                           },timeout=aiohttp.ClientTimeout(total=30)) as r:
                               status_counts[str(r.status)]+=1
                               text=await r.text()
-                              async with lock:
-                                  request_count+=1
+                              request_count[0]+=1
                               if r.status in (429,500,502,503,504):
                                   await asyncio.sleep(attempt*0.8+random.random()*0.3)
                                   continue
@@ -134,7 +131,7 @@ jobs:
               'printed_pages':printed_pages,
               'words_per_page':len(words),
               'planned_queries':len(words)*len(printed_pages),
-              'request_attempts':request_count,
+              'request_attempts':request_count[0],
               'status_counts':dict(status_counts),
               'elapsed_seconds':elapsed,
               'positives':positives,
@@ -147,7 +144,7 @@ jobs:
               f"Pages: {printed_pages}",
               f"Words per page: {len(words)}",
               f"Planned queries: {summary['planned_queries']}",
-              f"Request attempts: {request_count}",
+              f"Request attempts: {request_count[0]}",
               f"HTTP statuses: {dict(status_counts)}",
               f"Errors: {len(errors)}",
               f"Elapsed seconds: {elapsed:.1f}",'',
