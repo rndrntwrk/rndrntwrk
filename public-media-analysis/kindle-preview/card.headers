@@ -2,35 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 07:34:20 GMT
+date: Tue, 18 Aug 2026 09:50:23 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: ZQ7Q4YVT5229W2CH7NVA
+x-amz-rid: MKPWEEETWFY1AW7N8DPF
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 cc5a019539e6efe2b661a72253272ed6.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: VcrizDydgxMMblh2LKpE-HIPkwjaC4xUHdmYA88I9wfL3fXqI2U5kw==
+via: 1.1 bebd8158555e665274969349ddaed8d4.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX50-P1
+x-amz-cf-id: q9FmNV34XBvCAo6U0e6dEG2Pe1CtWGrFo6mwnnVQFTB1_epTLW3ANw==
 
 HTTP/1.1 301 Moved Permanently
-Server: AkamaiGHost
-Content-Length: 0
-Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Tue, 18 Aug 2026 07:34:20 GMT
+Server: CloudFront
+Date: Tue, 18 Aug 2026 09:50:23 GMT
+Content-Type: text/html
+Content-Length: 167
 Connection: keep-alive
-Akamai-Request-BC: [a=23.220.104.91,b=2163650776,c=g,n=US_VA_ASHBURN,o=20940]
-X-Amzn-Cdn-Id: ak-0.5b68dc17.1787038460.80f6b0d8
-X-Cache: NotCacheable from child
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 0c32860274691581031a51698ea82be8.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: LAX53-P4
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: moTxMUpLeeek9T6BiTIpVUQQe9JeViPMat-QHTFJ4YqQkmvwpYsMaw==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 07:34:20 GMT
+date: Tue, 18 Aug 2026 09:50:23 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: ZR5ZQDYSG89TX088X2TP
+x-amz-rid: PBTCJ56YQJT2DMY727ZC
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 83abbdac1eb1a9b7f18f692b71f8efbc.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P10
+via: 1.1 f31a6426ebd75ce4393909b12f5cbdcc.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX53-P4
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: ONaWTTkHpHU-BuPRXOgUn7l5hma6gFs94puKCNj92ERknuaeEU9uMA==
+x-amz-cf-id: uh1NtEj1IijZjkUH0p9coXFsESdG0PVGqik1UdoJ0_qV45iGTO5m6w==
 
