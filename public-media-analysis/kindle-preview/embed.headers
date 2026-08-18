@@ -2,34 +2,34 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:29:34 GMT
+date: Tue, 18 Aug 2026 20:32:06 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: ZPHDDM7E9GG3G9QS0ZNJ
+x-amz-rid: V76492BBYM48CKKB9JXM
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 edfd8a65550b8bda6252072d1cbc2e9c.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P5
-x-amz-cf-id: rVI1tuAfWzg04ZhVq77V7LLM3njA9V1Khwivu5n8AudpCSlOEHZKCA==
+via: 1.1 6e0637fb9d75c49c696ae12c3a8b3c3a.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: cYMNnwc9Da4mFDS92b0b2hkVO_T7EjBaTgCbpcAL-9aJywkWSNn6SQ==
 
 HTTP/1.1 301 Moved Permanently
 Server: AkamaiGHost
 Content-Length: 0
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Tue, 18 Aug 2026 20:29:34 GMT
+Date: Tue, 18 Aug 2026 20:32:06 GMT
 Connection: keep-alive
-Akamai-Request-BC: [a=23.46.208.175,b=2988912658,c=g,n=US_WA_SEATTLE,o=20940]
-X-Amzn-Cdn-Id: ak-0.afd02e17.1787084974.b2273012
+Akamai-Request-BC: [a=23.38.164.40,b=667084068,c=g,n=US_TX_DALLAS,o=20940]
+X-Amzn-Cdn-Id: ak-0.28a42617.1787085126.27c2e524
 X-Cache: NotCacheable from child
 
 HTTP/2 500 
-x-amz-rid: 268PBN9XV608JXY8A6NB
+x-amz-rid: VZGEGV375C195NWM1DKE
 cache-control: no-cache
 pragma: no-cache
 expires: -1
-date: Tue, 18 Aug 2026 20:29:34 GMT
+date: Tue, 18 Aug 2026 20:32:06 GMT
 alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.46.208.164,b=3221091665,c=g,n=US_WA_SEATTLE,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.a4d02e17.1787084974.bffdf551
+akamai-request-bc: [a=23.38.164.38,b=1312654399,c=g,n=US_TX_DALLAS,o=20940],[c=o]
+x-amzn-cdn-id: ak-0.26a42617.1787085126.4e3d843f
 x-cache: NotCacheable from child
 
