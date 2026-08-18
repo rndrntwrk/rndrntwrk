@@ -1,0 +1,65 @@
+name: Package target page scans for pagination analysis
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/download-target-page-scans.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+      - name: Download and verify public sample scans
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib, urllib.request
+          root = pathlib.Path('public-media-analysis')
+          summary = json.loads((root/'target-pages'/'summary.json').read_text())
+          out = pathlib.Path('target-page-scans')
+          out.mkdir(exist_ok=True)
+          manifest=[]
+          for item in summary['downloadedImages']:
+              page=int(item['page'])
+              dest=out/item['file']
+              with urllib.request.urlopen(item['url'], timeout=60) as r:
+                  data=r.read()
+              digest=hashlib.sha256(data).hexdigest()
+              if digest != item['sha256']:
+                  raise SystemExit(f'hash mismatch for page {page}: {digest} != {item["sha256"]}')
+              dest.write_bytes(data)
+              manifest.append({'page':page,'file':dest.name,'bytes':len(data),'sha256':digest})
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print(f'downloaded {len(manifest)} verified scans')
+          PY
+      - name: Record run metadata
+        run: |
+          cat > public-media-analysis/TARGET_SCAN_PACKAGE_RUN.json <<EOF
+          {
+            "run_id": ${GITHUB_RUN_ID},
+            "run_attempt": ${GITHUB_RUN_ATTEMPT},
+            "workflow_sha": "${GITHUB_SHA}"
+          }
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/TARGET_SCAN_PACKAGE_RUN.json
+          git commit -m 'research: record target scan package run' || true
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+      - name: Upload verified scans
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-target-page-scans
+          path: target-page-scans
+          if-no-files-found: error
+          retention-days: 3
