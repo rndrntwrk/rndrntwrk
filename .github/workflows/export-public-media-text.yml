@@ -1,0 +1,75 @@
+name: Export clue media as text
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-public-media-text.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Create medium-resolution base64 exports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q pillow
+          python - <<'PY'
+          from pathlib import Path
+          import base64, textwrap
+          from PIL import Image
+
+          root = Path('public-media-analysis')
+          out = root / 'text-exports'
+          out.mkdir(parents=True, exist_ok=True)
+
+          def write_b64(source: Path, target: Path) -> None:
+              encoded = base64.b64encode(source.read_bytes()).decode('ascii')
+              target.write_text('\n'.join(textwrap.wrap(encoded, 76)) + '\n', encoding='ascii')
+
+          for source in sorted(root.glob('clue-*.jpg')):
+              image = Image.open(source).convert('RGB')
+              image.thumbnail((1000, 1000), Image.Resampling.LANCZOS)
+              medium = out / f'{source.stem}-medium.jpg'
+              image.save(medium, 'JPEG', quality=72, optimize=True, progressive=True)
+              write_b64(medium, out / f'{source.stem}-medium.jpg.b64')
+              medium.unlink()
+
+          for name in ('all-clues-contact-sheet.jpg', 'unnumbered-clues-contact-sheet.jpg'):
+              source = root / 'previews' / name
+              if source.exists():
+                  write_b64(source, out / f'{name}.b64')
+
+          manifest = []
+          for path in sorted(out.glob('*.b64')):
+              manifest.append(f'{path.name}\t{path.stat().st_size}')
+          (out / 'manifest.tsv').write_text('\n'.join(manifest) + '\n', encoding='utf-8')
+          print('\n'.join(manifest))
+          PY
+
+      - name: Persist text exports
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/text-exports
+          if git diff --cached --quiet; then
+            echo 'No exports to commit'
+            exit 0
+          fi
+          git commit -m 'research: add base64 clue-image exports'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
