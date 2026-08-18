@@ -1,0 +1,99 @@
+name: Probe target page word presence
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-target-page-word-presence.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe known controls and target pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/target-word-presence
+          rm -rf "$out"
+          mkdir -p "$out"
+          python - <<'PY'
+          from __future__ import annotations
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+
+          out=Path('public-media-analysis/target-word-presence')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FRGB2PMR&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print/position-data'
+          cookies=out/'cookies.txt'
+          subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-c',str(cookies),card,'-o',str(out/'card.html')],check=True)
+
+          controls={
+            14:['black','ocean','sunset','record','memory','blue'],
+            19:['signal','device','network','connect','machine','watch','time','drone'],
+            21:['shoulder','group','pair','machine','aim','air','jungle'],
+            24:['surface','world','time','watch','current','prize','turtle'],
+            32:['road','car','screen','window','wall','stone','watch','image'],
+          }
+          targets={
+            103:['time','watch','track','tracking','target','signal','view','screen','forest','jungle','thermal','image','monitor','machine','drone','height','position','shadow','night','hour','minute','second','clock','where','find','found','hunt','follow','wait'],
+            110:['defense','defender','vehicle','car','drive','road','truck','engine','wheel','forest','jungle','green','cargo','load','travel','journey','route','country','protect','tool','rain','mud','land','bag','window','machine'],
+            241:['pilot','flight','air','control','screen','display','system','view','night','moon','river','forest','jungle','machine','helicopter','aircraft','cockpit','gaze','eye','alert','ready','armed','force','world','height','position','map','radar','signal','track','target','light','dark','cloud','mountain','valley'],
+          }
+          results=[]
+          def call(page,query,variant):
+            params={'asin':'B0FRGB2PMR','query':query,'page':str(page)}
+            if variant in ('null','buy-null'):
+              params['token']='null'
+            if variant.startswith('buy'):
+              params['buyingAsin']='B0FRGB2PMR'
+            url=base+'?'+urllib.parse.urlencode(params)
+            body=out/f'p{page}-{query}-{variant}.body'
+            hdr=out/f'p{page}-{query}-{variant}.headers'
+            p=subprocess.run(['curl','-L','--compressed','--retry','2','-sS','-A',ua,'-b',str(cookies),'-c',str(cookies),'-e',card,'-H','Accept: application/json','-D',str(hdr),url,'-o',str(body),'-w','%{http_code}\t%{content_type}'],capture_output=True,text=True)
+            raw=body.read_bytes() if body.exists() else b''
+            rec={'page':page,'query':query,'variant':variant,'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw)}
+            try: rec['json']=json.loads(raw)
+            except Exception as e: rec['parse_error']=repr(e); rec['prefix']=raw[:500].decode('utf-8','replace')
+            results.append(rec)
+
+          for page,words in {**controls,**targets}.items():
+            for word in words:
+              for variant in ('null','buy-null'):
+                call(page,word,variant)
+
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          compact=[]
+          for r in results:
+            j=r.get('json') or {}
+            h=j.get('highlights') if isinstance(j,dict) else None
+            nonempty={k:v for k,v in (h or {}).items() if v}
+            compact.append({'page':r['page'],'query':r['query'],'variant':r['variant'],'status':r['status'],'bytes':r['bytes'],'nonempty':nonempty,'json':j if not h else None})
+          (out/'compact.json').write_text(json.dumps(compact,indent=2,ensure_ascii=False))
+          for x in compact:
+            if x['nonempty'] or x['page'] in controls:
+              print(json.dumps(x,ensure_ascii=False))
+          PY
+
+      - name: Persist results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/target-word-presence
+          git commit -m "research: persist target-page word presence probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
