@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 20:47:00 GMT
+date: Tue, 18 Aug 2026 20:54:44 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: S3S57W35MF4HX5J0JQDY
+x-amz-rid: P7QB03QZNGHCFPGBD7SN
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 68a9f2dcbbd436308ba855514c015cf2.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: qzump3YXW2jBvbfIjIUn0ot-UyNRwQskJPPFSVpFpnGehnxLnzGh_Q==
+via: 1.1 8257282100dce681c3713e02e67e94bc.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: iAWclQF5hLxrz4Bj8Gyzb7R1vop7TtH2fCt_tUFHJJkeXNQcIx_hVw==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 20:47:00 GMT
+Date: Tue, 18 Aug 2026 20:54:44 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 4f17893c93e658659c8f0bb35062dbd6.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD61-P8
+Via: 1.1 5ceb9cec7debee0553fef552eba62cc4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD55-P10
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: lgMYnZ4P7UTOZjnaA37ZFHwoHqwNQHUHfBHA5j_kUSLfeD8hjqaXiA==
+X-Amz-Cf-Id: pGoe4NFl-koZ1-P1yKxEUe8vRBxdW8JQ5XTmlDIq5RLP0h7XXkceBQ==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 20:47:00 GMT
-x-amz-rid: NSZK035EC44VQ1WN9MJM
-cache-control: no-cache
+date: Tue, 18 Aug 2026 20:54:44 GMT
 pragma: no-cache
 expires: -1
+x-amz-rid: 1PHC98JDD89A69NRB2Y2
+cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 db2931c54bbe28a236fccb537f265fb8.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD61-P8
+via: 1.1 2998d920822e5ea25e271f9a9d21f94e.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: 6YabkuxdPFoX55g3aa39K2grWjED3ZPf_f5CnogexIrufbsEUwBupQ==
+x-amz-cf-id: z4M0n6QJ_BOFiTGSPjZo01-bYMYeRJmMkR3JNF3HND8Rd3SAqOmhIw==
 
