@@ -1,0 +1,5 @@
+https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html/ref=rm_c_ac
+https://developer.amazonservices.co.uk/ref=rm_c_sv,
+https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css
+https://www.amazon.co.uk/gp/help/customer/display.html/ref=footer_cou?ie=UTF8&nodeId=1040616
+https://www.amazon.co.uk/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&nodeId=502584

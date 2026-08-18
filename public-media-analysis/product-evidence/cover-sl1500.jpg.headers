@@ -1,0 +1,23 @@
+HTTP/2 200 
+content-type: image/jpeg
+content-length: 23981
+date: Tue, 18 Aug 2026 03:45:51 GMT
+server: Server
+x-amz-ir-id: 445152d2-e675-42bf-a943-2fd38286427a
+cache-control: max-age=630720000,public
+last-modified: Mon, 28 Jul 2025 22:24:51 GMT
+access-control-allow-origin: *
+timing-allow-origin: https://www.amazon.in, https://www.amazon.com
+edge-cache-tag: x-cache-382,/images/I/41ut6sqjXIL
+expires: Mon, 13 Aug 2046 03:45:51 GMT
+surrogate-key: x-cache-382 /images/I/41ut6sqjXIL
+x-nginx-cache-status: MISS
+accept-ranges: bytes
+via: 1.1 7ebf86def0385a427d4375fd043f4f94.cloudfront.net (CloudFront)
+alt-svc: h3=":443"; ma=86400
+server-timing: cdn-upstream-layer;desc="REC",cdn-upstream-dns;dur=0,cdn-upstream-connect;dur=0,cdn-upstream-fbl;dur=517,cdn-cache-miss,cdn-pop;desc="SFO53-P5",cdn-rid;desc="osvxsBIemT2_fECNsmVmIoI2clxbmvaWq_B_Cj-pvxwM-xLQ8J-HLg==",cdn-downstream-fbl;dur=585,provider;desc="cf"
+accept-ch: Sec-CH-UA-Form-Factors, Sec-CH-Viewport-Width, Sec-CH-Width, Sec-CH-Viewport-Height, Sec-CH-DPR, ECT
+x-cache: Miss from cloudfront
+x-amz-cf-pop: SFO53-P5
+x-amz-cf-id: osvxsBIemT2_fECNsmVmIoI2clxbmvaWq_B_Cj-pvxwM-xLQ8J-HLg==
+

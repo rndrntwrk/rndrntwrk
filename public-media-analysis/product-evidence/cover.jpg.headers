@@ -1,0 +1,18 @@
+HTTP/2 200 
+content-type: image/jpeg
+x-amz-ir-id: 43ddca0d-7004-41b4-b19a-d084b295ee9e
+cache-control: max-age=630720000,public
+last-modified: Mon, 28 Jul 2025 22:24:51 GMT
+access-control-allow-origin: *
+timing-allow-origin: https://www.amazon.in, https://www.amazon.com
+expires: Sun, 12 Aug 2046 18:58:07 GMT
+x-nginx-cache-status: HIT
+accept-ranges: bytes
+age: 31625
+date: Tue, 18 Aug 2026 03:45:50 GMT
+x-served-by: cache-iad-kcgs7200110-IAD, cache-sjc1000145-SJC
+x-cache: MISS from fastly, HIT from fastly
+server-timing: provider;desc="fy",cdn-cache-hit,cdn-hit-layer;desc="e"
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 23981
+

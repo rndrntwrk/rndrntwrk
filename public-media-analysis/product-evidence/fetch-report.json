@@ -1,0 +1,58 @@
+{
+  "amazon-us.html": {
+    "size": 734144,
+    "title": "Amazon.com: Hunting Time: Genesis eBook : Warwick, Martin: Kindle Store",
+    "asins": [
+      "B084KP3NG6",
+      "B0DVBL912R",
+      "B0FK7RBDFL",
+      "B0FRG53BM6",
+      "B0FRGB2PMR",
+      "B0FTM8XPKL",
+      "B0FWJPXY5Y",
+      "B0HBY3NNSZ"
+    ],
+    "isbns": []
+  },
+  "site.html.headers": {
+    "size": 1606
+  },
+  "amazon-uk.html": {
+    "size": 3805,
+    "title": "Amazon.co.uk",
+    "asins": [],
+    "isbns": []
+  },
+  "cover-sl1500.jpg.headers": {
+    "size": 1164
+  },
+  "site.html": {
+    "size": 812508,
+    "title": "Home  | Hunting Time",
+    "asins": [
+      "B0HBS2TZ9Z"
+    ],
+    "isbns": []
+  },
+  "cover.jpg.headers": {
+    "size": 691
+  },
+  "cover-sl1500.jpg": {
+    "size": 23981
+  },
+  "cover.jpg": {
+    "size": 23981
+  },
+  "sample-meta.json.headers": {
+    "size": 2300
+  },
+  "sample-meta.json": {
+    "size": 1351
+  },
+  "amazon-us.html.headers": {
+    "size": 2446
+  },
+  "amazon-uk.html.headers": {
+    "size": 427
+  }
+}
