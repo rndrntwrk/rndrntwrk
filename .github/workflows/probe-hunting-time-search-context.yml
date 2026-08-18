@@ -1,0 +1,78 @@
+name: Probe Hunting Time search context service
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/probe-hunting-time-search-context.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Probe known indexed positions
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/search-context-probe
+          rm -rf "$out"
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/reader/preview/?asin=B0FK7RBDFL'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/reader.html"
+          python - <<'PY'
+          import json,subprocess,base64
+          from pathlib import Path
+          out=Path('public-media-analysis/search-context-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          ref='https://read.amazon.com/reader/preview/?asin=B0FK7RBDFL'
+          endpoint='https://read.amazon.com/service/web/content/getSearchContext'
+          base={'asin':'B0FK7RBDFL','revision':'64363d23','yjACR':'YJ','clientVersion':'20000100'}
+          variants=[
+            ('nested-one',dict(base,positions=[[5947]])),
+            ('flat-one',dict(base,positions=[5947])),
+            ('nested-two',dict(base,positions=[[5947],[13097]])),
+            ('nested-group',dict(base,positions=[[5947,6230]])),
+            ('nested-nullref',dict(base,positions=[[5947]],refEmId=None)),
+            ('nested-emptyref',dict(base,positions=[[5947]],refEmId='')),
+            ('nested-format-acr',{'asin':'B0FK7RBDFL','positions':[[5947]],'refEmId':None,'revision':'64363d23','yjACR':'YJBinary','clientVersion':'20000100'}),
+          ]
+          summary=[]
+          for name,body in variants:
+              (out/f'{name}.request.json').write_text(json.dumps(body,indent=2))
+              resp=out/f'{name}.response'
+              hdr=out/f'{name}.headers'
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),'-e',ref,'-H','Accept: application/json','-H','Content-Type: application/json','-D',str(hdr),'-X','POST','--data-binary','@'+str(out/f'{name}.request.json'),endpoint,'-o',str(resp),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+              raw=resp.read_bytes() if resp.exists() else b''
+              rec={'name':name,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw),'prefix':raw[:1000].decode('utf-8','replace')}
+              try:
+                  obj=json.loads(raw); rec['json']=obj
+                  (out/f'{name}.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+                  contexts=obj.get('searchContexts',[]) if isinstance(obj,dict) else []
+                  dec=[]
+                  for i,c in enumerate(contexts):
+                      try:
+                          key=base64.b64decode(c[:24]); iv=base64.b64decode(c[24:48]); ct=base64.b64decode(c[48:])
+                          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+                          pt=AESGCM(key).decrypt(iv,ct,None)
+                          text=pt.decode('utf-8','replace'); dec.append(text)
+                          (out/f'{name}.context-{i:02d}.txt').write_text(text)
+                      except Exception as e: dec.append('ERROR '+repr(e))
+                  rec['decrypted']=dec
+              except Exception as e: rec['parse_error']=repr(e)
+              summary.append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist search context service probe'
+          git push origin HEAD:research/hunting-time-amazon-probe
