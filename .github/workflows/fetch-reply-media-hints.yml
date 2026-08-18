@@ -1,0 +1,69 @@
+name: Fetch public reply media hints
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-reply-media-hints.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Download and inspect reply images
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/reply-media-hints
+          rm -rf "$out"; mkdir -p "$out"
+          cat > "$out/urls.tsv" <<'EOF'
+clue-04-reply	https://pbs.twimg.com/media/HNtedwjWcAARW4W.jpg?name=orig
+clue-11-reply-a	https://pbs.twimg.com/media/HPgG_E3WAAAK5L0.jpg?name=orig
+clue-11-reply-b	https://pbs.twimg.com/media/HPgIulQW4AAGchl.png?name=orig
+EOF
+          while IFS=$'\t' read -r name url; do
+            ext=jpg; case "$url" in *.png*) ext=png;; esac
+            curl -L --compressed --retry 3 -sS "$url" -o "$out/$name.$ext"
+          done < "$out/urls.tsv"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr
+          python -m pip install --disable-pip-version-check -q pillow
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageOps,ImageEnhance
+          import subprocess,json,hashlib
+          root=Path('public-media-analysis/reply-media-hints')
+          records=[]
+          for p in sorted(list(root.glob('*.jpg'))+list(root.glob('*.png'))):
+            im=Image.open(p).convert('RGB')
+            texts=[]
+            for name,v in [('orig',im),('gray',ImageOps.grayscale(im)),('auto',ImageOps.autocontrast(ImageOps.grayscale(im))),('c3',ImageEnhance.Contrast(ImageOps.grayscale(im)).enhance(3))]:
+              q=root/f'{p.stem}-{name}.png'; v.save(q)
+              for psm in (6,11,12):
+                r=subprocess.run(['tesseract',str(q),'stdout','--psm',str(psm)],capture_output=True,text=True)
+                t=' '.join(r.stdout.split())
+                if t and t not in texts:texts.append(t)
+              if name!='orig':q.unlink()
+            records.append({'file':p.name,'size':list(im.size),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'ocr':texts})
+          (root/'analysis.json').write_text(json.dumps(records,indent=2,ensure_ascii=False))
+          print(json.dumps(records,indent=2,ensure_ascii=False))
+          PY
+      - name: Persist reply media
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/reply-media-hints
+          git commit -m "research: persist public reply media hints $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
