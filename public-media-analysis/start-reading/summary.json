@@ -1,0 +1,73 @@
+{
+  "start_top_type": "dict",
+  "start_keys": [
+    "YJFormatVersion",
+    "clippingLimit",
+    "contentChecksum",
+    "contentType",
+    "contentVersion",
+    "deliveredAsin",
+    "downloadRestrictionReason",
+    "expirationDate",
+    "format",
+    "formatVersion",
+    "fragmentMapUrl",
+    "hasAnnotations",
+    "isOwned",
+    "isSample",
+    "karamelToken",
+    "kindleSessionId",
+    "lastPageReadData",
+    "manifestUrl",
+    "metadataUrl",
+    "originType",
+    "pageNumberUrl",
+    "referenceEmbeddedId",
+    "requestedAsin",
+    "srl",
+    "verticalLayout"
+  ],
+  "start_data": {
+    "YJFormatVersion": null,
+    "clippingLimit": null,
+    "contentChecksum": null,
+    "contentType": "EBSP",
+    "contentVersion": "aaa51e7b",
+    "deliveredAsin": "B0FK7RBDFL",
+    "downloadRestrictionReason": null,
+    "expirationDate": null,
+    "format": "Mobi7",
+    "formatVersion": "CR!N644BV0YKD6N76T80AVNS17846KZ",
+    "fragmentMapUrl": "https://dsck18ahv3gbi.cloudfront.net/books2/B0FK7RBDFL/aaa51e7b/CR!N644BV0YKD6N76T80AVNS17846KZ/sample/frags/gz_fragmap.jsonp?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kc2NrMThhaHYzZ2JpLmNsb3VkZnJvbnQubmV0L2Jvb2tzMi9CMEZLN1JCREZML2FhYTUxZTdiL0NSIU42NDRCVjBZS0Q2Tjc2VDgwQVZOUzE3ODQ2S1ovc2FtcGxlLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODcwNTk5MjV9fX1dfQ__&Signature=GwuiHZ-dbWHo0lAlfJcijBnWMyv5ItKyJM2mySJWz50tKzJ7I44adhcs2Kw043XjdFhwC34GSfiJlE8vLTEokeG7AnyfcdUJ3CCm3jNnT7B3XuCbfBSi7UH8c-DyxIzjfx~jYgbaABgn1Wl-ISafI-lqNrD3VRmR7aDlfdbMhe4_&Key-Pair-Id=APKAJKO4CDEE5JSS6NZA",
+    "hasAnnotations": false,
+    "isOwned": false,
+    "isSample": true,
+    "karamelToken": null,
+    "kindleSessionId": null,
+    "lastPageReadData": null,
+    "manifestUrl": null,
+    "metadataUrl": "https://dsck18ahv3gbi.cloudfront.net/books2/B0FK7RBDFL/aaa51e7b/CR!N644BV0YKD6N76T80AVNS17846KZ/sample/metadata.jsonp?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kc2NrMThhaHYzZ2JpLmNsb3VkZnJvbnQubmV0L2Jvb2tzMi9CMEZLN1JCREZML2FhYTUxZTdiL0NSIU42NDRCVjBZS0Q2Tjc2VDgwQVZOUzE3ODQ2S1ovc2FtcGxlLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODcwNTk5MjV9fX1dfQ__&Signature=GwuiHZ-dbWHo0lAlfJcijBnWMyv5ItKyJM2mySJWz50tKzJ7I44adhcs2Kw043XjdFhwC34GSfiJlE8vLTEokeG7AnyfcdUJ3CCm3jNnT7B3XuCbfBSi7UH8c-DyxIzjfx~jYgbaABgn1Wl-ISafI-lqNrD3VRmR7aDlfdbMhe4_&Key-Pair-Id=APKAJKO4CDEE5JSS6NZA",
+    "originType": "Sample",
+    "pageNumberUrl": null,
+    "referenceEmbeddedId": null,
+    "requestedAsin": "B0FK7RBDFL",
+    "srl": null,
+    "verticalLayout": false
+  },
+  "karamel-token": {
+    "status": "200",
+    "body_prefix": "{\"token\":\"AgV405SEz33e0S+0hwfJlK3ecax0WEozlWxS8xlB3SnPSsQAdAACAA1Ub2tlbkNsaWVudElkAARsaXRiABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFtQ0pQcGxsUjAzNk03ZkxBN2ZJaE9FeGV0NUVtT25hY1hmY3YzdDFhV3ltWnBEZWJEWFY3azhsUjJtczVNZ3Bjdz09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMTo2NTIyMDE5NzAzMTE6a2V5LzkyOWY2ZTcxLWQ4OGUtNDBlMy1hNGViLWE3ZDljMTg4M2Q4NwC4AQIBAHhCh7tZo4le0UBWgc67YGydDEJf6yDRcPdjXogL/mUdoQHMCVziHS5QTaix+FNWGBOtAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM7maQKb7/WfBAveTJAgEQgDt/rUWDdGhB5ULKDRSRCQ+5119wlmcSEZXoSEGuy6dpUe4kaTfD+6lkYcxlyZ/Mtx8KywMvP3AKvTzhJAIAABAABZz54iyOMQKi1PUdiTCBgIaYwI2cRTlBLq4aHirwIHlhNUMJuhz83m/zABaXoo7I/////wAAAAEAAAAAAAAAAAAAAAEAAADgdX85kmkUj6XmHJoCxvL6iiHBF9P19B9CWcJI8+ZEy5R+OZ8co4MqfWCTVzIyVECBw1nna/1Ee8y/BNL+cBkZLJaja9mJTUftb7MPYBNhzgGN5UrXB3bA4JCeMbMiZ4y23e4NEBmNfPEqznMvru9jVfYBdfla9nJmBv9VG/tpyfMEfxv82O5yy4zjAYmpKqJ3igK3brvDYiEV5/Z8o738h/Xox7iofKdhdXKvoJSj8vO7ODAICxahFjRtS9+y1SsUolnI3zZt/kITZMZ5kfR8vWCthMwSgFJTNPDuIAoICqot/AwFnM/xmf4n15xBaRtxAGcwZQIwDW0j2HpKlbdCUkcqEL0ddm9fBbZ86fm1TVCh70iAV8v4nggwaG7J2uIIsQLu4gZ/AjEAzNPFnHfJ5oCIeIoLHG/7eWX539uYfaCc0qcElQMZJtoeAK7kC3sLgfxZ+GCRZTI4\",\"expiresAt\":1789651325280}"
+  },
+  "can-start": {
+    "status": "403",
+    "body_prefix": "{\"Message\":\"The given request is not an ADP session request.  Ensure the proper device type configuration is set.\"}"
+  },
+  "kcms": {
+    "status": "404",
+    "body_prefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@amazon.com.\n\nFor information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com/ref=rm_5_sv, or our Product Advertising API at https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_5_ac for advertising use cases.\n    -->\n  <a href=\"/\">\n    <img id=\"b\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/logo._TTD_.png\" alt=\"Amazon\"/>\n  </a>\n  <form id=\"a\" accept-charset=\"utf-8\" action=\"/s\" method=\"GET\" role=\"search\">\n    <div id=\"c\">\n      <input id=\"e\" name=\"field-keywords\" placeholder=\"Search\">\n      <input id=\"f\" type=\"submit\" value=\"Go\">\n    </div>\n  </form>\n    <div id=\"g\">\n      <div>\n        <a href=\"/\">\n          <img src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/en_US/title._TTD_.png\"\n               alt=\"Sorry! We couldn't find that page. Try searching or go to Amazon's home page.\"/>\n        </a>\n      </div>\n      <a href=\"/dogsofamazon\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <img id=\"d\" alt=\"Dogs of Amazon\">\n      </a>\n      <script>\n        document.getElementById(\"d\").src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/en_US/\" + (Math.floor(Math.random() *200) + 1) + \"._TTD_.jpg\";\n      </script>\n    </div>\n  </body>\n</html>\n<!-- 806ac919 --><!-- sp:error_pages -->"
+  },
+  "print": {
+    "status": "404",
+    "body_prefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@amazon.com.\n\nFor information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com/ref=rm_5_sv, or our Product Advertising API at https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_5_ac for advertising use cases.\n    -->\n  <a href=\"/\">\n    <img id=\"b\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/logo._TTD_.png\" alt=\"Amazon\"/>\n  </a>\n  <form id=\"a\" accept-charset=\"utf-8\" action=\"/s\" method=\"GET\" role=\"search\">\n    <div id=\"c\">\n      <input id=\"e\" name=\"field-keywords\" placeholder=\"Search\">\n      <input id=\"f\" type=\"submit\" value=\"Go\">\n    </div>\n  </form>\n    <div id=\"g\">\n      <div>\n        <a href=\"/\">\n          <img src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/en_US/title._TTD_.png\"\n               alt=\"Sorry! We couldn't find that page. Try searching or go to Amazon's home page.\"/>\n        </a>\n      </div>\n      <a href=\"/dogsofamazon\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <img id=\"d\" alt=\"Dogs of Amazon\">\n      </a>\n      <script>\n        document.getElementById(\"d\").src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/en_US/\" + (Math.floor(Math.random() *200) + 1) + \"._TTD_.jpg\";\n      </script>\n    </div>\n  </body>\n</html>\n<!-- 806ac919 --><!-- sp:error_pages -->"
+  }
+}

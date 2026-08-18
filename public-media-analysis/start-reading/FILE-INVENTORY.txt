@@ -1,0 +1,17 @@
+public-media-analysis/start-reading/FILE-INVENTORY.txt	0 bytes
+public-media-analysis/start-reading/can-start.body	115 bytes
+public-media-analysis/start-reading/can-start.headers.txt	765 bytes
+public-media-analysis/start-reading/can-start.status.txt	4 bytes
+public-media-analysis/start-reading/karamel-token.body	1170 bytes
+public-media-analysis/start-reading/karamel-token.headers.txt	2250 bytes
+public-media-analysis/start-reading/karamel-token.status.txt	4 bytes
+public-media-analysis/start-reading/kcms.body	2319 bytes
+public-media-analysis/start-reading/kcms.headers.txt	2300 bytes
+public-media-analysis/start-reading/kcms.status.txt	4 bytes
+public-media-analysis/start-reading/print.body	2319 bytes
+public-media-analysis/start-reading/print.headers.txt	2300 bytes
+public-media-analysis/start-reading/print.status.txt	4 bytes
+public-media-analysis/start-reading/start-reading.headers.txt	665 bytes
+public-media-analysis/start-reading/start-reading.json	1789 bytes
+public-media-analysis/start-reading/start-reading.pretty.json	1941 bytes
+public-media-analysis/start-reading/summary.json	8939 bytes
