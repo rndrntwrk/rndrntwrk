@@ -1,0 +1,8 @@
+LanguageId=en
+BytesPerEntity=3
+MinimumTitleEntityValue=3
+MaximumTitleEntityValue=49799
+NumberOfWordsIndexed=5973
+WhereIndexed=Cloud
+Algorithm=JUNO_4
+BookFormat=YJBinary

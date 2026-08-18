@@ -1,0 +1,3 @@
+public-media-analysis/search-index-extracted/files/B0FK7RBDFL.positions:  data
+public-media-analysis/search-index-extracted/files/B0FK7RBDFL.properties: ASCII text
+public-media-analysis/search-index-extracted/files/B0FK7RBDFL.words:      ASCII text
