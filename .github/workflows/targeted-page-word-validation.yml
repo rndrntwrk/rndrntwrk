@@ -1,0 +1,140 @@
+name: Validate Hunting Time page-word candidates
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/targeted-page-word-validation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Query public Search Inside page highlights
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=/tmp/hunting-page-word-validation
+          rm -rf "$out"
+          mkdir -p "$out/raw"
+          python - <<'PY'
+          import json, subprocess, time, urllib.parse
+          from pathlib import Path
+
+          out=Path('/tmp/hunting-page-word-validation')
+          rawdir=out/'raw'
+          asin='B0FRGB2PMR'
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card=f'https://read.amazon.com/kp/card?asin={asin}&preview=inline&linkCode=kpe'
+          cookies=out/'cookies.txt'
+          subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-c',str(cookies),card,'-o',str(out/'card.html')],check=True)
+
+          candidates={
+            3:['watch','time','view','world','cloud','house','scene','orange','sun','ready'],
+            14:['black','machine','group','blue','sea','sunset','memory','ocean','record','perfect'],
+            19:['device','machine','network','position','advance','attack','angle','signal','connect','drone'],
+            21:['group','pair','aim','machine','steel','attack','air','journey','jungle','enemy'],
+            24:['surface','world','time','edge','whale','blue','orange','current','prize','turtle'],
+            32:['road','car','wall','window','screen','mobile','light','stone','watch','message'],
+            103:['track','target','view','screen','monitor','forest','signal','drone','thermal','heat','mountain','position','black','night','zoom','camera','feed','air'],
+            110:['vehicle','drive','car','road','jungle','forest','green','truck','jeep','defender','mountain','offroad','trail','engine','wheel','travel','air'],
+            241:['pilot','flight','air','control','screen','machine','plane','aircraft','jet','helmet','valley','monitor','cockpit','view','night','cloud','mountain','engine'],
+          }
+
+          records=[]
+          positives=[]
+          for page, words in candidates.items():
+            for word in words:
+              # The first two variants are known to return JSON. Keep both because
+              # some Search Inside deployments require buyingAsin.
+              variants=[
+                {'asin':asin,'query':word,'token':'null','page':str(page)},
+                {'asin':asin,'buyingAsin':asin,'query':word,'token':'null','page':str(page)},
+              ]
+              for vi,params in enumerate(variants,1):
+                url='https://read.amazon.com/sample/print/position-data?'+urllib.parse.urlencode(params)
+                body=rawdir/f'p{page:03d}-{word}-v{vi}.body'
+                hdr=rawdir/f'p{page:03d}-{word}-v{vi}.headers'
+                proc=subprocess.run([
+                  'curl','-L','--compressed','--retry','3','-sS','-A',ua,
+                  '-b',str(cookies),'-c',str(cookies),'-e',card,
+                  '-H','Accept: application/json','-D',str(hdr),url,
+                  '-o',str(body),'-w','%{http_code}\t%{content_type}\n'
+                ],capture_output=True,text=True)
+                b=body.read_bytes() if body.exists() else b''
+                rec={'page':page,'word':word,'variant':vi,'url':url,
+                     'status':proc.stdout.strip(),'stderr':proc.stderr.strip(),'bytes':len(b)}
+                try:
+                  obj=json.loads(b)
+                  rec['json']=obj
+                  highlights=obj.get('highlights') if isinstance(obj,dict) else None
+                  page_hits=[]
+                  if isinstance(highlights,dict):
+                    for k,v in highlights.items():
+                      if v: page_hits.append({'key':k,'hits':v})
+                  rec['nonempty']=page_hits
+                  if page_hits:
+                    positives.append({'page':page,'word':word,'variant':vi,'hits':page_hits})
+                except Exception as e:
+                  rec['parse_error']=repr(e)
+                  rec['prefix']=b[:500].decode('utf-8','replace')
+                records.append(rec)
+                # Stop after the first positive variant for this page/word.
+                if rec.get('nonempty'):
+                  break
+              time.sleep(0.04)
+
+          summary={'asin':asin,'candidate_count':sum(map(len,candidates.values())),
+                   'request_count':len(records),'positives':positives,
+                   'pages':{str(k):v for k,v in candidates.items()}}
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          (out/'records.json').write_text(json.dumps(records,indent=2,ensure_ascii=False))
+          md=['# Hunting Time targeted page-word validation','',
+              f"Candidates: {summary['candidate_count']}",
+              f"Requests: {summary['request_count']}",'', '## Non-empty highlights','']
+          if positives:
+            for p in positives:
+              md.append(f"- page {p['page']}: `{p['word']}` — {json.dumps(p['hits'],ensure_ascii=False)}")
+          else:
+            md.append('- none')
+          (out/'summary.md').write_text('\n'.join(md)+'\n')
+          print((out/'summary.md').read_text())
+          PY
+
+      - name: Upload validation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-page-word-validation
+          path: /tmp/hunting-page-word-validation
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Persist compact validation result
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/page-word-validation
+          cp /tmp/hunting-page-word-validation/summary.json public-media-analysis/page-word-validation/summary.json
+          cp /tmp/hunting-page-word-validation/summary.md public-media-analysis/page-word-validation/summary.md
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/page-word-validation/RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/page-word-validation
+          git commit -m "research: persist page-word validation $GITHUB_RUN_ID"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin research/public-media-analysis
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
