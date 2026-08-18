@@ -1,0 +1,34 @@
+name: Export public clue conversations
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-clue-conversations.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-public-conversations
+          path: public-media-analysis/conversations
+          if-no-files-found: error
+          retention-days: 7
+      - name: Persist run identifier
+        run: |
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/latest-conversation-export-run-id.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/latest-conversation-export-run-id.txt
+          git commit -m 'research: record conversation export run [skip ci]'
+          git push origin HEAD:research/public-media-analysis
