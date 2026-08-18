@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 04:14:26 GMT
+date: Tue, 18 Aug 2026 04:26:44 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: MY0VM6Z2T2JNAY8DZTZN
+x-amz-rid: TVC40Z1PGTW6E8JR36QC
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 a3fcfc1aa68473c1f8608ba55a0e426e.cloudfront.net (CloudFront)
+via: 1.1 123e69ce4c4641277ec2a7cbf9f44f26.cloudfront.net (CloudFront)
 x-amz-cf-pop: PHX50-P1
-x-amz-cf-id: eKmWbytAxPzz0O3jhJYV5o-JVl2yrHs2ymry55hnJ50IFHCZPxYPlQ==
+x-amz-cf-id: dLAm3aQV9SaCQ3Vstg2n4hsL7g43BRZ7_KY3DE_EIzv5r4lpNzs4PA==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 04:14:26 GMT
+Date: Tue, 18 Aug 2026 04:26:44 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 9387f08affa1cb3381ae76eb5bcc4b84.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: PHX52-P1
+Via: 1.1 a183b6545fea485604515ba7931cb9b8.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: DFW57-P1
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: dzCZDF7ZI1I0yonZQIBETeag1QW_Z_aSCowBdCUgH-hNIWKJlwTQ-g==
+X-Amz-Cf-Id: Q0PWC2_GRXTosLyqwHI-HJe-ez5kf_kuROU9XQjwNAMaIfgpI_prHg==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 04:14:26 GMT
+date: Tue, 18 Aug 2026 04:26:44 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: M4BWDYM2DPWGGYYH0KAS
+x-amz-rid: 2E26Z03A0B6NN544EA95
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 3740149c7170537660af3e7e085066c2.cloudfront.net (CloudFront)
-x-amz-cf-pop: PHX52-P1
+via: 1.1 223f95455b0bb3057583bfe63e0d5c7a.cloudfront.net (CloudFront)
+x-amz-cf-pop: DFW57-P1
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: Bir6iBMiy_v17auQUkE9VJ_YfIzO-c308dZRXLh9zBry5S49AEpYiw==
+x-amz-cf-id: 1Ba2HcMQcmDN5B2ANsEiypQ9IBA4vqLCrdAgY9Ixm9bJRC-JTV2uZw==
 
