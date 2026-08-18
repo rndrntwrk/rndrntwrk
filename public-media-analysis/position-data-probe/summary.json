@@ -1,0 +1,1617 @@
+[
+  {
+    "page": 14,
+    "query": "computer",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=computer&token=null&page=14",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 14 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 14,
+    "query": "camouflaged",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=camouflaged&token=null&page=14",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 14 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 14,
+    "query": "clock",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=clock&token=null&page=14",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 14 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 14,
+    "query": "stone",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=stone&token=null&page=14",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 14 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 14,
+    "query": "helicopter",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=helicopter&token=null&page=14",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 14 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 14,
+    "query": "air",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=air&token=null&page=14",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 14 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 19,
+    "query": "price",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=price&token=null&page=19",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 19 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 19,
+    "query": "cash",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=cash&token=null&page=19",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 19 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 19,
+    "query": "headquarters",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=headquarters&token=null&page=19",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 19 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 19,
+    "query": "radio",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=radio&token=null&page=19",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 19 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 19,
+    "query": "trust",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=trust&token=null&page=19",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 19 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 19,
+    "query": "wealth",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=wealth&token=null&page=19",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 19 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 21,
+    "query": "army",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=army&token=null&page=21",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 21 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 21,
+    "query": "window",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=window&token=null&page=21",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 21 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 21,
+    "query": "guilt",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=guilt&token=null&page=21",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 21 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 21,
+    "query": "soldier",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=soldier&token=null&page=21",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 21 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 21,
+    "query": "overseas",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=overseas&token=null&page=21",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 21 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 21,
+    "query": "surface",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=surface&token=null&page=21",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 21 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 22,
+    "query": "machine",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=machine&token=null&page=22",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 22 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 22,
+    "query": "radio",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=radio&token=null&page=22",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 22 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 22,
+    "query": "patrol",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=patrol&token=null&page=22",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 22 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 22,
+    "query": "top",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=top&token=null&page=22",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 22 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 22,
+    "query": "cover",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=cover&token=null&page=22",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 22 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 22,
+    "query": "desert",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=desert&token=null&page=22",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 22 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 24,
+    "query": "white",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=white&token=null&page=24",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 24 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 24,
+    "query": "stairwell",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=stairwell&token=null&page=24",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 24 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 24,
+    "query": "stairs",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=stairs&token=null&page=24",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 24 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 24,
+    "query": "alone",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=alone&token=null&page=24",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 24 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 24,
+    "query": "shoreline",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=shoreline&token=null&page=24",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 24 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 24,
+    "query": "wall",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=wall&token=null&page=24",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 24 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "thailand",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=thailand&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "north",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=north&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "unit",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=unit&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "war",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=war&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "bitcoin",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=bitcoin&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "network",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=network&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 32,
+    "query": "street",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=street&token=null&page=32",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 32 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 34,
+    "query": "watch",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=watch&token=null&page=34",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 34 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 34,
+    "query": "wet",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=wet&token=null&page=34",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 34 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 34,
+    "query": "earth",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=earth&token=null&page=34",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 34 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 34,
+    "query": "gps",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=gps&token=null&page=34",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 34 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 34,
+    "query": "trail",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=trail&token=null&page=34",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 34 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 34,
+    "query": "jungle",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=jungle&token=null&page=34",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 34 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 39,
+    "query": "thermal",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=thermal&token=null&page=39",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 39 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 39,
+    "query": "target",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=target&token=null&page=39",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 39 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 39,
+    "query": "pound",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=pound&token=null&page=39",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 39 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 39,
+    "query": "drone",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=drone&token=null&page=39",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 39 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 39,
+    "query": "trees",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=trees&token=null&page=39",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 39 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 39,
+    "query": "below",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=below&token=null&page=39",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 157,
+    "json": {
+      "error": {
+        "text": {
+          "key": "Failed to create response for page 39 and ASIN B0FK7RBDFL"
+        },
+        "title": {
+          "key": "PositionData::Error::PageResponseError"
+        },
+        "reftag": null
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "time",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=time&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "watch",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=watch&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "jungle",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=jungle&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "target",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=target&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "drone",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=drone&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "hotel",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=hotel&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "wallet",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=wallet&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "electric",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=electric&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "power",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=power&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "wall",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=wall&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "stone",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=stone&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "army",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=army&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "machine",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=machine&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "earth",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=earth&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "pound",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=pound&token=null&page=103",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "defender",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=defender&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "vehicle",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=vehicle&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "car",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=car&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "drive",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=drive&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "road",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=road&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "jungle",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=jungle&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "truck",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=truck&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "wheel",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=wheel&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "army",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=army&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "target",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=target&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "time",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=time&token=null&page=110",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "helicopter",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=helicopter&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "pilot",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=pilot&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "flight",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=flight&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "air",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=air&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "heading",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=heading&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "control",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=control&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "vehicle",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=vehicle&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "army",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=army&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "target",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=target&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "machine",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FK7RBDFL&query=machine&token=null&page=241",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  }
+]
