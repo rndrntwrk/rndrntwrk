@@ -1,0 +1,125 @@
+name: Fetch public clue conversations
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-clue-conversations.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Fetch conversation and quote metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          root=public-media-analysis/conversations
+          mkdir -p "$root/raw"
+          ids=(
+            2071632285951226106 2074168998938210563 2076705716501610744
+            2079242430499487893 2081779146196439527 2082504700125966650
+            2083486983142142452 2084315859770872026 2085434753092653555
+            2086490186888986672 2087297821921640942 2087893684633141356
+          )
+          for id in "${ids[@]}"; do
+            curl -fsSL --retry 3 --max-time 45 -A 'Mozilla/5.0' \
+              "https://api.fxtwitter.com/2/conversation/${id}?ranking_mode=likes" \
+              -o "$root/raw/${id}-conversation.json" || printf '{}\n' > "$root/raw/${id}-conversation.json"
+            curl -fsSL --retry 3 --max-time 45 -A 'Mozilla/5.0' \
+              "https://api.fxtwitter.com/2/status/${id}/quotes" \
+              -o "$root/raw/${id}-quotes.json" || printf '{}\n' > "$root/raw/${id}-quotes.json"
+          done
+
+      - name: Build searchable reply ledger
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          root = Path('public-media-analysis/conversations')
+          ids = [
+            '2071632285951226106','2074168998938210563','2076705716501610744',
+            '2079242430499487893','2081779146196439527','2082504700125966650',
+            '2083486983142142452','2084315859770872026','2085434753092653555',
+            '2086490186888986672','2087297821921640942','2087893684633141356'
+          ]
+
+          def author_name(obj):
+              a = obj.get('author') if isinstance(obj, dict) else None
+              if isinstance(a, dict):
+                  return a.get('screen_name') or a.get('username') or a.get('name') or ''
+              return obj.get('author_screen_name') or obj.get('screen_name') or obj.get('username') or ''
+
+          def walk(obj, path='$'):
+              if isinstance(obj, dict):
+                  text = obj.get('text') or obj.get('full_text') or obj.get('rawText')
+                  ident = obj.get('id') or obj.get('tweet_id') or obj.get('rest_id')
+                  if isinstance(text, str) and text.strip():
+                      yield {
+                          'path': path,
+                          'id': str(ident or ''),
+                          'author': author_name(obj),
+                          'text': re.sub(r'\s+', ' ', text).strip(),
+                          'likes': obj.get('likes') or obj.get('favorite_count') or obj.get('like_count') or 0,
+                          'replies': obj.get('replies') or obj.get('reply_count') or 0,
+                      }
+                  for k, v in obj.items():
+                      yield from walk(v, f'{path}.{k}')
+              elif isinstance(obj, list):
+                  for i, v in enumerate(obj):
+                      yield from walk(v, f'{path}[{i}]')
+
+          records = []
+          seen = set()
+          for clue, ident in enumerate(ids, 1):
+              for kind in ('conversation', 'quotes'):
+                  p = root/'raw'/f'{ident}-{kind}.json'
+                  try:
+                      data = json.loads(p.read_text(errors='replace'))
+                  except Exception:
+                      continue
+                  for r in walk(data):
+                      key = (ident, kind, r['id'], r['author'], r['text'])
+                      if key in seen:
+                          continue
+                      seen.add(key)
+                      r.update({'clue': clue, 'root_id': ident, 'kind': kind})
+                      records.append(r)
+
+          records.sort(key=lambda r: (r['clue'], r['kind'], -int(r.get('likes') or 0), r['author'], r['text']))
+          (root/'reply-ledger.json').write_text(json.dumps(records, indent=2, ensure_ascii=False))
+
+          md = ['# Public reply and quote ledger', '']
+          for clue in range(1, 13):
+              md += [f'## Clue {clue}', '']
+              rows = [r for r in records if r['clue'] == clue]
+              if not rows:
+                  md += ['No text records recovered.', '']
+                  continue
+              for r in rows:
+                  md.append(f"- [{r['kind']}] @{r['author'] or '?'} ({r['likes']} likes): {r['text']}")
+              md.append('')
+          (root/'reply-ledger.md').write_text('\n'.join(md), encoding='utf-8')
+          print(f'recovered {len(records)} unique text records')
+          PY
+
+      - name: Persist public conversation evidence
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/conversations
+          git commit -m 'research: persist public clue conversations' || exit 0
+          git push origin HEAD:research/public-media-analysis
