@@ -1,0 +1,107 @@
+name: CLIP ranking of BIP39 clue words
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/clip-bip39-ranking.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Install CLIP dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q 'transformers==4.48.3' pillow mnemonic safetensors
+
+      - name: Rank wordlist semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/clip-bip39
+          cat > /tmp/rank_clip.py <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import torch
+          from PIL import Image
+          from mnemonic import Mnemonic
+          from transformers import CLIPModel, CLIPProcessor
+
+          root=Path('public-media-analysis')
+          out=root/'clip-bip39'
+          out.mkdir(parents=True,exist_ok=True)
+          model_id='openai/clip-vit-base-patch32'
+          model=CLIPModel.from_pretrained(model_id).eval()
+          processor=CLIPProcessor.from_pretrained(model_id)
+          words=Mnemonic('english').wordlist
+          templates=(
+              'a photograph representing the word {}',
+              'the visual concept of {}',
+              'a scene about {}',
+          )
+
+          # Precompute one averaged text vector per BIP39 word.
+          vectors=[]
+          batch_size=128
+          with torch.inference_mode():
+              for start in range(0,len(words),batch_size):
+                  batch=words[start:start+batch_size]
+                  per_template=[]
+                  for template in templates:
+                      texts=[template.format(w) for w in batch]
+                      inp=processor(text=texts,return_tensors='pt',padding=True,truncation=True)
+                      feat=model.get_text_features(**inp)
+                      feat=feat/feat.norm(dim=-1,keepdim=True)
+                      per_template.append(feat)
+                  avg=torch.stack(per_template).mean(dim=0)
+                  avg=avg/avg.norm(dim=-1,keepdim=True)
+                  vectors.append(avg)
+          text_features=torch.cat(vectors,dim=0)
+
+          results={}
+          with torch.inference_mode():
+              for path in sorted(root.glob('clue-*.jpg')):
+                  image=Image.open(path).convert('RGB')
+                  inp=processor(images=image,return_tensors='pt')
+                  image_feat=model.get_image_features(**inp)
+                  image_feat=image_feat/image_feat.norm(dim=-1,keepdim=True)
+                  scores=(image_feat @ text_features.T)[0]
+                  vals,idx=torch.topk(scores,k=150)
+                  ranking=[{'rank':i+1,'word':words[j],'index_zero_based':j,'index_one_based':j+1,'score':float(v)} for i,(v,j) in enumerate(zip(vals.tolist(),idx.tolist()))]
+                  results[path.stem]=ranking
+                  print('\n'+path.name)
+                  print(' '.join(f"{r['word']}({r['index_zero_based']}:{r['score']:.3f})" for r in ranking[:30]))
+          (out/'results.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
+          lines=['# CLIP ranking over the BIP39 English wordlist','']
+          for clue,ranking in results.items():
+              lines += [f'## {clue}','','| Rank | Word | Zero-based index | One-based index | Score |','|---:|---|---:|---:|---:|']
+              for r in ranking[:100]: lines.append(f"| {r['rank']} | `{r['word']}` | {r['index_zero_based']} | {r['index_one_based']} | {r['score']:.6f} |")
+              lines.append('')
+          (out/'results.md').write_text('\n'.join(lines),encoding='utf-8')
+          PY
+          python /tmp/rank_clip.py | tee public-media-analysis/clip-bip39/console.txt
+
+      - name: Persist rankings
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/clip-bip39
+          git commit -m 'research: add CLIP BIP39 rankings'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
