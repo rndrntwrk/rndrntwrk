@@ -1,0 +1,6 @@
+{
+  "method": "AES/CBC/PKCS5Padding",
+  "key_len_b64": 24,
+  "iv_len_b64": 24,
+  "encrypted_bytes": 26880
+}
