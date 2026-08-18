@@ -1,0 +1,61 @@
+name: Export extended public sample pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-sample-pages-extended.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Download legally exposed sample pages
+        run: |
+          python - <<'PY'
+          import json, pathlib, urllib.request
+          root = pathlib.Path('public-media-analysis')
+          out = root / 'sample-pages-extended'
+          out.mkdir(exist_ok=True)
+          window = json.load(open(root / 'sample-pages' / 'page-window.json'))
+          urls = {int(k): v for k, v in window['largeImageUrls'].items()}
+          summary = json.load(open(root / 'page-map' / 'summary.json'))
+          for req in summary.get('page_requests', []):
+              if str(req.get('params', {}).get('page')) == '58':
+                  urls[58] = req.get('json', {}).get('largeImageUrls', {}).get('58')
+                  if urls[58]:
+                      break
+          for page, url in sorted(urls.items()):
+              if not url:
+                  continue
+              dest = out / f'page-{page:03d}.jpg'
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as response:
+                      dest.write_bytes(response.read())
+                  print(page, dest.stat().st_size)
+              except Exception as exc:
+                  print('FAILED', page, repr(exc))
+          PY
+      - name: Upload extended sample pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: extended-public-sample-pages
+          path: public-media-analysis/sample-pages-extended
+          retention-days: 1
+          if-no-files-found: error
+      - name: Persist run identifier
+        run: |
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/latest-sample-export-run-id.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/latest-sample-export-run-id.txt
+          git commit -m 'research: record extended sample export run [skip ci]'
+          git push origin HEAD:research/public-media-analysis
