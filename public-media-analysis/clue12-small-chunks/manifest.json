@@ -1,0 +1,45 @@
+{
+  "image_size": [
+    720,
+    480
+  ],
+  "base64_characters": 49332,
+  "parts": [
+    {
+      "file": "part-000.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-001.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-002.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-003.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-004.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-005.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-006.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-007.txt",
+      "characters": 6000
+    },
+    {
+      "file": "part-008.txt",
+      "characters": 1332
+    }
+  ]
+}
