@@ -1,0 +1,16 @@
+{
+  "cdn": {
+    "expirationDate": 1787062217689,
+    "baseUrl": "https://d3lzhnl3ghk4fg.cloudfront.net/B0FK7RBDFL/64363d23/sample",
+    "authParameter": null,
+    "isEncrypted": false
+  },
+  "resources": [
+    {
+      "url": "resource/rsrc2SE",
+      "size": 0,
+      "type": "IMAGE_PNG",
+      "authParameter": "Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kM2x6aG5sM2doazRmZy5jbG91ZGZyb250Lm5ldC9CMEZLN1JCREZMLzY0MzYzZDIzL3NhbXBsZS9yZXNvdXJjZS9yc3JjMlNFIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg3MDYyMjE3fX19XX0_&Signature=TUzv-cNqLzvvvFSHuLLko6~CMaVCZS4u5MhX2DazKNndL9~2nEPF14rMMv4V5WZ~RYEkujj3FdYFG4-~Wf3NfvrW2oEr5ChwJCcdVlR7O8Ig3sVghY-rMB~Ykmx5~ATq8~Zm2DL28gluI7gi7KTSMlowWrZY3X8Zts26tSAMqiho29q3Vty5OIJenVoKRrsjU6rjVoqGSA8q5yizgHN~rbyVH2sPsBwMitbk1mcl8MMCxpPqcgTsWG7gl13GNCylKo6YswFAsqwk9~VBS3faa6UxJAo7lmQ6QHWzts2Vo0~BnXebVpYhLIlnrHy51ZakjagNt4Dqv~6pFYLPJbZCvA__&Key-Pair-Id=K2DMXAZKWU5XAP"
+    }
+  ]
+}

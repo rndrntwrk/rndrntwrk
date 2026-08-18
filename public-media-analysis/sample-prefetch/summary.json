@@ -1,0 +1,20 @@
+{
+  "pageStatus": 200,
+  "revisionId": "64363d23",
+  "format": "3",
+  "fixedFormat": true,
+  "baseUrl": "https://d3lzhnl3ghk4fg.cloudfront.net/B0FK7RBDFL/64363d23/sample",
+  "resourceCount": 1,
+  "resources": [
+    {
+      "index": 1,
+      "url": "resource/rsrc2SE",
+      "type": "IMAGE_PNG",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "bytes": 2160430,
+      "file": "resource-01.bin",
+      "sha256": "7093e65893e64f7c1e10ff6e31a0d43b530315a84cba1291e57128dc95a1a423"
+    }
+  ]
+}
