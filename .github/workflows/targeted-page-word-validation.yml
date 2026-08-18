@@ -14,7 +14,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,11 +35,15 @@ jobs:
           out=Path('/tmp/hunting-page-word-validation')
           rawdir=out/'raw'
           asin='B0FRGB2PMR'
-          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151 Safari/537.36'
           card=f'https://read.amazon.com/kp/card?asin={asin}&preview=inline&linkCode=kpe'
           cookies=out/'cookies.txt'
           subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-c',str(cookies),card,'-o',str(out/'card.html')],check=True)
 
+          # The public print reader uses an internal image number that is nine
+          # greater than the printed page number.  This mapping has been checked
+          # against printed pages 3, 14, 19, 21, 24 and 32.
+          PAGE_OFFSET=9
           candidates={
             3:['watch','time','view','world','cloud','house','scene','orange','sun','ready'],
             14:['black','machine','group','blue','sea','sunset','memory','ocean','record','perfect'],
@@ -54,18 +58,17 @@ jobs:
 
           records=[]
           positives=[]
-          for page, words in candidates.items():
+          for printed_page, words in candidates.items():
+            internal_page=printed_page+PAGE_OFFSET
             for word in words:
-              # The first two variants are known to return JSON. Keep both because
-              # some Search Inside deployments require buyingAsin.
               variants=[
-                {'asin':asin,'query':word,'token':'null','page':str(page)},
-                {'asin':asin,'buyingAsin':asin,'query':word,'token':'null','page':str(page)},
+                {'asin':asin,'query':word,'token':'null','page':str(internal_page)},
+                {'asin':asin,'buyingAsin':asin,'query':word,'token':'null','page':str(internal_page)},
               ]
               for vi,params in enumerate(variants,1):
                 url='https://read.amazon.com/sample/print/position-data?'+urllib.parse.urlencode(params)
-                body=rawdir/f'p{page:03d}-{word}-v{vi}.body'
-                hdr=rawdir/f'p{page:03d}-{word}-v{vi}.headers'
+                body=rawdir/f'printed-{printed_page:03d}-internal-{internal_page:03d}-{word}-v{vi}.body'
+                hdr=rawdir/f'printed-{printed_page:03d}-internal-{internal_page:03d}-{word}-v{vi}.headers'
                 proc=subprocess.run([
                   'curl','-L','--compressed','--retry','3','-sS','-A',ua,
                   '-b',str(cookies),'-c',str(cookies),'-e',card,
@@ -73,7 +76,8 @@ jobs:
                   '-o',str(body),'-w','%{http_code}\t%{content_type}\n'
                 ],capture_output=True,text=True)
                 b=body.read_bytes() if body.exists() else b''
-                rec={'page':page,'word':word,'variant':vi,'url':url,
+                rec={'printed_page':printed_page,'internal_page':internal_page,
+                     'word':word,'variant':vi,'url':url,
                      'status':proc.stdout.strip(),'stderr':proc.stderr.strip(),'bytes':len(b)}
                 try:
                   obj=json.loads(b)
@@ -81,31 +85,39 @@ jobs:
                   highlights=obj.get('highlights') if isinstance(obj,dict) else None
                   page_hits=[]
                   if isinstance(highlights,dict):
+                    # Only count hits attached to the expected internal page.
                     for k,v in highlights.items():
-                      if v: page_hits.append({'key':k,'hits':v})
+                      if v and str(k)==str(internal_page):
+                        page_hits.append({'key':k,'hits':v})
                   rec['nonempty']=page_hits
                   if page_hits:
-                    positives.append({'page':page,'word':word,'variant':vi,'hits':page_hits})
+                    positives.append({'printed_page':printed_page,
+                                      'internal_page':internal_page,
+                                      'word':word,'variant':vi,
+                                      'hits':page_hits})
                 except Exception as e:
                   rec['parse_error']=repr(e)
                   rec['prefix']=b[:500].decode('utf-8','replace')
                 records.append(rec)
-                # Stop after the first positive variant for this page/word.
                 if rec.get('nonempty'):
                   break
-              time.sleep(0.04)
+              time.sleep(0.05)
 
-          summary={'asin':asin,'candidate_count':sum(map(len,candidates.values())),
+          summary={'asin':asin,'page_offset':PAGE_OFFSET,
+                   'candidate_count':sum(map(len,candidates.values())),
                    'request_count':len(records),'positives':positives,
-                   'pages':{str(k):v for k,v in candidates.items()}}
+                   'pages':{str(k):{'internal_page':k+PAGE_OFFSET,'words':v}
+                            for k,v in candidates.items()}}
           (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
           (out/'records.json').write_text(json.dumps(records,indent=2,ensure_ascii=False))
           md=['# Hunting Time targeted page-word validation','',
+              f"Printed-page offset: +{PAGE_OFFSET}",
               f"Candidates: {summary['candidate_count']}",
-              f"Requests: {summary['request_count']}",'', '## Non-empty highlights','']
+              f"Requests: {summary['request_count']}",'',
+              '## Non-empty highlights','']
           if positives:
             for p in positives:
-              md.append(f"- page {p['page']}: `{p['word']}` — {json.dumps(p['hits'],ensure_ascii=False)}")
+              md.append(f"- printed page {p['printed_page']} (internal {p['internal_page']}): `{p['word']}` — {json.dumps(p['hits'],ensure_ascii=False)}")
           else:
             md.append('- none')
           (out/'summary.md').write_text('\n'.join(md)+'\n')
@@ -115,7 +127,7 @@ jobs:
       - name: Upload validation evidence
         uses: actions/upload-artifact@v4
         with:
-          name: hunting-time-page-word-validation
+          name: hunting-time-page-word-validation-offset-corrected
           path: /tmp/hunting-page-word-validation
           if-no-files-found: error
           retention-days: 7
@@ -131,7 +143,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add public-media-analysis/page-word-validation
-          git commit -m "research: persist page-word validation $GITHUB_RUN_ID"
+          git commit -m "research: persist corrected page-word validation $GITHUB_RUN_ID"
           for attempt in 1 2 3 4 5; do
             git pull --rebase origin research/public-media-analysis
             if git push origin HEAD:research/public-media-analysis; then exit 0; fi
