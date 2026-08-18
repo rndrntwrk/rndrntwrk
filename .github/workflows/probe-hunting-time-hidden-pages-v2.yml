@@ -1,0 +1,151 @@
+name: Probe Hunting Time correctly offset hidden pages v2
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-hidden-pages-v2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Query image-derived BIP39 candidates on printed pages
+        run: |
+          set -euxo pipefail
+          python -m pip install --disable-pip-version-check -q requests
+          python - <<'PY'
+          import concurrent.futures, json, time
+          from pathlib import Path
+          import requests
+
+          out=Path('/tmp/hunting-time-hidden-pages-v2')
+          out.mkdir(parents=True,exist_ok=True)
+          asin='B0FRGB2PMR'
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card=f'https://read.amazon.com/kp/card?asin={asin}&preview=inline&linkCode=kpe'
+
+          s=requests.Session()
+          s.headers.update({'User-Agent':ua,'Referer':card,'Accept':'application/json'})
+          s.get(card,timeout=30).raise_for_status()
+          token_resp=s.get(f'https://read.amazon.com/sample/karamel-token?asin={asin}',timeout=30)
+          try: issued=token_resp.json().get('token')
+          except Exception: issued=None
+
+          # Printed page numbers are Amazon internal image page +9 for this paperback.
+          candidates={
+            60: ['air','airport','army','attack','base','battle','black','blue','control','crew','dawn','engine','flight','fly','green','group','light','machine','moon','night','number','outside','pair','pilot','rain','shadow','steel','travel','two','vehicle','wing'],
+            103:['aim','air','alert','camera','clock','device','enemy','feed','flight','forest','green','hand','hour','hunt','jungle','lock','minute','monitor','move','night','position','screen','search','second','system','target','time','track','tree','view','wrist'],
+            110:['armor','army','bag','car','cargo','defense','drive','engine','forest','green','heavy','jungle','motor','mountain','off','path','protect','rain','river','road','roof','travel','truck','vehicle','wheel'],
+            241:['air','attack','below','control','course','crew','engine','flight','fly','forest','helmet','jungle','machine','moon','night','pair','pilot','radar','river','screen','speed','two','valley','view'],
+          }
+          # Controls: known words on printed pages 14, 19, 21, 24, 32.
+          controls={
+            14:['group','blue','sea','sunset','memory','perfect','ocean','black','record','way'],
+            19:['device','machine','network','position','advance','attack','air','angle','blue','calm','connect'],
+            21:['group','pair','aim','machine','steel','attack','air','journey','jungle','enemy'],
+            24:['surface','world','time','edge','whale','blue','orange','current','prize','turtle'],
+            32:['road','car','wall','window','screen','mobile','office','light','green','stone'],
+          }
+          all_sets={**controls,**candidates}
+
+          def one(task):
+            printed,word,token_kind=task
+            internal=printed+9
+            token='null' if token_kind=='null' else issued
+            params={'asin':asin,'buyingAsin':asin,'query':word,'token':token,'page':str(internal)}
+            url='https://read.amazon.com/sample/print/position-data'
+            last=None
+            for attempt in range(4):
+              try:
+                r=s.get(url,params=params,timeout=30)
+                text=r.text
+                try: body=r.json()
+                except Exception: body={'raw_prefix':text[:500]}
+                return {'printed_page':printed,'internal_page':internal,'word':word,'token_kind':token_kind,'status':r.status_code,'body':body,'url':r.url}
+              except Exception as e:
+                last=repr(e); time.sleep(0.5*(attempt+1))
+            return {'printed_page':printed,'internal_page':internal,'word':word,'token_kind':token_kind,'error':last}
+
+          tasks=[]
+          for page,ws in all_sets.items():
+            for w in ws:
+              tasks.append((page,w,'null'))
+              if issued: tasks.append((page,w,'issued'))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as ex:
+            rows=list(ex.map(one,tasks))
+
+          def has_hit(row):
+            body=row.get('body') or {}
+            highlights=body.get('highlights') if isinstance(body,dict) else None
+            if not isinstance(highlights,dict): return False
+            return any(bool(v) for v in highlights.values())
+
+          hits=[r for r in rows if has_hit(r)]
+          compact={}
+          for p in sorted(all_sets):
+            compact[str(p)]={
+              'internal_page':p+9,
+              'hits_null':[r['word'] for r in hits if r['printed_page']==p and r['token_kind']=='null'],
+              'hits_issued':[r['word'] for r in hits if r['printed_page']==p and r['token_kind']=='issued'],
+              'statuses':sorted({str(r.get('status',r.get('error'))) for r in rows if r['printed_page']==p}),
+            }
+          (out/'all-results.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          (out/'compact.json').write_text(json.dumps(compact,indent=2,ensure_ascii=False))
+          (out/'compact.md').write_text('\n'.join(
+            [f"# Hidden-page candidate probe",'']+
+            [f"- Printed page {p} (internal {p+9}): {', '.join(compact[str(p)]['hits_null']) or '(no null-token hits)'}" for p in sorted(all_sets)]
+          )+'\n')
+          print(json.dumps(compact,indent=2))
+          PY
+
+      - name: Upload full probe
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-hidden-pages-v2
+          path: /tmp/hunting-time-hidden-pages-v2
+          if-no-files-found: error
+          retention-days: 2
+
+      - name: Persist compact results and coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          cp /tmp/hunting-time-hidden-pages-v2/compact.json /tmp/hidden-compact.json
+          cp /tmp/hunting-time-hidden-pages-v2/compact.md /tmp/hidden-compact.md
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/hidden-pages-v2
+            cp /tmp/hidden-compact.json public-media-analysis/hidden-pages-v2/compact.json
+            cp /tmp/hidden-compact.md public-media-analysis/hidden-pages-v2/compact.md
+            python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('public-media-analysis/hidden-pages-v2/run.json').write_text(json.dumps({
+            'run_id':int(os.environ['RUN_ID']),
+            'artifact_id':int(os.environ['ARTIFACT_ID']),
+            'artifact_url':os.environ.get('ARTIFACT_URL','')
+          },indent=2)+'\n')
+          PY
+            git add public-media-analysis/hidden-pages-v2
+            git commit -m 'research: persist correctly offset hidden-page probe' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
