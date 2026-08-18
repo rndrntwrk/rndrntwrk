@@ -1,0 +1,65 @@
+name: Fetch Hunting Time cover and product metadata
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-hunting-time-product.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Fetch public product and author-site evidence
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/product-evidence
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36'
+          urls=(
+            'https://www.huntingtimenovel.com/'
+            'https://www.amazon.com/dp/B0FK7RBDFL'
+            'https://www.amazon.co.uk/dp/B0FK7RBDFL'
+            'https://read.amazon.com/sample/meta/with-fallback/B0FK7RBDFL'
+            'https://m.media-amazon.com/images/I/41ut6sqjXIL.jpg'
+            'https://m.media-amazon.com/images/I/41ut6sqjXIL._SL1500_.jpg'
+          )
+          names=(site.html amazon-us.html amazon-uk.html sample-meta.json cover.jpg cover-sl1500.jpg)
+          for i in "${!urls[@]}"; do
+            curl -L --compressed --retry 3 --connect-timeout 20 --max-time 90 -A "$ua" -D "$out/${names[$i]}.headers" -o "$out/${names[$i]}" "${urls[$i]}" || true
+          done
+          python - <<'PY'
+          from pathlib import Path
+          import re, html, json
+          root=Path('public-media-analysis/product-evidence')
+          report={}
+          for p in root.iterdir():
+              if p.is_file(): report[p.name]={'size':p.stat().st_size}
+          for name in ('site.html','amazon-us.html','amazon-uk.html'):
+              p=root/name
+              if not p.exists(): continue
+              text=p.read_text(errors='ignore')
+              urls=sorted(set(html.unescape(x) for x in re.findall(r'https?://[^"\'<>\\ ]+',text)))
+              (root/(name+'.urls.txt')).write_text('\n'.join(urls))
+              report[name]['title']=next(iter(re.findall(r'<title[^>]*>(.*?)</title>',text,re.I|re.S)), '')[:500]
+              report[name]['asins']=sorted(set(re.findall(r'B0[A-Z0-9]{8}',text)))
+              report[name]['isbns']=sorted(set(re.findall(r'97[89][0-9 -]{10,20}',text)))[:50]
+          (root/'fetch-report.json').write_text(json.dumps(report,indent=2))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort
+      - name: Persist evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/product-evidence
+          git commit -m 'research: persist Hunting Time product evidence' || exit 0
+          git push origin HEAD:research/public-media-analysis
