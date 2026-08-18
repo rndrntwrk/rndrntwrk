@@ -1,0 +1,30 @@
+{
+  "encryptedBytes": 26880,
+  "decryptedBytes": 26879,
+  "prefixHex": "504b0304140008080800a3580a5d000000000000000000000000150000004230464b37524244464c2e70726f706572746965736dc9b10ac2301000d0fd7ea795922183118516db3aa8c5492239d36072816b02cddf8b889beb7b474d366b8bad9148a04ac2e584bca7e4529115f48e5cc8e1ec92c72f5eb5cff819bdfe9d5a34",
+  "prefixUtf8": "PK\u0003\u0004\u0014\u0000\b\b\b\u0000�X\n]\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0015\u0000\u0000\u0000B0FK7RBDFL.propertiesmɱ\n�0\u0010\u0000��~���!�\u0011�\u0016�:��I\"9�`r�k\u0002�ߋ���{GM6k���H�J�儼��R�\u0015�\\����/^���\u0019���Z4B���\u0003y|N��Ғ�\u0015�܈��iFƟ�|�\u0006��Fvi\u000e��\f�\u0006\u0015��\u00109�$o�r��\u0000�\u0001PK\u0007\by�孃\u0000\u0000\u0000�\u0000\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u0000�X\n]\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0010\u0000\u0000\u0000B0FK7RBDFL.wordsE\\Y���\u000e��j���ݐ�\u0004w\u0001�\r$U��w\"D������ K���]U+��N\u001be�S+���T�r�Օ�$�Wu�:�����S\u001a�lh�FN\u001f�Ҷ3]�J�ҞԢt�t����Q\u0016\u0005��#���5�k\u001b�\rH:\fq;�m��0��T�\u0012:���\u0006��\u0003��T�0Ϝ�G9G�k��\u0012�I9\u0016=�4*\u0017:]��ǡj��ϔ7U�����-\u001dΫ_T\u001d����\u0006����T��\u0018�TT��;�\n,l�eS���%n��6\u0015X�x-�\n��]?~�mPM�ՠ�v^E5L\u0014K�\u0017հ�x\f��r��\u0001z��\u000b",
+  "variants": [
+    {
+      "name": "gunzip",
+      "ok": false,
+      "error": "Error: incorrect header check"
+    },
+    {
+      "name": "inflate",
+      "ok": false,
+      "error": "Error: incorrect header check"
+    },
+    {
+      "name": "inflateRaw",
+      "ok": false,
+      "error": "Error: invalid stored block lengths"
+    },
+    {
+      "name": "brotli",
+      "ok": false,
+      "error": "Error: Decompression failed"
+    }
+  ],
+  "json": false,
+  "jsonError": "SyntaxError: Unexpected token 'P', \"PK\u0003\u0004\u0014\u0000\b\b\b\u0000\"... is not valid JSON"
+}

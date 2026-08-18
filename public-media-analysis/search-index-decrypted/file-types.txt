@@ -1,0 +1,5 @@
+public-media-analysis/search-index-decrypted/decrypted.bin: Zip archive data, at least v2.0 to extract, compression method=deflate
+public-media-analysis/search-index-decrypted/decrypted.hex: ASCII text, with very long lines (53758), with no line terminators
+public-media-analysis/search-index-decrypted/encrypted.bin: data
+public-media-analysis/search-index-decrypted/metadata.json: JSON text data
+public-media-analysis/search-index-decrypted/summary.json:  JSON text data
