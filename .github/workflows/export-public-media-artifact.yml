@@ -1,0 +1,33 @@
+name: Export public media analysis artifact
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-public-media-artifact.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Package recovered public evidence
+        run: |
+          set -euo pipefail
+          test -d public-media-analysis
+          find public-media-analysis -maxdepth 3 -type f -print | sort
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-public-evidence
+          path: public-media-analysis
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 7
