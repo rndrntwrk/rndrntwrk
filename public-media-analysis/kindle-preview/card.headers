@@ -2,38 +2,35 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 06:53:38 GMT
+date: Tue, 18 Aug 2026 07:34:20 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 6SFBN6M3982M76ZQWC3H
+x-amz-rid: ZQ7Q4YVT5229W2CH7NVA
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 6de43a485035bee550e0be8a5b7e6312.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: krEI0dfl96J_HSkQEeov5Y-jLrn4L7ISqssNlKf_xO5u-GPqmu56xw==
+via: 1.1 cc5a019539e6efe2b661a72253272ed6.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: VcrizDydgxMMblh2LKpE-HIPkwjaC4xUHdmYA88I9wfL3fXqI2U5kw==
 
 HTTP/1.1 301 Moved Permanently
-Server: CloudFront
-Date: Tue, 18 Aug 2026 06:53:38 GMT
-Content-Type: text/html
-Content-Length: 167
-Connection: keep-alive
+Server: AkamaiGHost
+Content-Length: 0
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-X-Cache: Redirect from cloudfront
-Via: 1.1 a01085ccfea285b86a6146a9254f03da.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: ORD56-P10
-Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: G0xiFVWd3YcLVUqTl-mB-zQiQMyZ5PNAorjzzHuAF-TmJB-PPyJ2aw==
+Date: Tue, 18 Aug 2026 07:34:20 GMT
+Connection: keep-alive
+Akamai-Request-BC: [a=23.220.104.91,b=2163650776,c=g,n=US_VA_ASHBURN,o=20940]
+X-Amzn-Cdn-Id: ak-0.5b68dc17.1787038460.80f6b0d8
+X-Cache: NotCacheable from child
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 06:53:39 GMT
+date: Tue, 18 Aug 2026 07:34:20 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: 8TQQT8VWM42Y0VK3R0H0
+x-amz-rid: ZR5ZQDYSG89TX088X2TP
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 38cc6a61c9a2c086036b0b60b93c4a12.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD56-P10
+via: 1.1 83abbdac1eb1a9b7f18f692b71f8efbc.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: FWm7YJz8yNJZJptVSlA6qn6uMpYYgCWBXXKk1rTWTXeibbkT5ptv6A==
+x-amz-cf-id: ONaWTTkHpHU-BuPRXOgUn7l5hma6gFs94puKCNj92ERknuaeEU9uMA==
 
