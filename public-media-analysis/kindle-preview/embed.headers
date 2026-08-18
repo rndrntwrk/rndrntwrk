@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 04:40:33 GMT
+date: Tue, 18 Aug 2026 05:43:45 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 2MXPX1GK59HCBTN344YA
+x-amz-rid: QMQQJ4X41T116GR5536F
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 5cce6fb1b1e95ae50a1c4328874fd518.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P5
-x-amz-cf-id: TpEJ2CPErDDpIN6cGT_u26HSUtlWn8fdY_kXhEptx3414O4hIq-oAA==
+via: 1.1 453fca9bdf51d1b9cd544a035e75d92c.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: j40TpZ34t2sKAZBM3-d3mwhvrjYZtmd8Pt1HML5YzTlyBXgD6V33XA==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 04:40:33 GMT
+Date: Tue, 18 Aug 2026 05:43:45 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 518bdec7a5119a665abaf6315a08e6a8.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: HIO52-P2
+Via: 1.1 b1a3a4ff6e52cd6d8599a21fc6f0de3a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD61-P10
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: 8PGtDZL7E0ff-T1wyJGCl-lMdUXD8MSBpTG-pM1vIC1N2mcFu2hPJg==
+X-Amz-Cf-Id: geV1zMrWenj-UoKdJmvp2y8yIaT4FDK5j6RzrYDpl_km7U6zSNVmvA==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 04:40:34 GMT
+date: Tue, 18 Aug 2026 05:43:45 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: 9AHW49DM3ZD7EFZXA6RB
+x-amz-rid: T6NT0JC9Z08PM651FJJ5
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 6a52d37737133b0b8a09947e5c586ec4.cloudfront.net (CloudFront)
-x-amz-cf-pop: HIO52-P2
+via: 1.1 6a91ddfdf36644f1344da228258d9082.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD61-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: qb7bUvP94Irdi5ejkiQn9inKoOO2YxMSQNadSLmk3VoYh5aSB5HCdg==
+x-amz-cf-id: SWTwq-cxiJBWblwbEZNKQFjWMy9o70pkCZizKJJTVrrIUXxbR2JjWg==
 
