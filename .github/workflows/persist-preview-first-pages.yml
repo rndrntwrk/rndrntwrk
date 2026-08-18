@@ -1,0 +1,55 @@
+name: Persist first Hunting Time sample pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/persist-preview-first-pages.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+      - name: Fetch and persist pages 1 through 13
+        run: |
+          set -euo pipefail
+          out=/tmp/first-pages
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" \
+            'https://read.amazon.com/sample/print/go-to-page?asin=B0FK7RBDFL&buyingAsin=B0FK7RBDFL&page=1&token=null' \
+            -o "$out/page-window.json"
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          out=Path('/tmp/first-pages')
+          obj=json.loads((out/'page-window.json').read_text())
+          urls=obj.get('jumboImageUrls') or obj.get('largeImageUrls') or {}
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          dst=Path('public-media-analysis/sample-pages')
+          dst.mkdir(parents=True,exist_ok=True)
+          for k,u in urls.items():
+              try: n=int(k)
+              except: continue
+              if not (1 <= n <= 13): continue
+              p=dst/f'page-{n:03d}.jpg'
+              subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-e',card,u,'-o',str(p)],check=True)
+          (dst/'page-window.json').write_text(json.dumps(obj,indent=2))
+          print(sorted(str(p) for p in dst.glob('*')))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/sample-pages
+          git commit -m 'research: persist first thirteen public sample pages' || exit 0
+          git push origin HEAD:research/public-media-analysis
