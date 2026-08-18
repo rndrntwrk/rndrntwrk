@@ -1,0 +1,236 @@
+{
+  "envConfig": {
+    "productAsin": "B0FRGB2PMR",
+    "format": "4",
+    "revisionId": "",
+    "printSampleUrl": "https://read.amazon.com/sample/B0FRGB2PMR?clientId=share",
+    "kindleSampleUrl": "https://read.amazon.com/sample/B0FK7RBDFL?clientId=share",
+    "fixedFormat": true
+  },
+  "responses": [
+    {
+      "name": "sample-page",
+      "url": "https://read.amazon.com/sample/B0FRGB2PMR?clientId=share",
+      "status": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 322964,
+      "file": "sample-page.html"
+    },
+    {
+      "name": "book-data",
+      "url": "https://read.amazon.com/sample/print/book-data?asin=B0FRGB2PMR",
+      "status": 200,
+      "contentType": "application/json;charset=utf-8",
+      "bytes": 3740,
+      "file": "book-data.json"
+    },
+    {
+      "name": "random-page",
+      "url": "https://read.amazon.com/sample/print/random-page?asin=B0FRGB2PMR&buyingAsin=B0FK7RBDFL",
+      "status": 200,
+      "contentType": "application/json;charset=utf-8",
+      "bytes": 6072,
+      "file": "random-page.json"
+    },
+    {
+      "name": "go-to-page-001",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-001.html"
+    },
+    {
+      "name": "go-to-page-002",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=2",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-002.html"
+    },
+    {
+      "name": "go-to-page-007",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=7",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-007.html"
+    },
+    {
+      "name": "go-to-page-018",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=18",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-018.html"
+    },
+    {
+      "name": "go-to-page-019",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=19",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-019.html"
+    },
+    {
+      "name": "go-to-page-020",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=20",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-020.html"
+    },
+    {
+      "name": "go-to-page-021",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=21",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-021.html"
+    },
+    {
+      "name": "go-to-page-022",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=22",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-022.html"
+    },
+    {
+      "name": "go-to-page-024",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=24",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-024.html"
+    },
+    {
+      "name": "go-to-page-032",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=32",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-032.html"
+    },
+    {
+      "name": "go-to-page-103",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=103",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-103.html"
+    },
+    {
+      "name": "go-to-page-110",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=110",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-110.html"
+    },
+    {
+      "name": "go-to-page-241",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=241",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-241.html"
+    },
+    {
+      "name": "go-to-page-277",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=277",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-277.html"
+    },
+    {
+      "name": "go-to-page-290",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=290",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-290.html"
+    },
+    {
+      "name": "go-to-page-304",
+      "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=304",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "go-to-page-304.html"
+    },
+    {
+      "name": "position-the",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=the&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-the.html"
+    },
+    {
+      "name": "position-bitcoin",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=bitcoin&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-bitcoin.html"
+    },
+    {
+      "name": "position-power",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=power&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-power.html"
+    },
+    {
+      "name": "position-watch",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-watch.html"
+    },
+    {
+      "name": "position-hotel",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=hotel&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-hotel.html"
+    },
+    {
+      "name": "position-price",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=price&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-price.html"
+    },
+    {
+      "name": "position-apology",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=apology&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-apology.html"
+    },
+    {
+      "name": "position-green",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=green&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-green.html"
+    },
+    {
+      "name": "position-message",
+      "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=message&page=1",
+      "status": 400,
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 2296,
+      "file": "position-message.html"
+    }
+  ]
+}

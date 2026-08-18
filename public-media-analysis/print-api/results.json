@@ -1,0 +1,254 @@
+[
+  {
+    "name": "sample-page",
+    "url": "https://read.amazon.com/sample/B0FRGB2PMR?clientId=share",
+    "status": 200,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 322964,
+    "file": "sample-page.html",
+    "bodyPrefix": "<!doctype html><html lang=\"en-us\" class=\"a-no-js\" data-19ax5a9jf=\"dingo\"><!-- sp:feature:head-start -->\n<head><script>var aPageStart = (new Date()).getTime();</script><meta charset=\"utf-8\"/>\n<!-- sp:end-feature:head-start -->\n<!-- sp:feature:csm:head-open-part1 -->\n\n<script type='text/javascript'>var ue_t0=ue_t0||+new Date();</script>\n<!-- sp:end-feature:csm:head-open-part1 -->\n<!-- sp:feature:cs-optimization -->\n<meta http-equiv='x-dns-prefetch-control' content='on'>\n<link rel=\"preconnect\" href=\"https://images-na.ssl-images-amazon.com\" crossorigin>\n<link rel=\"preconnect\" href=\"https://m.media-amazon.com\" crossorigin>\n<!-- sp:end-feature:cs-optimization -->\n<!-- sp:feature:csm:head-open-part2 -->\n<script type='text/javascript'>\nwindow.ue_ihb = (window.ue_ihb || window.ueinit || 0) + 1;\nif (window.ue_ihb === 1) {\n\nvar ue_csm = window,\n    ue_hob = +new Date();\n(function(d){var e=d.ue=d.ue||{},f=Date.now||function(){return+new Date};e.d=function(b){return f()-(b?0:d.ue_t0)};e.stub=functi"
+  },
+  {
+    "name": "book-data",
+    "url": "https://read.amazon.com/sample/print/book-data?asin=B0FRGB2PMR",
+    "status": 200,
+    "contentType": "application/json;charset=utf-8",
+    "bytes": 3740,
+    "file": "book-data.json",
+    "bodyPrefix": "{\"buyingAsin\":\"B0FRGB2PMR\",\"title\":\"Hunting Time: Genesis\",\"kindleAsin\":\"B0FK7RBDFL\",\"bookmarks\":[[\"Front Cover\",1,1],[\"Copyright\",3,1],[\"Table of Contents\",8,2],[\"First Pages\",10,58],[\"Back Cover\",306,1]],\"largeImageUrls\":{\"1\":\"https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S001.LXXXXXXX.jpg?Expires=1787146032&Signature=JTQyRBNwD0mXVuWQuTwK75R8uDNof2PmDvmDmv3~toVu9RXdpnLbrnbMd58-FLIqYoO6E7nWwxAciIQ6rcqknDTGcu7gJqQJo6XOtZmXJBf~A~1ryhoJ5rTS4DqpgpE8L8FFQdEOtbvAv~TlohPuiFNOBcTvIRIZ6Zljf25nH7E_&Key-Pair-Id=APKAIUO27P366FGALUMQ\",\"3\":\"https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S003.LXXXXXXX.jpg?Expires=1787146032&Signature=UxjqOGm2mV-qUaXbTY-AXfg1Lper0f6ZWdoyGDrZDE7bqCb13dDVZ5IW1OK60ew2RoYoRIRzFl8RuzPRPO8OzLhWH8trkXdaOsuF51YxpcwJi0obgkS7W0hUrvWO7RGDMuAOHmkGSHJQDC4vEP-E32LTmzy3jhTYM3agQqLMdBo_&Key-Pair-Id=APKAIUO27P366FGALUMQ\",\"8\":\"https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S008.LXXXXXXX.jpg?Expires=1787146032&Signature=O2sdbUNnTFhFWyl9Vlsn-dwngTTvgWGIn4QgxMQotO6DWz59TB"
+  },
+  {
+    "name": "random-page",
+    "url": "https://read.amazon.com/sample/print/random-page?asin=B0FRGB2PMR&buyingAsin=B0FK7RBDFL",
+    "status": 200,
+    "contentType": "application/json;charset=utf-8",
+    "bytes": 6072,
+    "file": "random-page.json",
+    "bodyPrefix": "{\"jumboImageUrls\":{\"64\":\"https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01S.JUMBOXXX.jpg?Expires=1787146033&Signature=Z6E6-OHVLWsh8PomDXyR62x008T3AMyhVAfFYY~JGfCfLIMVxulVSF87aIXgkfPhti9FGiZrI4fKnd1J4mlJLddNMxhRrKWBuhWDfGn1uLnlXvOYuteentdUFdjW6em6DJ1dT~uR0HJEzcTx9mt~QVu~haDGkGj9GSq~y6yqZrU_&Key-Pair-Id=APKAIUO27P366FGALUMQ\",\"65\":\"https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01T.JUMBOXXX.jpg?Expires=1787146033&Signature=eIsboTc~x2Xg4O6Jew~mDUgH~MxIZ7rkOfEPYY5dbJXidxEEQU~fyp7VHyjHvz9PQQ~64JHP13FgoW9ymwwv-3kgaBoWzpAtJnpCUACQ4LpS~ve-OgIkcNtNTqk1Oj3bZZxFXfirLOcp4pcVsppFU86aGBkUfF8CnMeyyDR66As_&Key-Pair-Id=APKAIUO27P366FGALUMQ\",\"66\":\"https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01U.JUMBOXXX.jpg?Expires=1787146033&Signature=gXqckUtCSY4Tqz4-VHkDP~P~Esh4Itt~7WOkEtU9Inro4rOeEesfEHkbJObp-o51Gk4dmc9fR~dnsFs2WvOYWkHZ5fuMH-uFb-cPWbWmHRqa4i51kkhqB2sJypYKUcAeYiQqWNz5AtEtcqUXKfqIPVJAdtskD6T1MT7i9ScSomo_&Key-Pair-Id=APKAIUO27P366FGALUMQ\",\"67\":\"https://d1b14unh5d6w7g.cloudfront.net/B"
+  },
+  {
+    "name": "go-to-page-001",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-001.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-002",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=2",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-002.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-007",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=7",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-007.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-018",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=18",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-018.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-019",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=19",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-019.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-020",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=20",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-020.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-021",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=21",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-021.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-022",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=22",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-022.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-024",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=24",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-024.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-032",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=32",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-032.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-103",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=103",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-103.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-110",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=110",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-110.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-241",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=241",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-241.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-277",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=277",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-277.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-290",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=290",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-290.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "go-to-page-304",
+    "url": "https://read.amazon.com/sample/print/go-to-page?asin=B0FRGB2PMR&page=304",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "go-to-page-304.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-the",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=the&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-the.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-bitcoin",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=bitcoin&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-bitcoin.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-power",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=power&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-power.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-watch",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-watch.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-hotel",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=hotel&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-hotel.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-price",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=price&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-price.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-apology",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=apology&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-apology.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-green",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=green&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-green.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  },
+  {
+    "name": "position-message",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=message&page=1",
+    "status": 400,
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 2296,
+    "file": "position-message.html",
+    "bodyPrefix": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@"
+  }
+]
