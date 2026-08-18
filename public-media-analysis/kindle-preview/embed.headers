@@ -2,34 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 12:46:27 GMT
+date: Tue, 18 Aug 2026 13:00:57 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 5AW9EVA66AX65KSMSQP1
+x-amz-rid: A5G91Q66GGKC28KHNV4R
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 d05c9456285ce343da7f437308d5947e.cloudfront.net (CloudFront)
-x-amz-cf-pop: DFW59-P7
-x-amz-cf-id: ZreOlCOdjOy61wnotfNie1G-dcstbAd_RkVy5y5fbbLnFVSfKc_u2Q==
+via: 1.1 9c8267a15d9ba974cf1dfcbe6981ef96.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: 8hLqISfpMhABReWOJ8MOcRn1lurxK1tquVLaLmEsVhfJDfs-0Lz64w==
 
 HTTP/1.1 301 Moved Permanently
-Server: AkamaiGHost
-Content-Length: 0
-Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Tue, 18 Aug 2026 12:46:27 GMT
+Server: CloudFront
+Date: Tue, 18 Aug 2026 13:00:57 GMT
+Content-Type: text/html
+Content-Length: 167
 Connection: keep-alive
-Akamai-Request-BC: [a=23.201.106.239,b=4257324580,c=g,n=US_TX_DALLAS,o=20940]
-X-Amzn-Cdn-Id: ak-0.ef6ac917.1787057187.fdc19e24
-X-Cache: NotCacheable from child
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 3b66cea026f27925ba048cc96a0885ca.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD61-P10
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: pPXswZ_qptBEo958LDgX7AsBKZvMjnOSAEiDRxZllfyT-jj6W24-dA==
 
 HTTP/2 500 
-x-amz-rid: 8V6E5D32JKWRE2XBPFXY
-cache-control: no-cache
+date: Tue, 18 Aug 2026 13:00:57 GMT
 pragma: no-cache
 expires: -1
-date: Tue, 18 Aug 2026 12:46:27 GMT
-alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.201.106.229,b=1842982800,c=g,n=US_TX_DALLAS,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.e56ac917.1787057187.6dd9af90
-x-cache: NotCacheable from child
+x-amz-rid: C2WCAAQRJ4CFG5MCY7VX
+cache-control: no-cache
+x-cache: Error from cloudfront
+via: 1.1 f50e53e9e947bca4dadaaf68ff4c7ea4.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD61-P10
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: VeUgOMKUzJa8cYoAnOUvg1q3l-PzvnzMTLGAY0cZoutqTW2Sfs0XqA==
 
