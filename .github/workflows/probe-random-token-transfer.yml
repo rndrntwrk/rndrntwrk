@@ -1,0 +1,114 @@
+name: Probe random-page token transfer
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-random-token-transfer.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Collect tokens and test target pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/random-token-transfer
+          rm -rf "$out"; mkdir -p "$out"
+          python - <<'PY'
+          from __future__ import annotations
+          import json, subprocess, urllib.parse, time
+          from pathlib import Path
+          out=Path('public-media-analysis/random-token-transfer')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FRGB2PMR&preview=inline&linkCode=kpe'
+          base='https://read.amazon.com/sample/print'
+          cookies=out/'cookies.txt'
+          subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-c',str(cookies),card,'-o',str(out/'card.html')],check=True)
+          def fetch(path,params,name):
+              url=base+'/'+path+'?'+urllib.parse.urlencode(params)
+              body=out/(name+'.body')
+              p=subprocess.run(['curl','-L','--compressed','--retry','2','-sS','-A',ua,'-b',str(cookies),'-c',str(cookies),'-e',card,'-H','Accept: application/json',url,'-o',str(body),'-w','%{http_code}\t%{content_type}'],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              try: obj=json.loads(raw)
+              except Exception as e: obj={'_parse_error':repr(e),'_prefix':raw[:500].decode('utf-8','replace')}
+              return {'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw),'json':obj}
+          tokens=[]
+          for i in range(40):
+              r=fetch('random-page',{'asin':'B0FRGB2PMR','buyingAsin':'B0FK7RBDFL'},f'random-{i:02d}')
+              j=r['json'] if isinstance(r['json'],dict) else {}
+              token=j.get('token') or j.get('pageToken')
+              page=j.get('pageNumber') or j.get('page')
+              # Search recursively for token-like and pageNumber fields.
+              def walk(x):
+                  if isinstance(x,dict):
+                      for k,v in x.items():
+                          if k.lower() in ('token','pagetoken') and isinstance(v,str): yield ('token',v)
+                          if k.lower() in ('pagenumber','page') and isinstance(v,(int,str)): yield ('page',v)
+                          yield from walk(v)
+                  elif isinstance(x,list):
+                      for v in x: yield from walk(v)
+              found=list(walk(j))
+              if not token:
+                  token=next((v for k,v in found if k=='token'),None)
+              if page is None:
+                  page=next((v for k,v in found if k=='page'),None)
+              if token and token not in [x['token'] for x in tokens]: tokens.append({'token':token,'source_page':page,'random_index':i})
+              time.sleep(.05)
+          tests=[]
+          target_pages=[103,110,112,119,241,250]
+          queries=['time','track','defense','drive','air','pilot','flight','control']
+          for ti,t in enumerate(tokens[:20]):
+              token=t['token']
+              for page in target_pages:
+                  for path in ('go-to-page','position-data'):
+                      qlist=['time'] if path=='go-to-page' else queries
+                      for query in qlist:
+                          params={'asin':'B0FRGB2PMR','buyingAsin':'B0FK7RBDFL','page':str(page),'token':token}
+                          if path=='position-data': params['query']=query
+                          rec=fetch(path,params,f't{ti:02d}-{path}-p{page}-{query}')
+                          rec.update({'token_index':ti,'source_page':t['source_page'],'request_page':page,'path':path,'query':query})
+                          tests.append(rec)
+          summary={'tokens':tokens,'tests':tests}
+          (out/'results.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          compact=[]
+          for r in tests:
+              j=r['json'] if isinstance(r['json'],dict) else {}
+              h=j.get('highlights') or {}
+              err=j.get('error')
+              pages=[]
+              def find_pages(x):
+                  if isinstance(x,dict):
+                      for k,v in x.items():
+                          if k in ('pageNumber','page') and isinstance(v,(int,str)): pages.append(v)
+                          find_pages(v)
+                  elif isinstance(x,list):
+                      for v in x: find_pages(v)
+              find_pages(j)
+              compact.append({'token_index':r['token_index'],'source_page':r['source_page'],'request_page':r['request_page'],'path':r['path'],'query':r['query'],'status':r['status'],'bytes':r['bytes'],'highlights':h,'error':err,'returned_pages':pages[:20]})
+          (out/'compact.json').write_text(json.dumps(compact,indent=2,ensure_ascii=False))
+          successes=[x for x in compact if x['highlights'] or (not x['error'] and x['bytes']>150)]
+          (out/'successes.json').write_text(json.dumps(successes,indent=2,ensure_ascii=False))
+          print(json.dumps({'token_count':len(tokens),'tests':len(tests),'successes':successes[:100]},indent=2,ensure_ascii=False))
+          PY
+      - name: Persist results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/random-token-transfer
+          git commit -m "research: persist random token transfer probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
