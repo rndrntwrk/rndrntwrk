@@ -1,0 +1,148 @@
+name: Probe Hunting Time high numbered selectors
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-high-pages.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Probe public reader contracts
+        run: |
+          set -euxo pipefail
+          out=/tmp/hunting-time-high-pages
+          rm -rf "$out"
+          mkdir -p "$out/json" "$out/images"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" -D "$out/card.headers" "$card" -o "$out/card.html"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' -D "$out/book-data.headers" 'https://read.amazon.com/sample/print/book-data?asin=B0FK7RBDFL' -o "$out/book-data.json"
+          curl -L --compressed --retry 3 -sS -A "$ua" -b "$out/cookies.txt" -c "$out/cookies.txt" -e "$card" -H 'Accept: application/json' -D "$out/token.headers" 'https://read.amazon.com/sample/karamel-token?asin=B0FK7RBDFL' -o "$out/karamel-token.json"
+
+          python - <<'PY'
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+
+          out=Path('/tmp/hunting-time-high-pages')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          cookies=str(out/'cookies.txt')
+          pages=[14,19,21,24,32,47,103,110,241]
+          report={'book_data':None,'token_present':False,'probes':[]}
+
+          try:
+              report['book_data']=json.loads((out/'book-data.json').read_bytes())
+              (out/'book-data.pretty.json').write_text(json.dumps(report['book_data'],indent=2,ensure_ascii=False))
+          except Exception as e:
+              report['book_data_error']=repr(e)
+
+          token=None
+          try:
+              token_obj=json.loads((out/'karamel-token.json').read_bytes())
+              token=token_obj.get('token') if isinstance(token_obj,dict) else None
+              report['token_present']=bool(token)
+              (out/'karamel-token.pretty.json').write_text(json.dumps(token_obj,indent=2,ensure_ascii=False))
+          except Exception as e:
+              report['token_error']=repr(e)
+
+          def run(url, tag):
+              body=out/'json'/f'{tag}.body'
+              headers=out/'json'/f'{tag}.headers'
+              p=subprocess.run([
+                  'curl','-L','--compressed','--retry','3','-sS','-A',ua,
+                  '-b',cookies,'-c',cookies,'-e',card,'-H','Accept: application/json',
+                  '-D',str(headers),url,'-o',str(body),
+                  '-w','%{http_code}\t%{url_effective}\t%{content_type}\n'
+              ],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              rec={'tag':tag,'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw)}
+              obj=None
+              try:
+                  obj=json.loads(raw)
+                  rec['keys']=sorted(obj.keys()) if isinstance(obj,dict) else []
+                  body.with_suffix('.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+              except Exception as e:
+                  rec['parse_error']=repr(e)
+                  rec['prefix']=raw[:500].decode('utf-8','replace')
+              if isinstance(obj,dict):
+                  urls=obj.get('jumboImageUrls') or obj.get('largeImageUrls') or obj.get('locationMap') or {}
+                  iterable=urls.items() if isinstance(urls,dict) else enumerate(urls,1) if isinstance(urls,list) else []
+                  for sub,u in iterable:
+                      if isinstance(u,dict):
+                          u=u.get('url') or u.get('imageUrl')
+                      if not isinstance(u,str) or not u.startswith('http'):
+                          continue
+                      ip=out/'images'/f'{tag}-{sub}.jpg'
+                      q=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-e',card,u,'-o',str(ip),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+                      rec.setdefault('assets',[]).append({'sub':str(sub),'url':u,'status':q.stdout.strip(),'stderr':q.stderr.strip(),'bytes':ip.stat().st_size if ip.exists() else 0,'file':ip.name})
+              report['probes'].append(rec)
+
+          for page in pages:
+              token_values=['null']
+              if token:
+                  token_values.append(token)
+              for ti,tok in enumerate(token_values,1):
+                  contracts=[
+                      ('go-buy', 'https://read.amazon.com/sample/print/go-to-page', {'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':str(page),'token':tok}),
+                      ('go', 'https://read.amazon.com/sample/print/go-to-page', {'asin':'B0FK7RBDFL','page':str(page),'token':tok}),
+                      ('get-buy', 'https://read.amazon.com/sample/print/get-page', {'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':str(page),'token':tok}),
+                      ('get', 'https://read.amazon.com/sample/print/get-page', {'asin':'B0FK7RBDFL','page':str(page),'token':tok}),
+                  ]
+                  for name,base,params in contracts:
+                      url=base+'?'+urllib.parse.urlencode(params)
+                      run(url,f'page-{page:03d}-t{ti}-{name}')
+
+          (out/'report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+
+      - name: Upload high-page probe
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-high-page-probe
+          path: /tmp/hunting-time-high-pages
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Record artifact coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          mkdir -p /tmp/runmeta
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('/tmp/runmeta/high-page-probe-run.json').write_text(json.dumps({
+              'run_id': int(os.environ['RUN_ID']),
+              'artifact_id': int(os.environ['ARTIFACT_ID']),
+              'artifact_url': os.environ.get('ARTIFACT_URL',''),
+          },indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis
+            cp /tmp/runmeta/high-page-probe-run.json public-media-analysis/high-page-probe-run.json
+            git add public-media-analysis/high-page-probe-run.json
+            git commit -m 'research: record high-page probe artifact' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
