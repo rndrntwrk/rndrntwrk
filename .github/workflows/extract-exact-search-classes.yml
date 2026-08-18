@@ -1,0 +1,85 @@
+name: Extract exact public search decoder classes
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-exact-search-classes.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Extract and beautify exact class spans
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q jsbeautifier
+          python - <<'PY'
+          from pathlib import Path
+          import jsbeautifier, json, re
+          src=Path('public-media-analysis/search-decoder/decoder-wide.js').read_text(errors='replace')
+          outdir=Path('public-media-analysis/search-decoder/exact')
+          outdir.mkdir(parents=True,exist_ok=True)
+
+          def class_span(name):
+              marker='class '+name
+              start=src.find(marker)
+              if start<0: raise RuntimeError(f'not found {marker}')
+              brace=src.find('{',start)
+              if brace<0: raise RuntimeError('no brace')
+              depth=0; quote=None; esc=False
+              for i in range(brace,len(src)):
+                  c=src[i]
+                  if quote:
+                      if esc: esc=False
+                      elif c=='\\': esc=True
+                      elif c==quote: quote=None
+                      continue
+                  if c in "'\"`": quote=c; continue
+                  if c=='{': depth+=1
+                  elif c=='}':
+                      depth-=1
+                      if depth==0:
+                          return start,i+1
+              raise RuntimeError('unclosed')
+
+          opts=jsbeautifier.default_options(); opts.indent_size=2; opts.preserve_newlines=False
+          manifest=[]
+          for name in ['Hi','Vi','Wi','Ki','Ji']:
+              try:
+                  a,b=class_span(name)
+              except Exception as e:
+                  manifest.append({'name':name,'error':repr(e)})
+                  continue
+              text=src[a:b]
+              pretty=jsbeautifier.beautify(text,opts)
+              (outdir/f'class-{name}.min.js').write_text(text)
+              (outdir/f'class-{name}.pretty.js').write_text(pretty)
+              manifest.append({'name':name,'start':a,'end':b,'chars':len(text),'pretty_lines':pretty.count('\n')+1})
+          # Also retain the 20k chars immediately preceding Ki to capture helper aliases/constants.
+          ki=src.find('class Ki')
+          helpers=src[max(0,ki-30000):ki]
+          (outdir/'helpers-before-Ki.pretty.js').write_text(jsbeautifier.beautify(helpers,opts))
+          (outdir/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          print(json.dumps(manifest,indent=2))
+          PY
+      - name: Persist exact classes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-decoder/exact
+          git commit -m "research: persist exact search decoder classes $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
