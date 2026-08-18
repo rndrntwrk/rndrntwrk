@@ -1,0 +1,104 @@
+name: Fast box-aware numeric OCR V2
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/numeric-ocr-fast-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  numeric-ocr-fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Install OCR dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr
+          python -m pip install --disable-pip-version-check -q pillow pytesseract opencv-python-headless numpy
+
+      - name: Run bounded digit detection
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/numeric-ocr-fast-v2
+          cat > /tmp/fast_digits.py <<'PY'
+          from __future__ import annotations
+          import json, re
+          from collections import defaultdict
+          from pathlib import Path
+          import cv2
+          import numpy as np
+          import pytesseract
+          from PIL import Image, ImageOps
+          from pytesseract import Output
+
+          root=Path('public-media-analysis')
+          out=root/'numeric-ocr-fast-v2'
+          out.mkdir(parents=True,exist_ok=True)
+          results={}
+          for path in sorted(root.glob('clue-*.jpg')):
+              im=Image.open(path).convert('RGB')
+              im.thumbnail((1400,1400),Image.Resampling.LANCZOS)
+              gray=np.asarray(ImageOps.grayscale(im))
+              variants={
+                  'gray':gray,
+                  'clahe':cv2.createCLAHE(clipLimit=2.5,tileGridSize=(8,8)).apply(gray),
+                  'otsu':cv2.threshold(gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)[1],
+                  'inv-otsu':cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)[1],
+              }
+              raw=[]
+              for name,arr in variants.items():
+                  for psm in (6,11,12):
+                      data=pytesseract.image_to_data(arr,config=f'--oem 3 --psm {psm} -c tessedit_char_whitelist=0123456789',output_type=Output.DICT)
+                      for i,t in enumerate(data['text']):
+                          text=re.sub(r'\D','',t or '')
+                          if not text or len(text)>6: continue
+                          try: conf=float(data['conf'][i])
+                          except Exception: continue
+                          if conf<10: continue
+                          x,y,w,h=[int(data[k][i]) for k in ('left','top','width','height')]
+                          raw.append({'text':text,'confidence':conf,'variant':name,'psm':psm,'bbox':[x,y,w,h], 'area_fraction':w*h/max(1,im.width*im.height), 'center':[round((x+w/2)/im.width,3),round((y+h/2)/im.height,3)]})
+              groups=defaultdict(list)
+              for d in raw:
+                  key=(d['text'],round(d['center'][0]*8),round(d['center'][1]*8))
+                  groups[key].append(d)
+              ranked=[]
+              for (text,bx,by),g in groups.items():
+                  ranked.append({'text':text,'bin':[bx,by],'support':len(g),'max_confidence':max(x['confidence'] for x in g),'mean_confidence':sum(x['confidence'] for x in g)/len(g),'max_area_fraction':max(x['area_fraction'] for x in g),'examples':sorted(g,key=lambda x:(x['confidence'],x['area_fraction']),reverse=True)[:3]})
+              ranked.sort(key=lambda x:(x['support'],x['max_confidence'],x['max_area_fraction']),reverse=True)
+              results[path.stem]={'file':path.name,'size':list(im.size),'candidates':ranked[:50]}
+              print('\n'+path.name)
+              for r in ranked[:20]: print(r['text'],r['support'],round(r['max_confidence'],1),round(r['max_area_fraction'],6),r['bin'])
+          (out/'results.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
+          lines=['# Fast numeric OCR V2','']
+          for clue,item in results.items():
+              lines += [f'## {clue}','','| Text | Support | Max confidence | Max area | Bin |','|---|---:|---:|---:|---|']
+              for r in item['candidates'][:30]: lines.append(f"| `{r['text']}` | {r['support']} | {r['max_confidence']:.1f} | {r['max_area_fraction']:.6f} | `{r['bin']}` |")
+              lines.append('')
+          (out/'results.md').write_text('\n'.join(lines),encoding='utf-8')
+          PY
+          python /tmp/fast_digits.py | tee public-media-analysis/numeric-ocr-fast-v2/console.txt
+
+      - name: Persist results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/numeric-ocr-fast-v2
+          git commit -m 'research: add fast numeric OCR V2 results'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
