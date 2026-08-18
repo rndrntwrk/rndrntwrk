@@ -1,0 +1,16 @@
+FILE-INVENTORY.txt	0 bytes
+body-01.html	3781 bytes
+body-02.html	163749 bytes
+body-03.html	330215 bytes
+body-04.html	114912 bytes
+body-05.html	122599 bytes
+body-06.html	3781 bytes
+curl-results.json	3802 bytes
+findings.json	23694 bytes
+headers-01.txt	427 bytes
+headers-02.txt	2551 bytes
+headers-03.txt	2324 bytes
+headers-04.txt	1226 bytes
+headers-05.txt	6937 bytes
+headers-06.txt	427 bytes
+urls.txt	323 bytes

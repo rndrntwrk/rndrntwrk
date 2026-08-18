@@ -1,0 +1,12 @@
+HTTP/2 200 
+content-type: text/html
+date: Tue, 18 Aug 2026 12:54:38 GMT
+x-amz-rid: CB5KGP18AKXBFN5QHSD4
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+server: Server
+x-cache: Miss from cloudfront
+via: 1.1 3d063e2b1b9a35235e000394a7bf1aa0.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P15
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: TuTB_M4285_AUMScjO29Egfqq4qGHkzH51Fe1d33zahZvlGprIsumg==
+

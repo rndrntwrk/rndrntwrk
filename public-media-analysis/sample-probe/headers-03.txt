@@ -1,0 +1,29 @@
+HTTP/2 200 
+content-type: text/html;charset=UTF-8
+server: Server
+date: Tue, 18 Aug 2026 12:54:39 GMT
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: MNCKNJ18XHSNWE04KYPQ
+set-cookie: session-id=130-8777174-9919412; Domain=.amazon.com; Expires=Wed, 18-Aug-2027 12:54:39 GMT; Path=/; Secure
+set-cookie: session-id-time=2082787201l; Domain=.amazon.com; Expires=Wed, 18-Aug-2027 12:54:39 GMT; Path=/; Secure
+set-cookie: sst-main=Sst1|PQKF20qNhp3P5UfVpQtg1tZwBz9E7bwwlKRpZBwh5Ckr8F91jQ3TKhBcCqZu7CyGOwQ7DVJR0OUBat1w2Xb3KvyFlcp9gSsQXL-tAHYpRO8Qh7XcR6Ji841_azW94Qf0ZgBGm8IK-h8AtGcwywD9QsQtbtAICp9qAoHj3G3agr5tSVRRXUjWXYEeSXix21cOjbe2opigpHnJLd-dXvXyIEWwT-6MEhzY-PtiNwjlXmPSrI_i6xHQ8ucv-dkgsHTZIPIg; Domain=.amazon.com; Expires=Wed, 18-Aug-2027 12:54:39 GMT; Path=/; Secure; HttpOnly; SameSite=Lax
+set-cookie: i18n-prefs=USD; Domain=.amazon.com; Expires=Wed, 18-Aug-2027 12:54:39 GMT; Path=/
+set-cookie: lc-main=en_US; Domain=.amazon.com; Expires=Wed, 18-Aug-2027 12:54:39 GMT; Path=/
+accept-ch: ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr,sec-ch-ua-full-version-list,viewport-height,sec-ch-viewport-height
+accept-ch-lifetime: 86400
+cache-control: no-cache
+content-language: en-US
+content-security-policy: upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/
+expires: -1
+permissions-policy: ch-dpr=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-viewport-width=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-downlink=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-ect=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com")
+pragma: no-cache
+x-content-type-options: nosniff
+x-xss-protection: 1;
+content-security-policy-report-only: default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/
+vary: Accept-Encoding,User-Agent
+x-cache: Miss from cloudfront
+via: 1.1 7ea77fb67c9c740f35098b77eea24cd2.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: C8tTJ_oz2i-HD99QLbW2vjCQQzP7QAFJfFyCDUi3p2jxhKhfCiHzCw==
+

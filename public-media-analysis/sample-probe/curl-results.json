@@ -1,0 +1,44 @@
+[
+  {
+    "input_url": "https://www.amazon.com/dp/B0FK7RBDFL",
+    "curl_exit": 0,
+    "metrics": "200\thttps://www.amazon.com/dp/B0FK7RBDFL\ttext/html",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100  3781    0  3781    0     0  30844      0 --:--:-- --:--:-- --:--:-- 30739\n100  3781    0  3781    0     0  30822      0 --:--:-- --:--:-- --:--:-- 30739\n",
+    "body_bytes": 3781
+  },
+  {
+    "input_url": "https://www.amazon.com/gp/aw/d/B0FK7RBDFL",
+    "curl_exit": 0,
+    "metrics": "200\thttps://www.amazon.com/gp/aw/d/B0FK7RBDFL\ttext/html;charset=UTF-8",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100  159k    0  159k    0     0   235k      0 --:--:-- --:--:-- --:--:--  235k\n",
+    "body_bytes": 163749
+  },
+  {
+    "input_url": "https://read.amazon.com/sample/B0FK7RBDFL",
+    "curl_exit": 0,
+    "metrics": "200\thttps://read.amazon.com/sample/B0FK7RBDFL\ttext/html;charset=UTF-8",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100  322k    0  322k    0     0   581k      0 --:--:-- --:--:-- --:--:--  581k\n",
+    "body_bytes": 330215
+  },
+  {
+    "input_url": "https://read.amazon.com/kp/embed?asin=B0FK7RBDFL&preview=newtab&linkCode=kpe",
+    "curl_exit": 0,
+    "metrics": "200\thttps://read.amazon.com/kp/embed?asin=B0FK7RBDFL&preview=newtab&linkCode=kpe\ttext/html;charset=UTF-8",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100  112k    0  112k    0     0   679k      0 --:--:-- --:--:-- --:--:--  680k\n",
+    "body_bytes": 114912
+  },
+  {
+    "input_url": "https://www.amazon.com/kindle-dbs/thankYouPage?asin=B0FK7RBDFL",
+    "curl_exit": 0,
+    "metrics": "200\thttps://www.amazon.com/ax/claim?arb=d68fd616-5b7e-4b9d-b4e3-e8ca894df7cd\ttext/html;charset=UTF-8",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100    25    0    25    0     0     94      0 --:--:-- --:--:-- --:--:--    94\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n\n100  119k    0  119k    0     0   217k      0 --:--:-- --:--:-- --:--:--  217k\n",
+    "body_bytes": 122599
+  },
+  {
+    "input_url": "https://www.amazon.com/gp/product/B0FK7RBDFL?storeType=ebooks",
+    "curl_exit": 0,
+    "metrics": "200\thttps://www.amazon.com/gp/product/B0FK7RBDFL?storeType=ebooks\ttext/html",
+    "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100  3781    0  3781    0     0  44846      0 --:--:-- --:--:-- --:--:-- 44482\n",
+    "body_bytes": 3781
+  }
+]
