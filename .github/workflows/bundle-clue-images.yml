@@ -1,0 +1,65 @@
+name: Bundle Hunting Time clue photographs
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/bundle-clue-images.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  BRANCH: research/public-media-analysis
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Build evidence bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/hunting-time-clues
+          cp public-media-analysis/clue-*.jpg /tmp/hunting-time-clues/
+          cp -r public-media-analysis/previews /tmp/hunting-time-clues/previews
+          cp public-media-analysis/source-manifest.json /tmp/hunting-time-clues/ 2>/dev/null || true
+          printf '%s\n' "$GITHUB_RUN_ID" > /tmp/hunting-time-clues/workflow-run-id.txt
+          printf '%s\n' "$GITHUB_SHA" > /tmp/hunting-time-clues/source-commit.txt
+
+      - name: Upload evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-clue-photographs
+          path: /tmp/hunting-time-clues
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 6
+
+      - name: Persist artifact lookup information
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/artifact
+          cat > public-media-analysis/artifact/latest.json <<EOF
+          {
+            "run_id": ${GITHUB_RUN_ID},
+            "run_attempt": ${GITHUB_RUN_ATTEMPT},
+            "source_sha": "${GITHUB_SHA}",
+            "artifact_name": "hunting-time-clue-photographs"
+          }
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/artifact/latest.json
+          git commit -m 'research: record clue artifact run id'
+          git pull --rebase origin "$BRANCH"
+          git push origin HEAD:"$BRANCH"
