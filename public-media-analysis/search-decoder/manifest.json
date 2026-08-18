@@ -1,0 +1,128 @@
+[
+  {
+    "needle": "class Ki",
+    "offset": 780798,
+    "start": 700798,
+    "end": 900798,
+    "file": "class-Ki-780798.js"
+  },
+  {
+    "needle": "class Ji",
+    "offset": 784318,
+    "start": 704318,
+    "end": 904318,
+    "file": "class-Ji-784318.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 60327,
+    "start": 0,
+    "end": 180327,
+    "file": "maximumPosition-60327.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 780970,
+    "start": 700970,
+    "end": 900970,
+    "file": "maximumPosition-780970.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 780998,
+    "start": 700998,
+    "end": 900998,
+    "file": "maximumPosition-780998.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 783643,
+    "start": 703643,
+    "end": 903643,
+    "file": "maximumPosition-783643.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 784372,
+    "start": 704372,
+    "end": 904372,
+    "file": "maximumPosition-784372.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 784827,
+    "start": 704827,
+    "end": 904827,
+    "file": "maximumPosition-784827.js"
+  },
+  {
+    "needle": "maximumPosition",
+    "offset": 784848,
+    "start": 704848,
+    "end": 904848,
+    "file": "maximumPosition-784848.js"
+  },
+  {
+    "needle": "getSearchIndex",
+    "offset": 784390,
+    "start": 704390,
+    "end": 904390,
+    "file": "getSearchIndex-784390.js"
+  },
+  {
+    "needle": "getSearchIndex",
+    "offset": 787161,
+    "start": 707161,
+    "end": 907161,
+    "file": "getSearchIndex-787161.js"
+  },
+  {
+    "needle": "getSearchIndex",
+    "offset": 787365,
+    "start": 707365,
+    "end": 907365,
+    "file": "getSearchIndex-787365.js"
+  },
+  {
+    "needle": "getSearchIndex",
+    "offset": 790350,
+    "start": 710350,
+    "end": 910350,
+    "file": "getSearchIndex-790350.js"
+  },
+  {
+    "needle": "getSearchIndex",
+    "offset": 790444,
+    "start": 710444,
+    "end": 910444,
+    "file": "getSearchIndex-790444.js"
+  },
+  {
+    "needle": "searchIndexInfo",
+    "offset": 784349,
+    "start": 704349,
+    "end": 904349,
+    "file": "searchIndexInfo-784349.js"
+  },
+  {
+    "needle": "searchIndexInfo",
+    "offset": 784497,
+    "start": 704497,
+    "end": 904497,
+    "file": "searchIndexInfo-784497.js"
+  },
+  {
+    "needle": "searchIndexInfo",
+    "offset": 784732,
+    "start": 704732,
+    "end": 904732,
+    "file": "searchIndexInfo-784732.js"
+  },
+  {
+    "needle": "searchIndexInfo",
+    "offset": 784767,
+    "start": 704767,
+    "end": 904767,
+    "file": "searchIndexInfo-784767.js"
+  }
+]
