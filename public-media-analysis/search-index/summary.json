@@ -1,0 +1,14 @@
+{
+  "index_bytes": 248,
+  "urls": [
+    "https://d1441h0yel17z5.cloudfront.net/d0f9bc14-30cd-40ec-850a-df0b2a378244"
+  ],
+  "downloads": [
+    {
+      "url": "https://d1441h0yel17z5.cloudfront.net/d0f9bc14-30cd-40ec-850a-df0b2a378244",
+      "status": "200\tapplication/search+j1",
+      "bytes": 26880,
+      "file": "public-media-analysis/search-index/resources/resource-00.bin"
+    }
+  ]
+}
