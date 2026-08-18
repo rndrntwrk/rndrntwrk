@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Tue, 18 Aug 2026 13:00:57 GMT
+date: Tue, 18 Aug 2026 15:04:58 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: W1P0C6200ER4DQ16ZS2S
+x-amz-rid: V7MH057G5JQWM2GSBE7F
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 e401756dd494b6bbc4d871b5300eb096.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: 9-WPPNCdhsrib602P02qoScBZ3WwxXThJI_FS0xmGjrRjjXnaVExkw==
+via: 1.1 fea3bb73170852a6088ac898afbb2522.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: P9sWaJ5sBWzMKEWD7k4iF2MIWArI6dl-XeBN_KUsO1QbisOEyM3Jww==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Tue, 18 Aug 2026 13:00:57 GMT
+Date: Tue, 18 Aug 2026 15:04:58 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 6225fd23298b677711e0721417a30ae2.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD61-P10
+Via: 1.1 31d2374e96e787bdcf45303a50ee19e6.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: ORD58-P15
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: xz27UVYQWXmRde7pdihSHQSmPIs3-3WVZyo4s7OjEYm6-StczfVBPg==
+X-Amz-Cf-Id: 9zB7hnDoGYyKdNjsNeu-9_2XBJ-dc7vsR3cUHS-2BPnpvpfakBWgeQ==
 
 HTTP/2 500 
-date: Tue, 18 Aug 2026 13:00:57 GMT
+date: Tue, 18 Aug 2026 15:04:58 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: WPKH75A5YH54M1CNP0BT
+x-amz-rid: VBQJD1DBKYE1XYWGYNX2
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 f50e53e9e947bca4dadaaf68ff4c7ea4.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD61-P10
+via: 1.1 bc680d9f3b1bd205faa846d0a2f1c85c.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P15
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: gOoH6FbKzWwoG-AoDzrPAsOgRy32EJAzk0lzwP8IFxY9VbeQoFrGag==
+x-amz-cf-id: WURYqF4LsX8meW52V9dCjHMYViVwIUd2QaUQpkSofCB4TdthpjnWUw==
 
