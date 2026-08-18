@@ -1,0 +1,254 @@
+{
+  "asin": "B0FRGB2PMR",
+  "candidate_count": 113,
+  "request_count": 220,
+  "positives": [
+    {
+      "page": 19,
+      "word": "machine",
+      "variant": 1,
+      "hits": [
+        {
+          "key": "19",
+          "hits": [
+            [
+              "230",
+              "110",
+              "100",
+              "15"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "word": "position",
+      "variant": 1,
+      "hits": [
+        {
+          "key": "19",
+          "hits": [
+            [
+              "685",
+              "137",
+              "93",
+              "15"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "word": "pair",
+      "variant": 1,
+      "hits": [
+        {
+          "key": "21",
+          "hits": [
+            [
+              "369",
+              "856",
+              "46",
+              "15"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "word": "air",
+      "variant": 1,
+      "hits": [
+        {
+          "key": "21",
+          "hits": [
+            [
+              "266",
+              "403",
+              "31",
+              "15"
+            ],
+            [
+              "204",
+              "670",
+              "38",
+              "13"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "word": "time",
+      "variant": 1,
+      "hits": [
+        {
+          "key": "24",
+          "hits": [
+            [
+              "245",
+              "856",
+              "64",
+              "15"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "word": "orange",
+      "variant": 1,
+      "hits": [
+        {
+          "key": "24",
+          "hits": [
+            [
+              "693",
+              "483",
+              "82",
+              "15"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "pages": {
+    "3": [
+      "watch",
+      "time",
+      "view",
+      "world",
+      "cloud",
+      "house",
+      "scene",
+      "orange",
+      "sun",
+      "ready"
+    ],
+    "14": [
+      "black",
+      "machine",
+      "group",
+      "blue",
+      "sea",
+      "sunset",
+      "memory",
+      "ocean",
+      "record",
+      "perfect"
+    ],
+    "19": [
+      "device",
+      "machine",
+      "network",
+      "position",
+      "advance",
+      "attack",
+      "angle",
+      "signal",
+      "connect",
+      "drone"
+    ],
+    "21": [
+      "group",
+      "pair",
+      "aim",
+      "machine",
+      "steel",
+      "attack",
+      "air",
+      "journey",
+      "jungle",
+      "enemy"
+    ],
+    "24": [
+      "surface",
+      "world",
+      "time",
+      "edge",
+      "whale",
+      "blue",
+      "orange",
+      "current",
+      "prize",
+      "turtle"
+    ],
+    "32": [
+      "road",
+      "car",
+      "wall",
+      "window",
+      "screen",
+      "mobile",
+      "light",
+      "stone",
+      "watch",
+      "message"
+    ],
+    "103": [
+      "track",
+      "target",
+      "view",
+      "screen",
+      "monitor",
+      "forest",
+      "signal",
+      "drone",
+      "thermal",
+      "heat",
+      "mountain",
+      "position",
+      "black",
+      "night",
+      "zoom",
+      "camera",
+      "feed",
+      "air"
+    ],
+    "110": [
+      "vehicle",
+      "drive",
+      "car",
+      "road",
+      "jungle",
+      "forest",
+      "green",
+      "truck",
+      "jeep",
+      "defender",
+      "mountain",
+      "offroad",
+      "trail",
+      "engine",
+      "wheel",
+      "travel",
+      "air"
+    ],
+    "241": [
+      "pilot",
+      "flight",
+      "air",
+      "control",
+      "screen",
+      "machine",
+      "plane",
+      "aircraft",
+      "jet",
+      "helmet",
+      "valley",
+      "monitor",
+      "cockpit",
+      "view",
+      "night",
+      "cloud",
+      "mountain",
+      "engine"
+    ]
+  }
+}
