@@ -1,0 +1,182 @@
+name: Hunting Time focused page analysis
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/hunting-time-focused-page-analysis.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Query clue terms and scan printed page 60
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/focused.py <<'PY'
+          from __future__ import annotations
+          import json
+          import math
+          import random
+          import time
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+
+          ASIN='B0FRGB2PMR'
+          ENDPOINT='https://read.amazon.com/sample/print/search-results'
+          PAGE_SIZE=100
+          root=Path('public-media-analysis')
+          out=Path('/tmp/hunting-time-focused')
+          out.mkdir(parents=True,exist_ok=True)
+
+          terms=[
+            # clue 2: damaged electrical panel
+            'apology','price','electric','electricity','power','energy','wire','switch','shock','circuit','breaker','panel','spark','current','voltage','arc','cable','machine','device',
+            # clue 5: neon bar quotation
+            'every apology has a price','apology has a price','apology','price','bar','neon','sign','sorry','cost','drink','night',
+            # clue 10: hotel room at sunset, luggage, curtains, city
+            'hotel','room','bed','bag','luggage','laptop','window','curtain','sunset','city','Bangkok','smoke','travel','pack','coffee','coldcard',
+            # target/high pages and direct scene nouns
+            'helicopter','pilot','flight','air','rotor','cockpit','watch','time','track','tracking','thermal','forest','shadow','height','strategy','swarm','machine','metal','siege','when','where','hold','keep','road','engine','route','vehicle','defender','drive','jungle','radio','seed','phrase','inhale','pulse','system','gaze','chair','floor','room'
+          ]
+          terms=list(dict.fromkeys(terms))
+
+          def get(term:str,page_number:int=1):
+            params={'asin':ASIN,'buyingAsin':ASIN,'query':term,'pageNumber':page_number,'pageSize':PAGE_SIZE}
+            url=ENDPOINT+'?'+urllib.parse.urlencode(params)
+            req=urllib.request.Request(url,headers={'Accept':'application/json','User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36'})
+            last=None
+            for attempt in range(6):
+              try:
+                with urllib.request.urlopen(req,timeout=30) as response:
+                  return json.loads(response.read()),url
+              except Exception as exc:
+                last=exc
+                time.sleep(min(8.0,0.6*(2**attempt))+random.random()*0.15)
+            raise RuntimeError(f'{term=} {page_number=}: {last!r}')
+
+          def all_rows(term:str):
+            body,url=get(term,1)
+            total=int(body.get('totalResults') or 0)
+            rows=list(body.get('results') or [])
+            pages=max(1,math.ceil(total/PAGE_SIZE)) if total else 1
+            bodies=[body]
+            for pn in range(2,pages+1):
+              b,_=get(term,pn)
+              rows.extend(b.get('results') or [])
+              bodies.append(b)
+              time.sleep(0.02)
+            return total,rows,bodies,url
+
+          term_results={}
+          target_labels={'Page 14','Page 19','Page 21','Page 24','Page 32','Page 60','Page 103','Page 110','Page 241'}
+          for i,term in enumerate(terms,1):
+            try:
+              total,rows,bodies,url=all_rows(term)
+              matching=[r for r in rows if isinstance(r,(list,tuple)) and len(r)>=2 and str(r[1]) in target_labels]
+              labels=sorted({str(r[1]) for r in rows if isinstance(r,(list,tuple)) and len(r)>=2})
+              compact_bodies=[]
+              for b in bodies:
+                compact_bodies.append({
+                  'totalResults':b.get('totalResults'),
+                  'results':b.get('results'),
+                  'highlights':b.get('highlights'),
+                  'jumboImageUrls':b.get('jumboImageUrls'),
+                  'largeImageUrls':b.get('largeImageUrls'),
+                })
+              term_results[term]={
+                'url':url,'total':total,'labels':labels,'target_rows':matching,'bodies':compact_bodies,
+              }
+              print(f'TERM {i}/{len(terms)} {term!r}: total={total} targets={[r[1] for r in matching]}',flush=True)
+            except Exception as exc:
+              term_results[term]={'error':repr(exc)}
+              print('TERM ERROR',term,repr(exc),flush=True)
+            time.sleep(0.03)
+
+          # Full BIP39 membership for printed Page 60.
+          words=(root/'wordlists'/'bip39-english.txt').read_text(encoding='utf-8').split()
+          page60=[]
+          errors=[]
+          for i,word in enumerate(words,1):
+            try:
+              total,rows,_,_=all_rows(word)
+              if any(isinstance(r,(list,tuple)) and len(r)>=2 and str(r[1])=='Page 60' for r in rows):
+                page60.append(word)
+              if i%100==0:
+                print(f'PAGE60 {i}/{len(words)} hits={len(page60)}',flush=True)
+            except Exception as exc:
+              errors.append({'word':word,'error':repr(exc)})
+            time.sleep(0.025)
+
+          payload={
+            'asin':ASIN,
+            'terms':term_results,
+            'page60_bip39':sorted(set(page60)),
+            'page60_errors':errors,
+          }
+          (out/'focused-results.json').write_text(json.dumps(payload,indent=2,ensure_ascii=False),encoding='utf-8')
+
+          lines=['# Hunting Time focused page analysis','']
+          for term,rec in term_results.items():
+            if 'error' in rec:
+              lines += [f'## `{term}`','',f"ERROR: `{rec['error']}`",'']
+              continue
+            targets=[r for r in rec['target_rows']]
+            if targets or term in {'apology','price','electric','power','energy','wire','switch','shock','hotel','room','bed','bag','luggage','window','curtain','sunset','city','Bangkok','smoke','travel','pack'}:
+              lines += [f'## `{term}`','',f"Total: {rec['total']}",'',f"Labels: {', '.join(rec['labels']) or '(none)'}`",'',f"Target rows: `{json.dumps(targets,ensure_ascii=False)}`",'']
+          lines += ['## Printed Page 60 BIP39 words','',f"Count: {len(page60)}",'',', '.join(f'`{w}`' for w in sorted(set(page60))),'',f'Errors: {len(errors)}','']
+          (out/'focused-results.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'term_count':len(terms),'page60_count':len(page60),'page60_errors':len(errors)},indent=2))
+          PY
+          python /tmp/focused.py | tee /tmp/hunting-time-focused/console.txt
+
+      - name: Upload focused analysis
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-focused-page-analysis
+          path: /tmp/hunting-time-focused
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Persist compact result and run id
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/focused-page-analysis
+            cp /tmp/hunting-time-focused/focused-results.md public-media-analysis/focused-page-analysis/results.md
+            python - <<'PY'
+          import json,os
+          from pathlib import Path
+          Path('public-media-analysis/focused-page-analysis/run.json').write_text(json.dumps({
+            'run_id':int(os.environ['RUN_ID']),
+            'artifact_id':int(os.environ['ARTIFACT_ID'])
+          },indent=2)+'\n')
+          PY
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add public-media-analysis/focused-page-analysis
+            git commit -m 'research: persist focused page analysis' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt*3))
+          done
+          exit 1
