@@ -1,0 +1,139 @@
+name: Hunting Time vision V2
+
+on:
+  push:
+    branches:
+      - research/hunting-time-vision-v2
+    paths:
+      - .github/workflows/hunting-time-vision-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Check out evidence branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-vision-v2
+          fetch-depth: 0
+
+      - name: Install vision dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q \
+            'transformers==4.48.3' pillow timm einops sentencepiece accelerate safetensors
+
+      - name: Analyze every original clue photograph
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/vision-v2
+          cat > /tmp/vision.py <<'PY'
+          from __future__ import annotations
+
+          import json
+          from pathlib import Path
+
+          import torch
+          from PIL import Image
+          from transformers import AutoModelForCausalLM, AutoProcessor
+
+          MODEL_ID = "microsoft/Florence-2-base-ft"
+          ROOT = Path("public-media-analysis")
+          OUT = ROOT / "vision-v2"
+          OUT.mkdir(parents=True, exist_ok=True)
+
+          print(f"torch={torch.__version__}")
+          print(f"loading {MODEL_ID}")
+          processor = AutoProcessor.from_pretrained(MODEL_ID, trust_remote_code=True)
+          model = AutoModelForCausalLM.from_pretrained(
+              MODEL_ID,
+              trust_remote_code=True,
+              torch_dtype=torch.float32,
+          ).eval()
+
+          tasks = (
+              "<MORE_DETAILED_CAPTION>",
+              "<OCR>",
+              "<OCR_WITH_REGION>",
+              "<DENSE_REGION_CAPTION>",
+          )
+          results: dict[str, object] = {}
+
+          for path in sorted(ROOT.glob("clue-*.jpg")):
+              image = Image.open(path).convert("RGB")
+              # Keep enough resolution for labels and numbers while bounding CPU time.
+              image.thumbnail((1280, 1280), Image.Resampling.LANCZOS)
+              item: dict[str, object] = {
+                  "file": path.name,
+                  "size": list(image.size),
+                  "tasks": {},
+              }
+              print(f"\n===== {path.name} {image.size} =====", flush=True)
+
+              for task in tasks:
+                  inputs = processor(text=task, images=image, return_tensors="pt")
+                  with torch.inference_mode():
+                      generated_ids = model.generate(
+                          input_ids=inputs["input_ids"],
+                          pixel_values=inputs["pixel_values"],
+                          max_new_tokens=1024,
+                          num_beams=3,
+                          do_sample=False,
+                          early_stopping=True,
+                      )
+                  generated_text = processor.batch_decode(
+                      generated_ids,
+                      skip_special_tokens=False,
+                  )[0]
+                  try:
+                      parsed = processor.post_process_generation(
+                          generated_text,
+                          task=task,
+                          image_size=image.size,
+                      )
+                  except Exception as exc:
+                      parsed = {"post_process_error": repr(exc), "raw": generated_text}
+                  item["tasks"][task] = parsed
+                  print(task, json.dumps(parsed, ensure_ascii=False), flush=True)
+
+              results[path.stem] = item
+              (OUT / "results.partial.json").write_text(
+                  json.dumps(results, indent=2, ensure_ascii=False),
+                  encoding="utf-8",
+              )
+
+          (OUT / "results.json").write_text(
+              json.dumps(results, indent=2, ensure_ascii=False),
+              encoding="utf-8",
+          )
+
+          lines = ["# Hunting Time: Florence-2 visual analysis", ""]
+          for clue, item in results.items():
+              lines.extend((f"## {clue}", ""))
+              for task, value in item["tasks"].items():
+                  lines.extend((f"### `{task}`", "", "```json", json.dumps(value, indent=2, ensure_ascii=False), "```", ""))
+          (OUT / "results.md").write_text("\n".join(lines), encoding="utf-8")
+          PY
+          python /tmp/vision.py
+
+      - name: Persist model outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/vision-v2
+          if git diff --cached --quiet; then
+            echo 'No vision output to commit'
+            exit 0
+          fi
+          git commit -m 'research: add Florence-2 clue analysis'
+          git pull --rebase origin research/hunting-time-vision-v2
+          git push origin HEAD:research/hunting-time-vision-v2
