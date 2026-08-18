@@ -1,0 +1,84 @@
+name: Probe public Genesis book sample
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-genesis-sample.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Probe public Amazon and Kindle endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/sample-probe
+          rm -rf "$out" && mkdir -p "$out"
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36'
+          cat > "$out/urls.txt" <<'EOF'
+          https://www.amazon.com/dp/B0FK7RBDFL
+          https://www.amazon.com/gp/aw/d/B0FK7RBDFL
+          https://read.amazon.com/sample/B0FK7RBDFL
+          https://read.amazon.com/kp/embed?asin=B0FK7RBDFL&preview=newtab&linkCode=kpe
+          https://www.amazon.com/kindle-dbs/thankYouPage?asin=B0FK7RBDFL
+          https://www.amazon.com/gp/product/B0FK7RBDFL?storeType=ebooks
+          EOF
+          python - <<'PY'
+          import json, pathlib, subprocess, urllib.parse
+          out=pathlib.Path('public-media-analysis/sample-probe')
+          urls=[x.strip() for x in (out/'urls.txt').read_text().splitlines() if x.strip()]
+          rows=[]
+          for i,url in enumerate(urls,1):
+              body=out/f'body-{i:02d}.html'; headers=out/f'headers-{i:02d}.txt'
+              p=subprocess.run(['curl','-L','--max-time','45','--retry','2','-A','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','-D',str(headers),'-o',str(body),'-w','%{http_code}\t%{url_effective}\t%{content_type}',url],text=True,capture_output=True)
+              rows.append({'input_url':url,'curl_exit':p.returncode,'metrics':p.stdout.strip(),'stderr':p.stderr[-1000:],'body_bytes':body.stat().st_size if body.exists() else 0})
+          (out/'curl-results.json').write_text(json.dumps(rows,indent=2))
+          print(json.dumps(rows,indent=2))
+          PY
+          python - <<'PY'
+          import json, pathlib, re, html
+          out=pathlib.Path('public-media-analysis/sample-probe')
+          findings=[]
+          patterns=[
+              r'https?://[^"\'<> ]+',
+              r'(?i)(?:sample|preview|look inside|read)[^"\'<>]{0,180}',
+              r'(?i)(?:asin|bookasin|titleasin)[^"\'<>]{0,100}',
+              r'(?i)(?:manifest|content|reader|kindle)[^"\'<>]{0,180}',
+          ]
+          for path in sorted(out.glob('body-*.html')):
+              text=path.read_text(errors='replace')
+              rec={'file':path.name,'title':None,'matches':[]}
+              m=re.search(r'<title[^>]*>(.*?)</title>',text,re.I|re.S)
+              if m: rec['title']=html.unescape(re.sub(r'<[^>]+>','',m.group(1))).strip()
+              for pat in patterns:
+                  vals=[]
+                  for m in re.finditer(pat,text,re.I|re.S):
+                      v=' '.join(m.group(0).split())[:300]
+                      if v not in vals: vals.append(v)
+                      if len(vals)>=100: break
+                  rec['matches'].extend(vals)
+              findings.append(rec)
+          (out/'findings.json').write_text(json.dumps(findings,indent=2))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE-INVENTORY.txt"
+      - name: Persist probe output
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/sample-probe
+          git commit -m 'research: persist public Genesis sample probe'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
