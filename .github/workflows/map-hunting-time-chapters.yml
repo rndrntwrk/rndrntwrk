@@ -1,0 +1,75 @@
+name: Map Hunting Time paperback chapter pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/map-hunting-time-chapters.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+      - name: Query chapter titles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,time,urllib.parse,urllib.request
+          from pathlib import Path
+          asin='B0FRGB2PMR'
+          titles=['Prologue','Parting Waves','Under Canopy','Diving In','Total','Closing Time','Turning Point','Relief','Countdown','Passing Time','Mining for Blood','Roman Rooms','From the Darkness','Dancing in the Shadows','Ocean Drive','A Penny for your Thoughts','Storm Inbound','Breakaway','Capital Flight','Counting the Cost','Lying Low, Flying High','Distance','Open Jail','Stolen Time','Hostile State','Vas','Waves of Regret','Timeless','Waiting Game','Home Again','Redemption','Time Honored','Treasure Island','Wasting Time','Confrontation','The Turning','After','Opportunity']
+          out={}
+          for title in titles:
+            params={'asin':asin,'buyingAsin':asin,'query':title,'pageNumber':1,'pageSize':100}
+            url='https://read.amazon.com/sample/print/search-results?'+urllib.parse.urlencode(params)
+            req=urllib.request.Request(url,headers={'Accept':'application/json','User-Agent':'Mozilla/5.0'})
+            with urllib.request.urlopen(req,timeout=30) as r: body=json.loads(r.read())
+            rows=body.get('results') or []
+            out[title]=rows
+            print(title,rows,flush=True)
+            time.sleep(.04)
+          p=Path('/tmp/chapter-map');p.mkdir(parents=True,exist_ok=True)
+          (p/'results.json').write_text(json.dumps(out,indent=2,ensure_ascii=False))
+          lines=['# Hunting Time chapter-page map','']
+          for title,rows in out.items(): lines.append(f"- **{title}:** `{json.dumps(rows,ensure_ascii=False)}`")
+          (p/'results.md').write_text('\n'.join(lines))
+          PY
+      - name: Upload chapter map
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-chapter-map
+          path: /tmp/chapter-map
+          retention-days: 7
+      - name: Persist results
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/chapter-map
+            cp /tmp/chapter-map/results.md public-media-analysis/chapter-map/results.md
+            printf '{"run_id":%s,"artifact_id":%s}\n' "$RUN_ID" "$ARTIFACT_ID" > public-media-analysis/chapter-map/run.json
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add public-media-analysis/chapter-map
+            git commit -m 'research: persist chapter-page map' || true
+            git push origin HEAD:research/public-media-analysis && exit 0
+            sleep $((attempt*2))
+          done
+          exit 1
