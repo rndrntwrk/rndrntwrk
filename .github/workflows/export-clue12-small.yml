@@ -1,0 +1,63 @@
+name: Export compact clue 12 image chunks
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/export-clue12-small.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Produce compact base64 chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q pillow
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageEnhance, ImageOps
+          import base64, json
+
+          root=Path('public-media-analysis')
+          out=root/'clue12-small-chunks'
+          out.mkdir(parents=True,exist_ok=True)
+          image=Image.open(root/'clue-12.jpg').convert('RGB')
+          image.thumbnail((720,720),Image.Resampling.LANCZOS)
+          small=out/'clue-12-small.jpg'
+          image.save(small,'JPEG',quality=46,optimize=True,progressive=True)
+          b64=base64.b64encode(small.read_bytes()).decode('ascii')
+          small.unlink()
+          chunk_size=6000
+          parts=[]
+          for i,start in enumerate(range(0,len(b64),chunk_size)):
+              name=f'part-{i:03d}.txt'
+              text=b64[start:start+chunk_size]
+              (out/name).write_text(text,encoding='ascii')
+              parts.append({'file':name,'characters':len(text)})
+          (out/'manifest.json').write_text(json.dumps({'image_size':list(image.size),'base64_characters':len(b64),'parts':parts},indent=2),encoding='utf-8')
+          print((out/'manifest.json').read_text())
+          PY
+
+      - name: Persist chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/clue12-small-chunks
+          git commit -m 'research: add compact clue 12 image chunks'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
