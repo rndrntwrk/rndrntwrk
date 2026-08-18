@@ -1,0 +1,130 @@
+name: Extract Kindle Search Index Decoder
+
+on:
+  push:
+    branches:
+      - research/hunting-index-decoder
+    paths:
+      - .github/workflows/extract-kindle-search-decoder.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-index-decoder
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Download and inspect reader bundles
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=/tmp/kindle-search-decoder
+          rm -rf "$out"
+          mkdir -p "$out/raw" "$out/pretty" "$out/snippets"
+          curl -L --compressed --retry 3 -sS 'https://m.media-amazon.com/images/I/91hYUh6DIgL.js' -o "$out/raw/91hYUh6DIgL.js"
+          curl -L --compressed --retry 3 -sS 'https://m.media-amazon.com/images/I/C1+7O3p6oWL.js' -o "$out/raw/C1_7O3p6oWL.js"
+          wc -c "$out/raw"/*.js
+          npx --yes prettier@3.6.2 --parser babel "$out/raw/91hYUh6DIgL.js" > "$out/pretty/91hYUh6DIgL.pretty.js"
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+
+          root=Path('/tmp/kindle-search-decoder')
+          queries=[
+            'JUNO_4','JUNO','AZSA','BytesPerEntity','NumberOfWordsIndexed',
+            'MinimumTitleEntityValue','MaximumTitleEntityValue','WhereIndexed',
+            'BookFormat','YJBinary','.positions','.words','getSearchIndex',
+            'getProperty("LanguageId")','new Wy','new dg','new ng','new qy',
+            'Wy=','dg=','ng=','qy=','vg=','Ig=',
+          ]
+          reports={}
+          for p in sorted((root/'raw').glob('*.js')):
+            s=p.read_text(errors='replace')
+            item={'bytes':len(s),'queries':{}}
+            for q in queries:
+              poss=[m.start() for m in re.finditer(re.escape(q),s)]
+              item['queries'][q]=poss[:100]
+              for n,pos in enumerate(poss[:20]):
+                lo=max(0,pos-12000); hi=min(len(s),pos+24000)
+                (root/'snippets'/f'{p.stem}-{re.sub(r"[^A-Za-z0-9]+","_",q)}-{n:02d}.js').write_text(s[lo:hi])
+            reports[p.name]=item
+
+          # Search the beautified bundle for likely minified class definitions and
+          # preserve complete surrounding regions with line numbers.
+          pretty=root/'pretty/91hYUh6DIgL.pretty.js'
+          text=pretty.read_text(errors='replace')
+          lines=text.splitlines()
+          patterns=[
+            r'\bWy\b',r'\bdg\b',r'\bng\b',r'\bqy\b',r'\bvg\b',r'\bIg\b',
+            r'getSearchIndex',r'getResults',r'getProperty',r'positions',r'words',
+          ]
+          selected=set()
+          for pat in patterns:
+            rx=re.compile(pat)
+            for i,line in enumerate(lines):
+              if rx.search(line):
+                for j in range(max(0,i-250),min(len(lines),i+500)):
+                  selected.add(j)
+          chunks=[]
+          current=[]; previous=None
+          for i in sorted(selected):
+            if previous is None or i==previous+1:
+              current.append(i)
+            else:
+              chunks.append(current); current=[i]
+            previous=i
+          if current: chunks.append(current)
+          with (root/'snippets/pretty-search-regions.js').open('w') as f:
+            for ci,chunk in enumerate(chunks):
+              f.write(f'\n/* ===== REGION {ci} lines {chunk[0]+1}-{chunk[-1]+1} ===== */\n')
+              for i in chunk:
+                f.write(f'{i+1:07d}: {lines[i]}\n')
+          (root/'report.json').write_text(json.dumps(reports,indent=2))
+          summary=['# Kindle search decoder extraction','']
+          for name,item in reports.items():
+            summary.append(f'## {name}')
+            summary.append('')
+            for q,poss in item['queries'].items():
+              if poss: summary.append(f'- `{q}`: {len(poss)} shown positions: {poss[:12]}')
+            summary.append('')
+          (root/'summary.md').write_text('\n'.join(summary)+'\n')
+          print((root/'summary.md').read_text())
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/inventory.txt"
+
+      - name: Upload decoder evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: kindle-search-decoder-extraction
+          path: /tmp/kindle-search-decoder
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 6
+
+      - name: Persist compact decoder extraction
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest=public-media-analysis/index-decoder
+          rm -rf "$dest"
+          mkdir -p "$dest"
+          cp /tmp/kindle-search-decoder/summary.md "$dest/summary.md"
+          cp /tmp/kindle-search-decoder/report.json "$dest/report.json"
+          cp /tmp/kindle-search-decoder/snippets/pretty-search-regions.js "$dest/pretty-search-regions.js"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$dest/RUN_ID.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dest"
+          git commit -m "research: persist Kindle decoder extraction $GITHUB_RUN_ID"
+          git push origin HEAD:research/hunting-index-decoder
