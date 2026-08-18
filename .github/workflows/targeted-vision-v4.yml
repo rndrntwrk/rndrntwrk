@@ -1,0 +1,94 @@
+name: Targeted dense clue vision V4
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/targeted-vision-v4.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  targeted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Install Florence-2 dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q \
+            'transformers==4.48.3' pillow timm einops sentencepiece accelerate safetensors
+
+      - name: Analyze ambiguous clues and vehicle markings
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/targeted-vision-v4
+          cat > /tmp/targeted.py <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import torch
+          from PIL import Image
+          from transformers import AutoModelForCausalLM, AutoProcessor
+
+          root=Path('public-media-analysis')
+          out=root/'targeted-vision-v4'
+          out.mkdir(parents=True,exist_ok=True)
+          model_id='microsoft/Florence-2-base-ft'
+          processor=AutoProcessor.from_pretrained(model_id,trust_remote_code=True)
+          model=AutoModelForCausalLM.from_pretrained(model_id,trust_remote_code=True,torch_dtype=torch.float32).eval()
+
+          selected=(2,5,7,10,11,12)
+          task_specs=[
+              ('<MORE_DETAILED_CAPTION>',None),
+              ('<DENSE_REGION_CAPTION>',None),
+              ('<OCR_WITH_REGION>',None),
+              ('<CAPTION_TO_PHRASE_GROUNDING>','number, digit, label, marking, sign, display, license plate, vehicle identification'),
+          ]
+          results={}
+          for n in selected:
+              path=root/f'clue-{n:02d}.jpg'
+              image=Image.open(path).convert('RGB')
+              image.thumbnail((1280,1280),Image.Resampling.LANCZOS)
+              item={'file':path.name,'size':list(image.size),'tasks':{}}
+              print('\n===== '+path.name+' =====',flush=True)
+              for task,suffix in task_specs:
+                  prompt=task+(suffix or '')
+                  inputs=processor(text=prompt,images=image,return_tensors='pt')
+                  with torch.inference_mode():
+                      ids=model.generate(input_ids=inputs['input_ids'],pixel_values=inputs['pixel_values'],max_new_tokens=1024,num_beams=3,do_sample=False,early_stopping=True)
+                  raw=processor.batch_decode(ids,skip_special_tokens=False)[0]
+                  try:
+                      parsed=processor.post_process_generation(raw,task=task,image_size=image.size)
+                  except Exception as exc:
+                      parsed={'error':repr(exc),'raw':raw}
+                  key=task if suffix is None else task+suffix
+                  item['tasks'][key]=parsed
+                  print(key,json.dumps(parsed,ensure_ascii=False),flush=True)
+              results[path.stem]=item
+              (out/'results.partial.json').write_text(json.dumps(results,indent=2,ensure_ascii=False),encoding='utf-8')
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False),encoding='utf-8')
+          (out/'results.md').write_text('# Targeted Florence-2 V4\n\n```json\n'+json.dumps(results,indent=2,ensure_ascii=False)+'\n```\n',encoding='utf-8')
+          PY
+          python /tmp/targeted.py
+
+      - name: Persist results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/targeted-vision-v4
+          git commit -m 'research: add targeted dense clue analysis'
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
