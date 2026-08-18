@@ -1,0 +1,20 @@
+{
+  "asin": "B0FRGB2PMR",
+  "page_offset": 9,
+  "printed_pages": [
+    103,
+    110,
+    241
+  ],
+  "words_per_page": 2048,
+  "planned_queries": 6144,
+  "request_attempts": 9249,
+  "status_counts": {
+    "200": 4998,
+    "503": 4251
+  },
+  "elapsed_seconds": 959.1145832538605,
+  "positives": [],
+  "error_count": 0,
+  "errors_sample": []
+}
