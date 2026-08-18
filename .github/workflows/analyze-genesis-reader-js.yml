@@ -1,0 +1,74 @@
+name: Inspect public Genesis reader JavaScript
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/analyze-genesis-reader-js.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Download public reader bundles and extract routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/reader-js
+          rm -rf "$out" && mkdir -p "$out"
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36'
+          curl -fsSL --retry 3 -A "$UA" 'https://d3fpmv3m8wlug6.cloudfront.net/assets/global.f665fa3ada48a8e15eaf.min.js' -o "$out/global.js"
+          curl -fsSL --retry 3 -A "$UA" 'https://d3fpmv3m8wlug6.cloudfront.net/assets/litbDesktop.f665fa3ada48a8e15eaf.min.js' -o "$out/litbDesktop.js"
+          python - <<'PY'
+          import json, pathlib, re
+          out=pathlib.Path('public-media-analysis/reader-js')
+          findings={}
+          for p in [out/'global.js',out/'litbDesktop.js']:
+              s=p.read_text(errors='replace')
+              vals=[]
+              pats=[
+                  r'https?://[^"\'<>\\ ]+',
+                  r'/(?:sample|reader|book|content|manifest|resource|position|page|karamel)[A-Za-z0-9_./?=&{}:\-]*',
+                  r'[A-Za-z0-9_./?=&{}:\-]*(?:reader-api|karamel|manifest|resource|bookData|pageMap|positionMap|sampleDepth|contentUrl)[A-Za-z0-9_./?=&{}:\-]*',
+              ]
+              for pat in pats:
+                  for m in re.finditer(pat,s,re.I):
+                      v=m.group(0)
+                      if 2 < len(v) < 500 and v not in vals: vals.append(v)
+              findings[p.name]={'bytes':len(s),'matches':vals}
+          (out/'routes.json').write_text(json.dumps(findings,indent=2))
+          with (out/'routes.txt').open('w') as f:
+              for name,rec in findings.items():
+                  f.write(f'### {name} ({rec["bytes"]} bytes)\n')
+                  for v in rec['matches']: f.write(v+'\n')
+          print((out/'routes.txt').read_text()[:40000])
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE-INVENTORY.txt"
+      - name: Upload reader bundle analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: genesis-reader-js-analysis
+          path: public-media-analysis/reader-js
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+      - name: Persist route extraction and run id
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/READER_JS_RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/reader-js/routes.json public-media-analysis/reader-js/routes.txt public-media-analysis/READER_JS_RUN_ID.txt
+          git commit -m "research: persist Genesis reader route extraction $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
