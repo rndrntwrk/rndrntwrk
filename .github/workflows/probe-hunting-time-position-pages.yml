@@ -1,0 +1,122 @@
+name: Probe Hunting Time Search Inside target pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-position-pages.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Probe known and target page/query pairs
+        run: |
+          set -euxo pipefail
+          python - <<'PY'
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+
+          out=Path('/tmp/hunting-time-position-pages')
+          out.mkdir(parents=True,exist_ok=True)
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          asin='B0FRGB2PMR'
+          card=f'https://read.amazon.com/kp/card?asin={asin}&preview=inline&linkCode=kpe'
+          cookies=out/'cookies.txt'
+          subprocess.run(['curl','-L','--compressed','--retry','3','--fail','-sS','-A',ua,'-c',str(cookies),card,'-o',str(out/'card.html')],check=True)
+          token_body=out/'token.json'
+          subprocess.run(['curl','-L','--compressed','--retry','3','--fail','-sS','-A',ua,'-b',str(cookies),'-c',str(cookies),'-e',card,f'https://read.amazon.com/sample/karamel-token?asin={asin}','-o',str(token_body)],check=True)
+          try: issued=json.loads(token_body.read_text()).get('token')
+          except Exception: issued=None
+
+          matrix={
+            10:['the','radio','machine','time','position'],
+            19:['the','radio','machine','time','position'],
+            28:['the','wallet','drone','watch','satellite','signal','device'],
+            12:['the','unit','group','pair','soldier','action','drone'],
+            21:['the','unit','group','pair','soldier','action','drone'],
+            15:['the','under','jungle','orange','energy','canopy'],
+            24:['the','under','jungle','orange','energy','canopy'],
+            23:['the','road','car','watch','computer','screen','dive'],
+            32:['the','road','car','watch','computer','screen','dive'],
+            14:['the','age','gold','silver','bronze','iron'],
+            60:['the','helicopter','pilot','flight','air','rotor','cockpit'],
+            103:['the','time','watch','track','component','signal','red','forest','drone'],
+            110:['the','defender','vehicle','car','drive','jungle','road','green'],
+            241:['the','helicopter','pilot','flight','air','rotor','cockpit'],
+          }
+          results=[]
+          for page,queries in matrix.items():
+            for query in queries:
+              for token_kind,token in [('null','null'),('issued',issued)]:
+                if not token: continue
+                params={'asin':asin,'buyingAsin':asin,'query':query,'token':token,'page':str(page)}
+                url='https://read.amazon.com/sample/print/position-data?'+urllib.parse.urlencode(params)
+                body=out/f'p{page:03d}-{query}-{token_kind}.json'
+                p=subprocess.run(['curl','-L','--compressed','--retry','3','--fail','-sS','-A',ua,'-b',str(cookies),'-c',str(cookies),'-e',card,'-H','Accept: application/json',url,'-o',str(body),'-w','%{http_code}\t%{content_type}\t%{size_download}\n'],capture_output=True,text=True)
+                rec={'page':page,'query':query,'token_kind':token_kind,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'url':url}
+                if body.exists():
+                  raw=body.read_text(errors='replace')
+                  try: rec['response']=json.loads(raw)
+                  except Exception: rec['prefix']=raw[:1000]
+                results.append(rec)
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          # Compact hit report.
+          lines=[]
+          for r in results:
+            resp=r.get('response') or {}
+            highlights=resp.get('highlights') if isinstance(resp,dict) else None
+            nonempty=False
+            if isinstance(highlights,dict):
+              nonempty=any(bool(v) for v in highlights.values())
+            if nonempty or r['query']=='the':
+              lines.append(json.dumps({'page':r['page'],'query':r['query'],'token_kind':r['token_kind'],'status':r['status'],'highlights':highlights,'response':resp},ensure_ascii=False))
+          (out/'hits.jsonl').write_text('\n'.join(lines)+'\n')
+          PY
+
+      - name: Upload probe
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-position-pages
+          path: /tmp/hunting-time-position-pages
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Persist compact results and artifact coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis/position-pages
+            cp /tmp/hunting-time-position-pages/hits.jsonl public-media-analysis/position-pages/hits.jsonl
+            python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('public-media-analysis/position-pages/run.json').write_text(json.dumps({
+              'run_id':int(os.environ['RUN_ID']),
+              'artifact_id':int(os.environ['ARTIFACT_ID']),
+              'artifact_url':os.environ.get('ARTIFACT_URL','')
+          },indent=2)+'\n')
+          PY
+            git add public-media-analysis/position-pages
+            git commit -m 'research: persist target-page Search Inside probe' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
