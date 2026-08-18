@@ -1,0 +1,127 @@
+name: Probe public Genesis print reader API
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-genesis-print-api.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Persist run identifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/PRINT_API_RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/PRINT_API_RUN_ID.txt
+          git commit -m "research: record Genesis print API run $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch print sample page and API responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > probe-genesis-print.mjs <<'JS'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import vm from 'node:vm';
+
+          const out='public-media-analysis/print-api';
+          fs.rmSync(out,{recursive:true,force:true});
+          fs.mkdirSync(out,{recursive:true});
+          const ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36';
+          const base='https://read.amazon.com';
+          const asin='B0FRGB2PMR';
+          const buyingAsin='B0FK7RBDFL';
+          const results=[];
+
+          async function get(name,url,headers={}) {
+            try {
+              const r=await fetch(url,{headers:{'user-agent':ua,'accept':'application/json,text/html,*/*',...headers},redirect:'follow'});
+              const b=Buffer.from(await r.arrayBuffer());
+              const ct=r.headers.get('content-type')||'';
+              let ext=ct.includes('json')?'.json':ct.includes('html')?'.html':ct.includes('jpeg')?'.jpg':ct.includes('png')?'.png':'.bin';
+              fs.writeFileSync(path.join(out,name+ext),b);
+              results.push({name,url,status:r.status,contentType:ct,bytes:b.length,file:name+ext,bodyPrefix:b.toString('utf8',0,Math.min(1000,b.length))});
+              return {r,b,ct,ext};
+            } catch(e) {
+              results.push({name,url,error:String(e)});
+              return null;
+            }
+          }
+
+          const page=await get('sample-page',`${base}/sample/${asin}?clientId=share`);
+          let cfg=null;
+          if(page){
+            const html=page.b.toString('utf8');
+            const m=html.match(/window\.envConfig\s*=\s*JSON\.parse\(("(?:\\.|[^"\\])*")\)\s*;/s);
+            if(m){ const decoded=vm.runInNewContext(m[1]); cfg=JSON.parse(decoded); fs.writeFileSync(path.join(out,'env-config.json'),JSON.stringify(cfg,null,2)); }
+          }
+
+          const book=await get('book-data',`${base}/sample/print/book-data?asin=${asin}`);
+          await get('random-page',`${base}/sample/print/random-page?asin=${asin}&buyingAsin=${buyingAsin}`);
+          for(const pageNo of [1,2,7,18,19,20,21,22,24,32,103,110,241,277,290,304]) {
+            await get(`go-to-page-${String(pageNo).padStart(3,'0')}`,`${base}/sample/print/go-to-page?asin=${asin}&page=${pageNo}`);
+          }
+          // Test endpoint shape with a few ordinary book words and BIP39-like words.
+          for(const query of ['the','bitcoin','power','watch','hotel','price','apology','green','message']) {
+            await get(`position-${query}`,`${base}/sample/print/position-data?asin=${asin}&query=${encodeURIComponent(query)}&page=1`);
+          }
+
+          fs.writeFileSync(path.join(out,'results.json'),JSON.stringify(results,null,2));
+          fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({
+            envConfig: cfg ? {
+              productAsin:cfg.productAsin,format:cfg.format,revisionId:cfg.revisionId,
+              printSampleUrl:cfg.printSampleUrl,kindleSampleUrl:cfg.kindleSampleUrl,
+              fixedFormat:cfg.fixedFormat
+            }:null,
+            responses:results.map(({bodyPrefix,...x})=>x)
+          },null,2));
+          console.log(fs.readFileSync(path.join(out,'summary.json'),'utf8'));
+          JS
+          node ./probe-genesis-print.mjs
+          find public-media-analysis/print-api -type f -printf '%p\t%s bytes\n' | sort > public-media-analysis/print-api/FILE-INVENTORY.txt
+
+      - name: Upload print API evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: genesis-print-api-probe
+          path: public-media-analysis/print-api
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+
+      - name: Persist print API summaries
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in summary.json results.json env-config.json FILE-INVENTORY.txt; do
+            test -f "public-media-analysis/print-api/$f" && git add "public-media-analysis/print-api/$f" || true
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist Genesis print API probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
