@@ -1,0 +1,61 @@
+{
+  "capture_count": 6,
+  "captures": [
+    {
+      "timestamp": "20250730080719",
+      "original": "https://www.huntingtimenovel.com/",
+      "mimetype": "text/html",
+      "statuscode": "200",
+      "digest": "BAKXDO6LS3RGX6D5EF6HKKTT6XIQEKPL"
+    },
+    {
+      "timestamp": "20250730141350",
+      "original": "https://www.huntingtimenovel.com/about",
+      "mimetype": "text/html",
+      "statuscode": "200",
+      "digest": "UFYUOW6XV2TRVCLIHK42AE6GGTAGERQS"
+    },
+    {
+      "timestamp": "20250730081820",
+      "original": "https://www.huntingtimenovel.com/favicon.ico",
+      "mimetype": "image/x-icon",
+      "statuscode": "200",
+      "digest": "FEWZV22FPK375W5NIUUFIMZK57ZGPJ4O"
+    },
+    {
+      "timestamp": "20250730090036",
+      "original": "https://www.huntingtimenovel.com/pages-sitemap.xml",
+      "mimetype": "text/xml",
+      "statuscode": "200",
+      "digest": "MUPTTK2QRHKDLTK5D3N6BGQ5EWMJNIA6"
+    },
+    {
+      "timestamp": "20250730081800",
+      "original": "https://www.huntingtimenovel.com/robots.txt",
+      "mimetype": "text/plain",
+      "statuscode": "200",
+      "digest": "3VIVNQ3MULCOXR4IXCEEBNWX3AD62H2N"
+    },
+    {
+      "timestamp": "20250730083852",
+      "original": "https://www.huntingtimenovel.com/sitemap.xml",
+      "mimetype": "text/xml",
+      "statuscode": "200",
+      "digest": "5BUW5EJRTDG4EKO3NNGHSKMYHWVET4MB"
+    }
+  ],
+  "amazon_urls": [
+    {
+      "timestamp": "20250730080719",
+      "url": "https://www.amazon.com/dp/B0FK7RBDFL"
+    },
+    {
+      "timestamp": "live",
+      "url": "https://www.amazon.com/gp/product/B0HBS2TZ9Z"
+    }
+  ],
+  "asins": [
+    "B0FK7RBDFL",
+    "B0HBS2TZ9Z"
+  ]
+}
