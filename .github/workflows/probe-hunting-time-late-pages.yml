@@ -1,0 +1,68 @@
+name: Probe Hunting Time late page coordinates
+
+on:
+  push:
+    branches:
+      - research/hunting-time-amazon-probe
+    paths:
+      - .github/workflows/probe-hunting-time-late-pages.yml
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/hunting-time-amazon-probe
+          fetch-depth: 0
+      - name: Fetch late public page windows
+        run: |
+          set -euxo pipefail
+          out=public-media-analysis/late-page-probe
+          rm -rf "$out"
+          mkdir -p "$out/json" "$out/images"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+          python - <<'PY'
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+          out=Path('public-media-analysis/late-page-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/kp/card?asin=B0FK7RBDFL&preview=inline&linkCode=kpe'
+          cookies=str(out/'cookies.txt')
+          summary=[]
+          for page in [24,19,21,32,103,110,241]:
+              params={'asin':'B0FK7RBDFL','buyingAsin':'B0FK7RBDFL','page':str(page),'token':'null'}
+              url='https://read.amazon.com/sample/print/go-to-page?'+urllib.parse.urlencode(params)
+              body=out/'json'/f'page-{page:03d}.body'
+              hdr=out/'json'/f'page-{page:03d}.headers'
+              p=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-b',cookies,'-c',cookies,'-e',card,'-H','Accept: application/json','-D',str(hdr),url,'-o',str(body),'-w','%{http_code}\t%{url_effective}\t%{content_type}\n'],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              rec={'page':page,'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw)}
+              try:
+                  obj=json.loads(raw)
+                  rec['json_keys']=sorted(obj.keys()) if isinstance(obj,dict) else []
+                  body.with_suffix('.pretty.json').write_text(json.dumps(obj,indent=2,ensure_ascii=False))
+                  urls=obj.get('jumboImageUrls') or obj.get('largeImageUrls') or {} if isinstance(obj,dict) else {}
+                  iterable=urls.items() if isinstance(urls,dict) else enumerate(urls,1) if isinstance(urls,list) else []
+                  for sub,u in iterable:
+                      if not u: continue
+                      ip=out/'images'/f'request-{page:03d}-page-{sub}.jpg'
+                      q=subprocess.run(['curl','-L','--compressed','--retry','3','-sS','-A',ua,'-e',card,u,'-o',str(ip),'-w','%{http_code}\t%{content_type}\n'],capture_output=True,text=True)
+                      rec.setdefault('assets',[]).append({'sub':str(sub),'url':u,'status':q.stdout.strip(),'stderr':q.stderr.strip(),'bytes':ip.stat().st_size if ip.exists() else 0,'file':ip.name})
+              except Exception as e:
+                  rec['parse_error']=repr(e)
+                  rec['prefix']=raw[:1000].decode('utf-8','replace')
+              summary.append(rec)
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out"
+          git commit -m 'research: persist late page coordinate probe'
+          git push origin HEAD:research/hunting-time-amazon-probe
