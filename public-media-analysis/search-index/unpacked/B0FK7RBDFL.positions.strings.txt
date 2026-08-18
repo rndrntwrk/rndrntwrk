@@ -1,0 +1,8 @@
+AZSA
+BytesPerEntity
+MinimumTitleEntityValue
+MaximumTitleEntityValue
+NumberOfWordsIndexed
+SearchBoundaryPositions
+EvenlySpacedPositions
+Positions

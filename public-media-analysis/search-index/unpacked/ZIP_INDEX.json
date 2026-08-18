@@ -1,0 +1,29 @@
+[
+  {
+    "name": "B0FK7RBDFL.properties",
+    "compressed": 131,
+    "size": 170,
+    "crc": 2917528185,
+    "sha256": "b30628d0aab8d35e7be49b89f52a05ed288e645946c60dc18c36b1b63441d8d1",
+    "prefix_hex": "4c616e677561676549643d656e0a4279746573506572456e746974793d330a4d",
+    "prefix_text": "LanguageId=en\nBytesPerEntity=3\nMinimumTitleEntityValue=3\nMaximumTitleEntityValue=49799\nNumberOfWordsIndexed=5973\nWhereIndexed=Cloud\nAlgorithm=JUNO_4\nBookFormat=YJBinary\n\n"
+  },
+  {
+    "name": "B0FK7RBDFL.words",
+    "compressed": 11935,
+    "size": 25428,
+    "crc": 165672303,
+    "sha256": "86e9046575cf3f02399b3356f4ca2dfdc50c90dc5c5d85e1e911cc0349449397",
+    "prefix_hex": "303a313a30360a313a313a31320a323a313a31360a333a313a3230300a343a31",
+    "prefix_text": "0:1:06\n1:1:12\n2:1:16\n3:1:200\n4:1:2010\n5:1:2025\n6:4:21\n10:1:24\n11:1:378\n12:1:572\n13:2:abil\n15:2:abl\n17:18:abov\n35:1:absorb\n36:1:abund\n37:2:accent\n39:1:accept\n40:1:accomplic\n41:1:account\n42:2:achiev\n44:"
+  },
+  {
+    "name": "B0FK7RBDFL.positions",
+    "compressed": 14401,
+    "size": 18343,
+    "crc": 2118103026,
+    "sha256": "d57d0c9af997a9429d63f5b58a54a3360dd1c7e9495ecd9f0d36a1c1e7d952b3",
+    "prefix_hex": "415a534103000000030000c2870000175500000000039500069a0009de000d52",
+    "prefix_text": "AZSA\u0003\u0000\u0000\u0000\u0003\u0000\u0000\u0000\u0000\u0017U\u0000\u0000\u0000\u0000\u0003�\u0000\u0006�\u0000\t�\u0000\rR\u0000\u0010[\u0000\u0013�\u0000\u0017\u0015\u0000\u001aK\u0000\u001d\u0018\u0000 C\u0000#�\u0000'6\u0000*�\u0000.\u0002\u00001>\u00004�\u00007�\u0000;\"\u0000>m\u0000A�\u0000D�\u0000H\n\u0000Kn\u0000Nz\u0000Q�\u0000U&\u0000X�\u0000\\*\u0000_e\u0000b�\u0000e�\u0000iF\u0000l�\u0000p\u001d\u0000s�\u0000w8\u0000z�\u0000~\u000e\u0000��\u0000��\u0000�H\u0000�e\u0000��\u0000��\u0000��\u0000�\u0002\u0000�/\u0000�a\u0000��\u0000��\u0000��\u0000��\u0000��\u0000��\u0000�\u0000�\u0006\u0000�/\u0000�b\u0000��\u0000"
+  }
+]

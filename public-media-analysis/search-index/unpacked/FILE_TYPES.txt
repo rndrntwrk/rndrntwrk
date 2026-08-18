@@ -1,0 +1,5 @@
+public-media-analysis/search-index/unpacked/B0FK7RBDFL.positions:  data
+public-media-analysis/search-index/unpacked/B0FK7RBDFL.properties: ASCII text
+public-media-analysis/search-index/unpacked/B0FK7RBDFL.words:      ASCII text
+public-media-analysis/search-index/unpacked/FILE_INDEX.txt:        ASCII text
+public-media-analysis/search-index/unpacked/ZIP_INDEX.json:        JSON text data

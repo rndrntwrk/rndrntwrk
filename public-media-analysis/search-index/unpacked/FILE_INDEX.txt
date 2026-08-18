@@ -1,0 +1,5 @@
+B0FK7RBDFL.positions	18343 bytes
+B0FK7RBDFL.properties	170 bytes
+B0FK7RBDFL.words	25428 bytes
+FILE_INDEX.txt	0 bytes
+ZIP_INDEX.json	2039 bytes
