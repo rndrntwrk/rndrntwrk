@@ -2,7 +2,7 @@
     9 fls-na.amazon.com
     4 clients2.google.com
     4 csp.withgoogle.com
-    4 r4---sn-vgqsrnzy.gvt1.com
+    4 r5---sn-qjp5q5-5q.gvt1.com
     4 read.amazon.com
     4 redirector.gvt1.com
     3 unagi.amazon.com
@@ -13,7 +13,7 @@
     2 clientservices.googleapis.com
     2 gvt1.com
     2 images-na.ssl-images-amazon.com
-    2 r3---sn-2ovgq5-cw.gvt1.com
+    2 r3---sn-p5qs7n6d.gvt1.com
     2 session.bugsnag.kindle.amazon.dev
     2 unagi-na.amazon.com
     2 www.gstatic.com
