@@ -1,0 +1,4830 @@
+[
+  {
+    "page": 14,
+    "query": "black",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=black&page=14&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "black"
+    }
+  },
+  {
+    "page": 14,
+    "query": "black",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=black&page=14&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "black"
+    }
+  },
+  {
+    "page": 14,
+    "query": "ocean",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=ocean&page=14&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "ocean"
+    }
+  },
+  {
+    "page": 14,
+    "query": "ocean",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=ocean&page=14&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "ocean"
+    }
+  },
+  {
+    "page": 14,
+    "query": "sunset",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=sunset&page=14&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "sunset"
+    }
+  },
+  {
+    "page": 14,
+    "query": "sunset",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=sunset&page=14&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "sunset"
+    }
+  },
+  {
+    "page": 14,
+    "query": "record",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=record&page=14&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "record"
+    }
+  },
+  {
+    "page": 14,
+    "query": "record",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=record&page=14&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "record"
+    }
+  },
+  {
+    "page": 14,
+    "query": "memory",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=memory&page=14&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "memory"
+    }
+  },
+  {
+    "page": 14,
+    "query": "memory",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=memory&page=14&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "memory"
+    }
+  },
+  {
+    "page": 14,
+    "query": "blue",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=blue&page=14&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 39,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "blue"
+    }
+  },
+  {
+    "page": 14,
+    "query": "blue",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=blue&page=14&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 39,
+    "json": {
+      "highlights": {
+        "14": []
+      },
+      "query": "blue"
+    }
+  },
+  {
+    "page": 19,
+    "query": "signal",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=signal&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "signal"
+    }
+  },
+  {
+    "page": 19,
+    "query": "signal",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=signal&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "signal"
+    }
+  },
+  {
+    "page": 19,
+    "query": "device",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=device&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "device"
+    }
+  },
+  {
+    "page": 19,
+    "query": "device",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=device&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "device"
+    }
+  },
+  {
+    "page": 19,
+    "query": "network",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=network&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "network"
+    }
+  },
+  {
+    "page": 19,
+    "query": "network",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=network&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "network"
+    }
+  },
+  {
+    "page": 19,
+    "query": "connect",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=connect&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "connect"
+    }
+  },
+  {
+    "page": 19,
+    "query": "connect",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=connect&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "connect"
+    }
+  },
+  {
+    "page": 19,
+    "query": "machine",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 66,
+    "json": {
+      "highlights": {
+        "19": [
+          [
+            "230",
+            "110",
+            "100",
+            "15"
+          ]
+        ]
+      },
+      "query": "machine"
+    }
+  },
+  {
+    "page": 19,
+    "query": "machine",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 66,
+    "json": {
+      "highlights": {
+        "19": [
+          [
+            "230",
+            "110",
+            "100",
+            "15"
+          ]
+        ]
+      },
+      "query": "machine"
+    }
+  },
+  {
+    "page": 19,
+    "query": "watch",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 64,
+    "json": {
+      "highlights": {
+        "19": [
+          [
+            "780",
+            "110",
+            "108",
+            "15"
+          ]
+        ]
+      },
+      "query": "watch"
+    }
+  },
+  {
+    "page": 19,
+    "query": "watch",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 64,
+    "json": {
+      "highlights": {
+        "19": [
+          [
+            "780",
+            "110",
+            "108",
+            "15"
+          ]
+        ]
+      },
+      "query": "watch"
+    }
+  },
+  {
+    "page": 19,
+    "query": "time",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=time&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 85,
+    "json": {
+      "highlights": {
+        "19": [
+          [
+            "522",
+            "60",
+            "46",
+            "13"
+          ],
+          [
+            "475",
+            "349",
+            "64",
+            "15"
+          ]
+        ]
+      },
+      "query": "time"
+    }
+  },
+  {
+    "page": 19,
+    "query": "time",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=time&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 85,
+    "json": {
+      "highlights": {
+        "19": [
+          [
+            "522",
+            "60",
+            "46",
+            "13"
+          ],
+          [
+            "475",
+            "349",
+            "64",
+            "15"
+          ]
+        ]
+      },
+      "query": "time"
+    }
+  },
+  {
+    "page": 19,
+    "query": "drone",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=drone&page=19&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "drone"
+    }
+  },
+  {
+    "page": 19,
+    "query": "drone",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=drone&page=19&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "19": []
+      },
+      "query": "drone"
+    }
+  },
+  {
+    "page": 21,
+    "query": "shoulder",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=shoulder&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 43,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "shoulder"
+    }
+  },
+  {
+    "page": 21,
+    "query": "shoulder",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=shoulder&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 43,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "shoulder"
+    }
+  },
+  {
+    "page": 21,
+    "query": "group",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=group&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "group"
+    }
+  },
+  {
+    "page": 21,
+    "query": "group",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=group&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "group"
+    }
+  },
+  {
+    "page": 21,
+    "query": "pair",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=pair&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 62,
+    "json": {
+      "highlights": {
+        "21": [
+          [
+            "369",
+            "856",
+            "46",
+            "15"
+          ]
+        ]
+      },
+      "query": "pair"
+    }
+  },
+  {
+    "page": 21,
+    "query": "pair",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=pair&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 62,
+    "json": {
+      "highlights": {
+        "21": [
+          [
+            "369",
+            "856",
+            "46",
+            "15"
+          ]
+        ]
+      },
+      "query": "pair"
+    }
+  },
+  {
+    "page": 21,
+    "query": "machine",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "machine"
+    }
+  },
+  {
+    "page": 21,
+    "query": "machine",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "machine"
+    }
+  },
+  {
+    "page": 21,
+    "query": "aim",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=aim&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 38,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "aim"
+    }
+  },
+  {
+    "page": 21,
+    "query": "aim",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=aim&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 38,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "aim"
+    }
+  },
+  {
+    "page": 21,
+    "query": "air",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=air&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 85,
+    "json": {
+      "highlights": {
+        "21": [
+          [
+            "266",
+            "403",
+            "31",
+            "15"
+          ],
+          [
+            "204",
+            "670",
+            "38",
+            "13"
+          ]
+        ]
+      },
+      "query": "air"
+    }
+  },
+  {
+    "page": 21,
+    "query": "air",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=air&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 85,
+    "json": {
+      "highlights": {
+        "21": [
+          [
+            "266",
+            "403",
+            "31",
+            "15"
+          ],
+          [
+            "204",
+            "670",
+            "38",
+            "13"
+          ]
+        ]
+      },
+      "query": "air"
+    }
+  },
+  {
+    "page": 21,
+    "query": "jungle",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=21&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "jungle"
+    }
+  },
+  {
+    "page": 21,
+    "query": "jungle",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=21&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "21": []
+      },
+      "query": "jungle"
+    }
+  },
+  {
+    "page": 24,
+    "query": "surface",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=surface&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "surface"
+    }
+  },
+  {
+    "page": 24,
+    "query": "surface",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=surface&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "surface"
+    }
+  },
+  {
+    "page": 24,
+    "query": "world",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=world&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "world"
+    }
+  },
+  {
+    "page": 24,
+    "query": "world",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=world&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "world"
+    }
+  },
+  {
+    "page": 24,
+    "query": "time",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=time&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 62,
+    "json": {
+      "highlights": {
+        "24": [
+          [
+            "245",
+            "856",
+            "64",
+            "15"
+          ]
+        ]
+      },
+      "query": "time"
+    }
+  },
+  {
+    "page": 24,
+    "query": "time",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=time&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 62,
+    "json": {
+      "highlights": {
+        "24": [
+          [
+            "245",
+            "856",
+            "64",
+            "15"
+          ]
+        ]
+      },
+      "query": "time"
+    }
+  },
+  {
+    "page": 24,
+    "query": "watch",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "watch"
+    }
+  },
+  {
+    "page": 24,
+    "query": "watch",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "watch"
+    }
+  },
+  {
+    "page": 24,
+    "query": "current",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=current&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "current"
+    }
+  },
+  {
+    "page": 24,
+    "query": "current",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=current&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 42,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "current"
+    }
+  },
+  {
+    "page": 24,
+    "query": "prize",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=prize&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "prize"
+    }
+  },
+  {
+    "page": 24,
+    "query": "prize",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=prize&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "prize"
+    }
+  },
+  {
+    "page": 24,
+    "query": "turtle",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=turtle&page=24&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "turtle"
+    }
+  },
+  {
+    "page": 24,
+    "query": "turtle",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=turtle&page=24&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "24": []
+      },
+      "query": "turtle"
+    }
+  },
+  {
+    "page": 32,
+    "query": "road",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=road&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 39,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "road"
+    }
+  },
+  {
+    "page": 32,
+    "query": "road",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=road&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 39,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "road"
+    }
+  },
+  {
+    "page": 32,
+    "query": "car",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=car&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 38,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "car"
+    }
+  },
+  {
+    "page": 32,
+    "query": "car",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=car&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 38,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "car"
+    }
+  },
+  {
+    "page": 32,
+    "query": "screen",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=screen&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "screen"
+    }
+  },
+  {
+    "page": 32,
+    "query": "screen",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=screen&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "screen"
+    }
+  },
+  {
+    "page": 32,
+    "query": "window",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=window&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "window"
+    }
+  },
+  {
+    "page": 32,
+    "query": "window",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=window&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 41,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "window"
+    }
+  },
+  {
+    "page": 32,
+    "query": "wall",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=wall&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 39,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "wall"
+    }
+  },
+  {
+    "page": 32,
+    "query": "wall",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=wall&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 39,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "wall"
+    }
+  },
+  {
+    "page": 32,
+    "query": "stone",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=stone&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "stone"
+    }
+  },
+  {
+    "page": 32,
+    "query": "stone",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=stone&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "stone"
+    }
+  },
+  {
+    "page": 32,
+    "query": "watch",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "watch"
+    }
+  },
+  {
+    "page": 32,
+    "query": "watch",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "watch"
+    }
+  },
+  {
+    "page": 32,
+    "query": "image",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=image&page=32&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "image"
+    }
+  },
+  {
+    "page": 32,
+    "query": "image",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=image&page=32&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 40,
+    "json": {
+      "highlights": {
+        "32": []
+      },
+      "query": "image"
+    }
+  },
+  {
+    "page": 103,
+    "query": "time",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=time&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "time",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=time&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "watch",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "watch",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=watch&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "track",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=track&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "track",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=track&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "tracking",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=tracking&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "tracking",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=tracking&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "target",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=target&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "target",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=target&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "signal",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=signal&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "signal",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=signal&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "view",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=view&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "view",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=view&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "screen",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=screen&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "screen",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=screen&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "forest",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=forest&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "forest",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=forest&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "jungle",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "jungle",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "thermal",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=thermal&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "thermal",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=thermal&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "image",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=image&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "image",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=image&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "monitor",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=monitor&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "monitor",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=monitor&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "machine",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "machine",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "drone",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=drone&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "drone",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=drone&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "height",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=height&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "height",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=height&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "position",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=position&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "position",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=position&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "shadow",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=shadow&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "shadow",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=shadow&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "night",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=night&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "night",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=night&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "hour",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=hour&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "hour",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=hour&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "minute",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=minute&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "minute",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=minute&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "second",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=second&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "second",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=second&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "clock",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=clock&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "clock",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=clock&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "where",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=where&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "where",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=where&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "find",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=find&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "find",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=find&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "found",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=found&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "found",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=found&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "hunt",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=hunt&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "hunt",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=hunt&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "follow",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=follow&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "follow",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=follow&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "wait",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=wait&page=103&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 103,
+    "query": "wait",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=wait&page=103&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "defense",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=defense&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "defense",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=defense&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "defender",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=defender&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "defender",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=defender&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "vehicle",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=vehicle&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "vehicle",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=vehicle&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "car",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=car&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "car",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=car&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "drive",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=drive&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "drive",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=drive&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "road",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=road&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "road",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=road&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "truck",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=truck&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "truck",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=truck&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "engine",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=engine&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "engine",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=engine&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "wheel",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=wheel&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "wheel",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=wheel&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "forest",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=forest&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "forest",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=forest&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "jungle",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "jungle",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "green",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=green&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "green",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=green&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "cargo",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=cargo&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "cargo",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=cargo&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "load",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=load&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "load",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=load&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "travel",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=travel&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "travel",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=travel&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "journey",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=journey&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "journey",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=journey&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "route",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=route&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "route",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=route&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "country",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=country&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "country",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=country&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "protect",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=protect&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "protect",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=protect&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "tool",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=tool&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "tool",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=tool&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "rain",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=rain&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "rain",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=rain&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "mud",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=mud&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "mud",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=mud&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "land",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=land&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "land",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=land&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "bag",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=bag&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "bag",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=bag&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "window",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=window&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "window",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=window&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "machine",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=110&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 110,
+    "query": "machine",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=110&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "pilot",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=pilot&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "pilot",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=pilot&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "flight",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=flight&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "flight",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=flight&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "air",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=air&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "air",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=air&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "control",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=control&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "control",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=control&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "screen",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=screen&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "screen",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=screen&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "display",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=display&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "display",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=display&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "system",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=system&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "system",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=system&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "view",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=view&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "view",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=view&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "night",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=night&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "night",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=night&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "moon",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=moon&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "moon",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=moon&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "river",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=river&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "river",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=river&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "forest",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=forest&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "forest",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=forest&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "jungle",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "jungle",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=jungle&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "machine",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "machine",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=machine&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "helicopter",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=helicopter&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "helicopter",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=helicopter&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "aircraft",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=aircraft&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "aircraft",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=aircraft&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "cockpit",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=cockpit&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "cockpit",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=cockpit&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "gaze",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=gaze&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "gaze",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=gaze&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "eye",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=eye&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "eye",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=eye&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "alert",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=alert&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "alert",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=alert&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "ready",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=ready&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "ready",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=ready&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "armed",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=armed&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "armed",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=armed&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "force",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=force&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "force",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=force&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "world",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=world&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "world",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=world&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "height",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=height&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "height",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=height&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "position",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=position&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "position",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=position&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "map",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=map&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "map",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=map&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "radar",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=radar&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "radar",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=radar&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "signal",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=signal&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "signal",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=signal&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "track",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=track&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "track",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=track&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "target",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=target&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "target",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=target&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "light",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=light&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "light",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=light&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "dark",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=dark&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "dark",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=dark&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "cloud",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=cloud&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "cloud",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=cloud&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "mountain",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=mountain&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "mountain",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=mountain&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "valley",
+    "variant": "null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=valley&page=241&token=null",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  },
+  {
+    "page": 241,
+    "query": "valley",
+    "variant": "buy-null",
+    "url": "https://read.amazon.com/sample/print/position-data?asin=B0FRGB2PMR&query=valley&page=241&token=null&buyingAsin=B0FRGB2PMR",
+    "status": "200\tapplication/json;charset=utf-8",
+    "stderr": "",
+    "bytes": 119,
+    "json": {
+      "error": {
+        "text": {
+          "key": "PAGE_NOT_AVAILABLE_TEXT"
+        },
+        "title": {
+          "key": "PAGE_NOT_AVAILABLE_TITLE"
+        },
+        "reftag": "rdr_bar_view"
+      }
+    }
+  }
+]

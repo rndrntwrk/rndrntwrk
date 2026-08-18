@@ -1,0 +1,21 @@
+HTTP/2 200 
+content-type: application/json;charset=utf-8
+server: Server
+date: Tue, 18 Aug 2026 22:02:01 GMT
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: 7CG37ZZ7RQFX0SSA450S
+accept-ch: ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr,sec-ch-ua-full-version-list,viewport-height,sec-ch-viewport-height
+accept-ch-lifetime: 86400
+content-encoding: gzip
+content-security-policy: upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/
+permissions-policy: ch-dpr=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-viewport-width=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-downlink=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-ect=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com")
+x-content-type-options: nosniff
+x-xss-protection: 1;
+content-security-policy-report-only: default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/
+vary: Accept-Encoding,User-Agent
+x-cache: Miss from cloudfront
+via: 1.1 c95a705fdf4e3077f715bd100df04b8a.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: _zWNqNisk1er2X-MxjVOsFVhJSLJZa2ty2nnvcpsfRsGB6ClJqD9Pg==
+
