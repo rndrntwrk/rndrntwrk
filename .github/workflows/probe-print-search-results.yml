@@ -3,7 +3,7 @@ name: Probe paperback search-results endpoint
 on:
   push:
     branches:
-      - research/public-media-analysis
+      - main
     paths:
       - .github/workflows/probe-print-search-results.yml
   workflow_dispatch:
