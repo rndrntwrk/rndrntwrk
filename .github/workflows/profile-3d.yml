@@ -4,12 +4,18 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "15 9 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/profile-3d.yml
 
 permissions:
   contents: write
 
 jobs:
   generate:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,3 +41,56 @@ jobs:
           fi
           git commit -m "Update 3D contribution graph"
           git push
+
+  paperback-search-probe:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Query public sample search endpoint
+        run: |
+          python - <<'PY'
+          import json, time, urllib.parse, urllib.request
+          from pathlib import Path
+
+          asin = 'B0FRGB2PMR'
+          terms = ['watch','surface','device','aim','road','power','energy','apology','price','hotel','room','vehicle','car','air','flight','jungle']
+          endpoint = 'https://read.amazon.com/sample/print/search-results'
+          out = []
+          for term in terms:
+              url = endpoint + '?' + urllib.parse.urlencode({
+                  'asin': asin, 'buyingAsin': asin, 'query': term,
+                  'pageNumber': 1, 'pageSize': 100,
+              })
+              req = urllib.request.Request(url, headers={'Accept':'application/json','User-Agent':'Mozilla/5.0'})
+              row = {'query': term, 'url': url}
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      body = response.read()
+                      row.update(status=response.status, content_type=response.headers.get('content-type'), bytes=len(body))
+                      try: row['body'] = json.loads(body)
+                      except Exception as exc:
+                          row['parse_error'] = repr(exc)
+                          row['body_prefix'] = body[:1000].decode('utf-8','replace')
+              except Exception as exc:
+                  row['error'] = repr(exc)
+              out.append(row)
+              time.sleep(0.15)
+          root = Path('public-media-analysis/search-results-probe')
+          root.mkdir(parents=True, exist_ok=True)
+          (root/'probe.json').write_text(json.dumps(out, indent=2, ensure_ascii=False))
+          lines = ['# Paperback search-results probe','']
+          for row in out:
+              lines += [f"## {row['query']}", f"- status: {row.get('status',row.get('error'))}", f"- body: `{json.dumps(row.get('body'),ensure_ascii=False)[:3000]}`", '']
+          (root/'summary.md').write_text('\n'.join(lines))
+          PY
+      - name: Persist probe results to research branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-results-probe
+          git commit -m 'research: persist paperback search-results probe'
+          git push origin HEAD:research/public-media-analysis
