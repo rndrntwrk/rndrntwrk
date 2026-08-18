@@ -1,0 +1,67 @@
+name: Bundle Hunting Time solver inputs
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/bundle-solver-inputs.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  BRANCH: research/public-media-analysis
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Assemble official wordlist and evidence metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/hunting-time-solver-inputs
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt \
+            --output /tmp/hunting-time-solver-inputs/bip39-english.txt
+          test "$(wc -l < /tmp/hunting-time-solver-inputs/bip39-english.txt)" -eq 2048
+          cp public-media-analysis/vision-v3/results.partial.json /tmp/hunting-time-solver-inputs/vision.json
+          cp public-media-analysis/targeted-vision-v4/results.partial.json /tmp/hunting-time-solver-inputs/targeted-vision.json
+          printf '%s\n' "$GITHUB_RUN_ID" > /tmp/hunting-time-solver-inputs/workflow-run-id.txt
+
+      - name: Upload solver-input artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-solver-inputs
+          path: /tmp/hunting-time-solver-inputs
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 6
+
+      - name: Persist artifact lookup information
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/artifact
+          cat > public-media-analysis/artifact/solver-inputs.json <<EOF
+          {
+            "run_id": ${GITHUB_RUN_ID},
+            "run_attempt": ${GITHUB_RUN_ATTEMPT},
+            "source_sha": "${GITHUB_SHA}",
+            "artifact_name": "hunting-time-solver-inputs"
+          }
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/artifact/solver-inputs.json
+          git commit -m 'research: record solver-input artifact run id'
+          git pull --rebase origin "$BRANCH"
+          git push origin HEAD:"$BRANCH"
