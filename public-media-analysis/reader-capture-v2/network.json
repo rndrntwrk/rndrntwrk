@@ -1,0 +1,2423 @@
+[
+  {
+    "url": "https://read.amazon.com/sample/B0FK7RBDFL?clientId=share",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "document",
+    "contentType": "text/html;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/21b2CPPFLqL._RC%7C51nfWTBkewL.css_.css?AUIClients/AmazonUI",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/11WsGYSItxL._RC%7C01DE6WSvLKL.css,51-rItlKGTL.css,31zRoguzRzL.css,21JMC7OC91L.css,01xH+fhFIJL.css,01oplyhwgTL.css,413Vvv3GONL.css,1170nDgl0uL.css,01Rw4F+QU6L.css,11GW2DCngTL.css,01dwEpLmO4L.css,01IdKcBuAdL.css,01iHqjS7YfL.css,21D3IemrALL.css,11Cv7swYm2L.css,51kR4v4RCcL.css,01yC8kk5kkL.css,11aX6hlPzjL.css,01GAxF7K5tL.css,01ZM-s8Z3xL.css,21gEzBqpmtL.css,11FeoxrgiyL.css,21Yuul0BcnL.css,01rSTIgNJIL.css,21HqyYwP3xL.css,31u+uM+C07L.css,01i092IYHUL.css,01oaPOLX+-L.css,31g3RABPKHL.css,11PDZ29p-PL.css,117zDsOznQL.css,215WpAjwzoL.css,11INh4d+2FL.css,114aTS6SjML.css,01Uw64cHNCL.css,21GcfcmbahL.css,21OD8FuBraL.css,11XozyxiH7L.css,210W8HxtP4L.css,11GyUpf9PlL.css,119Cktja74L.css,11PMguLK6gL.css,01890+Vwk8L.css,11TZSntL0oL.css,01qiwJ7qDfL.css,21jZ2Hny6UL.css,01pps5qPjtL.css,0136+UFOtpL.css,31un+UKeIeL.css,21MLYj6O8gL.css,013-xYw+SRL.css_.css?AUIClients/AmazonUI",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/51waPb-h-9L._RC%7C71M-boLUTYL.css,41WcY5PbsbL.css,612evE2JRhL.css,61kstcNBlyL.css,41z1jkezPCL.css,01FcI3FsaiL.css,21y6uRBcF9L.css,01-Mnqi69mL.css,31YZpDCYJPL.css,21DwGGPS1eL.css,41vWFCvFunL.css,21CB9R4dxNL.css,111Bp55OByL.css,01Acb9NWohL.css,21KQnzhmfTL.css,41bqNBi+QSL.css,61f0dQ2ffRL.css,01NLp3ZKNoL.css_.css?AUIClients/NavDesktopUberAsset",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-reorg-privacy._CB779528203_.png",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "21248",
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/litbDesktop.f665fa3ada48a8e15eaf.min.css",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/516npEhK50L.js?AUIClients/CardJsRuntimeBuzzCopyBuild",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/61xJcNKKLXL.js?AUIClients/AmazonUIjQuery",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/11I0WXrZVoL._RC%7C11Y+5x+kkTL.js,51DFoGfFeXL.js,115zbyk371L.js,11GgN1+C7hL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21NadQlXUWL.js,01vRf9id2EL.js,31on-La90vL.js,11a7qqY8xXL.js,11PZSUl3FLL.js,51C4kaFbiAL.js,11FhdH2HZwL.js,11wb9K3sw0L.js,11BrgrMAHUL.js,11GPhx42StL.js,21F6z4HaEVL.js,01Svfxfy8OL.js,61lbT4bHNWL.js,01ikBbTAneL.js,31xywoXPfpL.js,01qXJuwGmxL.js,01WlsjNmqIL.js,11F929pmpYL.js,31Zn4S+IOkL.js,01rpauTep4L.js,31rqCOnXDNL.js,011FfPwYqHL.js,21P5VvHf-XL.js,01-E15R8CKL.js,21kN0q4IA-L.js,01VvIkYCafL.js,11vb6P5C5AL.js,01+2Aw8C0FL.js_.js?AUIClients/AmazonUI",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/global.f665fa3ada48a8e15eaf.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/personalization/ybh/loading-4x-gray._CB485916920_.gif",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "8865",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/11wZer7figL.css?AUIClients/WebFlowIngressJs",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/11QGzS1bPmL.css?AUIClients/BooksCardsReactAssetsBuzz-sp-core-assets",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/61T5ZyAUdQL.css?AUIClients/BooksDesignSystemWebBuzzAssets",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "contentType": "text/css",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/litbDesktop.f665fa3ada48a8e15eaf.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/pDxWAF1pBB0dzGB.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2; charset=utf-8",
+    "contentLength": "16616",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Fsample%2Fapi%2Fuedata%3Fstaticb%26id%3DH4RW9D17GJCG5JYKRVEV:0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fstaticb%26id%3DH4RW9D17GJCG5JYKRVEV:0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/51rG04VN8cL._RC%7C71SQlPx3FQL.js,41VWJ7fRjuL.js,01QvReFeJyL.js,01kC46b9vjL.js,81sMrVn2q3L.js,11xVfZMez3L.js,41jBieyCvYL.js,01wXnKULArL.js,01+pnQJuQ0L.js,31Hw59Tp4HL.js,51D+BomCJLL.js,41GvVRH6GqL.js,31yCF4ftzxL.js,11lw6J7z8iL.js,31COIUU385L.js,01VYGE8lGhL.js_.js?AUIClients/NavDesktopUberAsset",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/csm/showads.v2.js?adspot_=1",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/81xIIjjqyuL.js?AUIClients/BooksCardsReactAssetsBuzz-sp-core-assets",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/91t0NzNdMAL._RC%7C01AADYONJ4L.js,01GznEWrFfL.js,01QVQbySIVL.js,01IP4x65DLL.js_.js?AUIClients/BooksDesignSystemWebBuzzAssets",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/trigger-weblab?weblab=BOOKS_LITB_ASSETS_LATENCY_745921&expectedTreatment=C",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/529.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/772.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/364.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/trigger-weblab?weblab=BOOKS_LITB_AI_CONTENT_HIGHLIGHTS_1269722&expectedTreatment=C",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/trigger-weblab?weblab=BOOKS_LITB_FIXED_FORMAT_FEATURES_1011644&expectedTreatment=T1",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/reftag?ref_=litb_p_d_kv3&asin=B0FK7RBDFL",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": "{\"reftag\":\"litb_p_d_kv3\",\"asin\":\"B0FK7RBDFL\"}"
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/i18n/bb28dbd6f6f5e7059a19c771d4b041bc.en-US.json",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/reftag?ref_=litb_p_d&asin=B0FK7RBDFL",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": "{\"reftag\":\"litb_p_d\",\"asin\":\"B0FK7RBDFL\"}"
+  },
+  {
+    "url": "https://m.media-amazon.com/images/P/B0FK7RBDFL.01._SCLZZZZZZZ_SX500_.jpg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/jpeg",
+    "contentLength": "23905",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/reftag?ref_=litb_p_d_share&asin=B0FK7RBDFL",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": "{\"reftag\":\"litb_p_d_share\",\"asin\":\"B0FK7RBDFL\"}"
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fld%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ic%3D2%26sw%3D1440%26sh%3D1000%26vw%3D1440%26vh%3D1000%26m%3D1%26sc%3DH4RW9D17GJCG5JYKRVEV%26ue%3D2%26bb%3D130%26be%3D592%26fp%3D228%26fcp%3D228%26pc%3D957%26tc%3D-472%26na_%3D-472%26ul_%3D-1787059131234%26_ul%3D-1787059131234%26rd_%3D-1787059131234%26_rd%3D-1787059131234%26fe_%3D-467%26lk_%3D-455%26_lk%3D-401%26co_%3D-401%26_co%3D-394%26sc_%3D-399%26rq_%3D-394%26rs_%3D-93%26_rs%3D69%26dl_%3D-20%26di_%3D688%26de_%3D688%26_de%3D689%26_dc%3D957%26ld_%3D957%26_ld%3D-1787059131234%26ntd%3D0%26ty%3D0%26rc%3D0%26hob%3D1%26hoe%3D3%26ld%3D958%26t%3D1787059132192%26ctb%3D1%26rt%3D__ld%3A31-11-7-5-4-12-0%26csmtags%3Daui%7Caui%3Aaui_build_date%3A3.26.6-2026-08-12%7Cfls-na-amazon-com%7CFWCIMEnabled%7Cadblk_no%7Caui%3Acss%3Anetwork%7Caui%3Ajs%3Anetwork%26viz%3Dvisible%3A2%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:960",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/meta/B0FK7RBDFL?sampleAsin=B0FK7RBDFL&locale=en_US&clientId=share&ref_=litb_o_d",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/meta/B0FK7RBDFL?sampleAsin=B0FK7RBDFL&locale=en_US&clientId=share&ref_=litb_o_d",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://images-na.ssl-images-amazon.com/images/I/215h87l68bL.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/WOnTLzkiaEccV7F.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2; charset=utf-8",
+    "contentLength": "17336",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/KFPk-9IF4FqAqY-.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2; charset=utf-8",
+    "contentLength": "16460",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/KwhNPG8Jz-Vz2X7.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2; charset=utf-8",
+    "contentLength": "23220",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/ozb5-CLHQWI6Soc.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2",
+    "contentLength": "29240",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/2SazJx$EeTHfhMN.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2; charset=utf-8",
+    "contentLength": "17448",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/Dv1WQ5DdeMS5qP7.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2",
+    "contentLength": "27920",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/NvWNxKhmDbgI1lq.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "42188",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/lZemoC3awOEEzLR.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "41236",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/pnZF3$c0rgepEUt.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "42008",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/VjTR4RqBzY0mUYx.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "application/font-woff2; charset=utf-8",
+    "contentLength": "21508",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/gyrV-mLs7VcgiFC.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "33912",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/MexTn601PAhMvAn.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "33604",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/Wdqa3S7nfGc3Naj.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "41188",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/1Ep1kWVX5g73xrY.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "40912",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/rlTCFdyUZFR9mQI.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "34512",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/-w6hwcDxlefrOYI.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "42600",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/ukoYNzKrqDRxhTq.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "33756",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/1yLvxs7jafx7AW$.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "35224",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/S/sash/8AuIu4whVB5EMoJ.woff2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "font",
+    "contentType": "font/woff2",
+    "contentLength": "34964",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.customsg.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/hz/rhf?currentPageType=LitbHorizonte&currentSubPageType=Sample&excludeAsin=B0FK7RBDFL&fieldKeywords=&k=&keywords=&search=&auditEnabled=&previewCampaigns=&forceWidgets=&searchAlias=&cardJSPresent=true",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "xhr",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d2oc8o3x5gjafu.cloudfront.net/B0FK7RBDFL/64363d23/sample/toc.json",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json",
+    "contentLength": "2",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ic%3D2%26m%3D1%26sc%3Dcsa%3Alcp%26lcp%3D936%26pc%3D1203%26at%3D1203%26t%3D1787059132437%26csmtags%3Daui%3Asw%3Abrowser%3Aregister%3Asupported%7Caui%3Asw%3Apage_proxy%3Ano_ctrl%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:1203",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://d2oc8o3x5gjafu.cloudfront.net/B0FK7RBDFL/64363d23/fullbook/toc.json",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3lzhnl3ghk4fg.cloudfront.net/B0FK7RBDFL/64363d23/sample/resource/rsrc2SE?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kM2x6aG5sM2doazRmZy5jbG91ZGZyb250Lm5ldC9CMEZLN1JCREZMLzY0MzYzZDIzL3NhbXBsZS9yZXNvdXJjZS9yc3JjMlNFIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg3MDYyNzMxfX19XX0_&Signature=Y9W5rDy2yIF4i-4KvSgUMNUgABPSRrq2abOShTIb5BOPbrMIBSnxs~J3fGBBmojmutEGgk7cQdmijJBxWU3EVt8vtcEYLhMtkOtzWcMINLwHRC9weuks40aHyUOnwgcqjRpF6omdH6hJq-tK3RXEVGkrxglN8uCPkREXUcB~~UpMiuvzA4COWaEL4RD6ASgJ2CLQAzraUqcpMBHxmEHg3wVgTjiAfgLEE3jpu939-h5CJpy7vtR-vfJqFJulgjoU7v77MtKMe57aoGQvtPljl5PJhvR5IRerzOetLoBbIdxdcNPy4fl1k3Uw-Wt6HvFcJDHTzieHABstsxIVzLSg-Q__&Key-Pair-Id=K2DMXAZKWU5XAP",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/octet-stream",
+    "contentLength": "2160430",
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/725.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/iu3?d=amazon.com&slot=navFooter&a2=0101e0fa52a68346604fd0f8444f3e60fb9fbff8280ed76d36beed43ef49543116b7&old_oo=0&ts=1787059131137&s=AWGL293c8XgyQKdJsj4eFaCGSODp43s_hDkoPv0bsLr7&gdpr_consent=&gdpr_consent_avl=&cb=1787059131137",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "document",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=true&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=0&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "155714",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/iu3?d=amazon.com&slot=navFooter&a2=0101e0fa52a68346604fd0f8444f3e60fb9fbff8280ed76d36beed43ef49543116b7&old_oo=0&ts=1787059131137&s=AWGL293c8XgyQKdJsj4eFaCGSODp43s_hDkoPv0bsLr7&gdpr_consent=&gdpr_consent_avl=&cb=1787059131137&dcc=t",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "document",
+    "contentType": "text/html;charset=ISO-8859-1",
+    "contentLength": "2148",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/v3/pr?exlist=n-xr-HMT_n-id-HMT_n-nt-HMT_ns_n-eq-HMT3_n-ix-HMT_bsw_n-y-HMT_n-cx-HMT_n-dm2-HMT_n-dx-HMT2_n-zeotap-4_fw_imdb_n-fo-HMT_n-lucid_n-st-HMT1_n-samba.tv_n-rb-HMT3_n-fw-HMT1_n-og-HMT_adelphic_adb_mp_n-mediarithmics_g_n-comscr.com_n-lm-HMT3_ox_n-tl-HMT_n-semasio-ecm_n-kg-HMT_n-gg-HMT2_an_n-pm-HMT_n-g-hmt_nsln_nd_n-ispot_n-stroer-HMT_n-ym-HMT_n-ox-hmt_n-ex1-HMT_tbl&fv=1.0&a=cm&dmt=1&gdpr_consent=&ex-pl-n-g-hmt=BK1s36FIRwOw6fpjbvLPeA&gdpr=0&ep=fmaeyMaiK1Wc9BxFeyqJEvu646o_PTSlBnbySO37NnhhOfmfnchk-9AFaZ2oaoJKT0vJvTOmVSLxgSFznNrQkBoZWhdO3FElKwZXnlA4ZOd7m_UV_jlyPqX2xChDapYUL6bWzf2kufEWCoZW-o4vcGKs80TTe06lJML2RD0BU3atTa7MJsTDN4YDsAAsHHnaBJz-6zR9PJvjIVNOE-OLz1lpdZmqQUuVj49VcTFSucViWgh4O5RwwWityiiH4rMaUHKC9gTCGw5JCHxFt5zz289QJqUwQrUfJe9Z6Nq4s5Ppt-8uGvjgsNE1l-ai0e9DxgPTBvY_UY9XkL4MMp5tIhnnNYrpRJPcSTGP0XvcEkxxezyjVHoh9aB0nR0mXPzSZiROj06qTYN6ar8pMyByQnqBRZqz4EL5UlPbwlqJIFHPpimwxTxQc60lX1-_hTMACJTgPw7vRGYI1rf9_XRWHrcadw28xA4kY0XX_SnK9OtQJi7DDIDR3vpgIkjyKLjHdjehoSW4lmmzdIYgZKdokfbhfjwhI8ur15xtKlm5FMS7tD-ZND9XgdlT8nfusFRCHBWh5tzapXFi8cjWg6cr0bjdqQTVaF4EpEsWEiFjNbOwhJqObdVkufSTeVJ83p-8mhkQr9gW7ncZVWpRc9sDQ02WBV79QEVqIxhJ2UtV_rTQql_GUaXB_lz-7x36JGeD5zgQlKjLTN1RH86OvLpJEguNXC6KtB800D4oVUAHyI3YFVgDFVEjDEEvzu3jKETUlpe0ux5gNZR3apZYjQOsI-5LVSLeCbXynQwq5VBb3YgEOOeA7Jjpr8_VGBiUaIut4BHwzdRUNq7UCPnC_sOK6G9ycf-1zGqf9h1rYJlwrpZf4FBxhubHK3a5YUCkWq4qk2u4Rd5VToWroaWzCrcp2XGddyZXldtuM3wBEbI12VfU7Czf9XL3K5LyF5ix6ThOgDtZu6C7o_JizAukGpWFK8srFshe-ejPlDmBZuxwDjsOvvEBBTD1uTQmjLOxCzGF-oPrj1nAxccvzQ47MurvbozYyKP2XTelY7XDvhNqR5K7C1UqknRTGafDcso5JYQQjbDL2IVMcEFnEy3ZgQN9cuj3mt2PAkWsrqDX_s3TRJ5oDS3IxkHThV8pS9Hnw7kyXmgLz_FmVaKAwIUkSuwrVKwOO3xSE06PCTzzMYuU9XJu5ZJAFge7Lfs3r5WOlUUlxqJLdsQ-Gu16Jl6MCRSZCS1Qrmjv3ggT2opuUlv56rcqFCVlht92sm0BnY_VtkUrHhgkpDTlWQh2cS3oqUTPU6C9mJWDQBno85XBm005VTzO4m0HbtscMtssQ6HqpKrbt5SlqrbbtsOiuAvgHTsn4YT_zDqlPLLMD5BJ4GjJ6bWXXVIPaFseKTqz4S7Z03Uq0PvasTrQvBLx-9WrLFSjrVP6mLch8voTsoz_j35Aph1wq6i5kZYuyaicn5hSRnvh",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "document",
+    "contentType": "text/html;charset=ISO-8859-1",
+    "contentLength": "7540",
+    "postData": null
+  },
+  {
+    "url": "https://ib.adnxs.com/setuid/a9?entity=188&code=Mr9NH-OzTMSpAVak5JTh_w&redir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DxandrHMT%26id%3D%24UID&gdpr_consent=&gdpr=0",
+    "status": 307,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://ib.adnxs.com/bounce?%2Fsetuid%2Fa9%3Fentity%3D188%26code%3DMr9NH-OzTMSpAVak5JTh_w%26redir%3Dhttps%253A%252F%252Fs.amazon-adsystem.com%252Fecm3%253Fex%253DxandrHMT%2526id%253D%2524UID%26gdpr_consent%3D%26gdpr%3D0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://dsum-sec.casalemedia.com/rrum?cm_dsp_id=198&external_user_id=907w5Mv0RpyyffoswEipSg&cb=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DindexHMT%26id%3D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://aa.agkn.com/adscores/g.pixel?sid=9212284268",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://public-prod-dspcookiematching.dmxleo.com/dspreply?dspId=1868&dspUserId=CDwoFCzuTjam1uf55P9WxA&redir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DdailymotionHMT2&id=&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/images/7c566ffc07036fa541bd.svg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/svg+xml",
+    "contentLength": "654",
+    "postData": null
+  },
+  {
+    "url": "https://dsum-sec.casalemedia.com/rrum?cb=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DindexHMT%26id%3D&cm_dsp_id=198&external_user_id=907w5Mv0RpyyffoswEipSg&gdpr=0&gdpr_consent=&C=1",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://capi.connatix.com/us/pixel?pId=32&puId=JJp31_8sRyqduKLc4z48cQ&callback=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DconnatixHMT%26id%3D%7BpuId%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=xandrHMT&id=Mr9NH-OzTMSpAVak5JTh_w",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://x.bidswitch.net/sync_a9/https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dbidswitch.com%26id%3D%24%7BUUID%7D?gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://capi.connatix.com/us/pixel?pId=32&puId=JJp31_8sRyqduKLc4z48cQ&callback=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DconnatixHMT%26id%3D%7BpuId%7D&gdpr_consent=&gdpr=0&final=true",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://jadserve.postrelease.com/suid/102012?vk=IOLC55wVTL2SMxddz0m8zA&ntv_r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DnativoHMT&id=&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?id=208060805708006967177&ex=neustar.biz",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://match.360yield.com/match?publisher_dsp_id=416&external_user_id=KFEGTGFkTY6itb5Ee3PWeQ&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DimprovedigitalHMT%26id%3D%7BPUB_USER_ID%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://rtb-csync.smartadserver.com/redir/?partnerid=144&partneruserid=3fjcA8G2Se6fWG_BVWr_jg&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://x.bidswitch.net/ul_cb/sync_a9/https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dbidswitch.com%26id%3D%24%7BUUID%7D?gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://pbs.yahoo.com/setuid?bidder=amazon&uid=xIJyc22XQ5qfdlHOHmWh5w&gdpr_consent=&gdpr=0",
+    "status": 204,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/314.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://match.360yield.com/ul_cb/match?publisher_dsp_id=416&external_user_id=KFEGTGFkTY6itb5Ee3PWeQ&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DimprovedigitalHMT%26id%3D%7BPUB_USER_ID%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://rtb-csync.smartadserver.com/redir/?partnerid=171&partneruserid=7MgZwWK0SgK-Fh5Zy1k_pg&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=indexHMT&id=aoRbvNHM7nUAJnhHBTOqwAAA",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=connatixHMT&id=JJp31_8sRyqduKLc4z48cQ",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=bidswitch.com&id=a0c606deac2746887e76c2a2b625d3c1",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/kcmsMetadata/B0FK7RBDFL?revision=64363d23&format=YJBinary",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://user-sync.fwmrm.net/ad/u?mode=user-register&dspid=56&dspuid=rlO0wU6OTgy547sAbF8xfg&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://spl.zeotap.com/?zdid=1353&zurl=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dzeotap%26id%3D%7BZCOOKIE%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=improvedigitalHMT&id=7109938f-f65d-4b64-9d3d-521b8b1cb767&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://pixel.rubiconproject.com/token?pid=2179&pt=n&puid=4gcDXHDDSTa-ohQ4UweE4A&rk=usync-na&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://user-sync.fwmrm.net/ad/u?mode=user-register&dspid=56&dspuid=7rCtvMlFQ8uinrbgkaMNaQ&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://www.imdb.com/ads/idsync?cid=a706a6beb&ex=imdb.com",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://d2oc8o3x5gjafu.cloudfront.net/B0FK7RBDFL/64363d23/sample/metadata.json",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json",
+    "contentLength": "300",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/061c851d-718f-433b-9b4e-e05614cdb3aa",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "734815",
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/images/8c7bac3d057cc085f8f0.svg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/svg+xml",
+    "contentLength": "679",
+    "postData": null
+  },
+  {
+    "url": "https://usersync.samplicio.us/amazon/pixel.gif?https://s.amazon-adsystem.com/ecm3?ex=luc.id&id=",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=rubiconprojectHMT&id=4gcDXHDDSTa-ohQ4UweE4A&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?rcode=1&ex=imdb.com",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://sync.rfp.fout.jp/map?dsp_id=13&uid=S20IqwVwQzmUYGR1aDs8Ew&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/409.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/332.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/842.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=-6&skipPageCount=0&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "59766",
+    "postData": null
+  },
+  {
+    "url": "https://d3fpmv3m8wlug6.cloudfront.net/assets/356.f665fa3ada48a8e15eaf.chunk.min.js",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/javascript; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://odr.mookie1.com/t/v2?tagid=V2_393725&AMAZON_REGION_SPECIFIC_ENDPOINT=s.amazon-adsystem.com&src.visitorID=iaYauHEdR16Nn4aC-uJ4hQ",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://ms-cookie-sync.presage.io/user-sync?amazondsp_id=MdZv_xg4Tvejeygti10gYA&redirect=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DoguryHMT%26id%3Damazondsp_id&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": "99",
+    "postData": null
+  },
+  {
+    "url": "https://geo.ads.audio.thisisdax.com/sync?tp_id=792&dsp_dax_listenerid=wQuiUJN3SEG7ZwbuwFHfLQ&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://dpm.demdex.net/ibs:dpid=139200&dpuuid=jAB1By6TQTyH6_2RdqmLWA&redir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dadobe.com%26id%3D%24%7BDD_UUID%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://cm.g.doubleclick.net/pixel?google_nid=a9&google_cm&ex=doubleclick.net&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=UTF-8",
+    "contentLength": "327",
+    "postData": null
+  },
+  {
+    "url": "https://sb.scorecardresearch.com/p?c1=9&c2=27552257&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dcomscore.com%26id%3D%25AX_UUID%25",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/service/web/content/getSearchIndex?asin=B0FK7RBDFL&contentVersion=64363d23&formatVersion=undefined&facet=YJ",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json",
+    "contentLength": "248",
+    "postData": null
+  },
+  {
+    "url": "https://cm.g.doubleclick.net/pixel?google_nid=a9&google_cm=&ex=doubleclick.net&gdpr_consent=&gdpr=0&google_tc=",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=UTF-8",
+    "contentLength": "340",
+    "postData": null
+  },
+  {
+    "url": "https://sb.scorecardresearch.com/p2?c1=9&c2=27552257&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dcomscore.com%26id%3D%25AX_UUID%25",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=oguryHMT&id=MdZv_xg4Tvejeygti10gYA",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=mplatform.com&id=10596688466441007645&gdpr=&gdpr_consent=",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://dpm.demdex.net/demconf.jpg?et:ibs%7cdata:dpid=139200&dpuuid=jAB1By6TQTyH6_2RdqmLWA&redir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dadobe.com%26id%3D%24%7BDD_UUID%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://mwzeom.zeotap.com/mw?zpartnerid=1353&env=mWeb&env=mWeb&eventType=map&id_mid_4=45007d51-cfce-45aa-7a83-32c755bbb648&id_mid_61=45007d51-cfce-45aa-7a83-32c755bbb648&reqId=6b90c750-95e9-4a28-69f0-fa1c73cfd52e&zdid=1353&zurl=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dzeotap%26id%3D%7BZCOOKIE%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/sample/rec/B0FK7RBDFL?max=24&locale=en_US&clientId=share",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/json;charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://us-u.openx.net/w/1.0/cm?id=e818ca1e-0c23-caa8-0dd3-096b0ada08b7&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dopenx.com%26id%3D%7BOPENX_ID%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/plain; charset=utf-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=doubleclick.net&gdpr_consent=&gdpr=0&google_gid=CAESEIDLhXKSOOXSPDTzXqEhhTE&google_cver=1",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=comscore.com&id=88a9b1d1620db298bb4b564caee7cdd0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://ib.adnxs.com/getuid?https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fid=%24UID&ex=appnexus.com&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=zeotap&id=45007d51-cfce-45aa-7a83-32c755bbb648",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=adobe.com&id=61376910751584912672982624541467483206",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://us-u.openx.net/w/1.0/cm?cc=1&id=e818ca1e-0c23-caa8-0dd3-096b0ada08b7&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dopenx.com%26id%3D%7BOPENX_ID%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://cm.g.doubleclick.net/pixel?google_nid=a9&google_hm=BK1s36FIRwOw6fpjbvLPeA&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=UTF-8",
+    "contentLength": "273",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?id=2223299227263700278&ex=appnexus.com&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/Books/BooksDesignSystem/icons/starFullSmall.svg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/svg+xml",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/Books/BooksDesignSystem/icons/starHalfSmall.svg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/svg+xml",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://image2.pubmatic.com/AdServer/Pug?vcode=bz0yJnR5cGU9MSZjb2RlPTM0MzgmdGw9MTI5NjAw&piggybackCookie=XobrhOykSUqmPb60_XIygQ&rd=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DpubmaticHMT%26id%3D%24%7BDSP_UID%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=openx.com&id=26c87db6-dd30-c33c-2d41-58a3f405eb9f&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=googleHMT&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://lciapi.ninthdecimal.com/v1/lci/sync/adv-amzn/c-23445/?rdr=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3F%26ex%3Dninthdecimal.com%26id%3D%24%7BND_UID%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": "151",
+    "postData": null
+  },
+  {
+    "url": "https://uipglob.semasio.net/amazon/1/get?_url=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dsemasio%26id%3D%24%7BUIPID%28%29%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/477c7aa4-5fc9-4a30-b7a6-d1eb6ae6359e",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "114911",
+    "postData": null
+  },
+  {
+    "url": "https://usersync.gumgum.com/usersync?b=amz&i=3YeOndsmTMGcKNC0bAJr0w&n=y&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DgumgumHMT&id=%5BUID%5D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://eb2.3lift.com/xuid?mid=8341&xuid=U96W7kUBQ-ysioQ6oTz95g&dongle=az46&rdir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DtripleliftHMT%26id%3D%24UID&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://pi.ispot.tv/v2/TC-3673-1.gif?redir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dispot.tv%26id%3D%7BISID%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/41FaVt5dEXL._UY266_FMwebp_.jpg?aicid=books-design-system-web",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/webp",
+    "contentLength": "7268",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/d32e6065-d069-44a0-892b-42960dc6f0b2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "763039",
+    "postData": null
+  },
+  {
+    "url": "https://image4.pubmatic.com/AdServer/SPug?partnerID=100&gdpr=0&gdpr_consent=&us_privacy=&gpp=&gpp_sid=&pr=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DpubmaticHMT%26id%3DXobrhOykSUqmPb60_XIygQ",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/rd/uedata?rid=H4RW9D17GJCG5JYKRVEV&sid=137-5766098-3614616&rx=2cidcB7RLHu38mESKQIavG29PmUeX5vODFeS57MZdOI",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?&ex=ninthdecimal.com&id=0E4B9A0ABD5B846A1300C609024BEBBC",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://uipglob.semasio.net/amazon/1/get2?_url=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3Dsemasio%26id%3D%24%7BUIPID%28%29%7D",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://crb.kargo.com/api/v1/dsync/amazon?exid=cYSEju3gT9qlsIhBoigoqQ&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DKargoHMT&id=&gdpr_consent=&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=gumgumHMT",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://eb2.3lift.com/xuid?ld=1&mid=8341&xuid=U96W7kUBQ-ysioQ6oTz95g&dongle=az46&gdpr=0&cmp_cs=&us_privacy=&rdir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DtripleliftHMT%26id%3D%24UID",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=ispot.tv&id=6798cccdc99eb5419ce1274817c61fcf0fe8be2052329b9ecab3f2049e70ae3d",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://d1441h0yel17z5.cloudfront.net/d0f9bc14-30cd-40ec-850a-df0b2a378244",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/search+j1",
+    "contentLength": "26880",
+    "postData": null
+  },
+  {
+    "url": "https://loadus.exelator.com/load/?p=204&g=8888&j=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://us-u.openx.net/w/1.0/sd?id=537072986&val=IivwUsdLSRimvwh-hTDl9Q&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DopenxHMT%26id%3D%7BOPENX_RTB_USERID%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=pubmaticHMT&id=XobrhOykSUqmPb60_XIygQ",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=semasio&id=55288EAE6624AB3",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://sync.taboola.com/sg/amazon-a9-network/1/rtb",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://us-east-sync.richaudience.com/2815b6ef352b486227f27969993f46e5/?uid=EOyvYE_2SAuAgm1DvvmTcg&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DexteHMT&id=&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=UTF-8",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=tripleliftHMT&id=1352012703485046182506",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://loadus.exelator.com/load/?p=204&g=8888&j=0&xl8blockcheck=1",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=openxHMT&id=IivwUsdLSRimvwh-hTDl9Q&gdpr=0",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=taboola.com&id=rtb-3d3bb772-e45c-47bd-8f93-c8de207cc1ce-tuct117de13d",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://sync-amazon.ads.yieldmo.com/sync?pn_id=amazon&id=f76uKxlRRLmIuVZsqSswOA&redir=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DyieldmoHMT%26id%3D%7B%7Buserid%7D%7D&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "application/json;charset=utf-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=exteHMT",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://csync.loopme.me/?partner_id=1392&uid=GEtgX3O6RRWf0c3MziJ5lw&r=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DloopmeHMT&id=&gdpr_consent=&gdpr=0",
+    "status": 204,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?&ex=nielsen&id=5e7bc5f2bb021b1a2e5b7663a1e0d3b1",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=yieldmoHMT&id=f76uKxlRRLmIuVZsqSswOA",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=6&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "181938",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/7d944980-8141-43f7-91e3-3447d73e848b",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "319686",
+    "postData": null
+  },
+  {
+    "url": "https://cookie-matching.mediarithmics.com/v1/get_user_agent_id?dom_token=amazon-na-23&gdpr=0&gdpr_consent=&gdpr=0",
+    "status": 303,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/9c417934-1487-4b8e-bc6f-7c6bed2153d2",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "234036",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/41kkWhY4MoL.js?AUIClients/LatencyInteractiveAsset",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/21a1o3dUMiL.js?AUIClients/WebFlowIngressJs",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/31GtEQnCWeL.js?AUIClients/LoadMonitoringAsset",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/51htaz1stoL.js?AUIClients/AmazonLightsaberPageAssets",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/I/81kCF8wuZEL.js?AUIClients/FWCIMAssets",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "script",
+    "contentType": "application/x-javascript",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://cookie-matching.mediarithmics.com/v1/get_or_create?gdpr=0&gdpr_consent=&domid=1109",
+    "status": 303,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://ih.adscale.de/tpui?tpid=158&tpuid=E-lyrZ32SvCDyO04PTO1Gg&cburl=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DstroerHMT&id=&gdpr_consent=&gdpr=0",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://cm.g.doubleclick.net/pixel?google_nid=medr_dmp&google_cm&key=GOO&gdpr_consent=&gdpr=0&action=GET_ID&opid=goo&etid=&domid=1109&ops=apx",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=UTF-8",
+    "contentLength": "422",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/c83e7ef5-9e3c-438c-9c44-9e8d38aaacac",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "819811",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/222d8fce-5b22-4973-96f0-b9836658b318",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "121719",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/eac1f7e6-b1c2-4b24-8afd-89d34cdb6ddc",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "73463",
+    "postData": null
+  },
+  {
+    "url": "https://ih.adscale.de/tpui?tpid=158&tpuid=E-lyrZ32SvCDyO04PTO1Gg&cburl=https%3A%2F%2Fs.amazon-adsystem.com%2Fecm3%3Fex%3DstroerHMT&id=&gdpr_consent=&gdpr=0&nut&uu=c171a16446594c719e89824cb5e884b1",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "*/*; charset=UTF-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://cookie-matching.mediarithmics.com/input?key=GOO&key=GOO&gdpr_consent=&gdpr=0&action=GET_ID&opid=goo&etid=&domid=1109&ops=apx&google_gid=CAESEASDlGCmxR9aA8hwcBo34ts&google_cver=1",
+    "status": 303,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://unagi-na.amazon.com/1/events/com.amazon.BotCXPolicy.na.beta.bd",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://ib.adnxs.com/getuid?https://cookie-matching.mediarithmics.com/input?key=APX&apx_uid=$UID&opid=apx&ops=&utidl=tech:goo:CAESEASDlGCmxR9aA8hwcBo34ts&gdpr_consent=&gdpr=0&action=GET_ID&etid=&domid=1109",
+    "status": 302,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html; charset=utf-8",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=stroerHMT",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://cookie-matching.mediarithmics.com/input?key=APX&apx_uid=2223299227263700278&opid=apx&ops=&utidl=tech:goo:CAESEASDlGCmxR9aA8hwcBo34ts&gdpr_consent=&gdpr=0&action=GET_ID&etid=&domid=1109",
+    "status": 303,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "",
+    "contentLength": "0",
+    "postData": null
+  },
+  {
+    "url": "https://s.amazon-adsystem.com/ecm3?ex=mediarithmics&id=vec-174529864281&gdpr=0&gdpr_consent=",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/2fbd127e-2d87-40cd-b0fc-f353f0e9d223",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "792420",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/6f8a9400-b04f-4624-af3e-df1788c448fb",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "90927",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/6ca885b8-2f1b-4a5d-8fda-b0ab0702c80c",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "732126",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/66075fa9-7e1a-4ae1-820b-3e5a5948437d",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "736608",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/806655e8-8814-4a38-ad91-7a94c53ac737",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "825387",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/e046913d-43da-4f6b-8cf3-51e8fd3ba921",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "482150",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/7fdd37f8-a5d1-46dc-b4a3-48e241da19f3",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "363241",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/rd/uedata?rid=H4RW9D17GJCG5JYKRVEV&sid=137-5766098-3614616&rx=3HXsRleyBxk6iU8HyL9Gmw",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/3c687b9b-ecc1-4ee8-a889-ee17779d1e9a",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "76542",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/841042dd-3cc2-487b-bed6-6fc345c3a430",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "740677",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/7e925897-25fb-4c1a-8195-3e935dbd5d32",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "798376",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ic%3D2%26m%3D1%26sc%3Dcsa%3Avl50%26vl50%3D2111%26pc%3D5251%26at%3D5251%26t%3D1787059136485%26ec%3D1%26ecf%3D0%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:5251",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ic%3D2%26m%3D1%26sc%3Dcsa%3Avl100%26vl100%3D2111%26pc%3D5251%26at%3D5251%26t%3D1787059136485%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:5251",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ic%3D2%26m%3D1%26sc%3Dcsa%3Avl90%26vl90%3D2111%26pc%3D5251%26at%3D5251%26t%3D1787059136485%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:5251",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://unagi-na.amazon.com/1/events/com.amazon.eel.katal.metrics.core.nexus",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ctb%3D1%26ic%3D2%26m%3D1%26sc%3DH4RW9D17GJCG5JYKRVEV%26pc%3D15966%26at%3D15966%26t%3D1787059147200%26csmtags%3Dcsm-feature-touch-enabled%3Afalse%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:15967",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ic%3D2%26m%3D1%26sc%3Drx%26pc%3D15985%26at%3D15985%26t%3D1787059147219%26csmtags%3Dhas-strong-interaction%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26lob%3D11:15985",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:137-5766098-3614616:H4RW9D17GJCG5JYKRVEV$uedata=s:%2Frd%2Fuedata%3Fat%26v%3D0.357890.0%26id%3DH4RW9D17GJCG5JYKRVEV%26ctb%3D1%26ic%3D2%26m%3D1%26sc%3DH4RW9D17GJCG5JYKRVEV%26pc%3D16012%26at%3D16012%26t%3D1787059147246%26pty%3DLitbHorizonte%26spty%3DSample%26pti%3Dundefined%26tid%3DH4RW9D17GJCG5JYKRVEV%26aftb%3D1%26ui%3D1%26lob%3D11:16012",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/gif",
+    "contentLength": "43",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/rd/uedata?rid=H4RW9D17GJCG5JYKRVEV&sid=137-5766098-3614616&rx=QatgISUtZQtIxs7O/X4s7Q",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=12&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "177601",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/d34e84e8-467b-4692-940f-9bbbfe48e1d4",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "803586",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/a1c0b5fb-1404-4d19-b4fe-7c1070977958",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "756272",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/rd/uedata?rid=H4RW9D17GJCG5JYKRVEV&sid=137-5766098-3614616&rx=3LT8yxbAR00dW+TebyoQCQ",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/217b2582-fe41-4d00-9137-d77332af8aa5",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "829364",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/56fdc090-4d81-408b-80f6-cd652cf48f3d",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "397832",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/6082736c-1b14-4fa5-bdff-d3bb75c50201",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "718274",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/72872a4e-097a-4902-a8ea-cb1e320f0d85",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "795701",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi-na.amazon.com/1/events/com.amazon.eel.katal.metrics.core.nexus",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/rd/uedata?rid=H4RW9D17GJCG5JYKRVEV&sid=137-5766098-3614616&rx=WiuM1j5RbdvOrpNzoOGwug",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=18&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "156572",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/cb8d56ed-d95f-46de-a35e-d663c85ccb4c",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "807427",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/46aba7f1-f7ed-4471-bc9a-7982de56051c",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "788892",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/1493f41b-3522-4b75-b522-3c692b386bd6",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "778719",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/70142ced-d190-4060-b7f0-b8b96c3409a9",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "360932",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/6bfaeda0-816e-4ca4-932c-ed1fadcf902e",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "674046",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/91f11c12-710c-4d55-833b-f996de5c6b3b",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi-na.amazon.com/1/events/com.amazon.eel.katal.metrics.core.nexus",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=24&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "21465",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/822e97cb-94f5-4260-97b0-628f0ddf1367",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/rd/uedata?rid=H4RW9D17GJCG5JYKRVEV&sid=137-5766098-3614616&rx=eMRyflczdt/fkpHjV1G1YKA8i5H0vzvrprD1Lz2RwPY",
+    "status": 404,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "text/html",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=25&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "21043",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/0ae916d6-fd51-497e-be81-81736e3cd805",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=26&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "21282",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/1091e1ac-12ad-47cd-8a92-47a077a5cfa7",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=27&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "21212",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/c89741b1-b375-4c4b-ab0d-ada4e011a9fd",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=28&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "20906",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/b92903a5-6c50-43b7-8a2e-4aa7e66b08a6",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://read.amazon.com/renderer/render?version=3.0&asin=B0FK7RBDFL&contentType=Sample&revision=64363d23&fontFamily=Bookerly&fontSize=7.920000000000001&lineHeight=1.4&dpi=160&height=775&width=1038&marginBottom=0&marginLeft=9&marginRight=9&marginTop=0&maxNumberColumns=2&theme=default&locationMap=false&packageType=TAR&encryptionVersion=NONE&numPage=6&skipPageCount=29&bundleImages=false",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "fetch",
+    "contentType": "application/x-tar",
+    "contentLength": "21022",
+    "postData": null
+  },
+  {
+    "url": "blob:https://read.amazon.com/19ed15aa-9c6d-45b2-bb75-9af6fa242c3c",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/png",
+    "contentLength": "266135",
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/Books/BooksDesignSystem/icons/chevron-left.svg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/svg+xml",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://m.media-amazon.com/images/G/01/Books/BooksDesignSystem/icons/chevron-right.svg",
+    "status": 200,
+    "method": "GET",
+    "resourceType": "image",
+    "contentType": "image/svg+xml",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://b11v5ewz9l.execute-api.us-east-1.amazonaws.com/prod/v1/log",
+    "status": 204,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "",
+    "contentLength": null,
+    "postData": null
+  },
+  {
+    "url": "https://unagi-na.amazon.com/1/events/com.amazon.eel.katal.metrics.core.nexus",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  },
+  {
+    "url": "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+    "status": 200,
+    "method": "POST",
+    "resourceType": "ping",
+    "contentType": "application/json",
+    "contentLength": "22",
+    "postData": null
+  }
+]
