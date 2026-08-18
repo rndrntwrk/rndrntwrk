@@ -1,0 +1,134 @@
+name: Acquire and enhance original Hunting Time cover
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/acquire-enhance-hunting-cover.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - name: Acquire exact original and generate analysis views
+        run: |
+          set -euxo pipefail
+          out=/tmp/hunting-cover-analysis
+          rm -rf "$out"
+          mkdir -p "$out/crops" "$out/channels" "$out/enhanced"
+          url='https://pbs.twimg.com/media/HK4WjnGXAAAaTYG.jpg?name=orig'
+          curl -L --compressed --retry 5 --retry-delay 2 -sS "$url" -o "$out/cover-original.jpg"
+          sha256sum "$out/cover-original.jpg" | tee "$out/SHA256SUMS"
+          test "$(sha256sum "$out/cover-original.jpg" | cut -d' ' -f1)" = '031284f1a95986ce0548dd04f4a4380db93d1add5e21fe40ede0e2b814d70607'
+
+          python -m pip install --disable-pip-version-check -q pillow
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageEnhance, ImageFilter, ImageOps, ImageStat
+          import json, hashlib
+
+          out=Path('/tmp/hunting-cover-analysis')
+          im=Image.open(out/'cover-original.jpg').convert('RGB')
+          W,H=im.size
+          assert (W,H)==(1086,2048), (W,H)
+          manifest={'source_size':[W,H],'views':[]}
+
+          def save(img,path,quality=95):
+              path.parent.mkdir(parents=True,exist_ok=True)
+              if path.suffix.lower() in ('.jpg','.jpeg'):
+                  img.convert('RGB').save(path,'JPEG',quality=quality,optimize=True,progressive=True,subsampling=0)
+              else:
+                  img.save(path)
+              manifest['views'].append({'file':str(path.relative_to(out)),'size':list(img.size),'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+
+          save(im,out/'cover-original-copy.jpg',98)
+
+          # Full-cover views.
+          gray=ImageOps.grayscale(im)
+          save(ImageOps.autocontrast(gray,cutoff=0.2),out/'enhanced/full-gray-autocontrast.png')
+          save(ImageEnhance.Contrast(gray).enhance(2.4),out/'enhanced/full-gray-contrast.png')
+          save(ImageOps.invert(ImageOps.autocontrast(gray,cutoff=0.2)),out/'enhanced/full-gray-invert.png')
+          save(im.filter(ImageFilter.UnsharpMask(radius=2,percent=220,threshold=2)),out/'enhanced/full-sharpen.jpg',96)
+
+          # Individual RGB and difference channels, autocontrasted.
+          r,g,b=im.split()
+          for name,ch in [('r',r),('g',g),('b',b)]:
+              save(ImageOps.autocontrast(ch,cutoff=0.1),out/f'channels/{name}-autocontrast.png')
+              save(ImageOps.invert(ImageOps.autocontrast(ch,cutoff=0.1)),out/f'channels/{name}-invert.png')
+          import PIL.ImageChops as C
+          for name,ch in [('r-minus-g',C.subtract(r,g)),('g-minus-b',C.subtract(g,b)),('r-minus-b',C.subtract(r,b)),('g-minus-r',C.subtract(g,r)),('b-minus-g',C.subtract(b,g)),('b-minus-r',C.subtract(b,r))]:
+              save(ImageOps.autocontrast(ch),out/f'channels/{name}.png')
+
+          # 4x4 exact grid, plus overlapping horizontal bands, all enlarged 2x.
+          for row in range(4):
+              for col in range(4):
+                  x0=round(col*W/4); x1=round((col+1)*W/4)
+                  y0=round(row*H/4); y1=round((row+1)*H/4)
+                  crop=im.crop((x0,y0,x1,y1))
+                  crop2=crop.resize((crop.width*2,crop.height*2),Image.Resampling.LANCZOS)
+                  save(crop2,out/f'crops/grid-r{row+1}c{col+1}.jpg',98)
+                  cg=ImageOps.grayscale(crop2)
+                  save(ImageOps.autocontrast(cg,cutoff=0.1).filter(ImageFilter.UnsharpMask(radius=2,percent=250,threshold=1)),out/f'crops/grid-r{row+1}c{col+1}-gray.png')
+                  save(ImageOps.invert(ImageOps.autocontrast(cg,cutoff=0.1)),out/f'crops/grid-r{row+1}c{col+1}-invert.png')
+
+          bands=[('top',(0,0,W,760)),('upper-middle',(0,420,W,1200)),('lower-middle',(0,900,W,1680)),('bottom',(0,1300,W,H))]
+          for name,box in bands:
+              crop=im.crop(box)
+              crop2=crop.resize((crop.width*2,crop.height*2),Image.Resampling.LANCZOS)
+              save(crop2,out/f'crops/band-{name}.jpg',97)
+              cg=ImageOps.grayscale(crop2)
+              save(ImageOps.autocontrast(cg,cutoff=0.1).filter(ImageFilter.UnsharpMask(radius=2,percent=300,threshold=1)),out/f'crops/band-{name}-gray.png')
+              save(ImageOps.invert(ImageOps.autocontrast(cg,cutoff=0.1)),out/f'crops/band-{name}-invert.png')
+
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          PY
+          find "$out" -type f -printf '%P\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+
+      - name: Upload cover analysis
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-cover-analysis
+          path: /tmp/hunting-cover-analysis
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 6
+
+      - name: Record artifact coordinates
+        env:
+          RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          mkdir -p /tmp/runmeta
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('/tmp/runmeta/cover-analysis-run.json').write_text(json.dumps({
+              'run_id': int(os.environ['RUN_ID']),
+              'artifact_id': int(os.environ['ARTIFACT_ID']),
+              'artifact_url': os.environ.get('ARTIFACT_URL',''),
+          },indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin research/public-media-analysis
+            git reset --hard origin/research/public-media-analysis
+            mkdir -p public-media-analysis
+            cp /tmp/runmeta/cover-analysis-run.json public-media-analysis/cover-analysis-run.json
+            git add public-media-analysis/cover-analysis-run.json
+            git commit -m 'research: record cover analysis artifact' || true
+            if git push origin HEAD:research/public-media-analysis; then exit 0; fi
+            sleep $((attempt * 3))
+          done
+          exit 1
