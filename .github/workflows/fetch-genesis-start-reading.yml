@@ -1,0 +1,98 @@
+name: Fetch public Genesis start-reading bootstrap
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/fetch-genesis-start-reading.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Persist run identifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/START_READING_RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/START_READING_RUN_ID.txt
+          git commit -m "research: record Genesis start-reading run $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+
+      - name: Fetch start-reading bootstrap and adjacent public endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/start-reading
+          rm -rf "$out" && mkdir -p "$out"
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36'
+          RAND="$(python -c 'import random; print(random.random())')"
+          BASE='https://read.amazon.com'
+          START="${BASE}/service/web/content/startReading?asin=B0FK7RBDFL&marketplace=ATVPDKIKX0DER&cor=US&clientVersion=999999999&randval=${RAND}"
+          curl -fsSL --retry 3 -A "$UA" -H 'Amzn-Device-Type: AI8E87R86GTSD' \
+            -D "$out/start-reading.headers.txt" "$START" -o "$out/start-reading.json"
+          python -m json.tool "$out/start-reading.json" > "$out/start-reading.pretty.json" || cp "$out/start-reading.json" "$out/start-reading.pretty.json"
+
+          # These are ordinary sample-page endpoints; retain status/body even when a guessed parameter set is rejected.
+          for spec in \
+            "karamel-token|${BASE}/sample/karamel-token?asin=B0FK7RBDFL&revisionId=64363d23&format=3" \
+            "can-start|${BASE}/service/web/reader/canStartReading?asin=B0FK7RBDFL&marketplace=ATVPDKIKX0DER&cor=US" \
+            "kcms|${BASE}/sample/kcmsMetadata?asin=B0FK7RBDFL" \
+            "print|${BASE}/sample/print?asin=B0FK7RBDFL"; do
+            name="${spec%%|*}"; url="${spec#*|}"
+            curl -sSL --retry 2 -A "$UA" -H 'Amzn-Device-Type: AI8E87R86GTSD' \
+              -D "$out/${name}.headers.txt" -w '%{http_code}\n' "$url" \
+              -o "$out/${name}.body" > "$out/${name}.status.txt" || true
+          done
+
+          python - <<'PY'
+          import json, pathlib
+          out=pathlib.Path('public-media-analysis/start-reading')
+          raw=out.joinpath('start-reading.json').read_text(errors='replace')
+          try: data=json.loads(raw)
+          except Exception as e: data={'parse_error':repr(e),'raw_prefix':raw[:1000]}
+          summary={'start_top_type':type(data).__name__,'start_keys':sorted(data) if isinstance(data,dict) else None,'start_data':data}
+          for stem in ['karamel-token','can-start','kcms','print']:
+              summary[stem]={'status':out.joinpath(stem+'.status.txt').read_text(errors='replace').strip() if out.joinpath(stem+'.status.txt').exists() else None,'body_prefix':out.joinpath(stem+'.body').read_text(errors='replace')[:3000] if out.joinpath(stem+'.body').exists() else None}
+          out.joinpath('summary.json').write_text(json.dumps(summary,indent=2))
+          print(json.dumps(summary,indent=2)[:30000])
+          PY
+          find "$out" -type f -printf '%p\t%s bytes\n' | sort > "$out/FILE-INVENTORY.txt"
+
+      - name: Upload bootstrap evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: genesis-start-reading-bootstrap
+          path: public-media-analysis/start-reading
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+
+      - name: Persist summaries
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in summary.json start-reading.pretty.json FILE-INVENTORY.txt; do
+            test -f "public-media-analysis/start-reading/$f" && git add "public-media-analysis/start-reading/$f" || true
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist Genesis start-reading bootstrap $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
