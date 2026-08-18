@@ -1,0 +1,110 @@
+name: Decrypt public sample search index
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/decrypt-public-search-index.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  decrypt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch and decrypt index
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/search-index-decrypted
+          rm -rf "$out" && mkdir -p "$out"
+          cat > /tmp/decrypt-search-index.mjs <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import zlib from 'node:zlib';
+
+          const out='public-media-analysis/search-index-decrypted';
+          const ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36';
+          const metaUrl='https://read.amazon.com/service/web/content/getSearchIndex?asin=B0FK7RBDFL&contentVersion=64363d23&formatVersion=undefined&facet=YJ';
+          const mr=await fetch(metaUrl,{headers:{'user-agent':ua,'accept':'application/json'}});
+          const meta=await mr.json();
+          fs.writeFileSync(`${out}/metadata.json`,JSON.stringify(meta,null,2));
+          const rr=await fetch(meta.s3Url,{headers:{'user-agent':ua}});
+          const encrypted=Buffer.from(await rr.arrayBuffer());
+          fs.writeFileSync(`${out}/encrypted.bin`,encrypted);
+
+          const key=Buffer.from(meta.decryptionKey,'base64');
+          const iv=Buffer.from(meta.decryptionIV,'base64');
+          const decipher=crypto.createDecipheriv('aes-128-cbc',key,iv);
+          const decrypted=Buffer.concat([decipher.update(encrypted),decipher.final()]);
+          fs.writeFileSync(`${out}/decrypted.bin`,decrypted);
+          fs.writeFileSync(`${out}/decrypted.hex`,decrypted.toString('hex'));
+
+          const outputs={
+            encryptedBytes:encrypted.length,
+            decryptedBytes:decrypted.length,
+            prefixHex:decrypted.subarray(0,128).toString('hex'),
+            prefixUtf8:decrypted.subarray(0,512).toString('utf8'),
+            variants:[]
+          };
+
+          const attempts=[
+            ['gunzip',b=>zlib.gunzipSync(b)],
+            ['inflate',b=>zlib.inflateSync(b)],
+            ['inflateRaw',b=>zlib.inflateRawSync(b)],
+            ['brotli',b=>zlib.brotliDecompressSync(b)]
+          ];
+          for(const [name,fn] of attempts){
+            try{
+              const b=fn(decrypted);
+              fs.writeFileSync(`${out}/${name}.bin`,b);
+              outputs.variants.push({name,ok:true,bytes:b.length,prefixHex:b.subarray(0,64).toString('hex'),prefixUtf8:b.subarray(0,256).toString('utf8')});
+            }catch(e){outputs.variants.push({name,ok:false,error:String(e)});}
+          }
+          try{
+            const obj=JSON.parse(decrypted.toString('utf8'));
+            fs.writeFileSync(`${out}/decrypted.pretty.json`,JSON.stringify(obj,null,2));
+            outputs.json=true;
+          }catch(e){outputs.json=false;outputs.jsonError=String(e);}
+          fs.writeFileSync(`${out}/summary.json`,JSON.stringify(outputs,null,2));
+          console.log(JSON.stringify(outputs,null,2));
+          JS
+          node /tmp/decrypt-search-index.mjs
+          file "$out"/* > "$out/file-types.txt" || true
+          strings -a -n 3 "$out/decrypted.bin" > "$out/strings.txt" || true
+          xxd -g 1 -l 2048 "$out/decrypted.bin" > "$out/head.hex.txt" || true
+
+      - name: Upload decrypted index
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: decrypted-public-sample-search-index
+          path: public-media-analysis/search-index-decrypted
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+
+      - name: Persist textual diagnostics
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-index-decrypted/metadata.json public-media-analysis/search-index-decrypted/summary.json public-media-analysis/search-index-decrypted/file-types.txt public-media-analysis/search-index-decrypted/strings.txt public-media-analysis/search-index-decrypted/head.hex.txt || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist decrypted search-index diagnostics $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
