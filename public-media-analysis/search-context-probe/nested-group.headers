@@ -1,0 +1,18 @@
+HTTP/2 400 
+content-type: application/json
+content-length: 51
+server: Server
+date: Tue, 18 Aug 2026 00:53:09 GMT
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: 7PN93MTWNJV2M797PTQ4
+x-amzn-requestid: 7828aeba-9662-497f-af41-56eadd80f96d
+x-amz-date: Tue, 18 Aug 2026 00:53:09 GMT
+x-amzn-errortype: InvalidInputException:http://internal.amazon.com/coral/com.amazon.kcp.cascade.exceptions/
+cache-control: no-cache
+vary: Accept-Encoding,User-Agent
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+x-cache: Error from cloudfront
+via: 1.1 e7608e57426cdae0a1ee070304be9c20.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: 57MjexaEP_yuy14q58h5HoSE2nV8FrVklkHr0qVtAwDthKh6f3b0nQ==
+

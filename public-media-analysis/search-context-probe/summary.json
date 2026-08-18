@@ -1,0 +1,101 @@
+[
+  {
+    "name": "nested-one",
+    "status": "200\tapplication/json",
+    "stderr": "",
+    "bytes": 119,
+    "prefix": "{\"searchContexts\":[\"Vk0Pp788dZaSRTdk6F6RKA==EdLviy1TP9XaJLwYq5b7Lw==DGVEgFPq0TOjwOjKpfreVwn9D+3JbN9GO6t7y26hN/zseWNw\"]}",
+    "json": {
+      "searchContexts": [
+        "Vk0Pp788dZaSRTdk6F6RKA==EdLviy1TP9XaJLwYq5b7Lw==DGVEgFPq0TOjwOjKpfreVwn9D+3JbN9GO6t7y26hN/zseWNw"
+      ]
+    },
+    "decrypted": [
+      "moment had come. His"
+    ]
+  },
+  {
+    "name": "flat-one",
+    "status": "400\tapplication/json",
+    "stderr": "",
+    "bytes": 35,
+    "prefix": "{\"Message\":\"Expected list or null\"}",
+    "json": {
+      "Message": "Expected list or null"
+    },
+    "decrypted": []
+  },
+  {
+    "name": "nested-two",
+    "status": "200\tapplication/json",
+    "stderr": "",
+    "bytes": 218,
+    "prefix": "{\"searchContexts\":[\"iWGXB5k48un9hMb3jk9v+Q==ZSY/1+oCQ7ustQwP5rP6vg==vA8r6jtLLZfILe8VIeE+ogOSffaESjFuvWBMh9KtGpAdHPm5\",\"FRqFaSPxteRV6fL7SKRgxg==jDJ39hUkpMcnqAy+dUw9nw==/AgZoOzMOI6FzYmD1GmRSZfW7OXRZgIV/xcoht9uxuKr8w==\"]}",
+    "json": {
+      "searchContexts": [
+        "iWGXB5k48un9hMb3jk9v+Q==ZSY/1+oCQ7ustQwP5rP6vg==vA8r6jtLLZfILe8VIeE+ogOSffaESjFuvWBMh9KtGpAdHPm5",
+        "FRqFaSPxteRV6fL7SKRgxg==jDJ39hUkpMcnqAy+dUw9nw==/AgZoOzMOI6FzYmD1GmRSZfW7OXRZgIV/xcoht9uxuKr8w=="
+      ]
+    },
+    "decrypted": [
+      "moment had come. His",
+      "crisp sound of his"
+    ]
+  },
+  {
+    "name": "nested-group",
+    "status": "400\tapplication/json",
+    "stderr": "",
+    "bytes": 51,
+    "prefix": "{\"message\":\"Invalid input, context limit exceeded\"}",
+    "json": {
+      "message": "Invalid input, context limit exceeded"
+    },
+    "decrypted": []
+  },
+  {
+    "name": "nested-nullref",
+    "status": "200\tapplication/json",
+    "stderr": "",
+    "bytes": 119,
+    "prefix": "{\"searchContexts\":[\"ZrEEW/FRZRffXri78KyIGA==1iVtbG1JNSjJy9lL+zg4vA==SlglpTEuUIJ7uRHw1jquKysZOM0ohdDj4nxFK+yZSDnpErRS\"]}",
+    "json": {
+      "searchContexts": [
+        "ZrEEW/FRZRffXri78KyIGA==1iVtbG1JNSjJy9lL+zg4vA==SlglpTEuUIJ7uRHw1jquKysZOM0ohdDj4nxFK+yZSDnpErRS"
+      ]
+    },
+    "decrypted": [
+      "moment had come. His"
+    ]
+  },
+  {
+    "name": "nested-emptyref",
+    "status": "200\tapplication/json",
+    "stderr": "",
+    "bytes": 119,
+    "prefix": "{\"searchContexts\":[\"/u/SCUEOJy8++eNU/ub/cw==z0QDCGDKDbjbpEG27sq7pA==8Aavs0NJhNPgG1GEprvkJ3oS4kkN+0Ku9hesfv6aO2SqIB0V\"]}",
+    "json": {
+      "searchContexts": [
+        "/u/SCUEOJy8++eNU/ub/cw==z0QDCGDKDbjbpEG27sq7pA==8Aavs0NJhNPgG1GEprvkJ3oS4kkN+0Ku9hesfv6aO2SqIB0V"
+      ]
+    },
+    "decrypted": [
+      "moment had come. His"
+    ]
+  },
+  {
+    "name": "nested-format-acr",
+    "status": "200\tapplication/json",
+    "stderr": "",
+    "bytes": 119,
+    "prefix": "{\"searchContexts\":[\"smHOFWWLrdlZJxdxxpiw6w==aeRmTBZ2cDP7k5RY/wFuUg==gUVL+GskA0fe5VPET8lM73NARh6xjFUYSXg5q6R6JfT6zA+U\"]}",
+    "json": {
+      "searchContexts": [
+        "smHOFWWLrdlZJxdxxpiw6w==aeRmTBZ2cDP7k5RY/wFuUg==gUVL+GskA0fe5VPET8lM73NARh6xjFUYSXg5q6R6JfT6zA+U"
+      ]
+    },
+    "decrypted": [
+      "moment had come. His"
+    ]
+  }
+]

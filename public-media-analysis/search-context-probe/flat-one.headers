@@ -1,0 +1,18 @@
+HTTP/2 400 
+content-type: application/json
+content-length: 35
+server: Server
+date: Tue, 18 Aug 2026 00:53:09 GMT
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: 524JKPSYT3YCWS14RDM3
+x-amzn-requestid: f7bde52a-8dc9-4d2d-9bee-f55bf4d304bc
+x-amz-date: Tue, 18 Aug 2026 00:53:09 GMT
+x-amzn-errortype: SerializationException:http://internal.amazon.com/coral/com.amazon.coral.service/
+cache-control: no-cache
+vary: Accept-Encoding,User-Agent
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+x-cache: Error from cloudfront
+via: 1.1 6efd8d47e8fd7203eaeb7b77ffeb05c4.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: P-OsGARy-nLtpwZDt8UfbFwV46BvAspFFe2eicQtFSOAAGIRnxotwA==
+
