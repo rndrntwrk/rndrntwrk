@@ -1,0 +1,76 @@
+name: Run corrected Hunting Time BIP39 enumeration v3
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/run-corrected-bip39-enumeration-v3.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install HTTP client
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
+      - name: Extract, repair, validate, and run enumerator
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/bip39-corrected-pages-v2
+          rm -rf "$out"
+          mkdir -p "$out"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+          python - <<'PY'
+          from pathlib import Path
+
+          source = Path('.github/workflows/enumerate-bip39-corrected-print-pages-v2.yml').read_text()
+          start_marker = "          cat > /tmp/enumerate.py <<'PY'\n"
+          end_marker = "\n          PY\n"
+          start = source.index(start_marker) + len(start_marker)
+          end = source.index(end_marker, start)
+          lines = source[start:end].splitlines()
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          code = code.replace('nonlocal completed', 'global completed')
+          code = code.replace('content_type.split(\\";\\")', 'content_type.split(";")')
+          Path('/tmp/enumerate.py').write_text(code)
+          compile(code, '/tmp/enumerate.py', 'exec')
+          print('enumerator syntax validated')
+          PY
+          python /tmp/enumerate.py | tee "$out/console.txt"
+
+      - name: Upload enumeration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-bip39-corrected-pages-v3
+          path: public-media-analysis/bip39-corrected-pages-v2
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist compact result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/bip39-corrected-pages-v2/RUN_ID.txt || true
+          git add public-media-analysis/bip39-corrected-pages-v2/partial.json || true
+          git add public-media-analysis/bip39-corrected-pages-v2/summary.json || true
+          git add public-media-analysis/bip39-corrected-pages-v2/summary.md || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist corrected BIP39 enumeration v3 $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
