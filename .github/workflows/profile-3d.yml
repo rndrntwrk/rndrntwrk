@@ -37,46 +37,65 @@ jobs:
           git commit -m "Update 3D contribution graph"
           git push
 
-  hunting-time-pair-scan:
+  hunting-time-full-occurrence-scan:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
           ref: research/public-media-analysis
 
+      - name: Install HTTP dependency
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
       - name: Record workflow run
         run: |
-          mkdir -p public-media-analysis/target-page-pairs
-          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/target-page-pairs/RUN_ID.txt
+          mkdir -p public-media-analysis/full-paperback-bip39-occurrences
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/full-paperback-bip39-occurrences/RUN_ID.txt
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public-media-analysis/target-page-pairs/RUN_ID.txt
-          git commit -m "research: record pair scan $GITHUB_RUN_ID"
+          git add public-media-analysis/full-paperback-bip39-occurrences/RUN_ID.txt
+          git commit -m "research: record fixed occurrence scan $GITHUB_RUN_ID"
           git pull --rebase origin research/public-media-analysis
           git push origin HEAD:research/public-media-analysis
 
-      - name: Scan ordered anchor proximity
-        run: python scripts/hunting_time_pair_scan.py
+      - name: Extract, compile, and run reviewed enumerator
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          src = Path('.github/workflows/enumerate-full-paperback-bip39-occurrences.yml').read_text()
+          start_marker = "cat > /tmp/enumerate_all_occurrences.py <<'PY'\n"
+          start = src.index(start_marker) + len(start_marker)
+          end = src.index("\n          PY\n", start)
+          lines = src[start:end].splitlines()
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          Path('/tmp/enumerate_all_occurrences.py').write_text(code)
+          print('extracted', len(code), 'bytes')
+          PY
+          python -m py_compile /tmp/enumerate_all_occurrences.py
+          python /tmp/enumerate_all_occurrences.py | tee /tmp/full-occurrences.log
+          cp /tmp/full-occurrences.log public-media-analysis/full-paperback-bip39-occurrences/console.log
 
       - name: Upload complete scan
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hunting-time-anchor-pair-scan
-          path: public-media-analysis/target-page-pairs
+          name: hunting-time-full-paperback-bip39-occurrences
+          path: public-media-analysis/full-paperback-bip39-occurrences
           if-no-files-found: warn
           retention-days: 7
 
-      - name: Persist concise results
+      - name: Persist results
         if: always()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public-media-analysis/target-page-pairs/pair-results.json || true
-          git add public-media-analysis/target-page-pairs/pair-results.md || true
+          git add public-media-analysis/full-paperback-bip39-occurrences || true
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "research: persist pair scan $GITHUB_RUN_ID"
+          git commit -m "research: persist fixed full occurrence scan $GITHUB_RUN_ID"
           git pull --rebase origin research/public-media-analysis
           git push origin HEAD:research/public-media-analysis
