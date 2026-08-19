@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 04:29:05 GMT
+date: Wed, 19 Aug 2026 04:31:08 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 9DX6CDGKCMJXQTBYD6RE
+x-amz-rid: SA6J3S3FVCRA8Z08SDE6
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 8a2526db76c9941bb9c29974d0546474.cloudfront.net (CloudFront)
+via: 1.1 fe187ea749e98273cf22180445286f22.cloudfront.net (CloudFront)
 x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: wKztiNKo_fPP9UhYjrvenPmR40omMcLhqRmklajy_kPliDp-1XfK-g==
+x-amz-cf-id: 28gFZSKlicmPcGE3RiXvS1KqpeeU_8nJCVTNb2eTd5rqTHZ0JZ4dZw==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 04:29:05 GMT
+Date: Wed, 19 Aug 2026 04:31:08 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 12409897d51c21c0f6259727b8d42890.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD61-P9
+Via: 1.1 58c3ce6e485adff4a9658be41214af94.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD55-P10
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: azsBd7qdG6ee6o6R19UsbnastKCkDoCRWv1lpcn1g6Dw5ONLz2g5cQ==
+X-Amz-Cf-Id: 6_kA1iYzSWQCukBOUw8wUaGhRmovQgqUW1YpvoeHwxrDOYpFK_v-qw==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 04:29:05 GMT
+date: Wed, 19 Aug 2026 04:31:08 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: D5YKAPKKK5WNZJHHPEGB
+x-amz-rid: 7PKZEZ7S3PTSZ92DPWSE
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 07d5eec4594a9bae53f5a0be90a3425a.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD61-P9
+via: 1.1 dd02f81d770406d1d5f9d2e199b1cd1a.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: kpyiqcFmCSp0S9KguS1OXd7LO2bFy__JNUkm8jEdjsLmzM5kEM-GQw==
+x-amz-cf-id: 91d7swpSiwPsSs947JdnfPjzEKh4Hw1A2SulZtfmRV7hg6zRHqo81Q==
 

@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 04:29:05 GMT
+date: Wed, 19 Aug 2026 04:31:08 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: WWJSQHHKX9735ZK958PS
+x-amz-rid: NS0HV6XRN0WA0FN61A0K
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 5e79d089f5701b7938b599fdf4db1b52.cloudfront.net (CloudFront)
+via: 1.1 1e5d213252e38a8aa2e2a927fd3c3754.cloudfront.net (CloudFront)
 x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: 102DgbrvJCDzMBBKtBFfpAfsqv4tTNTCGX8UrqERR-pdWTMKG4wNHg==
+x-amz-cf-id: 0Z9o2C61zbQm8NXGIlniRNTdprxq3rMk3MH8CEfKTVRV8Q6O2LQyQg==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 04:29:05 GMT
+Date: Wed, 19 Aug 2026 04:31:08 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 5cac25c3f8a8e7707f05f3c2c47aa970.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD61-P9
+Via: 1.1 d334ff04d1eeafd1a1eff8d2e5fe0eb4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD55-P10
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: ADR7-Y9BSwFUD6X7FCtHK-Mkbg91_T1AJrXuwr4DW4bfWs7nZQ4nGw==
+X-Amz-Cf-Id: zkNRq7yZoZd_0-xszPluehKvjhnJlkh8oMpfPOJqKoHU8Cz8zMFGgg==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 04:29:05 GMT
+date: Wed, 19 Aug 2026 04:31:08 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: WGT6YVXX1242PQSD0WA4
+x-amz-rid: WTQF51A9A4BVFAY535EN
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 8dfd154588604bd0d1afc174cea90fae.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD61-P9
+via: 1.1 081bf13eb62524432344903c8901ed1e.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: 6kMhXKKxpgTJlWSGhX8TBGeXEeWVzfuG1Vr5Xw4_0uYOl_i6Zd7BAA==
+x-amz-cf-id: GVnJW1XSPE0x6SZyfta_23CDOF4NXzj_YSFCxK1gHwT_8GGTjJq-KA==
 
