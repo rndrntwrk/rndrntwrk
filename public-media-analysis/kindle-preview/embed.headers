@@ -2,38 +2,34 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 04:02:24 GMT
+date: Wed, 19 Aug 2026 04:05:56 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: WDSEXX7GZDP1KD90646K
+x-amz-rid: BXJYXW1X2X1NAH2BF2ZQ
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 7be60d02009d61b26bbf43fa8ade0eca.cloudfront.net (CloudFront)
+via: 1.1 d05c9456285ce343da7f437308d5947e.cloudfront.net (CloudFront)
 x-amz-cf-pop: DFW59-P7
-x-amz-cf-id: ZhNJOsOxs1aPkNrNRh5q_OL6HQT0gHaqOROWPdc-g9uQbeFIm6SoFQ==
+x-amz-cf-id: DvpPHigTK_KtDcVpI2Dc2g28WOPlGS4kb7i1aF9p-XA6fIV30Asc6w==
 
 HTTP/1.1 301 Moved Permanently
-Server: CloudFront
-Date: Wed, 19 Aug 2026 04:02:24 GMT
-Content-Type: text/html
-Content-Length: 167
-Connection: keep-alive
+Server: AkamaiGHost
+Content-Length: 0
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-X-Cache: Redirect from cloudfront
-Via: 1.1 e91983916bae26f33ca40ee48e1def62.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: DFW57-P8
-Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: OGV1Q8jDoyb63FwqeMiS-tYwgHAE_j_e3JCQbqF6MKg2Kc20CwgbQw==
+Date: Wed, 19 Aug 2026 04:05:57 GMT
+Connection: keep-alive
+Akamai-Request-BC: [a=23.201.106.234,b=3084017310,c=g,n=US_TX_DALLAS,o=20940]
+X-Amzn-Cdn-Id: ak-0.ea6ac917.1787112357.b7d25e9e
+X-Cache: NotCacheable from child
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 04:02:24 GMT
+x-amz-rid: 4TCGG80ZM2A7TQDYZP0C
+cache-control: no-cache
 pragma: no-cache
 expires: -1
-x-amz-rid: 07HNC3H6M8A9TCSG5JB9
-cache-control: no-cache
-x-cache: Error from cloudfront
-via: 1.1 f16991a19cc348d88a5c4397ded6f796.cloudfront.net (CloudFront)
-x-amz-cf-pop: DFW57-P8
-alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: T_6eb2S4zObVTUv4zL6r2-NNHDe9WLHFjeaenuQndN7kavU_Fb0leA==
+date: Wed, 19 Aug 2026 04:05:57 GMT
+alt-svc: h3=":443"; ma=93600
+akamai-request-bc: [a=23.201.106.234,b=3084017674,c=g,n=US_TX_DALLAS,o=20940],[c=o]
+x-amzn-cdn-id: ak-0.ea6ac917.1787112357.b7d2600a
+x-cache: NotCacheable from child
 
