@@ -1,0 +1,21 @@
+HTTP/2 400 
+content-type: application/json
+content-length: 35
+server: Server
+date: Wed, 19 Aug 2026 04:22:24 GMT
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: P8DMRZF8GMFNYK0T8BYY
+x-amzn-requestid: 08277559-cd2f-43bc-8b16-20b5e1d360dc
+x-amz-date: Wed, 19 Aug 2026 04:22:24 GMT
+access-control-allow-origin: https://read.amazon.com
+x-amzn-errortype: SerializationException:http://internal.amazon.com/coral/com.amazon.coral.service/
+cache-control: no-cache
+access-control-expose-headers: x-amzn-Remapped-Content-Length,x-amzn-sk-cdn,x-amzn-sk-cdn-auth,X-ADP-Session-Token
+access-control-allow-credentials: true
+vary: Origin,Accept-Encoding,User-Agent
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+x-cache: Error from cloudfront
+via: 1.1 c738be87603e90cfc8c27e842b82a9d4.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: qmcZpQz4dpJak_ucCE153vsOaKJqfqMYrq-1XGNTu4JWag2ahCr03A==
+

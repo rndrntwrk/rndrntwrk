@@ -1,0 +1,20 @@
+HTTP/2 200 
+content-type: application/json
+content-length: 123
+server: Server
+date: Wed, 19 Aug 2026 04:22:23 GMT
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: F9W6JY55Q5DD2E43DS38
+x-amzn-requestid: 7b94cbd8-f944-42ba-9337-cfa9c0c66134
+x-amz-date: Wed, 19 Aug 2026 04:22:23 GMT
+access-control-allow-origin: https://read.amazon.com
+cache-control: no-cache
+access-control-expose-headers: x-amzn-Remapped-Content-Length,x-amzn-sk-cdn,x-amzn-sk-cdn-auth,X-ADP-Session-Token
+access-control-allow-credentials: true
+vary: Origin,Accept-Encoding,User-Agent
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+x-cache: Miss from cloudfront
+via: 1.1 6a1e43c7e8523dfb0378fa16c9f34f70.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: P4TK46mQFhaRv7hdz3S59O4Ls6UrG1sYFO4QyjYPS7FCjJkQMVMeDA==
+
