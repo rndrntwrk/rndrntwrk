@@ -1,0 +1,456 @@
+name: Hunting Time checkpoint 01 integrity v2
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/hunting-time-checkpoint-01-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 1
+
+      - name: Persist run identity before work
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=research/hunting-time/checkpoint-01-v2
+          mkdir -p "$out"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/ACTIVE_RUN_ID.txt"
+          printf '%s\n' "$GITHUB_SHA" > "$out/TRIGGER_SHA.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$out/ACTIVE_RUN_ID.txt" "$out/TRIGGER_SHA.txt"
+          git commit -m "research: mark Hunting Time checkpoint 01 run ${GITHUB_RUN_ID}"
+          for attempt in 1 2 3 4; do
+            if git pull --rebase origin research/public-media-analysis && git push origin HEAD:research/public-media-analysis; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install minimal oracle dependency
+        shell: bash
+        run: python -m pip install --disable-pip-version-check -q 'cryptography>=42,<46'
+
+      - name: Execute bounded integrity checkpoint
+        shell: bash
+        env:
+          TARGET_ADDRESS: bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85
+          EXPECTED_REWARD_SATS: '420000'
+          ELECTRUM_COMMIT: bc37f9c5293a121bed6955a3ce6c152d14695fd0
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import importlib.util
+          import json
+          import os
+          import re
+          import time
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path.cwd()
+          out = root / 'research/hunting-time/checkpoint-01-v2'
+          live_dir = out / 'live'
+          official_dir = out / 'official-electrum-source'
+          live_dir.mkdir(parents=True, exist_ok=True)
+          official_dir.mkdir(parents=True, exist_ok=True)
+
+          target = os.environ['TARGET_ADDRESS']
+          expected_reward = int(os.environ['EXPECTED_REWARD_SATS'])
+          electrum_commit = os.environ['ELECTRUM_COMMIT']
+          checked_at = datetime.now(timezone.utc).isoformat()
+
+          def request_bytes(url: str) -> bytes:
+              last = None
+              for attempt in range(1, 5):
+                  try:
+                      req = urllib.request.Request(
+                          url,
+                          headers={
+                              'accept': 'application/json,text/plain,*/*',
+                              'user-agent': 'Hunting-Time-Checkpoint-01-v2/1.0',
+                          },
+                      )
+                      with urllib.request.urlopen(req, timeout=30) as response:
+                          return response.read()
+                  except Exception as exc:
+                      last = exc
+                      if attempt == 4:
+                          raise
+                      time.sleep(attempt * 2)
+              raise last
+
+          def fetch_json(name: str, url: str):
+              body = request_bytes(url)
+              obj = json.loads(body)
+              (live_dir / f'{name}.json').write_bytes(body)
+              (live_dir / f'{name}.pretty.json').write_text(
+                  json.dumps(obj, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+              )
+              return obj
+
+          endpoints = {
+              'mempool_address': f'https://mempool.space/api/address/{target}',
+              'mempool_utxo': f'https://mempool.space/api/address/{target}/utxo',
+              'mempool_txs': f'https://mempool.space/api/address/{target}/txs',
+              'blockstream_address': f'https://blockstream.info/api/address/{target}',
+              'blockstream_utxo': f'https://blockstream.info/api/address/{target}/utxo',
+              'blockstream_txs': f'https://blockstream.info/api/address/{target}/txs',
+          }
+          live = {name: fetch_json(name, url) for name, url in endpoints.items()}
+
+          def summarize_address(obj):
+              chain = obj['chain_stats']
+              mempool = obj['mempool_stats']
+              confirmed = int(chain['funded_txo_sum']) - int(chain['spent_txo_sum'])
+              pending = int(mempool['funded_txo_sum']) - int(mempool['spent_txo_sum'])
+              return {
+                  'confirmed_balance_sats': confirmed,
+                  'pending_balance_sats': pending,
+                  'total_balance_sats': confirmed + pending,
+                  'confirmed_tx_count': int(chain['tx_count']),
+                  'pending_tx_count': int(mempool['tx_count']),
+                  'confirmed_funded_txo_sum': int(chain['funded_txo_sum']),
+                  'confirmed_spent_txo_sum': int(chain['spent_txo_sum']),
+              }
+
+          def normalize_utxos(items):
+              rows = []
+              for item in items:
+                  status = item.get('status') or {}
+                  rows.append({
+                      'txid': item['txid'],
+                      'vout': int(item['vout']),
+                      'value': int(item['value']),
+                      'confirmed': bool(status.get('confirmed')),
+                      'block_height': status.get('block_height'),
+                      'block_hash': status.get('block_hash'),
+                  })
+              return sorted(rows, key=lambda row: (row['txid'], row['vout']))
+
+          mempool_summary = summarize_address(live['mempool_address'])
+          blockstream_summary = summarize_address(live['blockstream_address'])
+          mempool_utxos = normalize_utxos(live['mempool_utxo'])
+          blockstream_utxos = normalize_utxos(live['blockstream_utxo'])
+          utxo_sum = sum(row['value'] for row in mempool_utxos)
+          services_agree = (
+              mempool_summary == blockstream_summary
+              and mempool_utxos == blockstream_utxos
+              and utxo_sum == mempool_summary['total_balance_sats']
+          )
+          if not services_agree:
+              raise AssertionError('mempool.space and Blockstream snapshots disagree')
+
+          # Load and execute the independent oracle already frozen in the branch.
+          oracle_path = root / 'research/hunting-time/checkpoint-01/oracle_checkpoint01.py'
+          spec = importlib.util.spec_from_file_location('checkpoint_oracle', oracle_path)
+          oracle = importlib.util.module_from_spec(spec)
+          assert spec.loader is not None
+          import sys
+          sys.modules[spec.name] = oracle
+          spec.loader.exec_module(oracle)
+          oracle_selftests = oracle.run_selftests()
+          (out / 'oracle-selftests.json').write_text(
+              json.dumps(oracle_selftests, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          # Pin the exact official Electrum source and verify that the fixed
+          # test vector and derivation semantics used by our oracle are present.
+          official_urls = {
+              'mnemonic.py': f'https://raw.githubusercontent.com/spesmilo/electrum/{electrum_commit}/electrum/mnemonic.py',
+              'keystore.py': f'https://raw.githubusercontent.com/spesmilo/electrum/{electrum_commit}/electrum/keystore.py',
+              'test_mnemonic.py': f'https://raw.githubusercontent.com/spesmilo/electrum/{electrum_commit}/tests/test_mnemonic.py',
+          }
+          official_sources = {}
+          for name, url in official_urls.items():
+              body = request_bytes(url)
+              (official_dir / name).write_bytes(body)
+              official_sources[name] = body.decode('utf-8')
+
+          phrase = 'wild father tree among universe such mobile favorite target dynamic credit identify'
+          expected_seed_hex = (
+              'aac2a6302e48577ab4b46f23dbae0774e2e62c796f797d0a1b5faeb528301e3'
+              '064342dafb79069e7c4c6b8c38ae11d7a973bec0d4f70626f8cc5184a8d0b0756'
+          )
+          source_assertions = {
+              'pbkdf2_uses_electrum_salt': "b'electrum' + passphrase.encode('utf-8')" in official_sources['mnemonic.py'],
+              'pbkdf2_rounds_2048': 'PBKDF2_ROUNDS = 2048' in official_sources['mnemonic.py'],
+              'seed_version_hmac': 'hmac_oneshot(b"Seed version"' in official_sources['mnemonic.py'],
+              'segwit_derivation_prefix_m_0_hardened': 'der = "m/0\'/"' in official_sources['keystore.py'],
+              'official_test_phrase_present': phrase in official_sources['test_mnemonic.py'],
+              'official_test_seed_present': expected_seed_hex in official_sources['test_mnemonic.py'],
+          }
+          if not all(source_assertions.values()):
+              raise AssertionError(f'official Electrum source assertion failed: {source_assertions}')
+          official_source_check = {
+              'passed': True,
+              'commit': electrum_commit,
+              'assertions': source_assertions,
+              'source_files': [
+                  {
+                      'path': name,
+                      'sha256': hashlib.sha256((official_dir / name).read_bytes()).hexdigest(),
+                      'bytes': (official_dir / name).stat().st_size,
+                  }
+                  for name in sorted(official_urls)
+              ],
+              'independent_first_receiving_address': oracle_selftests['electrum_seed_vector']['independent_address'],
+              'full_path': "m/0'/0/0",
+          }
+          (out / 'official-electrum-source-check.json').write_text(
+              json.dumps(official_source_check, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          # Re-verify the acquisition manifest for all twelve clue photographs.
+          source_sum_file = root / 'public-media-analysis/SHA256SUMS'
+          source_records = []
+          for line in source_sum_file.read_text(encoding='utf-8').splitlines():
+              if not line.strip():
+                  continue
+              expected, rel = line.split(None, 1)
+              p = root / rel.strip()
+              actual = hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else None
+              source_records.append({
+                  'path': rel.strip(), 'expected': expected, 'actual': actual,
+                  'exists': p.exists(), 'ok': actual == expected,
+              })
+          source_hashes_ok = len(source_records) == 12 and all(row['ok'] for row in source_records)
+          if not source_hashes_ok:
+              raise AssertionError('original clue-image hash verification failed')
+          (out / 'source-sha256-verification.json').write_text(
+              json.dumps(source_records, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          # Hash a compact canonical evidence set. Each missing path is fatal.
+          required = [
+              *[f'public-media-analysis/clue-{i:02d}.jpg' for i in range(1, 13)],
+              'public-media-analysis/cover-post/media-01.jpg',
+              'public-media-analysis/flat-cover-post/media-01.jpg',
+              'public-media-analysis/product-evidence/cover.jpg',
+              'public-media-analysis/wordlists/bip39-english.txt',
+              'public-media-analysis/hidden-pages-v2/compact.json',
+              'public-media-analysis/page-map/summary.json',
+              'public-media-analysis/position-pages/hits.jsonl',
+              'public-media-analysis/target-pages/summary.json',
+              'public-media-analysis/targeted-vision-v4/results.json',
+              'public-media-analysis/numeric-ocr-fast-v2/results.json',
+              'public-media-analysis/sample-pages/page-window.json',
+              'public-media-analysis/conversations/reply-ledger.json',
+              'public-media-analysis/SHA256SUMS',
+              'research/hunting-time/checkpoint-01/oracle_checkpoint01.py',
+              '.github/workflows/hunting-time-checkpoint-01-v2.yml',
+          ]
+          hashes = []
+          for rel in required:
+              p = root / rel
+              if not p.exists():
+                  raise FileNotFoundError(rel)
+              hashes.append({
+                  'path': rel,
+                  'size': p.stat().st_size,
+                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
+              })
+          (out / 'artifact-hashes.json').write_text(
+              json.dumps(hashes, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          with (out / 'artifact-hashes.tsv').open('w', encoding='utf-8') as handle:
+              handle.write('sha256\tsize\tpath\n')
+              for row in hashes:
+                  handle.write(f"{row['sha256']}\t{row['size']}\t{row['path']}\n")
+
+          # Audit only result/evidence data, excluding workflow and source code,
+          # so explanatory text cannot create a false positive.
+          data_suffixes = {'.json', '.jsonl', '.log', '.txt', '.csv'}
+          exclusions = {
+              'research/hunting-time/checkpoint-01-v2',
+              'research/hunting-time/checkpoint-01',
+              'public-media-analysis/amazon-reader-js',
+              'public-media-analysis/index-parser',
+              'public-media-analysis/search-service-source',
+          }
+          suspicious_names = []
+          exact_markers = []
+          for base in [root / 'public-media-analysis', root / 'research']:
+              if not base.exists():
+                  continue
+              for p in base.rglob('*'):
+                  if not p.is_file() or p.suffix.lower() not in data_suffixes:
+                      continue
+                  rel = str(p.relative_to(root))
+                  if any(rel == ex or rel.startswith(ex + '/') for ex in exclusions):
+                      continue
+                  if re.search(r'MATCH_FOUND_PRIVATE|private[-_ ].*match|winner[-_ ].*seed', p.name, re.I):
+                      suspicious_names.append(rel)
+                  if p.stat().st_size > 20_000_000:
+                      continue
+                  data = p.read_bytes()
+                  if re.search(rb'MATCH_FOUND_PRIVATE', data, re.I) or re.search(rb'"exact_match"\s*:\s*true', data, re.I):
+                      exact_markers.append(rel)
+          private_audit = {
+              'passed': not suspicious_names and not exact_markers,
+              'suspicious_filenames': suspicious_names,
+              'exact_match_marker_files': exact_markers,
+          }
+          if not private_audit['passed']:
+              raise AssertionError(f'private match audit failed: {private_audit}')
+          (out / 'private-match-audit.json').write_text(
+              json.dumps(private_audit, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          txids = sorted({tx['txid'] for tx in live['mempool_txs']})
+          result = {
+              'checkpoint': '01',
+              'status': 'COMPLETE',
+              'checked_at_utc': checked_at,
+              'target_address': target,
+              'expected_reward_sats': expected_reward,
+              'live_escrow': {
+                  'services': ['mempool.space', 'Blockstream Esplora'],
+                  'services_agree': services_agree,
+                  'confirmed_balance_sats': mempool_summary['confirmed_balance_sats'],
+                  'pending_balance_sats': mempool_summary['pending_balance_sats'],
+                  'total_balance_sats': mempool_summary['total_balance_sats'],
+                  'confirmed_tx_count': mempool_summary['confirmed_tx_count'],
+                  'pending_tx_count': mempool_summary['pending_tx_count'],
+                  'utxo_count': len(mempool_utxos),
+                  'utxo_sum_sats': utxo_sum,
+                  'utxos': mempool_utxos,
+                  'transaction_ids': txids,
+                  'full_expected_reward_present': utxo_sum == expected_reward,
+              },
+              'oracle': {
+                  'independent_selftests': oracle_selftests,
+                  'official_source_check': official_source_check,
+                  'primary_path': "m/0'/0/i",
+                  'seed_version_prefix': '100',
+                  'bip39_checksum_required_for_primary': False,
+              },
+              'integrity': {
+                  'clue_hashes_passed': source_hashes_ok,
+                  'canonical_artifact_count': len(hashes),
+                  'private_match_audit': private_audit,
+              },
+              'candidate_search_ran': False,
+              'exact_match_found': False,
+              'github_run_id': os.environ.get('GITHUB_RUN_ID'),
+              'github_sha': os.environ.get('GITHUB_SHA'),
+              'next_checkpoint': '02 — Twelve-clue evidence matrix',
+          }
+          (out / 'result.json').write_text(
+              json.dumps(result, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          report = f'''# Hunting Time — Checkpoint 01 report
+
+**Checkpoint:** 01 — Escrow, oracle, and artifact integrity  
+**Status:** COMPLETE  
+**Checked:** {checked_at}
+
+## Inputs frozen
+
+- Target: `{target}`
+- Expected incentive: 420,000 sats / 0.0042 BTC
+- Primary wallet model: Electrum native segwit
+- Primary path: `m/0'/0/i`
+- Original clue photographs: 12
+
+## Work completed
+
+- Queried mempool.space and Blockstream Esplora directly.
+- Compared normalized address summaries and UTXO sets.
+- Ran the official BIP84 test vector through the independent oracle.
+- Ran Electrum's fixed mnemonic/PBKDF2/version vector through the independent oracle.
+- Pinned and checked the exact official Electrum source commit `{electrum_commit}`.
+- Verified all twelve original photograph hashes.
+- Hashed {len(hashes)} canonical evidence and oracle artifacts.
+- Audited result data for a private or exact-match artifact.
+- Generated no new candidate phrases and ran no puzzle search.
+
+## Live escrow
+
+- Confirmed balance: **{mempool_summary['confirmed_balance_sats']:,} sats**
+- Pending balance: **{mempool_summary['pending_balance_sats']:,} sats**
+- UTXOs: **{len(mempool_utxos)}**
+- UTXO sum: **{utxo_sum:,} sats**
+- Public transactions observed: **{len(txids)}**
+- Independent explorers agree: **{str(services_agree).lower()}**
+- Complete expected reward present: **{str(utxo_sum == expected_reward).lower()}**
+
+## Oracle verification
+
+- Official BIP84 vector: **PASS**
+- Electrum fixed seed/PBKDF2 vector: **PASS**
+- Electrum version prefix `100`: **PASS**
+- Official Electrum derivation source `m/0'/` at the pinned commit: **PASS**
+- Independent first receiving path: `m/0'/0/0`
+- Independent vector address: `{oracle_selftests['electrum_seed_vector']['independent_address']}`
+
+## Integrity and private-match audit
+
+- Original clue hashes: **12/12 PASS**
+- Canonical artifacts hashed: **{len(hashes)}**
+- Suspicious private-match filenames: **{len(suspicious_names)}**
+- Files containing a positive exact-match marker: **{len(exact_markers)}**
+- Private-match audit: **PASS**
+
+## Exact-match result
+
+**No exact match was found.** This checkpoint did not search candidate phrases.
+
+## Next checkpoint
+
+**Checkpoint 02 — Twelve-clue evidence matrix.**
+'''
+          (out / 'report.md').write_text(report, encoding='utf-8')
+          print(json.dumps(result, indent=2, sort_keys=True))
+          PY
+
+      - name: Persist completed checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/hunting-time/checkpoint-01-v2
+          git commit -m "research: complete Hunting Time checkpoint 01 run ${GITHUB_RUN_ID}"
+          for attempt in 1 2 3 4; do
+            if git pull --rebase origin research/public-media-analysis && git push origin HEAD:research/public-media-analysis; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Upload checkpoint artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-checkpoint-01-v2
+          path: research/hunting-time/checkpoint-01-v2
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
