@@ -1,0 +1,152 @@
+name: Crypto puzzle reward-risk preflight
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/crypto-puzzle-rr-preflight.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Query live escrows
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research/puzzle-rr-preflight
+          cat > /tmp/preflight.py <<'PY'
+          import datetime, json, time, urllib.parse, urllib.request
+          from pathlib import Path
+
+          UA = 'open-crypto-puzzles reward-risk preflight/1.0'
+          OUT = Path('research/puzzle-rr-preflight')
+
+          def get(url, retries=3):
+              last = None
+              for attempt in range(1, retries + 1):
+                  try:
+                      req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json,text/plain,*/*'})
+                      with urllib.request.urlopen(req, timeout=25) as r:
+                          raw = r.read()
+                          text = raw.decode('utf-8', 'replace')
+                          try: body = json.loads(text)
+                          except Exception: body = text.strip()
+                          return {'ok': True, 'status': r.status, 'url': url, 'body': body}
+                  except Exception as e:
+                      last = repr(e)
+                      time.sleep(attempt)
+              return {'ok': False, 'url': url, 'error': last}
+
+          btc = {
+              'gsmg_small': '1GSMG1JC9wtdSwfwApgj2xcmJPAwx7prBe',
+              'gsmg_dualite': '17ucy1K9ZUAaoY6JVtM932W9jUp5LXfyHa',
+              'aoi_big': '14zMkTgaVXJcxdh4JdWi29MLRR44iUSG9W',
+              'aoi_76': '13Cv6SXUnzGDT8JHqzzJ8xMPtsSdhJA4wd',
+              'blm_collage': '1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ',
+              'glimmer': 'bc1q0akdjvrc2csau2n3gyxa3xcq0fss852x997m9y',
+          }
+          eth = {
+              'guntis': '0x9C2F44EFAd0c1E852a09dF9939e6DaF061140CaF',
+              'arweave_11': '0xFF2142E98E09b5344994F9bEB9C56C95506B9F17',
+              'fe_registry': '0x71fB6afcD98c5BD611712ad4b8D314EF729aa69D',
+          }
+          base = {
+              'logicbeach': '0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd',
+          }
+          ar = {
+              'arweave_3': 'wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0',
+          }
+
+          result = {
+              'schema_version': 1,
+              'checked_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'btc': {}, 'ethereum': {}, 'base': {}, 'arweave': {},
+          }
+
+          for name, addr in btc.items():
+              a = get(f'https://mempool.space/api/address/{addr}')
+              u = get(f'https://mempool.space/api/address/{addr}/utxo')
+              rec = {'address': addr, 'address_response': a, 'utxo_response': u}
+              if a.get('ok') and isinstance(a.get('body'), dict):
+                  b = a['body']; cs = b.get('chain_stats', {}); ms = b.get('mempool_stats', {})
+                  rec['confirmed_balance_sats'] = cs.get('funded_txo_sum', 0) - cs.get('spent_txo_sum', 0)
+                  rec['unconfirmed_delta_sats'] = ms.get('funded_txo_sum', 0) - ms.get('spent_txo_sum', 0)
+                  rec['balance_sats'] = rec['confirmed_balance_sats'] + rec['unconfirmed_delta_sats']
+                  rec['tx_count'] = cs.get('tx_count', 0) + ms.get('tx_count', 0)
+              if u.get('ok') and isinstance(u.get('body'), list):
+                  rec['utxo_count'] = len(u['body'])
+                  rec['utxo_total_sats'] = sum(x.get('value', 0) for x in u['body'])
+              result['btc'][name] = rec
+
+          for name, addr in eth.items():
+              q = urllib.parse.urlencode({'module':'account','action':'balance','address':addr})
+              r = get('https://eth.blockscout.com/api?' + q)
+              rec = {'address': addr, 'response': r}
+              if r.get('ok') and isinstance(r.get('body'), dict):
+                  try:
+                      wei = int(r['body'].get('result', '0'))
+                      rec['balance_wei'] = wei
+                      rec['balance_eth'] = wei / 10**18
+                  except Exception: pass
+              result['ethereum'][name] = rec
+
+          for name, addr in base.items():
+              q = urllib.parse.urlencode({'module':'account','action':'balance','address':addr})
+              r = get('https://base.blockscout.com/api?' + q)
+              rec = {'address': addr, 'response': r}
+              if r.get('ok') and isinstance(r.get('body'), dict):
+                  try:
+                      wei = int(r['body'].get('result', '0'))
+                      rec['balance_wei'] = wei
+                      rec['balance_eth'] = wei / 10**18
+                  except Exception: pass
+              result['base'][name] = rec
+
+          for name, addr in ar.items():
+              r = get(f'https://arweave.net/wallet/{addr}/balance')
+              rec = {'address': addr, 'response': r}
+              if r.get('ok'):
+                  try:
+                      winston = int(r['body'])
+                      rec['balance_winston'] = winston
+                      rec['balance_ar'] = winston / 10**12
+                  except Exception: pass
+              result['arweave'][name] = rec
+
+          (OUT / 'live-balances.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+
+          rows = []
+          for chain in ('btc','ethereum','base','arweave'):
+              for name, rec in result[chain].items():
+                  bal = rec.get('balance_sats', rec.get('balance_eth', rec.get('balance_ar')))
+                  unit = 'sats' if chain == 'btc' else ('ETH' if chain in ('ethereum','base') else 'AR')
+                  rows.append((name, chain, rec['address'], bal, unit, rec.get('utxo_count', '')))
+          md = ['# Live crypto-puzzle reward preflight', '', f"Checked: `{result['checked_at_utc']}`", '', '| Candidate | Chain | Address | Live balance | UTXOs |', '|---|---|---|---:|---:|']
+          for name, chain, addr, bal, unit, utxos in rows:
+              md.append(f'| {name} | {chain} | `{addr}` | {bal} {unit} | {utxos} |')
+          (OUT / 'live-balances.md').write_text('\n'.join(md) + '\n', encoding='utf-8')
+          print('\n'.join(md))
+          PY
+          python /tmp/preflight.py
+
+      - name: Persist preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/puzzle-rr-preflight/live-balances.json research/puzzle-rr-preflight/live-balances.md
+          git commit -m "research: persist live puzzle reward preflight $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
