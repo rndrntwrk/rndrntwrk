@@ -1,0 +1,94 @@
+name: Probe corrected Hunting Time semantic candidates
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-corrected-target-semantics.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe corrected semantic candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/corrected-semantic-probe
+          rm -rf "$out"; mkdir -p "$out/raw"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+          cat > /tmp/probe.py <<'PY'
+          import json, subprocess, urllib.parse
+          from pathlib import Path
+          out=Path('public-media-analysis/corrected-semantic-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/sample/B0FRGB2PMR?clientId=share'
+          endpoint='https://read.amazon.com/sample/print/position-data'
+          pages={
+            14:(23,['black','group','blue','sea','sunset','memory','perfect','ocean','record','way']),
+            19:(28,['device','machine','network','position','advance','attack','angle','blue','calm','connect','radio']),
+            21:(30,['group','pair','aim','machine','steel','attack','air','journey','jungle','enemy','unit']),
+            24:(33,['surface','world','time','edge','whale','blue','orange','current','prize','turtle','wall']),
+            32:(41,['road','car','wall','window','screen','mobile','light','stone','trip']),
+            103:(112,['time','wrist','hour','minute','second','clock','dial','jungle','forest','tree','green','watch','view','screen','target','camera','image','feed','display','monitor','flight','position','night','air','signal','heat','white','red','track','tracking','component','drone']),
+            110:(119,['vehicle','car','truck','drive','wheel','road','door','window','engine','machine','green','forest','jungle','defender','rover','land','transport','mud','path','trail','offroad','jeep']),
+            241:(250,['pilot','flight','control','panel','switch','power','engine','air','screen','dial','machine','device','black','cabin','gauge','monitor','display','cockpit','aircraft','rotor','instrument','number','sky','helicopter']),
+          }
+          # bootstrap cookie jar
+          subprocess.run(['curl','-L','--compressed','--retry','2','-sS','-A',ua,'-c',str(out/'cookies.txt'),card,'-o',str(out/'card.html')],check=True)
+          results=[]; hits={}
+          for printed,(page,queries) in pages.items():
+            hits[str(printed)]=[]
+            for q in queries:
+              params={'asin':'B0FRGB2PMR','query':q,'token':'null','page':str(page)}
+              url=endpoint+'?'+urllib.parse.urlencode(params)
+              p=subprocess.run(['curl','-L','--compressed','--retry','2','--max-time','25','-sS','-A',ua,'-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),'-e',card,'-H','Accept: application/json',url],capture_output=True)
+              rec={'printed_page':printed,'endpoint_page':page,'query':q,'returncode':p.returncode,'bytes':len(p.stdout)}
+              try:
+                obj=json.loads(p.stdout); rec['json']=obj
+                hs=obj.get('highlights') if isinstance(obj,dict) else None
+                count=sum(len(v) for v in hs.values() if isinstance(v,list)) if isinstance(hs,dict) else 0
+                rec['highlight_count']=count
+                if count: hits[str(printed)].append(q)
+              except Exception as e:
+                rec['error']=repr(e); rec['prefix']=p.stdout[:200].decode('utf-8','replace')
+              results.append(rec)
+          summary={'run_id':None,'hits':hits,'results_count':len(results)}
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          print(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          python /tmp/probe.py | tee "$out/console.txt"
+
+      - name: Upload semantic probe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-corrected-semantic-probe
+          path: public-media-analysis/corrected-semantic-probe
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist semantic probe
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/corrected-semantic-probe/summary.json public-media-analysis/corrected-semantic-probe/RUN_ID.txt || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist corrected semantic probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
