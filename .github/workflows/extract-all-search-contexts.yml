@@ -1,0 +1,145 @@
+name: Extract indexed search contexts
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-all-search-contexts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install parser dependencies
+        run: python -m pip install --disable-pip-version-check -q cryptography requests
+
+      - name: Decode index and request all public contexts
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf public-media-analysis/all-search-contexts
+          mkdir -p public-media-analysis/all-search-contexts
+          cat > /tmp/extract_contexts.py <<'PY'
+          from __future__ import annotations
+          import base64, io, json, struct, time, zipfile
+          from pathlib import Path
+          import requests
+          from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+          from cryptography.hazmat.primitives.padding import PKCS7
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+          root=Path('public-media-analysis/all-search-contexts')
+          meta=json.loads(Path('public-media-analysis/search-index-extracted/metadata.json').read_text())
+          s=requests.Session()
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          s.headers.update({'User-Agent':ua,'Accept':'application/json','Referer':'https://read.amazon.com/sample/B0FK7RBDFL?clientId=share','Origin':'https://read.amazon.com'})
+          s.get('https://read.amazon.com/sample/B0FK7RBDFL?clientId=share',timeout=30)
+
+          encrypted=s.get(meta['s3Url'],timeout=60).content
+          key=base64.b64decode(meta['decryptionKey']); iv=base64.b64decode(meta['decryptionIV'])
+          dec=Cipher(algorithms.AES(key),modes.CBC(iv)).decryptor().update(encrypted)+Cipher(algorithms.AES(key),modes.CBC(iv)).decryptor().finalize() if False else None
+          decryptor=Cipher(algorithms.AES(key),modes.CBC(iv)).decryptor()
+          padded=decryptor.update(encrypted)+decryptor.finalize()
+          unpad=PKCS7(128).unpadder(); clear=unpad.update(padded)+unpad.finalize()
+          z=zipfile.ZipFile(io.BytesIO(clear))
+          names=z.namelist()
+          words_name=next(x for x in names if x.endswith('.words'))
+          props_name=next(x for x in names if x.endswith('.properties'))
+          pos_name=next(x for x in names if x.endswith('.positions'))
+          words=z.read(words_name).decode(); props=z.read(props_name).decode(); pos=z.read(pos_name)
+
+          # Exact AZSA parser copied from Amazon's public reader implementation.
+          HEADER=28
+          if pos[:4]!=b'AZSA': raise RuntimeError('bad magic')
+          file_len,dir_offset,dir_len=struct.unpack_from('>III',pos,len(pos)-HEADER)
+          if file_len!=len(pos): raise RuntimeError((file_len,len(pos)))
+          entries={}; off=dir_offset
+          while off<dir_offset+dir_len:
+              data_off,data_len=struct.unpack_from('>II',pos,off); nlen=pos[off+8]
+              name=pos[off+9:off+9+nlen].decode(); entries[name]=(data_off,data_len); off+=9+nlen
+          def read_entry(name):
+              o,n=entries[name]
+              return int.from_bytes(pos[o:o+n],'big')
+          bpe=read_entry('BytesPerEntity'); minimum=read_entry('MinimumTitleEntityValue')
+          positions_offset,_=entries['Positions']
+          records=[]
+          for line in words.splitlines():
+              if not line: continue
+              off_s,len_s,stem=line.split(':',2); entity_off=int(off_s); count=int(len_s)
+              for i in range(count):
+                  p=positions_offset+(entity_off+i)*bpe
+                  value=int.from_bytes(pos[p:p+bpe],'big')+minimum
+                  records.append((value,stem))
+          records.sort()
+          (root/'index-records.jsonl').write_text(''.join(json.dumps({'position':p,'stem':w})+'\n' for p,w in records))
+
+          ident='CR!CHPJ159K3X04FAFE0X117MS13EMN'; revision='64363d23'
+          endpoint='https://read.amazon.com/service/web/content/getSearchContext'
+          def decrypt_context(x):
+              k=base64.b64decode(x[:24]); nonce=base64.b64decode(x[24:48]); ct=base64.b64decode(x[48:])
+              return AESGCM(k).decrypt(nonce,ct,None).decode('utf-8')
+
+          output=[]; failures=[]
+          def fetch_batch(batch,depth=0):
+              payload={'asin':'B0FK7RBDFL','positions':[[p] for p,_ in batch],'refEmId':ident,'revision':revision,'yjACR':ident,'clientVersion':'20000100'}
+              for attempt in range(4):
+                  try:
+                      r=s.post(endpoint,json=payload,timeout=60)
+                      if r.status_code==200:
+                          obj=r.json(); ciphers=obj.get('searchContexts',[])
+                          if len(ciphers)!=len(batch): raise RuntimeError(f'length {len(ciphers)} != {len(batch)}')
+                          for (p,stem),ciphertext in zip(batch,ciphers):
+                              output.append({'position':p,'stem':stem,'context':decrypt_context(ciphertext)})
+                          return
+                      err=f'{r.status_code} {r.text[:300]}'
+                  except Exception as e: err=repr(e)
+                  time.sleep(1.0*(attempt+1))
+              if len(batch)>1:
+                  mid=len(batch)//2; fetch_batch(batch[:mid],depth+1); fetch_batch(batch[mid:],depth+1)
+              else:
+                  failures.append({'position':batch[0][0],'stem':batch[0][1],'error':err})
+
+          batch_size=100
+          for start in range(0,len(records),batch_size):
+              fetch_batch(records[start:start+batch_size])
+              print(json.dumps({'done':min(start+batch_size,len(records)),'total':len(records),'output':len(output),'failures':len(failures)}),flush=True)
+              time.sleep(0.08)
+          output.sort(key=lambda x:(x['position'],x['stem']))
+          (root/'contexts.jsonl').write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in output))
+          (root/'failures.json').write_text(json.dumps(failures,indent=2))
+          (root/'summary.json').write_text(json.dumps({'records':len(records),'contexts':len(output),'failures':len(failures),'minimum_position':records[0][0],'maximum_position':records[-1][0]},indent=2))
+          print((root/'summary.json').read_text())
+          PY
+          python /tmp/extract_contexts.py
+
+      - name: Upload private analysis artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-all-search-contexts
+          path: public-media-analysis/all-search-contexts
+          if-no-files-found: error
+          compression-level: 9
+          retention-days: 7
+
+      - name: Persist run lookup only
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/ALL_CONTEXTS_RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/ALL_CONTEXTS_RUN_ID.txt
+          git commit -m "research: record all-context extraction run $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
