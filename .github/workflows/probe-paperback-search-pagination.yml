@@ -1,0 +1,100 @@
+name: Probe paperback search pagination
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-paperback-search-pagination.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe result pagination
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, urllib.parse, urllib.request
+          from pathlib import Path
+
+          asin='B0FRGB2PMR'
+          base='https://read.amazon.com/sample/print/search-results'
+          card=f'https://read.amazon.com/sample/{asin}?clientId=share'
+          out=Path('public-media-analysis/paperback-search-pagination')
+          out.mkdir(parents=True,exist_ok=True)
+          opener=urllib.request.build_opener(urllib.request.HTTPCookieProcessor())
+          headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36','Accept':'application/json,text/html,*/*'}
+          req=urllib.request.Request(card,headers=headers)
+          with opener.open(req,timeout=25) as r: r.read()
+
+          queries=['time','road','black','device','group','surface','watch','drone','vehicle','flight','jungle']
+          variants=[]
+          for page_size in (1,2,5,20,100):
+            for page_number in range(1,11):
+              variants.append((page_number,page_size))
+          records=[]
+          for q in queries:
+            for page_number,page_size in variants:
+              params={'asin':asin,'buyingAsin':asin,'query':q,'pageNumber':str(page_number),'pageSize':str(page_size)}
+              url=base+'?'+urllib.parse.urlencode(params)
+              try:
+                with opener.open(urllib.request.Request(url,headers=headers),timeout=25) as r:
+                  raw=r.read(); status=r.status; ct=r.headers.get('content-type','')
+                try: obj=json.loads(raw)
+                except Exception: obj={'rawPrefix':raw[:500].decode('utf-8','replace')}
+                rec={'query':q,'pageNumber':page_number,'pageSize':page_size,'status':status,'contentType':ct,'bytes':len(raw),'json':obj}
+              except Exception as e:
+                rec={'query':q,'pageNumber':page_number,'pageSize':page_size,'error':repr(e)}
+              records.append(rec)
+          (out/'records.json').write_text(json.dumps(records,indent=2,ensure_ascii=False))
+          compact=[]
+          for r in records:
+            obj=r.get('json')
+            compact.append({
+              'query':r['query'],'pageNumber':r['pageNumber'],'pageSize':r['pageSize'],
+              'status':r.get('status'),'error':r.get('error'),
+              'topKeys':sorted(obj.keys()) if isinstance(obj,dict) else None,
+              'highlights':obj.get('highlights') if isinstance(obj,dict) else None,
+              'results':obj.get('results') if isinstance(obj,dict) else None,
+              'cause':obj.get('cause') if isinstance(obj,dict) else None,
+              'responsePageNumber':obj.get('pageNumber') if isinstance(obj,dict) else None,
+              'totalResults':obj.get('totalResults') if isinstance(obj,dict) else None,
+            })
+          (out/'compact.json').write_text(json.dumps(compact,indent=2,ensure_ascii=False))
+          for rec in compact:
+            if rec.get('highlights') or rec.get('results') or rec.get('error'):
+              print(json.dumps(rec,ensure_ascii=False)[:3000])
+          PY
+
+      - name: Upload probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paperback-search-pagination
+          path: public-media-analysis/paperback-search-pagination
+          retention-days: 7
+          compression-level: 6
+
+      - name: Persist probe results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/paperback-search-pagination || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist paperback search pagination probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
