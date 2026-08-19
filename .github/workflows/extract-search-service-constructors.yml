@@ -1,0 +1,62 @@
+name: Extract search service constructors
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-search-service-constructors.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+      - name: Extract exact constructors
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/search-service-source
+          rm -rf "$out"; mkdir -p "$out"
+          curl -L --compressed --retry 3 -sS 'https://m.media-amazon.com/images/I/C1+7O3p6oWL.js' -o /tmp/reader.js
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          s=Path('/tmp/reader.js').read_text(errors='ignore')
+          terms=['getSearchIndexInfo','getSearchContext(e,t,[o])','new Sy(','new Oy(','SRS_UNAUTHENTICATED_ROOT_URL','SERVICE_UNAUTH_WEB_ROOT','referenceEmbeddedId','yjACR']
+          out=Path('public-media-analysis/search-service-source')
+          rec={}
+          chunks=[]
+          for term in terms:
+            loc=[]; start=0
+            while True:
+              i=s.find(term,start)
+              if i<0: break
+              loc.append(i); start=i+len(term)
+            rec[term]=loc
+            for i in loc: chunks.append((max(0,i-30000),min(len(s),i+50000),term,i))
+          merged=[]
+          for a,b,t,i in sorted(chunks):
+            if merged and a<=merged[-1][1]: merged[-1][1]=max(merged[-1][1],b); merged[-1][2].append((t,i))
+            else: merged.append([a,b,[(t,i)]])
+          for j,(a,b,hits) in enumerate(merged):
+            (out/f'chunk-{j:02d}.txt').write_text('RANGE %d:%d\n%s\n\n%s'%(a,b,'\n'.join(f'{t}@{i}' for t,i in hits),s[a:b]),errors='ignore')
+          (out/'manifest.json').write_text(json.dumps(rec,indent=2))
+          PY
+      - name: Persist source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-service-source
+          git commit -m "research: persist search service constructor source $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
