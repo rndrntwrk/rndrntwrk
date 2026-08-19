@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 02:45:58 GMT
+date: Wed, 19 Aug 2026 03:08:34 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 413ZQ9DWFSGS80RPN419
+x-amz-rid: QDYBCR3WVNA2K12RJ3FV
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 3008b9a578c3977f537823c42fddc23c.cloudfront.net (CloudFront)
-x-amz-cf-pop: DFW59-P7
-x-amz-cf-id: 3QGwo9Y_mc6bEdYXHoIBYm0RqaXzkJ7fbM8ebC3dbZ2EirRDt6NarQ==
+via: 1.1 706d44cf645fa513dc870a95865811d8.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: wAWCK5EuQekLNG3WMJVmUvdK1gKd30bUqivUgfG3Ww7ogSImNGNHyQ==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 02:45:58 GMT
+Date: Wed, 19 Aug 2026 03:08:34 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 98d88908b69262fc69248986276dbe36.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: DFW57-P1
+Via: 1.1 f4367b41311e3e9a490d7461b7b85490.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: SFO5-P2
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: YbUqpcVIZn66Igiw3OAWULFP3aXSRdGbJnirwYye0k12emBFC6akXg==
+X-Amz-Cf-Id: CofR_CFMvjsyoW5GBvDdg_9pLuNW4xE6M3zr8h-vSKSSlRsQ58zZmw==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 02:45:58 GMT
+date: Wed, 19 Aug 2026 03:08:34 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: M8HSPND48E9C0J01E01H
+x-amz-rid: K8RY3G0SVDRTYTACFNDX
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 73e04d645babcbb9ee8f20cc865b009c.cloudfront.net (CloudFront)
-x-amz-cf-pop: DFW57-P1
+via: 1.1 b6d577696b14c86cbfeb5b3459f38c50.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P2
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: 6L7ugAbiYl9JxUHEyZT1lyINOm8ePOOv5HBqF4X8cuiJ1R-pQuZANg==
+x-amz-cf-id: _q5Rcgp5ZFitzRL3ZiCJiE7TnU--_5qYcnQtrpVhTxcM0VFlikmo_g==
 
