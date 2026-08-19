@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 06:06:33 GMT
+date: Wed, 19 Aug 2026 06:09:57 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: T41EYX933K94B62M393D
+x-amz-rid: RJ4HKX04WEM8A2M368BP
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 1f5974048bfcf864a4fce0bf66127d8c.cloudfront.net (CloudFront)
-x-amz-cf-pop: PHX50-P1
-x-amz-cf-id: sSO2ISrboxVoBUQ6_FRDdffbX9nq9EwE3DqtDQX1kvdu3JWmFPI0Rg==
+via: 1.1 cf578bec6ba4cca4f0f2b684f49f235a.cloudfront.net (CloudFront)
+x-amz-cf-pop: ORD58-P10
+x-amz-cf-id: 9pvvU95zIrwToiKREdPRKke-hTI-VEXw_7yShdIJdkn2ujX6F-DrrA==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 06:06:33 GMT
+Date: Wed, 19 Aug 2026 06:09:58 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 666df5a6f6c7e4d9718a0e9301903340.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: PHX52-P1
+Via: 1.1 043c4762442d95a2bd0e484dcb2b4184.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD61-P9
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: 1flVlOqAlMEafkXY7VZ5bpGVq3stKRZrr1k2KRJuJ5RQ57GH-fVwqg==
+X-Amz-Cf-Id: -laBtt3m_ursUacTs1UGdqc504jWprGCDaN4hWWHbTERqQxX7Qv__g==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 06:06:33 GMT
+date: Wed, 19 Aug 2026 06:09:58 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: 5H0GMHDW9WY1P45AYKXA
+x-amz-rid: EPHMH22M8PWGZQA6JD94
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 ad4d28e08a6faaecade15c79406941ee.cloudfront.net (CloudFront)
-x-amz-cf-pop: PHX52-P1
+via: 1.1 8861f667e8c2cb75496b6b7283d951cc.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD61-P9
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: LaXdh2C277cHsR6L6ltBogV_KfBVX6p_4AdbGGKrCVy89q8EaQxxww==
+x-amz-cf-id: cdCB-DBXhn6Yb79PdXplhKHyBViZJSPTVbbCtHqggRnvSen0Ekr56A==
 
