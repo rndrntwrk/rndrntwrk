@@ -2,34 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 03:13:22 GMT
+date: Wed, 19 Aug 2026 03:16:52 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 4EJ3B1NWMRMT9Z9TBFWT
+x-amz-rid: ZGSWSAMGPR7ETBXR96XK
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 bde2479fd325644e3a866a702d0c1d52.cloudfront.net (CloudFront)
+via: 1.1 e0a0043c26183d67f99a46bb7af410e2.cloudfront.net (CloudFront)
 x-amz-cf-pop: PHX50-P1
-x-amz-cf-id: T2NCn1j4IU2vqQKLyGEYTpWXq00xGtfzuYFH1yiDq2oJiZWhRhEhaA==
+x-amz-cf-id: X0LtwuzHUlHPS6AdkYUkkf_y_DILlFyYnGrQoOmSo42FQOHVdXDFjQ==
 
 HTTP/1.1 301 Moved Permanently
-Server: AkamaiGHost
-Content-Length: 0
-Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Wed, 19 Aug 2026 03:13:22 GMT
+Server: CloudFront
+Date: Wed, 19 Aug 2026 03:16:52 GMT
+Content-Type: text/html
+Content-Length: 167
 Connection: keep-alive
-Akamai-Request-BC: [a=23.202.113.6,b=2822697695,c=g,n=US_CA_ELSEGUNDO,o=20940]
-X-Amzn-Cdn-Id: ak-0.671ca17.1787109202.a83ef2df
-X-Cache: NotCacheable from child
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 9387f08affa1cb3381ae76eb5bcc4b84.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: PHX52-P1
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Q-sHUQEKDnSc3MqlAyhWopNQ5_vD1cUF-o1UE3psnctIxOSzd4B9ww==
 
 HTTP/2 500 
-x-amz-rid: 4FJM8JQYX539GNRK8DB1
-cache-control: no-cache
+date: Wed, 19 Aug 2026 03:16:53 GMT
 pragma: no-cache
 expires: -1
-date: Wed, 19 Aug 2026 03:13:22 GMT
-alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.202.113.11,b=256180933,c=g,n=US_CA_ELSEGUNDO,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.b71ca17.1787109202.f4502c5
-x-cache: NotCacheable from child
+x-amz-rid: 3V5644B0H9M06HQX3PNX
+cache-control: no-cache
+x-cache: Error from cloudfront
+via: 1.1 4f9514c3ca494aed957651005d37255c.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX52-P1
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: -_-DdZfS1ZRbatTo-Bukgtb6ezsipSuyxaIZ9tz_UlAYSjvGM3uxgA==
 
