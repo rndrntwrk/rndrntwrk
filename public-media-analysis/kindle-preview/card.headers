@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 03:42:09 GMT
+date: Wed, 19 Aug 2026 03:46:58 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 0QDZ91WVSAAPFN1DY4KT
+x-amz-rid: 1DN9PRTNEY1FWYNQP7NJ
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 caa5dc507511eeb90523a221b2bd19b4.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: iXKhAaV5lSWU7gBtrCnUTwoQ2-xHk1NV-GRK6jTgwj0HSB8OPhjK-Q==
+via: 1.1 ffaf0c51f3c9bb4c8568d8f059b53550.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX50-P1
+x-amz-cf-id: PLk2hEhHvJzljd_OF8_oEg0KqbwcKB699pql_diIqIqwofQNNbkqAg==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 03:42:09 GMT
+Date: Wed, 19 Aug 2026 03:46:58 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 e8d77b1e6889ac008ecdc7ca4cc9346c.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: IAD61-P9
+Via: 1.1 b3707aef923427d5b3d151dd164d8930.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: PHX52-P1
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: h6LnjPFASTYDVu7XFQRn3RrS9DJ3Aj_Uitcw0UnX2lap-xEKeHIsGA==
+X-Amz-Cf-Id: QA1PRNHdCZ6Wi1izckWLTXS5MIfh_zaJ8Zd0FGZfYfv-VzP-TBJUGA==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 03:42:09 GMT
+date: Wed, 19 Aug 2026 03:46:59 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: JK2VQGTCEQBRG1SXC7YV
+x-amz-rid: 89J13F564CJQD656QVF4
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 043c4762442d95a2bd0e484dcb2b4184.cloudfront.net (CloudFront)
-x-amz-cf-pop: IAD61-P9
+via: 1.1 ad4d28e08a6faaecade15c79406941ee.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX52-P1
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: xnxd2dCPGzQt3GGl_aSDiSKB9sqJnUxS1ajmhul2xqOUqWN1aAd0Kw==
+x-amz-cf-id: IC__n54IhIy9GoB6R-Gl8BLhc5Pg9riXAmWn1eDGUAjb1djWyWSEdQ==
 
