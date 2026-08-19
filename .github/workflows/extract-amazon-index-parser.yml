@@ -1,0 +1,76 @@
+name: Extract Amazon sample index parser
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/extract-amazon-index-parser.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Download reader bundles and extract parser source
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/index-parser
+          rm -rf "$out"
+          mkdir -p "$out"
+          curl -L --compressed --retry 3 -sS 'https://m.media-amazon.com/images/I/C1+7O3p6oWL.js' -o "$out/C1_7O3p6oWL.js"
+          curl -L --compressed --retry 3 -sS 'https://m.media-amazon.com/images/I/91hYUh6DIgL.js' -o "$out/91hYUh6DIgL.js"
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+          root=Path('public-media-analysis/index-parser')
+          terms=['class Ki','class Ly','getProperty(','positionsFile','BytesPerEntity','JUNO_4','NumberOfWordsIndexed','MaximumTitleEntityValue','MinimumTitleEntityValue','getPositions','getWord','searchIndex']
+          manifest={}
+          for js in sorted(root.glob('*.js')):
+              s=js.read_text(errors='ignore')
+              rec={'bytes':len(s),'hits':{}}
+              chunks=[]
+              for term in terms:
+                  loc=[]; start=0
+                  while True:
+                      i=s.find(term,start)
+                      if i<0: break
+                      loc.append(i); start=i+len(term)
+                  rec['hits'][term]=loc[:100]
+                  for i in loc[:20]:
+                      chunks.append((max(0,i-12000),min(len(s),i+30000),term,i))
+              # merge overlapping source windows
+              merged=[]
+              for a,b,term,i in sorted(chunks):
+                  if merged and a<=merged[-1][1]:
+                      merged[-1][1]=max(merged[-1][1],b)
+                      merged[-1][2].append((term,i))
+                  else:
+                      merged.append([a,b,[(term,i)]])
+              for j,(a,b,hits) in enumerate(merged):
+                  header='\n'.join(f'{t} @ {i}' for t,i in hits)
+                  (root/f'{js.stem}-chunk-{j:02d}.txt').write_text(f'FILE {js.name}\nRANGE {a}:{b}\n{header}\n\n{s[a:b]}',errors='ignore')
+              manifest[js.name]=rec
+          (root/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > "$out/FILE_INDEX.txt"
+
+      - name: Persist parser evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/index-parser/manifest.json public-media-analysis/index-parser/FILE_INDEX.txt public-media-analysis/index-parser/*-chunk-*.txt
+          git commit -m "research: persist Amazon search-index parser evidence $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
