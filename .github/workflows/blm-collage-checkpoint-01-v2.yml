@@ -1,0 +1,454 @@
+name: BLM Collage Checkpoint 01 Final
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/blm-collage-checkpoint-01-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install pillow==11.3.0 ecdsa==0.19.1 base58==2.1.1 bip-utils==2.9.3
+
+      - name: Re-run corrected integrity gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT=research/blm-collage/checkpoint-01-final
+          rm -rf "$OUT"
+          mkdir -p "$OUT/source" "$OUT/oracle" "$OUT/raw-chain"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$OUT/RUN_ID.txt"
+
+          cat > /tmp/blm_checkpoint01_final.py <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import hmac
+          import html
+          import json
+          import os
+          import re
+          import struct
+          import subprocess
+          import sys
+          import time
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from typing import Any
+
+          import base58
+          import ecdsa
+          from PIL import Image
+          from bip_utils import Bip39SeedGenerator, Bip44, Bip44Coins, Bip44Changes
+
+          OUT = Path('research/blm-collage/checkpoint-01-final')
+          TARGET = '1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ'
+          EXPECTED_REWARD = 20107284
+          EXPECTED_SHA = 'd0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782'
+          UA = 'BLM-Collage-Checkpoint-01-Final/1.0'
+          NOW = datetime.now(timezone.utc).isoformat()
+
+          def sha(data: bytes) -> str:
+              return hashlib.sha256(data).hexdigest()
+
+          def fetch(name: str, url: str, timeout: int = 30) -> dict[str, Any]:
+              rec: dict[str, Any] = {'name': name, 'url': url, 'fetched_at_utc': datetime.now(timezone.utc).isoformat()}
+              for attempt in range(1, 4):
+                  try:
+                      req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': '*/*'})
+                      with urllib.request.urlopen(req, timeout=timeout) as r:
+                          body = r.read()
+                          rec.update({'ok': True, 'attempt': attempt, 'status': int(getattr(r, 'status', 200)), 'content_type': r.headers.get('content-type', ''), 'bytes': len(body), 'sha256': sha(body), 'body': body})
+                          return rec
+                  except Exception as e:
+                      rec.update({'ok': False, 'attempt': attempt, 'error': f'{type(e).__name__}: {e}'})
+                      time.sleep(attempt)
+              return rec
+
+          def clean(rec: dict[str, Any]) -> dict[str, Any]:
+              out = {k: v for k, v in rec.items() if k != 'body'}
+              if rec.get('ok'):
+                  try:
+                      out['json'] = json.loads(rec['body'])
+                  except Exception:
+                      out['body_prefix'] = rec['body'][:300].decode('utf-8', 'replace')
+              return out
+
+          # Live chain: two Esplora instances plus Blockchain.info balance.
+          endpoints = {
+              'mempool_address': f'https://mempool.space/api/address/{TARGET}',
+              'mempool_utxo': f'https://mempool.space/api/address/{TARGET}/utxo',
+              'blockstream_address': f'https://blockstream.info/api/address/{TARGET}',
+              'blockstream_utxo': f'https://blockstream.info/api/address/{TARGET}/utxo',
+              'blockchain_balance': f'https://blockchain.info/q/addressbalance/{TARGET}?confirmations=0',
+          }
+          raw = {name: fetch(name, url) for name, url in endpoints.items()}
+          for name, rec in raw.items():
+              (OUT / 'raw-chain' / f'{name}.bin').write_bytes(rec.get('body', b''))
+          responses = {name: clean(rec) for name, rec in raw.items()}
+
+          def addr_stats(obj: dict[str, Any]) -> dict[str, int]:
+              c = obj.get('chain_stats', {}) or {}
+              m = obj.get('mempool_stats', {}) or {}
+              confirmed = int(c.get('funded_txo_sum', 0)) - int(c.get('spent_txo_sum', 0))
+              pending = int(m.get('funded_txo_sum', 0)) - int(m.get('spent_txo_sum', 0))
+              return {
+                  'funded_txo_count': int(c.get('funded_txo_count', 0)),
+                  'funded_txo_sum_sats': int(c.get('funded_txo_sum', 0)),
+                  'spent_txo_count': int(c.get('spent_txo_count', 0)),
+                  'spent_txo_sum_sats': int(c.get('spent_txo_sum', 0)),
+                  'confirmed_tx_count': int(c.get('tx_count', 0)),
+                  'mempool_tx_count': int(m.get('tx_count', 0)),
+                  'confirmed_balance_sats': confirmed,
+                  'unconfirmed_delta_sats': pending,
+                  'total_balance_sats': confirmed + pending,
+              }
+
+          def utxos(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+              out = []
+              for r in rows or []:
+                  st = r.get('status', {}) or {}
+                  out.append({'txid': r.get('txid'), 'vout': int(r.get('vout', 0)), 'value_sats': int(r.get('value', 0)), 'confirmed': bool(st.get('confirmed', False)), 'block_height': st.get('block_height'), 'block_hash': st.get('block_hash'), 'block_time': st.get('block_time')})
+              return sorted(out, key=lambda x: (x['txid'] or '', x['vout']))
+
+          ma = addr_stats(responses['mempool_address'].get('json', {}))
+          ba = addr_stats(responses['blockstream_address'].get('json', {}))
+          mu = utxos(responses['mempool_utxo'].get('json', []))
+          bu = utxos(responses['blockstream_utxo'].get('json', []))
+          bb = None
+          try:
+              bb = int(raw['blockchain_balance']['body'].decode().strip())
+          except Exception:
+              pass
+          observations = [ma['total_balance_sats'], sum(x['value_sats'] for x in mu), ba['total_balance_sats'], sum(x['value_sats'] for x in bu), bb]
+          chain = {
+              'schema_version': 1,
+              'checked_at_utc': NOW,
+              'address': TARGET,
+              'mempool': {'address': ma, 'utxos': mu, 'utxo_count': len(mu), 'utxo_sum_sats': sum(x['value_sats'] for x in mu)},
+              'blockstream': {'address': ba, 'utxos': bu, 'utxo_count': len(bu), 'utxo_sum_sats': sum(x['value_sats'] for x in bu)},
+              'blockchain_info_balance_sats': bb,
+              'consensus': {
+                  'address_stats_agree': ma == ba,
+                  'utxo_sets_agree': mu == bu,
+                  'balance_observations_sats': observations,
+                  'all_observations_agree': len({x for x in observations if x is not None}) == 1,
+                  'fully_available': all(x == EXPECTED_REWARD for x in observations if x is not None),
+                  'expected_reward_sats': EXPECTED_REWARD,
+              },
+              'responses': responses,
+          }
+          (OUT / 'live-chain.json').write_text(json.dumps(chain, indent=2), encoding='utf-8')
+
+          # Source reconciliation: repository archive plus an independent 2020 community mirror
+          # whose README explicitly labels images/original.png as the original Reddit photo.
+          source_urls = {
+              'open_crypto_puzzles_copy': 'https://raw.githubusercontent.com/floflo777/open-crypto-puzzles/main/1-big-prizes/blm-brave-new-world-0-2btc/clues/welcome-to-the-brave-new-world.png',
+              'independent_2020_mirror': 'https://raw.githubusercontent.com/jmr2704/bitcoin-0.2-image-puzzle/master/images/original.png',
+          }
+          imgs = []
+          pixel_hashes = {}
+          for name, url in source_urls.items():
+              rec = fetch(name, url)
+              entry = clean(rec)
+              if rec.get('ok'):
+                  p = OUT / 'source' / f'{name}.png'
+                  p.write_bytes(rec['body'])
+                  entry['path'] = str(p)
+                  with Image.open(p) as im:
+                      rgba = im.convert('RGBA')
+                      entry.update({'format': im.format, 'mode': im.mode, 'width': im.width, 'height': im.height, 'dimensions_match': [im.width, im.height] == [1600, 1200], 'pixel_sha256_rgba': sha(rgba.tobytes()), 'png_info_keys': sorted(im.info.keys())})
+                      pixel_hashes[name] = entry['pixel_sha256_rgba']
+              imgs.append(entry)
+          canonical = next((e for e in imgs if e.get('sha256') == EXPECTED_SHA and e.get('dimensions_match')), None)
+          byte_identical = len({e.get('sha256') for e in imgs if e.get('ok')}) == 1
+          pixel_identical = len({e.get('pixel_sha256_rgba') for e in imgs if e.get('ok')}) == 1
+          if canonical:
+              Path(OUT / 'source' / 'canonical-original.png').write_bytes(Path(canonical['path']).read_bytes())
+          source = {
+              'schema_version': 2,
+              'checked_at_utc': NOW,
+              'expected_sha256': EXPECTED_SHA,
+              'expected_dimensions': [1600, 1200],
+              'canonical_established': canonical is not None,
+              'canonical_source_name': canonical.get('name') if canonical else None,
+              'repository_copy_matches_expected': any(e.get('name') == 'open_crypto_puzzles_copy' and e.get('sha256') == EXPECTED_SHA for e in imgs),
+              'independent_mirror_matches_expected_bytes': any(e.get('name') == 'independent_2020_mirror' and e.get('sha256') == EXPECTED_SHA for e in imgs),
+              'copies_byte_identical': byte_identical,
+              'copies_pixel_identical': pixel_identical,
+              'candidates': imgs,
+          }
+          (OUT / 'source-manifest.json').write_text(json.dumps(source, indent=2), encoding='utf-8')
+
+          # Existing oracle plus truly independent witnesses.
+          oracle_url = 'https://raw.githubusercontent.com/floflo777/open-crypto-puzzles/main/1-big-prizes/blm-brave-new-world-0-2btc/tools/oracle.py'
+          orec = fetch('repository_oracle', oracle_url)
+          opath = OUT / 'oracle' / 'repository-oracle.py'
+          opath.write_bytes(orec.get('body', b''))
+          proc = subprocess.run([sys.executable, str(opath), '--selftest'], capture_output=True, text=True)
+
+          bip_phrase = 'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about'
+          bip_expected = '1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA'
+          bip_actual = Bip44.FromSeed(Bip39SeedGenerator(bip_phrase).Generate(), Bip44Coins.BITCOIN).Purpose().Coin().Account(0).Change(Bip44Changes.CHAIN_EXT).AddressIndex(0).PublicKey().ToAddress()
+
+          old_url = 'https://raw.githubusercontent.com/spesmilo/electrum/master/electrum/old_mnemonic.py'
+          oldrec = fetch('official_electrum_old_mnemonic', old_url)
+          oldtext = oldrec.get('body', b'').decode('utf-8', 'replace')
+          (OUT / 'oracle' / 'official-old_mnemonic.py').write_text(oldtext, encoding='utf-8')
+          m = re.search(r'_words\s*=\s*\((.*?)\)\s*\n', oldtext, re.S)
+          words = re.findall(r"['\"]([^'\"]+)['\"]", m.group(1)) if m else []
+          if len(words) != 1626:
+              raise RuntimeError(f'old Electrum wordlist parse failed: {len(words)}')
+          wi = {w: i for i, w in enumerate(words)}
+          n = len(words)
+          curve_n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+
+          def old_hex(mnemonic: str) -> str:
+              ws = mnemonic.split()
+              out = ''
+              for i in range(0, len(ws), 3):
+                  w1, w2, w3 = (wi[x] for x in ws[i:i+3])
+                  x = w1 + n * ((w2 - w1) % n) + n*n * ((w3 - w2) % n)
+                  out += f'{x:08x}'
+              return out
+
+          def p2pkh(point) -> str:
+              pub = b'\x04' + int(point.x()).to_bytes(32, 'big') + int(point.y()).to_bytes(32, 'big')
+              h160 = hashlib.new('ripemd160', hashlib.sha256(pub).digest()).digest()
+              payload = b'\x00' + h160
+              checksum = hashlib.sha256(hashlib.sha256(payload).digest()).digest()[:4]
+              return base58.b58encode(payload + checksum).decode()
+
+          def old_address(mnemonic: str, change: int, index: int) -> str:
+              hex_seed = old_hex(mnemonic)
+              encoded = hex_seed.encode('ascii')
+              x = encoded
+              for _ in range(100000):
+                  x = hashlib.sha256(x + encoded).digest()
+              secexp = int.from_bytes(x, 'big')
+              G = ecdsa.SECP256k1.generator
+              master = secexp * G
+              mpk = int(master.x()).to_bytes(32, 'big') + int(master.y()).to_bytes(32, 'big')
+              z = int.from_bytes(hashlib.sha256(hashlib.sha256(f'{index}:{change}:'.encode('ascii') + mpk).digest()).digest(), 'big')
+              return p2pkh(master + (z % curve_n) * G)
+
+          old_phrase = 'another embrace sense creek careful crush advice glare passion skip awaken childhood'
+          old_expected = '1KCvshw5g3ndGYxQmAxKcTpJV5kbj6Lefo'
+          old_actual = old_address(old_phrase, 0, 0)
+          oracle = {
+              'schema_version': 2,
+              'checked_at_utc': NOW,
+              'repository_oracle_sha256': sha(opath.read_bytes()),
+              'repository_selftest': {'returncode': proc.returncode, 'passed': proc.returncode == 0 and 'SELFTEST OK' in proc.stdout, 'stdout': proc.stdout, 'stderr': proc.stderr},
+              'independent_bip39': {'path': "m/44'/0'/0'/0/0", 'expected': bip_expected, 'actual': bip_actual, 'passed': bip_actual == bip_expected, 'phrase_sha256': sha(bip_phrase.encode())},
+              'independent_old_electrum_v1': {'change': 0, 'index': 0, 'expected': old_expected, 'actual': old_actual, 'passed': old_actual == old_expected, 'phrase_sha256': sha(old_phrase.encode()), 'official_wordlist_size': len(words), 'official_source_sha256': sha(oldrec.get('body', b''))},
+          }
+          oracle['all_passed'] = oracle['repository_selftest']['passed'] and oracle['independent_bip39']['passed'] and oracle['independent_old_electrum_v1']['passed']
+          (OUT / 'oracle-selftest.json').write_text(json.dumps(oracle, indent=2), encoding='utf-8')
+
+          # Artifact scan: only plausible secret-bearing BLM paths. Source-code marker literals
+          # and prior scanner reports are not treated as discoveries.
+          root = Path('.')
+          candidate_paths = []
+          for p in root.rglob('*'):
+              if not p.is_file() or '.git' in p.parts:
+                  continue
+              low = str(p).lower()
+              if 'blm' not in low and 'brave-new-world' not in low:
+                  continue
+              if '.github/workflows' in low or 'checkpoint-01' in low or 'campaign-plan' in low:
+                  continue
+              candidate_paths.append(p)
+          suspicious_name_re = re.compile(r'(match[_-]?found|winner|recovered[_-]?(seed|mnemonic)|private[_-]?(key|mnemonic)|seed[_-]?phrase)', re.I)
+          name_hits = [str(p) for p in candidate_paths if suspicious_name_re.search(p.name)]
+          structured_hits = []
+
+          def walk(obj: Any, path: str, trail: str = ''):
+              if isinstance(obj, dict):
+                  for k, v in obj.items():
+                      t = f'{trail}.{k}' if trail else str(k)
+                      if str(k).lower() in {'exact_match', 'match_found', 'target_match'} and v is True:
+                          structured_hits.append({'path': path, 'key': t})
+                      walk(v, path, t)
+              elif isinstance(obj, list):
+                  for i, v in enumerate(obj):
+                      walk(v, path, f'{trail}[{i}]')
+
+          scanned = 0
+          scanned_bytes = 0
+          exact_match_line_hits = []
+          for p in candidate_paths:
+              try:
+                  if p.stat().st_size > 20_000_000:
+                      continue
+                  data = p.read_bytes()
+              except Exception:
+                  continue
+              scanned += 1; scanned_bytes += len(data)
+              if p.suffix.lower() in {'.json', '.jsonl'}:
+                  try:
+                      if p.suffix.lower() == '.json':
+                          walk(json.loads(data), str(p))
+                      else:
+                          for line in data.splitlines():
+                              if line.strip(): walk(json.loads(line), str(p))
+                  except Exception:
+                      pass
+              if ('/runs/' in str(p).replace('\\', '/') or p.suffix.lower() in {'.log', '.out'}) and re.search(rb'(?m)^MATCH\s+.*1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ\s*$', data):
+                  exact_match_line_hits.append(str(p))
+          private_scan = {
+              'schema_version': 2,
+              'scanned_at_utc': NOW,
+              'scope': 'BLM-specific plausible secret-bearing paths only',
+              'scanned_files': scanned,
+              'scanned_bytes': scanned_bytes,
+              'suspicious_filename_hits': sorted(name_hits),
+              'structured_true_hits': structured_hits,
+              'exact_match_line_hits': exact_match_line_hits,
+              'private_match_artifact_found': bool(name_hits or structured_hits or exact_match_line_hits),
+              'note': 'Workflow source and previous scanner reports are deliberately excluded to prevent marker-definition false positives. No candidate plaintext is included.',
+          }
+          (OUT / 'private-match-scan.json').write_text(json.dumps(private_scan, indent=2), encoding='utf-8')
+
+          status = 'complete' if chain['consensus']['fully_available'] and source['canonical_established'] and source['copies_pixel_identical'] and oracle['all_passed'] and not private_scan['private_match_artifact_found'] else 'blocked'
+          result = {
+              'schema_version': 2,
+              'checkpoint': '01',
+              'status': status,
+              'checked_at_utc': NOW,
+              'live_reward': chain['consensus'],
+              'source': {'canonical_established': source['canonical_established'], 'repository_copy_matches_expected': source['repository_copy_matches_expected'], 'independent_mirror_matches_expected_bytes': source['independent_mirror_matches_expected_bytes'], 'copies_byte_identical': source['copies_byte_identical'], 'copies_pixel_identical': source['copies_pixel_identical'], 'expected_sha256': EXPECTED_SHA},
+              'oracle': {'repository_selftest_passed': oracle['repository_selftest']['passed'], 'independent_bip39_passed': oracle['independent_bip39']['passed'], 'independent_old_electrum_passed': oracle['independent_old_electrum_v1']['passed'], 'all_passed': oracle['all_passed'], 'oracle_sha256': oracle['repository_oracle_sha256']},
+              'private_match_artifact_found': private_scan['private_match_artifact_found'],
+              'exact_target_match_found': False,
+              'next_checkpoint': '02 — Prior-work provenance and normalized negative ledger',
+          }
+          (OUT / 'result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+
+          report = f'''# BLM Collage — Checkpoint 01 final report
+
+          **Checkpoint:** 01 — Live reward, source, and oracle integrity  
+          **Status:** {status.upper()}  
+          **Exact target match:** No
+
+          ## Live reward
+
+          - Target: `{TARGET}`
+          - Five balance observations: `{chain['consensus']['balance_observations_sats']}` sats
+          - Independent observations agree: `{chain['consensus']['all_observations_agree']}`
+          - UTXO sets agree: `{chain['consensus']['utxo_sets_agree']}`
+          - UTXOs: `{len(mu)}`
+          - Full `{EXPECTED_REWARD}`-sat reward available: `{chain['consensus']['fully_available']}`
+
+          ## Source integrity
+
+          - Expected SHA-256: `{EXPECTED_SHA}`
+          - Canonical source established: `{source['canonical_established']}`
+          - Repository copy matches expected bytes: `{source['repository_copy_matches_expected']}`
+          - Independent 2020 mirror matches expected bytes: `{source['independent_mirror_matches_expected_bytes']}`
+          - Copies byte-identical: `{source['copies_byte_identical']}`
+          - Copies pixel-identical: `{source['copies_pixel_identical']}`
+          - Dimensions: `1600 x 1200`
+
+          ## Oracle integrity
+
+          - Repository oracle self-test: `{oracle['repository_selftest']['passed']}`
+          - Independent BIP39/BIP44 witness: `{oracle['independent_bip39']['passed']}`
+          - Independent old-Electrum v1 witness: `{oracle['independent_old_electrum_v1']['passed']}`
+          - All oracle gates: `{oracle['all_passed']}`
+          - Oracle SHA-256: `{oracle['repository_oracle_sha256']}`
+
+          ## Prior private-match scan
+
+          - Files in BLM-specific scope: `{private_scan['scanned_files']}`
+          - Suspicious filenames: `{len(private_scan['suspicious_filename_hits'])}`
+          - Structured exact-match markers: `{len(private_scan['structured_true_hits'])}`
+          - Exact MATCH lines: `{len(private_scan['exact_match_line_hits'])}`
+          - Prior private match artifact found: `{private_scan['private_match_artifact_found']}`
+
+          ## Result
+
+          Checkpoint 01 is complete only when the reward remains live, two source copies reconcile,
+          both wallet families are independently witnessed, and no prior exact match exists.
+
+          ## Next checkpoint
+
+          Checkpoint 02 — Prior-work provenance and normalized negative ledger.
+          '''
+          report = '\n'.join(line[10:] if line.startswith('          ') else line for line in report.splitlines()) + '\n'
+          (OUT / 'report.md').write_text(report, encoding='utf-8')
+
+          hashes = []
+          for p in sorted(OUT.rglob('*')):
+              if p.is_file() and p.name != 'SHA256SUMS.txt':
+                  hashes.append(f'{sha(p.read_bytes())}  {p.relative_to(OUT)}')
+          (OUT / 'SHA256SUMS.txt').write_text('\n'.join(hashes) + '\n', encoding='utf-8')
+          print(json.dumps(result, indent=2))
+          PY
+
+          python /tmp/blm_checkpoint01_final.py | tee "$OUT/console.log"
+
+          mkdir -p research/blm-collage/source research/blm-collage/reports research/blm-collage/tools research/blm-collage/private
+          cp "$OUT/report.md" research/blm-collage/reports/checkpoint-01.md
+          cp "$OUT/result.json" research/blm-collage/campaign-state-checkpoint-01.json
+          cp "$OUT/live-chain.json" research/blm-collage/source/live-chain.json
+          cp "$OUT/source-manifest.json" research/blm-collage/source/source-manifest.json
+          cp "$OUT/oracle/repository-oracle.py" research/blm-collage/tools/oracle.py
+
+      - name: Upload final checkpoint evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blm-collage-checkpoint-01-final
+          path: research/blm-collage/checkpoint-01-final
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+
+      - name: Persist final checkpoint summaries
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            research/blm-collage/reports/checkpoint-01.md \
+            research/blm-collage/campaign-state-checkpoint-01.json \
+            research/blm-collage/source/live-chain.json \
+            research/blm-collage/source/source-manifest.json \
+            research/blm-collage/tools/oracle.py \
+            research/blm-collage/checkpoint-01-final/RUN_ID.txt \
+            research/blm-collage/checkpoint-01-final/result.json \
+            research/blm-collage/checkpoint-01-final/report.md \
+            research/blm-collage/checkpoint-01-final/live-chain.json \
+            research/blm-collage/checkpoint-01-final/source-manifest.json \
+            research/blm-collage/checkpoint-01-final/oracle-selftest.json \
+            research/blm-collage/checkpoint-01-final/private-match-scan.json \
+            research/blm-collage/checkpoint-01-final/SHA256SUMS.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: finalize BLM collage checkpoint 01"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
