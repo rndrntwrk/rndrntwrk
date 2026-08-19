@@ -1,0 +1,67 @@
+{
+  "run_id": null,
+  "hits": {
+    "14": [
+      "black",
+      "group",
+      "blue",
+      "sea",
+      "sunset",
+      "memory",
+      "perfect",
+      "ocean",
+      "record",
+      "way"
+    ],
+    "19": [
+      "device",
+      "machine",
+      "network",
+      "position",
+      "advance",
+      "attack",
+      "angle",
+      "blue",
+      "calm",
+      "connect"
+    ],
+    "21": [
+      "group",
+      "pair",
+      "aim",
+      "machine",
+      "steel",
+      "attack",
+      "air",
+      "journey",
+      "jungle",
+      "enemy"
+    ],
+    "24": [
+      "surface",
+      "world",
+      "time",
+      "edge",
+      "whale",
+      "blue",
+      "orange",
+      "current",
+      "prize",
+      "turtle"
+    ],
+    "32": [
+      "road",
+      "car",
+      "wall",
+      "window",
+      "screen",
+      "mobile",
+      "light",
+      "stone"
+    ],
+    "103": [],
+    "110": [],
+    "241": []
+  },
+  "results_count": 130
+}
