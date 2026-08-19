@@ -22,80 +22,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
       - uses: yoshi389111/github-profile-3d-contrib@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-
       - name: Remove language and vanity stats blocks
         run: node scripts/clean-3d-contrib.mjs
-
       - name: Commit generated profile graph
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add profile-3d-contrib
-          if git diff --staged --quiet; then
-            exit 0
-          fi
+          if git diff --staged --quiet; then exit 0; fi
           git commit -m "Update 3D contribution graph"
           git push
-
-  paperback-search-probe:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: research/public-media-analysis
-      - name: Query public sample search endpoint
-        run: |
-          python - <<'PY'
-          import json, time, urllib.parse, urllib.request
-          from pathlib import Path
-
-          asin = 'B0FRGB2PMR'
-          terms = ['watch','surface','device','aim','road','power','energy','apology','price','hotel','room','vehicle','car','air','flight','jungle']
-          endpoint = 'https://read.amazon.com/sample/print/search-results'
-          out = []
-          for term in terms:
-              url = endpoint + '?' + urllib.parse.urlencode({
-                  'asin': asin, 'buyingAsin': asin, 'query': term,
-                  'pageNumber': 1, 'pageSize': 100,
-              })
-              req = urllib.request.Request(url, headers={'Accept':'application/json','User-Agent':'Mozilla/5.0'})
-              row = {'query': term, 'url': url}
-              try:
-                  with urllib.request.urlopen(req, timeout=30) as response:
-                      body = response.read()
-                      row.update(status=response.status, content_type=response.headers.get('content-type'), bytes=len(body))
-                      try: row['body'] = json.loads(body)
-                      except Exception as exc:
-                          row['parse_error'] = repr(exc)
-                          row['body_prefix'] = body[:1000].decode('utf-8','replace')
-              except Exception as exc:
-                  row['error'] = repr(exc)
-              out.append(row)
-              time.sleep(0.15)
-          root = Path('public-media-analysis/search-results-probe')
-          root.mkdir(parents=True, exist_ok=True)
-          (root/'probe.json').write_text(json.dumps(out, indent=2, ensure_ascii=False))
-          lines = ['# Paperback search-results probe','']
-          for row in out:
-              lines += [f"## {row['query']}", f"- status: {row.get('status',row.get('error'))}", f"- body: `{json.dumps(row.get('body'),ensure_ascii=False)[:3000]}`", '']
-          (root/'summary.md').write_text('\n'.join(lines))
-          PY
-      - name: Persist probe results to research branch
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public-media-analysis/search-results-probe
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'research: persist paperback search-results probe'
-          git pull --rebase origin research/public-media-analysis
-          git push origin HEAD:research/public-media-analysis
 
   bip39-target-page-scan:
     if: github.event_name == 'push'
@@ -123,7 +63,13 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           from __future__ import annotations
-          import concurrent.futures, json, random, threading, time, urllib.parse, urllib.request
+          import concurrent.futures
+          import json
+          import random
+          import threading
+          import time
+          import urllib.parse
+          import urllib.request
           from pathlib import Path
 
           ASIN='B0FRGB2PMR'
@@ -135,40 +81,45 @@ jobs:
           OUT=Path('public-media-analysis/bip39-target-pages')
           OUT.mkdir(parents=True,exist_ok=True)
 
-          req=urllib.request.Request(WORDLIST_URL,headers={'User-Agent':UA})
-          with urllib.request.urlopen(req,timeout=30) as response:
+          request=urllib.request.Request(WORDLIST_URL,headers={'User-Agent':UA})
+          with urllib.request.urlopen(request,timeout=30) as response:
               words=[line.strip() for line in response.read().decode().splitlines() if line.strip()]
           assert len(words)==2048, len(words)
-          order={word:i for i,word in enumerate(words)}
-          lock=threading.Lock(); completed=0
+          order={word:index for index,word in enumerate(words)}
+          lock=threading.Lock()
+          completed=[0]
 
           def target_entries(value):
               found=[]
               if isinstance(value,list):
-                  strings=[str(x) for x in value]
-                  if TARGET_LABELS.intersection(strings): found.append(value)
-                  for child in value: found.extend(target_entries(child))
+                  strings=[str(item) for item in value]
+                  if TARGET_LABELS.intersection(strings):
+                      found.append(value)
+                  for child in value:
+                      found.extend(target_entries(child))
               elif isinstance(value,dict):
-                  for child in value.values(): found.extend(target_entries(child))
+                  for child in value.values():
+                      found.extend(target_entries(child))
               return found
 
           def query_word(word):
-              nonlocal completed
               params={'asin':ASIN,'buyingAsin':ASIN,'query':word,'pageNumber':1,'pageSize':100}
               url=ENDPOINT+'?'+urllib.parse.urlencode(params)
               row=None
               for attempt in range(5):
                   try:
-                      req=urllib.request.Request(url,headers={
-                          'Accept':'application/json','User-Agent':UA,
-                          'Referer':f'https://read.amazon.com/kp/card?asin={ASIN}&preview=inline&linkCode=kpe'})
-                      with urllib.request.urlopen(req,timeout=45) as response:
+                      request=urllib.request.Request(url,headers={
+                          'Accept':'application/json',
+                          'User-Agent':UA,
+                          'Referer':f'https://read.amazon.com/kp/card?asin={ASIN}&preview=inline&linkCode=kpe',
+                      })
+                      with urllib.request.urlopen(request,timeout=45) as response:
                           body=json.loads(response.read())
                       hits=[]
                       for entry in target_entries(body):
-                          strings=[str(x) for x in entry]
-                          label=next((x for x in strings if x in TARGET_LABELS),None)
-                          internal=next((x for x in strings if x in TARGET_INTERNAL),None)
+                          strings=[str(item) for item in entry]
+                          label=next((item for item in strings if item in TARGET_LABELS),None)
+                          internal=next((item for item in strings if item in TARGET_INTERNAL),None)
                           hits.append({'label':label,'internalPage':internal,'entry':entry})
                       row={'word':word,'status':200,'totalResults':body.get('totalResults'),'hits':hits}
                       break
@@ -178,32 +129,48 @@ jobs:
                       else:
                           time.sleep(0.5*(2**attempt)+random.random()*0.4)
               with lock:
-                  completed+=1
-                  if completed%100==0: print(f'completed {completed}/2048',flush=True)
+                  completed[0]+=1
+                  if completed[0]%100==0:
+                      print(f'completed {completed[0]}/2048',flush=True)
               return row
 
-          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-              rows=list(pool.map(query_word,words))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+              rows=list(executor.map(query_word,words))
 
           target_rows=sorted((row for row in rows if row['hits']),key=lambda row:order[row['word']])
           errors=[row for row in rows if row['status']=='error']
-          by_page={label:[] for label in sorted(TARGET_LABELS,key=lambda x:int(x.split()[-1]))}
+          by_page={label:[] for label in sorted(TARGET_LABELS,key=lambda value:int(value.split()[-1]))}
           for row in target_rows:
               for hit in row['hits']:
                   if hit['label']:
                       by_page[hit['label']].append({
-                          'word':row['word'],'internalPage':hit['internalPage'],
-                          'entry':hit['entry'],'totalResults':row.get('totalResults')})
+                          'word':row['word'],
+                          'internalPage':hit['internalPage'],
+                          'entry':hit['entry'],
+                          'totalResults':row.get('totalResults'),
+                      })
 
-          result={'runId':'${{ github.run_id }}','wordsQueried':len(words),'errorCount':len(errors),
-                  'targetWordCount':len(target_rows),'byPage':by_page,'errors':errors}
+          result={
+              'runId':'${{ github.run_id }}',
+              'wordsQueried':len(words),
+              'errorCount':len(errors),
+              'targetWordCount':len(target_rows),
+              'byPage':by_page,
+              'errors':errors,
+          }
           (OUT/'target-words.json').write_text(json.dumps(result,indent=2,ensure_ascii=False))
-          lines=['# BIP39 target-page scan','',f'- queried: {len(words)}',f'- errors: {len(errors)}',
-                 f'- words hitting a target page: {len(target_rows)}','']
+          lines=[
+              '# BIP39 target-page scan','',
+              f'- queried: {len(words)}',
+              f'- errors: {len(errors)}',
+              f'- words hitting a target page: {len(target_rows)}','',
+          ]
           for label,items in by_page.items():
-              lines += [f'## {label}','']
-              lines += [f"- `{item['word']}` — internal {item.get('internalPage')}; `{json.dumps(item['entry'],ensure_ascii=False)}`" for item in items]
-              if not items: lines.append('_No hit._')
+              lines.extend([f'## {label}',''])
+              for item in items:
+                  lines.append(f"- `{item['word']}` — internal {item.get('internalPage')}; `{json.dumps(item['entry'],ensure_ascii=False)}`")
+              if not items:
+                  lines.append('_No hit._')
               lines.append('')
           (OUT/'target-words.md').write_text('\n'.join(lines))
           print((OUT/'target-words.md').read_text())
