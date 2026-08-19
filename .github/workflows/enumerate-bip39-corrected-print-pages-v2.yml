@@ -1,0 +1,255 @@
+name: Enumerate BIP39 words on corrected Hunting Time pages v2
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/enumerate-bip39-corrected-print-pages-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install HTTP client
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
+      - name: Enumerate corrected target pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/bip39-corrected-pages-v2
+          rm -rf "$out"
+          mkdir -p "$out"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+          cat > /tmp/enumerate.py <<'PY'
+          from __future__ import annotations
+          import asyncio
+          import json
+          import random
+          import time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          import aiohttp
+
+          ASIN = 'B0FRGB2PMR'
+          ENDPOINT = 'https://read.amazon.com/sample/print/position-data'
+          CARD = 'https://read.amazon.com/sample/B0FRGB2PMR?clientId=share'
+          UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          OUT = Path('public-media-analysis/bip39-corrected-pages-v2')
+          WORDLIST = Path('public-media-analysis/wordlists/bip39-english.txt')
+          words = [w.strip() for w in WORDLIST.read_text().splitlines() if w.strip()]
+          if len(words) != 2048:
+              raise SystemExit(f'expected 2048 BIP39 words, got {len(words)}')
+
+          # Printed page -> Amazon internal image/search page.
+          mapping = {14: 23, 19: 28, 21: 30, 24: 33, 32: 41, 103: 112, 110: 119, 241: 250}
+          controls = {
+              14: ['black', 'way'],
+              19: ['device', 'machine', 'network'],
+              21: ['group', 'air', 'jungle'],
+              24: ['surface', 'time', 'orange'],
+              32: ['road', 'car', 'window'],
+          }
+
+          semaphore = asyncio.Semaphore(10)
+          lock = asyncio.Lock()
+          timeout = aiohttp.ClientTimeout(total=25, connect=10, sock_read=15)
+          connector = aiohttp.TCPConnector(limit=14, ttl_dns_cache=300)
+          statuses = Counter()
+          positives = defaultdict(list)
+          errors = []
+          completed = 0
+          started = time.time()
+
+          def write_partial() -> None:
+              data = {
+                  'mapping': {str(k): v for k, v in mapping.items()},
+                  'completed_requests': completed,
+                  'status_counts': dict(statuses),
+                  'error_count': len(errors),
+                  'positive_words': {str(p): sorted({x['word'] for x in positives[p]}) for p in mapping},
+                  'elapsed_seconds': time.time() - started,
+              }
+              (OUT / 'partial.json').write_text(json.dumps(data, indent=2, ensure_ascii=False))
+
+          async def query(session, printed_page, endpoint_page, word, phase):
+              nonlocal completed
+              params = {'asin': ASIN, 'query': word, 'token': 'null', 'page': str(endpoint_page)}
+              last_error = None
+              for attempt in range(5):
+                  try:
+                      async with semaphore:
+                          async with session.get(ENDPOINT, params=params, timeout=timeout) as response:
+                              text = await response.text()
+                              status = response.status
+                              content_type = response.headers.get('content-type', '')
+                      statuses[f'{status} {content_type.split(";")[0]}'] += 1
+                      if status in (429, 500, 502, 503, 504):
+                          last_error = f'HTTP {status}: {text[:180]}'
+                          await asyncio.sleep(0.6 * (2 ** attempt) + random.random() * 0.3)
+                          continue
+                      try:
+                          obj = json.loads(text)
+                      except Exception as exc:
+                          last_error = f'JSON {exc!r}: {text[:180]}'
+                          break
+                      highlights = obj.get('highlights') if isinstance(obj, dict) else None
+                      count = sum(len(v) for v in highlights.values() if isinstance(v, list)) if isinstance(highlights, dict) else 0
+                      if count:
+                          positives[printed_page].append({
+                              'word': word,
+                              'endpoint_page': endpoint_page,
+                              'highlight_count': count,
+                              'highlights': highlights,
+                              'phase': phase,
+                          })
+                      last_error = None
+                      break
+                  except Exception as exc:
+                      last_error = repr(exc)
+                      await asyncio.sleep(0.6 * (2 ** attempt) + random.random() * 0.3)
+              async with lock:
+                  completed += 1
+                  if last_error:
+                      errors.append({
+                          'printed_page': printed_page,
+                          'endpoint_page': endpoint_page,
+                          'word': word,
+                          'phase': phase,
+                          'error': last_error,
+                      })
+                  if completed % 256 == 0:
+                      write_partial()
+                      print(
+                          f'completed={completed} positives={sum(len(v) for v in positives.values())} '
+                          f'errors={len(errors)} elapsed={time.time() - started:.1f}s',
+                          flush=True,
+                      )
+
+          async def main():
+              jar = aiohttp.CookieJar(unsafe=True)
+              headers = {'User-Agent': UA, 'Accept': 'application/json,text/html,*/*'}
+              async with aiohttp.ClientSession(headers=headers, cookie_jar=jar, connector=connector) as session:
+                  async with session.get(CARD) as response:
+                      await response.read()
+                      print('card', response.status, response.url, flush=True)
+
+                  for printed_page, test_words in controls.items():
+                      await asyncio.gather(*(
+                          query(session, printed_page, mapping[printed_page], word, 'control')
+                          for word in test_words
+                      ))
+                      print(
+                          'CONTROL', printed_page, mapping[printed_page],
+                          sorted({x['word'] for x in positives[printed_page]}),
+                          flush=True,
+                      )
+
+                  pages_with_hits = sum(bool(positives[p]) for p in controls)
+                  if pages_with_hits < 3:
+                      raise RuntimeError(f'printed-page offset failed validation: {pages_with_hits}/5 controls')
+
+                  for printed_page in (103, 110, 241):
+                      endpoint_page = mapping[printed_page]
+                      for start in range(0, len(words), 128):
+                          await asyncio.gather(*(
+                              query(session, printed_page, endpoint_page, word, 'enumeration')
+                              for word in words[start:start + 128]
+                          ))
+                          write_partial()
+                      positives[printed_page].sort(key=lambda item: item['word'])
+                      print(
+                          'TARGET', printed_page, endpoint_page,
+                          [x['word'] for x in positives[printed_page]],
+                          flush=True,
+                      )
+
+          asyncio.run(main())
+          write_partial()
+          summary = {
+              'asin': ASIN,
+              'mapping': {str(k): v for k, v in mapping.items()},
+              'wordlist_size': len(words),
+              'completed_requests': completed,
+              'status_counts': dict(statuses),
+              'error_count': len(errors),
+              'control_hits': {
+                  str(p): sorted({x['word'] for x in positives[p] if x['phase'] == 'control'})
+                  for p in controls
+              },
+              'target_words': {
+                  str(p): sorted({x['word'] for x in positives[p] if x['phase'] == 'enumeration'})
+                  for p in (103, 110, 241)
+              },
+              'details': {str(p): positives[p] for p in mapping},
+              'elapsed_seconds': time.time() - started,
+          }
+          (OUT / 'summary.json').write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+          (OUT / 'errors.json').write_text(json.dumps(errors, indent=2, ensure_ascii=False))
+          lines = [
+              '# Corrected printed-page BIP39 enumeration v2',
+              '',
+              f'- Completed requests: {completed:,}',
+              f'- Errors: {len(errors):,}',
+              '- Elapsed: %.1fs' % summary['elapsed_seconds'],
+              '',
+          ]
+          for page in controls:
+              hits = summary['control_hits'][str(page)]
+              lines += [
+                  f'## Control: printed page {page} -> endpoint page {mapping[page]}',
+                  '',
+                  ', '.join(f'`{word}`' for word in hits) or '_No hits._',
+                  '',
+              ]
+          for page in (103, 110, 241):
+              hits = summary['target_words'][str(page)]
+              lines += [
+                  f'## Target: printed page {page} -> endpoint page {mapping[page]}',
+                  '',
+                  ', '.join(f'`{word}`' for word in hits) or '_No BIP39 words returned._',
+                  '',
+              ]
+          (OUT / 'summary.md').write_text('\n'.join(lines) + '\n')
+          print(json.dumps(summary, indent=2, ensure_ascii=False), flush=True)
+          PY
+          # Remove the only escaped quote sequence in the generated Python source.
+          sed -i 's/content_type.split(\\";\\")/content_type.split(";")/' /tmp/enumerate.py
+          python /tmp/enumerate.py | tee "$out/console.txt"
+
+      - name: Upload full enumeration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-bip39-corrected-pages-v2
+          path: public-media-analysis/bip39-corrected-pages-v2
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist compact enumeration result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/bip39-corrected-pages-v2/RUN_ID.txt || true
+          git add public-media-analysis/bip39-corrected-pages-v2/partial.json || true
+          git add public-media-analysis/bip39-corrected-pages-v2/summary.json || true
+          git add public-media-analysis/bip39-corrected-pages-v2/summary.md || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist corrected BIP39 page enumeration v2 $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
