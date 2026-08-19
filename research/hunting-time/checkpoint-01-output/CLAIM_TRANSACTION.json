@@ -1,0 +1,54 @@
+{
+  "target_address": "bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85",
+  "original_incentive_sats": 420000,
+  "original_incentive_btc": 0.0042,
+  "current_claimable_balance_sats": 0,
+  "status": "swept",
+  "spending_transaction": {
+    "txid": "d3783a1cde2c491a6edfbead81aeebda90257c8c25b4b0c9b2bac89bc5cd607a",
+    "confirmed": true,
+    "block_height": 962971,
+    "block_hash": "00000000000000000001ac260e1349b852f40eb4ebce01ecdec62c7f060b464d",
+    "block_time_unix": 1787018840,
+    "block_time_utc": "2026-08-18T02:07:20+00:00",
+    "block_time_america_chicago": "2026-08-17T21:07:20-05:00",
+    "input_count": 2,
+    "inputs_from_target": [
+      {
+        "funding_txid": "00a72c1b2bd08db06d4ea7027d4352a3644a9b3a3c81cdacf82379cbff95b33a",
+        "vout": 1,
+        "value_sats": 210000,
+        "pubkey": "0370f4ef335df0da109a49fdd2627f5fb27c87545e991134ce0cf77291a6d48da4"
+      },
+      {
+        "funding_txid": "45ea9718a05f453cf44ccbce9771464f29136bcfc54f62627eca2519f6985a10",
+        "vout": 0,
+        "value_sats": 210000,
+        "pubkey": "0370f4ef335df0da109a49fdd2627f5fb27c87545e991134ce0cf77291a6d48da4"
+      }
+    ],
+    "input_sum_sats": 420000,
+    "fee_sats": 358,
+    "outputs": [
+      {
+        "address": "3KBUSqmnxCDspUYe5HwskVvTbLfs5baeXb",
+        "type": "p2sh",
+        "value_sats": 419642
+      }
+    ]
+  },
+  "verification": {
+    "checked_at_utc": "2026-08-19T06:14:07.343872+00:00",
+    "checked_at_america_chicago": "2026-08-19T01:14:07.343872-05:00",
+    "services": [
+      "mempool.space",
+      "Blockstream Esplora"
+    ],
+    "services_agree": true,
+    "utxo_count": 0,
+    "private_match_audit_passed": true,
+    "candidate_search_ran_in_checkpoint": false,
+    "exact_match_found_by_this_effort": false
+  },
+  "interpretation": "The address was controlled and both prize outputs were spent. On-chain data alone cannot distinguish an independent solver from an author-initiated withdrawal."
+}
