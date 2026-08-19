@@ -1,0 +1,281 @@
+name: Hunting Time Checkpoint 01B - Live Chain
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/hunting-time-checkpoint-01b-chain.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Query independent public Bitcoin explorers
+        shell: bash
+        env:
+          TARGET_ADDRESS: bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85
+        run: |
+          set -euo pipefail
+          OUT=research/hunting-time/checkpoint-01b
+          rm -rf "$OUT"
+          mkdir -p "$OUT/raw"
+          python - <<'PY'
+          from __future__ import annotations
+
+          import datetime as dt
+          import hashlib
+          import json
+          import os
+          import ssl
+          import time
+          import urllib.error
+          import urllib.request
+          from collections import Counter
+          from pathlib import Path
+          from typing import Any
+
+          address = os.environ['TARGET_ADDRESS']
+          out = Path('research/hunting-time/checkpoint-01b')
+          raw_dir = out / 'raw'
+          raw_dir.mkdir(parents=True, exist_ok=True)
+          now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
+
+          endpoints = {
+              'mempool_address': f'https://mempool.space/api/address/{address}',
+              'mempool_utxo': f'https://mempool.space/api/address/{address}/utxo',
+              'blockstream_address': f'https://blockstream.info/api/address/{address}',
+              'blockstream_utxo': f'https://blockstream.info/api/address/{address}/utxo',
+              'blockchain_balance': f'https://blockchain.info/q/addressbalance/{address}?confirmations=0',
+              'blockcypher_address': f'https://api.blockcypher.com/v1/btc/main/addrs/{address}?unspentOnly=true&includeScript=true',
+          }
+
+          ctx = ssl.create_default_context()
+          ua = 'Mozilla/5.0 Hunting-Time-Checkpoint-01B/1.0'
+          responses: dict[str, dict[str, Any]] = {}
+
+          def fetch(name: str, url: str) -> None:
+              rec: dict[str, Any] = {'name': name, 'url': url, 'fetched_at_utc': now}
+              last_error = None
+              for attempt in range(1, 4):
+                  try:
+                      req = urllib.request.Request(url, headers={'User-Agent': ua, 'Accept': 'application/json,text/plain,*/*'})
+                      with urllib.request.urlopen(req, timeout=25, context=ctx) as r:
+                          body = r.read()
+                          rec.update({
+                              'ok': 200 <= r.status < 300,
+                              'status': r.status,
+                              'content_type': r.headers.get('content-type', ''),
+                              'bytes': len(body),
+                              'sha256': hashlib.sha256(body).hexdigest(),
+                              'attempt': attempt,
+                          })
+                          (raw_dir / f'{name}.body').write_bytes(body)
+                          (raw_dir / f'{name}.headers.json').write_text(json.dumps(dict(r.headers.items()), indent=2, sort_keys=True))
+                          text = body.decode('utf-8', 'replace').strip()
+                          try:
+                              rec['json'] = json.loads(text)
+                          except Exception:
+                              rec['text'] = text
+                          responses[name] = rec
+                          return
+                  except Exception as exc:
+                      last_error = repr(exc)
+                      time.sleep(attempt)
+              rec.update({'ok': False, 'error': last_error})
+              responses[name] = rec
+
+          for name, url in endpoints.items():
+              fetch(name, url)
+
+          def esplora_balance(obj: Any) -> dict[str, int] | None:
+              if not isinstance(obj, dict):
+                  return None
+              chain = obj.get('chain_stats') or {}
+              mem = obj.get('mempool_stats') or {}
+              keys = ('funded_txo_sum', 'spent_txo_sum')
+              if not all(k in chain for k in keys) or not all(k in mem for k in keys):
+                  return None
+              confirmed = int(chain['funded_txo_sum']) - int(chain['spent_txo_sum'])
+              unconfirmed = int(mem['funded_txo_sum']) - int(mem['spent_txo_sum'])
+              return {
+                  'confirmed_sats': confirmed,
+                  'unconfirmed_delta_sats': unconfirmed,
+                  'total_sats': confirmed + unconfirmed,
+                  'confirmed_tx_count': int(chain.get('tx_count', 0)),
+                  'mempool_tx_count': int(mem.get('tx_count', 0)),
+              }
+
+          def normalize_utxos(obj: Any) -> list[dict[str, Any]] | None:
+              if not isinstance(obj, list):
+                  return None
+              norm = []
+              for x in obj:
+                  if not isinstance(x, dict) or not {'txid', 'vout', 'value'} <= x.keys():
+                      continue
+                  status = x.get('status') or {}
+                  norm.append({
+                      'txid': str(x['txid']),
+                      'vout': int(x['vout']),
+                      'value': int(x['value']),
+                      'confirmed': bool(status.get('confirmed', False)),
+                      'block_height': status.get('block_height'),
+                      'block_hash': status.get('block_hash'),
+                      'block_time': status.get('block_time'),
+                  })
+              return sorted(norm, key=lambda x: (x['txid'], x['vout']))
+
+          derived: dict[str, Any] = {}
+          for source in ('mempool', 'blockstream'):
+              addr_obj = responses.get(f'{source}_address', {}).get('json')
+              utxo_obj = responses.get(f'{source}_utxo', {}).get('json')
+              bal = esplora_balance(addr_obj)
+              utxos = normalize_utxos(utxo_obj)
+              derived[source] = {
+                  'balance': bal,
+                  'utxos': utxos,
+                  'utxo_total_sats': sum(x['value'] for x in utxos) if utxos is not None else None,
+                  'utxo_count': len(utxos) if utxos is not None else None,
+              }
+
+          bc_text = responses.get('blockchain_balance', {}).get('text')
+          try:
+              blockchain_balance = int(bc_text) if bc_text is not None else None
+          except Exception:
+              blockchain_balance = None
+          derived['blockchain_com'] = {'balance_sats': blockchain_balance}
+
+          blockcypher = responses.get('blockcypher_address', {}).get('json')
+          if isinstance(blockcypher, dict):
+              derived['blockcypher'] = {
+                  'balance_sats': blockcypher.get('balance'),
+                  'unconfirmed_balance_sats': blockcypher.get('unconfirmed_balance'),
+                  'final_balance_sats': blockcypher.get('final_balance'),
+                  'n_tx': blockcypher.get('n_tx'),
+                  'final_n_tx': blockcypher.get('final_n_tx'),
+                  'txrefs': blockcypher.get('txrefs'),
+              }
+          else:
+              derived['blockcypher'] = None
+
+          balance_candidates = []
+          for source in ('mempool', 'blockstream'):
+              b = derived[source]['balance']
+              if b is not None:
+                  balance_candidates.append((source, b['total_sats']))
+              u = derived[source]['utxo_total_sats']
+              if u is not None:
+                  balance_candidates.append((source + '_utxo', u))
+          if blockchain_balance is not None:
+              balance_candidates.append(('blockchain_com', blockchain_balance))
+          if isinstance(derived.get('blockcypher'), dict) and derived['blockcypher'].get('final_balance_sats') is not None:
+              balance_candidates.append(('blockcypher', int(derived['blockcypher']['final_balance_sats'])))
+
+          counts = Counter(v for _, v in balance_candidates)
+          consensus_balance = counts.most_common(1)[0][0] if counts else None
+          consensus_support = counts.most_common(1)[0][1] if counts else 0
+
+          mempool_utxos = derived['mempool']['utxos']
+          blockstream_utxos = derived['blockstream']['utxos']
+          utxo_sets_agree = (
+              mempool_utxos is not None
+              and blockstream_utxos is not None
+              and mempool_utxos == blockstream_utxos
+          )
+
+          summary = {
+              'schema_version': 1,
+              'checkpoint': '01B',
+              'checked_at_utc': now,
+              'address': address,
+              'responses': responses,
+              'derived': derived,
+              'balance_observations': [{'source': s, 'sats': v} for s, v in balance_candidates],
+              'consensus': {
+                  'balance_sats': consensus_balance,
+                  'supporting_observations': consensus_support,
+                  'observation_count': len(balance_candidates),
+                  'utxo_sets_agree': utxo_sets_agree,
+                  'fully_funded_420000': consensus_balance == 420000,
+              },
+              'checkpoint_pass': bool(
+                  consensus_balance == 420000
+                  and consensus_support >= 2
+                  and utxo_sets_agree
+                  and derived['mempool']['utxo_count'] is not None
+                  and derived['mempool']['utxo_count'] > 0
+              ),
+          }
+
+          (out / 'chain-state.json').write_text(json.dumps(summary, indent=2, sort_keys=True))
+
+          lines = [
+              '# Hunting Time — Checkpoint 01B live-chain report',
+              '',
+              f'- Checked at (UTC): `{now}`',
+              f'- Address: `{address}`',
+              f'- Consensus balance: `{consensus_balance}` sats',
+              f'- Supporting observations: `{consensus_support}/{len(balance_candidates)}`',
+              f'- Mempool/Blockstream UTXO sets agree: `{utxo_sets_agree}`',
+              f'- Checkpoint pass: `{summary["checkpoint_pass"]}`',
+              '',
+              '## Balance observations',
+              '',
+              '| Source | Balance (sats) |',
+              '|---|---:|',
+          ]
+          lines += [f'| {s} | {v} |' for s, v in balance_candidates]
+          lines += ['', '## Consensus UTXOs', '']
+          if mempool_utxos is not None:
+              lines += ['| TXID | vout | Value (sats) | Confirmed | Block height |', '|---|---:|---:|---:|---:|']
+              for x in mempool_utxos:
+                  lines.append(f'| `{x["txid"]}` | {x["vout"]} | {x["value"]} | {x["confirmed"]} | {x["block_height"]} |')
+          else:
+              lines.append('Mempool UTXO response unavailable.')
+          lines += ['', '## Source status', '', '| Source | HTTP | Parsed |', '|---|---:|---:|']
+          for name, rec in responses.items():
+              lines.append(f'| {name} | {rec.get("status", "—")} | {"json" in rec or "text" in rec} |')
+          (out / 'report.md').write_text('\n'.join(lines) + '\n')
+          (out / 'SHA256SUMS.txt').write_text('\n'.join(
+              f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(out)}'
+              for p in sorted(out.rglob('*')) if p.is_file() and p.name != 'SHA256SUMS.txt'
+          ) + '\n')
+          print(json.dumps(summary['consensus'], indent=2, sort_keys=True))
+          if not summary['checkpoint_pass']:
+              raise SystemExit('live-chain consensus gate did not pass')
+          PY
+
+      - name: Persist checkpoint result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/hunting-time/checkpoint-01b
+          if git diff --cached --quiet; then
+            echo 'No checkpoint output to commit'
+            exit 0
+          fi
+          git commit -m "research: persist Hunting Time checkpoint 01B $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+
+      - name: Upload checkpoint evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-checkpoint-01b
+          path: research/hunting-time/checkpoint-01b
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
