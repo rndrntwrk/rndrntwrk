@@ -2,38 +2,37 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 03:08:33 GMT
+date: Wed, 19 Aug 2026 03:13:21 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: WN44GB4B69M70HGRHGM0
+x-amz-rid: 6JPH25GNHJ4GD3SB0QZ0
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 f3f86fbc8a4e9f42e0461331fba615da.cloudfront.net (CloudFront)
-x-amz-cf-pop: SFO5-P3
-x-amz-cf-id: VVbxciAACMAlH4ddLKRfyFXQ0SSO76hEnpuSgqqdn2YYp8OReUzNSA==
+via: 1.1 f0c69aaab12c2df7a91cf822152fa666.cloudfront.net (CloudFront)
+x-amz-cf-pop: PHX50-P1
+x-amz-cf-id: SeAC5MYtQi5MS4wFUklSnXrXuyXI7QHKtoXhiCwaY_16XLN5VYonBA==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 03:08:34 GMT
+Date: Wed, 19 Aug 2026 03:13:21 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 5e4ed8b3ad7ea224ed1bfcac62553bf6.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: SFO5-P2
+Via: 1.1 02f549084606711466056148482a4a0a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: PHX52-P1
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: h8Cns6aUsIfb7s6rIPktdW5s1Fkd89HQbDMAdwxfecMeywfTm848ww==
+X-Amz-Cf-Id: Rm8K1dYEkmePmwHtgVzBsK4JXvvC3pooEcz37VcTJyiNNX2ZphIFTg==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 03:08:34 GMT
+x-amz-rid: V1X6SYJXR87HH69G8D3R
+cache-control: no-cache
 pragma: no-cache
 expires: -1
-x-amz-rid: M4ZR23KVWKVR5XBK3YNZ
-cache-control: no-cache
-x-cache: Error from cloudfront
-via: 1.1 442d080ad536f368b087d8fa4ff33ee6.cloudfront.net (CloudFront)
-x-amz-cf-pop: SFO5-P2
-alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: X7aDhIWfqNGGF_03G2VkSIA9So53yQRktTF8b_UhShlIqgAjb9B6MA==
+date: Wed, 19 Aug 2026 03:13:22 GMT
+alt-svc: h3=":443"; ma=93600
+akamai-request-bc: [a=23.202.113.11,b=256179176,c=g,n=US_CA_ELSEGUNDO,o=20940],[c=o]
+x-amzn-cdn-id: ak-0.b71ca17.1787109201.f44fbe8
+x-cache: NotCacheable from child
 
