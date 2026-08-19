@@ -1,0 +1,133 @@
+name: Probe Hunting Time print position data
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-print-position-data.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe page-specific Search Inside data
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/print-position-probe
+          rm -rf "$out"
+          mkdir -p "$out/raw"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/sample/B0FRGB2PMR?clientId=share'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$card" -o "$out/card.html"
+
+          cat > /tmp/probe.py <<'PY'
+          from __future__ import annotations
+          import json, subprocess, urllib.parse, time
+          from pathlib import Path
+
+          out=Path('public-media-analysis/print-position-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          card='https://read.amazon.com/sample/B0FRGB2PMR?clientId=share'
+          endpoint='https://read.amazon.com/sample/print/position-data'
+          asin='B0FRGB2PMR'
+
+          page_queries={
+            14:['the','and','black','group','sea','sunset','memory','ocean','record','way','everyone','inside','permanent'],
+            19:['the','and','device','radio','wallet','machine','network','antenna','dawn','software','field','beacon'],
+            21:['the','and','group','unit','steel','frame','trigger','spark','machine','air','journey','jungle','enemy'],
+            24:['the','and','surface','world','time','edge','whale','blue','orange','current','prize','turtle','dial','yellow'],
+            32:['the','and','road','car','wall','window','screen','mobile','light','stone','charger','cable'],
+            103:['the','and','watch','time','jungle','forest','tree','green','wrist','hour','minute','second','clock','dial','component','thermal','tracking','drone','view','screen','target','heat','red','white','camera','image','feed','display','map','monitor','flight','position'],
+            110:['the','and','defender','vehicle','car','truck','land','rover','road','jungle','green','drive','wheel','tire','door','window','transport','engine','machine','jeep'],
+            241:['the','and','helicopter','cockpit','aircraft','flight','pilot','control','panel','instrument','switch','power','engine','rotor','air','sky','screen','dial','number','military','machine','device','black'],
+          }
+
+          results=[]
+          positives=[]
+          for page,queries in page_queries.items():
+            for query in queries:
+              params={'asin':asin,'query':query,'token':'null','page':str(page)}
+              url=endpoint+'?'+urllib.parse.urlencode(params)
+              key=f'p{page:03d}-{query}'
+              body=out/'raw'/f'{key}.body'
+              hdr=out/'raw'/f'{key}.headers'
+              p=subprocess.run([
+                'curl','-L','--compressed','--retry','2','--max-time','30','-sS',
+                '-A',ua,'-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),
+                '-e',card,'-H','Accept: application/json','-D',str(hdr),url,
+                '-o',str(body),'-w','%{http_code}\t%{content_type}'
+              ],capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              rec={'page':page,'query':query,'url':url,'status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw)}
+              try:
+                obj=json.loads(raw)
+                rec['json']=obj
+                hs=obj.get('highlights') if isinstance(obj,dict) else None
+                count=0
+                if isinstance(hs,dict):
+                  count=sum(len(v) for v in hs.values() if isinstance(v,list))
+                rec['highlight_count']=count
+                if count:
+                  positives.append(rec)
+              except Exception as e:
+                rec['parse_error']=repr(e)
+                rec['prefix']=raw[:500].decode('utf-8','replace')
+              results.append(rec)
+              time.sleep(0.05)
+
+          counts={}
+          for r in results:
+            counts[r['status']]=counts.get(r['status'],0)+1
+          summary={
+            'run_id':None,
+            'request_count':len(results),
+            'status_counts':counts,
+            'positive_count':len(positives),
+            'positive_results':positives,
+            'controls':[
+              r for r in results if r['page'] in (14,19,21,24,32) and r.get('highlight_count',0)>0
+            ],
+            'target_pages':[
+              r for r in results if r['page'] in (103,110,241) and r.get('highlight_count',0)>0
+            ],
+          }
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          print(json.dumps(summary,indent=2,ensure_ascii=False))
+          PY
+          python /tmp/probe.py
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+
+      - name: Upload probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-print-position-probe
+          path: public-media-analysis/print-position-probe
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist compact probe output
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/print-position-probe/summary.json public-media-analysis/print-position-probe/RUN_ID.txt || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist print position probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
