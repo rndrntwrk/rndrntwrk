@@ -2,48 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 08:21:48 GMT
+date: Wed, 19 Aug 2026 08:27:38 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: RFJ3D0QZH47D2DGSWTF1
+x-amz-rid: HR6MSQJPMXC0H8VBZJ28
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 fe187ea749e98273cf22180445286f22.cloudfront.net (CloudFront)
+via: 1.1 5bab46d8af126fb7ca14b6d331ff182a.cloudfront.net (CloudFront)
 x-amz-cf-pop: IAD55-P8
-x-amz-cf-id: zfnFiY6zaDiWyHX3L23CBlfcfhxxpIT58BmMDVCcU3C98Hlv-c02gQ==
+x-amz-cf-id: SFAVdnp3c_6mL73PS8rlvuPUN4WfDrfxiI0ZvbjXSqs3rsFwiHIkUA==
 
 HTTP/1.1 301 Moved Permanently
-Server: AkamaiGHost
-Content-Length: 0
-Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-Date: Wed, 19 Aug 2026 08:21:48 GMT
+Server: CloudFront
+Date: Wed, 19 Aug 2026 08:27:38 GMT
+Content-Type: text/html
+Content-Length: 167
 Connection: keep-alive
-Akamai-Request-BC: [a=23.48.200.102,b=2351729022,c=g,n=US_VA_ASHBURN,o=20940]
-X-Amzn-Cdn-Id: ak-0.66c83017.1787127708.8c2c897e
-X-Cache: NotCacheable from child
-
-HTTP/2 301 
-content-length: 0
-server: Server
-x-amz-rid: QAHFGA9Q583Q78K7C1HF
-location: https://www.amazon.com/Hunting-Time-Genesis-Martin-Warwick-ebook/dp/B0FK7RBDFL
-vary: Accept-Encoding,User-Agent
-strict-transport-security: max-age=47474747; includeSubDomains; preload
-x-frame-options: SAMEORIGIN
-date: Wed, 19 Aug 2026 08:21:48 GMT
-alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.48.200.107,b=90444428,c=g,n=US_VA_ASHBURN,o=20940],[a=229,c=o]
-x-amzn-cdn-id: ak-0.6bc83017.1787127708.564128c
-x-cache: NotCacheable from child
+Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
+X-Cache: Redirect from cloudfront
+Via: 1.1 a41d734044cac7cfe09820f04854befc.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: IAD61-P10
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: DDUvqQGM8ntuxnYDuxOPo7kgKteWW5XRl4mXufIKbomk4qzOsp8iTg==
 
 HTTP/2 500 
-x-amz-rid: 2110WAG1HA4GFKTYGMXB
-cache-control: no-cache
+date: Wed, 19 Aug 2026 08:27:38 GMT
 pragma: no-cache
 expires: -1
-date: Wed, 19 Aug 2026 08:21:48 GMT
-alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.48.200.107,b=90444703,c=g,n=US_VA_ASHBURN,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.6bc83017.1787127708.564139f
-x-cache: NotCacheable from child
+x-amz-rid: AZ9Z339D0RFJ798W2ZDM
+cache-control: no-cache
+x-cache: Error from cloudfront
+via: 1.1 70e9f6c79b570a07593d98d3c3eb2fc6.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD61-P10
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: 2nPCiASADLI7lcdMKXXuDIzP1SNYrrH1hvR_KWxctE6vr-MgPqXSrA==
 
