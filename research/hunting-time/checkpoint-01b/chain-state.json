@@ -1,0 +1,190 @@
+{
+  "address": "bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85",
+  "balance_observations": [
+    {
+      "sats": 0,
+      "source": "mempool"
+    },
+    {
+      "sats": 0,
+      "source": "mempool_utxo"
+    },
+    {
+      "sats": 0,
+      "source": "blockstream"
+    },
+    {
+      "sats": 0,
+      "source": "blockstream_utxo"
+    },
+    {
+      "sats": 0,
+      "source": "blockcypher"
+    }
+  ],
+  "checked_at_utc": "2026-08-19T06:40:55+00:00",
+  "checkpoint": "01B",
+  "checkpoint_pass": false,
+  "consensus": {
+    "balance_sats": 0,
+    "fully_funded_420000": false,
+    "observation_count": 5,
+    "supporting_observations": 5,
+    "utxo_sets_agree": true
+  },
+  "derived": {
+    "blockchain_com": {
+      "balance_sats": null
+    },
+    "blockcypher": {
+      "balance_sats": 0,
+      "final_balance_sats": 0,
+      "final_n_tx": 0,
+      "n_tx": 0,
+      "txrefs": null,
+      "unconfirmed_balance_sats": 0
+    },
+    "blockstream": {
+      "balance": {
+        "confirmed_sats": 0,
+        "confirmed_tx_count": 3,
+        "mempool_tx_count": 0,
+        "total_sats": 0,
+        "unconfirmed_delta_sats": 0
+      },
+      "utxo_count": 0,
+      "utxo_total_sats": 0,
+      "utxos": []
+    },
+    "mempool": {
+      "balance": {
+        "confirmed_sats": 0,
+        "confirmed_tx_count": 3,
+        "mempool_tx_count": 0,
+        "total_sats": 0,
+        "unconfirmed_delta_sats": 0
+      },
+      "utxo_count": 0,
+      "utxo_total_sats": 0,
+      "utxos": []
+    }
+  },
+  "responses": {
+    "blockchain_balance": {
+      "attempt": 1,
+      "bytes": 1,
+      "content_type": "text/plain; charset=utf-8",
+      "fetched_at_utc": "2026-08-19T06:40:55+00:00",
+      "json": 0,
+      "name": "blockchain_balance",
+      "ok": true,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "status": 200,
+      "url": "https://blockchain.info/q/addressbalance/bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85?confirmations=0"
+    },
+    "blockcypher_address": {
+      "attempt": 1,
+      "bytes": 286,
+      "content_type": "application/json",
+      "fetched_at_utc": "2026-08-19T06:40:55+00:00",
+      "json": {
+        "address": "bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85",
+        "balance": 0,
+        "final_balance": 0,
+        "final_n_tx": 0,
+        "n_tx": 0,
+        "total_received": 0,
+        "total_sent": 0,
+        "tx_url": "https://api.blockcypher.com/v1/btc/main/txs/",
+        "unconfirmed_balance": 0,
+        "unconfirmed_n_tx": 0
+      },
+      "name": "blockcypher_address",
+      "ok": true,
+      "sha256": "2973493d2781166d64c34957d3d6b036ccc8eb71c794b93e291100c9531413f7",
+      "status": 200,
+      "url": "https://api.blockcypher.com/v1/btc/main/addrs/bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85?unspentOnly=true&includeScript=true"
+    },
+    "blockstream_address": {
+      "attempt": 1,
+      "bytes": 282,
+      "content_type": "application/json",
+      "fetched_at_utc": "2026-08-19T06:40:55+00:00",
+      "json": {
+        "address": "bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85",
+        "chain_stats": {
+          "funded_txo_count": 2,
+          "funded_txo_sum": 420000,
+          "spent_txo_count": 2,
+          "spent_txo_sum": 420000,
+          "tx_count": 3
+        },
+        "mempool_stats": {
+          "funded_txo_count": 0,
+          "funded_txo_sum": 0,
+          "spent_txo_count": 0,
+          "spent_txo_sum": 0,
+          "tx_count": 0
+        }
+      },
+      "name": "blockstream_address",
+      "ok": true,
+      "sha256": "654eaa6e11a7fb9968e71e2fe69fdc287ed4635938897f9644644d3d62fc722d",
+      "status": 200,
+      "url": "https://blockstream.info/api/address/bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85"
+    },
+    "blockstream_utxo": {
+      "attempt": 1,
+      "bytes": 2,
+      "content_type": "application/json",
+      "fetched_at_utc": "2026-08-19T06:40:55+00:00",
+      "json": [],
+      "name": "blockstream_utxo",
+      "ok": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": 200,
+      "url": "https://blockstream.info/api/address/bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85/utxo"
+    },
+    "mempool_address": {
+      "attempt": 1,
+      "bytes": 282,
+      "content_type": "application/json",
+      "fetched_at_utc": "2026-08-19T06:40:55+00:00",
+      "json": {
+        "address": "bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85",
+        "chain_stats": {
+          "funded_txo_count": 2,
+          "funded_txo_sum": 420000,
+          "spent_txo_count": 2,
+          "spent_txo_sum": 420000,
+          "tx_count": 3
+        },
+        "mempool_stats": {
+          "funded_txo_count": 0,
+          "funded_txo_sum": 0,
+          "spent_txo_count": 0,
+          "spent_txo_sum": 0,
+          "tx_count": 0
+        }
+      },
+      "name": "mempool_address",
+      "ok": true,
+      "sha256": "654eaa6e11a7fb9968e71e2fe69fdc287ed4635938897f9644644d3d62fc722d",
+      "status": 200,
+      "url": "https://mempool.space/api/address/bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85"
+    },
+    "mempool_utxo": {
+      "attempt": 1,
+      "bytes": 2,
+      "content_type": "application/json",
+      "fetched_at_utc": "2026-08-19T06:40:55+00:00",
+      "json": [],
+      "name": "mempool_utxo",
+      "ok": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": 200,
+      "url": "https://mempool.space/api/address/bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85/utxo"
+    }
+  },
+  "schema_version": 1
+}

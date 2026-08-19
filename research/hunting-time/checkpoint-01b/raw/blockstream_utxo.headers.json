@@ -1,0 +1,16 @@
+{
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Expose-Headers": "x-total-results",
+  "Connection": "close",
+  "Content-Length": "2",
+  "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'",
+  "Content-Type": "application/json",
+  "Date": "Wed, 19 Aug 2026 06:40:57 GMT",
+  "Referrer-Policy": "no-referrer",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+  "X-Cache-Status": "MISS",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "X-XSS-Protection": "1; mode=block",
+  "cache-control": "public, max-age=10"
+}

@@ -1,0 +1,13 @@
+{
+  "CF-RAY": "a2d72b77cc014b80-IAD",
+  "Connection": "close",
+  "Content-Length": "286",
+  "Content-Type": "application/json",
+  "Date": "Wed, 19 Aug 2026 06:40:57 GMT",
+  "Server": "cloudflare",
+  "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept",
+  "access-control-allow-methods": "GET, POST, PUT, DELETE",
+  "access-control-allow-origin": "*",
+  "cf-cache-status": "DYNAMIC",
+  "x-ratelimit-remaining": "1"
+}
