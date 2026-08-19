@@ -1,0 +1,27 @@
+{
+  "repository_oracle_sha256": "a1b52e311ca97fd752708622d050d480f65f8b1177c9e6726a485f344e7c65a5",
+  "returncode": 0,
+  "stdout": "priv=1 uncompressed P2PKH -> 1EHNa6Q4Jz2uvNExL497mE43ikXhwF6kZm: OK\npriv=1 compressed P2PKH -> 1BgGZ9tcN4rm9KBzDn7KprQz87SZ26SAMH: OK\nBIP39 KAT m/44'/0'/0'/0/0 -> 1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA: OK\nold-Electrum v1 vector -> 1KCvshw5g3ndGYxQmAxKcTpJV5kbj6Lefo: OK\nnegative control (public vectors vs escrow) -> no match: OK\nSELFTEST OK\n",
+  "stderr": "",
+  "passed": true,
+  "independent": {
+    "bip39_bip44": {
+      "phrase_sha256": "c557eec878dfd852ba3f88087c4f350f09c55537ab5e549c3cd14320ec3cef38",
+      "path": "m/44'/0'/0'/0/0",
+      "expected": "1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA",
+      "actual": "1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA",
+      "passed": true
+    },
+    "old_electrum_v1": {
+      "phrase_sha256": "4e9f80d414229c8a3f90367a5863e4f0f47b10ffaffe8894f921ad9ee1dc9988",
+      "change": 0,
+      "index": 0,
+      "expected": "1KCvshw5g3ndGYxQmAxKcTpJV5kbj6Lefo",
+      "actual": "1AkwHzN5onj9uSNFvKVN8czZTnZdqAhuu7",
+      "passed": false,
+      "official_wordlist_size": 1626,
+      "official_source_sha256": "9cf503acd21f86cf14c782e456bba4bb38a0999314da25fce899e0d930c39e68"
+    }
+  },
+  "all_passed": false
+}

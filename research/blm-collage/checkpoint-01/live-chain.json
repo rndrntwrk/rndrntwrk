@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "checkpoint": "01",
+  "checked_at_utc": "2026-08-19T08:22:02.325220+00:00",
+  "address": "1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+  "mempool": {
+    "address": {
+      "funded_txo_count": 5,
+      "funded_txo_sum_sats": 20107284,
+      "spent_txo_count": 0,
+      "spent_txo_sum_sats": 0,
+      "confirmed_tx_count": 5,
+      "mempool_tx_count": 0,
+      "confirmed_balance_sats": 20107284,
+      "unconfirmed_delta_sats": 0,
+      "total_balance_sats": 20107284
+    },
+    "utxo_count": 5,
+    "utxo_sum_sats": 20107284,
+    "utxos": [
+      {
+        "txid": "51b778b00ca5dc676e99da96545e5c1ae6cf68c4ca79d59879e77facac64a251",
+        "vout": 1,
+        "value_sats": 557,
+        "confirmed": true,
+        "block_height": 896018,
+        "block_hash": "000000000000000000013618bf5278843b9487445602c6408163d4826271841b",
+        "block_time": 1746831774
+      },
+      {
+        "txid": "6ca136b078c61f530e3c7eb46eed0a23785840294fc59ef006df26e26f88fb53",
+        "vout": 0,
+        "value_sats": 100000,
+        "confirmed": true,
+        "block_height": 874537,
+        "block_hash": "00000000000000000001893c6881932c9535a1396e034b07143796d1e867ec07",
+        "block_time": 1734079375
+      },
+      {
+        "txid": "6d1f46d1913c45de1cd515a9cdc4de64ff2abfc19102e2cf23840bb5e944f8f4",
+        "vout": 38,
+        "value_sats": 5727,
+        "confirmed": true,
+        "block_height": 899464,
+        "block_hash": "000000000000000000020d7c1802f0def99ba3b0b7d5321781fa4bdf67ac40b9",
+        "block_time": 1748843301
+      },
+      {
+        "txid": "a490266f12466f91c00546a4b744b5faea70835794b5b182d84e47e4294a33ee",
+        "vout": 0,
+        "value_sats": 1000,
+        "confirmed": true,
+        "block_height": 813704,
+        "block_hash": "00000000000000000002f4b5f056e47482a65dd8e2a4930d2e0d0b45263484b1",
+        "block_time": 1698198934
+      },
+      {
+        "txid": "fcee21d44ee94c09869947c74b61669bf928358e9c2d1699fb075bb6ebf5d043",
+        "vout": 1,
+        "value_sats": 20000000,
+        "confirmed": true,
+        "block_height": 629754,
+        "block_hash": "0000000000000000000c6a6ef21b6e1dac08d353b10f1273dde0144ec58b51f1",
+        "block_time": 1589097706
+      }
+    ]
+  },
+  "blockstream": {
+    "address": {
+      "funded_txo_count": 5,
+      "funded_txo_sum_sats": 20107284,
+      "spent_txo_count": 0,
+      "spent_txo_sum_sats": 0,
+      "confirmed_tx_count": 5,
+      "mempool_tx_count": 0,
+      "confirmed_balance_sats": 20107284,
+      "unconfirmed_delta_sats": 0,
+      "total_balance_sats": 20107284
+    },
+    "utxo_count": 5,
+    "utxo_sum_sats": 20107284,
+    "utxos": [
+      {
+        "txid": "51b778b00ca5dc676e99da96545e5c1ae6cf68c4ca79d59879e77facac64a251",
+        "vout": 1,
+        "value_sats": 557,
+        "confirmed": true,
+        "block_height": 896018,
+        "block_hash": "000000000000000000013618bf5278843b9487445602c6408163d4826271841b",
+        "block_time": 1746831774
+      },
+      {
+        "txid": "6ca136b078c61f530e3c7eb46eed0a23785840294fc59ef006df26e26f88fb53",
+        "vout": 0,
+        "value_sats": 100000,
+        "confirmed": true,
+        "block_height": 874537,
+        "block_hash": "00000000000000000001893c6881932c9535a1396e034b07143796d1e867ec07",
+        "block_time": 1734079375
+      },
+      {
+        "txid": "6d1f46d1913c45de1cd515a9cdc4de64ff2abfc19102e2cf23840bb5e944f8f4",
+        "vout": 38,
+        "value_sats": 5727,
+        "confirmed": true,
+        "block_height": 899464,
+        "block_hash": "000000000000000000020d7c1802f0def99ba3b0b7d5321781fa4bdf67ac40b9",
+        "block_time": 1748843301
+      },
+      {
+        "txid": "a490266f12466f91c00546a4b744b5faea70835794b5b182d84e47e4294a33ee",
+        "vout": 0,
+        "value_sats": 1000,
+        "confirmed": true,
+        "block_height": 813704,
+        "block_hash": "00000000000000000002f4b5f056e47482a65dd8e2a4930d2e0d0b45263484b1",
+        "block_time": 1698198934
+      },
+      {
+        "txid": "fcee21d44ee94c09869947c74b61669bf928358e9c2d1699fb075bb6ebf5d043",
+        "vout": 1,
+        "value_sats": 20000000,
+        "confirmed": true,
+        "block_height": 629754,
+        "block_hash": "0000000000000000000c6a6ef21b6e1dac08d353b10f1273dde0144ec58b51f1",
+        "block_time": 1589097706
+      }
+    ]
+  },
+  "blockchain_info_balance_sats": 20107284,
+  "consensus": {
+    "address_stats_agree": true,
+    "utxo_sets_agree": true,
+    "balance_observations_sats": [
+      20107284,
+      20107284,
+      20107284,
+      20107284,
+      20107284
+    ],
+    "all_balance_observations_agree": true,
+    "expected_reward_sats": 20107284,
+    "fully_available": true
+  },
+  "responses": {
+    "mempool_address": {
+      "name": "mempool_address",
+      "url": "https://mempool.space/api/address/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+      "fetched_at_utc": "2026-08-19T08:22:02.325245+00:00",
+      "ok": true,
+      "attempt": 1,
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 271,
+      "sha256": "a93a2ff1906a94c5422e50e00798b4874e3b542ad86ac09acffb90025f12fff0",
+      "json": {
+        "address": "1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+        "chain_stats": {
+          "funded_txo_count": 5,
+          "funded_txo_sum": 20107284,
+          "spent_txo_count": 0,
+          "spent_txo_sum": 0,
+          "tx_count": 5
+        },
+        "mempool_stats": {
+          "funded_txo_count": 0,
+          "funded_txo_sum": 0,
+          "spent_txo_count": 0,
+          "spent_txo_sum": 0,
+          "tx_count": 0
+        }
+      }
+    },
+    "mempool_utxo": {
+      "name": "mempool_utxo",
+      "url": "https://mempool.space/api/address/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ/utxo",
+      "fetched_at_utc": "2026-08-19T08:22:02.745678+00:00",
+      "ok": true,
+      "attempt": 1,
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 1267,
+      "sha256": "48f496e7595a5332a0e13aa8b9c89d7fcd4fef2ba3d5f16ad377f7967bf4f7cb",
+      "json": [
+        {
+          "txid": "fcee21d44ee94c09869947c74b61669bf928358e9c2d1699fb075bb6ebf5d043",
+          "vout": 1,
+          "status": {
+            "confirmed": true,
+            "block_height": 629754,
+            "block_hash": "0000000000000000000c6a6ef21b6e1dac08d353b10f1273dde0144ec58b51f1",
+            "block_time": 1589097706
+          },
+          "value": 20000000
+        },
+        {
+          "txid": "a490266f12466f91c00546a4b744b5faea70835794b5b182d84e47e4294a33ee",
+          "vout": 0,
+          "status": {
+            "confirmed": true,
+            "block_height": 813704,
+            "block_hash": "00000000000000000002f4b5f056e47482a65dd8e2a4930d2e0d0b45263484b1",
+            "block_time": 1698198934
+          },
+          "value": 1000
+        },
+        {
+          "txid": "6ca136b078c61f530e3c7eb46eed0a23785840294fc59ef006df26e26f88fb53",
+          "vout": 0,
+          "status": {
+            "confirmed": true,
+            "block_height": 874537,
+            "block_hash": "00000000000000000001893c6881932c9535a1396e034b07143796d1e867ec07",
+            "block_time": 1734079375
+          },
+          "value": 100000
+        },
+        {
+          "txid": "6d1f46d1913c45de1cd515a9cdc4de64ff2abfc19102e2cf23840bb5e944f8f4",
+          "vout": 38,
+          "status": {
+            "confirmed": true,
+            "block_height": 899464,
+            "block_hash": "000000000000000000020d7c1802f0def99ba3b0b7d5321781fa4bdf67ac40b9",
+            "block_time": 1748843301
+          },
+          "value": 5727
+        },
+        {
+          "txid": "51b778b00ca5dc676e99da96545e5c1ae6cf68c4ca79d59879e77facac64a251",
+          "vout": 1,
+          "status": {
+            "confirmed": true,
+            "block_height": 896018,
+            "block_hash": "000000000000000000013618bf5278843b9487445602c6408163d4826271841b",
+            "block_time": 1746831774
+          },
+          "value": 557
+        }
+      ]
+    },
+    "blockstream_address": {
+      "name": "blockstream_address",
+      "url": "https://blockstream.info/api/address/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+      "fetched_at_utc": "2026-08-19T08:22:02.940039+00:00",
+      "ok": true,
+      "attempt": 1,
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 271,
+      "sha256": "a93a2ff1906a94c5422e50e00798b4874e3b542ad86ac09acffb90025f12fff0",
+      "json": {
+        "address": "1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+        "chain_stats": {
+          "funded_txo_count": 5,
+          "funded_txo_sum": 20107284,
+          "spent_txo_count": 0,
+          "spent_txo_sum": 0,
+          "tx_count": 5
+        },
+        "mempool_stats": {
+          "funded_txo_count": 0,
+          "funded_txo_sum": 0,
+          "spent_txo_count": 0,
+          "spent_txo_sum": 0,
+          "tx_count": 0
+        }
+      }
+    },
+    "blockstream_utxo": {
+      "name": "blockstream_utxo",
+      "url": "https://blockstream.info/api/address/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ/utxo",
+      "fetched_at_utc": "2026-08-19T08:22:03.022445+00:00",
+      "ok": true,
+      "attempt": 1,
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 1267,
+      "sha256": "c4ba27e7c51a3d7d4b87c0eb1657d34d2a568a1442fa94b8cab4bb318950d143",
+      "json": [
+        {
+          "txid": "fcee21d44ee94c09869947c74b61669bf928358e9c2d1699fb075bb6ebf5d043",
+          "vout": 1,
+          "status": {
+            "confirmed": true,
+            "block_height": 629754,
+            "block_hash": "0000000000000000000c6a6ef21b6e1dac08d353b10f1273dde0144ec58b51f1",
+            "block_time": 1589097706
+          },
+          "value": 20000000
+        },
+        {
+          "txid": "a490266f12466f91c00546a4b744b5faea70835794b5b182d84e47e4294a33ee",
+          "vout": 0,
+          "status": {
+            "confirmed": true,
+            "block_height": 813704,
+            "block_hash": "00000000000000000002f4b5f056e47482a65dd8e2a4930d2e0d0b45263484b1",
+            "block_time": 1698198934
+          },
+          "value": 1000
+        },
+        {
+          "txid": "51b778b00ca5dc676e99da96545e5c1ae6cf68c4ca79d59879e77facac64a251",
+          "vout": 1,
+          "status": {
+            "confirmed": true,
+            "block_height": 896018,
+            "block_hash": "000000000000000000013618bf5278843b9487445602c6408163d4826271841b",
+            "block_time": 1746831774
+          },
+          "value": 557
+        },
+        {
+          "txid": "6ca136b078c61f530e3c7eb46eed0a23785840294fc59ef006df26e26f88fb53",
+          "vout": 0,
+          "status": {
+            "confirmed": true,
+            "block_height": 874537,
+            "block_hash": "00000000000000000001893c6881932c9535a1396e034b07143796d1e867ec07",
+            "block_time": 1734079375
+          },
+          "value": 100000
+        },
+        {
+          "txid": "6d1f46d1913c45de1cd515a9cdc4de64ff2abfc19102e2cf23840bb5e944f8f4",
+          "vout": 38,
+          "status": {
+            "confirmed": true,
+            "block_height": 899464,
+            "block_hash": "000000000000000000020d7c1802f0def99ba3b0b7d5321781fa4bdf67ac40b9",
+            "block_time": 1748843301
+          },
+          "value": 5727
+        }
+      ]
+    },
+    "blockchain_balance": {
+      "name": "blockchain_balance",
+      "url": "https://blockchain.info/q/addressbalance/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ?confirmations=0",
+      "fetched_at_utc": "2026-08-19T08:22:03.048825+00:00",
+      "ok": true,
+      "attempt": 1,
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8,
+      "sha256": "8b839927d04e6ecaa09bfe4625f10b7cfe77d32dde61e785e58e1010e210a0d6",
+      "json": 20107284
+    }
+  }
+}

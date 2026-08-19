@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-08-19T08:22:02.325220+00:00",
+  "expected_sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782",
+  "expected_dimensions": [
+    1600,
+    1200
+  ],
+  "canonical_path": "research/blm-collage/checkpoint-01/source/canonical-original.png",
+  "canonical_established": true,
+  "matching_source_count": 1,
+  "candidates": [
+    {
+      "name": "repository_raw",
+      "url": "https://raw.githubusercontent.com/floflo777/open-crypto-puzzles/main/1-big-prizes/blm-brave-new-world-0-2btc/clues/welcome-to-the-brave-new-world.png",
+      "path": "research/blm-collage/checkpoint-01/source/candidates/repository-original.png",
+      "bytes": 2383395,
+      "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1600,
+      "height": 1200,
+      "dimensions_match": true,
+      "png_info_keys": [
+        "srgb"
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_fully_opaque": true
+    }
+  ],
+  "reddit_media_urls_discovered": [],
+  "repository_copy_matches_expected": true,
+  "independent_reddit_copy_matches_expected": false
+}

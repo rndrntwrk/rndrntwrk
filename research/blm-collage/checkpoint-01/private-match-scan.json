@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scanned_at_utc": "2026-08-19T08:22:02.325220+00:00",
+  "scanned_files": 2649,
+  "scanned_bytes": 40690291,
+  "suspicious_filename_hits": [],
+  "true_marker_hits": [
+    {
+      "path": "research/hunting-time/checkpoint-01/run_checkpoint01.py",
+      "marker_id": 2
+    },
+    {
+      "path": ".github/workflows/hunting-time-checkpoint-01-v2.yml",
+      "marker_id": 2
+    },
+    {
+      "path": ".github/workflows/blm-collage-checkpoint-01.yml",
+      "marker_id": 2
+    },
+    {
+      "path": ".github/workflows/hunting-time-checkpoint-01.yml",
+      "marker_id": 2
+    }
+  ],
+  "private_match_artifact_found": true,
+  "note": "No file contents or candidate phrases are included in this report."
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "checkpoint": "01",
+  "status": "blocked",
+  "checked_at_utc": "2026-08-19T08:22:02.325220+00:00",
+  "live_reward": {
+    "address_stats_agree": true,
+    "utxo_sets_agree": true,
+    "balance_observations_sats": [
+      20107284,
+      20107284,
+      20107284,
+      20107284,
+      20107284
+    ],
+    "all_balance_observations_agree": true,
+    "expected_reward_sats": 20107284,
+    "fully_available": true
+  },
+  "source": {
+    "canonical_established": true,
+    "repository_copy_matches_expected": true,
+    "independent_reddit_copy_matches_expected": false,
+    "matching_source_count": 1,
+    "expected_sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782"
+  },
+  "oracle": {
+    "repository_selftest_passed": true,
+    "independent_bip39_passed": true,
+    "independent_old_electrum_passed": false,
+    "all_passed": false,
+    "oracle_sha256": "a1b52e311ca97fd752708622d050d480f65f8b1177c9e6726a485f344e7c65a5"
+  },
+  "private_match_artifact_found": true,
+  "exact_target_match_found": false,
+  "next_checkpoint": "02 \u2014 Prior-work provenance and normalized negative ledger"
+}
