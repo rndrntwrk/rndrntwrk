@@ -1,0 +1,243 @@
+name: Hunting Time Checkpoint 01B - Spend Verification
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/hunting-time-checkpoint-01b-spend.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-spend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Recover and cross-check complete address history
+        shell: bash
+        env:
+          TARGET_ADDRESS: bc1qhzy6j4amw26z7e694mgfr7kvzl7xteu54f0a85
+        run: |
+          set -euo pipefail
+          OUT=research/hunting-time/checkpoint-01b-spend
+          rm -rf "$OUT"
+          mkdir -p "$OUT/raw"
+          python - <<'PY'
+          from __future__ import annotations
+
+          import datetime as dt
+          import hashlib
+          import json
+          import os
+          import ssl
+          import time
+          import urllib.request
+          from pathlib import Path
+          from typing import Any
+
+          address = os.environ['TARGET_ADDRESS']
+          out = Path('research/hunting-time/checkpoint-01b-spend')
+          raw = out / 'raw'
+          raw.mkdir(parents=True, exist_ok=True)
+          checked = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
+          ctx = ssl.create_default_context()
+          ua = 'Mozilla/5.0 Hunting-Time-Checkpoint-01B-Spend/1.0'
+
+          urls = {
+              'mempool_txs': f'https://mempool.space/api/address/{address}/txs',
+              'blockstream_txs': f'https://blockstream.info/api/address/{address}/txs',
+          }
+          responses: dict[str, Any] = {}
+
+          for name, url in urls.items():
+              err = None
+              for attempt in range(1, 4):
+                  try:
+                      req = urllib.request.Request(url, headers={'User-Agent': ua, 'Accept': 'application/json'})
+                      with urllib.request.urlopen(req, timeout=25, context=ctx) as r:
+                          body = r.read()
+                          obj = json.loads(body)
+                          responses[name] = {
+                              'url': url,
+                              'status': r.status,
+                              'bytes': len(body),
+                              'sha256': hashlib.sha256(body).hexdigest(),
+                              'attempt': attempt,
+                              'json': obj,
+                          }
+                          (raw / f'{name}.json').write_bytes(body)
+                          break
+                  except Exception as exc:
+                      err = repr(exc)
+                      time.sleep(attempt)
+              else:
+                  responses[name] = {'url': url, 'error': err}
+
+          def summarize_tx(tx: dict[str, Any]) -> dict[str, Any]:
+              target_outputs = []
+              target_inputs = []
+              for i, vout in enumerate(tx.get('vout') or []):
+                  if vout.get('scriptpubkey_address') == address:
+                      target_outputs.append({'vout': i, 'value': int(vout.get('value', 0))})
+              for i, vin in enumerate(tx.get('vin') or []):
+                  prev = vin.get('prevout') or {}
+                  if prev.get('scriptpubkey_address') == address:
+                      target_inputs.append({
+                          'vin': i,
+                          'prev_txid': vin.get('txid'),
+                          'prev_vout': vin.get('vout'),
+                          'value': int(prev.get('value', 0)),
+                      })
+              status = tx.get('status') or {}
+              destination_outputs = []
+              if target_inputs:
+                  for i, vout in enumerate(tx.get('vout') or []):
+                      dest = vout.get('scriptpubkey_address')
+                      destination_outputs.append({
+                          'vout': i,
+                          'address': dest,
+                          'type': vout.get('scriptpubkey_type'),
+                          'value': int(vout.get('value', 0)),
+                      })
+              return {
+                  'txid': tx.get('txid'),
+                  'confirmed': bool(status.get('confirmed', False)),
+                  'block_height': status.get('block_height'),
+                  'block_hash': status.get('block_hash'),
+                  'block_time': status.get('block_time'),
+                  'block_time_utc': (
+                      dt.datetime.fromtimestamp(status['block_time'], tz=dt.timezone.utc).isoformat()
+                      if status.get('block_time') is not None else None
+                  ),
+                  'fee': tx.get('fee'),
+                  'size': tx.get('size'),
+                  'weight': tx.get('weight'),
+                  'target_outputs': target_outputs,
+                  'target_output_total': sum(x['value'] for x in target_outputs),
+                  'target_inputs': target_inputs,
+                  'target_input_total': sum(x['value'] for x in target_inputs),
+                  'destination_outputs': destination_outputs,
+              }
+
+          source_summaries = {}
+          for source in ('mempool_txs', 'blockstream_txs'):
+              txs = responses.get(source, {}).get('json')
+              source_summaries[source] = [summarize_tx(tx) for tx in txs] if isinstance(txs, list) else None
+
+          mem = source_summaries.get('mempool_txs')
+          blk = source_summaries.get('blockstream_txs')
+          if mem is not None:
+              mem = sorted(mem, key=lambda x: x['txid'] or '')
+          if blk is not None:
+              blk = sorted(blk, key=lambda x: x['txid'] or '')
+          histories_agree = mem is not None and blk is not None and mem == blk
+          history = mem if mem is not None else blk or []
+          funding = [x for x in history if x['target_output_total'] > 0]
+          spending = [x for x in history if x['target_input_total'] > 0]
+          total_funded = sum(x['target_output_total'] for x in funding)
+          total_spent = sum(x['target_input_total'] for x in spending)
+          current_balance = total_funded - total_spent
+
+          result = {
+              'schema_version': 1,
+              'checkpoint': '01B-spend',
+              'checked_at_utc': checked,
+              'address': address,
+              'responses': responses,
+              'histories_agree': histories_agree,
+              'history': history,
+              'funding_transactions': funding,
+              'spending_transactions': spending,
+              'totals': {
+                  'funded_sats': total_funded,
+                  'spent_sats': total_spent,
+                  'balance_sats': current_balance,
+                  'transaction_count': len(history),
+                  'funding_transaction_count': len(funding),
+                  'spending_transaction_count': len(spending),
+              },
+              'claim_state': {
+                  'funds_available': current_balance > 0,
+                  'fully_spent': total_funded == 420000 and total_spent == 420000 and current_balance == 0,
+                  'spend_identified': len(spending) == 1 and spending[0]['target_input_total'] == 420000,
+              },
+              'checkpoint_complete': bool(
+                  histories_agree
+                  and total_funded == 420000
+                  and total_spent == 420000
+                  and current_balance == 0
+                  and len(spending) == 1
+              ),
+          }
+          (out / 'spend-state.json').write_text(json.dumps(result, indent=2, sort_keys=True))
+
+          lines = [
+              '# Hunting Time — Checkpoint 01B spend verification',
+              '',
+              f'- Checked at (UTC): `{checked}`',
+              f'- Address: `{address}`',
+              f'- Histories agree: `{histories_agree}`',
+              f'- Total funded: `{total_funded}` sats',
+              f'- Total spent: `{total_spent}` sats',
+              f'- Current balance: `{current_balance}` sats',
+              f'- Funds available: `{current_balance > 0}`',
+              '',
+              '## Transactions',
+              '',
+              '| Role | TXID | Value involving target (sats) | Confirmed | Block height | Block time (UTC) |',
+              '|---|---|---:|---:|---:|---|',
+          ]
+          for tx in funding:
+              lines.append(f'| Funding | `{tx["txid"]}` | {tx["target_output_total"]} | {tx["confirmed"]} | {tx["block_height"]} | {tx["block_time_utc"]} |')
+          for tx in spending:
+              lines.append(f'| Spend | `{tx["txid"]}` | {tx["target_input_total"]} | {tx["confirmed"]} | {tx["block_height"]} | {tx["block_time_utc"]} |')
+          if spending:
+              tx = spending[0]
+              lines += ['', '## Spending transaction outputs', '', '| vout | Destination | Type | Value (sats) |', '|---:|---|---|---:|']
+              for v in tx['destination_outputs']:
+                  lines.append(f'| {v["vout"]} | `{v["address"]}` | {v["type"]} | {v["value"]} |')
+              lines += ['', f'- Transaction fee: `{tx["fee"]}` sats']
+          (out / 'report.md').write_text('\n'.join(lines) + '\n')
+          (out / 'SHA256SUMS.txt').write_text('\n'.join(
+              f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(out)}'
+              for p in sorted(out.rglob('*')) if p.is_file() and p.name != 'SHA256SUMS.txt'
+          ) + '\n')
+          print(json.dumps({
+              'histories_agree': histories_agree,
+              'totals': result['totals'],
+              'claim_state': result['claim_state'],
+              'checkpoint_complete': result['checkpoint_complete'],
+          }, indent=2, sort_keys=True))
+          if not result['checkpoint_complete']:
+              raise SystemExit('spending-history consensus gate did not pass')
+          PY
+
+      - name: Persist spend verification
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/hunting-time/checkpoint-01b-spend
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist Hunting Time spend verification $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+
+      - name: Upload spend verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-checkpoint-01b-spend
+          path: research/hunting-time/checkpoint-01b-spend
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
