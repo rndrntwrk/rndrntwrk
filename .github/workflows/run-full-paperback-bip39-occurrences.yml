@@ -1,0 +1,78 @@
+name: Run instrumented full paperback BIP39 occurrence scan
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/run-full-paperback-bip39-occurrences.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Persist run identifier immediately
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-media-analysis/full-paperback-bip39-occurrences
+          printf '%s\n' "$GITHUB_RUN_ID" > public-media-analysis/full-paperback-bip39-occurrences/RUN_ID.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/full-paperback-bip39-occurrences/RUN_ID.txt
+          git commit -m "research: record full occurrence scan run $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
+
+      - name: Install HTTP dependency
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
+      - name: Extract and run the reviewed enumerator
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          src = Path('.github/workflows/enumerate-full-paperback-bip39-occurrences.yml').read_text()
+          start_marker = "cat > /tmp/enumerate_all_occurrences.py <<'PY'\n"
+          start = src.index(start_marker) + len(start_marker)
+          end = src.index("\n          PY\n", start)
+          lines = src[start:end].splitlines()
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          Path('/tmp/enumerate_all_occurrences.py').write_text(code)
+          print('extracted', len(code), 'bytes')
+          PY
+          python /tmp/enumerate_all_occurrences.py | tee /tmp/full-occurrences.log
+          cp /tmp/full-occurrences.log public-media-analysis/full-paperback-bip39-occurrences/console.log
+
+      - name: Upload occurrence enumeration
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-paperback-bip39-occurrences-instrumented
+          path: public-media-analysis/full-paperback-bip39-occurrences
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist occurrence enumeration
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/full-paperback-bip39-occurrences || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist instrumented full occurrence scan $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
