@@ -1,0 +1,144 @@
+name: Probe Hunting Time hardcover preview
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-hunting-time-hardcover.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe hardcover reader endpoints and random windows
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/hardcover-probe
+          rm -rf "$out"; mkdir -p "$out/raw"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+          cat > /tmp/probe.py <<'PY'
+          from __future__ import annotations
+          import json
+          import subprocess
+          import time
+          import urllib.parse
+          from collections import Counter
+          from pathlib import Path
+
+          asin='B0FTM8XPKL'
+          out=Path('public-media-analysis/hardcover-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          cards=[
+              f'https://read.amazon.com/sample/{asin}?clientId=share',
+              f'https://read.amazon.com/kp/card?asin={asin}&preview=inline&linkCode=kpe',
+              f'https://read.amazon.com/kp/embed/?asin={asin}',
+          ]
+          results=[]
+
+          def curl(name,url,referer=None):
+              body=out/'raw'/f'{name}.body'
+              headers=out/'raw'/f'{name}.headers'
+              command=['curl','-L','--compressed','--retry','2','--max-time','35','-sS','-A',ua,'-c',str(out/'cookies.txt'),'-b',str(out/'cookies.txt'),'-D',str(headers),url,'-o',str(body),'-w','%{http_code}\t%{content_type}\t%{url_effective}']
+              if referer:
+                  command[command.index('-D'):command.index('-D')]=['-e',referer]
+              process=subprocess.run(command,capture_output=True,text=True)
+              raw=body.read_bytes() if body.exists() else b''
+              record={'name':name,'url':url,'status':process.stdout.strip(),'stderr':process.stderr.strip(),'bytes':len(raw),'file':str(body)}
+              try:
+                  record['json']=json.loads(raw)
+              except Exception:
+                  record['prefix']=raw[:1000].decode('utf-8','replace')
+              results.append(record)
+              return record
+
+          for index,card in enumerate(cards,1):
+              curl(f'card-{index}',card)
+
+          base='https://read.amazon.com/sample/print'
+          for path in ['book-data','random-page']:
+              params={'asin':asin,'buyingAsin':asin}
+              curl(path,base+'/'+path+'?'+urllib.parse.urlencode(params),cards[0])
+
+          # Repeat fresh random-page calls to discover the hardcover sample allocation.
+          distribution=Counter(); windows=[]
+          for attempt in range(80):
+              params={'asin':asin,'buyingAsin':asin,'nonce':str(attempt)}
+              rec=curl(f'random-{attempt:03d}',base+'/random-page?'+urllib.parse.urlencode(params),cards[0])
+              obj=rec.get('json')
+              pages=[]
+              if isinstance(obj,dict):
+                  for key in ('jumboImageUrls','largeImageUrls'):
+                      value=obj.get(key)
+                      if isinstance(value,dict):
+                          pages.extend(int(page) for page in value if str(page).isdigit())
+              pages=sorted(set(pages))
+              windows.append({'attempt':attempt,'pages':pages})
+              for page in pages: distribution[page]+=1
+              time.sleep(0.05)
+
+          semantic=['watch','time','screen','view','vehicle','car','truck','pilot','control','panel','surface','device','group','black','road']
+          search_hits={}
+          endpoint=base+'/search-results'
+          for term in semantic:
+              params={'asin':asin,'buyingAsin':asin,'query':term,'pageNumber':1,'pageSize':100}
+              rec=curl('search-'+term,endpoint+'?'+urllib.parse.urlencode(params),cards[0])
+              obj=rec.get('json')
+              highlights=obj.get('highlights') if isinstance(obj,dict) else None
+              search_hits[term]=sorted(int(page) for page in highlights) if isinstance(highlights,dict) else []
+
+          targets={103,110,112,119,241,250}
+          summary={
+              'asin':asin,
+              'result_count':len(results),
+              'random_distribution':{str(page):count for page,count in sorted(distribution.items())},
+              'target_pages_observed':sorted(page for page in distribution if page in targets),
+              'windows':windows,
+              'search_hits':search_hits,
+              'statuses':Counter(rec['status'].split('\t')[0] for rec in results),
+          }
+          summary['statuses']=dict(summary['statuses'])
+          (out/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          (out/'results.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          lines=['# Hunting Time hardcover preview probe','',f'- ASIN: `{asin}`',f'- Responses: {len(results)}',f'- Target pages observed: {summary["target_pages_observed"]}','', '## Random page distribution','',json.dumps(summary['random_distribution'],indent=2),'','## Semantic search pages','']
+          for term,pages in search_hits.items(): lines.append(f'- `{term}`: {pages}')
+          (out/'summary.md').write_text('\n'.join(lines)+'\n')
+          print(json.dumps(summary,indent=2),flush=True)
+          PY
+          sed -i 's/summary\[\\"target_pages_observed\\"\]/summary["target_pages_observed"]/g' /tmp/probe.py
+          python /tmp/probe.py | tee "$out/console.txt"
+
+      - name: Upload hardcover evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-hardcover-probe
+          path: public-media-analysis/hardcover-probe
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist hardcover summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/hardcover-probe/RUN_ID.txt || true
+          git add public-media-analysis/hardcover-probe/summary.json || true
+          git add public-media-analysis/hardcover-probe/summary.md || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist hardcover probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
