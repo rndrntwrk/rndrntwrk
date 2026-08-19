@@ -1,0 +1,47 @@
+{
+  "mapping": {
+    "14": 23,
+    "19": 28,
+    "21": 30,
+    "24": 33,
+    "32": 41,
+    "103": 112,
+    "110": 119,
+    "241": 250
+  },
+  "completed_requests": 6158,
+  "status_counts": {
+    "200 application/json": 6158
+  },
+  "error_count": 0,
+  "positive_words": {
+    "14": [
+      "black",
+      "way"
+    ],
+    "19": [
+      "device",
+      "machine",
+      "network"
+    ],
+    "21": [
+      "air",
+      "group",
+      "jungle"
+    ],
+    "24": [
+      "orange",
+      "surface",
+      "time"
+    ],
+    "32": [
+      "car",
+      "road",
+      "window"
+    ],
+    "103": [],
+    "110": [],
+    "241": []
+  },
+  "elapsed_seconds": 67.88988709449768
+}

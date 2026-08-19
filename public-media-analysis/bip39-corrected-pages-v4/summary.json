@@ -1,0 +1,356 @@
+{
+  "asin": "B0FRGB2PMR",
+  "mapping": {
+    "14": 23,
+    "19": 28,
+    "21": 30,
+    "24": 33,
+    "32": 41,
+    "103": 112,
+    "110": 119,
+    "241": 250
+  },
+  "wordlist_size": 2048,
+  "completed_requests": 6158,
+  "status_counts": {
+    "200 application/json": 6158
+  },
+  "error_count": 0,
+  "control_hits": {
+    "14": [
+      "black",
+      "way"
+    ],
+    "19": [
+      "device",
+      "machine",
+      "network"
+    ],
+    "21": [
+      "air",
+      "group",
+      "jungle"
+    ],
+    "24": [
+      "orange",
+      "surface",
+      "time"
+    ],
+    "32": [
+      "car",
+      "road",
+      "window"
+    ]
+  },
+  "target_words": {
+    "103": [],
+    "110": [],
+    "241": []
+  },
+  "details": {
+    "14": [
+      {
+        "word": "black",
+        "endpoint_page": 23,
+        "highlight_count": 1,
+        "highlights": {
+          "23": [
+            [
+              "830",
+              "217",
+              "59",
+              "13"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "way",
+        "endpoint_page": 23,
+        "highlight_count": 1,
+        "highlights": {
+          "23": [
+            [
+              "778",
+              "242",
+              "46",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      }
+    ],
+    "19": [
+      {
+        "word": "machine",
+        "endpoint_page": 28,
+        "highlight_count": 1,
+        "highlights": {
+          "28": [
+            [
+              "131",
+              "856",
+              "98",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "network",
+        "endpoint_page": 28,
+        "highlight_count": 1,
+        "highlights": {
+          "28": [
+            [
+              "227",
+              "910",
+              "103",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "device",
+        "endpoint_page": 28,
+        "highlight_count": 2,
+        "highlights": {
+          "28": [
+            [
+              "131",
+              "190",
+              "72",
+              "15"
+            ],
+            [
+              "581",
+              "217",
+              "74",
+              "13"
+            ]
+          ]
+        },
+        "phase": "control"
+      }
+    ],
+    "21": [
+      {
+        "word": "group",
+        "endpoint_page": 30,
+        "highlight_count": 1,
+        "highlights": {
+          "30": [
+            [
+              "700",
+              "137",
+              "67",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "air",
+        "endpoint_page": 30,
+        "highlight_count": 1,
+        "highlights": {
+          "30": [
+            [
+              "240",
+              "749",
+              "38",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "jungle",
+        "endpoint_page": 30,
+        "highlight_count": 2,
+        "highlights": {
+          "30": [
+            [
+              "667",
+              "510",
+              "69",
+              "15"
+            ],
+            [
+              "173",
+              "670",
+              "77",
+              "13"
+            ]
+          ]
+        },
+        "phase": "control"
+      }
+    ],
+    "24": [
+      {
+        "word": "surface",
+        "endpoint_page": 33,
+        "highlight_count": 2,
+        "highlights": {
+          "33": [
+            [
+              "232",
+              "190",
+              "82",
+              "15"
+            ],
+            [
+              "716",
+              "856",
+              "103",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "orange",
+        "endpoint_page": 33,
+        "highlight_count": 1,
+        "highlights": {
+          "33": [
+            [
+              "100",
+              "722",
+              "85",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "time",
+        "endpoint_page": 33,
+        "highlight_count": 7,
+        "highlights": {
+          "33": [
+            [
+              "522",
+              "60",
+              "46",
+              "13"
+            ],
+            [
+              "336",
+              "242",
+              "59",
+              "15"
+            ],
+            [
+              "680",
+              "376",
+              "51",
+              "15"
+            ],
+            [
+              "243",
+              "483",
+              "54",
+              "15"
+            ],
+            [
+              "535",
+              "510",
+              "51",
+              "15"
+            ],
+            [
+              "287",
+              "776",
+              "62",
+              "15"
+            ],
+            [
+              "835",
+              "883",
+              "54",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      }
+    ],
+    "32": [
+      {
+        "word": "window",
+        "endpoint_page": 41,
+        "highlight_count": 3,
+        "highlights": {
+          "41": [
+            [
+              "780",
+              "190",
+              "113",
+              "15"
+            ],
+            [
+              "799",
+              "403",
+              "93",
+              "15"
+            ],
+            [
+              "240",
+              "910",
+              "100",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "road",
+        "endpoint_page": 41,
+        "highlight_count": 1,
+        "highlights": {
+          "41": [
+            [
+              "240",
+              "563",
+              "56",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      },
+      {
+        "word": "car",
+        "endpoint_page": 41,
+        "highlight_count": 1,
+        "highlights": {
+          "41": [
+            [
+              "408",
+              "563",
+              "36",
+              "15"
+            ]
+          ]
+        },
+        "phase": "control"
+      }
+    ],
+    "103": [],
+    "110": [],
+    "241": []
+  },
+  "elapsed_seconds": 67.89011836051941
+}
