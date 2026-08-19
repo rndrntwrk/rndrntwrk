@@ -1,0 +1,101 @@
+name: Probe public search contexts by title position
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-search-context-position.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe and decrypt public search contexts
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/search-context-position
+          rm -rf "$out"
+          mkdir -p "$out"
+          cat > /tmp/probe.mjs <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+
+          const out='public-media-analysis/search-context-position';
+          const endpoint='https://read.amazon.com/service/web/content/getSearchContext';
+          const asin='B0FK7RBDFL';
+          const revision='64363d23';
+          const ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36';
+
+          function decryptContext(s){
+            try{
+              const key=Buffer.from(s.slice(0,24),'base64');
+              const iv=Buffer.from(s.slice(24,48),'base64');
+              const payload=Buffer.from(s.slice(48),'base64');
+              if(payload.length<17) throw new Error('payload too short');
+              const tag=payload.subarray(payload.length-16);
+              const ciphertext=payload.subarray(0,payload.length-16);
+              const d=crypto.createDecipheriv('aes-128-gcm',key,iv);
+              d.setAuthTag(tag);
+              return Buffer.concat([d.update(ciphertext),d.final()]).toString('utf8');
+            }catch(e){ return {error:String(e)}; }
+          }
+
+          const known=[25,7622,8148,20136,20447,27622,28648,31385,31975,35119,36054,49345,49602];
+          const beyond=[50000,52000,55000,60000,70000,80000,90000,100000,120000,140000,160000,180000,200000,220000,250000,300000,350000,400000,450000,500000,550000,600000];
+          const positionSets=[...known,...beyond].map(p=>[p]);
+          positionSets.push([49345,49360]);
+          positionSets.push([27622,27629]);
+
+          const variants=[
+            p=>({asin,positions:[p],revision,clientVersion:'20000100'}),
+            p=>({asin,positions:[p],revision,refEmId:null,yjACR:null,clientVersion:'20000100'}),
+            p=>({asin,positions:[p],contentVersion:revision,clientVersion:'20000100'}),
+          ];
+          const results=[];
+          let n=0;
+          for(const p of positionSets){
+            for(let vi=0;vi<variants.length;vi++){
+              const body=variants[vi](p);
+              let rec={n:n++,positions:p,variant:vi+1,body};
+              try{
+                const r=await fetch(endpoint,{method:'POST',headers:{'user-agent':ua,'accept':'application/json','content-type':'application/json','origin':'https://read.amazon.com','referer':'https://read.amazon.com/'},body:JSON.stringify(body)});
+                const text=await r.text();
+                rec.status=r.status; rec.contentType=r.headers.get('content-type'); rec.bytes=Buffer.byteLength(text); rec.raw=text;
+                try{
+                  const obj=JSON.parse(text); rec.json=obj;
+                  const contexts=obj.searchContexts||obj.contexts||[];
+                  rec.decrypted=contexts.map(decryptContext);
+                }catch(e){rec.jsonError=String(e)}
+              }catch(e){rec.error=String(e)}
+              results.push(rec);
+              console.log(JSON.stringify({positions:p,variant:vi+1,status:rec.status,bytes:rec.bytes,decrypted:rec.decrypted,raw:(rec.raw||'').slice(0,300)}));
+            }
+          }
+          fs.writeFileSync(`${out}/results.json`,JSON.stringify(results,null,2));
+          fs.writeFileSync(`${out}/summary.json`,JSON.stringify(results.map(({raw,body,...r})=>r),null,2));
+          JS
+          node /tmp/probe.mjs | tee "$out/console.txt"
+
+      - name: Persist results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-context-position || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist public search-context position probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
