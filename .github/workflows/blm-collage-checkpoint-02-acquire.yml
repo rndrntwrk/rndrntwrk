@@ -1,0 +1,65 @@
+name: BLM Collage Checkpoint 02 provenance acquisition
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/blm-collage-checkpoint-02-acquire.yml
+      - research/blm-collage/checkpoint-02/acquire_checkpoint02.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install acquisition dependency
+        run: python -m pip install --disable-pip-version-check requests
+
+      - name: Acquire public provenance evidence
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python research/blm-collage/checkpoint-02/acquire_checkpoint02.py | tee research/blm-collage/checkpoint-02-acquisition-console.log
+          printf '%s\n' "$GITHUB_RUN_ID" > research/blm-collage/checkpoint-02-acquisition/RUN_ID.txt
+          printf '%s\n' "$GITHUB_SHA" > research/blm-collage/checkpoint-02-acquisition/WORKFLOW_HEAD_SHA.txt
+
+      - name: Upload complete acquisition evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: blm-collage-checkpoint-02-acquisition
+          path: |
+            research/blm-collage/checkpoint-02-acquisition
+            research/blm-collage/checkpoint-02-acquisition-console.log
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14
+
+      - name: Persist compact acquisition index
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p research/blm-collage/checkpoint-02/index
+          for f in acquisition-summary.json repository-clones.json MANIFEST.json RUN_ID.txt WORKFLOW_HEAD_SHA.txt; do
+            cp "research/blm-collage/checkpoint-02-acquisition/$f" "research/blm-collage/checkpoint-02/index/$f"
+          done
+          cp research/blm-collage/checkpoint-02-acquisition/github-code-search/summary.json research/blm-collage/checkpoint-02/index/code-search-summary.json
+          git add research/blm-collage/checkpoint-02/index
+          git commit -m "research: persist BLM checkpoint 02 acquisition index $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
