@@ -3,7 +3,7 @@
 - BIP39 words completed: 2,048 / 2,048
 - HTTP requests: 2,063
 - Errors: 0
-- Elapsed: 68.4 seconds
+- Elapsed: 66.7 seconds
 
 ## Control printed page 14
 
