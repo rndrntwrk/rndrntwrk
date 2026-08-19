@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 05:55:24 GMT
+date: Wed, 19 Aug 2026 05:57:21 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: QAC60JZ2M8RQCWWGP90R
+x-amz-rid: 22A8CRYX5JTBP6KZZQAP
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 6eb1ef8dae64848e6a3aaafe9f5944b6.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: BtbvFOCRkY3j51su4JoQp9sgsrAv3jasR14XSmkxnFXmBVuYGKiYAQ==
+via: 1.1 4d70f087869a9b5ea44066f1023bcc14.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: WQgMmLt_nLVTgUTAy-BqGkkpDChHLSFBotL6u5WGsx-qq-vOHxc7zQ==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 05:55:24 GMT
+Date: Wed, 19 Aug 2026 05:57:21 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 dc3bc2dd1f151417f0c9932a954494e2.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: ORD56-P13
+Via: 1.1 d430993d08ddf1e5fb27a5abae1dfcc6.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: SFO53-P10
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: gLGg67jlp_4y3TUyC2EEoPIiQI0rWyXWu6EHyzNJg_bQt15qJ7XMnw==
+X-Amz-Cf-Id: 7TyYi6OQFMdRq-0MkGNyCMtdr_xDl4n0NeTv3YMPpxyZkjXgZbkjVg==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 05:55:24 GMT
+date: Wed, 19 Aug 2026 05:57:21 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: Q1XSG7SFHB0BQ2W5Y5SK
+x-amz-rid: 9EP41C5N274SS0M67P7N
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 e10f0b32dbf391842a3cc42e46640810.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD56-P13
+via: 1.1 20c43a0e6fb1d8790d777292bc628d74.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO53-P10
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: FwhQ2iAEx3VQaHPs2VtmwmApeej1SAewxLOaUFlZyONXUOf5q0xvHQ==
+x-amz-cf-id: QDGqQZYaNpneqdFrGrzzTI2F4qgsQGtacrjKvyOj4Iok5oF4yPcB7Q==
 
