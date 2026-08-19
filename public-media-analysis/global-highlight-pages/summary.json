@@ -1,0 +1,1011 @@
+{
+  "run_id": null,
+  "query_count": 99,
+  "target_hits": {
+    "112": [],
+    "119": [],
+    "250": []
+  },
+  "high_page_hits": [],
+  "rows": [
+    {
+      "term": "air",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=air&pageNumber=1&pageSize=100",
+      "pages": [
+        10
+      ],
+      "status": 200,
+      "counts": {
+        "10": 1
+      }
+    },
+    {
+      "term": "airport",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=airport&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "alarm",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=alarm&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "apology",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=apology&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "army",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=army&pageNumber=1&pageSize=100",
+      "pages": [
+        18
+      ],
+      "status": 200,
+      "counts": {
+        "18": 1
+      }
+    },
+    {
+      "term": "artefact",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=artefact&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "attack",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=attack&pageNumber=1&pageSize=100",
+      "pages": [
+        28
+      ],
+      "status": 200,
+      "counts": {
+        "28": 1
+      }
+    },
+    {
+      "term": "bag",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=bag&pageNumber=1&pageSize=100",
+      "pages": [
+        37
+      ],
+      "status": 200,
+      "counts": {
+        "37": 1
+      }
+    },
+    {
+      "term": "balcony",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=balcony&pageNumber=1&pageSize=100",
+      "pages": [
+        10
+      ],
+      "status": 200,
+      "counts": {
+        "10": 1
+      }
+    },
+    {
+      "term": "bed",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=bed&pageNumber=1&pageSize=100",
+      "pages": [
+        66
+      ],
+      "status": 200,
+      "counts": {
+        "66": 1
+      }
+    },
+    {
+      "term": "black",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=black&pageNumber=1&pageSize=100",
+      "pages": [
+        22
+      ],
+      "status": 200,
+      "counts": {
+        "22": 1
+      }
+    },
+    {
+      "term": "blue",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=blue&pageNumber=1&pageSize=100",
+      "pages": [
+        19
+      ],
+      "status": 200,
+      "counts": {
+        "19": 1
+      }
+    },
+    {
+      "term": "cabin",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=cabin&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "cable",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=cable&pageNumber=1&pageSize=100",
+      "pages": [
+        41
+      ],
+      "status": 200,
+      "counts": {
+        "41": 1
+      }
+    },
+    {
+      "term": "camera",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=camera&pageNumber=1&pageSize=100",
+      "pages": [
+        21
+      ],
+      "status": 200,
+      "counts": {
+        "21": 1
+      }
+    },
+    {
+      "term": "car",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=car&pageNumber=1&pageSize=100",
+      "pages": [
+        41
+      ],
+      "status": 200,
+      "counts": {
+        "41": 1
+      }
+    },
+    {
+      "term": "carry",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=carry&pageNumber=1&pageSize=100",
+      "pages": [
+        11
+      ],
+      "status": 200,
+      "counts": {
+        "11": 0
+      }
+    },
+    {
+      "term": "charge",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=charge&pageNumber=1&pageSize=100",
+      "pages": [
+        29
+      ],
+      "status": 200,
+      "counts": {
+        "29": 1
+      }
+    },
+    {
+      "term": "city",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=city&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "clock",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=clock&pageNumber=1&pageSize=100",
+      "pages": [
+        12
+      ],
+      "status": 200,
+      "counts": {
+        "12": 1
+      }
+    },
+    {
+      "term": "cloud",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=cloud&pageNumber=1&pageSize=100",
+      "pages": [
+        11
+      ],
+      "status": 200,
+      "counts": {
+        "11": 1
+      }
+    },
+    {
+      "term": "cold",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=cold&pageNumber=1&pageSize=100",
+      "pages": [
+        27
+      ],
+      "status": 200,
+      "counts": {
+        "27": 1
+      }
+    },
+    {
+      "term": "connect",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=connect&pageNumber=1&pageSize=100",
+      "pages": [
+        28
+      ],
+      "status": 200,
+      "counts": {
+        "28": 4
+      }
+    },
+    {
+      "term": "control",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=control&pageNumber=1&pageSize=100",
+      "pages": [
+        42
+      ],
+      "status": 200,
+      "counts": {
+        "42": 1
+      }
+    },
+    {
+      "term": "current",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=current&pageNumber=1&pageSize=100",
+      "pages": [
+        33
+      ],
+      "status": 200,
+      "counts": {
+        "33": 1
+      }
+    },
+    {
+      "term": "curtain",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=curtain&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "device",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=device&pageNumber=1&pageSize=100",
+      "pages": [
+        27
+      ],
+      "status": 200,
+      "counts": {
+        "27": 1
+      }
+    },
+    {
+      "term": "dial",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=dial&pageNumber=1&pageSize=100",
+      "pages": [
+        33
+      ],
+      "status": 200,
+      "counts": {
+        "33": 1
+      }
+    },
+    {
+      "term": "display",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=display&pageNumber=1&pageSize=100",
+      "pages": [
+        52
+      ],
+      "status": 200,
+      "counts": {
+        "52": 1
+      }
+    },
+    {
+      "term": "door",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=door&pageNumber=1&pageSize=100",
+      "pages": [
+        44
+      ],
+      "status": 200,
+      "counts": {
+        "44": 1
+      }
+    },
+    {
+      "term": "drive",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=drive&pageNumber=1&pageSize=100",
+      "pages": [
+        8
+      ],
+      "status": 200,
+      "counts": {
+        "8": 1
+      }
+    },
+    {
+      "term": "drone",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=drone&pageNumber=1&pageSize=100",
+      "pages": [
+        20
+      ],
+      "status": 200,
+      "counts": {
+        "20": 1
+      }
+    },
+    {
+      "term": "electric",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=electric&pageNumber=1&pageSize=100",
+      "pages": [
+        49
+      ],
+      "status": 200,
+      "counts": {
+        "49": 1
+      }
+    },
+    {
+      "term": "energy",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=energy&pageNumber=1&pageSize=100",
+      "pages": [
+        24
+      ],
+      "status": 200,
+      "counts": {
+        "24": 1
+      }
+    },
+    {
+      "term": "engine",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=engine&pageNumber=1&pageSize=100",
+      "pages": [
+        47
+      ],
+      "status": 200,
+      "counts": {
+        "47": 1
+      }
+    },
+    {
+      "term": "feed",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=feed&pageNumber=1&pageSize=100",
+      "pages": [
+        46
+      ],
+      "status": 200,
+      "counts": {
+        "46": 1
+      }
+    },
+    {
+      "term": "fire",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=fire&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "flight",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=flight&pageNumber=1&pageSize=100",
+      "pages": [
+        9
+      ],
+      "status": 200,
+      "counts": {
+        "9": 1
+      }
+    },
+    {
+      "term": "forest",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=forest&pageNumber=1&pageSize=100",
+      "pages": [
+        24
+      ],
+      "status": 200,
+      "counts": {
+        "24": 1
+      }
+    },
+    {
+      "term": "gauge",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=gauge&pageNumber=1&pageSize=100",
+      "pages": [
+        33
+      ],
+      "status": 200,
+      "counts": {
+        "33": 0
+      }
+    },
+    {
+      "term": "green",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=green&pageNumber=1&pageSize=100",
+      "pages": [
+        24
+      ],
+      "status": 200,
+      "counts": {
+        "24": 0
+      }
+    },
+    {
+      "term": "group",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=group&pageNumber=1&pageSize=100",
+      "pages": [
+        18
+      ],
+      "status": 200,
+      "counts": {
+        "18": 2
+      }
+    },
+    {
+      "term": "heat",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=heat&pageNumber=1&pageSize=100",
+      "pages": [
+        19
+      ],
+      "status": 200,
+      "counts": {
+        "19": 1
+      }
+    },
+    {
+      "term": "helicopter",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=helicopter&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "hotel",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=hotel&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "hour",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=hour&pageNumber=1&pageSize=100",
+      "pages": [
+        24
+      ],
+      "status": 200,
+      "counts": {
+        "24": 1
+      }
+    },
+    {
+      "term": "image",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=image&pageNumber=1&pageSize=100",
+      "pages": [
+        27
+      ],
+      "status": 200,
+      "counts": {
+        "27": 1
+      }
+    },
+    {
+      "term": "instrument",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=instrument&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "journey",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=journey&pageNumber=1&pageSize=100",
+      "pages": [
+        10
+      ],
+      "status": 200,
+      "counts": {
+        "10": 1
+      }
+    },
+    {
+      "term": "jungle",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=jungle&pageNumber=1&pageSize=100",
+      "pages": [
+        24
+      ],
+      "status": 200,
+      "counts": {
+        "24": 2
+      }
+    },
+    {
+      "term": "light",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=light&pageNumber=1&pageSize=100",
+      "pages": [
+        10
+      ],
+      "status": 200,
+      "counts": {
+        "10": 2
+      }
+    },
+    {
+      "term": "machine",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=machine&pageNumber=1&pageSize=100",
+      "pages": [
+        19
+      ],
+      "status": 200,
+      "counts": {
+        "19": 1
+      }
+    },
+    {
+      "term": "metal",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=metal&pageNumber=1&pageSize=100",
+      "pages": [
+        30
+      ],
+      "status": 200,
+      "counts": {
+        "30": 1
+      }
+    },
+    {
+      "term": "military",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=military&pageNumber=1&pageSize=100",
+      "pages": [
+        19
+      ],
+      "status": 200,
+      "counts": {
+        "19": 1
+      }
+    },
+    {
+      "term": "minute",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=minute&pageNumber=1&pageSize=100",
+      "pages": [
+        27
+      ],
+      "status": 200,
+      "counts": {
+        "27": 1
+      }
+    },
+    {
+      "term": "mobile",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=mobile&pageNumber=1&pageSize=100",
+      "pages": [
+        41
+      ],
+      "status": 200,
+      "counts": {
+        "41": 1
+      }
+    },
+    {
+      "term": "monitor",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=monitor&pageNumber=1&pageSize=100",
+      "pages": [
+        25
+      ],
+      "status": 200,
+      "counts": {
+        "25": 1
+      }
+    },
+    {
+      "term": "moon",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=moon&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "night",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=night&pageNumber=1&pageSize=100",
+      "pages": [
+        10
+      ],
+      "status": 200,
+      "counts": {
+        "10": 1
+      }
+    },
+    {
+      "term": "ocean",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=ocean&pageNumber=1&pageSize=100",
+      "pages": [
+        8
+      ],
+      "status": 200,
+      "counts": {
+        "8": 1
+      }
+    },
+    {
+      "term": "panel",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=panel&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "path",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=path&pageNumber=1&pageSize=100",
+      "pages": [
+        24
+      ],
+      "status": 200,
+      "counts": {
+        "24": 1
+      }
+    },
+    {
+      "term": "pilot",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=pilot&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "position",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=position&pageNumber=1&pageSize=100",
+      "pages": [
+        19
+      ],
+      "status": 200,
+      "counts": {
+        "19": 1
+      }
+    },
+    {
+      "term": "power",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=power&pageNumber=1&pageSize=100",
+      "pages": [
+        12
+      ],
+      "status": 200,
+      "counts": {
+        "12": 1
+      }
+    },
+    {
+      "term": "price",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=price&pageNumber=1&pageSize=100",
+      "pages": [
+        59
+      ],
+      "status": 200,
+      "counts": {
+        "59": 1
+      }
+    },
+    {
+      "term": "radio",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=radio&pageNumber=1&pageSize=100",
+      "pages": [
+        19
+      ],
+      "status": 200,
+      "counts": {
+        "19": 1
+      }
+    },
+    {
+      "term": "record",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=record&pageNumber=1&pageSize=100",
+      "pages": [
+        3
+      ],
+      "status": 200,
+      "counts": {
+        "3": 1
+      }
+    },
+    {
+      "term": "road",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=road&pageNumber=1&pageSize=100",
+      "pages": [
+        41
+      ],
+      "status": 200,
+      "counts": {
+        "41": 1
+      }
+    },
+    {
+      "term": "room",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=room&pageNumber=1&pageSize=100",
+      "pages": [
+        8
+      ],
+      "status": 200,
+      "counts": {
+        "8": 1
+      }
+    },
+    {
+      "term": "rotor",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=rotor&pageNumber=1&pageSize=100",
+      "pages": [
+        21
+      ],
+      "status": 200,
+      "counts": {
+        "21": 2
+      }
+    },
+    {
+      "term": "screen",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=screen&pageNumber=1&pageSize=100",
+      "pages": [
+        12
+      ],
+      "status": 200,
+      "counts": {
+        "12": 1
+      }
+    },
+    {
+      "term": "second",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=second&pageNumber=1&pageSize=100",
+      "pages": [
+        20
+      ],
+      "status": 200,
+      "counts": {
+        "20": 1
+      }
+    },
+    {
+      "term": "signal",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=signal&pageNumber=1&pageSize=100",
+      "pages": [
+        28
+      ],
+      "status": 200,
+      "counts": {
+        "28": 2
+      }
+    },
+    {
+      "term": "sky",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=sky&pageNumber=1&pageSize=100",
+      "pages": [
+        10
+      ],
+      "status": 200,
+      "counts": {
+        "10": 2
+      }
+    },
+    {
+      "term": "smoke",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=smoke&pageNumber=1&pageSize=100",
+      "pages": [
+        64
+      ],
+      "status": 200,
+      "counts": {
+        "64": 1
+      }
+    },
+    {
+      "term": "stone",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=stone&pageNumber=1&pageSize=100",
+      "pages": [
+        12
+      ],
+      "status": 200,
+      "counts": {
+        "12": 1
+      }
+    },
+    {
+      "term": "street",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=street&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "surface",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=surface&pageNumber=1&pageSize=100",
+      "pages": [
+        18
+      ],
+      "status": 200,
+      "counts": {
+        "18": 1
+      }
+    },
+    {
+      "term": "switch",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=switch&pageNumber=1&pageSize=100",
+      "pages": [
+        29
+      ],
+      "status": 200,
+      "counts": {
+        "29": 1
+      }
+    },
+    {
+      "term": "target",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=target&pageNumber=1&pageSize=100",
+      "pages": [
+        29
+      ],
+      "status": 200,
+      "counts": {
+        "29": 1
+      }
+    },
+    {
+      "term": "thermal",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=thermal&pageNumber=1&pageSize=100",
+      "pages": [
+        29
+      ],
+      "status": 200,
+      "counts": {
+        "29": 1
+      }
+    },
+    {
+      "term": "time",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=time&pageNumber=1&pageSize=100",
+      "pages": [
+        1
+      ],
+      "status": 200,
+      "counts": {
+        "1": 1
+      }
+    },
+    {
+      "term": "track",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=track&pageNumber=1&pageSize=100",
+      "pages": [
+        26
+      ],
+      "status": 200,
+      "counts": {
+        "26": 1
+      }
+    },
+    {
+      "term": "train",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=train&pageNumber=1&pageSize=100",
+      "pages": [
+        30
+      ],
+      "status": 200,
+      "counts": {
+        "30": 1
+      }
+    },
+    {
+      "term": "transport",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=transport&pageNumber=1&pageSize=100",
+      "pages": [
+        44
+      ],
+      "status": 200,
+      "counts": {
+        "44": 1
+      }
+    },
+    {
+      "term": "travel",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=travel&pageNumber=1&pageSize=100",
+      "pages": [
+        37
+      ],
+      "status": 200,
+      "counts": {
+        "37": 1
+      }
+    },
+    {
+      "term": "tree",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=tree&pageNumber=1&pageSize=100",
+      "pages": [
+        26
+      ],
+      "status": 200,
+      "counts": {
+        "26": 1
+      }
+    },
+    {
+      "term": "trip",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=trip&pageNumber=1&pageSize=100",
+      "pages": [
+        26
+      ],
+      "status": 200,
+      "counts": {
+        "26": 1
+      }
+    },
+    {
+      "term": "truck",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=truck&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "unit",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=unit&pageNumber=1&pageSize=100",
+      "pages": [
+        25
+      ],
+      "status": 200,
+      "counts": {
+        "25": 3
+      }
+    },
+    {
+      "term": "vehicle",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=vehicle&pageNumber=1&pageSize=100",
+      "pages": [
+        52
+      ],
+      "status": 200,
+      "counts": {
+        "52": 1
+      }
+    },
+    {
+      "term": "view",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=view&pageNumber=1&pageSize=100",
+      "pages": [
+        11
+      ],
+      "status": 200,
+      "counts": {
+        "11": 1
+      }
+    },
+    {
+      "term": "wall",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=wall&pageNumber=1&pageSize=100",
+      "pages": [
+        40
+      ],
+      "status": 200,
+      "counts": {
+        "40": 1
+      }
+    },
+    {
+      "term": "watch",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=watch&pageNumber=1&pageSize=100",
+      "pages": [
+        11
+      ],
+      "status": 200,
+      "counts": {
+        "11": 1
+      }
+    },
+    {
+      "term": "wheel",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=wheel&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "window",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=window&pageNumber=1&pageSize=100",
+      "pages": [
+        18
+      ],
+      "status": 200,
+      "counts": {
+        "18": 1
+      }
+    },
+    {
+      "term": "wire",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=wire&pageNumber=1&pageSize=100",
+      "pages": [],
+      "status": 200
+    },
+    {
+      "term": "wrist",
+      "url": "https://read.amazon.com/sample/print/search-results?asin=B0FRGB2PMR&buyingAsin=B0FRGB2PMR&query=wrist&pageNumber=1&pageSize=100",
+      "pages": [
+        57
+      ],
+      "status": 200,
+      "counts": {
+        "57": 1
+      }
+    }
+  ]
+}
