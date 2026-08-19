@@ -1,0 +1,225 @@
+name: Enumerate paperback BIP39 page hits
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/enumerate-paperback-bip39-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install HTTP dependency
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
+      - name: Enumerate BIP39 words against public paperback search
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/enumerate.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import json
+          import random
+          import time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          import aiohttp
+
+          ASIN = "B0FRGB2PMR"
+          CARD = f"https://read.amazon.com/sample/{ASIN}?clientId=share"
+          ENDPOINT = "https://read.amazon.com/sample/print/search-results"
+          OUT = Path("public-media-analysis/paperback-bip39-page-hits")
+          WORDLIST = Path("public-media-analysis/wordlists/bip39-english.txt")
+          TARGETS = {103, 110, 241}
+          UA = (
+              "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+          )
+
+          words = [w.strip() for w in WORDLIST.read_text().splitlines() if w.strip()]
+          if len(words) != 2048:
+              raise SystemExit(f"expected 2048 BIP39 words, got {len(words)}")
+
+          OUT.mkdir(parents=True, exist_ok=True)
+          sem = asyncio.Semaphore(12)
+          timeout = aiohttp.ClientTimeout(total=30, connect=10, sock_read=20)
+          statuses: Counter[str] = Counter()
+          records: dict[str, dict] = {}
+          target_words: defaultdict[int, list[str]] = defaultdict(list)
+          errors: list[dict] = []
+          started = time.time()
+
+          def persist_partial(completed: int) -> None:
+              payload = {
+                  "completed": completed,
+                  "status_counts": dict(statuses),
+                  "target_words": {str(p): sorted(target_words[p]) for p in TARGETS},
+                  "error_count": len(errors),
+                  "elapsed_seconds": time.time() - started,
+              }
+              (OUT / "partial.json").write_text(json.dumps(payload, indent=2))
+
+          async def one(session: aiohttp.ClientSession, word: str) -> tuple[str, dict | None, str | None]:
+              params = {
+                  "asin": ASIN,
+                  "buyingAsin": ASIN,
+                  "query": word,
+                  "pageNumber": "1",
+                  "pageSize": "500",
+              }
+              last = None
+              for attempt in range(5):
+                  try:
+                      async with sem:
+                          async with session.get(ENDPOINT, params=params, timeout=timeout) as r:
+                              text = await r.text()
+                              ct = r.headers.get("content-type", "").partition(";")[0]
+                              statuses[f"{r.status} {ct}"] += 1
+                      if r.status in {429, 500, 502, 503, 504}:
+                          last = f"HTTP {r.status}: {text[:180]}"
+                          await asyncio.sleep(0.5 * (2 ** attempt) + random.random() * 0.25)
+                          continue
+                      try:
+                          obj = json.loads(text)
+                      except Exception as exc:
+                          return word, None, f"JSON {exc!r}: {text[:180]}"
+                      return word, obj, None
+                  except Exception as exc:
+                      last = repr(exc)
+                      await asyncio.sleep(0.5 * (2 ** attempt) + random.random() * 0.25)
+              return word, None, last
+
+          async def main() -> None:
+              jar = aiohttp.CookieJar(unsafe=True)
+              connector = aiohttp.TCPConnector(limit=16, ttl_dns_cache=300)
+              headers = {"User-Agent": UA, "Accept": "application/json,text/html,*/*"}
+              async with aiohttp.ClientSession(
+                  headers=headers, cookie_jar=jar, connector=connector
+              ) as session:
+                  async with session.get(CARD, timeout=timeout) as r:
+                      await r.read()
+                      print("CARD", r.status, str(r.url), flush=True)
+
+                  completed = 0
+                  for start in range(0, len(words), 96):
+                      batch = await asyncio.gather(*(one(session, w) for w in words[start:start+96]))
+                      for word, obj, error in batch:
+                          completed += 1
+                          if error:
+                              errors.append({"word": word, "error": error})
+                              continue
+                          highlights = obj.get("highlights") if isinstance(obj, dict) else None
+                          pages: dict[str, int] = {}
+                          if isinstance(highlights, dict):
+                              for page, boxes in highlights.items():
+                                  if isinstance(boxes, list) and boxes:
+                                      pages[str(page)] = len(boxes)
+                                      try:
+                                          p = int(page)
+                                      except ValueError:
+                                          continue
+                                      if p in TARGETS:
+                                          target_words[p].append(word)
+                          records[word] = {
+                              "pages": pages,
+                              "cause": obj.get("cause") if isinstance(obj, dict) else None,
+                              "error": obj.get("error") if isinstance(obj, dict) else None,
+                          }
+                      persist_partial(completed)
+                      print(
+                          "completed=%d target103=%d target110=%d target241=%d errors=%d elapsed=%.1f"
+                          % (
+                              completed,
+                              len(target_words[103]),
+                              len(target_words[110]),
+                              len(target_words[241]),
+                              len(errors),
+                              time.time() - started,
+                          ),
+                          flush=True,
+                      )
+
+          asyncio.run(main())
+
+          by_page: defaultdict[int, list[str]] = defaultdict(list)
+          for word, rec in records.items():
+              for page in rec["pages"]:
+                  try:
+                      by_page[int(page)].append(word)
+                  except ValueError:
+                      pass
+
+          summary = {
+              "asin": ASIN,
+              "wordlist_size": len(words),
+              "completed": len(records) + len(errors),
+              "status_counts": dict(statuses),
+              "error_count": len(errors),
+              "target_words": {str(p): sorted(set(target_words[p])) for p in sorted(TARGETS)},
+              "pages_with_hits": {
+                  str(p): sorted(set(ws)) for p, ws in sorted(by_page.items())
+              },
+              "elapsed_seconds": time.time() - started,
+          }
+          (OUT / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+          (OUT / "records.json").write_text(json.dumps(records, indent=2, ensure_ascii=False))
+          (OUT / "errors.json").write_text(json.dumps(errors, indent=2, ensure_ascii=False))
+
+          lines = [
+              "# BIP39 words returned by the public paperback search index",
+              "",
+              f"- Queries completed: {summary['completed']:,}",
+              f"- Errors: {summary['error_count']:,}",
+              f"- Elapsed: {summary['elapsed_seconds']:.1f} seconds",
+              "",
+          ]
+          for p in sorted(TARGETS):
+              hits = summary["target_words"][str(p)]
+              lines += [
+                  f"## Page {p}",
+                  "",
+                  ", ".join(f"`{w}`" for w in hits) if hits else "_No BIP39 hits._",
+                  "",
+              ]
+          (OUT / "summary.md").write_text("\n".join(lines) + "\n")
+          print(json.dumps(summary["target_words"], indent=2), flush=True)
+          PY
+          python /tmp/enumerate.py | tee /tmp/enumerate.log
+          cp /tmp/enumerate.log public-media-analysis/paperback-bip39-page-hits/console.log
+
+      - name: Upload enumeration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paperback-bip39-page-hits
+          path: public-media-analysis/paperback-bip39-page-hits
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist enumeration results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/paperback-bip39-page-hits || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist paperback BIP39 page enumeration $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
