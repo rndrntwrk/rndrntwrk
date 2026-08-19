@@ -1,0 +1,1429 @@
+{
+  "target": "1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+  "public_sources": [
+    {
+      "name": "bitcointalk_all",
+      "url": "https://bitcointalk.org/index.php?topic=5404767.0;all",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5578,
+      "sha256": "5a6ed09a74b73bf0cd0ad38586edeff4b0dd4d979c13d678b1aa9daf21fb20eb",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/bitcointalk_all.html"
+    },
+    {
+      "name": "reddit_original_json",
+      "url": "https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/.json?raw_json=1",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 190240,
+      "sha256": "dc131f91303300301ab1b23a7e3b0a084b9e325b318b2722d00fc637247b8b7a",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/reddit_original_json.html"
+    },
+    {
+      "name": "reddit_bitcoinpuzzles_json",
+      "url": "https://www.reddit.com/r/bitcoinpuzzles/comments/jrr7mo/is_this_puzzle_still_valid_is_this_image_correct/.json?raw_json=1",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 190240,
+      "sha256": "dc131f91303300301ab1b23a7e3b0a084b9e325b318b2722d00fc637247b8b7a",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/reddit_bitcoinpuzzles_json.html"
+    },
+    {
+      "name": "reddit_cryptopuzzlers_json",
+      "url": "https://www.reddit.com/r/CryptoPuzzlers/comments/mbdogq/02_btc_puzzle/.json?raw_json=1",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 190240,
+      "sha256": "dc131f91303300301ab1b23a7e3b0a084b9e325b318b2722d00fc637247b8b7a",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/reddit_cryptopuzzlers_json.html"
+    },
+    {
+      "name": "pullpush_big_cut_comments",
+      "url": "https://api.pullpush.io/reddit/search/comment/?author=Big_Cut7029&size=100",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5693,
+      "sha256": "7ab77479526449d229bf1999852d71124d7f69edd43f769a48ed909aeae37dc1",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/pullpush_big_cut_comments.html"
+    },
+    {
+      "name": "pullpush_straight_solution_comments",
+      "url": "https://api.pullpush.io/reddit/search/comment/?author=Straight-Solution-39&size=100",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5741,
+      "sha256": "3c7e6591ee4b1e94af19e1ce4b0ae1aca547fab3755b9e0cfcc662a41fef890d",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/pullpush_straight_solution_comments.html"
+    },
+    {
+      "name": "pullpush_author_submissions",
+      "url": "https://api.pullpush.io/reddit/search/submission/?author=stsh_n&size=100",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5687,
+      "sha256": "a43c98e4f1664f1a5336a702b4df309243d2a7787ba478b453bbf0ad7ee3eedd",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/pullpush_author_submissions.html"
+    },
+    {
+      "name": "pullpush_author_comments",
+      "url": "https://api.pullpush.io/reddit/search/comment/?author=stsh_n&size=100",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5678,
+      "sha256": "af26573e9901e4a49409131916dad66fc9dfd478779db523274e11d073a5b5e1",
+      "path": "research/blm-collage/checkpoint-02-acquisition/web/pullpush_author_comments.html"
+    }
+  ],
+  "code_search": {
+    "queries": [
+      "\"1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ\"",
+      "\"0.2 BTC puzzle\" bitcoin",
+      "\"Welcome to the Brave New World\" bitcoin mnemonic"
+    ],
+    "unique_items": 92,
+    "records": [
+      {
+        "repo": "HomelessPhD/BLM_0.2BTC",
+        "path": "README.md",
+        "blob_sha": "8e792daef2bc1e704f4e1881ac1187d46c8678a7",
+        "html_url": "https://github.com/HomelessPhD/BLM_0.2BTC/blob/4563f5869a838868e405926bcc082454554791dc/README.md",
+        "bytes": 27512,
+        "sha256": "81753c8e92eb79c1e6a166a5bff3aeca42a374606b92ca6db0b13a37374ec01c",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/HomelessPhD/BLM_0.2BTC/README.md"
+      },
+      {
+        "repo": "panchpasha/0.2-BTC-Puzzle-script",
+        "path": "README.md",
+        "blob_sha": "5a816d5eb7d2f06d21364225ea79841c37f913d5",
+        "html_url": "https://github.com/panchpasha/0.2-BTC-Puzzle-script/blob/1eae6abdfabdb59bc7fd0ada1c8675acab1465c7/README.md",
+        "bytes": 5928,
+        "sha256": "52b50f994710a8a1d81f4022711759ef75edbbe77c86891f4e26908c4e407ec7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/panchpasha/0.2-BTC-Puzzle-script/README.md"
+      },
+      {
+        "repo": "HomelessPhD/BLM_0.2BTC",
+        "path": "python_script/BLM_generate_BIP39_pk.py",
+        "blob_sha": "3fb5750edf22224458f6abced71f7c87ad180a66",
+        "html_url": "https://github.com/HomelessPhD/BLM_0.2BTC/blob/4563f5869a838868e405926bcc082454554791dc/python_script/BLM_generate_BIP39_pk.py",
+        "bytes": 4582,
+        "sha256": "9eaae8bf6ef453852efe2fad764f3d33302d1b0489d1164a73495c32bfaba21b",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/HomelessPhD/BLM_0.2BTC/python_script/BLM_generate_BIP39_pk.py"
+      },
+      {
+        "repo": "floflo777/open-crypto-puzzles",
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/README.md",
+        "blob_sha": "f544d086a7e1d0cc0e5862609c80106664e2a691",
+        "html_url": "https://github.com/floflo777/open-crypto-puzzles/blob/7b4b9c3096719049d0b0cc7dfe698e666ef58d8b/1-big-prizes/blm-brave-new-world-0-2btc/README.md",
+        "bytes": 12252,
+        "sha256": "e3a79e3818631e5ab058bd2fd1f53d16d4216b4d7388fe0eee3e930a78fb2a53",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/floflo777/open-crypto-puzzles/1-big-prizes/blm-brave-new-world-0-2btc/README.md"
+      },
+      {
+        "repo": "SCI18/master-rahool",
+        "path": "mbf.py",
+        "blob_sha": "1b0b1c92db0d4714e90907a6dd49f800ca916edc",
+        "html_url": "https://github.com/SCI18/master-rahool/blob/555d62c85f0c9c9bb0a40169547782da8a2e7a06/mbf.py",
+        "bytes": 2158,
+        "sha256": "84203c516b1413ef6741d1571943f0d18f8fa479b422fb3b424717b2580ce467",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/SCI18/master-rahool/mbf.py"
+      },
+      {
+        "repo": "panchpasha/0.2-BTC-Puzzle-script",
+        "path": "0.2-BTC-Puzzle-script/README.md",
+        "blob_sha": "d0758570aa3c032aa396d5bc3b57891dd3c42724",
+        "html_url": "https://github.com/panchpasha/0.2-BTC-Puzzle-script/blob/1eae6abdfabdb59bc7fd0ada1c8675acab1465c7/0.2-BTC-Puzzle-script/README.md",
+        "bytes": 1779,
+        "sha256": "5868161c530305793770b7d505b87429c0bb8ef9b4f0610d3b9c173a81362eb8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/panchpasha/0.2-BTC-Puzzle-script/0.2-BTC-Puzzle-script/README.md"
+      },
+      {
+        "repo": "merchant862/CryptoResearchFramework",
+        "path": "docs/codex_context.md",
+        "blob_sha": "77940bb35476d87b39fa9e6c51df83de4723cdce",
+        "html_url": "https://github.com/merchant862/CryptoResearchFramework/blob/2e46cc90394bd9635af373dd8bfa8949e744e3ff/docs/codex_context.md",
+        "bytes": 1003,
+        "sha256": "394ad870f2f1d214c0ba6a4978cd5284b7851e598c5962c9cac21b4a7bbd7d6b",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/merchant862/CryptoResearchFramework/docs/codex_context.md"
+      },
+      {
+        "repo": "floflo777/open-crypto-puzzles",
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/analysis/tested.md",
+        "blob_sha": "9dbce792806119368860fe3ccc9a46b5da5064aa",
+        "html_url": "https://github.com/floflo777/open-crypto-puzzles/blob/7b4b9c3096719049d0b0cc7dfe698e666ef58d8b/1-big-prizes/blm-brave-new-world-0-2btc/analysis/tested.md",
+        "bytes": 8278,
+        "sha256": "0ea7348f738b33eb6668188a479659c09ee575d78f1d832a650bfac37b3df070",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/floflo777/open-crypto-puzzles/1-big-prizes/blm-brave-new-world-0-2btc/analysis/tested.md"
+      },
+      {
+        "repo": "panchpasha/0.2-BTC-Puzzle-script",
+        "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py",
+        "blob_sha": "4da18fafd8ab74acdff82764ff93c6dd791b24a8",
+        "html_url": "https://github.com/panchpasha/0.2-BTC-Puzzle-script/blob/1eae6abdfabdb59bc7fd0ada1c8675acab1465c7/0.2-BTC-Puzzle-script/check_seed_combinations.py",
+        "bytes": 2117,
+        "sha256": "8600ea92001979da9e5b74a157111eb29b52ac08b29c234daddde8632cefcd21",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/panchpasha/0.2-BTC-Puzzle-script/0.2-BTC-Puzzle-script/check_seed_combinations.py"
+      },
+      {
+        "repo": "floflo777/open-crypto-puzzles",
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/oracle.py",
+        "blob_sha": "038c39d26385365a273c903034b12970ee3ed8c4",
+        "html_url": "https://github.com/floflo777/open-crypto-puzzles/blob/7b4b9c3096719049d0b0cc7dfe698e666ef58d8b/1-big-prizes/blm-brave-new-world-0-2btc/tools/oracle.py",
+        "bytes": 8573,
+        "sha256": "a1b52e311ca97fd752708622d050d480f65f8b1177c9e6726a485f344e7c65a5",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/floflo777/open-crypto-puzzles/1-big-prizes/blm-brave-new-world-0-2btc/tools/oracle.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-10/synthesis-report.md",
+        "blob_sha": "90a41d8ceeb9747a1d658b95823a03a008e172c1",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-10/synthesis-report.md",
+        "bytes": 25120,
+        "sha256": "160c7412df3a35db920463666ec7d71d60f3be34bbfafbee11169bb56e34f421",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-10/synthesis-report.md"
+      },
+      {
+        "repo": "lerasah/btc-puzzle-solver",
+        "path": "CLAUDE.md",
+        "blob_sha": "8063524a8485f8aef7b8fcd1914419f3d7fe99e1",
+        "html_url": "https://github.com/lerasah/btc-puzzle-solver/blob/cfac15b427146c5f5292f44d4a951499270fb6ee/CLAUDE.md",
+        "bytes": 3417,
+        "sha256": "c7afd76251e1f3a0f84c9673d9f70ed6e8f731be00e94f01a1fc9aec6ff05181",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/lerasah/btc-puzzle-solver/CLAUDE.md"
+      },
+      {
+        "repo": "jmr2704/bitcoin-0.2-image-puzzle",
+        "path": "README.md",
+        "blob_sha": "39d9abd495f235801bff2b60528a90f4aa80dce9",
+        "html_url": "https://github.com/jmr2704/bitcoin-0.2-image-puzzle/blob/b2584b91c7987b670b3bb1c1f3534440eb5609cf/README.md",
+        "bytes": 26338,
+        "sha256": "372416e4abb7511e50d0004d31f9c6d34d9522a9e350bcd814519c2539c1cd4f",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/jmr2704/bitcoin-0.2-image-puzzle/README.md"
+      },
+      {
+        "repo": "floflo777/open-crypto-puzzles",
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/puzzle.json",
+        "blob_sha": "3dd1fb12858c59c59f38154c1d543474ee2f30cc",
+        "html_url": "https://github.com/floflo777/open-crypto-puzzles/blob/7b4b9c3096719049d0b0cc7dfe698e666ef58d8b/1-big-prizes/blm-brave-new-world-0-2btc/puzzle.json",
+        "bytes": 4192,
+        "sha256": "0f8b8e3d434f4b47ee3990d1ea181da872109783338a7e2011588be77c15e9f7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/floflo777/open-crypto-puzzles/1-big-prizes/blm-brave-new-world-0-2btc/puzzle.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/BLM_PUZZLE_INVESTIGATION.md",
+        "blob_sha": "464db859fea58b208792e824713732499c5ed8c2",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/BLM_PUZZLE_INVESTIGATION.md",
+        "bytes": 9369,
+        "sha256": "6e0630acfe598d048873abfe92132b8472e2bb5e48809051c7707af7650b516a",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/BLM_PUZZLE_INVESTIGATION.md"
+      },
+      {
+        "repo": "svenpohl/checkseedwordpermutations",
+        "path": "checkpermutations.py",
+        "blob_sha": "44fa2f80b6d79628074907db3aaaf0890a9d3fa0",
+        "html_url": "https://github.com/svenpohl/checkseedwordpermutations/blob/d6c36476db9703c668cb1e49403e36a11001424d/checkpermutations.py",
+        "bytes": 2147,
+        "sha256": "798f11f1eaac5d526c27a94d126a0eda4a4ba8bd6dff478424ca912f19d760b0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/svenpohl/checkseedwordpermutations/checkpermutations.py"
+      },
+      {
+        "repo": "davidduckwitz/ducKI-Agent",
+        "path": "skills/btc-puzzle-solver/SKILL.md",
+        "blob_sha": "f41d0e72a0edb57fe20037726a6f7a08b1aa67ce",
+        "html_url": "https://github.com/davidduckwitz/ducKI-Agent/blob/fcd1c3743712e379b0ba6736e3fb73d79c834ee0/skills/btc-puzzle-solver/SKILL.md",
+        "bytes": 507,
+        "sha256": "8569b98712de233db995079671639bc4569ba78198c7516673103ebb2c49f872",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/davidduckwitz/ducKI-Agent/skills/btc-puzzle-solver/SKILL.md"
+      },
+      {
+        "repo": "mgaratcin/Py-Seed",
+        "path": "keys.py",
+        "blob_sha": "be2621d31afd777acb3e616fc3dda0b61e7eac30",
+        "html_url": "https://github.com/mgaratcin/Py-Seed/blob/a2be353d362fc5f7d360f4a919c6b827a9689e8f/keys.py",
+        "bytes": 3488,
+        "sha256": "8c0966a97ddfb7e617d70dd4f54bf4fcf7e8c5ceffeb5bf43dede9dfdb321ca6",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/mgaratcin/Py-Seed/keys.py"
+      },
+      {
+        "repo": "floflo777/open-crypto-puzzles",
+        "path": "puzzles.json",
+        "blob_sha": "9cd69ebecbae0314f364a94c9c86c84db0913f5c",
+        "html_url": "https://github.com/floflo777/open-crypto-puzzles/blob/7b4b9c3096719049d0b0cc7dfe698e666ef58d8b/puzzles.json",
+        "bytes": 213396,
+        "sha256": "dac559c18ee1930a0abdf7e567b6a4446a15dc563337f0e825c9c4260255e704",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/floflo777/open-crypto-puzzles/puzzles.json"
+      },
+      {
+        "repo": "lerasah/btc-puzzle-solver",
+        "path": "README.md",
+        "blob_sha": "316c06c33ac8d1ab1c95a46640181b2f9d6d4129",
+        "html_url": "https://github.com/lerasah/btc-puzzle-solver/blob/cfac15b427146c5f5292f44d4a951499270fb6ee/README.md",
+        "bytes": 5706,
+        "sha256": "7c7402d4fac2bfd30d7ceddc69e94544e8621782eb871d8c587a523b5d857b79",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/lerasah/btc-puzzle-solver/README.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/PUZZLE_SOLVED_POST_MORTEM.md",
+        "blob_sha": "daad61dbbff0eea2ce571cfe0480de7c906e198c",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/PUZZLE_SOLVED_POST_MORTEM.md",
+        "bytes": 8705,
+        "sha256": "df58716d95707d2f71e02a5163d407e75b5a19a1b15d3cb11fa2e5dd476f89a6",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/PUZZLE_SOLVED_POST_MORTEM.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/creati_synthesis-report.md",
+        "blob_sha": "76c49338b4e8dd2e26dc8f537db0f021ebfa364a",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/creati_synthesis-report.md",
+        "bytes": 48783,
+        "sha256": "e99be9eb015bc1dadc9d6415d203501a98ba3640df8ac03df7190eebc9394112",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/creati_synthesis-report.md"
+      },
+      {
+        "repo": "davidduckwitz/ducKI-Agent",
+        "path": "apps/server/skills/btc-puzzle-solver/SKILL.md",
+        "blob_sha": "f41d0e72a0edb57fe20037726a6f7a08b1aa67ce",
+        "html_url": "https://github.com/davidduckwitz/ducKI-Agent/blob/fcd1c3743712e379b0ba6736e3fb73d79c834ee0/apps/server/skills/btc-puzzle-solver/SKILL.md",
+        "bytes": 507,
+        "sha256": "8569b98712de233db995079671639bc4569ba78198c7516673103ebb2c49f872",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/davidduckwitz/ducKI-Agent/apps/server/skills/btc-puzzle-solver/SKILL.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/LATEST_REDDIT_ANALYSIS.md",
+        "blob_sha": "65240d941ecc13f4e8244d8614336f6b2102019b",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/LATEST_REDDIT_ANALYSIS.md",
+        "bytes": 5756,
+        "sha256": "e4f213ad36c0bc2335221e02513f540407b73e13438e7048ed895fe19faf09d5",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/LATEST_REDDIT_ANALYSIS.md"
+      },
+      {
+        "repo": "Azocom/btc-puzzle",
+        "path": "wallets.js",
+        "blob_sha": "5fec3d2bf1f57ce5d05e7149703934114c41a7c4",
+        "html_url": "https://github.com/Azocom/btc-puzzle/blob/215aa81e15d1f4b3a8a8f1b07bdb757fe6a20db8/wallets.js",
+        "bytes": 4079,
+        "sha256": "3734300463a55ca4e1c9dec565ac4b5d50a39bf35433c7121c7aecffaeea15b0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/Azocom/btc-puzzle/wallets.js"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/REDDIT_CLUES_ANALYSIS.md",
+        "blob_sha": "40e70aeff45e2e2ef08f21aae4ae87cb7e5e2c55",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/REDDIT_CLUES_ANALYSIS.md",
+        "bytes": 6181,
+        "sha256": "9a4e6244d28212569cc01eeded84a2c4ff594edf14828872f9a148cf3ddd8518",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/REDDIT_CLUES_ANALYSIS.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/REDDIT_LATEST_CRITICAL_ANALYSIS.md",
+        "blob_sha": "3e90aadf34a5ba8e2963c534def6637f933c2c05",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/REDDIT_LATEST_CRITICAL_ANALYSIS.md",
+        "bytes": 8342,
+        "sha256": "f38764e0b17bd6316afda9b6721665f2548dcad1f0736f586dd44c7a2e010396",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/REDDIT_LATEST_CRITICAL_ANALYSIS.md"
+      },
+      {
+        "repo": "davidduckwitz/ducKI-Agent",
+        "path": "skills/btc-puzzle-solve/SKILL.md",
+        "blob_sha": "894ee2007a0ce64ebfa65e9f6e9a905c8e0b020d",
+        "html_url": "https://github.com/davidduckwitz/ducKI-Agent/blob/fcd1c3743712e379b0ba6736e3fb73d79c834ee0/skills/btc-puzzle-solve/SKILL.md",
+        "bytes": 9102,
+        "sha256": "f527c2694dce14fc4a5a56310f9f2fada81ae1e8d52fca65527e2f0079fa973c",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/davidduckwitz/ducKI-Agent/skills/btc-puzzle-solve/SKILL.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/blm-puzzle-solver.ts",
+        "blob_sha": "772a48e5369c0ca7c9281b85a8c383d6e5563059",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/blm-puzzle-solver.ts",
+        "bytes": 11721,
+        "sha256": "fe86c534d795ccadc26fe348eb5ac9014f4eb2eb49fc694cb4ad9e4ac9a96549",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/blm-puzzle-solver.ts"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/extended-word-search.cjs",
+        "blob_sha": "e9ca605630f4fb8f4fea986c331910cfd41d5250",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/extended-word-search.cjs",
+        "bytes": 4787,
+        "sha256": "94cac17576199802cbeef09631456e9ae483bb4e7379e41f6e0b1b14a7b6d864",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/extended-word-search.cjs"
+      },
+      {
+        "repo": "PakRTsensen/Seed-Phrase-Cracker",
+        "path": "main.py",
+        "blob_sha": "d7ecf6c07313bfcee806e77b30f1fb45b6d1a503",
+        "html_url": "https://github.com/PakRTsensen/Seed-Phrase-Cracker/blob/92251ccf5defc4d0fc9ebde17fa6a68d8f69990a/main.py",
+        "bytes": 12488,
+        "sha256": "137a60506e472cc36429ad2eecb379816a7c6648bfcfc7c10c2c8da91b43e413",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/PakRTsensen/Seed-Phrase-Cracker/main.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "brute_force_seed.py",
+        "blob_sha": "7a67a40acc82727be3513333345531c32c2fc597",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/brute_force_seed.py",
+        "bytes": 1741,
+        "sha256": "0258e2712f4be915e8838b9620ac22dd5c7daf43b525dd7529b9f05f284bc6f7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/brute_force_seed.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/blm-final-solver.ts",
+        "blob_sha": "f4840959bad74a1f0b3c292b86819aaef1da0c34",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/blm-final-solver.ts",
+        "bytes": 6823,
+        "sha256": "81c783f4146ff6c5780b291e4eebe231240d38ecd2d449d81246b4d42a39c526",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/blm-final-solver.ts"
+      },
+      {
+        "repo": "Azocom/btc-puzzle",
+        "path": "solo/wallets.js",
+        "blob_sha": "5fec3d2bf1f57ce5d05e7149703934114c41a7c4",
+        "html_url": "https://github.com/Azocom/btc-puzzle/blob/215aa81e15d1f4b3a8a8f1b07bdb757fe6a20db8/solo/wallets.js",
+        "bytes": 4079,
+        "sha256": "3734300463a55ca4e1c9dec565ac4b5d50a39bf35433c7121c7aecffaeea15b0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/Azocom/btc-puzzle/solo/wallets.js"
+      },
+      {
+        "repo": "AmirHaz220/puzzle",
+        "path": "README.md",
+        "blob_sha": "9397fa024f3242329e525da336e1c4412412bcba",
+        "html_url": "https://github.com/AmirHaz220/puzzle/blob/88e9a36ba68a2428ff3a5ad95632e7093bef71d4/README.md",
+        "bytes": 31399,
+        "sha256": "5b75ddb2853da167c4c54780a4ebf0fd0ad2f59443c7192c0ce89af6a8e110f0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/AmirHaz220/puzzle/README.md"
+      },
+      {
+        "repo": "Azocom/btc-puzzle",
+        "path": "solo/data/wallets.js",
+        "blob_sha": "5fec3d2bf1f57ce5d05e7149703934114c41a7c4",
+        "html_url": "https://github.com/Azocom/btc-puzzle/blob/215aa81e15d1f4b3a8a8f1b07bdb757fe6a20db8/solo/data/wallets.js",
+        "bytes": 4079,
+        "sha256": "3734300463a55ca4e1c9dec565ac4b5d50a39bf35433c7121c7aecffaeea15b0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/Azocom/btc-puzzle/solo/data/wallets.js"
+      },
+      {
+        "repo": "angwin7/btc-puzzle-0.2",
+        "path": "0.2-BTC-Puzzle-script/check_seed_phrases.py",
+        "blob_sha": "c511986afad86a7ae27b099789e91f2d13cf318e",
+        "html_url": "https://github.com/angwin7/btc-puzzle-0.2/blob/c3e5021f9aa27907cebc5d20a01d4e606ce6b05b/0.2-BTC-Puzzle-script/check_seed_phrases.py",
+        "bytes": 2226,
+        "sha256": "7c7718e8e391f9d875f11aab27db488ab7fdbab95d879e92487c89ec672c0675",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/angwin7/btc-puzzle-0.2/0.2-BTC-Puzzle-script/check_seed_phrases.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/blm-puzzle-analysis.ts",
+        "blob_sha": "b2ca5fa1d6e3cf0fd98f4a7a58c358a4eb188e48",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/blm-puzzle-analysis.ts",
+        "bytes": 10957,
+        "sha256": "d2d19d9ddadbea12e98d7e59030569cf65eea694fe2bf4d5c51350bd5ba8e629",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/blm-puzzle-analysis.ts"
+      },
+      {
+        "repo": "davidduckwitz/ducKI-Agent",
+        "path": "apps/server/skills/btc-puzzle-solve/SKILL.md",
+        "blob_sha": "894ee2007a0ce64ebfa65e9f6e9a905c8e0b020d",
+        "html_url": "https://github.com/davidduckwitz/ducKI-Agent/blob/fcd1c3743712e379b0ba6736e3fb73d79c834ee0/apps/server/skills/btc-puzzle-solve/SKILL.md",
+        "bytes": 9102,
+        "sha256": "f527c2694dce14fc4a5a56310f9f2fada81ae1e8d52fca65527e2f0079fa973c",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/davidduckwitz/ducKI-Agent/apps/server/skills/btc-puzzle-solve/SKILL.md"
+      },
+      {
+        "repo": "idchatg-maker/Site",
+        "path": "btc hack 2.html",
+        "blob_sha": "39e8c7cc4ea4ca38e7ee208e139eadad419beef2",
+        "html_url": "https://github.com/idchatg-maker/Site/blob/4c799b78c4e605d8b23fc086080fa2f79a580313/btc hack 2.html",
+        "bytes": 13629,
+        "sha256": "418e9460a71f5e254e475c4b60ebe60b8d56e10acd5222627340ab3d48bd65a1",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/idchatg-maker/Site/btc_hack_2.html"
+      },
+      {
+        "repo": "lerasah/btc-puzzle-solver",
+        "path": "puzzle_solver.py",
+        "blob_sha": "55f2b6a55c2b0862335bf900b2aaec7a77ce406e",
+        "html_url": "https://github.com/lerasah/btc-puzzle-solver/blob/cfac15b427146c5f5292f44d4a951499270fb6ee/puzzle_solver.py",
+        "bytes": 16952,
+        "sha256": "c38631b5e176f1475fd2af2b923564635fb0cf608f3fd18d9d0ac9ab6a75f2c3",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/lerasah/btc-puzzle-solver/puzzle_solver.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "check_seeds.py",
+        "blob_sha": "cb4831b57d938ec88d14ea4c9ef5a808fd8f1b67",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/check_seeds.py",
+        "bytes": 3499,
+        "sha256": "c3befaca580032766f7545990a35aef8f746300b60c29dc5d26a1f886bb72209",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/check_seeds.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "targeted_seed_runner.py",
+        "blob_sha": "f2523a67dd8ded5be08dcacb583b93aee051c660",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/targeted_seed_runner.py",
+        "bytes": 2937,
+        "sha256": "514fe3d3fb834d0bccd74c23a895bd47b8559b495e94f8d521bc284f312d5362",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/targeted_seed_runner.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "targeted_seed_runner_csv.py",
+        "blob_sha": "f2523a67dd8ded5be08dcacb583b93aee051c660",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/targeted_seed_runner_csv.py",
+        "bytes": 2937,
+        "sha256": "514fe3d3fb834d0bccd74c23a895bd47b8559b495e94f8d521bc284f312d5362",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/targeted_seed_runner_csv.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/targeted_seed_runner.py",
+        "blob_sha": "f2523a67dd8ded5be08dcacb583b93aee051c660",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/targeted_seed_runner.py",
+        "bytes": 2937,
+        "sha256": "514fe3d3fb834d0bccd74c23a895bd47b8559b495e94f8d521bc284f312d5362",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/targeted_seed_runner.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "seedhunter.py",
+        "blob_sha": "6c4e5c21018654cdcf4a5cac70e1a42e2f6cf0f7",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/seedhunter.py",
+        "bytes": 6782,
+        "sha256": "e74d124e87f5620a78be56e6eb4307f97ac30f49b0f2c465f0eecbb90277a417",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/seedhunter.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/targeted_seed_runner_csv.py",
+        "blob_sha": "f2523a67dd8ded5be08dcacb583b93aee051c660",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/targeted_seed_runner_csv.py",
+        "bytes": 2937,
+        "sha256": "514fe3d3fb834d0bccd74c23a895bd47b8559b495e94f8d521bc284f312d5362",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/targeted_seed_runner_csv.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "check_csv_balances.py",
+        "blob_sha": "161d55bacd7e70a9a65a8890ee8d6ff6962125b7",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/check_csv_balances.py",
+        "bytes": 5212,
+        "sha256": "bb62d8466e285b8b3da6f8c548eb16309a785684a93c5f742983a0a2294339e7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/check_csv_balances.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "variance_checker.py",
+        "blob_sha": "e74178a54cb4316b0930c3afafd14f17309e3e9b",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/variance_checker.py",
+        "bytes": 7503,
+        "sha256": "1038ba18c936961ca133beeefdc144e34b7247dec17eee89b7fbfc4eb2547f17",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/variance_checker.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/seedhunter.py",
+        "blob_sha": "6c4e5c21018654cdcf4a5cac70e1a42e2f6cf0f7",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/seedhunter.py",
+        "bytes": 6782,
+        "sha256": "e74d124e87f5620a78be56e6eb4307f97ac30f49b0f2c465f0eecbb90277a417",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/seedhunter.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "seed_variant_checker.py",
+        "blob_sha": "d833173022477d921c2b20bf271d85f037cda12c",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/seed_variant_checker.py",
+        "bytes": 7224,
+        "sha256": "fd2dc2efffc6fb154068daadf569e93e2855077234d119dd7c3592f6489ef3d8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/seed_variant_checker.py"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/check_csv_balances.py",
+        "blob_sha": "161d55bacd7e70a9a65a8890ee8d6ff6962125b7",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/check_csv_balances.py",
+        "bytes": 5212,
+        "sha256": "bb62d8466e285b8b3da6f8c548eb16309a785684a93c5f742983a0a2294339e7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/check_csv_balances.py"
+      },
+      {
+        "repo": "merchant862/CryptoResearchFramework",
+        "path": "puzzle_plugins/privatekeys_pw/target.json",
+        "blob_sha": "f79bb807ece2bc0b3b5e00e9eb4628b335f7ca38",
+        "html_url": "https://github.com/merchant862/CryptoResearchFramework/blob/2e46cc90394bd9635af373dd8bfa8949e744e3ff/puzzle_plugins/privatekeys_pw/target.json",
+        "bytes": 650,
+        "sha256": "a6148a3fdd7235e5a4e05d571bf6010bf02f44577ec4214dadba9d27f67075e8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/merchant862/CryptoResearchFramework/puzzle_plugins/privatekeys_pw/target.json"
+      },
+      {
+        "repo": "davidduckwitz/ducKI-Agent",
+        "path": "apps/server/shared-workspace/solver-parallel.js",
+        "blob_sha": "1a9e2d633f826876b9236fcc565d7f384c716746",
+        "html_url": "https://github.com/davidduckwitz/ducKI-Agent/blob/fcd1c3743712e379b0ba6736e3fb73d79c834ee0/apps/server/shared-workspace/solver-parallel.js",
+        "bytes": 7309,
+        "sha256": "6eed523f9e01d8871624186a4b3aea21680a2c7a5013b5073de8472ffffc984a",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/davidduckwitz/ducKI-Agent/apps/server/shared-workspace/solver-parallel.js"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "structured_seed_variants.py",
+        "blob_sha": "d833173022477d921c2b20bf271d85f037cda12c",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/structured_seed_variants.py",
+        "bytes": 7224,
+        "sha256": "fd2dc2efffc6fb154068daadf569e93e2855077234d119dd7c3592f6489ef3d8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/structured_seed_variants.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-10/synthesized-ideas.json",
+        "blob_sha": "0373641af7000e4bcee3e5fcf40efda8d62280ef",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-10/synthesized-ideas.json",
+        "bytes": 27057,
+        "sha256": "1bdcd8dcecfd9e0bece13aaedd4da6696ad136a7d2e543709bc9d69bda878af0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-10/synthesized-ideas.json"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/variance_checker.py",
+        "blob_sha": "e74178a54cb4316b0930c3afafd14f17309e3e9b",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/variance_checker.py",
+        "bytes": 7503,
+        "sha256": "1038ba18c936961ca133beeefdc144e34b7247dec17eee89b7fbfc4eb2547f17",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/variance_checker.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/synthesis-report.md",
+        "blob_sha": "15bf469756fd30b23d7389bafd986e8836549d96",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/synthesis-report.md",
+        "bytes": 119692,
+        "sha256": "4de7cca7444ea3fec32670886d233057cc1db7cd3da4e0a0ad98dbbe50558135",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/synthesis-report.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-10/session.json",
+        "blob_sha": "03b2faf6d96ce3cea5b1c063906fff2c9a7b59b9",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-10/session.json",
+        "bytes": 81292,
+        "sha256": "f53e2fc950a02f70494b5baeb218ec5251383cf135475c06e50513c1f1ec2995",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-10/session.json"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/seed_variant_checker.py",
+        "blob_sha": "d833173022477d921c2b20bf271d85f037cda12c",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/seed_variant_checker.py",
+        "bytes": 7224,
+        "sha256": "fd2dc2efffc6fb154068daadf569e93e2855077234d119dd7c3592f6489ef3d8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/seed_variant_checker.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1766203792447-2d991d40/synthesis-report.md",
+        "blob_sha": "021e5e368724cec0a5a6b8d201634b1fd3b93c29",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1766203792447-2d991d40/synthesis-report.md",
+        "bytes": 177994,
+        "sha256": "f0b3830ebc4507ebc899b5555f6049bfc77c4addeec6f4122f0f599559ee5aa9",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1766203792447-2d991d40/synthesis-report.md"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/session.json",
+        "blob_sha": "aed98124b557f5fe821157fd42c3c25d98f9ca59",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/session.json",
+        "bytes": 24693,
+        "sha256": "dd1724ff09d8a88c14e1075cd0e7919359523b94e1d3a1f5a2c63148a4fa0f89",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/session.json"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/structured_seed_variants.py",
+        "blob_sha": "d833173022477d921c2b20bf271d85f037cda12c",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/structured_seed_variants.py",
+        "bytes": 7224,
+        "sha256": "fd2dc2efffc6fb154068daadf569e93e2855077234d119dd7c3592f6489ef3d8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/structured_seed_variants.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/creati_synthesized-ideas.json",
+        "blob_sha": "1a2f794172e0252716144c4031d70afe15759b16",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/creati_synthesized-ideas.json",
+        "bytes": 54109,
+        "sha256": "3587545cfd53235ce52445b08944c3b2452e7376496114dacf16694ff0c1d347",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/creati_synthesized-ideas.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/creati_session.json",
+        "blob_sha": "323c5968866a80b39e625a27f122a489f0445b50",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/creati_session.json",
+        "bytes": 137681,
+        "sha256": "ea74637c409eb89d4a0cb3c18b5145aacf83de76f91a5685b804f372daab0c4b",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/creati_session.json"
+      },
+      {
+        "repo": "davidduckwitz/ducKI-Agent",
+        "path": "apps/web/src/components/crypto/BitcoinPuzzleManager.tsx",
+        "blob_sha": "a1d7c805eda71847c3e4948f23da80a3139b4b04",
+        "html_url": "https://github.com/davidduckwitz/ducKI-Agent/blob/fcd1c3743712e379b0ba6736e3fb73d79c834ee0/apps/web/src/components/crypto/BitcoinPuzzleManager.tsx",
+        "bytes": 40581,
+        "sha256": "3402af828354b20a790ed6ea7b67d38782af43bff57ebe9b8d78bca65d1355ed",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/davidduckwitz/ducKI-Agent/apps/web/src/components/crypto/BitcoinPuzzleManager.tsx"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/session.json",
+        "blob_sha": "08a77c7e9c9de6dcb93ab7e3a10cf61c459368b1",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/session.json",
+        "bytes": 306368,
+        "sha256": "99addf67918b44a5b8c12bb76978b6ad9bd0be07ce6454a0991a215a4b55d1d2",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/session.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1766263947693-5c643c2d/session.json",
+        "blob_sha": "eecdd97969b19f523fab53ead74403cbe4a7b482",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1766263947693-5c643c2d/session.json",
+        "bytes": 101505,
+        "sha256": "3408d38af4b351922241ca4a430236fa59c8f71b0290e18ed0f2aea5de4d00e9",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1766263947693-5c643c2d/session.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1766261558090-b46dbaa5/session.json",
+        "blob_sha": "4e5d465cc0088c8d58a603227789c897d0bc5ccf",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1766261558090-b46dbaa5/session.json",
+        "bytes": 171617,
+        "sha256": "5dc1ca2076b5e2303e8d6fac18ab9b18144bc9eb23aa72259620102d8e5c477a",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1766261558090-b46dbaa5/session.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/synthesized-ideas.json",
+        "blob_sha": "4b0861bb7664bee425fa586bbe5c857296d3bea1",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/synthesized-ideas.json",
+        "bytes": 135117,
+        "sha256": "77812c5ecbe3f45d8498be4ac900d8f39e2903ec79f8c8354a85655b92f2687d",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1765932298550-8a5a3f15/synthesized-ideas.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": ".memory-exports/creative-synthesis/synthesis-1766203792447-2d991d40/synthesized-ideas.json",
+        "blob_sha": "fe7f786e339095eff7febdb3b7669896b014a104",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/.memory-exports/creative-synthesis/synthesis-1766203792447-2d991d40/synthesized-ideas.json",
+        "bytes": 205211,
+        "sha256": "fb108a94fae725810890ce87ee27e03ce9bed92a58b5cc0e69118a03a03e252b",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/.memory-exports/creative-synthesis/synthesis-1766203792447-2d991d40/synthesized-ideas.json"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/test-thematic-words.cjs",
+        "blob_sha": "7541a403ebe8a203e2e7941d225cf6322b5518ee",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/test-thematic-words.cjs",
+        "bytes": 2345,
+        "sha256": "8c1e8c33f81f621deed3f8d811e3ee212367152ec6869f28f7fb904f26a26c14",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/test-thematic-words.cjs"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/test-reddit-clues.cjs",
+        "blob_sha": "e1c0ad473e52342d3b9375fe665f87a4c760b6a1",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/test-reddit-clues.cjs",
+        "bytes": 5359,
+        "sha256": "2ce482b984b961e3d9399fdebcf29bda486bba6149011ef712609c38556487c7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/test-reddit-clues.cjs"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/test-reddit-user-combo.cjs",
+        "blob_sha": "1319c736e84cf48035b49ca11b0fea1c86826039",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/test-reddit-user-combo.cjs",
+        "bytes": 4698,
+        "sha256": "e370f32543229a8fb5b3e1cc44dfb13800263120148571d329eff7f27357e25e",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/test-reddit-user-combo.cjs"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/blm-systematic-test.ts",
+        "blob_sha": "a368ac68df40582b410bb17988cc630a144dab4a",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/blm-systematic-test.ts",
+        "bytes": 8111,
+        "sha256": "dd6c6031a51580833d6250b6f783fe7f4e7a688a0b00cf28d077a9984520604d",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/blm-systematic-test.ts"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "test_variations.py",
+        "blob_sha": "aecab7d49ddf15aa8e46ca2d92e28d8daa366b74",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/test_variations.py",
+        "bytes": 2496,
+        "sha256": "47a7b9d54b5d32509fe83158265708e799e936ccc850d0bdce08a392e44bc329",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/test_variations.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/comprehensive-thematic-test.cjs",
+        "blob_sha": "7ce5b7440b3ffacf9693d87a5ec8e10cd0ac84fa",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/comprehensive-thematic-test.cjs",
+        "bytes": 5872,
+        "sha256": "0a8c584f21a22d98640113b22d5017be35e9839caf8583746f5dcd16b5ff005a",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/comprehensive-thematic-test.cjs"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/test-electrum-approach.cjs",
+        "blob_sha": "2a34c6b159880db170ed4f5fdec61b324f515ea7",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/test-electrum-approach.cjs",
+        "bytes": 8596,
+        "sha256": "21141fe1ff29ca1dd941e60584e9ae4bf344435a8c4a2ef6e3d7c3129e775517",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/test-electrum-approach.cjs"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/test-grok-thematic-words.cjs",
+        "blob_sha": "63c63292e75644ca4453f21fa788728f035efbe5",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/test-grok-thematic-words.cjs",
+        "bytes": 7418,
+        "sha256": "c7344dcd83a7ba7df4cfad9398c5eae9c9ad707e697a86a4109cef73ec9fb40f",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/test-grok-thematic-words.cjs"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/test-latest-reddit-words.cjs",
+        "blob_sha": "b3b80a02e05f9759212313e49395362089de33a7",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/test-latest-reddit-words.cjs",
+        "bytes": 7730,
+        "sha256": "92b94ad6933c0ef9bf532dff83394ee61b7566570eaee9dfbfd2975fa27e66db",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/test-latest-reddit-words.cjs"
+      },
+      {
+        "repo": "bidcoinauction/gsmgio_puzzle_kit",
+        "path": "manifest/test_variations.py",
+        "blob_sha": "aecab7d49ddf15aa8e46ca2d92e28d8daa366b74",
+        "html_url": "https://github.com/bidcoinauction/gsmgio_puzzle_kit/blob/6508c897d00ddeb98a9fac79a5895264c9285b50/manifest/test_variations.py",
+        "bytes": 2496,
+        "sha256": "47a7b9d54b5d32509fe83158265708e799e936ccc850d0bdce08a392e44bc329",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/bidcoinauction/gsmgio_puzzle_kit/manifest/test_variations.py"
+      },
+      {
+        "repo": "angwin7/btc-puzzle-0.2",
+        "path": "README.md",
+        "blob_sha": "5a816d5eb7d2f06d21364225ea79841c37f913d5",
+        "html_url": "https://github.com/angwin7/btc-puzzle-0.2/blob/c3e5021f9aa27907cebc5d20a01d4e606ce6b05b/README.md",
+        "bytes": 5928,
+        "sha256": "52b50f994710a8a1d81f4022711759ef75edbbe77c86891f4e26908c4e407ec7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/angwin7/btc-puzzle-0.2/README.md"
+      },
+      {
+        "repo": "angwin7/btc-puzzle-0.2",
+        "path": "0.2-BTC-Puzzle-script/README.md",
+        "blob_sha": "d0758570aa3c032aa396d5bc3b57891dd3c42724",
+        "html_url": "https://github.com/angwin7/btc-puzzle-0.2/blob/c3e5021f9aa27907cebc5d20a01d4e606ce6b05b/0.2-BTC-Puzzle-script/README.md",
+        "bytes": 1779,
+        "sha256": "5868161c530305793770b7d505b87429c0bb8ef9b4f0610d3b9c173a81362eb8",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/angwin7/btc-puzzle-0.2/0.2-BTC-Puzzle-script/README.md"
+      },
+      {
+        "repo": "angwin7/btc-puzzle-0.2",
+        "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py",
+        "blob_sha": "4da18fafd8ab74acdff82764ff93c6dd791b24a8",
+        "html_url": "https://github.com/angwin7/btc-puzzle-0.2/blob/c3e5021f9aa27907cebc5d20a01d4e606ce6b05b/0.2-BTC-Puzzle-script/check_seed_combinations.py",
+        "bytes": 2117,
+        "sha256": "8600ea92001979da9e5b74a157111eb29b52ac08b29c234daddde8632cefcd21",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/angwin7/btc-puzzle-0.2/0.2-BTC-Puzzle-script/check_seed_combinations.py"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "scripts/bitcoin/analyze-blm-puzzle.ts",
+        "blob_sha": "1d482a652c13d2d256ef8de8efaf2cb8f8c80ba3",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/scripts/bitcoin/analyze-blm-puzzle.ts",
+        "bytes": 7623,
+        "sha256": "69abd6323236f691367f3016b3eccdf161b2989b0f65d7d3e58f645941ba6b7f",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/scripts/bitcoin/analyze-blm-puzzle.ts"
+      },
+      {
+        "repo": "StableExo/TheWarden",
+        "path": "github/2025-12-12/THEMATIC_TESTING_SUMMARY.md",
+        "blob_sha": "2f414c56150531af0fa9aad993f7b5d1bf1c931c",
+        "html_url": "https://github.com/StableExo/TheWarden/blob/f8f10da11f28a2b696412a33b3d26c2ab50bb5c5/github/2025-12-12/THEMATIC_TESTING_SUMMARY.md",
+        "bytes": 7630,
+        "sha256": "411edf3c7e4a84fc4b74bbedfebc86aecb7f9c6b08c72ba86219196fbac41807",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StableExo/TheWarden/github/2025-12-12/THEMATIC_TESTING_SUMMARY.md"
+      },
+      {
+        "repo": "sim-628/cti_fact-checking",
+        "path": "successful_run/documents/doc_000501_to_001000/doc_000847/verifier/gpt-5.5/from_extractor_S/raw/011_local_11.txt",
+        "blob_sha": "be04b90b216ad30ef4fce3bf3133dc9a4de66f3e",
+        "html_url": "https://github.com/sim-628/cti_fact-checking/blob/35b0beb518f1415470ac3cc4baa3856d5956cedb/successful_run/documents/doc_000501_to_001000/doc_000847/verifier/gpt-5.5/from_extractor_S/raw/011_local_11.txt",
+        "bytes": 1190,
+        "sha256": "e2937b58a4eeb38a43b02f2ea99e4ceda13e0b6e92920d4bb5ee982d47ec4c9f",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/sim-628/cti_fact-checking/successful_run/documents/doc_000501_to_001000/doc_000847/verifier/gpt-5.5/from_extractor_S/raw/011_local_11.txt"
+      },
+      {
+        "repo": "sim-628/cti_fact-checking",
+        "path": "successful_run/documents/doc_000501_to_001000/doc_000847/verifier/gpt-5.5/from_extractor_S/parsed.json",
+        "blob_sha": "11ce325cc737a95f5854c001e9561b6a12add91d",
+        "html_url": "https://github.com/sim-628/cti_fact-checking/blob/35b0beb518f1415470ac3cc4baa3856d5956cedb/successful_run/documents/doc_000501_to_001000/doc_000847/verifier/gpt-5.5/from_extractor_S/parsed.json",
+        "bytes": 14503,
+        "sha256": "041dff1b37dd01f63f62bc149b0ead397017e0c65beb4acf1d64fb7d106c6c10",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/sim-628/cti_fact-checking/successful_run/documents/doc_000501_to_001000/doc_000847/verifier/gpt-5.5/from_extractor_S/parsed.json"
+      },
+      {
+        "repo": "jashchawla8/keenu",
+        "path": "reddit_crypto_posts_with_analysis.csv",
+        "blob_sha": "9b17d551c8c9610f4df67dd3f71a1c824c8f3631",
+        "html_url": "https://github.com/jashchawla8/keenu/blob/9f1c29a293e4f539904bb1847c48d52617e8aea7/reddit_crypto_posts_with_analysis.csv",
+        "bytes": 214140,
+        "sha256": "f8c4a5b61ad2a835471021e57c611effc3c55ddb633162a17ac01513139d2b8c",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/jashchawla8/keenu/reddit_crypto_posts_with_analysis.csv"
+      },
+      {
+        "repo": "jashchawla8/keenu",
+        "path": "reddit_crypto_posts_with_analysipandasai.csv",
+        "blob_sha": "9ab1cb04c107129709bf680081e2f7c4aae7604a",
+        "html_url": "https://github.com/jashchawla8/keenu/blob/9f1c29a293e4f539904bb1847c48d52617e8aea7/reddit_crypto_posts_with_analysipandasai.csv",
+        "bytes": 226564,
+        "sha256": "7fd5d8fb2dcbb7bdfc6131c7c1a796352c551d3e95c4be861a800decf3ac7eb0",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/jashchawla8/keenu/reddit_crypto_posts_with_analysipandasai.csv"
+      },
+      {
+        "repo": "StativaCamelia/ARMS",
+        "path": "data/original_tweets.csv",
+        "blob_sha": "14027f5150056ee16e1c2bd2e951626d01c31910",
+        "html_url": "https://github.com/StativaCamelia/ARMS/blob/3b55797bc6ab3788ac8b90c74f21f8c9784711ce/data/original_tweets.csv",
+        "bytes": 135319,
+        "sha256": "e3f08aef5aec41a9733304cef8ca5c107b8d89e511c351538c2ab3fb073b4bd7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StativaCamelia/ARMS/data/original_tweets.csv"
+      },
+      {
+        "repo": "StativaCamelia/ARMS",
+        "path": "tweets_csv_files/original_tweets.csv",
+        "blob_sha": "14027f5150056ee16e1c2bd2e951626d01c31910",
+        "html_url": "https://github.com/StativaCamelia/ARMS/blob/3b55797bc6ab3788ac8b90c74f21f8c9784711ce/tweets_csv_files/original_tweets.csv",
+        "bytes": 135319,
+        "sha256": "e3f08aef5aec41a9733304cef8ca5c107b8d89e511c351538c2ab3fb073b4bd7",
+        "saved_path": "research/blm-collage/checkpoint-02-acquisition/github-code-search/files/StativaCamelia/ARMS/tweets_csv_files/original_tweets.csv"
+      }
+    ]
+  },
+  "repositories": [
+    {
+      "repo": "floflo777/open-crypto-puzzles",
+      "ref": "main",
+      "paths": [
+        "1-big-prizes/blm-brave-new-world-0-2btc",
+        "puzzles.json"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/floflo777/open-crypto-puzzles",
+      "head": "7b4b9c3096719049d0b0cc7dfe698e666ef58d8b",
+      "commit": {
+        "hash": "7b4b9c3096719049d0b0cc7dfe698e666ef58d8b",
+        "author_date": "2026-08-18T14:29:51+01:00",
+        "commit_date": "2026-08-18T14:29:51+01:00",
+        "subject": "Update README.md"
+      },
+      "file_count": 14,
+      "files": [
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/README.md",
+          "bytes": 12252,
+          "sha256": "e3a79e3818631e5ab058bd2fd1f53d16d4216b4d7388fe0eee3e930a78fb2a53"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/analysis/leads.md",
+          "bytes": 2783,
+          "sha256": "2601e0fff3e508d1dfad832e0f2b341c5813f2364fa9dd165ff711382b1d1832"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/analysis/tested.md",
+          "bytes": 8278,
+          "sha256": "0ea7348f738b33eb6668188a479659c09ee575d78f1d832a650bfac37b3df070"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/clues/author-posts.md",
+          "bytes": 841,
+          "sha256": "2972225552f446430d0707bace5e2fa5f686411cfb0c9672eb493db98f3cf9f9"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/clues/welcome-to-the-brave-new-world.png",
+          "bytes": 2383395,
+          "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/data/candidate-regions.json",
+          "bytes": 1173,
+          "sha256": "8085de51539895243035e0a7dd62eb446c85161acded01079ad837fcaec22323"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/data/format-fork.json",
+          "bytes": 796,
+          "sha256": "2ab4de1fa0650a546791e66ac7107d7efeccf267035416487a1e530a26ea74f1"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/images/01-annotated-regions.png",
+          "bytes": 306124,
+          "sha256": "c40628abdb7102d1a91715559fe72a6514c36355d617477c503c75fb5e30514c"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/images/02-format-fork.svg",
+          "bytes": 3126,
+          "sha256": "57a896708666d1beda817b74ef1fefde6884ae9b91f1055568b06e11f006d79a"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/puzzle.json",
+          "bytes": 4192,
+          "sha256": "0f8b8e3d434f4b47ee3990d1ea181da872109783338a7e2011588be77c15e9f7"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/fig_format_fork.py",
+          "bytes": 6132,
+          "sha256": "17e32f0788a476afe2ef4b821130d883aa7f9501e7b19a5ac54239afdfbf939d"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/fig_regions.py",
+          "bytes": 3308,
+          "sha256": "a212d8f54d822b28e294a00b1d713f01db6699db3e03f635673466cdc16bd8c8"
+        },
+        {
+          "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/oracle.py",
+          "bytes": 8573,
+          "sha256": "a1b52e311ca97fd752708622d050d480f65f8b1177c9e6726a485f344e7c65a5"
+        },
+        {
+          "path": "puzzles.json",
+          "bytes": 213396,
+          "sha256": "dac559c18ee1930a0abdf7e567b6a4446a15dc563337f0e825c9c4260255e704"
+        }
+      ]
+    },
+    {
+      "repo": "jmr2704/bitcoin-0.2-image-puzzle",
+      "ref": "master",
+      "paths": [
+        "README.md",
+        "images"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/jmr2704/bitcoin-0.2-image-puzzle",
+      "head": "b2584b91c7987b670b3bb1c1f3534440eb5609cf",
+      "commit": {
+        "hash": "b2584b91c7987b670b3bb1c1f3534440eb5609cf",
+        "author_date": "2023-08-14T11:23:43+02:00",
+        "commit_date": "2023-08-14T11:23:43+02:00",
+        "subject": "chore: add few hints"
+      },
+      "file_count": 38,
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 26338,
+          "sha256": "372416e4abb7511e50d0004d31f9c6d34d9522a9e350bcd814519c2539c1cd4f"
+        },
+        {
+          "path": "images/10_bill.png",
+          "bytes": 91360,
+          "sha256": "3bc32f1375f309bab49ddc85c47126b43876bf1d5955528f6d043c27235aa979"
+        },
+        {
+          "path": "images/11_gravity_falls_cypher.png",
+          "bytes": 951166,
+          "sha256": "054da6ab5e365458889f6693b627f13668ed939042f738cba9a0509bde2e91ab"
+        },
+        {
+          "path": "images/11_rune_trump_head.png",
+          "bytes": 39020,
+          "sha256": "264b4e522496e071bb9f9fed7c2449a853ccf14b4213ac1967e463bd4f9362ce"
+        },
+        {
+          "path": "images/12_black_power_logo.png",
+          "bytes": 5272,
+          "sha256": "e6fd11bd0e1ba13160004f6d15abf9b7a551669b63c3ad55dd724f5d6578a148"
+        },
+        {
+          "path": "images/12_statue.png",
+          "bytes": 315814,
+          "sha256": "868e6267c70b7fba96774f2d24d61b8993d3ea94c8ad580b27e00ee13731efb4"
+        },
+        {
+          "path": "images/12_statue_flag.png",
+          "bytes": 164517,
+          "sha256": "f1847e304d163f03909be02c83b53a4bef43e0a678e987a835ef3183ad6f75aa"
+        },
+        {
+          "path": "images/12_us_flag.png",
+          "bytes": 2393,
+          "sha256": "a266997e9a6e229ae1f10c4f2b7e7ad4ef52b8ec86e8018a195589baafdc2c84"
+        },
+        {
+          "path": "images/13_trade_war.png",
+          "bytes": 405450,
+          "sha256": "0c99700f96162b5c32c8cae88799da25666347fd107a0c16db47b87ff16f39bd"
+        },
+        {
+          "path": "images/14_new_world.png",
+          "bytes": 351450,
+          "sha256": "7c5aad1dd8ac3385532fc6cdf3073352b90dc895d8ddd593c93111d3cfbaffb5"
+        },
+        {
+          "path": "images/14_order_and_stability.png",
+          "bytes": 281041,
+          "sha256": "e68faefa8a582c8b9f65cd6e1b7fb35dff809e1544e19a1bebe3e69bb15fd5c7"
+        },
+        {
+          "path": "images/15_cameras.png",
+          "bytes": 78648,
+          "sha256": "0f299ec7807e0ab898c35fb22ce09928536d7e9d5c92ba8b63ed6e57abe25ec9"
+        },
+        {
+          "path": "images/16_black_lives.png",
+          "bytes": 513773,
+          "sha256": "3ab52e519334a0227d3c75976f7139d9c9ce45fd6ae8ab2c7dfeec63ccffa199"
+        },
+        {
+          "path": "images/17_george.png",
+          "bytes": 429828,
+          "sha256": "4c0dc1d26422e116b8b07d4e31356446a27f43d0e56070419e0e1d701193bc95"
+        },
+        {
+          "path": "images/17_george_original.png",
+          "bytes": 1983074,
+          "sha256": "4b554cf4644f5d29a24e4706821a466a24d6b6f0651e14e7f445c970fa11695e"
+        },
+        {
+          "path": "images/17_icantbreathe.png",
+          "bytes": 767801,
+          "sha256": "67ec1e242f44409970d52741012eaaf780e97034c6e7af243b52d128f8db0996"
+        },
+        {
+          "path": "images/18_great_seal.png",
+          "bytes": 509292,
+          "sha256": "fc1d44887109c65bfc8fe5f82a1110956e4d62870573f9c073902f5e487d3019"
+        },
+        {
+          "path": "images/18_pyramid.png",
+          "bytes": 784789,
+          "sha256": "5e35babd115283e3ebd0dfd10220f48334600fe332326dd336fc28280e7cfef8"
+        },
+        {
+          "path": "images/19_bust.png",
+          "bytes": 168651,
+          "sha256": "c5d2ab00b48bd3c0dc8751779ea682b74cdcb052202c29f5bb2dc0f8ed2ec2d0"
+        },
+        {
+          "path": "images/19_bust_original.png",
+          "bytes": 1965598,
+          "sha256": "b400fab782a1b815e8bd122cd96c1e8705290bdaed79544c9f837cd1d07df72b"
+        },
+        {
+          "path": "images/1_chart.png",
+          "bytes": 347350,
+          "sha256": "125489e7d5d4938d40288eea8972cf91ce088b310a0fcd71cb8591a97ff48f40"
+        },
+        {
+          "path": "images/1_chart_tradingview.png",
+          "bytes": 48443,
+          "sha256": "63759a7544515fd9334ec282ab00234f62846f9a046eefc1c4f2b8eaca3697a2"
+        },
+        {
+          "path": "images/20_rune_right.png",
+          "bytes": 55179,
+          "sha256": "1f8286f5ad6d5ca85e623696ebe3250bf9331bc0e4ebe21100a5e8c3501f95db"
+        },
+        {
+          "path": "images/2_covid19.png",
+          "bytes": 33507,
+          "sha256": "14fd4807a34462dcce6e693e1d5c6ee8dd891f4318b371c611bab9d33d76651b"
+        },
+        {
+          "path": "images/2_covid19_wall.png",
+          "bytes": 216740,
+          "sha256": "a86bb435aa1b48f3501336cb4f2367c3db06b7807ca91987fc18234d21306696"
+        },
+        {
+          "path": "images/2_covid_stock.png",
+          "bytes": 20384,
+          "sha256": "690cc664100045bc5d6a5fea634c12dc7c29d7f22fc3207129299730dd66639b"
+        },
+        {
+          "path": "images/3_trump_vs_biden.png",
+          "bytes": 423350,
+          "sha256": "b676d83d31999df24e135d6eefac838523db585939ffd188f6ae7d0bb2353f93"
+        },
+        {
+          "path": "images/3_versus_mirrored.png",
+          "bytes": 14607,
+          "sha256": "05974c0f58c31e3becf53c505209eeb4c2a21a1b4924b495fedbeb726091d212"
+        },
+        {
+          "path": "images/4_thirteenth_amendment.png",
+          "bytes": 171873,
+          "sha256": "28ab9afc9b6483ea83b5b1e53af860c2b8bc8f455b3481042eed50fe3f84ef32"
+        },
+        {
+          "path": "images/5_clock.png",
+          "bytes": 714771,
+          "sha256": "5957ae22d80fb118a90b6e3002537cafa0c8b6fb269d0a4ee4d5dcfc0572bf33"
+        },
+        {
+          "path": "images/6_esse_quam.png",
+          "bytes": 46761,
+          "sha256": "654ddf341fac4e6fc653192ab37c95b23bba15f6fbc1098a3b45a49f28cb393a"
+        },
+        {
+          "path": "images/7_covid.png",
+          "bytes": 113058,
+          "sha256": "e40697cd385c3ae466f127330d93bc7cce38d2d730fb6c67f0441dcde364df6a"
+        },
+        {
+          "path": "images/8_in_wich.png",
+          "bytes": 170876,
+          "sha256": "e4c15ea9b5c9d56cba1178b8cf27ece961049fbd7d1967b58a0b009015cde460"
+        },
+        {
+          "path": "images/8_in_wich_bitcoin_whitepaper.png",
+          "bytes": 18190,
+          "sha256": "3a1bf89a0fa036b341465199a4b7c99a12ed09ff4c7a57428502628af79086b5"
+        },
+        {
+          "path": "images/9_space_needle.png",
+          "bytes": 755692,
+          "sha256": "f806b7c316f26b4befb1d83470191dbb62e7d9fdf63d4c5b5ec59003cd840340"
+        },
+        {
+          "path": "images/original-clock.png",
+          "bytes": 2685563,
+          "sha256": "3e08b2fe7150f97f202eafecabe037f7a377d63fe6c92d17f7276ac262b84bbf"
+        },
+        {
+          "path": "images/original.png",
+          "bytes": 2383395,
+          "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782"
+        },
+        {
+          "path": "images/world_map.png",
+          "bytes": 191300,
+          "sha256": "2e0e437a17380f51bcb1e7806a9ad95004172bdd8e167b655de1c5557ebf9b9a"
+        }
+      ]
+    },
+    {
+      "repo": "HomelessPhD/BLM_0.2BTC",
+      "ref": "main",
+      "paths": [
+        "README.md",
+        "python_script",
+        ".github"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/HomelessPhD/BLM_0.2BTC",
+      "head": "4563f5869a838868e405926bcc082454554791dc",
+      "commit": {
+        "hash": "4563f5869a838868e405926bcc082454554791dc",
+        "author_date": "2026-07-05T23:12:30+02:00",
+        "commit_date": "2026-07-05T23:12:30+02:00",
+        "subject": "Update README.md"
+      },
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".github/FUNDING.yml",
+          "bytes": 279,
+          "sha256": "a4403bedbd826b806de20dd179fe1cacffea0c6bd118f79d00955963c57359bc"
+        },
+        {
+          "path": "README.md",
+          "bytes": 27512,
+          "sha256": "81753c8e92eb79c1e6a166a5bff3aeca42a374606b92ca6db0b13a37374ec01c"
+        },
+        {
+          "path": "python_script/BLM_generate_BIP39_pk.py",
+          "bytes": 4582,
+          "sha256": "9eaae8bf6ef453852efe2fad764f3d33302d1b0489d1164a73495c32bfaba21b"
+        },
+        {
+          "path": "python_script/english.txt",
+          "bytes": 13116,
+          "sha256": "2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda"
+        }
+      ]
+    },
+    {
+      "repo": "panchpasha/0.2-BTC-Puzzle-script",
+      "ref": "main",
+      "paths": [
+        "README.md",
+        "0.2-BTC-Puzzle-script"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/panchpasha/0.2-BTC-Puzzle-script",
+      "head": "1eae6abdfabdb59bc7fd0ada1c8675acab1465c7",
+      "commit": {
+        "hash": "1eae6abdfabdb59bc7fd0ada1c8675acab1465c7",
+        "author_date": "2024-08-26T12:29:28+02:00",
+        "commit_date": "2024-08-26T12:29:28+02:00",
+        "subject": "Update README.md"
+      },
+      "file_count": 6,
+      "files": [
+        {
+          "path": "0.2-BTC-Puzzle-script/README.md",
+          "bytes": 1779,
+          "sha256": "5868161c530305793770b7d505b87429c0bb8ef9b4f0610d3b9c173a81362eb8"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py",
+          "bytes": 2117,
+          "sha256": "8600ea92001979da9e5b74a157111eb29b52ac08b29c234daddde8632cefcd21"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py\uf03aZone.Identifier",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/seedwords.txt",
+          "bytes": 211,
+          "sha256": "5d1c583cf7bb1377a2735ed950922711a3f8ccad0baaeedd0e35db4b9641d627"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/seedwords.txt\uf03aZone.Identifier",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5928,
+          "sha256": "52b50f994710a8a1d81f4022711759ef75edbbe77c86891f4e26908c4e407ec7"
+        }
+      ]
+    },
+    {
+      "repo": "svenpohl/checkseedwordpermutations",
+      "ref": "master",
+      "paths": [
+        "README.md",
+        "checkpermutations.py"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/svenpohl/checkseedwordpermutations",
+      "error": "CalledProcessError(128, ['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', '--branch', 'master', 'https://github.com/svenpohl/checkseedwordpermutations.git', 'research/blm-collage/checkpoint-02-acquisition/repositories/svenpohl/checkseedwordpermutations'])"
+    },
+    {
+      "repo": "angwin7/btc-puzzle-0.2",
+      "ref": "main",
+      "paths": [
+        "README.md",
+        "0.2-BTC-Puzzle-script"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/angwin7/btc-puzzle-0.2",
+      "head": "c3e5021f9aa27907cebc5d20a01d4e606ce6b05b",
+      "commit": {
+        "hash": "c3e5021f9aa27907cebc5d20a01d4e606ce6b05b",
+        "author_date": "2025-02-04T12:56:29+07:00",
+        "commit_date": "2025-02-04T12:56:29+07:00",
+        "subject": "Update check_seed_phrases.py"
+      },
+      "file_count": 7,
+      "files": [
+        {
+          "path": "0.2-BTC-Puzzle-script/README.md",
+          "bytes": 1779,
+          "sha256": "5868161c530305793770b7d505b87429c0bb8ef9b4f0610d3b9c173a81362eb8"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py",
+          "bytes": 2117,
+          "sha256": "8600ea92001979da9e5b74a157111eb29b52ac08b29c234daddde8632cefcd21"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py\uf03aZone.Identifier",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/check_seed_phrases.py",
+          "bytes": 2226,
+          "sha256": "7c7718e8e391f9d875f11aab27db488ab7fdbab95d879e92487c89ec672c0675"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/seedwords.txt",
+          "bytes": 211,
+          "sha256": "5d1c583cf7bb1377a2735ed950922711a3f8ccad0baaeedd0e35db4b9641d627"
+        },
+        {
+          "path": "0.2-BTC-Puzzle-script/seedwords.txt\uf03aZone.Identifier",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5928,
+          "sha256": "52b50f994710a8a1d81f4022711759ef75edbbe77c86891f4e26908c4e407ec7"
+        }
+      ]
+    },
+    {
+      "repo": "lerasah/btc-puzzle-solver",
+      "ref": "main",
+      "paths": [
+        "README.md",
+        "CLAUDE.md"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/lerasah/btc-puzzle-solver",
+      "head": "cfac15b427146c5f5292f44d4a951499270fb6ee",
+      "commit": {
+        "hash": "cfac15b427146c5f5292f44d4a951499270fb6ee",
+        "author_date": "2026-06-27T23:17:24-04:00",
+        "commit_date": "2026-06-27T23:17:24-04:00",
+        "subject": "Add tiered generator (t12_) and 24-word template (t24_) plus 24-word self-test"
+      },
+      "file_count": 2,
+      "files": [
+        {
+          "path": "CLAUDE.md",
+          "bytes": 3417,
+          "sha256": "c7afd76251e1f3a0f84c9673d9f70ed6e8f731be00e94f01a1fc9aec6ff05181"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5706,
+          "sha256": "7c7402d4fac2bfd30d7ceddc69e94544e8621782eb871d8c587a523b5d857b79"
+        }
+      ]
+    },
+    {
+      "repo": "AmirHaz220/puzzle",
+      "ref": "main",
+      "paths": [
+        "README.md"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/AmirHaz220/puzzle",
+      "head": "88e9a36ba68a2428ff3a5ad95632e7093bef71d4",
+      "commit": {
+        "hash": "88e9a36ba68a2428ff3a5ad95632e7093bef71d4",
+        "author_date": "2025-04-21T23:34:07-07:00",
+        "commit_date": "2025-04-21T23:34:07-07:00",
+        "subject": "Update README.md"
+      },
+      "file_count": 1,
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 31399,
+          "sha256": "5b75ddb2853da167c4c54780a4ebf0fd0ad2f59443c7192c0ce89af6a8e110f0"
+        }
+      ]
+    },
+    {
+      "repo": "AlberTajuelo/bitcoin-0.2-image-puzzle",
+      "ref": "master",
+      "paths": [
+        "README.md"
+      ],
+      "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/AlberTajuelo/bitcoin-0.2-image-puzzle",
+      "error": "CalledProcessError(128, ['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', '--branch', 'master', 'https://github.com/AlberTajuelo/bitcoin-0.2-image-puzzle.git', 'research/blm-collage/checkpoint-02-acquisition/repositories/AlberTajuelo/bitcoin-0.2-image-puzzle'])"
+    }
+  ]
+}

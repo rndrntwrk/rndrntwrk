@@ -1,0 +1,514 @@
+[
+  {
+    "repo": "floflo777/open-crypto-puzzles",
+    "ref": "main",
+    "paths": [
+      "1-big-prizes/blm-brave-new-world-0-2btc",
+      "puzzles.json"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/floflo777/open-crypto-puzzles",
+    "head": "7b4b9c3096719049d0b0cc7dfe698e666ef58d8b",
+    "commit": {
+      "hash": "7b4b9c3096719049d0b0cc7dfe698e666ef58d8b",
+      "author_date": "2026-08-18T14:29:51+01:00",
+      "commit_date": "2026-08-18T14:29:51+01:00",
+      "subject": "Update README.md"
+    },
+    "file_count": 14,
+    "files": [
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/README.md",
+        "bytes": 12252,
+        "sha256": "e3a79e3818631e5ab058bd2fd1f53d16d4216b4d7388fe0eee3e930a78fb2a53"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/analysis/leads.md",
+        "bytes": 2783,
+        "sha256": "2601e0fff3e508d1dfad832e0f2b341c5813f2364fa9dd165ff711382b1d1832"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/analysis/tested.md",
+        "bytes": 8278,
+        "sha256": "0ea7348f738b33eb6668188a479659c09ee575d78f1d832a650bfac37b3df070"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/clues/author-posts.md",
+        "bytes": 841,
+        "sha256": "2972225552f446430d0707bace5e2fa5f686411cfb0c9672eb493db98f3cf9f9"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/clues/welcome-to-the-brave-new-world.png",
+        "bytes": 2383395,
+        "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/data/candidate-regions.json",
+        "bytes": 1173,
+        "sha256": "8085de51539895243035e0a7dd62eb446c85161acded01079ad837fcaec22323"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/data/format-fork.json",
+        "bytes": 796,
+        "sha256": "2ab4de1fa0650a546791e66ac7107d7efeccf267035416487a1e530a26ea74f1"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/images/01-annotated-regions.png",
+        "bytes": 306124,
+        "sha256": "c40628abdb7102d1a91715559fe72a6514c36355d617477c503c75fb5e30514c"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/images/02-format-fork.svg",
+        "bytes": 3126,
+        "sha256": "57a896708666d1beda817b74ef1fefde6884ae9b91f1055568b06e11f006d79a"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/puzzle.json",
+        "bytes": 4192,
+        "sha256": "0f8b8e3d434f4b47ee3990d1ea181da872109783338a7e2011588be77c15e9f7"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/fig_format_fork.py",
+        "bytes": 6132,
+        "sha256": "17e32f0788a476afe2ef4b821130d883aa7f9501e7b19a5ac54239afdfbf939d"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/fig_regions.py",
+        "bytes": 3308,
+        "sha256": "a212d8f54d822b28e294a00b1d713f01db6699db3e03f635673466cdc16bd8c8"
+      },
+      {
+        "path": "1-big-prizes/blm-brave-new-world-0-2btc/tools/oracle.py",
+        "bytes": 8573,
+        "sha256": "a1b52e311ca97fd752708622d050d480f65f8b1177c9e6726a485f344e7c65a5"
+      },
+      {
+        "path": "puzzles.json",
+        "bytes": 213396,
+        "sha256": "dac559c18ee1930a0abdf7e567b6a4446a15dc563337f0e825c9c4260255e704"
+      }
+    ]
+  },
+  {
+    "repo": "jmr2704/bitcoin-0.2-image-puzzle",
+    "ref": "master",
+    "paths": [
+      "README.md",
+      "images"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/jmr2704/bitcoin-0.2-image-puzzle",
+    "head": "b2584b91c7987b670b3bb1c1f3534440eb5609cf",
+    "commit": {
+      "hash": "b2584b91c7987b670b3bb1c1f3534440eb5609cf",
+      "author_date": "2023-08-14T11:23:43+02:00",
+      "commit_date": "2023-08-14T11:23:43+02:00",
+      "subject": "chore: add few hints"
+    },
+    "file_count": 38,
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 26338,
+        "sha256": "372416e4abb7511e50d0004d31f9c6d34d9522a9e350bcd814519c2539c1cd4f"
+      },
+      {
+        "path": "images/10_bill.png",
+        "bytes": 91360,
+        "sha256": "3bc32f1375f309bab49ddc85c47126b43876bf1d5955528f6d043c27235aa979"
+      },
+      {
+        "path": "images/11_gravity_falls_cypher.png",
+        "bytes": 951166,
+        "sha256": "054da6ab5e365458889f6693b627f13668ed939042f738cba9a0509bde2e91ab"
+      },
+      {
+        "path": "images/11_rune_trump_head.png",
+        "bytes": 39020,
+        "sha256": "264b4e522496e071bb9f9fed7c2449a853ccf14b4213ac1967e463bd4f9362ce"
+      },
+      {
+        "path": "images/12_black_power_logo.png",
+        "bytes": 5272,
+        "sha256": "e6fd11bd0e1ba13160004f6d15abf9b7a551669b63c3ad55dd724f5d6578a148"
+      },
+      {
+        "path": "images/12_statue.png",
+        "bytes": 315814,
+        "sha256": "868e6267c70b7fba96774f2d24d61b8993d3ea94c8ad580b27e00ee13731efb4"
+      },
+      {
+        "path": "images/12_statue_flag.png",
+        "bytes": 164517,
+        "sha256": "f1847e304d163f03909be02c83b53a4bef43e0a678e987a835ef3183ad6f75aa"
+      },
+      {
+        "path": "images/12_us_flag.png",
+        "bytes": 2393,
+        "sha256": "a266997e9a6e229ae1f10c4f2b7e7ad4ef52b8ec86e8018a195589baafdc2c84"
+      },
+      {
+        "path": "images/13_trade_war.png",
+        "bytes": 405450,
+        "sha256": "0c99700f96162b5c32c8cae88799da25666347fd107a0c16db47b87ff16f39bd"
+      },
+      {
+        "path": "images/14_new_world.png",
+        "bytes": 351450,
+        "sha256": "7c5aad1dd8ac3385532fc6cdf3073352b90dc895d8ddd593c93111d3cfbaffb5"
+      },
+      {
+        "path": "images/14_order_and_stability.png",
+        "bytes": 281041,
+        "sha256": "e68faefa8a582c8b9f65cd6e1b7fb35dff809e1544e19a1bebe3e69bb15fd5c7"
+      },
+      {
+        "path": "images/15_cameras.png",
+        "bytes": 78648,
+        "sha256": "0f299ec7807e0ab898c35fb22ce09928536d7e9d5c92ba8b63ed6e57abe25ec9"
+      },
+      {
+        "path": "images/16_black_lives.png",
+        "bytes": 513773,
+        "sha256": "3ab52e519334a0227d3c75976f7139d9c9ce45fd6ae8ab2c7dfeec63ccffa199"
+      },
+      {
+        "path": "images/17_george.png",
+        "bytes": 429828,
+        "sha256": "4c0dc1d26422e116b8b07d4e31356446a27f43d0e56070419e0e1d701193bc95"
+      },
+      {
+        "path": "images/17_george_original.png",
+        "bytes": 1983074,
+        "sha256": "4b554cf4644f5d29a24e4706821a466a24d6b6f0651e14e7f445c970fa11695e"
+      },
+      {
+        "path": "images/17_icantbreathe.png",
+        "bytes": 767801,
+        "sha256": "67ec1e242f44409970d52741012eaaf780e97034c6e7af243b52d128f8db0996"
+      },
+      {
+        "path": "images/18_great_seal.png",
+        "bytes": 509292,
+        "sha256": "fc1d44887109c65bfc8fe5f82a1110956e4d62870573f9c073902f5e487d3019"
+      },
+      {
+        "path": "images/18_pyramid.png",
+        "bytes": 784789,
+        "sha256": "5e35babd115283e3ebd0dfd10220f48334600fe332326dd336fc28280e7cfef8"
+      },
+      {
+        "path": "images/19_bust.png",
+        "bytes": 168651,
+        "sha256": "c5d2ab00b48bd3c0dc8751779ea682b74cdcb052202c29f5bb2dc0f8ed2ec2d0"
+      },
+      {
+        "path": "images/19_bust_original.png",
+        "bytes": 1965598,
+        "sha256": "b400fab782a1b815e8bd122cd96c1e8705290bdaed79544c9f837cd1d07df72b"
+      },
+      {
+        "path": "images/1_chart.png",
+        "bytes": 347350,
+        "sha256": "125489e7d5d4938d40288eea8972cf91ce088b310a0fcd71cb8591a97ff48f40"
+      },
+      {
+        "path": "images/1_chart_tradingview.png",
+        "bytes": 48443,
+        "sha256": "63759a7544515fd9334ec282ab00234f62846f9a046eefc1c4f2b8eaca3697a2"
+      },
+      {
+        "path": "images/20_rune_right.png",
+        "bytes": 55179,
+        "sha256": "1f8286f5ad6d5ca85e623696ebe3250bf9331bc0e4ebe21100a5e8c3501f95db"
+      },
+      {
+        "path": "images/2_covid19.png",
+        "bytes": 33507,
+        "sha256": "14fd4807a34462dcce6e693e1d5c6ee8dd891f4318b371c611bab9d33d76651b"
+      },
+      {
+        "path": "images/2_covid19_wall.png",
+        "bytes": 216740,
+        "sha256": "a86bb435aa1b48f3501336cb4f2367c3db06b7807ca91987fc18234d21306696"
+      },
+      {
+        "path": "images/2_covid_stock.png",
+        "bytes": 20384,
+        "sha256": "690cc664100045bc5d6a5fea634c12dc7c29d7f22fc3207129299730dd66639b"
+      },
+      {
+        "path": "images/3_trump_vs_biden.png",
+        "bytes": 423350,
+        "sha256": "b676d83d31999df24e135d6eefac838523db585939ffd188f6ae7d0bb2353f93"
+      },
+      {
+        "path": "images/3_versus_mirrored.png",
+        "bytes": 14607,
+        "sha256": "05974c0f58c31e3becf53c505209eeb4c2a21a1b4924b495fedbeb726091d212"
+      },
+      {
+        "path": "images/4_thirteenth_amendment.png",
+        "bytes": 171873,
+        "sha256": "28ab9afc9b6483ea83b5b1e53af860c2b8bc8f455b3481042eed50fe3f84ef32"
+      },
+      {
+        "path": "images/5_clock.png",
+        "bytes": 714771,
+        "sha256": "5957ae22d80fb118a90b6e3002537cafa0c8b6fb269d0a4ee4d5dcfc0572bf33"
+      },
+      {
+        "path": "images/6_esse_quam.png",
+        "bytes": 46761,
+        "sha256": "654ddf341fac4e6fc653192ab37c95b23bba15f6fbc1098a3b45a49f28cb393a"
+      },
+      {
+        "path": "images/7_covid.png",
+        "bytes": 113058,
+        "sha256": "e40697cd385c3ae466f127330d93bc7cce38d2d730fb6c67f0441dcde364df6a"
+      },
+      {
+        "path": "images/8_in_wich.png",
+        "bytes": 170876,
+        "sha256": "e4c15ea9b5c9d56cba1178b8cf27ece961049fbd7d1967b58a0b009015cde460"
+      },
+      {
+        "path": "images/8_in_wich_bitcoin_whitepaper.png",
+        "bytes": 18190,
+        "sha256": "3a1bf89a0fa036b341465199a4b7c99a12ed09ff4c7a57428502628af79086b5"
+      },
+      {
+        "path": "images/9_space_needle.png",
+        "bytes": 755692,
+        "sha256": "f806b7c316f26b4befb1d83470191dbb62e7d9fdf63d4c5b5ec59003cd840340"
+      },
+      {
+        "path": "images/original-clock.png",
+        "bytes": 2685563,
+        "sha256": "3e08b2fe7150f97f202eafecabe037f7a377d63fe6c92d17f7276ac262b84bbf"
+      },
+      {
+        "path": "images/original.png",
+        "bytes": 2383395,
+        "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782"
+      },
+      {
+        "path": "images/world_map.png",
+        "bytes": 191300,
+        "sha256": "2e0e437a17380f51bcb1e7806a9ad95004172bdd8e167b655de1c5557ebf9b9a"
+      }
+    ]
+  },
+  {
+    "repo": "HomelessPhD/BLM_0.2BTC",
+    "ref": "main",
+    "paths": [
+      "README.md",
+      "python_script",
+      ".github"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/HomelessPhD/BLM_0.2BTC",
+    "head": "4563f5869a838868e405926bcc082454554791dc",
+    "commit": {
+      "hash": "4563f5869a838868e405926bcc082454554791dc",
+      "author_date": "2026-07-05T23:12:30+02:00",
+      "commit_date": "2026-07-05T23:12:30+02:00",
+      "subject": "Update README.md"
+    },
+    "file_count": 4,
+    "files": [
+      {
+        "path": ".github/FUNDING.yml",
+        "bytes": 279,
+        "sha256": "a4403bedbd826b806de20dd179fe1cacffea0c6bd118f79d00955963c57359bc"
+      },
+      {
+        "path": "README.md",
+        "bytes": 27512,
+        "sha256": "81753c8e92eb79c1e6a166a5bff3aeca42a374606b92ca6db0b13a37374ec01c"
+      },
+      {
+        "path": "python_script/BLM_generate_BIP39_pk.py",
+        "bytes": 4582,
+        "sha256": "9eaae8bf6ef453852efe2fad764f3d33302d1b0489d1164a73495c32bfaba21b"
+      },
+      {
+        "path": "python_script/english.txt",
+        "bytes": 13116,
+        "sha256": "2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda"
+      }
+    ]
+  },
+  {
+    "repo": "panchpasha/0.2-BTC-Puzzle-script",
+    "ref": "main",
+    "paths": [
+      "README.md",
+      "0.2-BTC-Puzzle-script"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/panchpasha/0.2-BTC-Puzzle-script",
+    "head": "1eae6abdfabdb59bc7fd0ada1c8675acab1465c7",
+    "commit": {
+      "hash": "1eae6abdfabdb59bc7fd0ada1c8675acab1465c7",
+      "author_date": "2024-08-26T12:29:28+02:00",
+      "commit_date": "2024-08-26T12:29:28+02:00",
+      "subject": "Update README.md"
+    },
+    "file_count": 6,
+    "files": [
+      {
+        "path": "0.2-BTC-Puzzle-script/README.md",
+        "bytes": 1779,
+        "sha256": "5868161c530305793770b7d505b87429c0bb8ef9b4f0610d3b9c173a81362eb8"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py",
+        "bytes": 2117,
+        "sha256": "8600ea92001979da9e5b74a157111eb29b52ac08b29c234daddde8632cefcd21"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py\uf03aZone.Identifier",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/seedwords.txt",
+        "bytes": 211,
+        "sha256": "5d1c583cf7bb1377a2735ed950922711a3f8ccad0baaeedd0e35db4b9641d627"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/seedwords.txt\uf03aZone.Identifier",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "README.md",
+        "bytes": 5928,
+        "sha256": "52b50f994710a8a1d81f4022711759ef75edbbe77c86891f4e26908c4e407ec7"
+      }
+    ]
+  },
+  {
+    "repo": "svenpohl/checkseedwordpermutations",
+    "ref": "master",
+    "paths": [
+      "README.md",
+      "checkpermutations.py"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/svenpohl/checkseedwordpermutations",
+    "error": "CalledProcessError(128, ['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', '--branch', 'master', 'https://github.com/svenpohl/checkseedwordpermutations.git', 'research/blm-collage/checkpoint-02-acquisition/repositories/svenpohl/checkseedwordpermutations'])"
+  },
+  {
+    "repo": "angwin7/btc-puzzle-0.2",
+    "ref": "main",
+    "paths": [
+      "README.md",
+      "0.2-BTC-Puzzle-script"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/angwin7/btc-puzzle-0.2",
+    "head": "c3e5021f9aa27907cebc5d20a01d4e606ce6b05b",
+    "commit": {
+      "hash": "c3e5021f9aa27907cebc5d20a01d4e606ce6b05b",
+      "author_date": "2025-02-04T12:56:29+07:00",
+      "commit_date": "2025-02-04T12:56:29+07:00",
+      "subject": "Update check_seed_phrases.py"
+    },
+    "file_count": 7,
+    "files": [
+      {
+        "path": "0.2-BTC-Puzzle-script/README.md",
+        "bytes": 1779,
+        "sha256": "5868161c530305793770b7d505b87429c0bb8ef9b4f0610d3b9c173a81362eb8"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py",
+        "bytes": 2117,
+        "sha256": "8600ea92001979da9e5b74a157111eb29b52ac08b29c234daddde8632cefcd21"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/check_seed_combinations.py\uf03aZone.Identifier",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/check_seed_phrases.py",
+        "bytes": 2226,
+        "sha256": "7c7718e8e391f9d875f11aab27db488ab7fdbab95d879e92487c89ec672c0675"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/seedwords.txt",
+        "bytes": 211,
+        "sha256": "5d1c583cf7bb1377a2735ed950922711a3f8ccad0baaeedd0e35db4b9641d627"
+      },
+      {
+        "path": "0.2-BTC-Puzzle-script/seedwords.txt\uf03aZone.Identifier",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "README.md",
+        "bytes": 5928,
+        "sha256": "52b50f994710a8a1d81f4022711759ef75edbbe77c86891f4e26908c4e407ec7"
+      }
+    ]
+  },
+  {
+    "repo": "lerasah/btc-puzzle-solver",
+    "ref": "main",
+    "paths": [
+      "README.md",
+      "CLAUDE.md"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/lerasah/btc-puzzle-solver",
+    "head": "cfac15b427146c5f5292f44d4a951499270fb6ee",
+    "commit": {
+      "hash": "cfac15b427146c5f5292f44d4a951499270fb6ee",
+      "author_date": "2026-06-27T23:17:24-04:00",
+      "commit_date": "2026-06-27T23:17:24-04:00",
+      "subject": "Add tiered generator (t12_) and 24-word template (t24_) plus 24-word self-test"
+    },
+    "file_count": 2,
+    "files": [
+      {
+        "path": "CLAUDE.md",
+        "bytes": 3417,
+        "sha256": "c7afd76251e1f3a0f84c9673d9f70ed6e8f731be00e94f01a1fc9aec6ff05181"
+      },
+      {
+        "path": "README.md",
+        "bytes": 5706,
+        "sha256": "7c7402d4fac2bfd30d7ceddc69e94544e8621782eb871d8c587a523b5d857b79"
+      }
+    ]
+  },
+  {
+    "repo": "AmirHaz220/puzzle",
+    "ref": "main",
+    "paths": [
+      "README.md"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/AmirHaz220/puzzle",
+    "head": "88e9a36ba68a2428ff3a5ad95632e7093bef71d4",
+    "commit": {
+      "hash": "88e9a36ba68a2428ff3a5ad95632e7093bef71d4",
+      "author_date": "2025-04-21T23:34:07-07:00",
+      "commit_date": "2025-04-21T23:34:07-07:00",
+      "subject": "Update README.md"
+    },
+    "file_count": 1,
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 31399,
+        "sha256": "5b75ddb2853da167c4c54780a4ebf0fd0ad2f59443c7192c0ce89af6a8e110f0"
+      }
+    ]
+  },
+  {
+    "repo": "AlberTajuelo/bitcoin-0.2-image-puzzle",
+    "ref": "master",
+    "paths": [
+      "README.md"
+    ],
+    "dest": "research/blm-collage/checkpoint-02-acquisition/repositories/AlberTajuelo/bitcoin-0.2-image-puzzle",
+    "error": "CalledProcessError(128, ['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', '--branch', 'master', 'https://github.com/AlberTajuelo/bitcoin-0.2-image-puzzle.git', 'research/blm-collage/checkpoint-02-acquisition/repositories/AlberTajuelo/bitcoin-0.2-image-puzzle'])"
+  }
+]
