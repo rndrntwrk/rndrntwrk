@@ -1,0 +1,167 @@
+name: Enumerate BIP39 words on hidden Hunting Time pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/enumerate-bip39-hidden-print-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Install asynchronous HTTP client
+        run: python -m pip install --disable-pip-version-check -q aiohttp
+
+      - name: Enumerate BIP39 page intersections
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/bip39-hidden-pages
+          rm -rf "$out"
+          mkdir -p "$out"
+          cat > /tmp/enumerate.py <<'PY'
+          from __future__ import annotations
+          import asyncio, json, random, time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          import aiohttp
+
+          ASIN='B0FRGB2PMR'
+          PAGES=(103,110,241)
+          ENDPOINT='https://read.amazon.com/sample/print/position-data'
+          CARD='https://read.amazon.com/sample/B0FRGB2PMR?clientId=share'
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          OUT=Path('public-media-analysis/bip39-hidden-pages')
+          WORDLIST=Path('public-media-analysis/wordlists/bip39-english.txt')
+          if not WORDLIST.exists():
+              raise SystemExit(f'missing {WORDLIST}')
+          words=[w.strip() for w in WORDLIST.read_text().splitlines() if w.strip()]
+          if len(words)!=2048:
+              raise SystemExit(f'expected 2048 BIP39 words, got {len(words)}')
+
+          semaphore=asyncio.Semaphore(18)
+          statuses=Counter()
+          errors=[]
+          positives=defaultdict(list)
+          completed=0
+          started=time.time()
+          lock=asyncio.Lock()
+
+          timeout=aiohttp.ClientTimeout(total=25,connect=10,sock_read=15)
+          connector=aiohttp.TCPConnector(limit=24,ttl_dns_cache=300)
+
+          async def one(session,page,word):
+              nonlocal completed
+              params={'asin':ASIN,'query':word,'token':'null','page':str(page)}
+              last=None
+              for attempt in range(4):
+                  try:
+                      async with semaphore:
+                          async with session.get(ENDPOINT,params=params,timeout=timeout) as r:
+                              text=await r.text()
+                              status=r.status
+                              ct=r.headers.get('content-type','')
+                      statuses[f'{status} {ct.split(";")[0]}']+=1
+                      if status in (429,500,502,503,504):
+                          last=f'HTTP {status}: {text[:200]}'
+                          await asyncio.sleep((0.4*(2**attempt))+random.random()*0.25)
+                          continue
+                      try:
+                          obj=json.loads(text)
+                      except Exception as e:
+                          last=f'JSON {e!r}: {text[:200]}'
+                          break
+                      hs=obj.get('highlights') if isinstance(obj,dict) else None
+                      count=0
+                      if isinstance(hs,dict):
+                          count=sum(len(v) for v in hs.values() if isinstance(v,list))
+                      if count:
+                          positives[page].append({'word':word,'highlight_count':count,'highlights':hs})
+                      last=None
+                      break
+                  except Exception as e:
+                      last=repr(e)
+                      await asyncio.sleep((0.4*(2**attempt))+random.random()*0.25)
+              async with lock:
+                  completed+=1
+                  if last:
+                      errors.append({'page':page,'word':word,'error':last})
+                  if completed%500==0:
+                      print(f'completed {completed}/{len(words)*len(PAGES)} positives={sum(map(len,positives.values()))} errors={len(errors)} elapsed={time.time()-started:.1f}s',flush=True)
+
+          async def main():
+              jar=aiohttp.CookieJar(unsafe=True)
+              async with aiohttp.ClientSession(headers={'User-Agent':UA,'Accept':'application/json,text/html,*/*'},cookie_jar=jar,connector=connector) as session:
+                  async with session.get(CARD) as r:
+                      await r.read()
+                      print('card',r.status,r.url,flush=True)
+                  for page in PAGES:
+                      # Page batches avoid a single enormous gather and make progress deterministic.
+                      for start in range(0,len(words),256):
+                          batch=words[start:start+256]
+                          await asyncio.gather(*(one(session,page,w) for w in batch))
+                      positives[page].sort(key=lambda x:x['word'])
+                      print('PAGE',page,'POSITIVE WORDS',[x['word'] for x in positives[page]],flush=True)
+
+          asyncio.run(main())
+          summary={
+              'run_id':None,
+              'asin':ASIN,
+              'pages':list(PAGES),
+              'wordlist_size':len(words),
+              'request_targets':len(words)*len(PAGES),
+              'completed':completed,
+              'status_counts':dict(statuses),
+              'error_count':len(errors),
+              'positive_words':{str(p):[x['word'] for x in positives[p]] for p in PAGES},
+              'positive_details':{str(p):positives[p] for p in PAGES},
+              'elapsed_seconds':time.time()-started,
+          }
+          (OUT/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          (OUT/'errors.json').write_text(json.dumps(errors,indent=2,ensure_ascii=False))
+          md=['# BIP39 intersections on inaccessible print pages','']
+          md.append(f'- Requests completed: {completed:,} / {len(words)*len(PAGES):,}')
+          md.append(f'- Request errors: {len(errors):,}')
+          md.append(f'- Elapsed: {summary["elapsed_seconds"]:.1f} seconds')
+          for p in PAGES:
+              ws=summary['positive_words'][str(p)]
+              md.extend(['',f'## Page {p}','',(', '.join(f'`{w}`' for w in ws) if ws else '_No BIP39 words returned._')])
+          (OUT/'summary.md').write_text('\n'.join(md)+'\n')
+          print(json.dumps(summary,indent=2,ensure_ascii=False),flush=True)
+          PY
+          python /tmp/enumerate.py | tee "$out/console.txt"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+
+      - name: Upload full enumeration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-bip39-hidden-pages
+          path: public-media-analysis/bip39-hidden-pages
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist compact enumeration result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/bip39-hidden-pages/summary.json public-media-analysis/bip39-hidden-pages/summary.md public-media-analysis/bip39-hidden-pages/RUN_ID.txt || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist hidden-page BIP39 enumeration $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
