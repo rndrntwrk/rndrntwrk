@@ -1,0 +1,104 @@
+name: Probe search context with recovered manifest identifiers
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-search-context-with-manifest.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Probe exact public search-context request
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/search-context-manifest-probe
+          rm -rf "$out"
+          mkdir -p "$out"
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          sample='https://read.amazon.com/sample/B0FK7RBDFL?clientId=share'
+          endpoint='https://read.amazon.com/service/web/content/getSearchContext'
+          curl -L --compressed --retry 3 -sS -A "$ua" -c "$out/cookies.txt" "$sample" -o "$out/sample.html"
+
+          python - <<'PY'
+          import base64, json, subprocess
+          from pathlib import Path
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+          out=Path('public-media-analysis/search-context-manifest-probe')
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+          sample='https://read.amazon.com/sample/B0FK7RBDFL?clientId=share'
+          endpoint='https://read.amazon.com/service/web/content/getSearchContext'
+          revision='64363d23'
+          ident='CR!CHPJ159K3X04FAFE0X117MS13EMN'
+          tests=[]
+          position_sets=[[25],[7622],[8148],[20136],[20447],[27622],[28648],[31385],[31975],[35119],[36054],[49345],[49602]]
+          variants=[]
+          for p in position_sets:
+              variants.extend([
+                  {'asin':'B0FK7RBDFL','positions':[p],'refEmId':ident,'revision':revision,'yjACR':ident,'clientVersion':'20000100'},
+                  {'asin':'B0FK7RBDFL','positions':p,'refEmId':ident,'revision':revision,'yjACR':ident,'clientVersion':'20000100'},
+                  {'asin':'B0FK7RBDFL','positions':[p],'refEmId':ident,'revision':revision,'yjACR':ident},
+              ])
+
+          def decrypt_context(s):
+              key=base64.b64decode(s[:24])
+              iv=base64.b64decode(s[24:48])
+              ct=base64.b64decode(s[48:])
+              return AESGCM(key).decrypt(iv,ct,None).decode('utf-8')
+
+          for n,body in enumerate(variants):
+              body_path=out/f'body-{n:03d}.json'
+              resp_path=out/f'response-{n:03d}.bin'
+              hdr_path=out/f'headers-{n:03d}.txt'
+              body_path.write_text(json.dumps(body,separators=(',',':')))
+              cmd=[
+                  'curl','-L','--compressed','--retry','2','-sS','-A',ua,
+                  '-b',str(out/'cookies.txt'),'-c',str(out/'cookies.txt'),
+                  '-e',sample,'-H','Origin: https://read.amazon.com',
+                  '-H','Accept: application/json','-H','Content-Type: application/json',
+                  '-D',str(hdr_path),'-o',str(resp_path),'-w','%{http_code}\t%{content_type}',
+                  '--data-binary','@'+str(body_path),endpoint,
+              ]
+              p=subprocess.run(cmd,capture_output=True,text=True)
+              raw=resp_path.read_bytes() if resp_path.exists() else b''
+              rec={'n':n,'request':body,'curl_status':p.stdout.strip(),'stderr':p.stderr.strip(),'bytes':len(raw),'decrypted':[]}
+              try:
+                  obj=json.loads(raw)
+                  rec['json']=obj
+                  for s in obj.get('searchContexts',[]) if isinstance(obj,dict) else []:
+                      try: rec['decrypted'].append(decrypt_context(s))
+                      except Exception as e: rec['decrypted'].append({'error':repr(e),'ciphertext_prefix':s[:80]})
+              except Exception as e:
+                  rec['parse_error']=repr(e)
+                  rec['prefix']=raw[:500].decode('utf-8','replace')
+              tests.append(rec)
+              print(json.dumps(rec,ensure_ascii=False))
+          (out/'results.json').write_text(json.dumps(tests,indent=2,ensure_ascii=False))
+          (out/'successes.json').write_text(json.dumps([x for x in tests if x.get('decrypted')],indent=2,ensure_ascii=False))
+          PY
+
+      - name: Persist probe results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/search-context-manifest-probe || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist manifest search-context probe $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
