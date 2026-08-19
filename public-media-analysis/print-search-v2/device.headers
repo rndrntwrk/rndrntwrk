@@ -1,0 +1,22 @@
+HTTP/2 200 
+content-type: application/json;charset=utf-8
+server: Server
+date: Wed, 19 Aug 2026 04:47:49 GMT
+strict-transport-security: max-age=47474747; includeSubDomains; preload
+edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
+x-amz-rid: PWJM3PCXQNMGKFZB0MRW
+set-cookie: session-token=nAvZ0lwf5tGpQEVP6P79/ZZGu+AOpR86f3znxww3PlYcF2Xzl+bzvAYkowlhgefQ+MoCxpXPspEZmrqcjFcfEiUGJuuJmvZT0YcYU3pyn+p1K2HVYoCy1JzvGjXld2hWd/fMX+5jz2qXthmFEtmfw8aATMBt0D9qEkm6CZDv5wBOy+L1Tm1mCYnZx1EQjGijprNKxFds+RVoZACDVxB86zo0ncDT2quH; Domain=.amazon.com; Expires=Thu, 19-Aug-2027 04:47:49 GMT; Path=/; Secure
+accept-ch: ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr,sec-ch-ua-full-version-list,viewport-height,sec-ch-viewport-height
+accept-ch-lifetime: 86400
+content-encoding: gzip
+content-security-policy: upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/
+permissions-policy: ch-dpr=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-viewport-width=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-downlink=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com"), ch-ect=(self "https://m.media-amazon.com" "https://images-na.ssl-images-amazon.com")
+x-content-type-options: nosniff
+x-xss-protection: 1;
+content-security-policy-report-only: default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/
+vary: Accept-Encoding,User-Agent
+x-cache: Miss from cloudfront
+via: 1.1 5e79d089f5701b7938b599fdf4db1b52.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: HEqhmJyWX1FoOO7C5OgwDVTQ-PDf8_Dpr-r5d6MvQsEDxU8vEfyz-Q==
+
