@@ -1,0 +1,197 @@
+name: Scan BIP39 words on unresolved paperback pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/scan-bip39-target-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hunting-time-bip39-target-page-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Query all BIP39 words against paperback search
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import json
+          import random
+          import threading
+          import time
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+
+          ASIN = 'B0FRGB2PMR'
+          ENDPOINT = 'https://read.amazon.com/sample/print/search-results'
+          WORDLIST_URL = 'https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt'
+          TARGET_LABELS = {'Page 103', 'Page 110', 'Page 241'}
+          TARGET_INTERNAL = {'112', '119', '250'}
+          UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36'
+          OUT = Path('public-media-analysis/bip39-target-pages')
+          OUT.mkdir(parents=True, exist_ok=True)
+
+          with urllib.request.urlopen(
+              urllib.request.Request(WORDLIST_URL, headers={'User-Agent': UA}), timeout=30
+          ) as response:
+              words = [x.strip() for x in response.read().decode().splitlines() if x.strip()]
+          assert len(words) == 2048, len(words)
+
+          lock = threading.Lock()
+          completed = 0
+
+          def page_entries(value):
+              found = []
+              if isinstance(value, list):
+                  as_strings = [str(x) for x in value]
+                  if TARGET_LABELS.intersection(as_strings):
+                      found.append(value)
+                  for child in value:
+                      found.extend(page_entries(child))
+              elif isinstance(value, dict):
+                  for child in value.values():
+                      found.extend(page_entries(child))
+              return found
+
+          def fetch_word(word: str):
+              nonlocal completed
+              params = {
+                  'asin': ASIN,
+                  'buyingAsin': ASIN,
+                  'query': word,
+                  'pageNumber': 1,
+                  'pageSize': 100,
+              }
+              url = ENDPOINT + '?' + urllib.parse.urlencode(params)
+              last_error = None
+              for attempt in range(5):
+                  try:
+                      request = urllib.request.Request(
+                          url,
+                          headers={
+                              'Accept': 'application/json',
+                              'User-Agent': UA,
+                              'Referer': f'https://read.amazon.com/kp/card?asin={ASIN}&preview=inline&linkCode=kpe',
+                          },
+                      )
+                      with urllib.request.urlopen(request, timeout=40) as response:
+                          body = json.loads(response.read())
+                      entries = page_entries(body)
+                      hits = []
+                      for entry in entries:
+                          strings = [str(x) for x in entry]
+                          label = next((x for x in strings if x in TARGET_LABELS), None)
+                          internal = next((x for x in strings if x in TARGET_INTERNAL), None)
+                          hits.append({'label': label, 'internalPage': internal, 'entry': entry})
+                      row = {
+                          'word': word,
+                          'status': 200,
+                          'totalResults': body.get('totalResults'),
+                          'hits': hits,
+                      }
+                      break
+                  except Exception as exc:
+                      last_error = repr(exc)
+                      if attempt == 4:
+                          row = {'word': word, 'status': 'error', 'error': last_error, 'hits': []}
+                          break
+                      time.sleep((0.35 * (2 ** attempt)) + random.random() * 0.25)
+              with lock:
+                  completed += 1
+                  if completed % 100 == 0:
+                      print(f'completed {completed}/{len(words)}', flush=True)
+              return row
+
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+              rows = list(executor.map(fetch_word, words))
+
+          target_rows = [row for row in rows if row['hits']]
+          target_rows.sort(key=lambda row: word_order[row['word']] if False else words.index(row['word']))
+          errors = [row for row in rows if row['status'] == 'error']
+
+          by_page = {label: [] for label in sorted(TARGET_LABELS)}
+          for row in target_rows:
+              for hit in row['hits']:
+                  if hit['label']:
+                      by_page[hit['label']].append({
+                          'word': row['word'],
+                          'internalPage': hit['internalPage'],
+                          'entry': hit['entry'],
+                          'totalResults': row.get('totalResults'),
+                      })
+
+          result = {
+              'runId': '${{ github.run_id }}',
+              'wordCount': len(words),
+              'targetLabels': sorted(TARGET_LABELS),
+              'targetInternalPages': sorted(TARGET_INTERNAL, key=int),
+              'targetWordCount': len(target_rows),
+              'errorCount': len(errors),
+              'byPage': by_page,
+              'errors': errors,
+          }
+          (OUT / 'target-words.json').write_text(json.dumps(result, indent=2, ensure_ascii=False))
+          (OUT / 'all-query-status.json').write_text(json.dumps(rows, indent=2, ensure_ascii=False))
+
+          lines = [
+              '# BIP39 words found on unresolved Hunting Time pages',
+              '',
+              f'- Words queried: {len(words)}',
+              f'- Query errors: {len(errors)}',
+              f'- Words with a target-page hit: {len(target_rows)}',
+              '',
+          ]
+          for label in sorted(by_page, key=lambda value: int(value.split()[-1])):
+              lines += [f'## {label}', '']
+              entries = by_page[label]
+              if not entries:
+                  lines.append('_No BIP39 word hit recovered._')
+              else:
+                  for item in entries:
+                      lines.append(f"- `{item['word']}` — internal page {item.get('internalPage')}; result `{json.dumps(item['entry'], ensure_ascii=False)}`")
+              lines.append('')
+          (OUT / 'target-words.md').write_text('\n'.join(lines))
+          print((OUT / 'target-words.md').read_text())
+          PY
+
+      - name: Upload complete scan output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-bip39-target-page-scan
+          path: public-media-analysis/bip39-target-pages
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist concise target-page results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f public-media-analysis/bip39-target-pages/target-words.json || exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/bip39-target-pages/target-words.json
+          git add public-media-analysis/bip39-target-pages/target-words.md
+          git commit -m "research: persist BIP39 target-page scan $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
