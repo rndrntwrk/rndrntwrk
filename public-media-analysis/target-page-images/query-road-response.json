@@ -1,0 +1,207 @@
+{
+  "highlights": {
+    "41": [
+      [
+        "240",
+        "563",
+        "56",
+        "15"
+      ]
+    ]
+  },
+  "jumboImageUrls": {
+    "64": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01S.JUMBOXXX.jpg?Expires=1787198309&Signature=Rgp3zx97hwBO5ae93DVw596ifcKDC6EXVYbO1B0tBv6MK1AsR9zCGqn87a2wRTCpf1LGxFiv30lCglL-1~ZeFKY1FTqcXaCZ2A8WoCLjL5hhg~NP7~L-7MbxL0q9mBJZ3W4C1cQxRgdGKAStwVrM5jP-ZkJPY~7fTN1tWCGIg50_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "65": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01T.JUMBOXXX.jpg?Expires=1787198309&Signature=K2eq0H5Q6QaiOPtbXDqvk1jYiI2ioDCAfEKMVNqjyoONN3QTQLc3356d6wHybRuiFHfnW0q5aGzRaXSNBxgBR9EwBfYAopwVRv45Or8qBsyJzkb1ZJkoBzfWowYpsSvEeHbqlENPUn-thvpoIlSLAyFY8YQoQbPWmR45GPozxzg_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "66": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01U.JUMBOXXX.jpg?Expires=1787198309&Signature=ewwFKDy6I4HErfY3ktzJyYKBDOSfzRMkjZisfVFu5S1nxxOeouBo8AmC0szgvmQSDFgthl3tqZ4bVSkqP~EubOSSKb7yZ1leKeqnPdcgci~mZZB4xmKS~IAVkFBIJgmXFToA3aERujVp8Ikgvuaiur0Ski6k5~RtORioj-dJD4k_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "67": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01V.JUMBOXXX.jpg?Expires=1787198309&Signature=Wjcx3kckd5NNKPDyULK7FMcudS8hjPkD5wEMKcGXU7IR7AXTWw8bxsolfd7p0VyED81MU-089ITvWc7xe8Tfb3KSXG3jcrsVHunJSJ9-o2gAqB5Z-9xUhXMPd4yFZdSKnM99UFV9H~qsY6Nm9DzFog6-BJPGCatQOOXNFzgtS6s_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "41": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S015.JUMBOXXX.jpg?Expires=1787198309&Signature=ZTBBQVLeR8-dVu5i5ILxFRDhEXcH0LJUKmkF2WC9jXe73t5vkMuxgnZKvD76Pej5c0eLxQK6iXpO5s63JZAtE6ZhUxI-TZ2exml176N6NBIurEJ0i2vQ3gTC9wFIEaMmEhC3-B6XyJzc2frloNGgXpUiwqcFwYKXB0WxaB0LuJo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "42": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S016.JUMBOXXX.jpg?Expires=1787198309&Signature=Zq0VLAjOFGDpEJE7pdqVP1-Xtr07QdQUi48PFmqF5OU9gxiLev1NdBUp2TWu2z5Qq-zeDcKF4gaG5-VbTHr3Jxemgw961d5DQhUMuC4gBnOiRO2M~vtPnylin4pnoChxMLrHfzINsE08h~~05xBbt5ljYBQw~GzBB9i70qJcDn4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "43": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S017.JUMBOXXX.jpg?Expires=1787198309&Signature=IufQ8figjeENH0-Tu6~VM72ytRZ5P~lO21ZoN5-ZQNoJEr0tiY07dF1yqMIuqDNKBdW2prUTKAsouc-3fadMS5iUAlL1tjf87itqKygBiVIhnOA-yE4562XaDY08L4ZEal-MtkPZxzYFlgTprLVoyGr9dlczQZFyEdxnqtNkzNE_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "44": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S018.JUMBOXXX.jpg?Expires=1787198309&Signature=aQdbrG7ZLCO1612j2yJVY1U6JOE5UaCxxK5XEjjsgB46qojjDSP451--15MxFV3cptF2f3q5tkCs08CsijpL6sY5TgRAeBt7T-xVA2hxwa6m4Cku2YwmpnCFL456cIZKBT~bFw6kkfN07kt3Obguur7bSTlU4q~F9ZNaFFQoQGo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "45": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S019.JUMBOXXX.jpg?Expires=1787198309&Signature=Iwfnk3DOaxG-gh~BOpxwDugUH90jqNSFUug3vWrzTvP9SXBS29yhpTP2TDCJzOKqr2teCPCT9IqYEG1FEcEWIol9hYd7bbNjOg1oCZwhCgcwOgfehAmrh2xnpiQl43~fNhH36RvxboCxfodK6bEkqhA43je1X0VbjfvPt2gjId4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "46": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01A.JUMBOXXX.jpg?Expires=1787198309&Signature=Ir9K-VWg3QSdbGtM6lpgSHf7kX3yF~kJ5PDyTC-W8eFYqHrPZ1nWBKg4~1jmGG225k89ZU~OfgcTNfYCgD2jEvWtWOQlKlqGY67Ep4FfC9blAMo-K9f~lyEIFpD72MfDzosVhxEZqHY9DHR1Tu6h6Hgo74sC~59rO5lRucnOzg0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "47": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01B.JUMBOXXX.jpg?Expires=1787198309&Signature=gi~MWb1bT1dU-YGUAugUCjH9RrQ-A0I9E5o9zY-Hn4tTOM3iO7fbNWhVk4tdO429f~MRWDUd3utKPJsCuEbF-vbAPDOyztRJvjWgs4hmzUIXqs94jT5JZbBnMEZMZ7O0ziVDzzf1dk4rZ9RTNDEgVFIIPLbgFnZERwNrml9RO94_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "48": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01C.JUMBOXXX.jpg?Expires=1787198309&Signature=NBJFcSgPDQPRV3ouBplUQbiI~HOelygihPft~P5RllDCI6AKDISDSNZvyMGqNnXaL7hlb6x01wH74JBetFoYxjj3hPXMopeuXnZvCWIxSxdvTcJ2YN~D0~QM9dUDnN8Fbkh1F03DPDvuTCPo0qLYqi3G~dse-U~UFPTeSgZL-AI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "49": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01D.JUMBOXXX.jpg?Expires=1787198309&Signature=bSOCXvm8Ql3TS-zhq0dnlI-O0VwropidPx-xp53yGFuo6-vEbtgUllQCTmJ-jmsrsuq5UXZdLI5hgxAxkPRW~j3vMUycDkaJptnN1ccvT81MtAguJs07CI91s9dt7vJFQ-Yh2b4TZut7-Y8xTlN16F4BCU6vVe3rxsLlgCu3NQs_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "50": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01E.JUMBOXXX.jpg?Expires=1787198309&Signature=QewGBnFAmbMSheMX1W4l55OEban40hYfQInSwnTD4KvSIxdqmUU-EN2~Ohkd4jTec3SwbyvpFnGmuFyIspRFTVP8rL3WGCd5HpgPEhmOG~wqK5xBAiD~1Um6ilfOjxbiHktMVoEZjckCxW5tY40rTMNpZTzkbGdb1U9BFijz62Y_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "306": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S08I.JUMBOXXX.jpg?Expires=1787198309&Signature=QpuI3BmJK8AoKpxHAtCjEZR0WhCSkcpbX7ArE~-zYpfSS-fJX2zIdBFtRErZZ~0nWPFOkmi5OD4yNQKHtkObi5OA-HlQspvCHqsfXeR5078CMnVu9~PVMkxidI~GthHAF3aokvxFREA5Br6KtXH3EMpjh9OeKCqCnXf1AxvtPEk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "51": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01F.JUMBOXXX.jpg?Expires=1787198309&Signature=JrtoCVDxIIup82orHnVkwMWYDqXVO9fuTx76ETnSJoeXovfelBIjOK1rUZdW3za~-CgDl3Nl7NehibO0MwyTa3psD7CIBFkrusutGGPVzi~w68v6f7RlUBUpxq7YjGsZAiiGRw0lcKqS5A7SwgiR8AiQbUwPScQPZoGRmQeY9Vw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "52": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01G.JUMBOXXX.jpg?Expires=1787198309&Signature=IGQYO4ILbiYBf005~JEURn4KTaMoA8QrIRdRj8CIvubGHu-pWMk4DJBcb77CA~vHQDOCw8kM0ws7I9U0imYvBuXoQyykv39043dri-AciXQOFPDDIHWb-XlVt~bDPhhrxL~BaOH0WwKUsxgWZ3ckUK7dKCial9SPOoWiriig3eY_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "53": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01H.JUMBOXXX.jpg?Expires=1787198309&Signature=F55byqt7jbP85Bn6mdR01VkMZVWjU0hN0Q-c41LUu8atxOlyTvBpkOZcgTOhJMKTrRJPzaFCyeK7wN9-l3-e2-a9Oqgv8WI889rehPOiIpDhnxcwhFqb98kWMHXnoJC59BFmcydpJiuuuU2NnAL67L956hd1g9QU3R7DzISIS2Q_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "54": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01I.JUMBOXXX.jpg?Expires=1787198309&Signature=Woe4yPV3LpYUS8ywJv3XbbV4huaVt7u~2tcsAYbyffQ39uDV3ED6P3ZwavCYcKqAYuhpeR51fEnDnVZIXqM5oQOOU2FH1teC1-xZ7zo5e7P2pAZB6AYLED8mluTavHtM0D~qQBvg59icsIJ5anDqWK8Q2BksbXVum9~9nCJSXo8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "55": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01J.JUMBOXXX.jpg?Expires=1787198309&Signature=e7txzdoWJktvnyaVH9t4TGPjHI~hkw7aaCwng86SIwm~0aHeGXA3hqCMtw8TqRlr02Cy3Rk6wyZiZnAtcSQCoNRCzO78biwOIE8sgB3ygUbB-TW1rePnXJAJj-UWwHgz-P-4shie1UXhYu1~x6h8aNfjLn5iI95IwmNKb7Hm9mo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "56": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01K.JUMBOXXX.jpg?Expires=1787198309&Signature=FmAbII2NFdiS4VwB9YNxxMvBU5Eiaqe4vYYb5BMXlqvBDQTQp85S6A156qfXu1J4-F8MRXjPCD3e1jSnAH5iIl57FEnw2~jU97YLH6DNs27-zHthk3iExnyBAfAFDlKhSXZBoeD-DN6SYStQdgXifJuXoSSw8~W~cX7Y4Dj-4W4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "57": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01L.JUMBOXXX.jpg?Expires=1787198309&Signature=FzDVuMw5HrQRym-05BHvgWH-Tq5wHYP70h6gy5ejeX161nxjoNKoyK8BSniXSIVDyzcwE3UeD76qdy9a6WLH0145LLlmxqzlI3VbXNjKnZfZb9kUKYWcixuaacLFD6y3YX10ZEKbLydFI4zAksrQ1Wehw24WqLcu4sb4Uvn9u50_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "58": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01M.JUMBOXXX.jpg?Expires=1787198309&Signature=AeiqBrCh6lrVFFiAflOn5SF1Dzutvx0IpbWCduHKWIeG0k7h3mX8EiDEGbaJvhMJxa1fceBujgdHyvY4E2YojGBkwGDI8KiggGL5oDxMUbN05EGfZwGlo3KjMRnlBD0S3ACxeToJ2Mei~YiGJMIc2Qctfu0M5S2135nTp9cMuXw_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "59": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01N.JUMBOXXX.jpg?Expires=1787198309&Signature=Btqq3sb77cnRgPvcqiVVXo2ft~4HmCIWH04BO1AAruHzijQsKzQ~l9ntqZyXjkB1yon8Sk-il6fA27N~J7sM-u83NdG2MfpgS-obOLB2T4oKpTmV-XfLLf~1gyKEpbt8AHoVx0kzvUsxDqM3G-387Fh5VKv8tpiF7On32DMNzO8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "60": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01O.JUMBOXXX.jpg?Expires=1787198309&Signature=dZ~nbQGNodfekm66a1NCtxNiQ~KVTGTJ3zqA~OZmXfCG9b-OPImINiUAGxmf0~nkfO3lcoLof1FVDAp~oDuRi8cY2P7XhdPJCKTgBicFkfe4khzZFW6CH6bC2oxGU2qkbLzepqIPob3PafNdrgwpg-SWWvCX~1KP1WokZCU~rJI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "61": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01P.JUMBOXXX.jpg?Expires=1787198309&Signature=Kp8CIurV2QKRFYoMMcZIq7ItCHZ10fZd9W5pn31XQy5hCSdBXmPldWrTPv4xYMYxTexHTck8yaQlm8gKQHRIf97pADLh~4Fdn7um-Z5vAAhtJmGEwOyEWBM8LQwGsMwpNgESFODjB2893RhaL5lzwlptWp1EBILuVX9C70vileQ_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "62": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01Q.JUMBOXXX.jpg?Expires=1787198309&Signature=Tro~myAJe9kd9ig6qqiO0bnIe0CiXg198U6VeC3a3coUqBKkrkZcAnLRRUJ7Bo9l6IoFs8Ufq7r6cA6JCcV3nZ9x-eNrCWFrGzYvRyCwXBtH-1MsECL4w9eu9-o5zQyi7jJmxIJpshn9PA33BKAcERmCD~HS7in2kYCfQr86Tt8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "63": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01R.JUMBOXXX.jpg?Expires=1787198309&Signature=UrJspqIdteUrp1X2DQN333XbJq7KmHjmjMJUGQ1BJfutbLVPEG6Iy0MdFO9Us7R9SzLmv39a0r3yHAvOrs44BACC-P~ihfrkddVctOl2Jjp-T94Stj7Sxo8pjzNy6sVv~T3co3hzC6Pt5n112uhdd4c2rmm640W3BPoP-u-RFb4_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+  },
+  "largeImageUrls": {
+    "64": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01S.LXXXXXXX.jpg?Expires=1787198309&Signature=bAfQbGoboBT1ySmkf0D1mzu~9oA1a5JUXImzuvFTxkmqj1bD127s0wg8~So~65~tg7s18ji4k-SpFrgpwHg2M3YyJkLEJUWs9aRYYAqtVZCi6~xBhinazU7CauIIS8~8iGAmCbblZ3~pRmJ-GrXsFtCQ~VUFCPwUxcBFli98p7E_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "65": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01T.LXXXXXXX.jpg?Expires=1787198309&Signature=XmaT3C2oqy4q9DCkshW0oAwtXEO0x4d7BcmB-LPwjIsFYLYkHx7RGYpGiaEgfiDKMamutGH2Hfkb9rjyvjmL6XIX-S060QMNLejo~nCnIoDkZQqqvqHlYTpo1BAbAd7emWvIeCE6FWQSNW6fpGFGYoAIpscIHzWeMCl8h2r02Q8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "66": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01U.LXXXXXXX.jpg?Expires=1787198309&Signature=Cp5qSbuWEu~OkUSo~MZWVufl~LfLvwTIKAOPBD-sMxgZ6yhRdcBJHbfo70sGNmjoUkXF11JT-8uLdDXqdqk4E1IDk6v5OQpuj9dtMC~Xcl4Gp9PIMuqO5MTDowUbgEKIy-E77DyQ7kOE1yDWXJEBO28T2U8YzU4~~7Mpzw9Ut3Y_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "67": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01V.LXXXXXXX.jpg?Expires=1787198309&Signature=MUCbWIm26I6AYW97hJI2R6L~gWBpxyaXqeJshpAzNIn9Bw9VV9aMulj8-f-eUmdq~IdI8ccnxhxHkKjNrTtq2e27UH4Cwr-ajpO-oh-g8MjlUVMVq8cvTl0MBawDKRcDNPMBfvZPqnhneFU2pHmZHtZrw6-NOr~9kEyMmfrfQW4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "41": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S015.LXXXXXXX.jpg?Expires=1787198309&Signature=EV6-qZxlXJcA0vgI5IM1dosRGgNsR-A4aCcN0A5cPPY3whS2KkrD0sMU7T-23MsjpTLu4UBCODQhv9JVWzwyjXQY2qwgbpon7AyT-8Xpi~Ja1hilTh26S66cpfrAZpopcUziO0FcAaPUZWa-IGECTy3TG9jtK8KF7qppwzP3Li4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "42": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S016.LXXXXXXX.jpg?Expires=1787198309&Signature=PUwqPRWSCPolcqe2C0bA1b6u2REDbvsUawOesmZu59x72wjzG9omiU0Wg-ZDKdAoVKMzVAj1~WH-TTeX3B94a1KS19~~~X3NP4gjOuaylDicBPBp5W32lDf8TNXE34haSYk35FjnuNDgB3JjyEaWvBjpd1Cox-~sc644u2L7eZk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "43": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S017.LXXXXXXX.jpg?Expires=1787198309&Signature=IOr8o8w9fQprSFzpLpna6PEj5U3IMKzCoz5cGNGdVltiC13LuDJChvvTu~zjN3~qRoRvuBNnG2dYGF2RWzxB0BNAKsvyweCVSQgHuqpuqw1c3MuFOauM9mTlgYCeDpfPYoT8kokPpcjnNQiwcpZ4EYKnjHoujFpQmZTjoPERE-8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "44": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S018.LXXXXXXX.jpg?Expires=1787198309&Signature=AJ-B7jWQI7dc-Q5w~dppZ4XFJdH0yLNMSLPnBfwr2AfPceutzFvtPoAe7I61iqb1TE~0uTbF26mSiltpjBSQk4E-f6OT5Fv3iAyZlSoV5ZI9RUe1m-ZbqHGfJh2djWymcFs4oQFdVszUfzCOSgRSXlSkk153jnGY0SNoPS2tPX4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "45": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S019.LXXXXXXX.jpg?Expires=1787198309&Signature=MK0stNvunCl-qbkQ3unFhoFPiLEpa8IZLL8SzhqmEJO~7X6JJiPBygvVj7T2Llkp3E23xIa4qPC6GS33tDkrlEZE41Z7fQj0VIKWk52TM1g3gjRYhE0qWPWeskYH1aI64uRqjtcSxlzVs2yjgiMKmb1Sh16Q52Sjl1dt4tYLVz0_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "46": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01A.LXXXXXXX.jpg?Expires=1787198309&Signature=a0-l3D56Vr5rMTdD-Q3-9-De5Ogn7moXStFqWFXywlGCN4silMVmFUcpXqGlceuHMIvgnSv8MVxHfvnSUkZOUoFgzDOtzehCZTADgnRxjOc8cBBTlMXfAf8QXttP2q55T9CKcEMAfOF9WCzvj01G2gQRQVKLd~UY-malOIQW8so_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "47": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01B.LXXXXXXX.jpg?Expires=1787198309&Signature=dpwgo5tH7Nca8GdeIdMwLgP~MHwBOp2mY0b9~yYMC6JX2TEJ4SunvBv4~KpP4Agm2tmyi0cOLNIuowHnHNaPzZXQT8GkzA906qRCww43Igs~f4NLMuFmNZORuwMIvSUEWrQ0hMtwE6de1BgSumss3KTPxYUICpLzO40xQ0k8WRc_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "48": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01C.LXXXXXXX.jpg?Expires=1787198309&Signature=G80fYbJoEVjrasirQZlRPi5MUbTIleeOTN657wsSLB~CSxSqh0ldiZICX-VeykochEnclJ~I80wPOkgfu0DnsfiLXLg-3HMzKyfZ-so4F2VMgWAdf24IAtHNwvklkAWNoa5NGOUBtwyjQivgbYLeLF9-UBYlxEoO92yCgp0MD6Y_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "49": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01D.LXXXXXXX.jpg?Expires=1787198309&Signature=JLpaeX9h-M2wciXBogbQtEut1FaAfqxKhn5a2fevGyFlIl1Q8WPC3K~mjzIfVjtsLkkytvd1pAqxKcv3HOBUEg0RRRrIy7IQueFyzRIW1WE3RZQjp0tIZxLfDtoJcVnsvBwt0MOV9gc4QUKpVnEclroamLUK4zArRNX~YbBhJ~I_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "50": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01E.LXXXXXXX.jpg?Expires=1787198309&Signature=SoUk6k9EmSyO76JhfG9MAgmhitC2sobvKapcdopgtj5L4X8ZUgiggSuOl4XkNfb3fMApp7Et58q3ronoIpfhKFNpTXmFRAxnRBJc32GiKyZCxBuO0RtIxCgaC86IbvOrdF9fqxdi2gZqkZEWrRROTt8iAPjpzlB6MLQf2ZPdQ6c_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "306": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S08I.LXXXXXXX.jpg?Expires=1787198309&Signature=Tvv5FUjLgiwPSxt~-khR3Yy4Cg3Gk1j9~nUC4-ZgqxAPZyeLC4gZ5tYmJfhpo2dieiBHO1P5ZeGLeO46y~EqwgwAiXa7Bm2uYBQzh0deyaw9KRBl5L1xwEqk-upGdv1226W67k~iPfpIHtnZUc2YaEdmWSCPthnldka-ztjppBs_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "51": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01F.LXXXXXXX.jpg?Expires=1787198309&Signature=WoiOMvjK305d0ME5IsBNAZxPqzfNcXb02hSnJ-CKqUOxILl3NHwa0fijjh86rLycI283ivfMdGWJIuMakn7jMhO8XqWAtsOYjYPratFe26bkAhOLIlVPx5s2Crhmg~igTU-cWzIQBojiZV-SH9fEa0czi9B5MkULitVsheMRpog_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "52": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01G.LXXXXXXX.jpg?Expires=1787198309&Signature=M6AOz6aVPutELJjzfafa6gZZCvoRT~pqX9vytc1-9ZmufjyABrfzk0liSD-nSNYWFq3OkGsaoHAkQ5sELcO5Ru4JDYy2hRna-snN3FtFYSkaqbPyJzAhhqQmJ05LtYxo94K5Api4~oaUU~Y0k08MI7oBIGyV7vJHEjurqZ7vRPA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "53": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01H.LXXXXXXX.jpg?Expires=1787198309&Signature=ZuQmGfnKRA4sboGCBbwBq2N2~55zPPyJBUN9sH4E-ObRGFtF78yKfXmq90beMXNvPBXYZH6CQyn3fEDjQck-4nkh4krvf~rVzD4RtQ4LHUIh4W~LghQ~c4k83Yr1dXnDMZuOScyLDfukOgKWnXR~b6nCjnX0WfZeL9rKu0R1c6I_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "54": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01I.LXXXXXXX.jpg?Expires=1787198309&Signature=Pnt1DQ6MMugAyi4uiPp-kbvAvN5lOI92bG9d2gdcxhQ95ILq9IABw2q7xzOB0o01VFBtR-G5vnZblPphHYbMDY~jHi0F4x-6~M8SyAvcgyaF5QfWDfqAgFvbIhy4ZdtArN7W8ZZA3Z8qcIgh6bcGGOFj-nHdA0kgUJd~0NN1YYI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "55": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01J.LXXXXXXX.jpg?Expires=1787198309&Signature=dbCyykCVrx29H2tlqPjrxBd~2diT9VRK00IP51ODLjulzZaHc7XTvuBc1Szgbm0DxS1TJvT7aYR2ZVH1mkm~-j~Z3Cgwfa~2dgjdyvnMhOdEsQe9RvWyoyb375T4p6ccRFmIl1eNvuc1~7TDmNZweWazgxKgoCss84kSBRfHwtI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "56": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01K.LXXXXXXX.jpg?Expires=1787198309&Signature=WU2wq7qkdivLibk6dP-nglAhbNwwGfT7BIksiuhEjr4g5G0aErJjlzHzsbf4JsCFK44L-LktmzhIhOTlnLAQz0KjhbQxiQCAD6LJW8NVswXLTLxE7yxvUq-rsSMWM-l4HzCEI2LUDe-cq9pH7JJ5t3qHZ2ovaQf80mNzLUa3XUU_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "57": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01L.LXXXXXXX.jpg?Expires=1787198309&Signature=AH~6ckupBExcT79OPXt8RuTqT3JWqrcP9tDpgIN93buiDYcnWTmgsR6OJ0hIYbmVjnRU-x6tzkWsx-7cw0uWUpZSjWgHEGwCO8yRX4EQozIpX1OgFt0kM7JwREl1SaMMFfWI6K2WJGibozFxSBhRrFyt8Ys1c7yLfiYvH4~y5SI_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "58": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01M.LXXXXXXX.jpg?Expires=1787198309&Signature=NPV~baRuz3g7CgkKbk61eI3ZWfde9E~Zn5wRmqspbUcMG~R4C0sCoGRPJbfGqPcQWHavoEdEFKL6BHqq1jTEfPOfNlTQSG9ooZJj1Rcbh7aYNY4-Ak-c5si8PoXpVs5w6j44SJPc4qp7ErRM0Qcn9v3QYF-Q1U87e9lSJ~P2cQA_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "59": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01N.LXXXXXXX.jpg?Expires=1787198309&Signature=e-PVRfd75apqKnx12Px0HgFGCSnDqYyX6bKeOL9Cso5GEKUWDAXfqRywvpwYA3uXzkKTsfKUkG-ePF3f-aM3yeDzb2zmEkiXEZK44hvyKGfNda0~d8woQux5kQLXRRDex3y09xHFzbbipb6qJLcvAskWf6hv6eZB6X5TKDChPTg_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "60": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01O.LXXXXXXX.jpg?Expires=1787198309&Signature=G-9fy6Xj6ZP6PY1gScKzV1ojp24gM0K-hAW7DmRSd8PRj7LgOuPD9Owcq0s4nNYoih~8UB56j0Yr-pFTVQm~2tEdE7DmRKS2QlPdHGST-V6TjrtqChZrSAUtfMTrXqxQEfK7iGHmSpJGRXsgVDT2Ing4NHMUALwOYVApZ7K9cD4_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "61": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01P.LXXXXXXX.jpg?Expires=1787198309&Signature=QxY9clVPkHaMj6hfpu7FRwvhRbDNW430yLF9IeYqfkv-zrGNiisBNIW1xtWWkQSGyj2HH6nh6WI5u6i15YRJwQBpiPKfZYDWezgGi4puQcaettol~QquhsiCTKnN3O77a6ZvaNh6h1s28ON0C8tf5FiLZ9k0T03pBJ8bSiOM8O8_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "62": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01Q.LXXXXXXX.jpg?Expires=1787198309&Signature=YQIiM7XJutB6oPVhsAM5ieSZ-SR~fKENOpEfFJQ9VLVULqyadecqBVH-VideOqdkiapOICJyYwA1tPKyAfo-9SHj0~X~pf4vkThrqbrMm5wO7HTXDM1cSclvbIM05AUWtKe~8L8ESNGK5wFeA5sqSP7u94xmspWW2OFAuSw8mFo_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+    "63": "https://d1b14unh5d6w7g.cloudfront.net/B0FRGB2PMR.01.S01R.LXXXXXXX.jpg?Expires=1787198309&Signature=UGFi~t8-Ncee0T2HhTIRFWVTmgLYIzgsW0Ardai-FmUigvIs~iPwg8HCdw1x88G3LMsr70D1yMaMnslZ4iRheG6BqaFKzv1Ut7LzyVJqiORurM9qMkjROqVwz14kW25MhIX-UPT2Ca17Uf1EcBFMC3vbdEs5DSsJ7Dv7afSSL4E_&Key-Pair-Id=APKAIUO27P366FGALUMQ"
+  },
+  "results": [
+    [
+      "41",
+      "Page 32",
+      "dpastthedrivewayandbeyond towards the <b>road</b>. A parked car sat in the shade, its dark",
+      "kv1-g3FfO4FH2Xjn+u8rhxmumVaS4P56OcBYA3+MUz0qGUYGAAAAAgAAAABqhSnkcmF3AAAAAHfbYEC1cv56uRerIE+olA=="
+    ],
+    [
+      "115",
+      "Page 106",
+      "road",
+      null
+    ],
+    [
+      "116",
+      "Page 107",
+      "road",
+      null
+    ],
+    [
+      "118",
+      "Page 109",
+      "road",
+      null
+    ],
+    [
+      "119",
+      "Page 110",
+      "road",
+      null
+    ],
+    [
+      "120",
+      "Page 111",
+      "road",
+      null
+    ],
+    [
+      "133",
+      "Page 124",
+      "road",
+      null
+    ],
+    [
+      "134",
+      "Page 125",
+      "road",
+      null
+    ],
+    [
+      "159",
+      "Page 150",
+      "road",
+      null
+    ],
+    [
+      "160",
+      "Page 151",
+      "road",
+      null
+    ],
+    [
+      "164",
+      "Page 155",
+      "road",
+      null
+    ],
+    [
+      "165",
+      "Page 156",
+      "road",
+      null
+    ],
+    [
+      "173",
+      "Page 164",
+      "road",
+      null
+    ],
+    [
+      "174",
+      "Page 165",
+      "road",
+      null
+    ],
+    [
+      "179",
+      "Page 170",
+      "road",
+      null
+    ],
+    [
+      "193",
+      "Page 184",
+      "road",
+      null
+    ],
+    [
+      "214",
+      "Page 205",
+      "road",
+      null
+    ],
+    [
+      "215",
+      "Page 206",
+      "road",
+      null
+    ],
+    [
+      "216",
+      "Page 207",
+      "road",
+      null
+    ],
+    [
+      "222",
+      "Page 213",
+      "road",
+      null
+    ],
+    [
+      "224",
+      "Page 215",
+      "road",
+      null
+    ],
+    [
+      "279",
+      "Page 270",
+      "road",
+      null
+    ]
+  ],
+  "totalResults": 22
+}
