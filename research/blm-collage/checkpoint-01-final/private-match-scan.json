@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "scanned_at_utc": "2026-08-19T08:27:47.392538+00:00",
+  "scope": "BLM-specific plausible secret-bearing paths only",
+  "scanned_files": 6,
+  "scanned_bytes": 22051,
+  "suspicious_filename_hits": [],
+  "structured_true_hits": [],
+  "exact_match_line_hits": [],
+  "private_match_artifact_found": false,
+  "note": "Workflow source and previous scanner reports are deliberately excluded to prevent marker-definition false positives. No candidate plaintext is included."
+}
