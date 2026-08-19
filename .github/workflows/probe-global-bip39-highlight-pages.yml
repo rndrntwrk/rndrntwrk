@@ -1,0 +1,116 @@
+name: Map Hunting Time semantic words to paperback pages
+
+on:
+  push:
+    branches:
+      - research/public-media-analysis
+    paths:
+      - .github/workflows/probe-global-bip39-highlight-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-media-analysis
+
+      - name: Query global paperback search and retain page numbers only
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=public-media-analysis/global-highlight-pages
+          rm -rf "$out"; mkdir -p "$out"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$out/RUN_ID.txt"
+          cat > /tmp/probe.py <<'PY'
+          from __future__ import annotations
+          import json
+          import time
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+
+          asin='B0FRGB2PMR'
+          endpoint='https://read.amazon.com/sample/print/search-results'
+          terms=sorted(set('''
+          air airport alarm apology army artefact attack bag balcony bed black blue cabin cable camera car carry charge city clock cloud cold connect control current curtain device dial display door drive drone electric energy engine feed fire flight forest gauge green group heat helicopter hotel hour image instrument journey jungle light machine metal military minute mobile monitor moon night ocean panel path pilot position power price radio record road room rotor screen second signal sky smoke stone street surface switch target thermal time track train transport travel tree trip truck unit vehicle view wall watch wheel window wire wrist
+          '''.split()))
+          rows=[]
+          target_pages={112,119,250}
+          target_hits={str(page):[] for page in sorted(target_pages)}
+          high_pages=[]
+          for index,term in enumerate(terms,1):
+              params={'asin':asin,'buyingAsin':asin,'query':term,'pageNumber':1,'pageSize':100}
+              url=endpoint+'?'+urllib.parse.urlencode(params)
+              request=urllib.request.Request(url,headers={'Accept':'application/json','User-Agent':'Mozilla/5.0'})
+              row={'term':term,'url':url,'pages':[],'status':None}
+              try:
+                  with urllib.request.urlopen(request,timeout=30) as response:
+                      body=response.read()
+                      row['status']=response.status
+                      obj=json.loads(body)
+                      highlights=obj.get('highlights') if isinstance(obj,dict) else None
+                      if isinstance(highlights,dict):
+                          row['pages']=sorted(int(page) for page in highlights)
+                          row['counts']={str(page):len(values) for page,values in highlights.items() if isinstance(values,list)}
+                      for page in row['pages']:
+                          if page in target_pages:
+                              target_hits[str(page)].append(term)
+                          if page >= 68 and page != 306:
+                              high_pages.append({'term':term,'page':page})
+              except Exception as exc:
+                  row['error']=repr(exc)
+              rows.append(row)
+              if index % 25 == 0:
+                  print(index,term,row['pages'],flush=True)
+              time.sleep(0.08)
+          summary={
+              'run_id':None,
+              'query_count':len(rows),
+              'target_hits':target_hits,
+              'high_page_hits':high_pages,
+              'rows':rows,
+          }
+          root=Path('public-media-analysis/global-highlight-pages')
+          (root/'summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False))
+          lines=['# Global paperback semantic highlight pages','']
+          for page in sorted(target_pages):
+              lines += [f'## Internal page {page}','',', '.join(f'`{term}`' for term in target_hits[str(page)]) or '_No semantic candidates found._','']
+          lines += ['## Other pages above the public opening window','',json.dumps(high_pages,indent=2,ensure_ascii=False),'']
+          lines += ['## All queries','']
+          for row in rows:
+              lines.append(f"- `{row['term']}`: {row.get('pages')} ({row.get('status',row.get('error'))})")
+          (root/'summary.md').write_text('\n'.join(lines)+'\n')
+          print(json.dumps({'target_hits':target_hits,'high_page_hits':high_pages},indent=2),flush=True)
+          PY
+          python /tmp/probe.py | tee "$out/console.txt"
+
+      - name: Upload page map
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunting-time-global-highlight-pages
+          path: public-media-analysis/global-highlight-pages
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
+
+      - name: Persist compact page map
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-media-analysis/global-highlight-pages/RUN_ID.txt || true
+          git add public-media-analysis/global-highlight-pages/summary.json || true
+          git add public-media-analysis/global-highlight-pages/summary.md || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research: persist global paperback highlight map $GITHUB_RUN_ID"
+          git pull --rebase origin research/public-media-analysis
+          git push origin HEAD:research/public-media-analysis
