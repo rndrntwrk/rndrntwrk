@@ -86,7 +86,7 @@ jobs:
               return rows if isinstance(rows, list) else []
 
           async def fetch_json(session: aiohttp.ClientSession, word: str, page_number: int) -> tuple[dict | None, str | None]:
-              nonlocal requests_made
+              global requests_made
               params = {
                   "asin": ASIN,
                   "buyingAsin": ASIN,
@@ -144,7 +144,7 @@ jobs:
               return parsed
 
           async def one_word(session: aiohttp.ClientSession, word: str) -> None:
-              nonlocal completed_words
+              global completed_words
               obj, error = await fetch_json(session, word, 1)
               if error or obj is None:
                   async with state_lock:
@@ -309,6 +309,7 @@ jobs:
           (OUT / "summary.md").write_text("\n".join(lines) + "\n")
           print(json.dumps(summary["target_words"], indent=2), flush=True)
           PY
+          python -m py_compile /tmp/enumerate_all_occurrences.py
           python /tmp/enumerate_all_occurrences.py | tee /tmp/full-occurrences.log
           cp /tmp/full-occurrences.log public-media-analysis/full-paperback-bip39-occurrences/console.log
 
