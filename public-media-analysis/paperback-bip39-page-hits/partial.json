@@ -1,0 +1,13 @@
+{
+  "completed": 2048,
+  "status_counts": {
+    "200 application/json": 2048
+  },
+  "target_words": {
+    "241": [],
+    "110": [],
+    "103": []
+  },
+  "error_count": 0,
+  "elapsed_seconds": 79.49589109420776
+}

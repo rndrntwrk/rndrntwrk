@@ -1,0 +1,28 @@
+CARD 200 https://read.amazon.com/sample/B0FRGB2PMR?clientId=share
+completed=96 target103=0 target110=0 target241=0 errors=0 elapsed=4.9
+completed=192 target103=0 target110=0 target241=0 errors=0 elapsed=8.6
+completed=288 target103=0 target110=0 target241=0 errors=0 elapsed=11.9
+completed=384 target103=0 target110=0 target241=0 errors=0 elapsed=15.3
+completed=480 target103=0 target110=0 target241=0 errors=0 elapsed=18.5
+completed=576 target103=0 target110=0 target241=0 errors=0 elapsed=21.6
+completed=672 target103=0 target110=0 target241=0 errors=0 elapsed=25.1
+completed=768 target103=0 target110=0 target241=0 errors=0 elapsed=28.7
+completed=864 target103=0 target110=0 target241=0 errors=0 elapsed=32.3
+completed=960 target103=0 target110=0 target241=0 errors=0 elapsed=36.1
+completed=1056 target103=0 target110=0 target241=0 errors=0 elapsed=40.4
+completed=1152 target103=0 target110=0 target241=0 errors=0 elapsed=44.4
+completed=1248 target103=0 target110=0 target241=0 errors=0 elapsed=48.6
+completed=1344 target103=0 target110=0 target241=0 errors=0 elapsed=52.0
+completed=1440 target103=0 target110=0 target241=0 errors=0 elapsed=55.3
+completed=1536 target103=0 target110=0 target241=0 errors=0 elapsed=58.7
+completed=1632 target103=0 target110=0 target241=0 errors=0 elapsed=61.9
+completed=1728 target103=0 target110=0 target241=0 errors=0 elapsed=65.6
+completed=1824 target103=0 target110=0 target241=0 errors=0 elapsed=70.1
+completed=1920 target103=0 target110=0 target241=0 errors=0 elapsed=73.8
+completed=2016 target103=0 target110=0 target241=0 errors=0 elapsed=77.5
+completed=2048 target103=0 target110=0 target241=0 errors=0 elapsed=79.5
+{
+  "103": [],
+  "110": [],
+  "241": []
+}
