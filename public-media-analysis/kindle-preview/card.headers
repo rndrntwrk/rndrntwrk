@@ -2,38 +2,38 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Wed, 19 Aug 2026 02:10:58 GMT
+date: Wed, 19 Aug 2026 02:33:51 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: 74EQBV6XC9DNY22QRXN7
+x-amz-rid: CCY9Q1YK7P90BN9KCQ1S
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 c00573149948572c58f7afc5c07b1898.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P10
-x-amz-cf-id: hRih0Z9Z-FTS-ckdRVBJ-p4bdWkobWst8wL74NK9MLzSZeUGBIsWzw==
+via: 1.1 706d44cf645fa513dc870a95865811d8.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
+x-amz-cf-id: Ou-BzBdvGN_q1sUxw17wtm1drHhPiT6pAB8qYiPMh2EAxptxd5hUQQ==
 
 HTTP/1.1 301 Moved Permanently
 Server: CloudFront
-Date: Wed, 19 Aug 2026 02:10:58 GMT
+Date: Wed, 19 Aug 2026 02:33:51 GMT
 Content-Type: text/html
 Content-Length: 167
 Connection: keep-alive
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 X-Cache: Redirect from cloudfront
-Via: 1.1 393a85cdc87811e2a196137f2006729a.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: ORD58-P15
+Via: 1.1 8613f77d46dfca83de5d13b6b163ab6e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: SFO5-P3
 Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: jOALCQIFJQcI2GWtGW2QFo3rcNS8ISytVPKmnUK8pZ8e1fKEuzmcTQ==
+X-Amz-Cf-Id: s55BpA99Xmgb7BZBHgW4gfzQ2jkcaMlNxAi9GW8vIDpVlf3Hu9AZww==
 
 HTTP/2 500 
-date: Wed, 19 Aug 2026 02:10:58 GMT
+date: Wed, 19 Aug 2026 02:33:51 GMT
 pragma: no-cache
 expires: -1
-x-amz-rid: 1NZGVP2WH2M345V7B5PH
+x-amz-rid: 0ZQAQHN3HPE64EQAT0GM
 cache-control: no-cache
 x-cache: Error from cloudfront
-via: 1.1 31d2374e96e787bdcf45303a50ee19e6.cloudfront.net (CloudFront)
-x-amz-cf-pop: ORD58-P15
+via: 1.1 06622e8d2688808518762aab285cc8ae.cloudfront.net (CloudFront)
+x-amz-cf-pop: SFO5-P3
 alt-svc: h3=":443"; ma=86400
-x-amz-cf-id: Ur719sIQ8JYLlkrXq6OZeYNjRPf6-hwyD1gSmTKIKd30qa48Ccy8dA==
+x-amz-cf-id: nROP29XCWFDWsto_9qyQO3PcnjNuq8WVBS8j3QZAV8j5nEO1lJBJiw==
 
