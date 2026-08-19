@@ -1,0 +1,4568 @@
+{
+  "asin": "B0FRGB2PMR",
+  "wordlist_size": 2048,
+  "completed_words": 2048,
+  "requests_made": 2063,
+  "status_counts": {
+    "200 application/json": 2063
+  },
+  "error_count": 0,
+  "control_validation": {
+    "14": {
+      "expected_scan_page": 23,
+      "observed_scan_pages": [
+        23
+      ],
+      "offset_confirmed": true,
+      "word_count": 27
+    },
+    "19": {
+      "expected_scan_page": 28,
+      "observed_scan_pages": [
+        28
+      ],
+      "offset_confirmed": true,
+      "word_count": 67
+    },
+    "21": {
+      "expected_scan_page": 30,
+      "observed_scan_pages": [
+        30
+      ],
+      "offset_confirmed": true,
+      "word_count": 78
+    },
+    "24": {
+      "expected_scan_page": 33,
+      "observed_scan_pages": [
+        33
+      ],
+      "offset_confirmed": true,
+      "word_count": 90
+    },
+    "32": {
+      "expected_scan_page": 41,
+      "observed_scan_pages": [
+        41
+      ],
+      "offset_confirmed": true,
+      "word_count": 75
+    }
+  },
+  "pages": {
+    "14": [
+      {
+        "word": "best",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "otherwise perfect day. Owen tried his <b>best</b> to bury his growing unease, but he knew"
+        ]
+      },
+      {
+        "word": "black",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "that out there on the ocean inside that <b>black</b> \n\nhull, a permanent record of him existed"
+        ]
+      },
+      {
+        "word": "blue",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "group partied on the yacht in the bright <b>blue</b> sea, dancing into the sunset, the drones"
+        ]
+      },
+      {
+        "word": "board",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "something invisible to everyone else on <b>board</b>. As the rest of the group partied on the"
+        ]
+      },
+      {
+        "word": "bright",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "the group partied on the yacht in the <b>bright</b> blue sea, dancing into the sunset, the"
+        ]
+      },
+      {
+        "word": "dance",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "on the yacht in the bright blue sea, <b>dancing</b> into the sunset, the drones quickly became"
+        ]
+      },
+      {
+        "word": "day",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "distant memory on an otherwise perfect <b>day</b>. Owen tried his best to bury his growing"
+        ]
+      },
+      {
+        "word": "else",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "it into something invisible to everyone <b>else</b> on board. As the rest of the group partied"
+        ]
+      },
+      {
+        "word": "exist",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "black \n\nhull, a permanent record of him <b>existed</b>, and records had a way of re- surfacing"
+        ]
+      },
+      {
+        "word": "group",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "everyone else on board. As the rest of the <b>group</b> partied on the yacht in the bright blue"
+        ]
+      },
+      {
+        "word": "grow",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "day. Owen tried his best to bury his <b>growing</b> unease, but he knew, that out there on"
+        ]
+      },
+      {
+        "word": "hunt",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "\n\t<b>HUNTING</b> TIME \n\nthrough it into something invisible to everyone else on board. As"
+        ]
+      },
+      {
+        "word": "inside",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "he knew, that out there on the ocean <b>inside</b> that black \n\nhull, a permanent record"
+        ]
+      },
+      {
+        "word": "just",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "the sunset, the drones quickly became <b>just</b> a distant memory on an otherwise perfect"
+        ]
+      },
+      {
+        "word": "know",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "had a way of re- surfacing. He couldn&rsquo;t <b>know</b> it yet, but he was being watched by more"
+        ]
+      },
+      {
+        "word": "machine",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "was being watched by more than just <b>machines</b>. \n\n14 \n"
+        ]
+      },
+      {
+        "word": "memory",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "drones quickly became just a distant <b>memory</b> on an otherwise perfect day. Owen tried"
+        ]
+      },
+      {
+        "word": "more",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "know it yet, but he was being watched by <b>more</b> than just machines. \n\n14 \n"
+        ]
+      },
+      {
+        "word": "ocean",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "unease, but he knew, that out there on the <b>ocean</b> inside that black \n\nhull, a permanent"
+        ]
+      },
+      {
+        "word": "party",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "else on board. As the rest of the group <b>partied</b> on the yacht in the bright blue sea,"
+        ]
+      },
+      {
+        "word": "perfect",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "just a distant memory on an otherwise <b>perfect</b> day. Owen tried his best to bury his"
+        ]
+      },
+      {
+        "word": "record",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "black \n\nhull, a permanent <b>record</b> of him existed, and <b>records</b> had a way of re- surfacing"
+        ]
+      },
+      {
+        "word": "sea",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "partied on the yacht in the bright blue <b>sea</b>, dancing into the sunset, the drones quickly"
+        ]
+      },
+      {
+        "word": "sunset",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "the bright blue sea, dancing into the <b>sunset</b>, the drones quickly became just a distant"
+        ]
+      },
+      {
+        "word": "surface",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "existed, and records had a way of re- <b>surfacing</b>. He couldn&rsquo;t know it yet, but he was"
+        ]
+      },
+      {
+        "word": "time",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "\n\tHUNTING <b>TIME</b> \n\nthrough it into something invisible to everyone else on board. As"
+        ]
+      },
+      {
+        "word": "way",
+        "scan_pages": [
+          23
+        ],
+        "contexts": [
+          "record of him existed, and records had a <b>way</b> of re- surfacing. He couldn&rsquo;t know it yet"
+        ]
+      }
+    ],
+    "19": [
+      {
+        "word": "above",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "purposeful angle to the dark blue dawn sky <b>above</b> them, hoping that he could make a strong"
+        ]
+      },
+      {
+        "word": "advance",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "connection in time. The drone ahead was <b>advancing</b> rapidly, the blades ofitspropellers"
+        ]
+      },
+      {
+        "word": "ahead",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "strong connection in time. The drone <b>ahead</b> was advancing rapidly, the blades ofi"
+        ]
+      },
+      {
+        "word": "alert",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "device buzzed silently in Tawan&rsquo;s hand, <b>alerting</b> him to the presence of an unnatural"
+        ]
+      },
+      {
+        "word": "angle",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "holding the antennae at a purposeful <b>angle</b> to the dark blue dawn sky above them,"
+        ]
+      },
+      {
+        "word": "announce",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "drone. \n&ldquo;Single drone, 572 meters&hellip;&rdquo; he <b>announced</b> calmly. With his heart beating in his"
+        ]
+      },
+      {
+        "word": "antenna",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "calm but determined while holding the <b>antennae</b> at a purposeful angle to the dark blue"
+        ]
+      },
+      {
+        "word": "arrive",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "sky. \n\tThey had little time before the <b>arrival</b> of a more lethal drone swarm. They needed"
+        ]
+      },
+      {
+        "word": "attack",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "satellites was a signal for the drone to <b>attack</b> and a beacon for its deadly approach"
+        ]
+      },
+      {
+        "word": "before",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "fixed on the sky. \n\tThey had little time <b>before</b> the arrival of a more lethal drone swarm"
+        ]
+      },
+      {
+        "word": "begin",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "wallet software. The mountain mist was <b>beginning</b> to clear with the morning light, as"
+        ]
+      },
+      {
+        "word": "blade",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "drone ahead was advancing rapidly, the <b>blades</b> ofitspropellersslicingthroughtheaira"
+        ]
+      },
+      {
+        "word": "blue",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "antennae at a purposeful angle to the dark <b>blue</b> dawn sky above them, hoping that he could"
+        ]
+      },
+      {
+        "word": "buzz",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "the hills to their front. The device <b>buzzed</b> silently in Tawan&rsquo;s hand, alerting him"
+        ]
+      },
+      {
+        "word": "calm",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "satellite constellation they required. He was <b>calm</b> but determined while holding the antennae"
+        ]
+      },
+      {
+        "word": "chest",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "calmly. With his heart beating in his <b>chest</b>, he watched the approaching drone, the"
+        ]
+      },
+      {
+        "word": "close",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "updating in real time as the enemy machine <b>closed</b> into their position. The lethal drone"
+        ]
+      },
+      {
+        "word": "connect",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "swarm. They needed to complete the <b>connection</b> fast. \n&ldquo;Single. 378 meters&hellip;&rdquo; \nRatt"
+        ]
+      },
+      {
+        "word": "course",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "ratincrediblespeedasitadjusted \n\nits <b>course</b> for the signal emanating from Rattana&rsquo;s"
+        ]
+      },
+      {
+        "word": "dawn",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "at a purposeful angle to the dark blue <b>dawn</b> sky above them, hoping that he could make"
+        ]
+      },
+      {
+        "word": "destroy",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          " The lethal drone was programmed to <b>destroy</b> anyone, or anything, that attempted to"
+        ]
+      },
+      {
+        "word": "detect",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "the morning light, as Tawan&rsquo;s optics <b>detected</b> movement in the hills to their front"
+        ]
+      },
+      {
+        "word": "device",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "movement in the hills to their front. The <b>device</b> buzzed silently in Tawan&rsquo;s hand, alerting"
+        ]
+      },
+      {
+        "word": "distance",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "of the drone through his optics, the <b>distance</b> calculation updating in real time as"
+        ]
+      },
+      {
+        "word": "enemy",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "calculation updating in real time as the <b>enemy</b> machine closed into their position. The"
+        ]
+      },
+      {
+        "word": "eye",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "whispered. \n&ldquo;I see it,&rdquo; Tawan replied, <b>eyes</b> fixed on the sky. \n\tThey had little time"
+        ]
+      },
+      {
+        "word": "field",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "and zoomed in on the \n\nsignature in his <b>field</b> of view, revealing the menacing approach"
+        ]
+      },
+      {
+        "word": "fix",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "whispered. \n&ldquo;I see it,&rdquo; Tawan replied, eyes <b>fixed</b> on the sky. \n\tThey had little time before"
+        ]
+      },
+      {
+        "word": "flash",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "count down the minutes, the numbers <b>flashing</b> by as Tawan glanced at his watch. \n&ldquo;You"
+        ]
+      },
+      {
+        "word": "force",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "alerting him to the presence of an unnatural <b>force</b>. He gripped the device and zoomed in on"
+        ]
+      },
+      {
+        "word": "front",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "detected movement in the hills to their <b>front</b>. The device buzzed silently in Tawan&rsquo;s"
+        ]
+      },
+      {
+        "word": "glance",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "minutes, the numbers flashing by as Tawan <b>glanced</b> at his watch. \n&ldquo;You see it?&rdquo; Rattana"
+        ]
+      },
+      {
+        "word": "hand",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "The device buzzed silently in Tawan&rsquo;s <b>hand</b>, alerting him to the presence of an unnatural"
+        ]
+      },
+      {
+        "word": "heart",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "meters&hellip;&rdquo; he announced calmly. With his <b>heart</b> beating in his chest, he watched the approaching"
+        ]
+      },
+      {
+        "word": "hill",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "Tawan&rsquo;s optics detected movement in the <b>hills</b> to their front. The device buzzed silently"
+        ]
+      },
+      {
+        "word": "hold",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "required. He was calm but determined while <b>holding</b> the antennae at a purposeful angle to"
+        ]
+      },
+      {
+        "word": "hope",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "to the dark blue dawn sky above them, <b>hoping</b> that he could make a strong connection"
+        ]
+      },
+      {
+        "word": "illegal",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "anything, that attempted to connect to the <b>illegal</b> satellite network, and with each closing"
+        ]
+      },
+      {
+        "word": "light",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "was beginning to clear with the morning <b>light</b>, as Tawan&rsquo;s optics detected movement in"
+        ]
+      },
+      {
+        "word": "little",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "replied, eyes fixed on the sky. \n\tThey had <b>little</b> time before the arrival of a more lethal"
+        ]
+      },
+      {
+        "word": "lock",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "\n&ldquo;Single. 200 meters&hellip;&rdquo; \nTawan&rsquo;s eyes <b>locked</b> on the augmented profile of the drone"
+        ]
+      },
+      {
+        "word": "machine",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "calculation updating in real time as the enemy <b>machine</b> closed into their position. The lethal"
+        ]
+      },
+      {
+        "word": "make",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "dawn sky above them, hoping that he could <b>make</b> a strong connection in time. The drone"
+        ]
+      },
+      {
+        "word": "minute",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "the timer continued to count down the <b>minutes</b>, the numbers flashing by as Tawan glanced"
+        ]
+      },
+      {
+        "word": "more",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "had little time before the arrival of a <b>more</b> lethal drone swarm. They needed to complete"
+        ]
+      },
+      {
+        "word": "morning",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "mist was beginning to clear with the <b>morning</b> light, as Tawan&rsquo;s optics detected movement"
+        ]
+      },
+      {
+        "word": "mountain",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "now opened the wallet software. The <b>mountain</b> mist was beginning to clear with the"
+        ]
+      },
+      {
+        "word": "need",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "arrival of a more lethal drone swarm. They <b>needed</b> to complete the connection fast. \n&ldquo;Single"
+        ]
+      },
+      {
+        "word": "network",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "to connect to the illegal satellite <b>network</b>, and with each closing meter of the drone&rsquo;s"
+        ]
+      },
+      {
+        "word": "now",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "\n\tUNDER CANOPY \n\nthe tablet as he <b>now</b> opened the wallet software. The mountain mist"
+        ]
+      },
+      {
+        "word": "number",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "continued to count down the minutes, the <b>numbers</b> flashing by as Tawan glanced at his watch"
+        ]
+      },
+      {
+        "word": "open",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "\tUNDER CANOPY \n\nthe tablet as he now <b>opened</b> the wallet software. The mountain mist"
+        ]
+      },
+      {
+        "word": "position",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "the enemy machine closed into their <b>position</b>. The lethal drone was programmed to"
+        ]
+      },
+      {
+        "word": "program",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "their position. The lethal drone was <b>programmed</b> to destroy anyone, or anything, that"
+        ]
+      },
+      {
+        "word": "purpose",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "determined while holding the antennae at a <b>purposeful</b> angle to the dark blue dawn sky above"
+        ]
+      },
+      {
+        "word": "real",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          " the distance calculation updating in <b>real</b> time as the enemy machine closed into"
+        ]
+      },
+      {
+        "word": "require",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "overhead satellite constellation they <b>required</b>. He was calm but determined while holding"
+        ]
+      },
+      {
+        "word": "reveal",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "the \n\nsignature in his field of view, <b>revealing</b> the menacing approach of an autonomous"
+        ]
+      },
+      {
+        "word": "silent",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "hills to their front. The device buzzed <b>silently</b> in Tawan&rsquo;s hand, alerting him to the"
+        ]
+      },
+      {
+        "word": "strong",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "above them, hoping that he could make a <b>strong</b> connection in time. The drone ahead was"
+        ]
+      },
+      {
+        "word": "swarm",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "before the arrival of a more lethal drone <b>swarm</b>. They needed to complete the connection"
+        ]
+      },
+      {
+        "word": "time",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "eyes fixed on the sky. \n\tThey had little <b>time</b> before the arrival of a more lethal drone"
+        ]
+      },
+      {
+        "word": "under",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "\n\t<b>UNDER</b> CANOPY \n\nthe tablet as he now opened the wallet software. The mountain mist"
+        ]
+      },
+      {
+        "word": "update",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "his optics, the distance calculation <b>updating</b> in real time as the enemy machine closed"
+        ]
+      },
+      {
+        "word": "view",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "in on the \n\nsignature in his field of <b>view</b>, revealing the menacing approach of an"
+        ]
+      },
+      {
+        "word": "whisper",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "at his watch. \n&ldquo;You see it?&rdquo; Rattana <b>whispered</b>. \n&ldquo;I see it,&rdquo; Tawan replied, eyes fixed"
+        ]
+      },
+      {
+        "word": "you",
+        "scan_pages": [
+          28
+        ],
+        "contexts": [
+          "flashing by as Tawan glanced at his watch. \n&ldquo;<b>You</b> see it?&rdquo; Rattana whispered. \n&ldquo;I see it"
+        ]
+      }
+    ],
+    "21": [
+      {
+        "word": "above",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "disturbed a group of birds from the canopy <b>above</b>, revealing its position. Tawan quickly"
+        ]
+      },
+      {
+        "word": "across",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "UNDER CANOPY \n\npulled the shotgun slung <b>across</b> his back up into his shoulder and waited"
+        ]
+      },
+      {
+        "word": "aim",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "In a flash of light, Tawan switched his <b>aim</b> to the attacking drone, its darkened metallic"
+        ]
+      },
+      {
+        "word": "air",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "re-enforcements would already be in the <b>air</b>, heading in their direction. Without delay"
+        ]
+      },
+      {
+        "word": "all",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "echoed with the boom, causing birds resting <b>all</b> around the ridge to flee in panic. The"
+        ]
+      },
+      {
+        "word": "already",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "to rest. Drone re-enforcements would <b>already</b> be in the air, heading in their direction"
+        ]
+      },
+      {
+        "word": "around",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "with the boom, causing birds resting all <b>around</b> the ridge to flee in panic. The stunned"
+        ]
+      },
+      {
+        "word": "attack",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "light, Tawan switched his aim to the <b>attacking</b> drone, its darkened metallic frame silhouetted"
+        ]
+      },
+      {
+        "word": "away",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "whichinstantlychargedtowardsthepair from only ten meters <b>away</b>. Sensing that this was its only opportunity"
+        ]
+      },
+      {
+        "word": "behind",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "ly flash of light in the undergrowth <b>behind</b> it. The jungle echoed with the boom,"
+        ]
+      },
+      {
+        "word": "below",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "back towards the village in the valley <b>below</b>. They had narrowlyavoideddeath,butwit"
+        ]
+      },
+      {
+        "word": "bird",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "luck, the drone disturbed a group of <b>birds</b> from the canopy above, revealing its position"
+        ]
+      },
+      {
+        "word": "blade",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "instant, destroying four of its rotating <b>blades</b> and sending the combat platform into"
+        ]
+      },
+      {
+        "word": "blast",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "o the leaves that had fallen from the <b>blast</b>. Tawan was sweating nervously as they"
+        ]
+      },
+      {
+        "word": "buzz",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "had been destroyed. \nSilence. The lethal <b>buzz</b> was now replaced by the natural sounds"
+        ]
+      },
+      {
+        "word": "cause",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "it. The jungle echoed with the boom, <b>causing</b> birds resting all around the ridge to"
+        ]
+      },
+      {
+        "word": "check",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "Tawan was sweating nervously as they <b>checked</b> for signs that the drone had been destroyed"
+        ]
+      },
+      {
+        "word": "crouch",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "wayfromthetwomen. Theywatchedwhile <b>crouching</b> on the ground as the drone swung first"
+        ]
+      },
+      {
+        "word": "delay",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          " heading in their direction. Without <b>delay</b>, they turned towards the trail they had"
+        ]
+      },
+      {
+        "word": "destroy",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "crippled the quadcopter in an instant, <b>destroying</b> four of its rotating blades and sending"
+        ]
+      },
+      {
+        "word": "direct",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "already be in the air, heading in their <b>direction</b>. Without delay, they turned towards"
+        ]
+      },
+      {
+        "word": "dust",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "stunned pair rose from the ground and <b>dusted</b> o the leaves that had fallen from the"
+        ]
+      },
+      {
+        "word": "echo",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "the undergrowth behind it. The jungle <b>echoed</b> with the boom, causing birds resting"
+        ]
+      },
+      {
+        "word": "enemy",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "to resume their rebellion against the <b>enemy</b> in the north. \nThesunhadfullyrisenast"
+        ]
+      },
+      {
+        "word": "enforce",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "had little time to rest. Drone re-<b>enforcements</b> would already be in the air, heading"
+        ]
+      },
+      {
+        "word": "first",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "crouching on the ground as the drone swung <b>first</b> into the branches of anearbytree, sna"
+        ]
+      },
+      {
+        "word": "flash",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "foliage in a rush of raging sound. In a <b>flash</b> of light, Tawan switched his aim to the"
+        ]
+      },
+      {
+        "word": "flee",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "birds resting all around the ridge to <b>flee</b> in panic. The stunned pair rose from the"
+        ]
+      },
+      {
+        "word": "frame",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "attacking drone, its darkened metallic <b>frame</b> silhouetted against the morning sky, and"
+        ]
+      },
+      {
+        "word": "group",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "moment of luck, the drone disturbed a <b>group</b> of birds from the canopy above, revealing"
+        ]
+      },
+      {
+        "word": "head",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "re-enforcements would already be in the air, <b>heading</b> in their direction. Without delay, they"
+        ]
+      },
+      {
+        "word": "insect",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "the morning sun, and \n\nthe chorus of <b>insects</b> resumed its soothing pulsating tone."
+        ]
+      },
+      {
+        "word": "journey",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "taken to the hilltop and began the long <b>journey</b> south back towards the village in the"
+        ]
+      },
+      {
+        "word": "jungle",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "light in the undergrowth behind it. The <b>jungle</b> echoed with the boom, causing birds resting"
+        ]
+      },
+      {
+        "word": "leave",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "rose from the ground and dusted o the <b>leaves</b> that had fallen from the blast. Tawan"
+        ]
+      },
+      {
+        "word": "light",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "a rush of raging sound. In a flash of <b>light</b>, Tawan switched his aim to the attacking"
+        ]
+      },
+      {
+        "word": "little",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "its soothing pulsating tone. \nThey had <b>little</b> time to rest. Drone re-enforcements would"
+        ]
+      },
+      {
+        "word": "long",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "had taken to the hilltop and began the <b>long</b> journey south back towards the village"
+        ]
+      },
+      {
+        "word": "machine",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "a wave of steel bearings towards the <b>machine</b>. \nThe carefully aimed shot crippled the"
+        ]
+      },
+      {
+        "word": "metal",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "to the attacking drone, its darkened <b>metallic</b> frame silhouetted against the morning"
+        ]
+      },
+      {
+        "word": "moment",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "up into his shoulder and waited. In a <b>moment</b> of luck, the drone disturbed a group"
+        ]
+      },
+      {
+        "word": "morning",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "metallic frame silhouetted against the <b>morning</b> sky, and pulled the trigger of his shotgun"
+        ]
+      },
+      {
+        "word": "nature",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "lethal buzz was now replaced by the <b>natural</b> sounds of the jungle. Birds squawked"
+        ]
+      },
+      {
+        "word": "north",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "their rebellion against the enemy in the <b>north</b>. \nThesunhadfullyrisenastheybegantheirrapiddescent"
+        ]
+      },
+      {
+        "word": "now",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "destroyed. \nSilence. The lethal buzz was <b>now</b> replaced by the natural sounds of the jungle"
+        ]
+      },
+      {
+        "word": "only",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "sthepair from <b>only</b> ten meters away. Sensing that this was its <b>only</b> opportunity \n"
+        ]
+      },
+      {
+        "word": "pair",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "the ridge to flee in panic. The stunned <b>pair</b> rose from the ground and dusted o the"
+        ]
+      },
+      {
+        "word": "panic",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "resting all around the ridge to flee in <b>panic</b>. The stunned pair rose from the ground"
+        ]
+      },
+      {
+        "word": "position",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "from the canopy above, revealing its <b>position</b>. Tawan quickly trained his eyesandaimonthemachine"
+        ]
+      },
+      {
+        "word": "pull",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "\n\tUNDER CANOPY \n\n<b>pulled</b> the shotgun slung across his back up into his shoulder and"
+        ]
+      },
+      {
+        "word": "replace",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "destroyed. \nSilence. The lethal buzz was now <b>replaced</b> by the natural sounds of the jungle"
+        ]
+      },
+      {
+        "word": "reveal",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "group of birds from the canopy above, <b>revealing</b> its position. Tawan quickly trained"
+        ]
+      },
+      {
+        "word": "ridge",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "causing birds resting all around the <b>ridge</b> to flee in panic. The stunned pair rose"
+        ]
+      },
+      {
+        "word": "rose",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "ridge to flee in panic. The stunned pair <b>rose</b> from the ground and dusted o the leaves"
+        ]
+      },
+      {
+        "word": "rotate",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "in an instant, destroying four of its <b>rotating</b> blades and sending the combat platform"
+        ]
+      },
+      {
+        "word": "security",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "they were both content that they had <b>secured</b> vital funding to resume their rebellion"
+        ]
+      },
+      {
+        "word": "sense",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "sthepair from only ten meters away. <b>Sensing</b> that this was its only opportunity \n"
+        ]
+      },
+      {
+        "word": "shoulder",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "shotgun slung across his back up into his <b>shoulder</b> and waited. In a moment of luck, the"
+        ]
+      },
+      {
+        "word": "sign",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "sweating nervously as they checked for <b>signs</b> that the drone had been destroyed. \nSilence"
+        ]
+      },
+      {
+        "word": "sound",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "from the foliage in a rush of raging <b>sound</b>. In a flash of light, Tawan switched his"
+        ]
+      },
+      {
+        "word": "south",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "the hilltop and began the long journey <b>south</b> back towards the village in the valley"
+        ]
+      },
+      {
+        "word": "steel",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "shotgun, sending sparks and a wave of <b>steel</b> bearings towards the machine. \nThe carefully"
+        ]
+      },
+      {
+        "word": "strike",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "that this was its only opportunity \n\nto <b>strike</b>, it shot from the foliage in a rush of"
+        ]
+      },
+      {
+        "word": "sun",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "squawked from the treetops in the morning <b>sun</b>, and \n\nthe chorus of insects resumed its"
+        ]
+      },
+      {
+        "word": "switch",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "raging sound. In a flash of light, Tawan <b>switched</b> his aim to the attacking drone, its"
+        ]
+      },
+      {
+        "word": "ten",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "whichinstantlychargedtowardsthepair from only <b>ten</b> meters away. Sensing that this was its"
+        ]
+      },
+      {
+        "word": "time",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "soothing pulsating tone. \nThey had little <b>time</b> to rest. Drone re-enforcements would already"
+        ]
+      },
+      {
+        "word": "tone",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "insects resumed its soothing pulsating <b>tone</b>. \nThey had little time to rest. Drone"
+        ]
+      },
+      {
+        "word": "toward",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "sparks and a wave of steel bearings <b>towards</b> the machine. \nThe carefully aimed shot"
+        ]
+      },
+      {
+        "word": "train",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "revealing its position. Tawan quickly <b>trained</b> his eyesandaimonthemachine, whichins"
+        ]
+      },
+      {
+        "word": "trigger",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "against the morning sky, and pulled the <b>trigger</b> of his shotgun, sending sparks and a"
+        ]
+      },
+      {
+        "word": "turn",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "their direction. Without delay, they <b>turned</b> towards the trail they had taken to the"
+        ]
+      },
+      {
+        "word": "under",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "\n\t<b>UNDER</b> CANOPY \n\npulled the shotgun slung across his back up into his shoulder and"
+        ]
+      },
+      {
+        "word": "valley",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "south back towards the village in the <b>valley</b> below. They had narrowlyavoideddeath"
+        ]
+      },
+      {
+        "word": "village",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "long journey south back towards the <b>village</b> in the valley below. They had narrowlyavoideddeath"
+        ]
+      },
+      {
+        "word": "vital",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "were both content that they had secured <b>vital</b> funding to resume their rebellion against"
+        ]
+      },
+      {
+        "word": "wait",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "across his back up into his shoulder and <b>waited</b>. In a moment of luck, the drone disturbed"
+        ]
+      },
+      {
+        "word": "wave",
+        "scan_pages": [
+          30
+        ],
+        "contexts": [
+          "trigger of his shotgun, sending sparks and a <b>wave</b> of steel bearings towards the machine"
+        ]
+      }
+    ],
+    "24": [
+      {
+        "word": "above",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "visited. As he kicked gently, floating <b>above</b> the underwater paradise around him, his"
+        ]
+      },
+      {
+        "word": "across",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\nDiving had taken him to coral reefs <b>across</b> the Pacific, Europe, and Southeast Asia"
+        ]
+      },
+      {
+        "word": "ahead",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          " \nAfter a short time, Owen looked up <b>ahead</b> of him, scanning the wildlife and rocky"
+        ]
+      },
+      {
+        "word": "alien",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "TIME \n\nouter space, complete with the <b>alien</b> life of underwater animals and plants"
+        ]
+      },
+      {
+        "word": "also",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "against the surface world. But it was <b>also</b> adventure, a kind he&rsquo;d come to crave more"
+        ]
+      },
+      {
+        "word": "always",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "underwater animals and plants. \nDiving had <b>always</b> been Owen&rsquo;s form of escape, a quiet rebellion"
+        ]
+      },
+      {
+        "word": "animal",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "complete with the alien life of underwater <b>animals</b> and plants. \nDiving had always been Owen&rsquo;s"
+        ]
+      },
+      {
+        "word": "around",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "floating above the underwater paradise <b>around</b> him, his girlfriend Laura followed, watching"
+        ]
+      },
+      {
+        "word": "away",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "left. It was important to not get carried <b>away</b> while diving, and his \n\n24 \n\n"
+        ]
+      },
+      {
+        "word": "before",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "he was keen to catch a glimpse of one <b>before</b> they surfaced. \nHe checked the oxygen"
+        ]
+      },
+      {
+        "word": "below",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "girlfriend Laura followed, watching the fish <b>below</b> her with excitement as she drifted through"
+        ]
+      },
+      {
+        "word": "blue",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "diving watch, its dial glowing a brilliant <b>blue</b>. It was only 12:24, more than enough time"
+        ]
+      },
+      {
+        "word": "blur",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          " and Southeast Asia, where memories <b>blurred</b> with saltwater and sunlight. In Thailand"
+        ]
+      },
+      {
+        "word": "bright",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "others protruding from below in tubes of <b>bright</b> yellow and orange, filled with brightly"
+        ]
+      },
+      {
+        "word": "carry",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "time left. It was important to not get <b>carried</b> away while diving, and his \n\n24 \n\n"
+        ]
+      },
+      {
+        "word": "catch",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "prize to see a turtle, and he was keen to <b>catch</b> a glimpse of one before they surfaced"
+        ]
+      },
+      {
+        "word": "change",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "mother&rsquo;s death. A quiet yearning for <b>change</b> \n\nafter such a dicult time. \nDiving"
+        ]
+      },
+      {
+        "word": "check",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "through the crystal-clear waters. Owen <b>checked</b> the time on his diving watch, its dial"
+        ]
+      },
+      {
+        "word": "color",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "yellow and orange, filled with brightly <b>colored</b> fish. The life that existed under the"
+        ]
+      },
+      {
+        "word": "come",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "But it was also adventure, a kind he&rsquo;d <b>come</b> to crave more since his mother&rsquo;s death"
+        ]
+      },
+      {
+        "word": "connect",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "symbol with his fingers as their eyes <b>connected</b> through their masks. Laura responded"
+        ]
+      },
+      {
+        "word": "coral",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "dicult time. \nDiving had taken him to <b>coral</b> reefs across the Pacific, Europe, and"
+        ]
+      },
+      {
+        "word": "crystal",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "excitement as she drifted through the <b>crystal</b>-clear waters. Owen checked the time on"
+        ]
+      },
+      {
+        "word": "current",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "behold, some waving gently in the \n\n<b>current</b>, others protruding from below in tubes"
+        ]
+      },
+      {
+        "word": "dial",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "checked the time on his diving watch, its <b>dial</b> glowing a brilliant blue. It was only"
+        ]
+      },
+      {
+        "word": "drift",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "fish below her with excitement as she <b>drifted</b> through the crystal-clear waters. Owen"
+        ]
+      },
+      {
+        "word": "edge",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "new friends. Friends who lived on the <b>edge</b> of political upheaval but still promised"
+        ]
+      },
+      {
+        "word": "enough",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "brilliant blue. It was only 12:24, more than <b>enough</b> time to explore the reef a little farther"
+        ]
+      },
+      {
+        "word": "escape",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Diving had always been Owen&rsquo;s form of <b>escape</b>, a quiet rebellion against the surface"
+        ]
+      },
+      {
+        "word": "excite",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "followed, watching the fish below her with <b>excitement</b> as she drifted through the crystal-clear"
+        ]
+      },
+      {
+        "word": "exist",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "brightly colored fish. The life that <b>existed</b> under the waves was spectacular. \nAfter"
+        ]
+      },
+      {
+        "word": "eye",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "&ldquo;OK&rdquo; symbol with his fingers as their <b>eyes</b> connected through their masks. Laura responded"
+        ]
+      },
+      {
+        "word": "finger",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "him and gave the &ldquo;OK&rdquo; symbol with his <b>fingers</b> as their eyes connected through their"
+        ]
+      },
+      {
+        "word": "fish",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "girlfriend Laura followed, watching the <b>fish</b> below her with excitement as she drifted"
+        ]
+      },
+      {
+        "word": "float",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "time he visited. As he kicked gently, <b>floating</b> above the underwater paradise around"
+        ]
+      },
+      {
+        "word": "follow",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "paradise around him, his girlfriend Laura <b>followed</b>, watching the fish below her with excitement"
+        ]
+      },
+      {
+        "word": "found",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Thailand, he&rsquo;d <b>found</b> more than just vibrant marine life; he&rsquo;d <b>found</b> new friends. Friends"
+        ]
+      },
+      {
+        "word": "friend",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "vibrant marine life; he&rsquo;d found new <b>friends</b>. <b>Friends</b> who lived on the edge of political"
+        ]
+      },
+      {
+        "word": "gauge",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\nHe checked the oxygen levels on his <b>gauge</b>&mdash;they had limited time left. It was important"
+        ]
+      },
+      {
+        "word": "glimpse",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "a turtle, and he was keen to catch a <b>glimpse</b> of one before they surfaced. \nHe checked"
+        ]
+      },
+      {
+        "word": "glow",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "the time on his diving watch, its dial <b>glowing</b> a brilliant blue. It was only 12:24,"
+        ]
+      },
+      {
+        "word": "hunt",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\n\t<b>HUNTING</b> TIME \n\nouter space, complete with the alien life of underwater animals"
+        ]
+      },
+      {
+        "word": "just",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "sunlight. In Thailand, he&rsquo;d found more than <b>just</b> vibrant marine life; he&rsquo;d found new friends"
+        ]
+      },
+      {
+        "word": "keen",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "always a prize to see a turtle, and he was <b>keen</b> to catch a glimpse of one before they"
+        ]
+      },
+      {
+        "word": "kick",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "sighting the next time he visited. As he <b>kicked</b> gently, floating above the underwater"
+        ]
+      },
+      {
+        "word": "kind",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "surface world. But it was also adventure, a <b>kind</b> he&rsquo;d come to crave more since his mother&rsquo;s"
+        ]
+      },
+      {
+        "word": "left",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "levels on his gauge&mdash;they had limited time <b>left</b>. It was important to not get carried away"
+        ]
+      },
+      {
+        "word": "level",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "they surfaced. \nHe checked the oxygen <b>levels</b> on his gauge&mdash;they had limited time left"
+        ]
+      },
+      {
+        "word": "life",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\nouter space, complete with the alien <b>life</b> of underwater animals and plants. \nDiving"
+        ]
+      },
+      {
+        "word": "limit",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "oxygen levels on his gauge&mdash;they had <b>limited</b> time left. It was important to not get"
+        ]
+      },
+      {
+        "word": "little",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "than enough time to explore the reef a <b>little</b> farther. \nOwen turned around slowly to"
+        ]
+      },
+      {
+        "word": "live",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "life; he&rsquo;d found new friends. Friends who <b>lived</b> on the edge of political upheaval but"
+        ]
+      },
+      {
+        "word": "make",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "through their masks. Laura responded, <b>making</b> the sign to continue, and they began"
+        ]
+      },
+      {
+        "word": "marine",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Thailand, he&rsquo;d found more than just vibrant <b>marine</b> life; he&rsquo;d found new friends. Friends"
+        ]
+      },
+      {
+        "word": "mask",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "as their eyes connected through their <b>masks</b>. Laura responded, making the sign to continue"
+        ]
+      },
+      {
+        "word": "memory",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Pacific, Europe, and Southeast Asia, where <b>memories</b> blurred with saltwater and sunlight"
+        ]
+      },
+      {
+        "word": "more",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "also adventure, a kind he&rsquo;d come to crave <b>more</b> since his mother&rsquo;s death. A quiet yearning"
+        ]
+      },
+      {
+        "word": "mother",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "kind he&rsquo;d come to crave more since his <b>mother&rsquo;s</b> death. A quiet yearning for change "
+        ]
+      },
+      {
+        "word": "news",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "than just vibrant marine life; he&rsquo;d found <b>new</b> friends. Friends who lived on the edge"
+        ]
+      },
+      {
+        "word": "next",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "promised him a whale shark sighting the <b>next</b> time he visited. As he kicked gently,"
+        ]
+      },
+      {
+        "word": "once",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "they began to scan the coral for wildlife <b>once</b> more. The intricate shapes of the coral"
+        ]
+      },
+      {
+        "word": "one",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "and he was keen to catch a glimpse of <b>one</b> before they surfaced. \nHe checked the oxygen"
+        ]
+      },
+      {
+        "word": "only",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "dial glowing a brilliant blue. It was <b>only</b> 12:24, more than enough time to explore"
+        ]
+      },
+      {
+        "word": "orange",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "from below in tubes of bright yellow and <b>orange</b>, filled with brightly colored fish. The"
+        ]
+      },
+      {
+        "word": "other",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "some waving gently in the \n\ncurrent, <b>others</b> protruding from below in tubes of bright"
+        ]
+      },
+      {
+        "word": "outer",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\n\tHUNTING TIME \n\n<b>outer</b> space, complete with the alien life of underwater animals"
+        ]
+      },
+      {
+        "word": "oxygen",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "before they surfaced. \nHe checked the <b>oxygen</b> levels on his gauge&mdash;they had limited"
+        ]
+      },
+      {
+        "word": "prize",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "grazed here regularly. It was always a <b>prize</b> to see a turtle, and he was keen to catch"
+        ]
+      },
+      {
+        "word": "scan",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "the sign to continue, and they began to <b>scan</b> the coral for wildlife once more. The"
+        ]
+      },
+      {
+        "word": "short",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "under the waves was spectacular. \nAfter a <b>short</b> time, Owen looked up ahead of him, scanning"
+        ]
+      },
+      {
+        "word": "sight",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "but still promised him a whale shark <b>sighting</b> the next time he visited. As he kicked"
+        ]
+      },
+      {
+        "word": "sign",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "their masks. Laura responded, making the <b>sign</b> to continue, and they began to scan the"
+        ]
+      },
+      {
+        "word": "since",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "adventure, a kind he&rsquo;d come to crave more <b>since</b> his mother&rsquo;s death. A quiet yearning for"
+        ]
+      },
+      {
+        "word": "space",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\n\tHUNTING TIME \n\nouter <b>space</b>, complete with the alien life of underwater animals"
+        ]
+      },
+      {
+        "word": "still",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "on the edge of political upheaval but <b>still</b> promised him a whale shark sighting the"
+        ]
+      },
+      {
+        "word": "surface",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "escape, a quiet rebellion against the <b>surface</b> world. But it was also adventure, a kind"
+        ]
+      },
+      {
+        "word": "symbol",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Laura was following him and gave the &ldquo;OK&rdquo; <b>symbol</b> with his fingers as their eyes connected"
+        ]
+      },
+      {
+        "word": "time",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "\n\tHUNTING <b>TIME</b> \n\nouter space, complete with the alien life of underwater animals"
+        ]
+      },
+      {
+        "word": "tube",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "current, others protruding from below in <b>tubes</b> of bright yellow and orange, filled with"
+        ]
+      },
+      {
+        "word": "turn",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "explore the reef a little farther. \nOwen <b>turned</b> around slowly to check that Laura was"
+        ]
+      },
+      {
+        "word": "turtle",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "for <b>turtles</b> that grazed here regularly. It was always a prize to see a <b>turtle</b>, and"
+        ]
+      },
+      {
+        "word": "under",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "brightly colored fish. The life that existed <b>under</b> the waves was spectacular. \nAfter a short"
+        ]
+      },
+      {
+        "word": "vibrant",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Thailand, he&rsquo;d found more than just <b>vibrant</b> marine life; he&rsquo;d found new friends."
+        ]
+      },
+      {
+        "word": "visit",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "whale shark sighting the next time he <b>visited</b>. As he kicked gently, floating above"
+        ]
+      },
+      {
+        "word": "water",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "she drifted through the crystal-clear <b>waters</b>. Owen checked the time on his diving"
+        ]
+      },
+      {
+        "word": "wave",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "the coral were a sight to behold, some <b>waving</b> gently in the \n\ncurrent, others protruding"
+        ]
+      },
+      {
+        "word": "whale",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "political upheaval but still promised him a <b>whale</b> shark sighting the next time he visited"
+        ]
+      },
+      {
+        "word": "where",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "Pacific, Europe, and Southeast Asia, <b>where</b> memories blurred with saltwater and sunlight"
+        ]
+      },
+      {
+        "word": "world",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "a quiet rebellion against the surface <b>world</b>. But it was also adventure, a kind he&rsquo;d"
+        ]
+      },
+      {
+        "word": "yellow",
+        "scan_pages": [
+          33
+        ],
+        "contexts": [
+          "protruding from below in tubes of bright <b>yellow</b> and orange, filled with brightly colored"
+        ]
+      }
+    ],
+    "32": [
+      {
+        "word": "again",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "image lingered. He checked his watch <b>again</b>. \n\n06:16. \nHe had a few minutes left to"
+        ]
+      },
+      {
+        "word": "always",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "of use but still as comfortable as it <b>always</b> had been. In front of the chair, against"
+        ]
+      },
+      {
+        "word": "around",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "sharp contrast to the bright foliage <b>around</b> it. It wasn&rsquo;t the neighbor&rsquo;s, they&rsquo;d"
+        ]
+      },
+      {
+        "word": "away",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "It wasn&rsquo;t the neighbor&rsquo;s, they&rsquo;d been <b>away</b> for weeks. Probably nothing. \nHe closed"
+        ]
+      },
+      {
+        "word": "bar",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "shutters into the oce windows, casting <b>bars</b> of illumination on the computer screens"
+        ]
+      },
+      {
+        "word": "before",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "few minutes left to try to calm himself <b>before</b> the day began. Asthebottlebegantowarmbetweenhisfingers"
+        ]
+      },
+      {
+        "word": "between",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          " and the exotic birds flew silently <b>between</b> the palms. Something caughthiseyeint"
+        ]
+      },
+      {
+        "word": "bird",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "asthesunbeganto rise, and the exotic <b>birds</b> flew silently between the palms. Something"
+        ]
+      },
+      {
+        "word": "blue",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "parked car sat in the shade, its dark <b>blue</b> exterior a sharp contrast to the bright"
+        ]
+      },
+      {
+        "word": "bright",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "blue exterior a sharp contrast to the <b>bright</b> foliage around it. It wasn&rsquo;t the neighbor&rsquo;s"
+        ]
+      },
+      {
+        "word": "cable",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "in a chaotic nest of discarded charger <b>cables</b>. An empty bottle stood amongst the clutter"
+        ]
+      },
+      {
+        "word": "calm",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          " \nHe had a few minutes left to try to <b>calm</b> himself before the day began. Asthebo"
+        ]
+      },
+      {
+        "word": "car",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "yandbeyond towards the road. A parked <b>car</b> sat in the shade, its dark blue exterior"
+        ]
+      },
+      {
+        "word": "chair",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "large, dominated by a sizeable leather <b>chair</b>, which had been worn by years of use but"
+        ]
+      },
+      {
+        "word": "check",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "shutters but the image lingered. He <b>checked</b> his watch again. \n\n06:16. \nHe had a few"
+        ]
+      },
+      {
+        "word": "close",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "away for weeks. Probably nothing. \nHe <b>closed</b> the shutters but the image lingered."
+        ]
+      },
+      {
+        "word": "comfort",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "worn by years of use but still as <b>comfortable</b> as it always had been. In front of"
+        ]
+      },
+      {
+        "word": "day",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "left to try to calm himself before the <b>day</b> began. Asthebottlebegantowarmbetweenhisfingers"
+        ]
+      },
+      {
+        "word": "desk",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "the wall was a generously sized wooden <b>desk</b>, its draws full of old mobile phones,"
+        ]
+      },
+      {
+        "word": "draw",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "was a generously sized wooden desk, its <b>draws</b> full of old mobile phones, discarded and"
+        ]
+      },
+      {
+        "word": "empty",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "nest of discarded charger cables. An <b>empty</b> bottle stood amongst the clutter on his"
+        ]
+      },
+      {
+        "word": "end",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "fingers,Owenbegantowonder how he had <b>ended</b> up here. Why was he doing this? Why him"
+        ]
+      },
+      {
+        "word": "exotic",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "ggoldenasthesunbeganto rise, and the <b>exotic</b> birds flew silently between the palms"
+        ]
+      },
+      {
+        "word": "few",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "checked his watch again. \n\n06:16. \nHe had a <b>few</b> minutes left to try to calm himself before"
+        ]
+      },
+      {
+        "word": "focus",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "andhowtoreplytoher,butinthismoment, he needed to <b>focus</b> and could not be distracted. \nGrey light"
+        ]
+      },
+      {
+        "word": "front",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "illumination on the computer screens in <b>front</b> of him. \n\nThe oce was large, dominated"
+        ]
+      },
+      {
+        "word": "general",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "of the chair, against the wall was a <b>generously</b> sized wooden desk, its draws full of"
+        ]
+      },
+      {
+        "word": "glow",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "His computer was unlocked; the screen <b>glowed</b> in the dim light displayinghismostrecentconversations"
+        ]
+      },
+      {
+        "word": "hand",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "outside and sipped on the cold beer in his <b>hand</b>, trying to steady his nerves. \nThevib"
+        ]
+      },
+      {
+        "word": "hour",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "the moment he had read them just a few <b>hours</b> before. \nThe other windows on his computer"
+        ]
+      },
+      {
+        "word": "hunt",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "\n\t<b>HUNTING</b> TIME \n\nwas etched into his mind. &ldquo;Are you okay?&rdquo; it read. Hewasunsurewhattodo"
+        ]
+      },
+      {
+        "word": "image",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "nothing. \nHe closed the shutters but the <b>image</b> lingered. He checked his watch again."
+        ]
+      },
+      {
+        "word": "just",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "stone from the moment he had read them <b>just</b> a few hours before. \nThe other windows"
+        ]
+      },
+      {
+        "word": "large",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "screens in front of him. \n\nThe oce was <b>large</b>, dominated by a sizeable leather chair"
+        ]
+      },
+      {
+        "word": "left",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "again. \n\n06:16. \nHe had a few minutes <b>left</b> to try to calm himself before the day"
+        ]
+      },
+      {
+        "word": "light",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "focus and could not be distracted. \nGrey <b>light</b> passed through the shutters into the oce"
+        ]
+      },
+      {
+        "word": "like",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "open, the words engraved into his mind <b>like</b> stone from the moment he had read them"
+        ]
+      },
+      {
+        "word": "mind",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "\n\tHUNTING TIME \n\nwas etched into his <b>mind</b>. &ldquo;Are you okay?&rdquo; it read. Hewasunsurewhattodo"
+        ]
+      },
+      {
+        "word": "minute",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "watch again. \n\n06:16. \nHe had a few <b>minutes</b> left to try to calm himself before the"
+        ]
+      },
+      {
+        "word": "mobile",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "sized wooden desk, its draws full of old <b>mobile</b> phones, discarded and dormant, awaiting"
+        ]
+      },
+      {
+        "word": "moment",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "engraved into his mind like stone from the <b>moment</b> he had read them just a few hours before"
+        ]
+      },
+      {
+        "word": "need",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "andhowtoreplytoher,butinthismoment, he <b>needed</b> to focus and could not be distracted"
+        ]
+      },
+      {
+        "word": "nerve",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "beer in his hand, trying to steady his <b>nerves</b>. \nThevibrantgreenofthetreeswasturnin"
+        ]
+      },
+      {
+        "word": "nest",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "next opportunity as they lay in a chaotic <b>nest</b> of discarded charger cables. An empty"
+        ]
+      },
+      {
+        "word": "next",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "and dormant, awaiting disposal at the <b>next</b> opportunity as they lay in a chaotic nest"
+        ]
+      },
+      {
+        "word": "nothing",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "they&rsquo;d been away for weeks. Probably <b>nothing</b>. \nHe closed the shutters but the image"
+        ]
+      },
+      {
+        "word": "okay",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "TIME \n\nwas etched into his mind. &ldquo;Are you <b>okay</b>?&rdquo; it read. Hewasunsurewhattodo,andhowtoreplytoher"
+        ]
+      },
+      {
+        "word": "old",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "generously sized wooden desk, its draws full of <b>old</b> mobile phones, discarded and dormant, awaiting"
+        ]
+      },
+      {
+        "word": "open",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "sations. Thelastmessagehereceived was <b>open</b>, the words engraved into his mind like"
+        ]
+      },
+      {
+        "word": "other",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "read them just a few hours before. \nThe <b>other</b> windows on his computer were filled with"
+        ]
+      },
+      {
+        "word": "outside",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "the window shutters to the palm trees <b>outside</b> and sipped on the cold beer in his hand"
+        ]
+      },
+      {
+        "word": "palm",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "looked through the window shutters to the <b>palm</b> trees outside and sipped on the cold beer"
+        ]
+      },
+      {
+        "word": "park",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "rivewayandbeyond towards the road. A <b>parked</b> car sat in the shade, its dark blue exterior"
+        ]
+      },
+      {
+        "word": "pass",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "could not be distracted. \nGrey light <b>passed</b> through the shutters into the oce windows"
+        ]
+      },
+      {
+        "word": "phone",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "wooden desk, its draws full of old mobile <b>phones</b>, discarded and dormant, awaiting disposal"
+        ]
+      },
+      {
+        "word": "road",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "dpastthedrivewayandbeyond towards the <b>road</b>. A parked car sat in the shade, its dark"
+        ]
+      },
+      {
+        "word": "screen",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "bars of illumination on the computer <b>screens</b> in front of him. \n\nThe oce was large"
+        ]
+      },
+      {
+        "word": "silent",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "nto rise, and the exotic birds flew <b>silently</b> between the palms. Something caught"
+        ]
+      },
+      {
+        "word": "size",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "chair, against the wall was a generously <b>sized</b> wooden desk, its draws full of old mobile"
+        ]
+      },
+      {
+        "word": "still",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "which had been worn by years of use but <b>still</b> as comfortable as it always had been."
+        ]
+      },
+      {
+        "word": "stone",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "the words engraved into his mind like <b>stone</b> from the moment he had read them just"
+        ]
+      },
+      {
+        "word": "time",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "\n\tHUNTING <b>TIME</b> \n\nwas etched into his mind. &ldquo;Are you okay?&rdquo; it read. Hewasunsurewhattodo"
+        ]
+      },
+      {
+        "word": "toward",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "eashelookedpastthedrivewayandbeyond <b>towards</b> the road. A parked car sat in the shade"
+        ]
+      },
+      {
+        "word": "track",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "his computer were filled with charts <b>tracking</b> \n\n32 \n\n"
+        ]
+      },
+      {
+        "word": "tree",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "through the window shutters to the palm <b>trees</b> outside and sipped on the cold beer in"
+        ]
+      },
+      {
+        "word": "try",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "sipped on the cold beer in his hand, <b>trying</b> to steady his nerves. \nThevibrantgre"
+        ]
+      },
+      {
+        "word": "unlock",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "doing this? Why him? \nHis computer was <b>unlocked</b>; the screen glowed in the dim light"
+        ]
+      },
+      {
+        "word": "use",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "chair, which had been worn by years of <b>use</b> but still as comfortable as it always had"
+        ]
+      },
+      {
+        "word": "used",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "chair, which had been worn by years of <b>use</b> but still as comfortable as it always had"
+        ]
+      },
+      {
+        "word": "useful",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "chair, which had been worn by years of <b>use</b> but still as comfortable as it always had"
+        ]
+      },
+      {
+        "word": "wall",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "been. In front of the chair, against the <b>wall</b> was a generously sized wooden desk, its"
+        ]
+      },
+      {
+        "word": "window",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "passed through the shutters into the oce <b>windows</b>, casting bars of illumination on the"
+        ]
+      },
+      {
+        "word": "word",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "Thelastmessagehereceived was open, the <b>words</b> engraved into his mind like stone from"
+        ]
+      },
+      {
+        "word": "year",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "leather chair, which had been worn by <b>years</b> of use but still as comfortable as it"
+        ]
+      },
+      {
+        "word": "you",
+        "scan_pages": [
+          41
+        ],
+        "contexts": [
+          "TIME \n\nwas etched into his mind. &ldquo;Are <b>you</b> okay?&rdquo; it read. Hewasunsurewhattodo,andhowtoreplytoher"
+        ]
+      }
+    ],
+    "103": [
+      {
+        "word": "apart",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "chaos",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "cheap",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "dance",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "direct",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "extend",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "found",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "govern",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "height",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "hold",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "hollow",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "keep",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "machine",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "metal",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "only",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "replace",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "sea",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "shadow",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "sick",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "siege",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "ski",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "space",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "strategy",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "swarm",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "turn",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "wealth",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "when",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "where",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      },
+      {
+        "word": "word",
+        "scan_pages": [
+          112
+        ],
+        "contexts": []
+      }
+    ],
+    "110": [
+      {
+        "word": "abandon",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "about",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "age",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "all",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "annual",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "another",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "apart",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "balance",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "between",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "bomb",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "civil",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "control",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "country",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "curtain",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "describe",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "direct",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "east",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "engine",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "erupt",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "execute",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "exist",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "eye",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "few",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "final",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "govern",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "group",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "guilt",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "have",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "hidden",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "hour",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "hunt",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "iron",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "island",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "knife",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "know",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "like",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "live",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "more",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "mother",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "nation",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "news",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "now",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "often",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "order",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "over",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "phrase",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "private",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "profit",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "radio",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "remember",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "rent",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "resource",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "rich",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "right",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "road",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "route",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "same",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "seed",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "side",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "since",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "spare",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "state",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "step",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "success",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "sure",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "swarm",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "time",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "tool",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "total",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "use",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "used",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "useful",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "wealth",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "west",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "what",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "when",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "window",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "wonder",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "word",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "work",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "worth",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      },
+      {
+        "word": "wrestle",
+        "scan_pages": [
+          119
+        ],
+        "contexts": []
+      }
+    ],
+    "241": [
+      {
+        "word": "across",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "alert",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "almost",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "always",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "answer",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "arm",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "armed",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "around",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "ask",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "away",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "begin",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "calm",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "can",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "chair",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "close",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "dream",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "drift",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "easy",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "edge",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "elegant",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "expect",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "eye",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "finger",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "floor",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "force",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "gaze",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "genuine",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "glow",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "guilt",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "head",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "help",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "inhale",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "innocent",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "just",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "kind",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "life",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "like",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "more",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "must",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "now",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "once",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "one",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "over",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "pause",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "place",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "possible",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "pulse",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "ready",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "reflect",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "right",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "risk",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "room",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "sense",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "soft",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "soon",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "still",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "system",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "tone",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "total",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "try",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "use",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "used",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "useful",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "voice",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "walk",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "want",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "when",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "where",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "word",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "world",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      },
+      {
+        "word": "you",
+        "scan_pages": [
+          250
+        ],
+        "contexts": []
+      }
+    ]
+  },
+  "target_words": {
+    "103": [
+      "apart",
+      "chaos",
+      "cheap",
+      "dance",
+      "direct",
+      "extend",
+      "found",
+      "govern",
+      "height",
+      "hold",
+      "hollow",
+      "keep",
+      "machine",
+      "metal",
+      "only",
+      "replace",
+      "sea",
+      "shadow",
+      "sick",
+      "siege",
+      "ski",
+      "space",
+      "strategy",
+      "swarm",
+      "turn",
+      "wealth",
+      "when",
+      "where",
+      "word"
+    ],
+    "110": [
+      "abandon",
+      "about",
+      "age",
+      "all",
+      "annual",
+      "another",
+      "apart",
+      "balance",
+      "between",
+      "bomb",
+      "civil",
+      "control",
+      "country",
+      "curtain",
+      "describe",
+      "direct",
+      "east",
+      "engine",
+      "erupt",
+      "execute",
+      "exist",
+      "eye",
+      "few",
+      "final",
+      "govern",
+      "group",
+      "guilt",
+      "have",
+      "hidden",
+      "hour",
+      "hunt",
+      "iron",
+      "island",
+      "knife",
+      "know",
+      "like",
+      "live",
+      "more",
+      "mother",
+      "nation",
+      "news",
+      "now",
+      "often",
+      "order",
+      "over",
+      "phrase",
+      "private",
+      "profit",
+      "radio",
+      "remember",
+      "rent",
+      "resource",
+      "rich",
+      "right",
+      "road",
+      "route",
+      "same",
+      "seed",
+      "side",
+      "since",
+      "spare",
+      "state",
+      "step",
+      "success",
+      "sure",
+      "swarm",
+      "time",
+      "tool",
+      "total",
+      "use",
+      "used",
+      "useful",
+      "wealth",
+      "west",
+      "what",
+      "when",
+      "window",
+      "wonder",
+      "word",
+      "work",
+      "worth",
+      "wrestle"
+    ],
+    "241": [
+      "across",
+      "alert",
+      "almost",
+      "always",
+      "answer",
+      "arm",
+      "armed",
+      "around",
+      "ask",
+      "away",
+      "begin",
+      "calm",
+      "can",
+      "chair",
+      "close",
+      "dream",
+      "drift",
+      "easy",
+      "edge",
+      "elegant",
+      "expect",
+      "eye",
+      "finger",
+      "floor",
+      "force",
+      "gaze",
+      "genuine",
+      "glow",
+      "guilt",
+      "head",
+      "help",
+      "inhale",
+      "innocent",
+      "just",
+      "kind",
+      "life",
+      "like",
+      "more",
+      "must",
+      "now",
+      "once",
+      "one",
+      "over",
+      "pause",
+      "place",
+      "possible",
+      "pulse",
+      "ready",
+      "reflect",
+      "right",
+      "risk",
+      "room",
+      "sense",
+      "soft",
+      "soon",
+      "still",
+      "system",
+      "tone",
+      "total",
+      "try",
+      "use",
+      "used",
+      "useful",
+      "voice",
+      "walk",
+      "want",
+      "when",
+      "where",
+      "word",
+      "world",
+      "you"
+    ]
+  },
+  "elapsed_seconds": 68.43469715118408
+}
