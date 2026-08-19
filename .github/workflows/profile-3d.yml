@@ -72,7 +72,6 @@ jobs:
 
           import hashlib
           import json
-          import re
           import urllib.parse
           import urllib.request
           from pathlib import Path
@@ -84,14 +83,25 @@ jobs:
           ENDPOINT = 'https://read.amazon.com/sample/print/search-results'
           UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/151 Safari/537.36'
           TARGETS = [
-              {'printed': 103, 'internal': '112', 'query': 'height'},
-              {'printed': 110, 'internal': '119', 'query': 'bomb'},
-              {'printed': 241, 'internal': '250', 'query': 'inhale'},
+              {'printed': 103, 'internal': '112', 'query': 'watch'},
+              {'printed': 110, 'internal': '119', 'query': 'road'},
+              {'printed': 241, 'internal': '250', 'query': 'watch'},
           ]
           OUT = Path('public-media-analysis/target-page-images')
           OUT.mkdir(parents=True, exist_ok=True)
+          cache = {}
 
-          def request_json(url: str):
+          def request_json(query: str):
+              if query in cache:
+                  return cache[query]
+              params = {
+                  'asin': ASIN,
+                  'buyingAsin': ASIN,
+                  'query': query,
+                  'pageNumber': 1,
+                  'pageSize': 100,
+              }
+              url = ENDPOINT + '?' + urllib.parse.urlencode(params)
               request = urllib.request.Request(
                   url,
                   headers={
@@ -101,10 +111,15 @@ jobs:
                   },
               )
               with urllib.request.urlopen(request, timeout=45) as response:
-                  return json.loads(response.read())
+                  value = json.loads(response.read())
+              cache[query] = value
+              return value
 
           def download(url: str, destination: Path):
-              request = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://read.amazon.com/'})
+              request = urllib.request.Request(
+                  url,
+                  headers={'User-Agent': UA, 'Referer': 'https://read.amazon.com/'},
+              )
               with urllib.request.urlopen(request, timeout=60) as response:
                   data = response.read()
               destination.write_bytes(data)
@@ -134,32 +149,26 @@ jobs:
               records = []
               for name, variant in variants.items():
                   for psm in (3, 4, 6, 11, 12):
-                      text = pytesseract.image_to_string(variant, config=f'--oem 3 --psm {psm}').strip()
+                      text = pytesseract.image_to_string(
+                          variant,
+                          config=f'--oem 3 --psm {psm}',
+                      ).strip()
                       if text:
                           records.append({'variant': name, 'psm': psm, 'text': text})
               return records
 
           results = []
           for target in TARGETS:
-              params = {
-                  'asin': ASIN,
-                  'buyingAsin': ASIN,
-                  'query': target['query'],
-                  'pageNumber': 1,
-                  'pageSize': 100,
-              }
-              response = request_json(ENDPOINT + '?' + urllib.parse.urlencode(params))
+              response = request_json(target['query'])
               label = f"Page {target['printed']}"
               entries = find_entries(response, label)
               urls = response.get('jumboImageUrls') or {}
-              page_url = urls.get(target['internal']) or urls.get(str(target['printed']))
-              if not page_url:
-                  # Some responses use numeric keys that are integers after JSON decoding.
-                  page_url = urls.get(int(target['internal'])) if isinstance(urls, dict) else None
+              page_url = urls.get(target['internal'])
               if not page_url:
                   raise RuntimeError(
-                      f"No image URL for {label}; internal={target['internal']}; "
-                      f"keys={list(urls)[:30]}; entries={entries[:3]}"
+                      f"No image URL for {label}; query={target['query']}; "
+                      f"internal={target['internal']}; keyCount={len(urls)}; "
+                      f"firstKeys={list(urls)[:20]}; entries={entries[:3]}"
                   )
 
               image_path = OUT / f"page-{target['printed']:03d}.jpg"
@@ -189,13 +198,18 @@ jobs:
               }
               results.append(result)
               (OUT / f"page-{target['printed']:03d}-ocr.txt").write_text(
-                  '\n\n===== OCR VARIANT =====\n\n'.join(unique), encoding='utf-8'
+                  '\n\n===== OCR VARIANT =====\n\n'.join(unique),
+                  encoding='utf-8',
               )
-              (OUT / f"page-{target['printed']:03d}-response.json").write_text(
-                  json.dumps(response, indent=2, ensure_ascii=False), encoding='utf-8'
+              (OUT / f"query-{target['query']}-response.json").write_text(
+                  json.dumps(response, indent=2, ensure_ascii=False),
+                  encoding='utf-8',
               )
 
-          (OUT / 'results.json').write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding='utf-8')
+          (OUT / 'results.json').write_text(
+              json.dumps(results, indent=2, ensure_ascii=False),
+              encoding='utf-8',
+          )
           lines = ['# Retrieved target paperback pages', '']
           for result in results:
               lines += [
