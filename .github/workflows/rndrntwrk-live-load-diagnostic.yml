@@ -10,4 +10,4 @@ jobs:
   marker:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Trigger same-origin asset production trace."
+      - run: echo "Trigger exact asset-origin probe."
