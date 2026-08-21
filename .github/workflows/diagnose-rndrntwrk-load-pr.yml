@@ -1,0 +1,79 @@
+name: Diagnose RNDRNTWRK production load (PR)
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/diagnose-rndrntwrk-load-pr.yml
+      - .github/workflows/diagnose-rndrntwrk-load.yml
+      - scripts/diagnose-rndrntwrk-load.mjs
+
+permissions:
+  contents: read
+
+jobs:
+  production-browser-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out diagnostic branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Capture raw HTTP evidence
+        shell: bash
+        run: |
+          mkdir -p artifacts/rndrntwrk-load/raw
+          date -u > artifacts/rndrntwrk-load/raw/probe-time.txt
+          getent ahosts rndrntwrk.com > artifacts/rndrntwrk-load/raw/apex-dns.txt 2>&1 || true
+          getent ahosts www.rndrntwrk.com > artifacts/rndrntwrk-load/raw/www-dns.txt 2>&1 || true
+          curl -sS --max-time 60 -I https://rndrntwrk.com/ > artifacts/rndrntwrk-load/raw/apex-head.txt 2>&1 || true
+          curl -sS --max-time 60 -I https://www.rndrntwrk.com/ > artifacts/rndrntwrk-load/raw/www-head.txt 2>&1 || true
+          curl -sS -L --max-time 60 \
+            --trace-time \
+            --trace-ascii artifacts/rndrntwrk-load/raw/curl-trace.txt \
+            -D artifacts/rndrntwrk-load/raw/redirect-headers.txt \
+            -o artifacts/rndrntwrk-load/raw/home.html \
+            -w '%{json}\n' \
+            https://rndrntwrk.com/ \
+            > artifacts/rndrntwrk-load/raw/curl-metrics.json \
+            2> artifacts/rndrntwrk-load/raw/curl-stderr.txt || true
+          echo | openssl s_client -connect www.rndrntwrk.com:443 -servername www.rndrntwrk.com 2>/dev/null \
+            | openssl x509 -noout -subject -issuer -serial -dates -fingerprint -sha256 -ext subjectAltName \
+            > artifacts/rndrntwrk-load/raw/tls.txt 2>&1 || true
+
+      - name: Install Playwright and Chromium
+        shell: bash
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Run desktop, mobile, and no-JavaScript probes
+        env:
+          OUTPUT_DIR: artifacts/rndrntwrk-load
+        run: node scripts/diagnose-rndrntwrk-load.mjs
+
+      - name: Print diagnostic evidence
+        if: always()
+        shell: bash
+        run: |
+          echo '===== RAW RESPONSE HEADERS ====='
+          cat artifacts/rndrntwrk-load/raw/redirect-headers.txt 2>/dev/null || true
+          echo '===== BROWSER SUMMARY ====='
+          cat artifacts/rndrntwrk-load/summary.json 2>/dev/null || true
+
+      - name: Upload diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rndrntwrk-production-load-diagnostics-pr
+          path: artifacts/rndrntwrk-load
+          if-no-files-found: error
+          retention-days: 3
