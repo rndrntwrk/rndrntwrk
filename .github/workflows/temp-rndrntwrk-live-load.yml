@@ -33,21 +33,23 @@ jobs:
           )
 
           : > evidence/results.tsv
-          printf 'url\thttp_code\tremote_ip\tcontent_type\tsize\tsha256\n' >> evidence/results.tsv
+          printf 'url\tcurl_exit\thttp_code\tremote_ip\tcontent_type\tsize\tsha256\n' >> evidence/results.tsv
           for url in "${urls[@]}"; do
             key="$(printf '%s' "$url" | sha256sum | cut -c1-16)"
+            body="evidence/bodies/${key}.bin"
+            : > "$body"
             set +e
             meta="$(curl --location --silent --show-error \
               --connect-timeout 8 --max-time 25 \
               --dump-header "evidence/headers/${key}.txt" \
-              --output "evidence/bodies/${key}.bin" \
+              --output "$body" \
               --write-out $'%{http_code}\t%{remote_ip}\t%{content_type}' \
               "$url" 2>"evidence/${key}.stderr")"
             rc=$?
             set -e
-            size="$(wc -c < "evidence/bodies/${key}.bin" 2>/dev/null || printf 0)"
-            sha="$(sha256sum "evidence/bodies/${key}.bin" 2>/dev/null | awk '{print $1}')"
-            printf '%s\t%s\t%s\t%s\t%s\n' "$url" "$meta" "$size" "$sha" >> evidence/results.tsv
+            size="$(wc -c < "$body")"
+            sha="$(sha256sum "$body" | awk '{print $1}')"
+            printf '%s\t%s\t%s\t%s\t%s\n' "$url" "$rc" "$meta" "$size" "$sha" >> evidence/results.tsv
             printf 'curl_exit=%s url=%s\n' "$rc" "$url" >> "evidence/${key}.stderr"
           done
 
