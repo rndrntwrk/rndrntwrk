@@ -1,4 +1,4 @@
-name: Temporary RNDRNTWRK live-load trace
+name: Temporary RNDRNTWRK supported-path trace
 
 on:
   pull_request:
@@ -18,184 +18,184 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Capture HTTP source and browser runtime
+      - name: Trace production while bypassing only the unsupported-browser redirect
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p evidence/bundles
-          curl --fail-with-body --silent --show-error --location --compressed \
-            --dump-header evidence/headers.txt \
-            --output evidence/index.html \
-            https://rndrntwrk.com/
-
-          python3 - <<'PY'
-          from html.parser import HTMLParser
-          from pathlib import Path
-          from urllib.parse import urljoin, urlparse
-          import json, subprocess
-
-          base = 'https://www.rndrntwrk.com/'
-          html = Path('evidence/index.html').read_text(errors='replace')
-          class Parser(HTMLParser):
-              def __init__(self):
-                  super().__init__(); self.assets=[]
-              def handle_starttag(self, tag, attrs):
-                  d=dict(attrs)
-                  for key in ('src','href'):
-                      if key in d:
-                          self.assets.append({'tag':tag,'attr':key,'url':urljoin(base,d[key])})
-          p=Parser(); p.feed(html)
-          Path('evidence/html-assets.json').write_text(json.dumps(p.assets,indent=2))
-          for asset in p.assets:
-              url=asset['url']
-              if asset['tag']=='script' and urlparse(url).hostname=='www.rndrntwrk.com':
-                  name=urlparse(url).path.strip('/').replace('/','_') or 'index.js'
-                  subprocess.run(['curl','--fail-with-body','--silent','--show-error','--location','--compressed',
-                                  '--dump-header',f'evidence/bundles/{name}.headers',
-                                  '--output',f'evidence/bundles/{name}',url],check=False)
-          PY
-
+          mkdir -p evidence
           google-chrome --version | tee evidence/chrome-version.txt
           npm --silent --no-audit --no-fund install playwright-core@1.55.0
 
-          cat > trace.cjs <<'NODE'
+          cat > trace-supported.cjs <<'NODE'
           const fs = require('fs');
           const path = require('path');
-          const crypto = require('crypto');
           const { chromium } = require('playwright-core');
 
           const target = 'https://www.rndrntwrk.com/';
+          const appPattern = /assets\/js\/app\.1746999829739\.js(?:\?.*)?$/;
           const root = path.resolve('evidence');
-          const bundleDir = path.join(root, 'bundles');
-          fs.mkdirSync(bundleDir, { recursive: true });
 
-          function filename(url) {
-            const u = new URL(url);
-            const ext = path.extname(u.pathname) || '.bin';
-            const stem = `${u.hostname}${u.pathname}`.replace(/[^a-z0-9._-]/gi, '_').slice(0, 170);
-            return `${stem}-${crypto.createHash('sha256').update(url).digest('hex').slice(0, 12)}${ext}`;
-          }
-
-          async function trace(browser, name, options = {}) {
+          async function trace(browser, name, contextOptions = {}) {
             const dir = path.join(root, name);
             fs.mkdirSync(dir, { recursive: true });
             const data = {
-              console: [], pageErrors: [], requestFailures: [], responses: [],
-              webSockets: [], timeline: [], navigationError: null, networkIdleError: null,
+              console: [], pageErrors: [], requestFailures: [], responses: [], timeline: [],
+              patch: null, navigationError: null, networkIdleError: null,
             };
-            const captures = [];
+
             const context = await browser.newContext({
               viewport: { width: 1440, height: 1000 },
+              serviceWorkers: 'block',
               recordHar: { path: path.join(dir, 'network.har'), content: 'embed', mode: 'full' },
-              ...options,
+              ...contextOptions,
             });
             const page = await context.newPage();
 
-            page.on('console', m => data.console.push({ type: m.type(), text: m.text(), location: m.location() }));
-            page.on('pageerror', e => data.pageErrors.push({ name: e.name, message: e.message, stack: e.stack }));
-            page.on('requestfailed', r => data.requestFailures.push({
-              url: r.url(), method: r.method(), resourceType: r.resourceType(), failure: r.failure(),
-            }));
-            page.on('websocket', ws => {
-              const item = { url: ws.url(), sent: 0, received: 0, errors: [], closed: false };
-              data.webSockets.push(item);
-              ws.on('framesent', () => item.sent++);
-              ws.on('framereceived', () => item.received++);
-              ws.on('socketerror', error => item.errors.push(String(error)));
-              ws.on('close', () => { item.closed = true; });
+            await page.addInitScript(() => {
+              window._PERF_DEBUG = true;
+              window.addEventListener('loader:suppressed-error', event => {
+                console.error('[SUPPRESSED-BY-LOADER]', JSON.stringify(event.detail));
+              });
             });
+
+            await page.route('**/assets/js/app.1746999829739.js*', async route => {
+              const response = await route.fetch();
+              let body = await response.text();
+              const before = body;
+              body = body.replace(
+                /\(\(UnsupportedRedirect\.requiresWebGL\s*=\s*!0\),\s*UnsupportedRedirect\.unsupported\(\)\)/,
+                '((UnsupportedRedirect.requiresWebGL = !1), false)'
+              );
+              data.patch = {
+                url: route.request().url(),
+                matched: body !== before,
+                originalBytes: Buffer.byteLength(before),
+                patchedBytes: Buffer.byteLength(body),
+              };
+              await route.fulfill({ response, body, headers: { ...response.headers(), 'cache-control': 'no-store' } });
+            });
+
+            page.on('console', message => data.console.push({
+              type: message.type(), text: message.text(), location: message.location(), at: Date.now(),
+            }));
+            page.on('pageerror', error => data.pageErrors.push({
+              name: error.name, message: error.message, stack: error.stack, at: Date.now(),
+            }));
+            page.on('requestfailed', request => data.requestFailures.push({
+              url: request.url(), method: request.method(), resourceType: request.resourceType(),
+              failure: request.failure(), at: Date.now(),
+            }));
             page.on('response', response => {
               const request = response.request();
               const headers = response.headers();
-              const row = {
-                url: response.url(), status: response.status(), statusText: response.statusText(),
-                resourceType: request.resourceType(), method: request.method(),
-                contentType: headers['content-type'] || '',
-                cache: headers['x-vercel-cache'] || headers['cf-cache-status'] || '',
-              };
-              data.responses.push(row);
-              const isScript = request.resourceType() === 'script' || /javascript|ecmascript/.test(row.contentType);
-              if (isScript && row.url.startsWith(target)) {
-                captures.push((async () => {
-                  try {
-                    const body = await response.body();
-                    if (body.length < 25 * 1024 * 1024) {
-                      fs.writeFileSync(path.join(bundleDir, filename(row.url)), body);
-                    }
-                  } catch (error) {
-                    data.console.push({ type: 'diagnostic', text: `bundle capture failed ${row.url}: ${error}` });
-                  }
-                })());
-              }
+              data.responses.push({
+                url: response.url(), status: response.status(), method: request.method(),
+                resourceType: request.resourceType(), contentType: headers['content-type'] || '',
+                contentLength: headers['content-length'] || '', at: Date.now(),
+              });
             });
 
-            try { await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 45000 }); }
-            catch (error) { data.navigationError = { message: error.message, stack: error.stack }; }
-            try { await page.waitForLoadState('networkidle', { timeout: 15000 }); }
-            catch (error) { data.networkIdleError = { message: error.message }; }
+            try {
+              await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 45000 });
+            } catch (error) {
+              data.navigationError = { message: error.message, stack: error.stack };
+            }
+            try {
+              await page.waitForLoadState('networkidle', { timeout: 15000 });
+            } catch (error) {
+              data.networkIdleError = { message: error.message };
+            }
 
-            for (let second = 0; second <= 15; second++) {
-              data.timeline.push(await page.evaluate(s => {
-                const main = document.querySelector('main');
-                const stage = document.querySelector('#Stage');
+            for (let second = 0; second <= 45; second++) {
+              const snapshot = await page.evaluate(s => {
                 const load = document.querySelector('#load-progress');
                 const status = document.querySelector('#load-status');
+                const stage = document.querySelector('#Stage');
+                const canvases = [...document.querySelectorAll('canvas')];
+                let loadFinishedState = null;
+                try {
+                  if (window.AppState && typeof window.AppState.get === 'function') {
+                    loadFinishedState = window.AppState.get('Global/loadFinished');
+                  }
+                } catch (error) {
+                  loadFinishedState = `get-error:${error.message}`;
+                }
                 return {
                   second: s,
                   href: location.href,
                   readyState: document.readyState,
                   bodyClass: document.body?.className || '',
-                  bodyText: (document.body?.innerText || '').slice(0, 1600),
-                  mainHtmlLength: main?.innerHTML?.length || 0,
-                  stageExists: Boolean(stage),
-                  stageHtmlLength: stage?.innerHTML?.length || 0,
+                  bodyText: (document.body?.innerText || '').slice(0, 1200),
                   loadStatus: status?.textContent || null,
                   loadDisplay: load ? getComputedStyle(load).display : null,
                   loadOpacity: load ? getComputedStyle(load).opacity : null,
+                  stageExists: Boolean(stage),
+                  stageChildren: stage?.children?.length || 0,
+                  canvases: canvases.length,
+                  visibleCanvases: canvases.filter(c => {
+                    const style = getComputedStyle(c);
+                    return style.display !== 'none' && style.visibility !== 'hidden' && c.width > 0 && c.height > 0;
+                  }).length,
+                  threeDLoaded: window._3dLoaded,
+                  mainType: typeof window.Main,
+                  mainStaticInitType: typeof window.Main?.init,
+                  hydraMainExists: Boolean(window.Hydra?.Main),
+                  qualityManager: window.QualityManager ? {
+                    initialized: window.QualityManager.initialized,
+                    tier: window.QualityManager.currentTier,
+                  } : null,
+                  gpu: typeof window.GPU === 'undefined' ? null : {
+                    initialized: window.GPU.initialized,
+                    blocklist: window.GPU.BLOCKLIST,
+                  },
+                  deviceWebGL: window.Device?.graphics?.webgl ?? null,
+                  appStateExists: Boolean(window.AppState),
+                  loadFinishedState,
+                  suppressedErrors: window._loaderSuppressedErrors ? JSON.parse(JSON.stringify(window._loaderSuppressedErrors)) : null,
+                  perfLog: window._perfLog ? JSON.parse(JSON.stringify(window._perfLog)) : null,
                 };
-              }, second));
-              if (second < 15) await page.waitForTimeout(1000);
+              }).catch(error => ({ second, evaluationError: String(error) }));
+              data.timeline.push(snapshot);
+              console.log('TIMELINE', JSON.stringify(snapshot));
+              if (second < 45) await page.waitForTimeout(1000);
             }
 
-            const state = await page.evaluate(() => ({
-              url: location.href,
+            const finalState = await page.evaluate(() => ({
+              href: location.href,
               title: document.title,
-              readyState: document.readyState,
-              userAgent: navigator.userAgent,
-              serviceWorkerControlled: Boolean(navigator.serviceWorker?.controller),
-              localStorage: Object.fromEntries(Object.entries(localStorage)),
-              sessionStorage: Object.fromEntries(Object.entries(sessionStorage)),
               bodyClass: document.body?.className || '',
               bodyText: document.body?.innerText || '',
-              htmlLength: document.documentElement.outerHTML.length,
-              scripts: [...document.scripts].map(s => ({ src: s.src, type: s.type, async: s.async, defer: s.defer })),
-              stylesheets: [...document.styleSheets].map(s => s.href).filter(Boolean),
-              resources: performance.getEntriesByType('resource').map(r => ({
-                name: r.name, initiatorType: r.initiatorType, duration: r.duration,
-                transferSize: r.transferSize, decodedBodySize: r.decodedBodySize,
+              threeDLoaded: window._3dLoaded,
+              suppressedErrors: window._loaderSuppressedErrors || null,
+              perfLog: window._perfLog || null,
+              resources: performance.getEntriesByType('resource').map(resource => ({
+                name: resource.name,
+                initiatorType: resource.initiatorType,
+                duration: resource.duration,
+                transferSize: resource.transferSize,
+                decodedBodySize: resource.decodedBodySize,
               })),
-            }));
+            })).catch(error => ({ evaluationError: String(error) }));
 
             await page.screenshot({ path: path.join(dir, 'screenshot.png'), fullPage: true });
             fs.writeFileSync(path.join(dir, 'rendered.html'), await page.content());
-            await Promise.allSettled(captures);
             fs.writeFileSync(path.join(dir, 'events.json'), JSON.stringify(data, null, 2));
-            fs.writeFileSync(path.join(dir, 'state.json'), JSON.stringify(state, null, 2));
+            fs.writeFileSync(path.join(dir, 'state.json'), JSON.stringify(finalState, null, 2));
 
             const summary = {
               name,
+              patch: data.patch,
               pageErrors: data.pageErrors,
-              consoleProblems: data.console.filter(x => ['error','warning','warn'].includes(x.type)),
+              consoleProblems: data.console.filter(entry => ['error', 'warning', 'warn'].includes(entry.type)),
               requestFailures: data.requestFailures,
-              badResponses: data.responses.filter(x => x.status >= 400),
-              webSockets: data.webSockets,
+              badResponses: data.responses.filter(entry => entry.status >= 400),
               timeline: data.timeline,
-              state,
+              finalState,
             };
             fs.writeFileSync(path.join(dir, 'summary.json'), JSON.stringify(summary, null, 2));
-            console.log(`TRACE_SUMMARY_BEGIN ${name}`);
+            console.log('TRACE_SUMMARY_BEGIN', name);
             console.log(JSON.stringify(summary, null, 2));
-            console.log(`TRACE_SUMMARY_END ${name}`);
+            console.log('TRACE_SUMMARY_END', name);
             await context.close();
           }
 
@@ -203,40 +203,38 @@ jobs:
             const browser = await chromium.launch({
               headless: true,
               executablePath: '/usr/bin/google-chrome',
-              args: ['--no-sandbox', '--disable-dev-shm-usage'],
+              args: [
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                '--enable-unsafe-swiftshader',
+                '--use-gl=angle',
+                '--use-angle=swiftshader',
+                '--ignore-gpu-blocklist',
+              ],
             });
             try {
-              await trace(browser, 'desktop-normal');
-              await trace(browser, 'desktop-service-workers-blocked', { serviceWorkers: 'block' });
-              await trace(browser, 'mobile-normal', {
+              await trace(browser, 'desktop-supported');
+              await trace(browser, 'mobile-supported', {
                 viewport: { width: 390, height: 844 },
-                deviceScaleFactor: 2, isMobile: true, hasTouch: true,
+                deviceScaleFactor: 2,
+                isMobile: true,
+                hasTouch: true,
               });
             } finally {
               await browser.close();
             }
-          })().catch(error => { console.error(error); process.exitCode = 1; });
+          })().catch(error => {
+            console.error(error);
+            process.exitCode = 1;
+          });
           NODE
 
-          node trace.cjs 2>&1 | tee evidence/browser.log
-
-      - name: Print source assets and bundle signatures
-        if: always()
-        shell: bash
-        run: |
-          echo '=== HTML assets ==='
-          cat evidence/html-assets.json || true
-          echo '=== bundle signatures ==='
-          grep -RInE --binary-files=text \
-            'ReferenceError|TypeError|Cannot access|initializ|WebGL|three|spline|throw new Error|Promise\.all|load-status' \
-            evidence/bundles | head -n 600 || true
-          echo '=== evidence files ==='
-          find evidence -type f -printf '%p %s bytes\n' | sort
+          node trace-supported.cjs 2>&1 | tee evidence/browser.log
 
       - name: Upload evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rndrntwrk-live-load-evidence
+          name: rndrntwrk-supported-path-evidence
           path: evidence
           retention-days: 3
