@@ -1,4 +1,4 @@
-name: Temporary RNDRNTWRK supported-path trace
+name: Temporary RNDRNTWRK same-origin asset trace
 
 on:
   pull_request:
@@ -18,36 +18,54 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Trace production while bypassing only the unsupported-browser redirect
+      - name: Verify DNS and same-origin critical assets
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p evidence
+          {
+            echo '=== assets.rendernet.work ==='
+            dig +noall +answer assets.rendernet.work A || true
+            dig +noall +answer assets.rendernet.work CNAME || true
+            echo '=== assets.rndrntwrk.com ==='
+            dig +noall +answer assets.rndrntwrk.com A || true
+            dig +noall +answer assets.rndrntwrk.com CNAME || true
+            echo '=== same-origin shader ==='
+            curl --silent --show-error --fail --location --range 0-31 --dump-header - \
+              https://www.rndrntwrk.com/assets/shaders/compiled.vs --output /tmp/shader-prefix
+            wc -c /tmp/shader-prefix
+            echo '=== same-origin modules ==='
+            curl --silent --show-error --fail --location --dump-header - \
+              https://www.rndrntwrk.com/assets/js/modules.1746999829739.js
+          } | tee evidence/network-preflight.txt
+
+      - name: Trace production with only CDN base corrected
+        shell: bash
+        run: |
+          set -euo pipefail
           google-chrome --version | tee evidence/chrome-version.txt
           npm --silent --no-audit --no-fund install playwright-core@1.55.0
 
-          cat > trace-supported.cjs <<'NODE'
+          cat > trace-cdn.cjs <<'NODE'
           const fs = require('fs');
           const path = require('path');
           const { chromium } = require('playwright-core');
+          const out = path.resolve('evidence');
+          const data = { console: [], pageErrors: [], requestFailures: [], responses: [], timeline: [], patches: {} };
 
-          const target = 'https://www.rndrntwrk.com/';
-          const appPattern = /assets\/js\/app\.1746999829739\.js(?:\?.*)?$/;
-          const root = path.resolve('evidence');
-
-          async function trace(browser, name, contextOptions = {}) {
-            const dir = path.join(root, name);
-            fs.mkdirSync(dir, { recursive: true });
-            const data = {
-              console: [], pageErrors: [], requestFailures: [], responses: [], timeline: [],
-              patch: null, navigationError: null, networkIdleError: null,
-            };
-
+          (async () => {
+            const browser = await chromium.launch({
+              headless: true,
+              executablePath: '/usr/bin/google-chrome',
+              args: [
+                '--no-sandbox', '--disable-dev-shm-usage', '--enable-unsafe-swiftshader',
+                '--use-gl=angle', '--use-angle=swiftshader', '--ignore-gpu-blocklist'
+              ],
+            });
             const context = await browser.newContext({
               viewport: { width: 1440, height: 1000 },
               serviceWorkers: 'block',
-              recordHar: { path: path.join(dir, 'network.har'), content: 'embed', mode: 'full' },
-              ...contextOptions,
+              recordHar: { path: path.join(out, 'network.har'), content: 'embed', mode: 'full' },
             });
             const page = await context.newPage();
 
@@ -58,21 +76,29 @@ jobs:
               });
             });
 
+            // Headless SwiftShader is intentionally blocklisted by the app. Bypass only
+            // that environment gate so the real production boot path can be observed.
             await page.route('**/assets/js/app.1746999829739.js*', async route => {
               const response = await route.fetch();
-              let body = await response.text();
-              const before = body;
-              body = body.replace(
+              const original = await response.text();
+              const patched = original.replace(
                 /\(\(UnsupportedRedirect\.requiresWebGL\s*=\s*!0\),\s*UnsupportedRedirect\.unsupported\(\)\)/,
                 '((UnsupportedRedirect.requiresWebGL = !1), false)'
               );
-              data.patch = {
-                url: route.request().url(),
-                matched: body !== before,
-                originalBytes: Buffer.byteLength(before),
-                patchedBytes: Buffer.byteLength(body),
-              };
-              await route.fulfill({ response, body, headers: { ...response.headers(), 'cache-control': 'no-store' } });
+              data.patches.unsupportedGate = patched !== original;
+              await route.fulfill({ response, body: patched, headers: { ...response.headers(), 'cache-control': 'no-store' } });
+            });
+
+            // This is the single hypothesis variable: keep every asset on the live origin
+            // instead of the currently unresolvable legacy assets.rendernet.work host.
+            await page.route('**/assets/js/cdn-config.js*', async route => {
+              const response = await route.fetch();
+              data.patches.cdnConfig = true;
+              await route.fulfill({
+                response,
+                body: "!function(){window.HYDRA_ASSETS_CDN=window.location.origin+'/';}();\n",
+                headers: { ...response.headers(), 'cache-control': 'no-store' },
+              });
             });
 
             page.on('console', message => data.console.push({
@@ -87,154 +113,83 @@ jobs:
             }));
             page.on('response', response => {
               const request = response.request();
-              const headers = response.headers();
               data.responses.push({
                 url: response.url(), status: response.status(), method: request.method(),
-                resourceType: request.resourceType(), contentType: headers['content-type'] || '',
-                contentLength: headers['content-length'] || '', at: Date.now(),
+                resourceType: request.resourceType(), contentType: response.headers()['content-type'] || '',
+                at: Date.now(),
               });
             });
 
-            try {
-              await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 45000 });
-            } catch (error) {
-              data.navigationError = { message: error.message, stack: error.stack };
-            }
-            try {
-              await page.waitForLoadState('networkidle', { timeout: 15000 });
-            } catch (error) {
-              data.networkIdleError = { message: error.message };
-            }
-
-            for (let second = 0; second <= 45; second++) {
+            await page.goto('https://www.rndrntwrk.com/', { waitUntil: 'domcontentloaded', timeout: 45000 });
+            for (let second = 0; second <= 60; second++) {
               const snapshot = await page.evaluate(s => {
                 const load = document.querySelector('#load-progress');
                 const status = document.querySelector('#load-status');
-                const stage = document.querySelector('#Stage');
                 const canvases = [...document.querySelectorAll('canvas')];
-                let loadFinishedState = null;
-                try {
-                  if (window.AppState && typeof window.AppState.get === 'function') {
-                    loadFinishedState = window.AppState.get('Global/loadFinished');
-                  }
-                } catch (error) {
-                  loadFinishedState = `get-error:${error.message}`;
-                }
+                let loadFinished = null;
+                try { loadFinished = window.AppState?.get?.('Global/loadFinished'); } catch (error) {}
                 return {
                   second: s,
                   href: location.href,
-                  readyState: document.readyState,
                   bodyClass: document.body?.className || '',
-                  bodyText: (document.body?.innerText || '').slice(0, 1200),
+                  bodyText: (document.body?.innerText || '').slice(0, 800),
                   loadStatus: status?.textContent || null,
                   loadDisplay: load ? getComputedStyle(load).display : null,
                   loadOpacity: load ? getComputedStyle(load).opacity : null,
-                  stageExists: Boolean(stage),
-                  stageChildren: stage?.children?.length || 0,
-                  canvases: canvases.length,
-                  visibleCanvases: canvases.filter(c => {
-                    const style = getComputedStyle(c);
-                    return style.display !== 'none' && style.visibility !== 'hidden' && c.width > 0 && c.height > 0;
-                  }).length,
                   threeDLoaded: window._3dLoaded,
-                  mainType: typeof window.Main,
-                  mainStaticInitType: typeof window.Main?.init,
-                  hydraMainExists: Boolean(window.Hydra?.Main),
-                  qualityManager: window.QualityManager ? {
-                    initialized: window.QualityManager.initialized,
-                    tier: window.QualityManager.currentTier,
-                  } : null,
-                  gpu: typeof window.GPU === 'undefined' ? null : {
-                    initialized: window.GPU.initialized,
-                    blocklist: window.GPU.BLOCKLIST,
-                  },
-                  deviceWebGL: window.Device?.graphics?.webgl ?? null,
-                  appStateExists: Boolean(window.AppState),
-                  loadFinishedState,
-                  suppressedErrors: window._loaderSuppressedErrors ? JSON.parse(JSON.stringify(window._loaderSuppressedErrors)) : null,
-                  perfLog: window._perfLog ? JSON.parse(JSON.stringify(window._perfLog)) : null,
+                  canvases: canvases.length,
+                  visibleCanvases: canvases.filter(canvas => {
+                    const style = getComputedStyle(canvas);
+                    return style.display !== 'none' && style.visibility !== 'hidden' && canvas.width > 0 && canvas.height > 0;
+                  }).length,
+                  qualityInitialized: window.QualityManager?.initialized ?? null,
+                  qualityTier: window.QualityManager?.currentTier ?? null,
+                  gpuInitialized: window.GPU?.initialized ?? null,
+                  gpuBlocklist: window.GPU?.BLOCKLIST ?? null,
+                  loadFinished,
+                  suppressedErrorCount: window._loaderSuppressedErrors?.total || 0,
+                  cdn: window.HYDRA_ASSETS_CDN || null,
                 };
-              }).catch(error => ({ second, evaluationError: String(error) }));
+              }, second);
               data.timeline.push(snapshot);
               console.log('TIMELINE', JSON.stringify(snapshot));
-              if (second < 45) await page.waitForTimeout(1000);
+              if (second < 60) await page.waitForTimeout(1000);
             }
 
-            const finalState = await page.evaluate(() => ({
+            data.final = await page.evaluate(() => ({
               href: location.href,
-              title: document.title,
               bodyClass: document.body?.className || '',
               bodyText: document.body?.innerText || '',
               threeDLoaded: window._3dLoaded,
+              cdn: window.HYDRA_ASSETS_CDN || null,
               suppressedErrors: window._loaderSuppressedErrors || null,
               perfLog: window._perfLog || null,
-              resources: performance.getEntriesByType('resource').map(resource => ({
-                name: resource.name,
-                initiatorType: resource.initiatorType,
-                duration: resource.duration,
-                transferSize: resource.transferSize,
-                decodedBodySize: resource.decodedBodySize,
-              })),
-            })).catch(error => ({ evaluationError: String(error) }));
-
-            await page.screenshot({ path: path.join(dir, 'screenshot.png'), fullPage: true });
-            fs.writeFileSync(path.join(dir, 'rendered.html'), await page.content());
-            fs.writeFileSync(path.join(dir, 'events.json'), JSON.stringify(data, null, 2));
-            fs.writeFileSync(path.join(dir, 'state.json'), JSON.stringify(finalState, null, 2));
-
-            const summary = {
-              name,
-              patch: data.patch,
+            }));
+            await page.screenshot({ path: path.join(out, 'screenshot.png'), fullPage: true });
+            fs.writeFileSync(path.join(out, 'rendered.html'), await page.content());
+            fs.writeFileSync(path.join(out, 'summary.json'), JSON.stringify(data, null, 2));
+            console.log('TRACE_SUMMARY_BEGIN');
+            console.log(JSON.stringify({
+              patches: data.patches,
               pageErrors: data.pageErrors,
-              consoleProblems: data.console.filter(entry => ['error', 'warning', 'warn'].includes(entry.type)),
+              consoleProblems: data.console.filter(x => ['error', 'warning', 'warn'].includes(x.type)),
               requestFailures: data.requestFailures,
-              badResponses: data.responses.filter(entry => entry.status >= 400),
+              badResponses: data.responses.filter(x => x.status >= 400),
               timeline: data.timeline,
-              finalState,
-            };
-            fs.writeFileSync(path.join(dir, 'summary.json'), JSON.stringify(summary, null, 2));
-            console.log('TRACE_SUMMARY_BEGIN', name);
-            console.log(JSON.stringify(summary, null, 2));
-            console.log('TRACE_SUMMARY_END', name);
+              final: data.final,
+            }, null, 2));
+            console.log('TRACE_SUMMARY_END');
             await context.close();
-          }
-
-          (async () => {
-            const browser = await chromium.launch({
-              headless: true,
-              executablePath: '/usr/bin/google-chrome',
-              args: [
-                '--no-sandbox',
-                '--disable-dev-shm-usage',
-                '--enable-unsafe-swiftshader',
-                '--use-gl=angle',
-                '--use-angle=swiftshader',
-                '--ignore-gpu-blocklist',
-              ],
-            });
-            try {
-              await trace(browser, 'desktop-supported');
-              await trace(browser, 'mobile-supported', {
-                viewport: { width: 390, height: 844 },
-                deviceScaleFactor: 2,
-                isMobile: true,
-                hasTouch: true,
-              });
-            } finally {
-              await browser.close();
-            }
-          })().catch(error => {
-            console.error(error);
-            process.exitCode = 1;
-          });
+            await browser.close();
+          })().catch(error => { console.error(error); process.exitCode = 1; });
           NODE
 
-          node trace-supported.cjs 2>&1 | tee evidence/browser.log
+          node trace-cdn.cjs 2>&1 | tee evidence/browser.log
 
       - name: Upload evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rndrntwrk-supported-path-evidence
+          name: rndrntwrk-same-origin-evidence
           path: evidence
           retention-days: 3
