@@ -27,14 +27,43 @@ jobs:
             --dump-header evidence/headers.txt \
             --output evidence/index.html \
             https://rndrntwrk.com/
+
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse
+          import json, subprocess
+
+          base = 'https://www.rndrntwrk.com/'
+          html = Path('evidence/index.html').read_text(errors='replace')
+          class Parser(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.assets=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  for key in ('src','href'):
+                      if key in d:
+                          self.assets.append({'tag':tag,'attr':key,'url':urljoin(base,d[key])})
+          p=Parser(); p.feed(html)
+          Path('evidence/html-assets.json').write_text(json.dumps(p.assets,indent=2))
+          for asset in p.assets:
+              url=asset['url']
+              if asset['tag']=='script' and urlparse(url).hostname=='www.rndrntwrk.com':
+                  name=urlparse(url).path.strip('/').replace('/','_') or 'index.js'
+                  subprocess.run(['curl','--fail-with-body','--silent','--show-error','--location','--compressed',
+                                  '--dump-header',f'evidence/bundles/{name}.headers',
+                                  '--output',f'evidence/bundles/{name}',url],check=False)
+          PY
+
           google-chrome --version | tee evidence/chrome-version.txt
           npm --silent --no-audit --no-fund install playwright-core@1.55.0
 
-          cat > /tmp/trace.cjs <<'NODE'
+          cat > trace.cjs <<'NODE'
           const fs = require('fs');
           const path = require('path');
           const crypto = require('crypto');
           const { chromium } = require('playwright-core');
+
           const target = 'https://www.rndrntwrk.com/';
           const root = path.resolve('evidence');
           const bundleDir = path.join(root, 'bundles');
@@ -50,7 +79,10 @@ jobs:
           async function trace(browser, name, options = {}) {
             const dir = path.join(root, name);
             fs.mkdirSync(dir, { recursive: true });
-            const data = { console: [], pageErrors: [], requestFailures: [], responses: [], timeline: [], navigationError: null, networkIdleError: null };
+            const data = {
+              console: [], pageErrors: [], requestFailures: [], responses: [],
+              webSockets: [], timeline: [], navigationError: null, networkIdleError: null,
+            };
             const captures = [];
             const context = await browser.newContext({
               viewport: { width: 1440, height: 1000 },
@@ -58,9 +90,20 @@ jobs:
               ...options,
             });
             const page = await context.newPage();
+
             page.on('console', m => data.console.push({ type: m.type(), text: m.text(), location: m.location() }));
             page.on('pageerror', e => data.pageErrors.push({ name: e.name, message: e.message, stack: e.stack }));
-            page.on('requestfailed', r => data.requestFailures.push({ url: r.url(), method: r.method(), resourceType: r.resourceType(), failure: r.failure() }));
+            page.on('requestfailed', r => data.requestFailures.push({
+              url: r.url(), method: r.method(), resourceType: r.resourceType(), failure: r.failure(),
+            }));
+            page.on('websocket', ws => {
+              const item = { url: ws.url(), sent: 0, received: 0, errors: [], closed: false };
+              data.webSockets.push(item);
+              ws.on('framesent', () => item.sent++);
+              ws.on('framereceived', () => item.received++);
+              ws.on('socketerror', error => item.errors.push(String(error)));
+              ws.on('close', () => { item.closed = true; });
+            });
             page.on('response', response => {
               const request = response.request();
               const headers = response.headers();
@@ -72,36 +115,43 @@ jobs:
               };
               data.responses.push(row);
               const isScript = request.resourceType() === 'script' || /javascript|ecmascript/.test(row.contentType);
-              if (isScript && row.url.startsWith('https://www.rndrntwrk.com/')) {
+              if (isScript && row.url.startsWith(target)) {
                 captures.push((async () => {
                   try {
                     const body = await response.body();
-                    if (body.length < 25 * 1024 * 1024) fs.writeFileSync(path.join(bundleDir, filename(row.url)), body);
-                  } catch (e) {
-                    data.console.push({ type: 'diagnostic', text: `bundle capture failed ${row.url}: ${e}` });
+                    if (body.length < 25 * 1024 * 1024) {
+                      fs.writeFileSync(path.join(bundleDir, filename(row.url)), body);
+                    }
+                  } catch (error) {
+                    data.console.push({ type: 'diagnostic', text: `bundle capture failed ${row.url}: ${error}` });
                   }
                 })());
               }
             });
 
             try { await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 45000 }); }
-            catch (e) { data.navigationError = { message: e.message, stack: e.stack }; }
+            catch (error) { data.navigationError = { message: error.message, stack: error.stack }; }
             try { await page.waitForLoadState('networkidle', { timeout: 15000 }); }
-            catch (e) { data.networkIdleError = { message: e.message }; }
+            catch (error) { data.networkIdleError = { message: error.message }; }
 
             for (let second = 0; second <= 15; second++) {
               data.timeline.push(await page.evaluate(s => {
-                const app = document.querySelector('#root, #app, main');
+                const main = document.querySelector('main');
+                const stage = document.querySelector('#Stage');
+                const load = document.querySelector('#load-progress');
+                const status = document.querySelector('#load-status');
                 return {
                   second: s,
                   href: location.href,
                   readyState: document.readyState,
+                  bodyClass: document.body?.className || '',
                   bodyText: (document.body?.innerText || '').slice(0, 1600),
-                  appText: (app?.innerText || '').slice(0, 1200),
-                  appHtmlLength: app?.innerHTML?.length || 0,
-                  initializingVisible: [...document.querySelectorAll('body *')].some(el =>
-                    el.children.length === 0 && /initializing/i.test(el.textContent || '') &&
-                    getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden'),
+                  mainHtmlLength: main?.innerHTML?.length || 0,
+                  stageExists: Boolean(stage),
+                  stageHtmlLength: stage?.innerHTML?.length || 0,
+                  loadStatus: status?.textContent || null,
+                  loadDisplay: load ? getComputedStyle(load).display : null,
+                  loadOpacity: load ? getComputedStyle(load).opacity : null,
                 };
               }, second));
               if (second < 15) await page.waitForTimeout(1000);
@@ -113,6 +163,9 @@ jobs:
               readyState: document.readyState,
               userAgent: navigator.userAgent,
               serviceWorkerControlled: Boolean(navigator.serviceWorker?.controller),
+              localStorage: Object.fromEntries(Object.entries(localStorage)),
+              sessionStorage: Object.fromEntries(Object.entries(sessionStorage)),
+              bodyClass: document.body?.className || '',
               bodyText: document.body?.innerText || '',
               htmlLength: document.documentElement.outerHTML.length,
               scripts: [...document.scripts].map(s => ({ src: s.src, type: s.type, async: s.async, defer: s.defer })),
@@ -122,6 +175,7 @@ jobs:
                 transferSize: r.transferSize, decodedBodySize: r.decodedBodySize,
               })),
             }));
+
             await page.screenshot({ path: path.join(dir, 'screenshot.png'), fullPage: true });
             fs.writeFileSync(path.join(dir, 'rendered.html'), await page.content());
             await Promise.allSettled(captures);
@@ -134,6 +188,7 @@ jobs:
               consoleProblems: data.console.filter(x => ['error','warning','warn'].includes(x.type)),
               requestFailures: data.requestFailures,
               badResponses: data.responses.filter(x => x.status >= 400),
+              webSockets: data.webSockets,
               timeline: data.timeline,
               state,
             };
@@ -154,33 +209,27 @@ jobs:
               await trace(browser, 'desktop-normal');
               await trace(browser, 'desktop-service-workers-blocked', { serviceWorkers: 'block' });
               await trace(browser, 'mobile-normal', {
-                viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true,
+                viewport: { width: 390, height: 844 },
+                deviceScaleFactor: 2, isMobile: true, hasTouch: true,
               });
             } finally {
               await browser.close();
             }
-          })().catch(e => { console.error(e); process.exitCode = 1; });
+          })().catch(error => { console.error(error); process.exitCode = 1; });
           NODE
 
-          node /tmp/trace.cjs 2>&1 | tee evidence/browser.log
+          node trace.cjs 2>&1 | tee evidence/browser.log
 
       - name: Print source assets and bundle signatures
         if: always()
         shell: bash
         run: |
-          python3 - <<'PY'
-          from html.parser import HTMLParser
-          from pathlib import Path
-          from urllib.parse import urljoin
-          class P(HTMLParser):
-              def handle_starttag(self, tag, attrs):
-                  d=dict(attrs)
-                  for key in ('src','href'):
-                      if key in d: print(tag, key, urljoin('https://www.rndrntwrk.com/', d[key]))
-          P().feed(Path('evidence/index.html').read_text(errors='replace'))
-          PY
+          echo '=== HTML assets ==='
+          cat evidence/html-assets.json || true
           echo '=== bundle signatures ==='
-          grep -RInE --binary-files=text 'ReferenceError|TypeError|Cannot access|initializ|WebGL|three|spline|throw new Error' evidence/bundles | head -n 400 || true
+          grep -RInE --binary-files=text \
+            'ReferenceError|TypeError|Cannot access|initializ|WebGL|three|spline|throw new Error|Promise\.all|load-status' \
+            evidence/bundles | head -n 600 || true
           echo '=== evidence files ==='
           find evidence -type f -printf '%p %s bytes\n' | sort
 
