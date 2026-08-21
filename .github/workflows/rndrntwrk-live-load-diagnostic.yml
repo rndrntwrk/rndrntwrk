@@ -1,0 +1,264 @@
+name: RNDRNTWRK live load diagnostic
+
+on:
+  push:
+    branches:
+      - debug/rndrntwrk-load-2026-08-21
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Capture redirect chain, headers, and raw HTML
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/bundles
+          curl --fail-with-body --silent --show-error --location --compressed \
+            --dump-header artifacts/headers.txt \
+            --output artifacts/index.html \
+            https://rndrntwrk.com/
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from urllib.parse import urljoin
+          from pathlib import Path
+          import json
+
+          html = Path('artifacts/index.html').read_text(errors='replace')
+          class P(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.refs=[]
+              def handle_starttag(self, tag, attrs):
+                  attrs=dict(attrs)
+                  for key in ('src','href'):
+                      if key in attrs:
+                          self.refs.append({'tag':tag,'attr':key,'raw':attrs[key],
+                                            'absolute':urljoin('https://www.rndrntwrk.com/', attrs[key])})
+          p=P(); p.feed(html)
+          Path('artifacts/html-assets.json').write_text(json.dumps(p.refs, indent=2))
+          print('=== HTML ASSETS ===')
+          for ref in p.refs:
+              print(ref['tag'], ref['attr'], ref['absolute'])
+          print('=== RAW HTML PREFIX ===')
+          print(html[:12000])
+          PY
+
+      - name: Install browser client
+        shell: bash
+        run: |
+          set -euo pipefail
+          google-chrome --version
+          npm --silent --no-audit --no-fund install playwright-core@1.55.0
+
+      - name: Run clean-browser diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/rndrntwrk-diagnose.cjs <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const crypto = require('crypto');
+          const { chromium } = require('playwright-core');
+
+          const target = 'https://www.rndrntwrk.com/';
+          const outRoot = path.resolve('artifacts');
+          fs.mkdirSync(outRoot, { recursive: true });
+          fs.mkdirSync(path.join(outRoot, 'bundles'), { recursive: true });
+
+          const safeName = (url) => {
+            const u = new URL(url);
+            const ext = path.extname(u.pathname) || '.bin';
+            const stem = (u.hostname + u.pathname).replace(/[^a-zA-Z0-9._-]+/g, '_').slice(0, 180);
+            return `${stem}-${crypto.createHash('sha256').update(url).digest('hex').slice(0, 12)}${ext}`;
+          };
+
+          async function runCase(browser, label, contextOptions = {}) {
+            const caseDir = path.join(outRoot, label);
+            fs.mkdirSync(caseDir, { recursive: true });
+            const events = {
+              console: [],
+              pageErrors: [],
+              requestFailures: [],
+              responses: [],
+              webSockets: [],
+              dialogs: [],
+              timeline: [],
+              navigationError: null,
+              networkIdleError: null,
+            };
+            const bodyTasks = [];
+            const context = await browser.newContext({
+              viewport: { width: 1440, height: 1000 },
+              ignoreHTTPSErrors: false,
+              recordHar: { path: path.join(caseDir, 'network.har'), content: 'embed', mode: 'full' },
+              ...contextOptions,
+            });
+            const page = await context.newPage();
+
+            page.on('console', (msg) => events.console.push({
+              type: msg.type(), text: msg.text(), location: msg.location(), timestamp: new Date().toISOString()
+            }));
+            page.on('pageerror', (error) => events.pageErrors.push({
+              name: error.name, message: error.message, stack: error.stack, timestamp: new Date().toISOString()
+            }));
+            page.on('requestfailed', (request) => events.requestFailures.push({
+              url: request.url(), method: request.method(), resourceType: request.resourceType(),
+              failure: request.failure(), timestamp: new Date().toISOString()
+            }));
+            page.on('dialog', async (dialog) => {
+              events.dialogs.push({ type: dialog.type(), message: dialog.message() });
+              await dialog.dismiss().catch(() => {});
+            });
+            page.on('websocket', (ws) => {
+              const entry = { url: ws.url(), framesSent: 0, framesReceived: 0, errors: [], closed: false };
+              events.webSockets.push(entry);
+              ws.on('framesent', () => entry.framesSent++);
+              ws.on('framereceived', () => entry.framesReceived++);
+              ws.on('socketerror', (e) => entry.errors.push(String(e)));
+              ws.on('close', () => { entry.closed = true; });
+            });
+            page.on('response', (response) => {
+              const req = response.request();
+              const headers = response.headers();
+              events.responses.push({
+                url: response.url(), status: response.status(), statusText: response.statusText(),
+                resourceType: req.resourceType(), method: req.method(),
+                contentType: headers['content-type'] || '', cache: headers['x-vercel-cache'] || headers['cf-cache-status'] || '',
+              });
+              const url = response.url();
+              const isScript = req.resourceType() === 'script' || /javascript|ecmascript/.test(headers['content-type'] || '');
+              if (isScript && url.startsWith('https://www.rndrntwrk.com/')) {
+                bodyTasks.push((async () => {
+                  try {
+                    const body = await response.body();
+                    if (body.length <= 20 * 1024 * 1024) {
+                      fs.writeFileSync(path.join(outRoot, 'bundles', safeName(url)), body);
+                    }
+                  } catch (error) {
+                    events.console.push({ type: 'diagnostic', text: `bundle capture failed ${url}: ${error}` });
+                  }
+                })());
+              }
+            });
+
+            try {
+              await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 45000 });
+            } catch (error) {
+              events.navigationError = { message: error.message, stack: error.stack };
+            }
+            try {
+              await page.waitForLoadState('networkidle', { timeout: 15000 });
+            } catch (error) {
+              events.networkIdleError = { message: error.message };
+            }
+
+            for (let second = 0; second <= 15; second++) {
+              const snapshot = await page.evaluate(() => {
+                const root = document.querySelector('#root, #app, main');
+                return {
+                  href: location.href,
+                  title: document.title,
+                  readyState: document.readyState,
+                  bodyText: (document.body?.innerText || '').slice(0, 1600),
+                  rootTag: root?.tagName || null,
+                  rootText: (root?.innerText || '').slice(0, 1200),
+                  rootHtmlLength: root?.innerHTML?.length || 0,
+                  initializingVisible: Array.from(document.querySelectorAll('body *')).some(
+                    (el) => el.children.length === 0 && /initializing/i.test(el.textContent || '') &&
+                      getComputedStyle(el).visibility !== 'hidden' && getComputedStyle(el).display !== 'none'
+                  ),
+                };
+              }).catch((error) => ({ evaluationError: String(error) }));
+              events.timeline.push({ second, ...snapshot });
+              if (second < 15) await page.waitForTimeout(1000);
+            }
+
+            const finalState = await page.evaluate(() => ({
+              url: location.href,
+              title: document.title,
+              readyState: document.readyState,
+              userAgent: navigator.userAgent,
+              serviceWorkerControlled: Boolean(navigator.serviceWorker?.controller),
+              localStorage: Object.fromEntries(Object.entries(localStorage)),
+              sessionStorage: Object.fromEntries(Object.entries(sessionStorage)),
+              bodyText: document.body?.innerText || '',
+              htmlLength: document.documentElement.outerHTML.length,
+              scripts: Array.from(document.scripts).map((s) => ({ src: s.src, type: s.type, async: s.async, defer: s.defer })),
+              stylesheets: Array.from(document.styleSheets).map((s) => s.href).filter(Boolean),
+              resources: performance.getEntriesByType('resource').map((r) => ({
+                name: r.name, initiatorType: r.initiatorType, duration: r.duration,
+                transferSize: r.transferSize, decodedBodySize: r.decodedBodySize,
+              })),
+            })).catch((error) => ({ evaluationError: String(error) }));
+
+            await page.screenshot({ path: path.join(caseDir, 'screenshot.png'), fullPage: true });
+            fs.writeFileSync(path.join(caseDir, 'rendered.html'), await page.content());
+            await Promise.allSettled(bodyTasks);
+            fs.writeFileSync(path.join(caseDir, 'events.json'), JSON.stringify(events, null, 2));
+            fs.writeFileSync(path.join(caseDir, 'state.json'), JSON.stringify(finalState, null, 2));
+
+            console.log(`=== CASE ${label} ===`);
+            console.log(JSON.stringify({
+              pageErrors: events.pageErrors,
+              consoleErrors: events.console.filter((e) => ['error', 'warning', 'warn'].includes(e.type)),
+              requestFailures: events.requestFailures,
+              badResponses: events.responses.filter((r) => r.status >= 400),
+              timeline: events.timeline,
+              finalState,
+            }, null, 2));
+            await context.close();
+          }
+
+          (async () => {
+            const executablePath = process.env.CHROME_BIN || '/usr/bin/google-chrome';
+            const browser = await chromium.launch({
+              headless: true,
+              executablePath,
+              args: ['--no-sandbox', '--disable-dev-shm-usage'],
+            });
+            try {
+              await runCase(browser, 'desktop-normal');
+              await runCase(browser, 'desktop-service-workers-blocked', { serviceWorkers: 'block' });
+              await runCase(browser, 'mobile-normal', {
+                viewport: { width: 390, height: 844 },
+                deviceScaleFactor: 2,
+                isMobile: true,
+                hasTouch: true,
+              });
+            } finally {
+              await browser.close();
+            }
+          })().catch((error) => {
+            console.error(error);
+            process.exitCode = 1;
+          });
+          NODE
+          node /tmp/rndrntwrk-diagnose.cjs 2>&1 | tee artifacts/browser-diagnostic.log
+
+      - name: Summarize captured bundles
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== ARTIFACT TREE ==='
+          find artifacts -maxdepth 3 -type f -printf '%p %s bytes\n' | sort
+          echo '=== BUNDLE ERROR SIGNATURES ==='
+          grep -RInE --binary-files=text \
+            'ReferenceError|TypeError|Cannot access|Failed to fetch|initializ|throw new Error|WebGL|three|spline' \
+            artifacts/bundles | head -n 300 || true
+
+      - name: Upload diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rndrntwrk-live-load-diagnostic
+          path: artifacts
+          if-no-files-found: error
+          retention-days: 3
