@@ -1,4 +1,4 @@
-name: Temporary RNDRNTWRK same-origin asset trace
+name: Temporary RNDRNTWRK asset-origin probe
 
 on:
   pull_request:
@@ -11,185 +11,54 @@ permissions:
   contents: read
 
 jobs:
-  trace:
+  probe:
     if: github.event_name == 'workflow_dispatch' || github.head_ref == 'debug/rndrntwrk-load-2026-08-21'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify DNS and same-origin critical assets
+      - name: Probe exact critical files on every plausible origin
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p evidence
-          {
-            echo '=== assets.rendernet.work ==='
-            dig +noall +answer assets.rendernet.work A || true
-            dig +noall +answer assets.rendernet.work CNAME || true
-            echo '=== assets.rndrntwrk.com ==='
-            dig +noall +answer assets.rndrntwrk.com A || true
-            dig +noall +answer assets.rndrntwrk.com CNAME || true
-            echo '=== same-origin shader ==='
-            curl --silent --show-error --fail --location --range 0-31 --dump-header - \
-              https://www.rndrntwrk.com/assets/shaders/compiled.vs --output /tmp/shader-prefix
-            wc -c /tmp/shader-prefix
-            echo '=== same-origin modules ==='
-            curl --silent --show-error --fail --location --dump-header - \
-              https://www.rndrntwrk.com/assets/js/modules.1746999829739.js
-          } | tee evidence/network-preflight.txt
+          mkdir -p evidence/bodies evidence/headers
+          urls=(
+            'https://assets.rendernet.work/assets/shaders/compiled.vs'
+            'https://assets.rendernet.work/assets/js/modules.1746999829739.js'
+            'https://assets.rndrntwrk.com/assets/shaders/compiled.vs'
+            'https://assets.rndrntwrk.com/assets/js/modules.1746999829739.js'
+            'https://www.rndrntwrk.com/assets/shaders/compiled.vs'
+            'https://www.rndrntwrk.com/assets/js/modules.1746999829739.js'
+          )
 
-      - name: Trace production with only CDN base corrected
-        shell: bash
-        run: |
-          set -euo pipefail
-          google-chrome --version | tee evidence/chrome-version.txt
-          npm --silent --no-audit --no-fund install playwright-core@1.55.0
+          : > evidence/results.tsv
+          printf 'url\thttp_code\tremote_ip\tcontent_type\tsize\tsha256\n' >> evidence/results.tsv
+          for url in "${urls[@]}"; do
+            key="$(printf '%s' "$url" | sha256sum | cut -c1-16)"
+            set +e
+            meta="$(curl --location --silent --show-error \
+              --connect-timeout 8 --max-time 25 \
+              --dump-header "evidence/headers/${key}.txt" \
+              --output "evidence/bodies/${key}.bin" \
+              --write-out $'%{http_code}\t%{remote_ip}\t%{content_type}' \
+              "$url" 2>"evidence/${key}.stderr")"
+            rc=$?
+            set -e
+            size="$(wc -c < "evidence/bodies/${key}.bin" 2>/dev/null || printf 0)"
+            sha="$(sha256sum "evidence/bodies/${key}.bin" 2>/dev/null | awk '{print $1}')"
+            printf '%s\t%s\t%s\t%s\t%s\n' "$url" "$meta" "$size" "$sha" >> evidence/results.tsv
+            printf 'curl_exit=%s url=%s\n' "$rc" "$url" >> "evidence/${key}.stderr"
+          done
 
-          cat > trace-cdn.cjs <<'NODE'
-          const fs = require('fs');
-          const path = require('path');
-          const { chromium } = require('playwright-core');
-          const out = path.resolve('evidence');
-          const data = { console: [], pageErrors: [], requestFailures: [], responses: [], timeline: [], patches: {} };
-
-          (async () => {
-            const browser = await chromium.launch({
-              headless: true,
-              executablePath: '/usr/bin/google-chrome',
-              args: [
-                '--no-sandbox', '--disable-dev-shm-usage', '--enable-unsafe-swiftshader',
-                '--use-gl=angle', '--use-angle=swiftshader', '--ignore-gpu-blocklist'
-              ],
-            });
-            const context = await browser.newContext({
-              viewport: { width: 1440, height: 1000 },
-              serviceWorkers: 'block',
-              recordHar: { path: path.join(out, 'network.har'), content: 'embed', mode: 'full' },
-            });
-            const page = await context.newPage();
-
-            await page.addInitScript(() => {
-              window._PERF_DEBUG = true;
-              window.addEventListener('loader:suppressed-error', event => {
-                console.error('[SUPPRESSED-BY-LOADER]', JSON.stringify(event.detail));
-              });
-            });
-
-            // Headless SwiftShader is intentionally blocklisted by the app. Bypass only
-            // that environment gate so the real production boot path can be observed.
-            await page.route('**/assets/js/app.1746999829739.js*', async route => {
-              const response = await route.fetch();
-              const original = await response.text();
-              const patched = original.replace(
-                /\(\(UnsupportedRedirect\.requiresWebGL\s*=\s*!0\),\s*UnsupportedRedirect\.unsupported\(\)\)/,
-                '((UnsupportedRedirect.requiresWebGL = !1), false)'
-              );
-              data.patches.unsupportedGate = patched !== original;
-              await route.fulfill({ response, body: patched, headers: { ...response.headers(), 'cache-control': 'no-store' } });
-            });
-
-            // This is the single hypothesis variable: keep every asset on the live origin
-            // instead of the currently unresolvable legacy assets.rendernet.work host.
-            await page.route('**/assets/js/cdn-config.js*', async route => {
-              const response = await route.fetch();
-              data.patches.cdnConfig = true;
-              await route.fulfill({
-                response,
-                body: "!function(){window.HYDRA_ASSETS_CDN=window.location.origin+'/';}();\n",
-                headers: { ...response.headers(), 'cache-control': 'no-store' },
-              });
-            });
-
-            page.on('console', message => data.console.push({
-              type: message.type(), text: message.text(), location: message.location(), at: Date.now(),
-            }));
-            page.on('pageerror', error => data.pageErrors.push({
-              name: error.name, message: error.message, stack: error.stack, at: Date.now(),
-            }));
-            page.on('requestfailed', request => data.requestFailures.push({
-              url: request.url(), method: request.method(), resourceType: request.resourceType(),
-              failure: request.failure(), at: Date.now(),
-            }));
-            page.on('response', response => {
-              const request = response.request();
-              data.responses.push({
-                url: response.url(), status: response.status(), method: request.method(),
-                resourceType: request.resourceType(), contentType: response.headers()['content-type'] || '',
-                at: Date.now(),
-              });
-            });
-
-            await page.goto('https://www.rndrntwrk.com/', { waitUntil: 'domcontentloaded', timeout: 45000 });
-            for (let second = 0; second <= 60; second++) {
-              const snapshot = await page.evaluate(s => {
-                const load = document.querySelector('#load-progress');
-                const status = document.querySelector('#load-status');
-                const canvases = [...document.querySelectorAll('canvas')];
-                let loadFinished = null;
-                try { loadFinished = window.AppState?.get?.('Global/loadFinished'); } catch (error) {}
-                return {
-                  second: s,
-                  href: location.href,
-                  bodyClass: document.body?.className || '',
-                  bodyText: (document.body?.innerText || '').slice(0, 800),
-                  loadStatus: status?.textContent || null,
-                  loadDisplay: load ? getComputedStyle(load).display : null,
-                  loadOpacity: load ? getComputedStyle(load).opacity : null,
-                  threeDLoaded: window._3dLoaded,
-                  canvases: canvases.length,
-                  visibleCanvases: canvases.filter(canvas => {
-                    const style = getComputedStyle(canvas);
-                    return style.display !== 'none' && style.visibility !== 'hidden' && canvas.width > 0 && canvas.height > 0;
-                  }).length,
-                  qualityInitialized: window.QualityManager?.initialized ?? null,
-                  qualityTier: window.QualityManager?.currentTier ?? null,
-                  gpuInitialized: window.GPU?.initialized ?? null,
-                  gpuBlocklist: window.GPU?.BLOCKLIST ?? null,
-                  loadFinished,
-                  suppressedErrorCount: window._loaderSuppressedErrors?.total || 0,
-                  cdn: window.HYDRA_ASSETS_CDN || null,
-                };
-              }, second);
-              data.timeline.push(snapshot);
-              console.log('TIMELINE', JSON.stringify(snapshot));
-              if (second < 60) await page.waitForTimeout(1000);
-            }
-
-            data.final = await page.evaluate(() => ({
-              href: location.href,
-              bodyClass: document.body?.className || '',
-              bodyText: document.body?.innerText || '',
-              threeDLoaded: window._3dLoaded,
-              cdn: window.HYDRA_ASSETS_CDN || null,
-              suppressedErrors: window._loaderSuppressedErrors || null,
-              perfLog: window._perfLog || null,
-            }));
-            await page.screenshot({ path: path.join(out, 'screenshot.png'), fullPage: true });
-            fs.writeFileSync(path.join(out, 'rendered.html'), await page.content());
-            fs.writeFileSync(path.join(out, 'summary.json'), JSON.stringify(data, null, 2));
-            console.log('TRACE_SUMMARY_BEGIN');
-            console.log(JSON.stringify({
-              patches: data.patches,
-              pageErrors: data.pageErrors,
-              consoleProblems: data.console.filter(x => ['error', 'warning', 'warn'].includes(x.type)),
-              requestFailures: data.requestFailures,
-              badResponses: data.responses.filter(x => x.status >= 400),
-              timeline: data.timeline,
-              final: data.final,
-            }, null, 2));
-            console.log('TRACE_SUMMARY_END');
-            await context.close();
-            await browser.close();
-          })().catch(error => { console.error(error); process.exitCode = 1; });
-          NODE
-
-          node trace-cdn.cjs 2>&1 | tee evidence/browser.log
+          cat evidence/results.tsv
+          echo '=== STDERR ==='
+          cat evidence/*.stderr
 
       - name: Upload evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rndrntwrk-same-origin-evidence
+          name: rndrntwrk-asset-origin-probe
           path: evidence
           retention-days: 3
