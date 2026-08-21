@@ -10,4 +10,4 @@ jobs:
   marker:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The PR-scoped base workflow performs the live-site trace."
+      - run: echo "Trigger supported-path production trace."
