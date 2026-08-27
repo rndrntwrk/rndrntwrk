@@ -8,7 +8,7 @@
   "dex_pair": {
     "url": "https://api.dexscreener.com/latest/dex/pairs/solana/58osDYARtvC5xy6GakQaBm16kDA4XwFyH4UfvtrjMvxj",
     "status": 200,
-    "bytes": 2634
+    "bytes": 2638
   },
   "gmgn_trades": {
     "url": "https://gmgn.ai/vas/api/v1/token_trades/sol/5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump?revert=true&limit=1000",
@@ -18,7 +18,7 @@
   "gmgn_holders": {
     "url": "https://gmgn.ai/vas/api/v1/token_holders/sol/5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump?orderby=amount_percentage&direction=desc&limit=100",
     "status": 200,
-    "bytes": 223318
+    "bytes": 223294
   },
   "sol_history": {
     "url": "https://api.coingecko.com/api/v3/coins/solana/market_chart/range?vs_currency=usd&from=1787179071&to=1787351871",
