@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-27T01:46:36.673242+00:00",
+  "mint": "5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump",
+  "pool": "58osDYARtvC5xy6GakQaBm16kDA4XwFyH4UfvtrjMvxj",
+  "creator": "5SwBKASggA52FRNRZS6esVNRDNCgG18dAFcXbuAPhH7u",
+  "curve": "4rK2FRt2jjoAG4kBeUVotSZJxTAbYPEozdw3yJpKZhXi",
+  "created_utc": "2026-07-10T02:57:22+00:00",
+  "migration_utc": "2026-08-20T22:37:51+00:00",
+  "signature_count": 0,
+  "parsed_trade_count": 0,
+  "unique_curve_wallets": 0,
+  "late_accumulator_count": 0,
+  "shared_funders": [],
+  "top_late_accumulators": [],
+  "top_curve_wallets": [],
+  "largest_curve_acceleration_minutes": [],
+  "rpc_stats": {
+    "https://solana-rpc.publicnode.com": {
+      "ok": 1,
+      "fail": 0
+    },
+    "https://api.mainnet-beta.solana.com": {
+      "ok": 0,
+      "fail": 0
+    },
+    "https://solana.api.onfinality.io/public": {
+      "ok": 0,
+      "fail": 0
+    },
+    "https://rpc.ankr.com/solana": {
+      "ok": 0,
+      "fail": 0
+    },
+    "https://solana.drpc.org": {
+      "ok": 0,
+      "fail": 0
+    }
+  },
+  "methodology": [
+    "Trades are derived from confirmed pre/post token balances in transactions touching the Pump.fun bonding-curve PDA.",
+    "SOL size uses the curve PDA's lamport delta, reducing wallet-rent and fee distortion.",
+    "Launch-window and old-holder inventory are explicitly separated from late accumulation.",
+    "Shared funders are clustering leads, not proof of common ownership."
+  ]
+}

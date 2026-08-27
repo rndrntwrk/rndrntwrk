@@ -1,0 +1,50 @@
+{
+  "pump_coin": {
+    "url": "https://frontend-api-v3.pump.fun/coins/5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump",
+    "status": 403,
+    "bytes": 117,
+    "preview": "{\n  \"error\": \"access_denied\",\n  \"rule_id\": \"0.09\",\n  \"host\": \"pump.fun\",\n  \"message\": \"request cannot be processed\"\n}"
+  },
+  "dex_pair": {
+    "url": "https://api.dexscreener.com/latest/dex/pairs/solana/58osDYARtvC5xy6GakQaBm16kDA4XwFyH4UfvtrjMvxj",
+    "status": 200,
+    "bytes": 2634
+  },
+  "gmgn_trades": {
+    "url": "https://gmgn.ai/vas/api/v1/token_trades/sol/5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump?revert=true&limit=1000",
+    "status": 200,
+    "bytes": 51263
+  },
+  "gmgn_holders": {
+    "url": "https://gmgn.ai/vas/api/v1/token_holders/sol/5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump?orderby=amount_percentage&direction=desc&limit=100",
+    "status": 200,
+    "bytes": 223318
+  },
+  "sol_history": {
+    "url": "https://api.coingecko.com/api/v3/coins/solana/market_chart/range?vs_currency=usd&from=1787179071&to=1787351871",
+    "status": 200,
+    "bytes": 4945
+  },
+  "rpc": {
+    "https://solana-rpc.publicnode.com": {
+      "ok": 1,
+      "fail": 0
+    },
+    "https://api.mainnet-beta.solana.com": {
+      "ok": 0,
+      "fail": 0
+    },
+    "https://solana.api.onfinality.io/public": {
+      "ok": 0,
+      "fail": 0
+    },
+    "https://rpc.ankr.com/solana": {
+      "ok": 0,
+      "fail": 0
+    },
+    "https://solana.drpc.org": {
+      "ok": 0,
+      "fail": 0
+    }
+  }
+}
