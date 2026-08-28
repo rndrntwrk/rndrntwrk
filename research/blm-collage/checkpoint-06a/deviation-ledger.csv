@@ -1,0 +1,8 @@
+deviation_id,canonical,image_reading,change_type,bbox,confidence,status,notes
+DEV01,introduce,introdue,single-letter deletion,"925,460,1030,590",high,confirmed,The expected c before the final e is absent in the visible handwriting.
+DEV02,a trusted,[omitted before central authority],phrase omission,"925,460,1030,590",medium-high,probable,The image moves from the misspelled introduce directly into central authority; no stable trace of the intervening phrase is visible.
+DEV03,double,doudle,internal-letter substitution/transposition,"820,480,900,575",medium-high,probable,The angled handwriting favors doudle; retained as probable rather than forced exact.
+DEV04,sign,sing,letter transposition,"700,620,780,695",high,confirmed,The visible order is s-i-n-g.
+DEV05,absence,abcense,letter substitution/order error,"1030,600,1120,700",medium-high,probable,The circular text favors abcense; low contrast prevents an absolute character-level claim.
+DEV06,arrived,arrrived,extra repeated letter,"575,395,700,465",medium,probable,The circular word contains an extra r-like stroke but the curved layout makes counting difficult.
+DEV07,participants,participans,single-letter deletion,"835,395,990,475",medium,probable,The terminal sequence appears to omit the second t; retained as a bounded reading.
