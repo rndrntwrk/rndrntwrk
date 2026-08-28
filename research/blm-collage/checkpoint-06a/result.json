@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "checkpoint": "06A",
+  "status": "complete",
+  "generated_at_utc": "2026-08-28T14:14:43.174913+00:00",
+  "target_address": "1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ",
+  "source_image_sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782",
+  "canonical_source": {
+    "url": "https://bitcoin.org/bitcoin.pdf",
+    "section": "2. Transactions",
+    "pdf_page": 2,
+    "parsed_line_range": "39-56"
+  },
+  "macro_phrase": "WELCOME TO THE BRAVE NEW WORLD",
+  "macro_letter_count": 25,
+  "visual_row_order": ["WELCOME TO THE", "BRAVE", "NEW WORLD"],
+  "canonical_source_flow_order": ["BRAVE", "NEW WORLD", "WELCOME TO THE"],
+  "confirmed_deviations": 2,
+  "probable_deviations": 5,
+  "candidate_generation_performed": false,
+  "wallet_derivations_performed": 0,
+  "exact_target_match_found": false,
+  "external_spend_usd": 0,
+  "next_checkpoint": "06B — Bottom-border and monument source alignment"
+}
