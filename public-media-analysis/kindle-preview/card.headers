@@ -2,37 +2,34 @@ HTTP/2 302
 content-type: text/html
 location: http://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
 server: Server
-date: Fri, 28 Aug 2026 14:19:09 GMT
+date: Fri, 28 Aug 2026 14:19:31 GMT
 edge-cache-control: no-store,no-cache,stale-if-error=0,stale-while-revalidate=0
 vary: User-Agent,Accept-Encoding
-x-amz-rid: VQ8D2CC8X2JY8PE9RRD3
+x-amz-rid: 25H7G0KA7VH364QTRAQJ
 strict-transport-security: max-age=47474747; includeSubDomains; preload
 x-cache: Miss from cloudfront
-via: 1.1 0b3b2bc925bbb60cbc1668ae1c438b24.cloudfront.net (CloudFront)
-x-amz-cf-pop: DFW59-P7
-x-amz-cf-id: GuMpuluNzC_Xu_J9m8-hDiWLU37GqRMJBZC9JSa-VQRddvhngeipgw==
+via: 1.1 e96ed109dde78412c6b4651755281804.cloudfront.net (CloudFront)
+x-amz-cf-pop: IAD55-P8
+x-amz-cf-id: TxUVWZtn7_xVv_5yJUcFIJiFPoiNmAB7xSO9nFVo1R42BvPj1AlVCA==
 
 HTTP/1.1 301 Moved Permanently
-Server: CloudFront
-Date: Fri, 28 Aug 2026 14:19:09 GMT
-Content-Type: text/html
-Content-Length: 167
-Connection: keep-alive
+Server: AkamaiGHost
+Content-Length: 0
 Location: https://www.amazon.com/dp/B0FK7RBDFL?ref_=k4w_ss_dp_bot
-X-Cache: Redirect from cloudfront
-Via: 1.1 d45e064f8c3e1035d136019303749e0e.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: DFW57-P1
-Alt-Svc: h3=":443"; ma=86400
-X-Amz-Cf-Id: -nnqBOLHXXMqxENX63dywYFLG4FVlev17ADVtfPoqniU57mpy0sKOQ==
+Date: Fri, 28 Aug 2026 14:19:31 GMT
+Connection: keep-alive
+Akamai-Request-BC: [a=23.200.94.221,b=489333223,c=g,n=US_VA_STERLING,o=20940]
+X-Amzn-Cdn-Id: ak-0.dd5ec817.1787926771.1d2aa1e7
+X-Cache: NotCacheable from child
 
 HTTP/2 500 
-x-amz-rid: HQWR64C47E4P1DJEJAWR
+x-amz-rid: V80CXXANFRJEHQ1ZZT4D
 cache-control: no-cache
 pragma: no-cache
 expires: -1
-date: Fri, 28 Aug 2026 14:19:10 GMT
+date: Fri, 28 Aug 2026 14:19:31 GMT
 alt-svc: h3=":443"; ma=93600
-akamai-request-bc: [a=23.38.164.48,b=416965897,c=g,n=US_TX_DALLAS,o=20940],[c=o]
-x-amzn-cdn-id: ak-0.30a42617.1787926749.18da6509
+akamai-request-bc: [a=23.200.94.217,b=1694942671,c=g,n=US_VA_STERLING,o=20940],[c=o]
+x-amzn-cdn-id: ak-0.d95ec817.1787926771.6506c5cf
 x-cache: NotCacheable from child
 
