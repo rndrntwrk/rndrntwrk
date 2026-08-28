@@ -1,0 +1,6 @@
+alignment_id,macro_text,visual_row,canonical_flow_order,source_units,pdf_lines,boundary_confidence,finding
+SA01,BRAVE,middle,1,WP2-P1 + opening WP2-P2,39-45,high,The canonical Section 2 text begins in the BRAVE construction.
+SA02,NEW WORLD,bottom,2,WP2-P2 remainder + opening WP2-P3,45-52,medium-high,"Text continues from BRAVE into NEW WORLD, with the transition near the sentence beginning after the double-spending discussion."
+SA03,WELCOME TO THE,top,3,WP2-P3 tail,52-56,high,The final Section 2 sentences form the top macro row and end at the end of the section.
+SA04,WELCOME TO THE / BRAVE / NEW WORLD,all,visual 2 -> visual 3 -> visual 1,WP2-P1 through WP2-P3,39-56,high,"Visual reading order spells the title, while canonical source-text flow runs middle row, then bottom row, then top row."
+SA05,FIND THE SEED PHRASE / IN THE THIS PICTURE,pale overlay,not part of Section 2 source flow,none,none,medium,"The pale instruction is a distinct text layer behind the black Section 2 construction; the duplicated THE remains a preserved visual reading."
