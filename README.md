@@ -103,4 +103,4 @@ A design partner does not need to adopt the entire system. We begin with one rea
 - **Public corpus:** [rndrntwrk.com/corpus](https://www.rndrntwrk.com/corpus)
 - **Contact:** [hello@rndrntwrk.com](mailto:hello@rndrntwrk.com)
 
-**Find reports and disclosures here:** [reports.rndrntwrk.com](https://reports.rndrntwrk.com/)
+**Find reports and disclosures here:** [report.rndrntwrk.com](https://report.rndrntwrk.com/)
