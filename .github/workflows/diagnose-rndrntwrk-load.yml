@@ -1,0 +1,192 @@
+name: Diagnose RNDRNTWRK production load
+
+on:
+  push:
+    branches:
+      - diagnostics/rndrntwrk-load-2026-08-21
+    paths:
+      - .github/workflows/diagnose-rndrntwrk-load.yml
+      - scripts/diagnose-rndrntwrk-load.mjs
+
+permissions:
+  contents: read
+
+jobs:
+  production-browser-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out diagnostic branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Capture DNS, TLS, redirects, response headers, and raw HTML
+        shell: bash
+        run: |
+          set -u
+          mkdir -p artifacts/rndrntwrk-load/raw artifacts/rndrntwrk-load/bundles
+
+          {
+            echo '=== UTC ==='
+            date -u
+            echo '=== getent rndrntwrk.com ==='
+            getent ahosts rndrntwrk.com || true
+            echo '=== getent www.rndrntwrk.com ==='
+            getent ahosts www.rndrntwrk.com || true
+          } > artifacts/rndrntwrk-load/raw/dns.txt 2>&1
+
+          {
+            echo | openssl s_client -connect www.rndrntwrk.com:443 -servername www.rndrntwrk.com 2>/dev/null \
+              | openssl x509 -noout -subject -issuer -serial -dates -fingerprint -sha256 -ext subjectAltName
+          } > artifacts/rndrntwrk-load/raw/tls.txt 2>&1 || true
+
+          curl -sS --max-time 60 -I https://rndrntwrk.com/ \
+            > artifacts/rndrntwrk-load/raw/apex-head.txt 2>&1 || true
+
+          curl -sS --max-time 60 -I https://www.rndrntwrk.com/ \
+            > artifacts/rndrntwrk-load/raw/www-head.txt 2>&1 || true
+
+          curl -sS -L --max-time 60 \
+            --trace-time \
+            --trace-ascii artifacts/rndrntwrk-load/raw/curl-trace.txt \
+            -D artifacts/rndrntwrk-load/raw/redirect-headers.txt \
+            -o artifacts/rndrntwrk-load/raw/home.html \
+            -w '%{json}\n' \
+            https://rndrntwrk.com/ \
+            > artifacts/rndrntwrk-load/raw/curl-metrics.json 2> artifacts/rndrntwrk-load/raw/curl-stderr.txt || true
+
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import pathlib
+          import re
+          import urllib.parse
+          import urllib.request
+          from html.parser import HTMLParser
+
+          root = pathlib.Path('artifacts/rndrntwrk-load')
+          html_path = root / 'raw' / 'home.html'
+          html = html_path.read_text(errors='replace') if html_path.exists() else ''
+
+          class AssetParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.scripts = []
+                  self.links = []
+                  self.metas = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == 'script':
+                      self.scripts.append(attrs)
+                  elif tag == 'link':
+                      self.links.append(attrs)
+                  elif tag == 'meta':
+                      self.metas.append(attrs)
+
+          parser = AssetParser()
+          parser.feed(html)
+          base = 'https://www.rndrntwrk.com/'
+          assets = []
+          for script in parser.scripts:
+              src = script.get('src')
+              if src:
+                  assets.append({'kind': 'script', 'url': urllib.parse.urljoin(base, src), 'attrs': script})
+          for link in parser.links:
+              href = link.get('href')
+              rel = link.get('rel', '')
+              if href and ('stylesheet' in rel or 'preload' in rel or 'modulepreload' in rel):
+                  assets.append({'kind': 'link', 'url': urllib.parse.urljoin(base, href), 'attrs': link})
+
+          manifest = {
+              'htmlBytes': len(html.encode()),
+              'htmlSha256': hashlib.sha256(html.encode()).hexdigest(),
+              'scriptTags': parser.scripts,
+              'linkTags': parser.links,
+              'metaTags': parser.metas,
+              'assets': assets,
+              'loaderMatches': [
+                  {'pattern': pattern, 'matches': len(re.findall(pattern, html, flags=re.I))}
+                  for pattern in [r'Initializing', r'Please enable javascript', r'__NEXT_DATA__', r'_next/static', r'vercel']
+              ],
+          }
+          (root / 'raw' / 'html-assets.json').write_text(json.dumps(manifest, indent=2))
+
+          opener = urllib.request.build_opener()
+          opener.addheaders = [('User-Agent', 'Mozilla/5.0 RNDRNTWRK diagnostic probe')]
+          downloads = []
+          for index, asset in enumerate(assets[:100]):
+              url = asset['url']
+              digest = hashlib.sha256(url.encode()).hexdigest()[:12]
+              suffix = pathlib.Path(urllib.parse.urlparse(url).path).suffix or '.bin'
+              target = root / 'bundles' / f'{index:03d}-{digest}{suffix}'
+              try:
+                  with opener.open(url, timeout=60) as response:
+                      body = response.read(30 * 1024 * 1024 + 1)
+                      truncated = len(body) > 30 * 1024 * 1024
+                      if truncated:
+                          body = body[:30 * 1024 * 1024]
+                      target.write_bytes(body)
+                      downloads.append({
+                          **asset,
+                          'status': getattr(response, 'status', None),
+                          'finalUrl': response.geturl(),
+                          'headers': dict(response.headers.items()),
+                          'savedAs': str(target),
+                          'bytes': len(body),
+                          'sha256': hashlib.sha256(body).hexdigest(),
+                          'truncated': truncated,
+                      })
+              except Exception as error:
+                  downloads.append({**asset, 'error': repr(error)})
+          (root / 'bundles' / 'index.json').write_text(json.dumps(downloads, indent=2))
+          PY
+
+          grep -R -n -E \
+            'Initializing|Please enable javascript|ChunkLoadError|Cannot access .* before initialization|webpack|__NEXT_DATA__|sourceMappingURL' \
+            artifacts/rndrntwrk-load/bundles \
+            > artifacts/rndrntwrk-load/raw/bundle-string-matches.txt 2>&1 || true
+
+      - name: Install Playwright and Chromium
+        shell: bash
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Run desktop, mobile, and no-JavaScript browser probes
+        env:
+          OUTPUT_DIR: artifacts/rndrntwrk-load
+        run: node scripts/diagnose-rndrntwrk-load.mjs
+
+      - name: Print concise diagnostic evidence
+        if: always()
+        shell: bash
+        run: |
+          echo '===== DNS ====='
+          cat artifacts/rndrntwrk-load/raw/dns.txt 2>/dev/null || true
+          echo '===== APEX HEAD ====='
+          cat artifacts/rndrntwrk-load/raw/apex-head.txt 2>/dev/null || true
+          echo '===== WWW HEAD ====='
+          cat artifacts/rndrntwrk-load/raw/www-head.txt 2>/dev/null || true
+          echo '===== TLS ====='
+          cat artifacts/rndrntwrk-load/raw/tls.txt 2>/dev/null || true
+          echo '===== RAW HTML ASSETS ====='
+          cat artifacts/rndrntwrk-load/raw/html-assets.json 2>/dev/null || true
+          echo '===== BUNDLE STRING MATCHES ====='
+          cat artifacts/rndrntwrk-load/raw/bundle-string-matches.txt 2>/dev/null || true
+          echo '===== BROWSER SUMMARY ====='
+          cat artifacts/rndrntwrk-load/summary.json 2>/dev/null || true
+
+      - name: Upload diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rndrntwrk-production-load-diagnostics
+          path: artifacts/rndrntwrk-load
+          if-no-files-found: error
+          retention-days: 3
