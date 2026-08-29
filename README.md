@@ -81,7 +81,7 @@ Implementation state is reported precisely. **Implemented, qualified, deployed, 
 
 ### Public operations
 
-- [`report`](https://github.com/rndrntwrk/report) — reports and disclosures implementation
+- [`report`](https://github.com/rndrntwrk/report) — operational report and current evidence surface
 - [`outreachr`](https://github.com/rndrntwrk/outreachr) — distribution and outreach systems
 
 ---
@@ -103,4 +103,4 @@ A design partner does not need to adopt the entire system. We begin with one rea
 - **Public corpus:** [rndrntwrk.com/corpus](https://www.rndrntwrk.com/corpus)
 - **Contact:** [hello@rndrntwrk.com](mailto:hello@rndrntwrk.com)
 
-**Find reports and disclosures here:** [report.rndrntwrk.com](https://report.rndrntwrk.com/)
+**Find reports and disclosures here:** [rndrntwrk.com/transparency](https://www.rndrntwrk.com/transparency)
