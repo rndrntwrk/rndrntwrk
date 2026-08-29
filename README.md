@@ -1,60 +1,106 @@
-<div align="center">
+# RNDRNTWRK
 
-# (enoomian)
+## The economic operating system for human and agent media.
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=950&duration=2900&color=0969DA&center=true&vCenter=true&random=false&width=920&lines=building+infrastructure+for+human+and+agent+media;accelerating+the+abundance+economy+through+rndrntwrk+protocol;contributing+to+hyperia%2C+milady%2C+and+elizaos)](https://git.io/typing-svg)
+RNDRNTWRK is building the layer that defines how humans and agents can own, earn, spend, and exchange value — and keep that state intact across the internet.
 
-**systems for live environments where attention, play, identity, and value share one programmable state.**
+Not just payments, but participation that is native, persistent, and interoperable for both.
 
-<p>
-  <a href="https://rndrntwrk.com"><img src="https://img.shields.io/badge/rndrntwrk-0969DA?style=flat&logo=githubpages&logoColor=white" alt="rndrntwrk" /></a>
-  <a href="https://docs.rndrntwrk.com"><img src="https://img.shields.io/badge/protocol_docs-24292f?style=flat&logo=readthedocs&logoColor=white" alt="docs" /></a>
-  <a href="https://twitter.com/enoomian"><img src="https://img.shields.io/badge/@enoomian-000000?style=flat&logo=x&logoColor=white" alt="x" /></a>
-</p>
+**In short: we make ownership and value native for humans and agents across the internet.**
 
-</div>
+---
 
-## Core Interest
+## What RNDRNTWRK coordinates
 
-> Live media is becoming infrastructure: a place where people and software operators coordinate, where participation has state, and where value can route through what happens in the moment.
+RNDRNTWRK brings five capabilities into one economic system:
 
-| Focus | Why it matters |
-| --- | --- |
-| Human and agent media | The next surface is not passive content. It is operated, responsive, and shared between people and agents. |
-| Verifiable participation | Attention, play, and contribution need stronger primitives than screenshots, vanity metrics, or platform dashboards. |
-| Abundance economy | The goal is more creation, more coordination, and more distribution without trapping value inside closed platforms. |
-| Protocol-shaped systems | The interface can change, but state, identity, rewards, and settlement need durable rails underneath. |
+| Capability | What it does | RNDRNTWRK surface |
+|---|---|---|
+| **Operate intelligence** | Research, coding, planning, communication, tools, memory, and persistent execution | Alice and the agent runtime |
+| **Operate media** | Live sessions, streaming, publishing, clips, outreach, and commercial media inventory | 555stream |
+| **Establish identity and authority** | Identity, roles, delegated authority, budgets, wallet relationships, and recovery | 555ID and policy systems |
+| **Create interactive participation** | Games, challenges, simulations, and human-agent interactive formats | 555 Arcade |
+| **Move and allocate value** | Stablecoin settlement, fees, cost recovery, payouts, rewards, claims, liquidity, and coordination | SW4P, SW4P Earn, and $555 |
 
-## Activity
+The mechanism is **coordination**. The result is **compounding capacity**: the outcome of one economic interaction can increase what the participants are capable of doing next.
 
-![3D GitHub contribution calendar](./profile-3d-contrib/profile-night-rainbow.svg?v=clean-1)
+---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=rndrntwrk&hide_border=true&border_radius=4.5&card_width=980&background=00000000&stroke=30363D&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&sideNums=F0F6FC&currStreakLabel=9198A1&sideLabels=9198A1&dates=9198A1">
-  <img src="https://streak-stats.demolab.com?user=rndrntwrk&hide_border=true&border_radius=4.5&card_width=980&background=00000000&stroke=D1D9E0&ring=0969DA&fire=0969DA&currStreakNum=0969DA&sideNums=24292F&currStreakLabel=57606A&sideLabels=57606A&dates=57606A" alt="GitHub contribution streak" width="100%">
-</picture>
+## What goes into production first
 
-## Current Throughline
+RNDRNTWRK is initially materializing the wider system through two connected surfaces:
 
-| I am looking for | Because |
-| --- | --- |
-| Protocol-minded system designers | The interface should feel immediate while the system underneath remains inspectable. |
-| Open-source contributors | The best primitives should be reusable, forkable, and legible. |
-| Weird but serious experiments | The abundance economy needs high-agency systems that are useful before they are obvious. |
+1. **Agent Fixtures** package the RNDRNTWRK capabilities required to complete a real objective.
+2. **SW4P** closes the economic activity around the work through programmable stablecoin settlement.
 
-## Temporary read-only forensic data bridge
+```text
+real objective
+      ↓
+agent fixture assembles the required capability
+      ↓
+humans and agents execute
+      ↓
+software, media, operations, or commercial output
+      ↓
+SW4P closes the economic activity
+      ↓
+revenue, reusable capability, and operating knowledge
+      ↓
+the next release
+```
 
-The links below are temporary read-only evidence endpoints for the $555 capital-ledger reconciliation. They do not sign or submit transactions.
+Implementation state is reported precisely. **Implemented, qualified, deployed, active, and revenue-producing are not interchangeable claims.**
 
-- [Current PumpSwap pair JSON](https://api.dexscreener.com/latest/dex/pairs/solana/FKBEZmogcdNGm1rtqCJpkLY9gW77antPkBXhSFftGHTG)
-- [Current PumpSwap pair through text reader](https://r.jina.ai/https://api.dexscreener.com/latest/dex/pairs/solana/FKBEZmogcdNGm1rtqCJpkLY9gW77antPkBXhSFftGHTG)
-- [Pump creator claim account](https://pumpdev.io/api/claim-account?publicKey=HW8jtVSXXyvt8AbbJ2knx2jjNeSSrLbpA1QkzLGZ5iWq&mint=CQwwRomsuWsUCPYomZmRnwMns4ZCTASc31ExMvSysAF2)
-- [Pump creator claim through text reader](https://r.jina.ai/https://pumpdev.io/api/claim-account?publicKey=HW8jtVSXXyvt8AbbJ2knx2jjNeSSrLbpA1QkzLGZ5iWq&mint=CQwwRomsuWsUCPYomZmRnwMns4ZCTASc31ExMvSysAF2)
-- [Creator wallet public transactions](https://public-api.solscan.io/account/transactions?address=HW8jtVSXXyvt8AbbJ2knx2jjNeSSrLbpA1QkzLGZ5iWq&limit=100)
-- [Creator wallet transactions through text reader](https://r.jina.ai/https://public-api.solscan.io/account/transactions?address=HW8jtVSXXyvt8AbbJ2knx2jjNeSSrLbpA1QkzLGZ5iWq&limit=100)
-- [Streamflow contract 6jEB](https://app.streamflow.finance/contract/solana/mainnet/6jEBKmB1mUD7tpgVn35ZqxTmSvhDSqpWBVzPzUiyqttb)
-- [Streamflow contract 6jEB through text reader](https://r.jina.ai/https://app.streamflow.finance/contract/solana/mainnet/6jEBKmB1mUD7tpgVn35ZqxTmSvhDSqpWBVzPzUiyqttb)
-- [Streamflow contract HHX](https://app.streamflow.finance/contract/solana/mainnet/HHXgYtezE32aATgWQFn3knAsy2xhQsjfepps3MLe3MXN)
-- [Streamflow contract HHX through text reader](https://r.jina.ai/https://app.streamflow.finance/contract/solana/mainnet/HHXgYtezE32aATgWQFn3knAsy2xhQsjfepps3MLe3MXN)
-- [Streamflow contract BSkf](https://app.streamflow.finance/contract/solana/mainnet/BSkf98N8ppTciokTv56AFA8f6HU4Kux7Ee9DV63mUinQ)
-- [Streamflow contract BSkf through text reader](https://r.jina.ai/https://app.streamflow.finance/contract/solana/mainnet/BSkf98N8ppTciokTv56AFA8f6HU4Kux7Ee9DV63mUinQ)
+---
+
+## Repositories by product role
+
+### Parent system
+
+- [`rndrntwrk`](https://github.com/rndrntwrk/rndrntwrk) — public profile and parent-system references
+- [`docs`](https://github.com/rndrntwrk/docs) — RNDRNTWRK documentation
+- [`cloud`](https://github.com/rndrntwrk/cloud) — shared cloud and runtime work
+- [`ctrl`](https://github.com/rndrntwrk/ctrl) — agent control and operating envelopes
+
+### Agents and media
+
+- [`milaidy`](https://github.com/rndrntwrk/milaidy) — agent runtime work
+- [`stream`](https://github.com/rndrntwrk/stream) — 555stream operations
+- [`stream-plugin`](https://github.com/rndrntwrk/stream-plugin) — agent-facing stream integration
+- [`555-arcade-plugin`](https://github.com/rndrntwrk/555-arcade-plugin) — agent-facing Arcade integration
+
+### Participation and $555
+
+- [`555-frontend`](https://github.com/rndrntwrk/555-frontend) — $555 and Arcade public product surface
+- [`555-backend`](https://github.com/rndrntwrk/555-backend) — product and economic backend services
+
+### Settlement
+
+- [`Sw4p`](https://github.com/rndrntwrk/Sw4p) — SW4P application surface
+- [`sw4p-docs`](https://github.com/rndrntwrk/sw4p-docs) — SW4P documentation
+
+### Public operations
+
+- [`report`](https://github.com/rndrntwrk/report) — reports and disclosures implementation
+- [`outreachr`](https://github.com/rndrntwrk/outreachr) — distribution and outreach systems
+
+---
+
+## Build with RNDRNTWRK
+
+We are collaborating with design partners across:
+
+- agent operations;
+- media and interactive industries;
+- programmable finance;
+- infrastructure, liquidity, and strategic capital.
+
+A design partner does not need to adopt the entire system. We begin with one real objective and the smallest RNDRNTWRK deployment that can materially advance it.
+
+- **Website:** [rndrntwrk.com](https://www.rndrntwrk.com/)
+- **Documentation:** [docs.rndrntwrk.com](https://docs.rndrntwrk.com/)
+- **Hub:** [hub.rndrntwrk.com](https://hub.rndrntwrk.com/)
+- **Public corpus:** [rndrntwrk.com/corpus](https://www.rndrntwrk.com/corpus)
+- **Contact:** [hello@rndrntwrk.com](mailto:hello@rndrntwrk.com)
+
+**Find reports and disclosures here:** [reports.rndrntwrk.com](https://reports.rndrntwrk.com/)
