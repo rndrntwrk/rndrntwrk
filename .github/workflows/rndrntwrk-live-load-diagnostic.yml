@@ -1,0 +1,13 @@
+name: RNDRNTWRK live-load diagnostic trigger
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  marker:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Trigger exact asset-origin probe."
