@@ -1,4 +1,4 @@
-name: Satori 3333 Wall Public Root TAR Runner
+name: Satori 3333 Wall Public Standalone Root TAR Runner
 
 on:
   push:
@@ -26,31 +26,40 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Reconstruct and verify exact Wall runner
+      - name: Reconstruct and verify standalone Wall builder
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf scratch/satori-wall-runner /tmp/satori-wall-runner.zip
-          mkdir -p scratch/satori-wall-runner
+          rm -f scratch/build_satori_wall_standalone.py
           cat \
-            scratch/satori-wall-runner.b64.part00 \
-            scratch/satori-wall-runner.b64.part01 \
-            scratch/satori-wall-runner.b64.part02 \
-            scratch/satori-wall-runner.b64.part03 \
-            | base64 --decode > /tmp/satori-wall-runner.zip
-          unzip -t /tmp/satori-wall-runner.zip
-          unzip -q /tmp/satori-wall-runner.zip -d scratch/satori-wall-runner
+            scratch/satori-standalone.b64.part00 \
+            scratch/satori-standalone.b64.part01 \
+            scratch/satori-standalone.b64.part02 \
+            scratch/satori-standalone.b64.part03 \
+            scratch/satori-standalone.b64.part04 \
+            scratch/satori-standalone.b64.part05 \
+            scratch/satori-standalone.b64.part06 \
+            scratch/satori-standalone.b64.part07 \
+            | base64 --decode > scratch/build_satori_wall_standalone.py
+          test "$(sha256sum scratch/build_satori_wall_standalone.py | awk '{print $1}')" = \
+            '1c2b82e67cef85146d439dadf61de05b8f10be0faa0c387caf5ac8ee71452228'
           python -m pip install --upgrade pip
-          python -m pip install -e scratch/satori-wall-runner
+          python -m pip install Pillow
+          python -m py_compile scratch/build_satori_wall_standalone.py
           python - <<'PY'
-          from satori_wall.bulkdir import build_manifest_from_directories
-          from satori_wall.layout import build_placements
-          placements, empty = build_placements(list(range(1, 3334)), columns=57, rows=59)
+          import importlib.util
+          from pathlib import Path
+          path = Path('scratch/build_satori_wall_standalone.py')
+          spec = importlib.util.spec_from_file_location('satori_wall_standalone', path)
+          module = importlib.util.module_from_spec(spec)
+          assert spec.loader is not None
+          spec.loader.exec_module(module)
+          placements, empty = module.build_placements(list(range(1, 3334)))
           assert len(placements) == 3333
           assert len({p.token_id for p in placements}) == 3333
           assert len({p.mosaic_index for p in placements}) == 3333
           assert len(empty) == 30
-          print('runner and deterministic layout verified')
+          print('standalone builder and deterministic layout verified')
           PY
           df -h .
 
@@ -182,7 +191,7 @@ jobs:
           SATORI_MASTER_HEIGHT: '11800'
         run: |
           set -o pipefail
-          python scratch/build_satori_wall_from_bulk.py \
+          python scratch/build_satori_wall_standalone.py \
             2>&1 | tee scratch/satori-wall-runner/satori-wall-run.log
 
       - name: Fresh independent release-gate assertion
