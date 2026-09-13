@@ -1,4 +1,4 @@
-name: Satori Wall Public Runner Smoke
+name: Satori 3333 Wall Public Root TAR Runner
 
 on:
   push:
@@ -9,14 +9,247 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: satori-3333-wall-public
+  cancel-in-progress: false
+
 jobs:
-  smoke:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+  build-wall:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 355
     steps:
-      - name: Confirm hosted runner allocation
+      - name: Checkout isolated public scratch branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Reconstruct and verify exact Wall runner
+        shell: bash
         run: |
           set -euo pipefail
-          echo "runner allocated"
-          uname -a
+          rm -rf scratch/satori-wall-runner /tmp/satori-wall-runner.zip
+          mkdir -p scratch/satori-wall-runner
+          cat \
+            scratch/satori-wall-runner.b64.part00 \
+            scratch/satori-wall-runner.b64.part01 \
+            scratch/satori-wall-runner.b64.part02 \
+            scratch/satori-wall-runner.b64.part03 \
+            | base64 --decode > /tmp/satori-wall-runner.zip
+          unzip -t /tmp/satori-wall-runner.zip
+          unzip -q /tmp/satori-wall-runner.zip -d scratch/satori-wall-runner
+          python -m pip install --upgrade pip
+          python -m pip install -e scratch/satori-wall-runner
+          python - <<'PY'
+          from satori_wall.bulkdir import build_manifest_from_directories
+          from satori_wall.layout import build_placements
+          placements, empty = build_placements(list(range(1, 3334)), columns=57, rows=59)
+          assert len(placements) == 3333
+          assert len({p.token_id for p in placements}) == 3333
+          assert len({p.mosaic_index for p in placements}) == 3333
+          assert len(empty) == 30
+          print('runner and deterministic layout verified')
+          PY
           df -h .
+
+      - name: Fetch and validate canonical metadata root
+        shell: bash
+        run: |
+          set -euo pipefail
+          META='bafybeiar7x3upqmim5m7alzlg6l5wvu2kpfytd3qtymhqfeiqrutficxku'
+          ROOT='scratch/satori-wall-runner'
+          rm -rf "$ROOT/bulk/metadata" "$ROOT/bulk/metadata.try"
+          mkdir -p "$ROOT/bulk"
+          success=0
+          selected=''
+          gateways=(
+            "https://gateway.pinata.cloud/ipfs/${META}?format=tar"
+            "https://dweb.link/ipfs/${META}?format=tar"
+            "https://ipfs.io/ipfs/${META}?format=tar"
+          )
+          for url in "${gateways[@]}"; do
+            for attempt in 1 2; do
+              echo "metadata archive attempt ${attempt}: ${url}"
+              rm -rf "$ROOT/bulk/metadata.try"
+              mkdir -p "$ROOT/bulk/metadata.try"
+              if curl --http1.1 -L --fail --show-error \
+                --connect-timeout 30 --speed-limit 1024 --speed-time 180 \
+                --max-time 1800 \
+                -H 'User-Agent: satori-3333-wall-public-metadata/1.0' \
+                "$url" | tar -x -C "$ROOT/bulk/metadata.try"; then
+                count=$(find "$ROOT/bulk/metadata.try" -type f | wc -l)
+                if [ "$count" -eq 3333 ]; then
+                  selected="$url"
+                  success=1
+                  break 2
+                fi
+                echo "metadata archive contained ${count} files; expected 3333"
+              else
+                echo "metadata archive stream failed"
+              fi
+              sleep 15
+            done
+          done
+          test "$success" -eq 1
+          mv "$ROOT/bulk/metadata.try" "$ROOT/bulk/metadata"
+          printf 'metadata_source=%s\n' "$selected" > "$ROOT/bulk/retrieval-source.txt"
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('scratch/satori-wall-runner/bulk/metadata')
+          files = {path.name: path for path in root.rglob('*') if path.is_file()}
+          art = 'bafybeigx7527j3bzrpnc4mhvhrjvlhsnfriinx276cklxiu3ldm4ees3eu'
+          assert len(files) == 3333, len(files)
+          assert '0' not in files and '0.json' not in files
+          for token_id in range(1, 3334):
+              path = files.get(str(token_id)) or files.get(f'{token_id}.json')
+              assert path is not None, token_id
+              metadata = json.loads(path.read_text(encoding='utf-8'))
+              image = metadata.get('image') or metadata.get('image_url')
+              assert image == f'ipfs://{art}/{token_id}.png', (token_id, image)
+          print('metadata gate passed: 3333 exact token-to-artwork mappings')
+          PY
+
+      - name: Fetch complete canonical artwork DAG as one archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          ART='bafybeigx7527j3bzrpnc4mhvhrjvlhsnfriinx276cklxiu3ldm4ees3eu'
+          ROOT='scratch/satori-wall-runner'
+          rm -rf "$ROOT/bulk/artwork" "$ROOT/bulk/artwork.try"
+          mkdir -p "$ROOT/bulk"
+          success=0
+          selected=''
+          gateways=(
+            "https://gateway.pinata.cloud/ipfs/${ART}?format=tar"
+            "https://${ART}.ipfs.dweb.link/?format=tar"
+            "https://dweb.link/ipfs/${ART}?format=tar"
+            "https://ipfs.io/ipfs/${ART}?format=tar"
+            "https://nftstorage.link/ipfs/${ART}?format=tar"
+            "https://w3s.link/ipfs/${ART}?format=tar"
+            "https://ipfs.filebase.io/ipfs/${ART}?format=tar"
+          )
+          for url in "${gateways[@]}"; do
+            for attempt in 1 2; do
+              echo "artwork archive attempt ${attempt}: ${url}"
+              date -u
+              rm -rf "$ROOT/bulk/artwork.try"
+              mkdir -p "$ROOT/bulk/artwork.try"
+              if curl --http1.1 -L --fail --show-error \
+                --connect-timeout 60 --speed-limit 1024 --speed-time 300 \
+                --max-time 14400 \
+                -H 'User-Agent: satori-3333-wall-public-artwork/1.0' \
+                "$url" | tar -x -C "$ROOT/bulk/artwork.try"; then
+                count=$(find "$ROOT/bulk/artwork.try" -type f -name '*.png' | wc -l)
+                echo "artwork PNG count from archive: ${count}"
+                if [ "$count" -eq 3333 ]; then
+                  selected="$url"
+                  success=1
+                  break 2
+                fi
+              else
+                echo "artwork archive stream failed"
+              fi
+              du -sh "$ROOT/bulk/artwork.try" || true
+              df -h .
+              sleep 30
+            done
+          done
+          test "$success" -eq 1
+          mv "$ROOT/bulk/artwork.try" "$ROOT/bulk/artwork"
+          printf 'artwork_source=%s\n' "$selected" >> "$ROOT/bulk/retrieval-source.txt"
+          count=$(find "$ROOT/bulk/artwork" -type f -name '*.png' | wc -l)
+          test "$count" -eq 3333
+          test -n "$(find "$ROOT/bulk/artwork" -type f -name '1.png' -print -quit)"
+          test -n "$(find "$ROOT/bulk/artwork" -type f -name '3333.png' -print -quit)"
+          test -z "$(find "$ROOT/bulk/artwork" -type f -name '0.png' -print -quit)"
+          du -sh "$ROOT/bulk/artwork"
+          df -h .
+
+      - name: Build manifests, render Wall and create social derivatives
+        shell: bash
+        env:
+          METADATA_DIR: scratch/satori-wall-runner/bulk/metadata
+          ARTWORK_DIR: scratch/satori-wall-runner/bulk/artwork
+          ARTIFACT_ROOT: scratch/satori-wall-runner/artifacts
+          SATORI_EXPECTED_COUNT: '3333'
+          SATORI_COLUMNS: '57'
+          SATORI_ROWS: '59'
+          SATORI_MASTER_WIDTH: '11400'
+          SATORI_MASTER_HEIGHT: '11800'
+        run: |
+          set -o pipefail
+          python scratch/build_satori_wall_from_bulk.py \
+            2>&1 | tee scratch/satori-wall-runner/satori-wall-run.log
+
+      - name: Fresh independent release-gate assertion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+
+          root = Path('scratch/satori-wall-runner/artifacts')
+          validation = json.loads((root / 'qa/validation.json').read_text())
+          metrics = validation['metrics']
+          assert validation['release_ready'] is True, validation
+          expected = {
+              'expected_count': 3333,
+              'manifest_entry_count': 3333,
+              'resolved_count': 3333,
+              'unique_token_id_count': 3333,
+              'occupied_cell_count': 3333,
+              'duplicate_token_placements': 0,
+              'missing_token_placements': 0,
+              'empty_cell_overlap': 0,
+          }
+          for key, value in expected.items():
+              assert metrics[key] == value, (key, metrics[key], value)
+          assert metrics['all_placed_sources_hashed'] is True
+          assert metrics['render_dimensions_match'] is True
+
+          manifest = json.loads(
+              (root / 'manifest/satori-3333-manifest.json').read_text()
+          )
+          assert [row['token_id'] for row in manifest] == list(range(1, 3334))
+          assert all(len(row['sha256']) == 64 for row in manifest)
+          assert len({row['mosaic_index'] for row in manifest}) == 3333
+
+          dimensions = {
+              'satori-3333-wall.png': (11400, 11800),
+              'satori-3333-wall-banner.jpg': (1500, 500),
+              'satori-3333-wall-16x9.jpg': (1920, 1080),
+              'satori-3333-wall-4x5.jpg': (1350, 1688),
+              'satori-3333-wall-square.jpg': (1080, 1080),
+          }
+          for filename, expected_size in dimensions.items():
+              path = root / 'renders' / filename
+              assert path.is_file() and path.stat().st_size > 0, filename
+              with Image.open(path) as image:
+                  assert image.size == expected_size, (filename, image.size)
+                  image.verify()
+          print('fresh canonical 3333/3333 release gate passed')
+          PY
+          sha256sum scratch/satori-wall-runner/artifacts/renders/* \
+            > scratch/satori-wall-runner/artifacts/qa/render-sha256.txt
+          cat scratch/satori-wall-runner/artifacts/qa/release-summary.json
+
+      - name: Upload canonical Wall release or diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: satori-3333-wall-canonical-public
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
+          path: |
+            scratch/satori-wall-runner/artifacts/manifest/*
+            scratch/satori-wall-runner/artifacts/qa/*
+            scratch/satori-wall-runner/artifacts/renders/*
+            scratch/satori-wall-runner/bulk/retrieval-source.txt
+            scratch/satori-wall-runner/satori-wall-run.log
