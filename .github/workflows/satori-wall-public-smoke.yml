@@ -1,0 +1,22 @@
+name: Satori Wall Public Runner Smoke
+
+on:
+  push:
+    branches:
+      - scratch/satori-3333-wall-public-20260911
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Confirm hosted runner allocation
+        run: |
+          set -euo pipefail
+          echo "runner allocated"
+          uname -a
+          df -h .
