@@ -1,0 +1,204 @@
+name: Recover exact corpus source 64-81
+
+on:
+  push:
+    branches:
+      - chore/recover-corpus-source-64-81
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install exporter and browser
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests playwright
+          git clone --depth 1 https://github.com/MeghdadFadaee/chatgpt-share-exporter.git /tmp/chatgpt-share-exporter
+          python -m playwright install --with-deps chromium
+
+      - name: Fetch and export the public shared conversation
+        shell: bash
+        run: |
+          set -euo pipefail
+          SHARE='https://chatgpt.com/share/6aa7c400-fe54-83ea-95b6-d54af829b0a3'
+          OUT='source-recovery/chatgpt-share-6aa7c400-fe54-83ea-95b6-d54af829b0a3'
+          mkdir -p "$OUT/raw" "$OUT/sections"
+
+          set +e
+          python /tmp/chatgpt-share-exporter/chatgpt_share_exporter.py "$SHARE" --timezone UTC --stdout > "$OUT/conversation_full.md" 2> "$OUT/direct_export.stderr"
+          DIRECT_STATUS=$?
+          set -e
+
+          if [ "$DIRECT_STATUS" -ne 0 ] || ! grep -q '^# Section 64:' "$OUT/conversation_full.md"; then
+            python - <<'PY'
+          import asyncio
+          from pathlib import Path
+          from playwright.async_api import async_playwright
+
+          SHARE = 'https://chatgpt.com/share/6aa7c400-fe54-83ea-95b6-d54af829b0a3'
+          OUT = Path('source-recovery/chatgpt-share-6aa7c400-fe54-83ea-95b6-d54af829b0a3/raw')
+          OUT.mkdir(parents=True, exist_ok=True)
+
+          async def main():
+              async with async_playwright() as p:
+                  browser = await p.chromium.launch(headless=True, args=['--disable-blink-features=AutomationControlled'])
+                  context = await browser.new_context(
+                      viewport={'width': 1440, 'height': 1200},
+                      locale='en-US',
+                      user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+                  )
+                  page = await context.new_page()
+                  captured = []
+
+                  async def on_response(response):
+                      url = response.url
+                      if '/share/' not in url and '/backend-api/share' not in url and 'conversation' not in url:
+                          return
+                      try:
+                          body = await response.body()
+                      except Exception:
+                          return
+                      suffix = '.json' if 'json' in (response.headers.get('content-type') or '') else '.bin'
+                      path = OUT / f'network_{len(captured):03d}{suffix}'
+                      path.write_bytes(body)
+                      captured.append({'url': url, 'status': response.status, 'path': str(path), 'bytes': len(body)})
+
+                  page.on('response', on_response)
+                  response = await page.goto(SHARE, wait_until='domcontentloaded', timeout=120000)
+                  if response is not None:
+                      try:
+                          (OUT / 'initial_document.html').write_bytes(await response.body())
+                      except Exception:
+                          pass
+                  await page.wait_for_timeout(20000)
+                  (OUT / 'rendered_page.html').write_text(await page.content(), encoding='utf-8')
+                  (OUT / 'visible_body.txt').write_text(await page.locator('body').inner_text(), encoding='utf-8')
+                  await page.screenshot(path=str(OUT / 'page.png'), full_page=True)
+                  import json
+                  (OUT / 'network_responses.json').write_text(json.dumps(captured, indent=2), encoding='utf-8')
+                  await browser.close()
+
+          asyncio.run(main())
+          PY
+
+            : > "$OUT/browser_attempts.log"
+            for candidate in "$OUT/raw/initial_document.html" "$OUT/raw/rendered_page.html" "$OUT/raw"/network_*.bin "$OUT/raw"/network_*.json; do
+              [ -f "$candidate" ] || continue
+              echo "TRY $candidate" >> "$OUT/browser_attempts.log"
+              set +e
+              python /tmp/chatgpt-share-exporter/chatgpt_share_exporter.py "$SHARE" --timezone UTC --html-file "$candidate" --stdout > "$OUT/candidate.md" 2>> "$OUT/browser_attempts.log"
+              STATUS=$?
+              set -e
+              if [ "$STATUS" -eq 0 ] && grep -q '^# Section 64:' "$OUT/candidate.md"; then
+                mv "$OUT/candidate.md" "$OUT/conversation_full.md"
+                echo "SUCCESS $candidate" >> "$OUT/browser_attempts.log"
+                break
+              fi
+            done
+          fi
+
+      - name: Extract exact assistant messages for Sections 64-81
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json, re
+
+          root = Path('source-recovery/chatgpt-share-6aa7c400-fe54-83ea-95b6-d54af829b0a3')
+          transcript_path = root / 'conversation_full.md'
+          transcript = transcript_path.read_text(encoding='utf-8') if transcript_path.exists() else ''
+          expected = list(range(64, 82))
+          section_re = re.compile(r'(?m)^# Section\s+(\d+)\s*:\s*(.+?)\s*$')
+          message_re = re.compile(r'(?m)^##\s+\d+\.\s+(Assistant|User|System)(?:\s+-.*)?$')
+
+          entries = []
+          starts = list(message_re.finditer(transcript))
+          for i, marker in enumerate(starts):
+              end = starts[i + 1].start() if i + 1 < len(starts) else len(transcript)
+              block = transcript[marker.start():end]
+              if marker.group(1) != 'Assistant':
+                  continue
+              section = section_re.search(block)
+              if not section:
+                  continue
+              number = int(section.group(1))
+              body = block[section.start():].rstrip()
+              body = re.sub(r'\n\n---\s*$', '', body).rstrip() + '\n'
+              entries.append((number, body))
+
+          selected = None
+          for start in range(len(entries)):
+              if entries[start][0] != 64:
+                  continue
+              run = entries[start:start + 18]
+              if [number for number, _ in run] == expected:
+                  selected = {number: body for number, body in run}
+                  break
+
+          report = {
+              'source_url': 'https://chatgpt.com/share/6aa7c400-fe54-83ea-95b6-d54af829b0a3',
+              'success': selected is not None,
+              'observed_section_messages': [number for number, _ in entries],
+              'expected_sections': expected,
+              'transcript_chars': len(transcript),
+              'sections': [],
+          }
+
+          if selected is not None:
+              combined = []
+              for number in expected:
+                  body = selected[number]
+                  path = root / 'sections' / f'Section_{number:02d}.md'
+                  path.write_text(body, encoding='utf-8')
+                  title = section_re.search(body).group(2).strip()
+                  report['sections'].append({
+                      'section': number,
+                      'title': title,
+                      'chars': len(body),
+                      'words': len(body.split()),
+                      'sha256': hashlib.sha256(body.encode()).hexdigest(),
+                      'path': str(path),
+                  })
+                  combined.append(body.rstrip())
+              combined_text = '\n\n---\n\n'.join(combined).rstrip() + '\n'
+              (root / 'Sections_64-81_exact_source.md').write_text(combined_text, encoding='utf-8')
+              report['combined_sha256'] = hashlib.sha256(combined_text.encode()).hexdigest()
+
+          (root / 'recovery_report.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(json.dumps(report, indent=2, ensure_ascii=False))
+          PY
+
+      - name: Upload source and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: corpus-sections-64-81-recovery
+          path: source-recovery/chatgpt-share-6aa7c400-fe54-83ea-95b6-d54af829b0a3
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Verify complete source range
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('source-recovery/chatgpt-share-6aa7c400-fe54-83ea-95b6-d54af829b0a3/recovery_report.json').read_text())
+          assert report['success'] is True, report
+          assert [x['section'] for x in report['sections']] == list(range(64, 82)), report
+          assert all(x['chars'] > 100 for x in report['sections']), report
+          print('Recovered Sections 64-81')
+          print(report['combined_sha256'])
+          PY
