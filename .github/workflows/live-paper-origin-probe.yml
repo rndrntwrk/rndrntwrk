@@ -1,0 +1,183 @@
+name: Live RNDRNTWRK Paper origin probe
+
+on:
+  push:
+    branches:
+      - debug/live-paper-origin-20260916
+    paths:
+      - .github/workflows/live-paper-origin-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe custom domain and Railway origin
+        shell: bash
+        run: |
+          set -u -o pipefail
+
+          stamp="$(date +%s)"
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          failures=0
+
+          fetch_one() {
+            local label="$1"
+            local url="$2"
+            local output="$3"
+
+            echo "FETCH $label $url"
+            if curl \
+              --location \
+              --compressed \
+              --fail-with-body \
+              --silent \
+              --show-error \
+              --retry 2 \
+              --retry-all-errors \
+              --connect-timeout 10 \
+              --max-time 60 \
+              --dump-header "${output}.headers" \
+              --output "$output" \
+              "$url"; then
+              echo "FETCH_OK $label bytes=$(wc -c < "$output") sha256=$(sha256sum "$output" | awk '{print $1}')"
+            else
+              rc=$?
+              echo "FETCH_FAILED $label curl_exit=$rc"
+              failures=$((failures + 1))
+              : > "$output"
+              : > "${output}.headers"
+            fi
+          }
+
+          custom="https://rndrntwrk.com"
+          railway="https://rndrweb-production.up.railway.app"
+
+          paths=(
+            "/"
+            "/assets/cms/contact-dev.json"
+            "/assets/js/paper-route-guard.js"
+            "/sw.js"
+            "/whitepaper"
+          )
+
+          names=(
+            "index.html"
+            "contact.json"
+            "guard.js"
+            "sw.js"
+            "whitepaper.html"
+          )
+
+          for i in "${!paths[@]}"; do
+            separator='?'
+            [[ "${paths[$i]}" == *'?'* ]] && separator='&'
+            fetch_one "custom-${names[$i]}" "${custom}${paths[$i]}${separator}paper_probe=${stamp}" "$work/custom-${names[$i]}"
+            fetch_one "railway-${names[$i]}" "${railway}${paths[$i]}${separator}paper_probe=${stamp}" "$work/railway-${names[$i]}"
+          done
+
+          echo '=== DNS ==='
+          echo 'rndrntwrk.com A'
+          dig +short rndrntwrk.com A || true
+          echo 'rndrntwrk.com AAAA'
+          dig +short rndrntwrk.com AAAA || true
+          echo 'rndrntwrk.com CNAME'
+          dig +short rndrntwrk.com CNAME || true
+          echo 'www.rndrntwrk.com CNAME'
+          dig +short www.rndrntwrk.com CNAME || true
+          echo 'rndrweb-production.up.railway.app A'
+          dig +short rndrweb-production.up.railway.app A || true
+          echo 'rndrweb-production.up.railway.app CNAME'
+          dig +short rndrweb-production.up.railway.app CNAME || true
+
+          echo '=== RESPONSE HEADERS ==='
+          for headers in "$work"/*.headers; do
+            echo "--- $(basename "$headers")"
+            grep -Ei '^(HTTP/|cache-control:|content-type:|etag:|last-modified:|server:|via:|cf-cache-status:|cf-ray:|x-railway|x-powered-by:|location:)' "$headers" || true
+          done
+
+          echo '=== TITLES AND MARKERS ==='
+          for prefix in custom railway; do
+            echo "--- $prefix index title"
+            grep -Eio '<title>[^<]*</title>' "$work/${prefix}-index.html" | head -n 3 || true
+            echo "--- $prefix route guard marker"
+            grep -Eo 'paper-route-guard\.js\?v=[^"<]+' "$work/${prefix}-index.html" | head -n 3 || true
+            echo "--- $prefix native Paper links"
+            grep -Eo '<a\b[^>]*href="/whitepaper"[^>]*>Paper</a>' "$work/${prefix}-index.html" | head -n 5 || true
+            echo "--- $prefix legacy Docs markers"
+            grep -Ein '>Docs</a>|>Documentation</a>|docs\.rndrntwrk\.com' "$work/${prefix}-index.html" | head -n 10 || true
+            echo "--- $prefix CMS paper entry"
+            jq -c '.links[]? | select(.id == "65c13868c0c0f7604e81a42c")' "$work/${prefix}-contact.json" 2>/dev/null || true
+            echo "--- $prefix guard constants"
+            grep -E "PAPER_LABEL|PAPER_PATH|LEGACY_DOCS_HOST" "$work/${prefix}-guard.js" | head -n 12 || true
+            echo "--- $prefix service worker cache"
+            grep -F 'CACHE_VERSION' "$work/${prefix}-sw.js" | head -n 3 || true
+            echo "--- $prefix whitepaper title"
+            grep -Eio '<title>[^<]*</title>' "$work/${prefix}-whitepaper.html" | head -n 3 || true
+          done
+
+          echo '=== BODY HASHES ==='
+          sha256sum "$work"/custom-* "$work"/railway-* || true
+
+          echo '=== ASSERTIONS ==='
+
+          if ! jq -e '.links[] | select(.id == "65c13868c0c0f7604e81a42c") | (.title == "Paper" and .url == "/whitepaper")' "$work/custom-contact.json" >/dev/null 2>&1; then
+            echo 'ASSERT_FAIL custom CMS paper tile is not Paper -> /whitepaper'
+            failures=$((failures + 1))
+          fi
+
+          if ! grep -Fq 'paper-route-guard.js?v=20260916-1' "$work/custom-index.html"; then
+            echo 'ASSERT_FAIL custom homepage lacks the canonical route guard marker'
+            failures=$((failures + 1))
+          fi
+
+          custom_paper_links="$(grep -Eoc '<a\b[^>]*href="/whitepaper"[^>]*>Paper</a>' "$work/custom-index.html" || true)"
+          if [[ "$custom_paper_links" -ne 2 ]]; then
+            echo "ASSERT_FAIL custom homepage Paper link count=$custom_paper_links expected=2"
+            failures=$((failures + 1))
+          fi
+
+          if grep -Eiq '>Docs</a>|>Documentation</a>|docs\.rndrntwrk\.com' "$work/custom-index.html"; then
+            echo 'ASSERT_FAIL custom homepage still contains a legacy Docs marker'
+            failures=$((failures + 1))
+          fi
+
+          if ! grep -Fq "var PAPER_LABEL = 'Paper';" "$work/custom-guard.js"; then
+            echo 'ASSERT_FAIL custom guard does not set Paper'
+            failures=$((failures + 1))
+          fi
+
+          if ! grep -Fq "var PAPER_PATH = '/whitepaper';" "$work/custom-guard.js"; then
+            echo 'ASSERT_FAIL custom guard does not target /whitepaper'
+            failures=$((failures + 1))
+          fi
+
+          if ! grep -Fq "const CACHE_VERSION = 'v13';" "$work/custom-sw.js"; then
+            echo 'ASSERT_FAIL custom service worker is not cache version v13'
+            failures=$((failures + 1))
+          fi
+
+          custom_whitepaper_bytes="$(wc -c < "$work/custom-whitepaper.html")"
+          if [[ "$custom_whitepaper_bytes" -lt 500000 ]]; then
+            echo "ASSERT_FAIL custom whitepaper bytes=$custom_whitepaper_bytes expected>=500000"
+            failures=$((failures + 1))
+          fi
+
+          for name in "${names[@]}"; do
+            if ! cmp -s "$work/custom-$name" "$work/railway-$name"; then
+              echo "ASSERT_FAIL custom-$name differs from railway-$name"
+              failures=$((failures + 1))
+            fi
+          done
+
+          if [[ "$failures" -ne 0 ]]; then
+            echo "PROBE_RESULT FAIL failures=$failures"
+            exit 1
+          fi
+
+          echo 'PROBE_RESULT PASS custom domain matches the Railway origin and serves Paper -> /whitepaper'
